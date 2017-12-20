@@ -7,8 +7,17 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5E1C498D1FEA4455007CE624 /* CustomBrownTextColorLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E1C498C1FEA4455007CE624 /* CustomBrownTextColorLabel.swift */; };
+		5E1C498F1FEA4468007CE624 /* CustomBlueTextColorLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E1C498E1FEA4468007CE624 /* CustomBlueTextColorLabel.swift */; };
+		5E1C49921FEA45F6007CE624 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E1C49911FEA45F6007CE624 /* Constants.swift */; };
+		5E1C49941FEA494B007CE624 /* PrivacySettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E1C49931FEA494B007CE624 /* PrivacySettingsViewController.swift */; };
+		5E1C49961FEA4EB8007CE624 /* EmailPreferencesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E1C49951FEA4EB8007CE624 /* EmailPreferencesViewController.swift */; };
+		5E1C49981FEA73F8007CE624 /* AboutMeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E1C49971FEA73F8007CE624 /* AboutMeViewController.swift */; };
+		5E1C499A1FEA7F30007CE624 /* CustomBrownTextColorTextfield.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E1C49991FEA7F30007CE624 /* CustomBrownTextColorTextfield.swift */; };
+		5E1C499D1FEA80A1007CE624 /* ViewBorder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E1C499C1FEA80A1007CE624 /* ViewBorder.swift */; };
+		5E1C49A01FEA847B007CE624 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E1C499F1FEA847B007CE624 /* BaseViewController.swift */; };
+		5E1C49A21FEA84F2007CE624 /* CustomerBrownTextColorButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E1C49A11FEA84F2007CE624 /* CustomerBrownTextColorButton.swift */; };
 		5E20CD931FE952BE004ACE0D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E20CD921FE952BE004ACE0D /* AppDelegate.swift */; };
-		5E20CD951FE952BE004ACE0D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E20CD941FE952BE004ACE0D /* ViewController.swift */; };
 		5E20CD9A1FE952BE004ACE0D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5E20CD991FE952BE004ACE0D /* Assets.xcassets */; };
 		5E20CD9D1FE952BE004ACE0D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5E20CD9B1FE952BE004ACE0D /* LaunchScreen.storyboard */; };
 		5E20CDAE1FE962E1004ACE0D /* SanFranciscoDisplay-Black.otf in Resources */ = {isa = PBXBuildFile; fileRef = 5E20CDA51FE9621A004ACE0D /* SanFranciscoDisplay-Black.otf */; };
@@ -25,9 +34,18 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		5E1C498C1FEA4455007CE624 /* CustomBrownTextColorLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomBrownTextColorLabel.swift; sourceTree = "<group>"; };
+		5E1C498E1FEA4468007CE624 /* CustomBlueTextColorLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomBlueTextColorLabel.swift; sourceTree = "<group>"; };
+		5E1C49911FEA45F6007CE624 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		5E1C49931FEA494B007CE624 /* PrivacySettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PrivacySettingsViewController.swift; sourceTree = "<group>"; };
+		5E1C49951FEA4EB8007CE624 /* EmailPreferencesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmailPreferencesViewController.swift; sourceTree = "<group>"; };
+		5E1C49971FEA73F8007CE624 /* AboutMeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutMeViewController.swift; sourceTree = "<group>"; };
+		5E1C49991FEA7F30007CE624 /* CustomBrownTextColorTextfield.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomBrownTextColorTextfield.swift; sourceTree = "<group>"; };
+		5E1C499C1FEA80A1007CE624 /* ViewBorder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewBorder.swift; sourceTree = "<group>"; };
+		5E1C499F1FEA847B007CE624 /* BaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		5E1C49A11FEA84F2007CE624 /* CustomerBrownTextColorButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomerBrownTextColorButton.swift; sourceTree = "<group>"; };
 		5E20CD8F1FE952BE004ACE0D /* mNet.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = mNet.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5E20CD921FE952BE004ACE0D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		5E20CD941FE952BE004ACE0D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		5E20CD991FE952BE004ACE0D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5E20CD9C1FE952BE004ACE0D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5E20CD9E1FE952BE004ACE0D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -55,6 +73,33 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5E1C498B1FEA442C007CE624 /* Custom View Classes */ = {
+			isa = PBXGroup;
+			children = (
+				5E1C498C1FEA4455007CE624 /* CustomBrownTextColorLabel.swift */,
+				5E1C498E1FEA4468007CE624 /* CustomBlueTextColorLabel.swift */,
+				5E1C49991FEA7F30007CE624 /* CustomBrownTextColorTextfield.swift */,
+				5E1C49A11FEA84F2007CE624 /* CustomerBrownTextColorButton.swift */,
+			);
+			name = "Custom View Classes";
+			sourceTree = "<group>";
+		};
+		5E1C499B1FEA8072007CE624 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				5E1C499C1FEA80A1007CE624 /* ViewBorder.swift */,
+			);
+			name = Extensions;
+			sourceTree = "<group>";
+		};
+		5E1C499E1FEA845B007CE624 /* Base classes */ = {
+			isa = PBXGroup;
+			children = (
+				5E1C499F1FEA847B007CE624 /* BaseViewController.swift */,
+			);
+			name = "Base classes";
+			sourceTree = "<group>";
+		};
 		5E20CD861FE952BE004ACE0D = {
 			isa = PBXGroup;
 			children = (
@@ -74,12 +119,15 @@
 		5E20CD911FE952BE004ACE0D /* mNet */ = {
 			isa = PBXGroup;
 			children = (
+				5E1C49911FEA45F6007CE624 /* Constants.swift */,
+				5E20CD921FE952BE004ACE0D /* AppDelegate.swift */,
+				5E1C499E1FEA845B007CE624 /* Base classes */,
+				5E1C499B1FEA8072007CE624 /* Extensions */,
+				5E1C498B1FEA442C007CE624 /* Custom View Classes */,
 				5E20CDBD1FE971FD004ACE0D /* Settings Module */,
 				5E20CDBA1FE9718F004ACE0D /* Storyboards */,
 				5E20CDB71FE96A7D004ACE0D /* Default Images */,
 				5E20CDA41FE96204004ACE0D /* Font */,
-				5E20CD921FE952BE004ACE0D /* AppDelegate.swift */,
-				5E20CD941FE952BE004ACE0D /* ViewController.swift */,
 				5E20CD991FE952BE004ACE0D /* Assets.xcassets */,
 				5E20CD9E1FE952BE004ACE0D /* Info.plist */,
 			);
@@ -132,6 +180,9 @@
 			isa = PBXGroup;
 			children = (
 				5E20CDC11FE9724A004ACE0D /* SettingsViewController.swift */,
+				5E1C49931FEA494B007CE624 /* PrivacySettingsViewController.swift */,
+				5E1C49951FEA4EB8007CE624 /* EmailPreferencesViewController.swift */,
+				5E1C49971FEA73F8007CE624 /* AboutMeViewController.swift */,
 			);
 			name = "View Controllers";
 			sourceTree = "<group>";
@@ -231,9 +282,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5E20CD951FE952BE004ACE0D /* ViewController.swift in Sources */,
+				5E1C49961FEA4EB8007CE624 /* EmailPreferencesViewController.swift in Sources */,
+				5E1C49941FEA494B007CE624 /* PrivacySettingsViewController.swift in Sources */,
+				5E1C49A01FEA847B007CE624 /* BaseViewController.swift in Sources */,
+				5E1C498D1FEA4455007CE624 /* CustomBrownTextColorLabel.swift in Sources */,
+				5E1C499A1FEA7F30007CE624 /* CustomBrownTextColorTextfield.swift in Sources */,
 				5E20CD931FE952BE004ACE0D /* AppDelegate.swift in Sources */,
+				5E1C498F1FEA4468007CE624 /* CustomBlueTextColorLabel.swift in Sources */,
 				5E20CDC21FE9724A004ACE0D /* SettingsViewController.swift in Sources */,
+				5E1C499D1FEA80A1007CE624 /* ViewBorder.swift in Sources */,
+				5E1C49981FEA73F8007CE624 /* AboutMeViewController.swift in Sources */,
+				5E1C49921FEA45F6007CE624 /* Constants.swift in Sources */,
+				5E1C49A21FEA84F2007CE624 /* CustomerBrownTextColorButton.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -389,6 +449,7 @@
 				5E20CDA31FE952BE004ACE0D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

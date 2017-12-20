@@ -1,14 +1,14 @@
 //
-//  SettingsViewController.swift
+//  EmailPreferencesViewController.swift
 //  mNet
 //
-//  Created by Anurag Jadhav on 12/19/17.
+//  Created by Anurag Jadhav on 12/20/17.
 //  Copyright © 2017 mNet. All rights reserved.
 //
 
 import UIKit
 
-class SettingsViewController: BaseViewController {
+class EmailPreferencesViewController: BaseViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
