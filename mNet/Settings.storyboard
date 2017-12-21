@@ -130,7 +130,7 @@
                                 <color key="backgroundColor" red="0.96900743249999999" green="0.97263187169999998" blue="0.97609406710000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" accessoryType="disclosureIndicator" indentationWidth="10" rowHeight="50" id="2Oa-gb-NLc">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="SettingOptionsTableViewCell" rowHeight="50" id="2Oa-gb-NLc" customClass="SettingOptionsTableViewCell" customModule="mNet" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="50"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="2Oa-gb-NLc" id="cCm-UX-kUQ">
@@ -150,6 +150,9 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" red="0.96900743249999999" green="0.97263187169999998" blue="0.97609406710000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <connections>
+                                            <outlet property="optionNameLabel" destination="7Sp-Tp-6Uf" id="NbZ-fj-V3T"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>
@@ -197,7 +200,7 @@
                                 <color key="backgroundColor" red="0.96900743249999999" green="0.97263187169999998" blue="0.97609406710000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" rowHeight="73" id="DCn-5M-Y9M">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="PrivacySettingOptionTableViewCell" rowHeight="73" id="DCn-5M-Y9M" customClass="PrivacySettingOptionTableViewCell" customModule="mNet" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="73"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="DCn-5M-Y9M" id="ETr-dl-Pfq">
@@ -236,6 +239,11 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" red="0.96900743249999999" green="0.97263187169999998" blue="0.97609406710000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <connections>
+                                            <outlet property="optionDescriptionLabel" destination="iC4-R4-zJq" id="BxC-Tx-jHF"/>
+                                            <outlet property="optionNameLabel" destination="eOU-mo-0ic" id="UBb-EF-8zE"/>
+                                            <outlet property="switchButton" destination="IKl-Y9-vgJ" id="RtE-Cw-AMu"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>
@@ -257,6 +265,9 @@
                             <color key="tintColor" red="0.45882352941176469" green="0.45882352941176469" blue="0.45882352941176469" alpha="1" colorSpace="calibratedRGB"/>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="optionsTableView" destination="n3Z-73-hpT" id="B1g-hQ-NzB"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="14P-SN-dKq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -296,16 +307,16 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="87" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="aef-9r-QQV">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="92" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="aef-9r-QQV">
                                 <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                                 <color key="backgroundColor" red="0.96900743249999999" green="0.97263187169999998" blue="0.97609406710000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" rowHeight="87" id="HVU-Nz-aEi">
-                                        <rect key="frame" x="0.0" y="28" width="375" height="87"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" rowHeight="92" id="HVU-Nz-aEi">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="92"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="HVU-Nz-aEi" id="I5R-yD-6p6">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="86.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="91.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Conversation" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="62w-q9-uoD" customClass="CustomBrownTextColorLabel" customModule="mNet" customModuleProvider="target">
@@ -331,10 +342,10 @@
                                             <constraints>
                                                 <constraint firstAttribute="trailing" secondItem="53j-AR-RLw" secondAttribute="trailing" constant="28" id="6Rv-AN-UZ2"/>
                                                 <constraint firstItem="Kep-5m-GxN" firstAttribute="leading" secondItem="62w-q9-uoD" secondAttribute="leading" id="7Qd-aY-tBo"/>
+                                                <constraint firstAttribute="bottom" secondItem="Kep-5m-GxN" secondAttribute="bottom" constant="16" id="9gb-A0-05y"/>
                                                 <constraint firstItem="Kep-5m-GxN" firstAttribute="top" secondItem="62w-q9-uoD" secondAttribute="bottom" constant="9" id="BgM-zY-Jec"/>
                                                 <constraint firstItem="62w-q9-uoD" firstAttribute="leading" secondItem="I5R-yD-6p6" secondAttribute="leading" constant="28" id="EK8-3e-moh"/>
                                                 <constraint firstItem="62w-q9-uoD" firstAttribute="top" secondItem="I5R-yD-6p6" secondAttribute="top" constant="16" id="NzF-en-lmH"/>
-                                                <constraint firstAttribute="bottom" secondItem="Kep-5m-GxN" secondAttribute="bottom" constant="11" id="Y0G-2p-GJZ"/>
                                                 <constraint firstItem="53j-AR-RLw" firstAttribute="centerY" secondItem="62w-q9-uoD" secondAttribute="centerY" constant="6" id="dDS-pH-wiV"/>
                                                 <constraint firstItem="53j-AR-RLw" firstAttribute="leading" secondItem="Kep-5m-GxN" secondAttribute="trailing" constant="8" id="sRM-6R-zMf"/>
                                             </constraints>
@@ -364,7 +375,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QvS-HE-RdR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1952.8" y="882.90854572713647"/>
+            <point key="canvasLocation" x="1951.2" y="882.00899550224892"/>
         </scene>
         <!--About Me-->
         <scene sceneID="PSY-yS-WrJ">
@@ -991,7 +1002,7 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="ASk-hv-v80" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="VPp-VL-Z9j">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="VPp-VL-Z9j">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>

@@ -8,28 +8,94 @@
 
 import UIKit
 
-class SettingsViewController: BaseViewController {
+class SettingsViewController: BaseViewController,UITableViewDelegate,UITableViewDataSource {
 
+    private let dataCtrl = SettingsDataController()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated);
+        
+        self.setupNavigationBar()
+    }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    func setupNavigationBar(){
+        
+        self.navigationController?.navigationBar.isHidden = true
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    //Mark: tableview delegates and data source
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        
+        return 1
     }
-    */
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        
+        return self.dataCtrl.optionsArray.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        let cell:SettingOptionsTableViewCell = tableView.dequeueReusableCell(withIdentifier:"SettingOptionsTableViewCell") as! SettingOptionsTableViewCell
+        
+        let optionName = self.dataCtrl.optionsArray[indexPath.row]
+        
+        cell.loadCellWithOption(optionName)
+        
+        return cell
+        
+    }
 
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        let optionName = self.dataCtrl.optionsArray[indexPath.row]
+        
+        switch optionName {
+            
+        case SettingOptions.aboutMe:
+            
+            let aboutMeVC = (UIStoryboard.init(name:"Settings", bundle: Bundle.main)).instantiateViewController(withIdentifier: "AboutMeViewController")
+            self.navigationController?.pushViewController(aboutMeVC, animated: true)
+            break
+            
+        case SettingOptions.password:
+         
+            //TODO
+            break
+            
+        case SettingOptions.privacySettings:
+            
+            let privacySettingsVC = (UIStoryboard.init(name:"Settings", bundle: Bundle.main)).instantiateViewController(withIdentifier: "PrivacySettingsViewController")
+            self.navigationController?.pushViewController(privacySettingsVC, animated: true)
+            break
+            
+        case SettingOptions.appSettings:
+            
+            let appSettingsVC = (UIStoryboard.init(name:"Settings", bundle: Bundle.main)).instantiateViewController(withIdentifier: "AppSettingsViewController")
+            self.navigationController?.pushViewController(appSettingsVC, animated: true)
+            break
+            
+        case SettingOptions.emailPreferences:
+            
+            let emailPreferenceVC = (UIStoryboard.init(name:"Settings", bundle: Bundle.main)).instantiateViewController(withIdentifier: "EmailPreferencesViewController")
+            self.navigationController?.pushViewController(emailPreferenceVC, animated: true)
+            break
+            
+        case SettingOptions.groups:
+           
+            //TODO :
+            break;
+            
+        default: break
+            
+        }
+        
+    }
 }

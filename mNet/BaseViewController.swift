@@ -24,6 +24,9 @@ class BaseViewController: UIViewController {
         //add keyboard notificaton listner
         NotificationCenter.default.addObserver(self, selector: #selector(keyBoardWillShow(notification:)), name: .UIKeyboardWillShow, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(keyBoardWillHide(notification:)), name: .UIKeyboardWillHide, object: nil)
+        
+        //add gesture recognizer
+        self.view.addGestureRecognizer(self.tapGestureToMoveKbDown)
     }
     
     //MARK: Loading view methods
