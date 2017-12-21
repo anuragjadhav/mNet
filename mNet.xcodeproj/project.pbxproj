@@ -31,6 +31,7 @@
 		5E20CDB61FE962F7004ACE0D /* SanFranciscoDisplay-Ultralight.otf in Resources */ = {isa = PBXBuildFile; fileRef = 5E20CDAD1FE9621A004ACE0D /* SanFranciscoDisplay-Ultralight.otf */; };
 		5E20CDBC1FE971A7004ACE0D /* Settings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5E20CDBB1FE971A7004ACE0D /* Settings.storyboard */; };
 		5E20CDC21FE9724A004ACE0D /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E20CDC11FE9724A004ACE0D /* SettingsViewController.swift */; };
+		5EC3005A1FEBEBFA00229516 /* AppSettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EC300591FEBEBFA00229516 /* AppSettingsViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -60,6 +61,7 @@
 		5E20CDAD1FE9621A004ACE0D /* SanFranciscoDisplay-Ultralight.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SanFranciscoDisplay-Ultralight.otf"; sourceTree = "<group>"; };
 		5E20CDBB1FE971A7004ACE0D /* Settings.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Settings.storyboard; sourceTree = "<group>"; };
 		5E20CDC11FE9724A004ACE0D /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		5EC300591FEBEBFA00229516 /* AppSettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppSettingsViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -183,6 +185,7 @@
 				5E1C49931FEA494B007CE624 /* PrivacySettingsViewController.swift */,
 				5E1C49951FEA4EB8007CE624 /* EmailPreferencesViewController.swift */,
 				5E1C49971FEA73F8007CE624 /* AboutMeViewController.swift */,
+				5EC300591FEBEBFA00229516 /* AppSettingsViewController.swift */,
 			);
 			name = "View Controllers";
 			sourceTree = "<group>";
@@ -290,6 +293,7 @@
 				5E20CD931FE952BE004ACE0D /* AppDelegate.swift in Sources */,
 				5E1C498F1FEA4468007CE624 /* CustomBlueTextColorLabel.swift in Sources */,
 				5E20CDC21FE9724A004ACE0D /* SettingsViewController.swift in Sources */,
+				5EC3005A1FEBEBFA00229516 /* AppSettingsViewController.swift in Sources */,
 				5E1C499D1FEA80A1007CE624 /* ViewBorder.swift in Sources */,
 				5E1C49981FEA73F8007CE624 /* AboutMeViewController.swift in Sources */,
 				5E1C49921FEA45F6007CE624 /* Constants.swift in Sources */,
