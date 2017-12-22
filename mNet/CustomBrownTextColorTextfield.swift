@@ -16,7 +16,7 @@ class CustomBrownTextColorTextfield: UITextField {
     override func awakeFromNib() {
         
         super.awakeFromNib();
-        self.textColor = ColorConstants.kBlueColor;
+        self.textColor = ColorConstants.kBrownColor;
     }
     
     override func textRect(forBounds bounds: CGRect) -> CGRect {
