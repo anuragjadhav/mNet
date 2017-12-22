@@ -15,7 +15,7 @@ class BaseViewController: UIViewController {
     var transaperantLoadingViewOnWindow : UIView?
     var loadingViewOnWindow : UIView?
     
-    let tapGestureToMoveKbDown : UITapGestureRecognizer = UITapGestureRecognizer.init(target: self, action: #selector(moveKeyboardDown(gesture:)))
+    var tapGestureToMoveKbDown : UITapGestureRecognizer?
 
     override func viewDidLoad() {
         
@@ -25,8 +25,7 @@ class BaseViewController: UIViewController {
         NotificationCenter.default.addObserver(self, selector: #selector(keyBoardWillShow(notification:)), name: .UIKeyboardWillShow, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(keyBoardWillHide(notification:)), name: .UIKeyboardWillHide, object: nil)
         
-        //add gesture recognizer
-        self.view.addGestureRecognizer(self.tapGestureToMoveKbDown)
+       tapGestureToMoveKbDown =  UITapGestureRecognizer.init(target: self, action: #selector(moveKeyboardDown(gesture:)))
     }
     
     //MARK: Loading view methods
@@ -169,6 +168,9 @@ class BaseViewController: UIViewController {
     
     func keyBoardWillShow(notification: NSNotification) {
         
+        //add gesture recognizer
+        self.view.addGestureRecognizer(self.tapGestureToMoveKbDown!)
+        
         if let keyboardSize = (notification.userInfo?[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue
         {
             if let foundScrollView = view.viewWithTag(12345) {
@@ -187,6 +189,9 @@ class BaseViewController: UIViewController {
     
     
     func keyBoardWillHide(notification: NSNotification) {
+        
+        //add gesture recognizer
+        self.view.removeGestureRecognizer(self.tapGestureToMoveKbDown!)
         
         if let foundScrollView = view.viewWithTag(12345) {
             

@@ -17,11 +17,11 @@ class PrivacySettingOptionTableViewCell: UITableViewCell {
     
     func loadCellWithOption(_ option:Option)  {
         
-        self.optionNameLabel.text = option.optionName
-        self.optionDescriptionLabel.text = option.optionDescription
+        self.optionNameLabel.text = option.settingOptionName
+        self.optionDescriptionLabel.text = option.settingOptionDescription
         
-        if(option.isOn != nil){
-            self.switchButton.setOn(option.isOn!, animated: false)
+        if(option.isSettingOn != nil){
+            self.switchButton.setOn(option.isSettingOn!, animated: false)
         }
     }
 }

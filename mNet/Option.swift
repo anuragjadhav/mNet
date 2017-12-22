@@ -10,9 +10,9 @@ import UIKit
 
 class Option: NSObject {
     
-    var optionName:String?
-    var optionDescription:String?
-    var isOn:Bool?
+    var settingOptionName:String?
+    var settingOptionDescription:String?
+    var isSettingOn:Bool?
     
     override init() {
         super.init()
@@ -21,8 +21,8 @@ class Option: NSObject {
     class func initWith(_ optionName:String , _ optionDescription:String) -> Option {
         
         let option = Option()
-        option.optionName = optionName
-        option.optionDescription = optionDescription
+        option.settingOptionName = optionName
+        option.settingOptionDescription = optionDescription
         
         return option
     }

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="dIh-qy-eeo">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -174,10 +174,12 @@
                             <constraint firstItem="pLZ-aZ-9Uq" firstAttribute="top" secondItem="jHg-Zn-3Es" secondAttribute="bottom" constant="21" id="ipl-kt-rPL"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="Dol-k0-tBv"/>
+                    <nil key="simulatedTopBarMetrics"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8Cy-AP-WVH" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="136.80000000000001" y="138.98050974512745"/>
+            <point key="canvasLocation" x="1076" y="138.98050974512745"/>
         </scene>
         <!--Privacy Settings-->
         <scene sceneID="cYI-ZW-bhV">
@@ -225,6 +227,9 @@
                                                         <constraint firstAttribute="width" constant="49" id="2qO-iG-3RN"/>
                                                         <constraint firstAttribute="height" constant="31" id="BqS-Gx-uCf"/>
                                                     </constraints>
+                                                    <connections>
+                                                        <action selector="switchButtonAction:" destination="UUW-Du-HoL" eventType="valueChanged" id="VtK-tL-21z"/>
+                                                    </connections>
                                                 </switch>
                                             </subviews>
                                             <constraints>
@@ -263,15 +268,25 @@
                     <navigationItem key="navigationItem" title="Privacy Settings" id="KHw-Qt-63F">
                         <barButtonItem key="leftBarButtonItem" image="backButtonImage" id="I0u-RX-tOE">
                             <color key="tintColor" red="0.45882352941176469" green="0.45882352941176469" blue="0.45882352941176469" alpha="1" colorSpace="calibratedRGB"/>
+                            <connections>
+                                <action selector="backButtonAction:" destination="UUW-Du-HoL" id="Tat-fb-mxG"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" image="tickmark" id="I7e-sl-le8">
+                            <inset key="imageInsets" minX="0.0" minY="2" maxX="-2" maxY="0.0"/>
+                            <color key="tintColor" red="0.45882352939999999" green="0.45882352939999999" blue="0.45882352939999999" alpha="1" colorSpace="calibratedRGB"/>
+                            <connections>
+                                <action selector="saveButtonAction:" destination="UUW-Du-HoL" id="Ocz-SD-h07"/>
+                            </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="optionsTableView" destination="n3Z-73-hpT" id="B1g-hQ-NzB"/>
+                        <outlet property="optionsTableView" destination="n3Z-73-hpT" id="0xP-33-lm3"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="14P-SN-dKq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1776.8" y="147.97601199400302"/>
+            <point key="canvasLocation" x="2716" y="147.97601199400302"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="7Wh-QW-RJo">
@@ -289,7 +304,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="q1W-gF-B5Y" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="997.60000000000002" y="134.48275862068968"/>
+            <point key="canvasLocation" x="1936.8" y="134.48275862068968"/>
         </scene>
         <!--Email Prferences-->
         <scene sceneID="FRe-Hw-27C">
@@ -303,73 +318,156 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="VAD-iy-X8Y">
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                            </view>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="92" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="aef-9r-QQV">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VAD-iy-X8Y">
                                 <rect key="frame" x="0.0" y="64" width="375" height="603"/>
-                                <color key="backgroundColor" red="0.96900743249999999" green="0.97263187169999998" blue="0.97609406710000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" rowHeight="92" id="HVU-Nz-aEi">
-                                        <rect key="frame" x="0.0" y="28" width="375" height="92"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="HVU-Nz-aEi" id="I5R-yD-6p6">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="91.5"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Conversation" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="62w-q9-uoD" customClass="CustomBrownTextColorLabel" customModule="mNet" customModuleProvider="target">
-                                                    <rect key="frame" x="28" y="16" width="85" height="17"/>
-                                                    <fontDescription key="fontDescription" name="SanFranciscoDisplay-Bold" family="San Francisco Display" pointSize="14"/>
-                                                    <color key="textColor" red="0.3803921569" green="0.28235294119999998" blue="0.22352941179999999" alpha="1" colorSpace="calibratedRGB"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Receive mail notification when someone start conversation with you." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kep-5m-GxN" customClass="CustomBrownTextColorLabel" customModule="mNet" customModuleProvider="target">
-                                                    <rect key="frame" x="28" y="42" width="262" height="33.5"/>
-                                                    <fontDescription key="fontDescription" name="SanFranciscoDisplay-Light" family="San Francisco Display" pointSize="14"/>
-                                                    <color key="textColor" red="0.3803921569" green="0.28235294119999998" blue="0.22352941179999999" alpha="1" colorSpace="calibratedRGB"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="53j-AR-RLw">
-                                                    <rect key="frame" x="298" y="15" width="51" height="31"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="width" constant="49" id="9Bn-D6-knE"/>
-                                                        <constraint firstAttribute="height" constant="31" id="vso-ff-sAj"/>
-                                                    </constraints>
-                                                </switch>
-                                            </subviews>
-                                            <constraints>
-                                                <constraint firstAttribute="trailing" secondItem="53j-AR-RLw" secondAttribute="trailing" constant="28" id="6Rv-AN-UZ2"/>
-                                                <constraint firstItem="Kep-5m-GxN" firstAttribute="leading" secondItem="62w-q9-uoD" secondAttribute="leading" id="7Qd-aY-tBo"/>
-                                                <constraint firstAttribute="bottom" secondItem="Kep-5m-GxN" secondAttribute="bottom" constant="16" id="9gb-A0-05y"/>
-                                                <constraint firstItem="Kep-5m-GxN" firstAttribute="top" secondItem="62w-q9-uoD" secondAttribute="bottom" constant="9" id="BgM-zY-Jec"/>
-                                                <constraint firstItem="62w-q9-uoD" firstAttribute="leading" secondItem="I5R-yD-6p6" secondAttribute="leading" constant="28" id="EK8-3e-moh"/>
-                                                <constraint firstItem="62w-q9-uoD" firstAttribute="top" secondItem="I5R-yD-6p6" secondAttribute="top" constant="16" id="NzF-en-lmH"/>
-                                                <constraint firstItem="53j-AR-RLw" firstAttribute="centerY" secondItem="62w-q9-uoD" secondAttribute="centerY" constant="6" id="dDS-pH-wiV"/>
-                                                <constraint firstItem="53j-AR-RLw" firstAttribute="leading" secondItem="Kep-5m-GxN" secondAttribute="trailing" constant="8" id="sRM-6R-zMf"/>
-                                            </constraints>
-                                        </tableViewCellContentView>
-                                        <color key="backgroundColor" red="0.96900743249999999" green="0.97263187169999998" blue="0.97609406710000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                    </tableViewCell>
-                                </prototypes>
-                                <connections>
-                                    <outlet property="dataSource" destination="3Cn-0j-gUv" id="VoR-6j-JHq"/>
-                                    <outlet property="delegate" destination="3Cn-0j-gUv" id="0pm-MO-vGr"/>
-                                </connections>
-                            </tableView>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Conversation" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="62w-q9-uoD" customClass="CustomBrownTextColorLabel" customModule="mNet" customModuleProvider="target">
+                                        <rect key="frame" x="26" y="23" width="85" height="17"/>
+                                        <fontDescription key="fontDescription" name="SanFranciscoDisplay-Bold" family="San Francisco Display" pointSize="14"/>
+                                        <color key="textColor" red="0.3803921569" green="0.28235294119999998" blue="0.22352941179999999" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Receive mail notification when someone start conversation with you." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kep-5m-GxN" customClass="CustomBrownTextColorLabel" customModule="mNet" customModuleProvider="target">
+                                        <rect key="frame" x="26" y="47" width="254" height="33.5"/>
+                                        <fontDescription key="fontDescription" name="SanFranciscoDisplay-Light" family="San Francisco Display" pointSize="14"/>
+                                        <color key="textColor" red="0.3803921569" green="0.28235294119999998" blue="0.22352941179999999" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="53j-AR-RLw">
+                                        <rect key="frame" x="300" y="46.5" width="51" height="31"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="49" id="9Bn-D6-knE"/>
+                                            <constraint firstAttribute="height" constant="31" id="vso-ff-sAj"/>
+                                        </constraints>
+                                    </switch>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Approval Reminder" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="htn-bY-bqe" customClass="CustomBrownTextColorLabel" customModule="mNet" customModuleProvider="target">
+                                        <rect key="frame" x="26" y="102.5" width="121.5" height="17"/>
+                                        <fontDescription key="fontDescription" name="SanFranciscoDisplay-Bold" family="San Francisco Display" pointSize="14"/>
+                                        <color key="textColor" red="0.3803921569" green="0.28235294119999998" blue="0.22352941179999999" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Receive mail notification fro pending PO." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iGV-Xe-1vq" customClass="CustomBrownTextColorLabel" customModule="mNet" customModuleProvider="target">
+                                        <rect key="frame" x="26" y="127" width="254" height="17"/>
+                                        <fontDescription key="fontDescription" name="SanFranciscoDisplay-Light" family="San Francisco Display" pointSize="14"/>
+                                        <color key="textColor" red="0.3803921569" green="0.28235294119999998" blue="0.22352941179999999" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="DcO-Oo-Zhq">
+                                        <rect key="frame" x="300" y="118" width="51" height="31"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="49" id="Vcy-AC-Pht"/>
+                                            <constraint firstAttribute="height" constant="31" id="m0C-dg-ir2"/>
+                                        </constraints>
+                                    </switch>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Comments" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CRj-xW-Mzi" customClass="CustomBrownTextColorLabel" customModule="mNet" customModuleProvider="target">
+                                        <rect key="frame" x="26" y="166" width="69" height="17"/>
+                                        <fontDescription key="fontDescription" name="SanFranciscoDisplay-Bold" family="San Francisco Display" pointSize="14"/>
+                                        <color key="textColor" red="0.3803921569" green="0.28235294119999998" blue="0.22352941179999999" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Receive mail notification when someone comments on your conversation." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zyb-6a-dmn" customClass="CustomBrownTextColorLabel" customModule="mNet" customModuleProvider="target">
+                                        <rect key="frame" x="26" y="190" width="254" height="33.5"/>
+                                        <fontDescription key="fontDescription" name="SanFranciscoDisplay-Light" family="San Francisco Display" pointSize="14"/>
+                                        <color key="textColor" red="0.3803921569" green="0.28235294119999998" blue="0.22352941179999999" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="XXn-4Q-o4L">
+                                        <rect key="frame" x="300" y="189.5" width="51" height="31"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="49" id="Hno-dk-OQU"/>
+                                            <constraint firstAttribute="height" constant="31" id="V7X-Vo-zVY"/>
+                                        </constraints>
+                                    </switch>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Remind me every" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Sps-DM-Es0" customClass="CustomBrownTextColorLabel" customModule="mNet" customModuleProvider="target">
+                                        <rect key="frame" x="26" y="245.5" width="109.5" height="17"/>
+                                        <fontDescription key="fontDescription" name="SanFranciscoDisplay-Bold" family="San Francisco Display" pointSize="14"/>
+                                        <color key="textColor" red="0.3803921569" green="0.28235294119999998" blue="0.22352941179999999" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nFt-wq-wSg" customClass="CustomBrownTextColorButton" customModule="mNet" customModuleProvider="target">
+                                        <rect key="frame" x="26" y="274.5" width="323" height="36"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="36" id="LSD-Y1-KZN"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="SanFranciscoDisplay-Light" family="San Francisco Display" pointSize="14"/>
+                                        <state key="normal" title="4 Days">
+                                            <color key="titleColor" red="0.3803921569" green="0.28235294119999998" blue="0.22352941179999999" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="0.0"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                <color key="value" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                <real key="value" value="1"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </button>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="downArrow" translatesAutoresizingMaskIntoConstraints="NO" id="Gai-tI-6BW">
+                                        <rect key="frame" x="324" y="284.5" width="13" height="15"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="15" id="6cn-2z-EAF"/>
+                                            <constraint firstAttribute="width" constant="13" id="zSM-17-zgc"/>
+                                        </constraints>
+                                    </imageView>
+                                </subviews>
+                                <color key="backgroundColor" red="0.96862745100000003" green="0.97254901959999995" blue="0.97647058819999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstItem="62w-q9-uoD" firstAttribute="top" secondItem="VAD-iy-X8Y" secondAttribute="top" constant="23" id="1fP-EY-fFg"/>
+                                    <constraint firstItem="XXn-4Q-o4L" firstAttribute="trailing" secondItem="53j-AR-RLw" secondAttribute="trailing" id="2EZ-4V-6B7"/>
+                                    <constraint firstItem="nFt-wq-wSg" firstAttribute="trailing" secondItem="53j-AR-RLw" secondAttribute="trailing" id="526-uN-KXE"/>
+                                    <constraint firstItem="iGV-Xe-1vq" firstAttribute="leading" secondItem="62w-q9-uoD" secondAttribute="leading" id="5hU-dP-yvZ"/>
+                                    <constraint firstItem="Gai-tI-6BW" firstAttribute="leading" secondItem="nFt-wq-wSg" secondAttribute="trailing" constant="-25" id="6VD-oP-oFN"/>
+                                    <constraint firstItem="DcO-Oo-Zhq" firstAttribute="trailing" secondItem="53j-AR-RLw" secondAttribute="trailing" id="71n-Z1-UzP"/>
+                                    <constraint firstItem="DcO-Oo-Zhq" firstAttribute="leading" secondItem="iGV-Xe-1vq" secondAttribute="trailing" constant="20" id="CFS-S9-R1R"/>
+                                    <constraint firstItem="Kep-5m-GxN" firstAttribute="top" secondItem="62w-q9-uoD" secondAttribute="bottom" constant="7" id="CUx-UD-nUg"/>
+                                    <constraint firstItem="DcO-Oo-Zhq" firstAttribute="centerY" secondItem="iGV-Xe-1vq" secondAttribute="centerY" constant="-2" id="CZd-2j-EHo"/>
+                                    <constraint firstItem="XXn-4Q-o4L" firstAttribute="centerY" secondItem="zyb-6a-dmn" secondAttribute="centerY" constant="-2" id="Gfu-br-S00"/>
+                                    <constraint firstItem="zyb-6a-dmn" firstAttribute="leading" secondItem="62w-q9-uoD" secondAttribute="leading" id="LMP-Jw-RR2"/>
+                                    <constraint firstItem="53j-AR-RLw" firstAttribute="leading" secondItem="Kep-5m-GxN" secondAttribute="trailing" constant="20" id="N1g-Fk-zh6"/>
+                                    <constraint firstItem="53j-AR-RLw" firstAttribute="centerY" secondItem="Kep-5m-GxN" secondAttribute="centerY" constant="-2" id="Q5Y-Th-fPd"/>
+                                    <constraint firstItem="htn-bY-bqe" firstAttribute="top" secondItem="Kep-5m-GxN" secondAttribute="bottom" constant="22" id="QZH-9W-8oV"/>
+                                    <constraint firstItem="zyb-6a-dmn" firstAttribute="top" secondItem="CRj-xW-Mzi" secondAttribute="bottom" constant="7" id="R6d-cA-gZv"/>
+                                    <constraint firstItem="62w-q9-uoD" firstAttribute="leading" secondItem="VAD-iy-X8Y" secondAttribute="leading" constant="26" id="THV-I1-J2M"/>
+                                    <constraint firstItem="Kep-5m-GxN" firstAttribute="leading" secondItem="62w-q9-uoD" secondAttribute="leading" id="U2c-Cx-VNW"/>
+                                    <constraint firstAttribute="trailing" secondItem="53j-AR-RLw" secondAttribute="trailing" constant="26" id="VtL-cA-x7Y"/>
+                                    <constraint firstItem="XXn-4Q-o4L" firstAttribute="leading" secondItem="zyb-6a-dmn" secondAttribute="trailing" constant="20" id="cSJ-QB-mLj"/>
+                                    <constraint firstItem="htn-bY-bqe" firstAttribute="leading" secondItem="62w-q9-uoD" secondAttribute="leading" id="cUK-Yl-4w9"/>
+                                    <constraint firstItem="Gai-tI-6BW" firstAttribute="centerY" secondItem="nFt-wq-wSg" secondAttribute="centerY" id="cUh-Zg-zr1"/>
+                                    <constraint firstItem="Sps-DM-Es0" firstAttribute="top" secondItem="zyb-6a-dmn" secondAttribute="bottom" constant="22" id="ecy-jV-Zpl"/>
+                                    <constraint firstItem="iGV-Xe-1vq" firstAttribute="top" secondItem="htn-bY-bqe" secondAttribute="bottom" constant="7" id="fGH-SP-tv2"/>
+                                    <constraint firstItem="CRj-xW-Mzi" firstAttribute="leading" secondItem="62w-q9-uoD" secondAttribute="leading" id="l2N-sR-8Wv"/>
+                                    <constraint firstItem="nFt-wq-wSg" firstAttribute="leading" secondItem="62w-q9-uoD" secondAttribute="leading" id="o6C-kd-fUW"/>
+                                    <constraint firstItem="Sps-DM-Es0" firstAttribute="leading" secondItem="62w-q9-uoD" secondAttribute="leading" id="p05-u0-s2Z"/>
+                                    <constraint firstItem="CRj-xW-Mzi" firstAttribute="top" secondItem="iGV-Xe-1vq" secondAttribute="bottom" constant="22" id="rm1-9O-c9h"/>
+                                    <constraint firstItem="nFt-wq-wSg" firstAttribute="top" secondItem="Sps-DM-Es0" secondAttribute="bottom" constant="12" id="yXP-Nx-vQz"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" red="0.96900743249999999" green="0.97263187169999998" blue="0.97609406710000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="aef-9r-QQV" firstAttribute="top" secondItem="Ccw-g9-Di7" secondAttribute="bottom" id="3Y9-nC-y4G"/>
-                            <constraint firstItem="X7G-MG-RQw" firstAttribute="top" secondItem="aef-9r-QQV" secondAttribute="bottom" id="5HM-GE-FU7"/>
-                            <constraint firstItem="aef-9r-QQV" firstAttribute="leading" secondItem="TeJ-1y-M2U" secondAttribute="leading" id="Lum-rJ-AJI"/>
-                            <constraint firstAttribute="trailing" secondItem="aef-9r-QQV" secondAttribute="trailing" id="hib-zp-m2w"/>
+                            <constraint firstItem="VAD-iy-X8Y" firstAttribute="leading" secondItem="TeJ-1y-M2U" secondAttribute="leading" id="4xL-Pl-wbe"/>
+                            <constraint firstItem="VAD-iy-X8Y" firstAttribute="top" secondItem="Ccw-g9-Di7" secondAttribute="bottom" id="87N-PI-NbK"/>
+                            <constraint firstAttribute="bottom" secondItem="VAD-iy-X8Y" secondAttribute="bottom" id="AKA-3Z-nGs"/>
+                            <constraint firstAttribute="trailing" secondItem="VAD-iy-X8Y" secondAttribute="trailing" id="Fno-yw-G1E"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Email Prferences" id="aGB-1j-Yg3">
                         <barButtonItem key="leftBarButtonItem" image="backButtonImage" id="u1P-tH-lU6">
                             <color key="tintColor" red="0.45882352939999999" green="0.45882352939999999" blue="0.45882352939999999" alpha="1" colorSpace="calibratedRGB"/>
+                            <connections>
+                                <action selector="backButtonAction:" destination="3Cn-0j-gUv" id="2JA-Q9-z0f"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" image="tickmark" id="QvB-4V-fcD">
+                            <inset key="imageInsets" minX="0.0" minY="2" maxX="-2" maxY="0.0"/>
+                            <color key="tintColor" red="0.45882352941176469" green="0.45882352941176469" blue="0.45882352941176469" alpha="1" colorSpace="calibratedRGB"/>
+                            <connections>
+                                <action selector="saveButtonAction:" destination="3Cn-0j-gUv" id="Aqm-mQ-O8j"/>
+                            </connections>
                         </barButtonItem>
                     </navigationItem>
                 </viewController>
@@ -453,6 +551,9 @@
                                                         <real key="value" value="1"/>
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="genderButtonAction:" destination="u55-vt-yFX" eventType="touchUpInside" id="GfP-ho-wM6"/>
+                                                </connections>
                                             </button>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Gender" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ejn-Dp-yJ6" customClass="CustomBrownTextColorLabel" customModule="mNet" customModuleProvider="target">
                                                 <rect key="frame" x="28" y="132" width="46.5" height="17"/>
@@ -485,6 +586,9 @@
                                                         <real key="value" value="1"/>
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="birthdayButtonAction:" destination="u55-vt-yFX" eventType="touchUpInside" id="aAf-oH-LxL"/>
+                                                </connections>
                                             </button>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="downArrow" translatesAutoresizingMaskIntoConstraints="NO" id="xah-0U-7ph">
                                                 <rect key="frame" x="322" y="246" width="13" height="15"/>
@@ -544,14 +648,14 @@
                                                 <color key="textColor" red="0.3803921569" green="0.28235294119999998" blue="0.22352941179999999" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Address" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uGU-uv-0ew" customClass="CustomBrownTextColorLabel" customModule="mNet" customModuleProvider="target">
-                                                <rect key="frame" x="28" y="542" width="52.5" height="17"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Address" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uGU-uv-0ew" customClass="CustomBrownTextColorLabel" customModule="mNet" customModuleProvider="target">
+                                                <rect key="frame" x="28" y="542" width="83" height="17"/>
                                                 <fontDescription key="fontDescription" name="SanFranciscoDisplay-Bold" family="San Francisco Display" pointSize="14"/>
                                                 <color key="textColor" red="0.3803921569" green="0.28235294119999998" blue="0.22352941179999999" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="About" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="B5y-hT-Hgo" customClass="CustomBrownTextColorLabel" customModule="mNet" customModuleProvider="target">
-                                                <rect key="frame" x="28" y="617" width="38.5" height="17"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="About" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="B5y-hT-Hgo" customClass="CustomBrownTextColorLabel" customModule="mNet" customModuleProvider="target">
+                                                <rect key="frame" x="28" y="617" width="71" height="17"/>
                                                 <fontDescription key="fontDescription" name="SanFranciscoDisplay-Bold" family="San Francisco Display" pointSize="14"/>
                                                 <color key="textColor" red="0.3803921569" green="0.28235294119999998" blue="0.22352941179999999" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
@@ -756,6 +860,16 @@
                     <navigationItem key="navigationItem" title="About Me" id="VEn-6k-NWf">
                         <barButtonItem key="leftBarButtonItem" image="backButtonImage" id="35C-cs-wJO">
                             <color key="tintColor" red="0.45882352939999999" green="0.45882352939999999" blue="0.45882352939999999" alpha="1" colorSpace="calibratedRGB"/>
+                            <connections>
+                                <action selector="backButtonAction:" destination="u55-vt-yFX" id="N6u-ai-jyk"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" image="tickmark" id="Zw6-LV-W5G">
+                            <inset key="imageInsets" minX="0.0" minY="2" maxX="-2" maxY="0.0"/>
+                            <color key="tintColor" red="0.45882352939999999" green="0.45882352939999999" blue="0.45882352939999999" alpha="1" colorSpace="calibratedRGB"/>
+                            <connections>
+                                <action selector="saveButtonAction:" destination="u55-vt-yFX" id="zVq-9b-lLx"/>
+                            </connections>
                         </barButtonItem>
                     </navigationItem>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
@@ -850,6 +964,9 @@
                                                         <real key="value" value="1"/>
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="selectAppsButtonAction:" destination="837-dQ-klA" eventType="touchUpInside" id="ebT-LC-x41"/>
+                                                </connections>
                                             </button>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="downArrow" translatesAutoresizingMaskIntoConstraints="NO" id="5t9-AR-559">
                                                 <rect key="frame" x="323" y="65" width="13" height="15"/>
@@ -865,7 +982,7 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="v0X-71-0EV">
-                                                <rect key="frame" x="299" y="126.5" width="51" height="31"/>
+                                                <rect key="frame" x="299" y="127" width="51" height="31"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="49" id="DQ3-fa-sRO"/>
                                                     <constraint firstAttribute="height" constant="31" id="Dmy-Rn-4Qk"/>
@@ -891,7 +1008,7 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Y5I-Gz-wUU">
-                                                <rect key="frame" x="299" y="237.5" width="51" height="31"/>
+                                                <rect key="frame" x="299" y="237" width="51" height="31"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="31" id="Vid-n7-wM4"/>
                                                     <constraint firstAttribute="width" constant="49" id="dh4-Tc-AET"/>
@@ -924,6 +1041,9 @@
                                                         <real key="value" value="1"/>
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="defaultLandingPageButtonAction:" destination="837-dQ-klA" eventType="touchUpInside" id="QZr-PH-RNs"/>
+                                                </connections>
                                             </button>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="downArrow" translatesAutoresizingMaskIntoConstraints="NO" id="MMr-uK-MYB">
                                                 <rect key="frame" x="323" y="336" width="13" height="15"/>
@@ -989,7 +1109,17 @@
                     </view>
                     <navigationItem key="navigationItem" title="App Settings" id="E7X-rt-s2R">
                         <barButtonItem key="leftBarButtonItem" image="backButtonImage" id="4h3-T9-Noc">
-                            <color key="tintColor" red="0.3803921569" green="0.28235294119999998" blue="0.22352941179999999" alpha="1" colorSpace="calibratedRGB"/>
+                            <color key="tintColor" red="0.45882352939999999" green="0.45882352939999999" blue="0.45882352939999999" alpha="1" colorSpace="calibratedRGB"/>
+                            <connections>
+                                <action selector="backButtonAction:" destination="837-dQ-klA" id="lK7-eb-XLX"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" image="tickmark" id="Y3e-R7-BHf">
+                            <inset key="imageInsets" minX="0.0" minY="2" maxX="-2" maxY="0.0"/>
+                            <color key="tintColor" red="0.45882352939999999" green="0.45882352939999999" blue="0.45882352939999999" alpha="1" colorSpace="calibratedRGB"/>
+                            <connections>
+                                <action selector="saveButtonAction:" destination="837-dQ-klA" id="wRN-At-EQy"/>
+                            </connections>
                         </barButtonItem>
                     </navigationItem>
                 </viewController>
@@ -1015,10 +1145,29 @@
             </objects>
             <point key="canvasLocation" x="2501.5999999999999" y="2439.130434782609"/>
         </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="xdI-eM-caF">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="dIh-qy-eeo" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="dXu-l2-4Ih">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="QCm-fJ-5PU" kind="relationship" relationship="rootViewController" id="4bA-VJ-JTR"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gzB-LX-3AI" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="136.80000000000001" y="138.98050974512745"/>
+        </scene>
     </scenes>
     <resources>
         <image name="backButtonImage" width="24" height="24"/>
         <image name="defaultProfileImage" width="64" height="64"/>
         <image name="downArrow" width="16" height="16"/>
+        <image name="tickmark" width="17" height="17"/>
     </resources>
 </document>

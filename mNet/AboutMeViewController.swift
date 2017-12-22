@@ -8,7 +8,7 @@
 
 import UIKit
 
-class AboutMeViewController: BaseViewController {
+class AboutMeViewController: BaseViewController,UITextFieldDelegate {
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -16,20 +16,33 @@ class AboutMeViewController: BaseViewController {
         // Do any additional setup after loading the view.
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated);
+        
+        self.setupNavigationBar()
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    func setupNavigationBar(){
+        
+        self.navigationController?.navigationBar.isHidden = false
     }
-    */
+    
+    //Mark:Button Actions
+    
+    @IBAction func genderButtonAction(_ sender: Any) {
+    }
+    
+    
+    @IBAction func birthdayButtonAction(_ sender: Any) {
+    }
+    
+    @IBAction func backButtonAction(_ sender: Any) {
+        
+        self.navigationController?.popViewController(animated: true)
+    }
 
+    @IBAction func saveButtonAction(_ sender: Any) {
+    }
+    
+    
 }

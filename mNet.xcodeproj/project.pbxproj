@@ -34,7 +34,6 @@
 		5EC3005A1FEBEBFA00229516 /* AppSettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EC300591FEBEBFA00229516 /* AppSettingsViewController.swift */; };
 		5EC3005C1FEC002000229516 /* SettingsDataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EC3005B1FEC002000229516 /* SettingsDataController.swift */; };
 		5EC3005E1FEC03FE00229516 /* SettingOptionsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EC3005D1FEC03FE00229516 /* SettingOptionsTableViewCell.swift */; };
-		5EC300601FEC09FA00229516 /* PrivacySettingsDataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EC3005F1FEC09FA00229516 /* PrivacySettingsDataController.swift */; };
 		5EC300621FEC0A5A00229516 /* Option.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EC300611FEC0A5A00229516 /* Option.swift */; };
 		5EC300651FEC106600229516 /* PrivacySettingOptionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EC300641FEC106600229516 /* PrivacySettingOptionTableViewCell.swift */; };
 /* End PBXBuildFile section */
@@ -69,7 +68,6 @@
 		5EC300591FEBEBFA00229516 /* AppSettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppSettingsViewController.swift; sourceTree = "<group>"; };
 		5EC3005B1FEC002000229516 /* SettingsDataController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsDataController.swift; sourceTree = "<group>"; };
 		5EC3005D1FEC03FE00229516 /* SettingOptionsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingOptionsTableViewCell.swift; sourceTree = "<group>"; };
-		5EC3005F1FEC09FA00229516 /* PrivacySettingsDataController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PrivacySettingsDataController.swift; sourceTree = "<group>"; };
 		5EC300611FEC0A5A00229516 /* Option.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Option.swift; sourceTree = "<group>"; };
 		5EC300641FEC106600229516 /* PrivacySettingOptionTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PrivacySettingOptionTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -205,7 +203,6 @@
 			isa = PBXGroup;
 			children = (
 				5EC3005B1FEC002000229516 /* SettingsDataController.swift */,
-				5EC3005F1FEC09FA00229516 /* PrivacySettingsDataController.swift */,
 			);
 			name = "Data Controllers";
 			sourceTree = "<group>";
@@ -311,7 +308,6 @@
 				5EC3005C1FEC002000229516 /* SettingsDataController.swift in Sources */,
 				5E1C49961FEA4EB8007CE624 /* EmailPreferencesViewController.swift in Sources */,
 				5E1C49941FEA494B007CE624 /* PrivacySettingsViewController.swift in Sources */,
-				5EC300601FEC09FA00229516 /* PrivacySettingsDataController.swift in Sources */,
 				5E1C49A01FEA847B007CE624 /* BaseViewController.swift in Sources */,
 				5E1C498D1FEA4455007CE624 /* CustomBrownTextColorLabel.swift in Sources */,
 				5E1C499A1FEA7F30007CE624 /* CustomBrownTextColorTextfield.swift in Sources */,

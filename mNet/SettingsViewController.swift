@@ -10,7 +10,7 @@ import UIKit
 
 class SettingsViewController: BaseViewController,UITableViewDelegate,UITableViewDataSource {
 
-    private let dataCtrl = SettingsDataController()
+    let dataCtrl = SettingsDataController()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -38,14 +38,14 @@ class SettingsViewController: BaseViewController,UITableViewDelegate,UITableView
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
-        return self.dataCtrl.optionsArray.count
+        return self.dataCtrl.settingOptionsArray.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell:SettingOptionsTableViewCell = tableView.dequeueReusableCell(withIdentifier:"SettingOptionsTableViewCell") as! SettingOptionsTableViewCell
         
-        let optionName = self.dataCtrl.optionsArray[indexPath.row]
+        let optionName = self.dataCtrl.settingOptionsArray[indexPath.row]
         
         cell.loadCellWithOption(optionName)
         
@@ -55,7 +55,7 @@ class SettingsViewController: BaseViewController,UITableViewDelegate,UITableView
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
-        let optionName = self.dataCtrl.optionsArray[indexPath.row]
+        let optionName = self.dataCtrl.settingOptionsArray[indexPath.row]
         
         switch optionName {
             
@@ -96,6 +96,9 @@ class SettingsViewController: BaseViewController,UITableViewDelegate,UITableView
         default: break
             
         }
-        
     }
+    
+    //Mark: Button Actions
+
+    
 }

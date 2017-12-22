@@ -12,7 +12,7 @@ class PrivacySettingsViewController: BaseViewController,UITableViewDelegate,UITa
 
     @IBOutlet weak private var optionsTableView: UITableView!
     
-    private let dataCtrl = PrivacySettingsDataController()
+    let dataCtrl = SettingsDataController()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -43,14 +43,14 @@ class PrivacySettingsViewController: BaseViewController,UITableViewDelegate,UITa
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
-        return self.dataCtrl.optionsArray.count
+        return self.dataCtrl.privacySettingOptionsArray.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell:PrivacySettingOptionTableViewCell = tableView.dequeueReusableCell(withIdentifier:"PrivacySettingOptionTableViewCell") as! PrivacySettingOptionTableViewCell
         
-        let option = self.dataCtrl.optionsArray[indexPath.row]
+        let option = self.dataCtrl.privacySettingOptionsArray[indexPath.row]
         
         cell.loadCellWithOption(option)
         
@@ -60,9 +60,9 @@ class PrivacySettingsViewController: BaseViewController,UITableViewDelegate,UITa
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
-        let option:Option = self.dataCtrl.optionsArray[indexPath.row]
+        let option:Option = self.dataCtrl.privacySettingOptionsArray[indexPath.row]
         
-        switch option.optionName {
+        switch option.settingOptionName {
             
             //TODO:
             
@@ -77,6 +77,20 @@ class PrivacySettingsViewController: BaseViewController,UITableViewDelegate,UITa
         return UITableViewAutomaticDimension
     }
 
+    
+    //Mark: Button Actions
+    
+    @IBAction func switchButtonAction(_ sender: UISwitch) {
+    }
+    
+    
+    @IBAction func backButtonAction(_ sender: Any) {
+        self.navigationController?.popViewController(animated: true)
+    }
+    
+    @IBAction func saveButtonAction(_ sender: Any) {
+    }
+    
     
 
 }
