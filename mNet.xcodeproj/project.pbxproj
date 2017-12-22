@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5E1B6CFD1FED2C8500C307B3 /* CustomPickerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5E1B6CFC1FED2C8500C307B3 /* CustomPickerView.xib */; };
+		5E1B6D011FED33A800C307B3 /* CustomPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E1B6D001FED33A800C307B3 /* CustomPickerView.swift */; };
 		5E1C498D1FEA4455007CE624 /* CustomBrownTextColorLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E1C498C1FEA4455007CE624 /* CustomBrownTextColorLabel.swift */; };
 		5E1C498F1FEA4468007CE624 /* CustomBlueTextColorLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E1C498E1FEA4468007CE624 /* CustomBlueTextColorLabel.swift */; };
 		5E1C49921FEA45F6007CE624 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E1C49911FEA45F6007CE624 /* Constants.swift */; };
@@ -39,6 +41,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		5E1B6CFC1FED2C8500C307B3 /* CustomPickerView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CustomPickerView.xib; sourceTree = "<group>"; };
+		5E1B6D001FED33A800C307B3 /* CustomPickerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomPickerView.swift; sourceTree = "<group>"; };
 		5E1C498C1FEA4455007CE624 /* CustomBrownTextColorLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomBrownTextColorLabel.swift; sourceTree = "<group>"; };
 		5E1C498E1FEA4468007CE624 /* CustomBlueTextColorLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomBlueTextColorLabel.swift; sourceTree = "<group>"; };
 		5E1C49911FEA45F6007CE624 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
@@ -83,6 +87,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5E1B6CFB1FED2AB900C307B3 /* Xibs */ = {
+			isa = PBXGroup;
+			children = (
+				5E1B6CFC1FED2C8500C307B3 /* CustomPickerView.xib */,
+			);
+			name = Xibs;
+			sourceTree = "<group>";
+		};
 		5E1C498B1FEA442C007CE624 /* Custom View Classes */ = {
 			isa = PBXGroup;
 			children = (
@@ -90,6 +102,7 @@
 				5E1C498E1FEA4468007CE624 /* CustomBlueTextColorLabel.swift */,
 				5E1C49991FEA7F30007CE624 /* CustomBrownTextColorTextfield.swift */,
 				5E1C49A11FEA84F2007CE624 /* CustomerBrownTextColorButton.swift */,
+				5E1B6D001FED33A800C307B3 /* CustomPickerView.swift */,
 			);
 			name = "Custom View Classes";
 			sourceTree = "<group>";
@@ -136,6 +149,7 @@
 				5E1C499B1FEA8072007CE624 /* Extensions */,
 				5E1C498B1FEA442C007CE624 /* Custom View Classes */,
 				5E20CDBD1FE971FD004ACE0D /* Settings Module */,
+				5E1B6CFB1FED2AB900C307B3 /* Xibs */,
 				5E20CDBA1FE9718F004ACE0D /* Storyboards */,
 				5E20CDB71FE96A7D004ACE0D /* Default Images */,
 				5E20CDA41FE96204004ACE0D /* Font */,
@@ -290,6 +304,7 @@
 				5E20CDB21FE962EC004ACE0D /* SanFranciscoDisplay-Medium.otf in Resources */,
 				5E20CDB51FE962F4004ACE0D /* SanFranciscoDisplay-Thin.otf in Resources */,
 				5E20CDB01FE962E7004ACE0D /* SanFranciscoDisplay-Heavy.otf in Resources */,
+				5E1B6CFD1FED2C8500C307B3 /* CustomPickerView.xib in Resources */,
 				5E20CDB31FE962F0004ACE0D /* SanFranciscoDisplay-Regular.otf in Resources */,
 				5E20CDAF1FE962E4004ACE0D /* SanFranciscoDisplay-Bold.otf in Resources */,
 				5E20CDB61FE962F7004ACE0D /* SanFranciscoDisplay-Ultralight.otf in Resources */,
@@ -320,6 +335,7 @@
 				5E1C49981FEA73F8007CE624 /* AboutMeViewController.swift in Sources */,
 				5EC3005E1FEC03FE00229516 /* SettingOptionsTableViewCell.swift in Sources */,
 				5E1C49921FEA45F6007CE624 /* Constants.swift in Sources */,
+				5E1B6D011FED33A800C307B3 /* CustomPickerView.swift in Sources */,
 				5EC300651FEC106600229516 /* PrivacySettingOptionTableViewCell.swift in Sources */,
 				5E1C49A21FEA84F2007CE624 /* CustomerBrownTextColorButton.swift in Sources */,
 			);

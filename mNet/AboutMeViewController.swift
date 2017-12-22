@@ -10,6 +10,8 @@ import UIKit
 
 class AboutMeViewController: BaseViewController,UITextFieldDelegate {
 
+    let dataCtrl = SettingsDataController()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 

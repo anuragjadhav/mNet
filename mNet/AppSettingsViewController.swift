@@ -10,6 +10,8 @@ import UIKit
 
 class AppSettingsViewController: BaseViewController {
 
+    let dataCtrl = SettingsDataController()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
