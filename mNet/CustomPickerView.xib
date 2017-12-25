@@ -41,10 +41,23 @@
                         <action selector="doneButtonAction:" destination="iN0-l3-epB" eventType="touchUpInside" id="fDd-0H-fTT"/>
                     </connections>
                 </button>
+                <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" minuteInterval="1" useCurrentDate="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nU9-aj-U7P">
+                    <rect key="frame" x="0.0" y="42" width="376" height="138"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="138" id="avm-cx-t2P"/>
+                    </constraints>
+                    <date key="date" timeIntervalSinceReferenceDate="-347121930.37153399">
+                        <!--1990-01-01 09:14:29 +0000-->
+                    </date>
+                    <locale key="locale" localeIdentifier="en_IN"/>
+                </datePicker>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
+                <constraint firstAttribute="trailing" secondItem="nU9-aj-U7P" secondAttribute="trailing" id="1ST-6U-kIJ"/>
+                <constraint firstItem="nU9-aj-U7P" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="Khw-Yz-re2"/>
                 <constraint firstItem="og8-Gc-P7d" firstAttribute="top" secondItem="T4E-aU-OAg" secondAttribute="bottom" id="L21-BW-GHg"/>
+                <constraint firstAttribute="bottom" secondItem="nU9-aj-U7P" secondAttribute="bottom" id="PAx-Gu-Blh"/>
                 <constraint firstItem="T4E-aU-OAg" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="b9N-hW-hXn"/>
                 <constraint firstAttribute="trailing" secondItem="og8-Gc-P7d" secondAttribute="trailing" id="daG-L3-JEJ"/>
                 <constraint firstAttribute="trailing" secondItem="T4E-aU-OAg" secondAttribute="trailing" id="mnm-Hh-DWd"/>
@@ -53,7 +66,8 @@
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <connections>
-                <outlet property="pickerView" destination="og8-Gc-P7d" id="PYX-A2-bhz"/>
+                <outlet property="customPickerView" destination="og8-Gc-P7d" id="vSm-OC-PSh"/>
+                <outlet property="datePickerView" destination="nU9-aj-U7P" id="m9W-6r-k9U"/>
             </connections>
         </view>
     </objects>

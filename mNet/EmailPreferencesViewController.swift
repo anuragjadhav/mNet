@@ -18,7 +18,7 @@ class EmailPreferencesViewController: BaseViewController,UIPickerViewDelegate,UI
     let dataCtrl = SettingsDataController()
     var customerPickerView : CustomPickerView?
     
-    var tempDaysArray:[String] = []
+    var tempDaysArray:[String] = ["1 day","2 days","3 days","4 days"]
     
     override func viewDidLoad() {
         
@@ -28,14 +28,8 @@ class EmailPreferencesViewController: BaseViewController,UIPickerViewDelegate,UI
        self.customerPickerView = UINib(nibName: "CustomPickerView", bundle: nil).instantiate(withOwner: nil, options: nil)[0] as? CustomPickerView
        self.customerPickerView?.frame = CGRect(x: 0, y: self.view.frame.height, width: self.view.frame.size.width, height: (self.customerPickerView?.frame.size.height)!)
        self.view.addSubview(self.customerPickerView!)
-       self.customerPickerView?.delegate = self as CustomPickerViewDelegate
        
-        //set temporary data array
-       self.tempDaysArray.append("1 days")
-       self.tempDaysArray.append("2 days")
-       self.tempDaysArray.append("3 days")
-       self.tempDaysArray.append("4 days")
-        
+
        self.remindMebutton.titleLabel?.text = self.tempDaysArray[0]
 
     }
@@ -74,13 +68,15 @@ class EmailPreferencesViewController: BaseViewController,UIPickerViewDelegate,UI
         let selectedTitle = self.tempDaysArray[index]
         
         self.remindMebutton.setTitle(selectedTitle, for:UIControlState.normal)
+        
+        //TODO:set selected object in data controller
     }
     
     //Mark: Button Actions
     
     @IBAction func remindMeButtonAction(_ sender: Any) {
         
-        self.customerPickerView?.showPickerView()
+        self.customerPickerView?.showPickerView(isDatePicker: false, delegate: self)
     }
 
     @IBAction func backButtonAction(_ sender: Any) {
