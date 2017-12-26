@@ -33,6 +33,8 @@
 		5E20CDB61FE962F7004ACE0D /* SanFranciscoDisplay-Ultralight.otf in Resources */ = {isa = PBXBuildFile; fileRef = 5E20CDAD1FE9621A004ACE0D /* SanFranciscoDisplay-Ultralight.otf */; };
 		5E20CDBC1FE971A7004ACE0D /* Settings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5E20CDBB1FE971A7004ACE0D /* Settings.storyboard */; };
 		5E20CDC21FE9724A004ACE0D /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E20CDC11FE9724A004ACE0D /* SettingsViewController.swift */; };
+		5E21A6F11FF28CA100DBB157 /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5E21A6F01FF28CA100DBB157 /* Profile.storyboard */; };
+		5E21A6F51FF28E4700DBB157 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E21A6F41FF28E4700DBB157 /* ProfileViewController.swift */; };
 		5EC3005A1FEBEBFA00229516 /* AppSettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EC300591FEBEBFA00229516 /* AppSettingsViewController.swift */; };
 		5EC3005C1FEC002000229516 /* SettingsDataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EC3005B1FEC002000229516 /* SettingsDataController.swift */; };
 		5EC3005E1FEC03FE00229516 /* SettingOptionsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EC3005D1FEC03FE00229516 /* SettingOptionsTableViewCell.swift */; };
@@ -69,6 +71,8 @@
 		5E20CDAD1FE9621A004ACE0D /* SanFranciscoDisplay-Ultralight.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SanFranciscoDisplay-Ultralight.otf"; sourceTree = "<group>"; };
 		5E20CDBB1FE971A7004ACE0D /* Settings.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Settings.storyboard; sourceTree = "<group>"; };
 		5E20CDC11FE9724A004ACE0D /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		5E21A6F01FF28CA100DBB157 /* Profile.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Profile.storyboard; sourceTree = "<group>"; };
+		5E21A6F41FF28E4700DBB157 /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		5EC300591FEBEBFA00229516 /* AppSettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppSettingsViewController.swift; sourceTree = "<group>"; };
 		5EC3005B1FEC002000229516 /* SettingsDataController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsDataController.swift; sourceTree = "<group>"; };
 		5EC3005D1FEC03FE00229516 /* SettingOptionsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingOptionsTableViewCell.swift; sourceTree = "<group>"; };
@@ -149,6 +153,7 @@
 				5E1C499B1FEA8072007CE624 /* Extensions */,
 				5E1C498B1FEA442C007CE624 /* Custom View Classes */,
 				5E20CDBD1FE971FD004ACE0D /* Settings Module */,
+				5E21A6F21FF28CF000DBB157 /* Profile Module */,
 				5E1B6CFB1FED2AB900C307B3 /* Xibs */,
 				5E20CDBA1FE9718F004ACE0D /* Storyboards */,
 				5E20CDB71FE96A7D004ACE0D /* Default Images */,
@@ -186,6 +191,7 @@
 			isa = PBXGroup;
 			children = (
 				5E20CDBB1FE971A7004ACE0D /* Settings.storyboard */,
+				5E21A6F01FF28CA100DBB157 /* Profile.storyboard */,
 				5E20CD9B1FE952BE004ACE0D /* LaunchScreen.storyboard */,
 			);
 			name = Storyboards;
@@ -228,6 +234,22 @@
 				5EC300641FEC106600229516 /* PrivacySettingOptionTableViewCell.swift */,
 			);
 			name = Views;
+			sourceTree = "<group>";
+		};
+		5E21A6F21FF28CF000DBB157 /* Profile Module */ = {
+			isa = PBXGroup;
+			children = (
+				5E21A6F31FF28E2200DBB157 /* View Controllers */,
+			);
+			name = "Profile Module";
+			sourceTree = "<group>";
+		};
+		5E21A6F31FF28E2200DBB157 /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				5E21A6F41FF28E4700DBB157 /* ProfileViewController.swift */,
+			);
+			name = "View Controllers";
 			sourceTree = "<group>";
 		};
 		5EC300631FEC0A6100229516 /* Models */ = {
@@ -309,6 +331,7 @@
 				5E20CDAF1FE962E4004ACE0D /* SanFranciscoDisplay-Bold.otf in Resources */,
 				5E20CDB61FE962F7004ACE0D /* SanFranciscoDisplay-Ultralight.otf in Resources */,
 				5E20CDBC1FE971A7004ACE0D /* Settings.storyboard in Resources */,
+				5E21A6F11FF28CA100DBB157 /* Profile.storyboard in Resources */,
 				5E20CDB11FE962EA004ACE0D /* SanFranciscoDisplay-Light.otf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -329,6 +352,7 @@
 				5EC300621FEC0A5A00229516 /* Option.swift in Sources */,
 				5E20CD931FE952BE004ACE0D /* AppDelegate.swift in Sources */,
 				5E1C498F1FEA4468007CE624 /* CustomBlueTextColorLabel.swift in Sources */,
+				5E21A6F51FF28E4700DBB157 /* ProfileViewController.swift in Sources */,
 				5E20CDC21FE9724A004ACE0D /* SettingsViewController.swift in Sources */,
 				5EC3005A1FEBEBFA00229516 /* AppSettingsViewController.swift in Sources */,
 				5E1C499D1FEA80A1007CE624 /* ViewBorder.swift in Sources */,
