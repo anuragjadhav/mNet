@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="SanFranciscoDisplay-Bold.otf">
+            <string>SanFranciscoDisplay-Bold</string>
+        </array>
+        <array key="SanFranciscoDisplay-Light.otf">
+            <string>SanFranciscoDisplay-Light</string>
+        </array>
+    </customFonts>
+    <scenes>
+        <!--Reject-->
+        <scene sceneID="3OR-uW-KK6">
+            <objects>
+                <viewController storyboardIdentifier="RejectApplicationViewController" id="R51-kN-ugD" customClass="RejectApplicationViewController" customModule="mNet" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Qna-WL-dcn"/>
+                        <viewControllerLayoutGuide type="bottom" id="C47-IJ-evB"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="bwh-QZ-1b1">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Message" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tHT-Dn-H1W" customClass="CustomBrownTextColorLabel" customModule="mNet" customModuleProvider="target">
+                                <rect key="frame" x="27" y="95" width="57" height="17"/>
+                                <fontDescription key="fontDescription" name="SanFranciscoDisplay-Bold" family="San Francisco Display" pointSize="14"/>
+                                <color key="textColor" red="0.3803921569" green="0.28235294119999998" blue="0.22352941179999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="DkH-3q-g5s" customClass="CustomBrownColorTextView" customModule="mNet" customModuleProvider="target">
+                                <rect key="frame" x="27" y="137" width="305" height="128"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="128" id="0EK-bI-9pf"/>
+                                </constraints>
+                                <color key="textColor" red="0.3803921569" green="0.28235294119999998" blue="0.22352941179999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" name="SanFranciscoDisplay-Light" family="San Francisco Display" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                <connections>
+                                    <outlet property="delegate" destination="R51-kN-ugD" id="cEM-06-i9F"/>
+                                </connections>
+                            </textView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NYr-Jj-d5g">
+                                <rect key="frame" x="0.0" y="622" width="375" height="45"/>
+                                <color key="backgroundColor" red="0.2901960784" green="0.56470588239999997" blue="0.8862745098" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="45" id="Iv6-ic-cFu"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="SanFranciscoDisplay-Bold" family="San Francisco Display" pointSize="16"/>
+                                <state key="normal" title="REJECT">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="rejectButtonAction:" destination="R51-kN-ugD" eventType="touchUpInside" id="dfZ-t7-DAe"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="0.96862745100000003" green="0.97254901959999995" blue="0.97647058819999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="NYr-Jj-d5g" secondAttribute="trailing" id="1lv-79-Phy"/>
+                            <constraint firstItem="DkH-3q-g5s" firstAttribute="leading" secondItem="tHT-Dn-H1W" secondAttribute="leading" id="4oT-3w-MF9"/>
+                            <constraint firstItem="tHT-Dn-H1W" firstAttribute="leading" secondItem="bwh-QZ-1b1" secondAttribute="leading" constant="27" id="6bV-Ut-P8G"/>
+                            <constraint firstItem="DkH-3q-g5s" firstAttribute="top" secondItem="tHT-Dn-H1W" secondAttribute="bottom" constant="25" id="Fi7-Ys-rQ0"/>
+                            <constraint firstItem="C47-IJ-evB" firstAttribute="top" secondItem="NYr-Jj-d5g" secondAttribute="bottom" id="SLV-MI-jrI"/>
+                            <constraint firstItem="NYr-Jj-d5g" firstAttribute="leading" secondItem="bwh-QZ-1b1" secondAttribute="leading" id="dkM-YB-sX3"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="DkH-3q-g5s" secondAttribute="trailing" constant="27" id="e1z-8u-FM7"/>
+                            <constraint firstItem="tHT-Dn-H1W" firstAttribute="top" secondItem="Qna-WL-dcn" secondAttribute="bottom" constant="31" id="eSa-vF-dAi"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Reject" id="lur-yR-00p">
+                        <barButtonItem key="leftBarButtonItem" image="backButtonImage" id="ifJ-Zs-fHd">
+                            <color key="tintColor" red="0.45882352939999999" green="0.45882352939999999" blue="0.45882352939999999" alpha="1" colorSpace="calibratedRGB"/>
+                            <connections>
+                                <action selector="backButtonAction:" destination="R51-kN-ugD" id="96s-Ms-xKj"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="messageTextView" destination="DkH-3q-g5s" id="w3l-kA-ui9"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="sz7-xy-oJf" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1061.5999999999999" y="234.33283358320841"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="Fyq-QN-CUa">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="65d-Zp-tot" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="NGJ-l6-Yeb">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="R51-kN-ugD" kind="relationship" relationship="rootViewController" id="cmI-wQ-C68"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="yx3-8G-bPm" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="272.80000000000001" y="235.23238380809596"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="backButtonImage" width="24" height="24"/>
+    </resources>
+</document>

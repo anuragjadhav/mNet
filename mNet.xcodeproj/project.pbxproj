@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5E183E961FF3791D00368DE1 /* ApproveReject.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5E183E951FF3791D00368DE1 /* ApproveReject.storyboard */; };
+		5E183E9B1FF37B7C00368DE1 /* RejectApplicationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E183E9A1FF37B7C00368DE1 /* RejectApplicationViewController.swift */; };
+		5E183E9D1FF385AD00368DE1 /* CustomBrownColorTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E183E9C1FF385AD00368DE1 /* CustomBrownColorTextView.swift */; };
+		5E183E9F1FF3887600368DE1 /* CustomBlueTextColorButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E183E9E1FF3887600368DE1 /* CustomBlueTextColorButton.swift */; };
 		5E1B6CFD1FED2C8500C307B3 /* CustomPickerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5E1B6CFC1FED2C8500C307B3 /* CustomPickerView.xib */; };
 		5E1B6D011FED33A800C307B3 /* CustomPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E1B6D001FED33A800C307B3 /* CustomPickerView.swift */; };
 		5E1C498D1FEA4455007CE624 /* CustomBrownTextColorLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E1C498C1FEA4455007CE624 /* CustomBrownTextColorLabel.swift */; };
@@ -43,6 +47,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		5E183E951FF3791D00368DE1 /* ApproveReject.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = ApproveReject.storyboard; sourceTree = "<group>"; };
+		5E183E9A1FF37B7C00368DE1 /* RejectApplicationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RejectApplicationViewController.swift; sourceTree = "<group>"; };
+		5E183E9C1FF385AD00368DE1 /* CustomBrownColorTextView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomBrownColorTextView.swift; sourceTree = "<group>"; };
+		5E183E9E1FF3887600368DE1 /* CustomBlueTextColorButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomBlueTextColorButton.swift; sourceTree = "<group>"; };
 		5E1B6CFC1FED2C8500C307B3 /* CustomPickerView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CustomPickerView.xib; sourceTree = "<group>"; };
 		5E1B6D001FED33A800C307B3 /* CustomPickerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomPickerView.swift; sourceTree = "<group>"; };
 		5E1C498C1FEA4455007CE624 /* CustomBrownTextColorLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomBrownTextColorLabel.swift; sourceTree = "<group>"; };
@@ -91,6 +99,30 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5E183E971FF37A5700368DE1 /* Approve Reject Application Module */ = {
+			isa = PBXGroup;
+			children = (
+				5E183E991FF37B2B00368DE1 /* Data Controllers */,
+				5E183E981FF37B2200368DE1 /* View Controllers */,
+			);
+			name = "Approve Reject Application Module";
+			sourceTree = "<group>";
+		};
+		5E183E981FF37B2200368DE1 /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				5E183E9A1FF37B7C00368DE1 /* RejectApplicationViewController.swift */,
+			);
+			name = "View Controllers";
+			sourceTree = "<group>";
+		};
+		5E183E991FF37B2B00368DE1 /* Data Controllers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = "Data Controllers";
+			sourceTree = "<group>";
+		};
 		5E1B6CFB1FED2AB900C307B3 /* Xibs */ = {
 			isa = PBXGroup;
 			children = (
@@ -106,6 +138,8 @@
 				5E1C498E1FEA4468007CE624 /* CustomBlueTextColorLabel.swift */,
 				5E1C49991FEA7F30007CE624 /* CustomBrownTextColorTextfield.swift */,
 				5E1C49A11FEA84F2007CE624 /* CustomerBrownTextColorButton.swift */,
+				5E183E9C1FF385AD00368DE1 /* CustomBrownColorTextView.swift */,
+				5E183E9E1FF3887600368DE1 /* CustomBlueTextColorButton.swift */,
 				5E1B6D001FED33A800C307B3 /* CustomPickerView.swift */,
 			);
 			name = "Custom View Classes";
@@ -148,6 +182,7 @@
 			children = (
 				5E1C49911FEA45F6007CE624 /* Constants.swift */,
 				5E20CD921FE952BE004ACE0D /* AppDelegate.swift */,
+				5E183E971FF37A5700368DE1 /* Approve Reject Application Module */,
 				5EC300631FEC0A6100229516 /* Models */,
 				5E1C499E1FEA845B007CE624 /* Base classes */,
 				5E1C499B1FEA8072007CE624 /* Extensions */,
@@ -193,6 +228,7 @@
 				5E20CDBB1FE971A7004ACE0D /* Settings.storyboard */,
 				5E21A6F01FF28CA100DBB157 /* Profile.storyboard */,
 				5E20CD9B1FE952BE004ACE0D /* LaunchScreen.storyboard */,
+				5E183E951FF3791D00368DE1 /* ApproveReject.storyboard */,
 			);
 			name = Storyboards;
 			sourceTree = "<group>";
@@ -322,6 +358,7 @@
 				5E20CDB41FE962F2004ACE0D /* SanFranciscoDisplay-Semibold.otf in Resources */,
 				5E20CD9D1FE952BE004ACE0D /* LaunchScreen.storyboard in Resources */,
 				5E20CD9A1FE952BE004ACE0D /* Assets.xcassets in Resources */,
+				5E183E961FF3791D00368DE1 /* ApproveReject.storyboard in Resources */,
 				5E20CDAE1FE962E1004ACE0D /* SanFranciscoDisplay-Black.otf in Resources */,
 				5E20CDB21FE962EC004ACE0D /* SanFranciscoDisplay-Medium.otf in Resources */,
 				5E20CDB51FE962F4004ACE0D /* SanFranciscoDisplay-Thin.otf in Resources */,
@@ -347,6 +384,7 @@
 				5E1C49961FEA4EB8007CE624 /* EmailPreferencesViewController.swift in Sources */,
 				5E1C49941FEA494B007CE624 /* PrivacySettingsViewController.swift in Sources */,
 				5E1C49A01FEA847B007CE624 /* BaseViewController.swift in Sources */,
+				5E183E9B1FF37B7C00368DE1 /* RejectApplicationViewController.swift in Sources */,
 				5E1C498D1FEA4455007CE624 /* CustomBrownTextColorLabel.swift in Sources */,
 				5E1C499A1FEA7F30007CE624 /* CustomBrownTextColorTextfield.swift in Sources */,
 				5EC300621FEC0A5A00229516 /* Option.swift in Sources */,
@@ -357,9 +395,11 @@
 				5EC3005A1FEBEBFA00229516 /* AppSettingsViewController.swift in Sources */,
 				5E1C499D1FEA80A1007CE624 /* ViewBorder.swift in Sources */,
 				5E1C49981FEA73F8007CE624 /* AboutMeViewController.swift in Sources */,
+				5E183E9F1FF3887600368DE1 /* CustomBlueTextColorButton.swift in Sources */,
 				5EC3005E1FEC03FE00229516 /* SettingOptionsTableViewCell.swift in Sources */,
 				5E1C49921FEA45F6007CE624 /* Constants.swift in Sources */,
 				5E1B6D011FED33A800C307B3 /* CustomPickerView.swift in Sources */,
+				5E183E9D1FF385AD00368DE1 /* CustomBrownColorTextView.swift in Sources */,
 				5EC300651FEC106600229516 /* PrivacySettingOptionTableViewCell.swift in Sources */,
 				5E1C49A21FEA84F2007CE624 /* CustomerBrownTextColorButton.swift in Sources */,
 			);
