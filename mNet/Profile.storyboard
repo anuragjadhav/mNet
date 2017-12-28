@@ -242,6 +242,101 @@
             </objects>
             <point key="canvasLocation" x="2872.8000000000002" y="1577.8110944527737"/>
         </scene>
+        <!--People-->
+        <scene sceneID="tSx-Mp-AsU">
+            <objects>
+                <viewController storyboardIdentifier="PeopleViewController" id="5j4-VK-qkj" customClass="PeopleViewController" customModule="mNet" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="iD5-Qa-uxo"/>
+                        <viewControllerLayoutGuide type="bottom" id="OXN-d1-CT0"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="TLf-4o-Pji">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="LVo-Fo-KyN">
+                                <rect key="frame" x="0.0" y="64" width="375" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="5oA-gG-lhk"/>
+                                </constraints>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="5j4-VK-qkj" id="jKa-Vi-7Ym"/>
+                                </connections>
+                            </searchBar>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="68" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="1sW-wb-J2l">
+                                <rect key="frame" x="0.0" y="108" width="375" height="559"/>
+                                <color key="backgroundColor" red="0.96862745100000003" green="0.97254901959999995" blue="0.97647058819999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="PeopleTableViewCell" rowHeight="68" id="sds-lT-Rz9" customClass="PeopleTableViewCell" customModule="mNet" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="68"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="sds-lT-Rz9" id="80j-Rl-n56">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="67.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Saurabh Suman" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KTd-xX-vQB" customClass="CustomBrownTextColorLabel" customModule="mNet" customModuleProvider="target">
+                                                    <rect key="frame" x="27" y="10" width="101" height="19"/>
+                                                    <fontDescription key="fontDescription" name="SanFranciscoDisplay-Bold" family="San Francisco Display" pointSize="14"/>
+                                                    <color key="textColor" red="0.3803921569" green="0.28235294119999998" blue="0.22352941179999999" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Manager" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dqc-I9-Sj3" customClass="CustomBrownTextColorLabel" customModule="mNet" customModuleProvider="target">
+                                                    <rect key="frame" x="27" y="37" width="52.5" height="17"/>
+                                                    <fontDescription key="fontDescription" name="SanFranciscoDisplay-Light" family="San Francisco Display" pointSize="14"/>
+                                                    <color key="textColor" red="0.3803921569" green="0.28235294119999998" blue="0.22352941179999999" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="KTd-xX-vQB" firstAttribute="leading" secondItem="80j-Rl-n56" secondAttribute="leading" constant="27" id="BC4-gz-znb"/>
+                                                <constraint firstItem="KTd-xX-vQB" firstAttribute="top" secondItem="80j-Rl-n56" secondAttribute="top" constant="10" id="EyQ-0a-fLr"/>
+                                                <constraint firstItem="Dqc-I9-Sj3" firstAttribute="top" secondItem="KTd-xX-vQB" secondAttribute="bottom" constant="10" id="JIy-wU-T7T"/>
+                                                <constraint firstItem="Dqc-I9-Sj3" firstAttribute="leading" secondItem="KTd-xX-vQB" secondAttribute="leading" id="ezm-HE-I55"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" red="0.96862745100000003" green="0.97254901959999995" blue="0.97647058819999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <connections>
+                                            <outlet property="personNameLabel" destination="KTd-xX-vQB" id="shn-Pu-Hb8"/>
+                                            <outlet property="personRoleLabel" destination="Dqc-I9-Sj3" id="doZ-Pk-l8T"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="5j4-VK-qkj" id="MSs-cV-ZyX"/>
+                                    <outlet property="delegate" destination="5j4-VK-qkj" id="ZQS-7h-DWO"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="1sW-wb-J2l" firstAttribute="leading" secondItem="TLf-4o-Pji" secondAttribute="leading" id="3lm-6i-gai"/>
+                            <constraint firstItem="LVo-Fo-KyN" firstAttribute="leading" secondItem="TLf-4o-Pji" secondAttribute="leading" id="AhA-Q5-55W"/>
+                            <constraint firstItem="LVo-Fo-KyN" firstAttribute="top" secondItem="iD5-Qa-uxo" secondAttribute="bottom" id="GLF-Cf-Cov"/>
+                            <constraint firstAttribute="trailing" secondItem="1sW-wb-J2l" secondAttribute="trailing" id="HZs-J7-u60"/>
+                            <constraint firstItem="OXN-d1-CT0" firstAttribute="top" secondItem="1sW-wb-J2l" secondAttribute="bottom" id="Ug0-rJ-G9g"/>
+                            <constraint firstItem="1sW-wb-J2l" firstAttribute="top" secondItem="LVo-Fo-KyN" secondAttribute="bottom" id="vPZ-UD-L3E"/>
+                            <constraint firstAttribute="trailing" secondItem="LVo-Fo-KyN" secondAttribute="trailing" id="wzo-qz-AzU"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="People" id="Q5g-qa-I5O">
+                        <barButtonItem key="leftBarButtonItem" image="backButtonImage" id="7nX-KP-PJP">
+                            <color key="tintColor" red="0.45882352941176469" green="0.45882352941176469" blue="0.45882352941176469" alpha="1" colorSpace="calibratedRGB"/>
+                            <connections>
+                                <action selector="backButtonAction:" destination="5j4-VK-qkj" id="Dfk-Pk-FkL"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="peopleTableView" destination="1sW-wb-J2l" id="GDE-7S-cjr"/>
+                        <outlet property="searchBar" destination="LVo-Fo-KyN" id="53n-zQ-e22"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="FXf-lM-OPh" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="5144.8000000000002" y="1574.6626686656673"/>
+        </scene>
         <!--Navigation Controller-->
         <scene sceneID="0Bd-7Q-e5g">
             <objects>
@@ -259,6 +354,24 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KC7-lK-rrP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1933.5999999999999" y="1579.1604197901052"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="T3m-xy-Jv1">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Rp9-mN-IHm" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="eSk-JS-zKK">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="5j4-VK-qkj" kind="relationship" relationship="rootViewController" id="G7b-zF-f92"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="kV9-9C-iAR" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4328.8000000000002" y="1577.3613193403301"/>
         </scene>
     </scenes>
     <resources>
