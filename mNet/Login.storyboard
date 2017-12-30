@@ -868,6 +868,589 @@ Analyse your own data with customized reports. Correlate parameters to reach con
             </objects>
             <point key="canvasLocation" x="1450.5" y="1033.5"/>
         </scene>
+        <!--Conversation Info-->
+        <scene sceneID="gQY-ea-S0Q">
+            <objects>
+                <viewController id="aCR-hy-R2J" customClass="ConversationInfoViewController" customModule="mNet" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="NrG-9X-3zv">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Misbah D. " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HBB-M5-ImA" customClass="CustomBrownTextColorLabel" customModule="mNet" customModuleProvider="target">
+                                <rect key="frame" x="27" y="88" width="53.5" height="14.5"/>
+                                <fontDescription key="fontDescription" name="SanFranciscoDisplay-Medium" family="San Francisco Display" pointSize="12"/>
+                                <color key="textColor" red="0.3803921569" green="0.28235294119999998" blue="0.22352941179999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Robin D." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HlG-X9-bkc" customClass="CustomBrownTextColorLabel" customModule="mNet" customModuleProvider="target">
+                                <rect key="frame" x="93" y="88" width="43.5" height="14.5"/>
+                                <fontDescription key="fontDescription" name="SanFranciscoDisplay-Medium" family="San Francisco Display" pointSize="12"/>
+                                <color key="textColor" red="0.3803921569" green="0.28235294119999998" blue="0.22352941179999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="&gt;" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vYp-h3-imR" customClass="CustomBrownTextColorLabel" customModule="mNet" customModuleProvider="target">
+                                <rect key="frame" x="82" y="88" width="7" height="14.5"/>
+                                <fontDescription key="fontDescription" name="SanFranciscoDisplay-Medium" family="San Francisco Display" pointSize="12"/>
+                                <color key="textColor" red="0.3803921569" green="0.28235294119999998" blue="0.22352941179999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="9:45 PM . 16 Jan ’17 .  Mon" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rLJ-hv-ANX">
+                                <rect key="frame" x="211.5" y="88" width="132.5" height="15"/>
+                                <fontDescription key="fontDescription" name="SanFranciscoDisplay-Medium" family="San Francisco Display" pointSize="12"/>
+                                <color key="textColor" red="0.28235294117647058" green="0.28235294117647058" blue="0.28235294117647058" alpha="0.47999999999999998" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="MEMBERS" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PcV-nP-Nfi" customClass="CustomBlueTextColorLabel" customModule="mNet" customModuleProvider="target">
+                                <rect key="frame" x="27" y="137.5" width="83" height="20"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="16"/>
+                                <color key="textColor" red="0.01176470588" green="0.51764705879999995" blue="0.80784313730000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="kee-iy-cV3">
+                                <rect key="frame" x="27" y="172.5" width="348" height="494.5"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <searchBar key="tableHeaderView" contentMode="redraw" searchBarStyle="minimal" id="FkQ-Gp-PUH">
+                                    <rect key="frame" x="0.0" y="0.0" width="348" height="44"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                    <textInputTraits key="textInputTraits"/>
+                                    <connections>
+                                        <outlet property="delegate" destination="aCR-hy-R2J" id="rXx-3Z-EMY"/>
+                                    </connections>
+                                </searchBar>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="60" id="fqE-h8-rTL">
+                                        <rect key="frame" x="0.0" y="72" width="348" height="60"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="fqE-h8-rTL" id="cZU-qi-qJ0">
+                                            <rect key="frame" x="0.0" y="0.0" width="348" height="59.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Saurabh Suman" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qYW-Ar-bPq" customClass="CustomBrownTextColorLabel" customModule="mNet" customModuleProvider="target">
+                                                    <rect key="frame" x="0.0" y="0.0" width="101" height="17"/>
+                                                    <fontDescription key="fontDescription" name="SanFranciscoDisplay-Bold" family="San Francisco Display" pointSize="14"/>
+                                                    <color key="textColor" red="0.3803921569" green="0.28235294119999998" blue="0.22352941179999999" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Approver" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="j5J-zJ-IAy" customClass="CustomBrownTextColorLabel" customModule="mNet" customModuleProvider="target">
+                                                    <rect key="frame" x="0.0" y="22" width="54" height="17"/>
+                                                    <fontDescription key="fontDescription" name="SanFranciscoDisplay-Light" family="San Francisco Display" pointSize="14"/>
+                                                    <color key="textColor" red="0.3803921569" green="0.28235294119999998" blue="0.22352941179999999" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FeV-NE-b5p">
+                                                    <rect key="frame" x="312" y="9" width="18" height="18"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" secondItem="FeV-NE-b5p" secondAttribute="height" multiplier="1:1" id="Hqr-S7-hoO"/>
+                                                        <constraint firstAttribute="width" constant="18" id="vmK-nn-7aV"/>
+                                                    </constraints>
+                                                    <state key="normal" image="deleteBin"/>
+                                                </button>
+                                            </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <constraints>
+                                                <constraint firstItem="FeV-NE-b5p" firstAttribute="top" secondItem="cZU-qi-qJ0" secondAttribute="top" constant="9" id="Obm-h7-pqD"/>
+                                                <constraint firstItem="j5J-zJ-IAy" firstAttribute="top" secondItem="qYW-Ar-bPq" secondAttribute="bottom" constant="5" id="avZ-9l-2WD"/>
+                                                <constraint firstItem="qYW-Ar-bPq" firstAttribute="top" secondItem="cZU-qi-qJ0" secondAttribute="top" id="bxF-0B-Z7t"/>
+                                                <constraint firstAttribute="trailing" secondItem="FeV-NE-b5p" secondAttribute="trailing" constant="18" id="gfe-8Z-1pX"/>
+                                                <constraint firstItem="qYW-Ar-bPq" firstAttribute="leading" secondItem="cZU-qi-qJ0" secondAttribute="leading" id="sJq-pn-gQ1"/>
+                                                <constraint firstItem="j5J-zJ-IAy" firstAttribute="leading" secondItem="qYW-Ar-bPq" secondAttribute="leading" id="uAW-nQ-Jzm"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="60" id="HBb-Xb-qYU">
+                                        <rect key="frame" x="0.0" y="132" width="348" height="60"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="HBb-Xb-qYU" id="wC7-rK-Cya">
+                                            <rect key="frame" x="0.0" y="0.0" width="348" height="59.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Saurabh Suman" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ds8-ZS-01c" customClass="CustomBrownTextColorLabel" customModule="mNet" customModuleProvider="target">
+                                                    <rect key="frame" x="0.0" y="0.0" width="101" height="17"/>
+                                                    <fontDescription key="fontDescription" name="SanFranciscoDisplay-Bold" family="San Francisco Display" pointSize="14"/>
+                                                    <color key="textColor" red="0.3803921569" green="0.28235294119999998" blue="0.22352941179999999" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Approver" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KdI-09-alM" customClass="CustomBrownTextColorLabel" customModule="mNet" customModuleProvider="target">
+                                                    <rect key="frame" x="0.0" y="22" width="54" height="17"/>
+                                                    <fontDescription key="fontDescription" name="SanFranciscoDisplay-Light" family="San Francisco Display" pointSize="14"/>
+                                                    <color key="textColor" red="0.3803921569" green="0.28235294119999998" blue="0.22352941179999999" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xta-YD-JZi">
+                                                    <rect key="frame" x="312" y="9" width="18" height="18"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="18" id="JeG-TB-bMS"/>
+                                                        <constraint firstAttribute="width" secondItem="xta-YD-JZi" secondAttribute="height" multiplier="1:1" id="LiX-hK-A1x"/>
+                                                    </constraints>
+                                                    <state key="normal" image="deleteBin"/>
+                                                </button>
+                                            </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <constraints>
+                                                <constraint firstItem="xta-YD-JZi" firstAttribute="top" secondItem="wC7-rK-Cya" secondAttribute="top" constant="9" id="6mp-Gb-lzE"/>
+                                                <constraint firstAttribute="trailing" secondItem="xta-YD-JZi" secondAttribute="trailing" constant="18" id="Gh6-Yo-Lu3"/>
+                                                <constraint firstItem="KdI-09-alM" firstAttribute="top" secondItem="ds8-ZS-01c" secondAttribute="bottom" constant="5" id="N73-M9-dtj"/>
+                                                <constraint firstItem="ds8-ZS-01c" firstAttribute="top" secondItem="wC7-rK-Cya" secondAttribute="top" id="Usq-hf-jpK"/>
+                                                <constraint firstItem="KdI-09-alM" firstAttribute="leading" secondItem="ds8-ZS-01c" secondAttribute="leading" id="iQx-De-F2V"/>
+                                                <constraint firstItem="ds8-ZS-01c" firstAttribute="leading" secondItem="wC7-rK-Cya" secondAttribute="leading" id="tFW-hn-EIN"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="60" id="IKF-3d-bQk">
+                                        <rect key="frame" x="0.0" y="192" width="348" height="60"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="IKF-3d-bQk" id="DkG-1Y-bLP">
+                                            <rect key="frame" x="0.0" y="0.0" width="348" height="59.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Saurabh Suman" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Y0k-Iz-PCr" customClass="CustomBrownTextColorLabel" customModule="mNet" customModuleProvider="target">
+                                                    <rect key="frame" x="0.0" y="0.0" width="101" height="17"/>
+                                                    <fontDescription key="fontDescription" name="SanFranciscoDisplay-Bold" family="San Francisco Display" pointSize="14"/>
+                                                    <color key="textColor" red="0.3803921569" green="0.28235294119999998" blue="0.22352941179999999" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Approver" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PQp-Nx-5LR" customClass="CustomBrownTextColorLabel" customModule="mNet" customModuleProvider="target">
+                                                    <rect key="frame" x="0.0" y="22" width="54" height="17"/>
+                                                    <fontDescription key="fontDescription" name="SanFranciscoDisplay-Light" family="San Francisco Display" pointSize="14"/>
+                                                    <color key="textColor" red="0.3803921569" green="0.28235294119999998" blue="0.22352941179999999" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jpP-2F-I96">
+                                                    <rect key="frame" x="312" y="9" width="18" height="18"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="18" id="NEN-ly-fDZ"/>
+                                                        <constraint firstAttribute="width" secondItem="jpP-2F-I96" secondAttribute="height" multiplier="1:1" id="rKT-Eu-DG0"/>
+                                                    </constraints>
+                                                    <state key="normal" image="deleteBin"/>
+                                                </button>
+                                            </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <constraints>
+                                                <constraint firstItem="Y0k-Iz-PCr" firstAttribute="top" secondItem="DkG-1Y-bLP" secondAttribute="top" id="Md2-xO-i8L"/>
+                                                <constraint firstAttribute="trailing" secondItem="jpP-2F-I96" secondAttribute="trailing" constant="18" id="PX0-Ju-rtc"/>
+                                                <constraint firstItem="PQp-Nx-5LR" firstAttribute="top" secondItem="Y0k-Iz-PCr" secondAttribute="bottom" constant="5" id="SyQ-UN-tSH"/>
+                                                <constraint firstItem="PQp-Nx-5LR" firstAttribute="leading" secondItem="Y0k-Iz-PCr" secondAttribute="leading" id="ehp-Os-iB2"/>
+                                                <constraint firstItem="Y0k-Iz-PCr" firstAttribute="leading" secondItem="DkG-1Y-bLP" secondAttribute="leading" id="exM-Ae-pas"/>
+                                                <constraint firstItem="jpP-2F-I96" firstAttribute="top" secondItem="DkG-1Y-bLP" secondAttribute="top" constant="9" id="u4F-rW-R4s"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="60" id="Qxw-ik-xEF">
+                                        <rect key="frame" x="0.0" y="252" width="348" height="60"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Qxw-ik-xEF" id="aNz-mV-8Ol">
+                                            <rect key="frame" x="0.0" y="0.0" width="348" height="59.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Saurabh Suman" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YOf-3X-bAl" customClass="CustomBrownTextColorLabel" customModule="mNet" customModuleProvider="target">
+                                                    <rect key="frame" x="0.0" y="0.0" width="101" height="17"/>
+                                                    <fontDescription key="fontDescription" name="SanFranciscoDisplay-Bold" family="San Francisco Display" pointSize="14"/>
+                                                    <color key="textColor" red="0.3803921569" green="0.28235294119999998" blue="0.22352941179999999" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Approver" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BCg-af-xcU" customClass="CustomBrownTextColorLabel" customModule="mNet" customModuleProvider="target">
+                                                    <rect key="frame" x="0.0" y="22" width="54" height="17"/>
+                                                    <fontDescription key="fontDescription" name="SanFranciscoDisplay-Light" family="San Francisco Display" pointSize="14"/>
+                                                    <color key="textColor" red="0.3803921569" green="0.28235294119999998" blue="0.22352941179999999" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9gJ-t2-tMm">
+                                                    <rect key="frame" x="312" y="9" width="18" height="18"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="18" id="0uZ-6l-K8m"/>
+                                                        <constraint firstAttribute="width" secondItem="9gJ-t2-tMm" secondAttribute="height" multiplier="1:1" id="6ca-lU-ZHX"/>
+                                                    </constraints>
+                                                    <state key="normal" image="deleteBin"/>
+                                                </button>
+                                            </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <constraints>
+                                                <constraint firstItem="YOf-3X-bAl" firstAttribute="top" secondItem="aNz-mV-8Ol" secondAttribute="top" id="DB1-T9-uj4"/>
+                                                <constraint firstAttribute="trailing" secondItem="9gJ-t2-tMm" secondAttribute="trailing" constant="18" id="Hcm-me-cJj"/>
+                                                <constraint firstItem="YOf-3X-bAl" firstAttribute="leading" secondItem="aNz-mV-8Ol" secondAttribute="leading" id="NLQ-69-1sk"/>
+                                                <constraint firstItem="BCg-af-xcU" firstAttribute="top" secondItem="YOf-3X-bAl" secondAttribute="bottom" constant="5" id="YD1-a0-tHz"/>
+                                                <constraint firstItem="BCg-af-xcU" firstAttribute="leading" secondItem="YOf-3X-bAl" secondAttribute="leading" id="rsW-2o-XZy"/>
+                                                <constraint firstItem="9gJ-t2-tMm" firstAttribute="top" secondItem="aNz-mV-8Ol" secondAttribute="top" constant="9" id="xEH-9k-fZW"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="60" id="gsG-Yy-8Xe">
+                                        <rect key="frame" x="0.0" y="312" width="348" height="60"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="gsG-Yy-8Xe" id="TD0-KW-4Dr">
+                                            <rect key="frame" x="0.0" y="0.0" width="348" height="59.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Saurabh Suman" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4Sx-Ow-IAS" customClass="CustomBrownTextColorLabel" customModule="mNet" customModuleProvider="target">
+                                                    <rect key="frame" x="0.0" y="0.0" width="101" height="17"/>
+                                                    <fontDescription key="fontDescription" name="SanFranciscoDisplay-Bold" family="San Francisco Display" pointSize="14"/>
+                                                    <color key="textColor" red="0.3803921569" green="0.28235294119999998" blue="0.22352941179999999" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Approver" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8cd-JD-oXW" customClass="CustomBrownTextColorLabel" customModule="mNet" customModuleProvider="target">
+                                                    <rect key="frame" x="0.0" y="22" width="54" height="17"/>
+                                                    <fontDescription key="fontDescription" name="SanFranciscoDisplay-Light" family="San Francisco Display" pointSize="14"/>
+                                                    <color key="textColor" red="0.3803921569" green="0.28235294119999998" blue="0.22352941179999999" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gNA-pI-FQe">
+                                                    <rect key="frame" x="312" y="9" width="18" height="18"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="18" id="Top-oh-hcj"/>
+                                                        <constraint firstAttribute="width" secondItem="gNA-pI-FQe" secondAttribute="height" multiplier="1:1" id="Zv6-as-LJs"/>
+                                                    </constraints>
+                                                    <state key="normal" image="deleteBin"/>
+                                                </button>
+                                            </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <constraints>
+                                                <constraint firstItem="4Sx-Ow-IAS" firstAttribute="top" secondItem="TD0-KW-4Dr" secondAttribute="top" id="MKW-Iq-pQI"/>
+                                                <constraint firstItem="8cd-JD-oXW" firstAttribute="top" secondItem="4Sx-Ow-IAS" secondAttribute="bottom" constant="5" id="O0d-NF-y6i"/>
+                                                <constraint firstItem="8cd-JD-oXW" firstAttribute="leading" secondItem="4Sx-Ow-IAS" secondAttribute="leading" id="TYJ-Nz-UtU"/>
+                                                <constraint firstItem="4Sx-Ow-IAS" firstAttribute="leading" secondItem="TD0-KW-4Dr" secondAttribute="leading" id="UWd-GF-YMM"/>
+                                                <constraint firstItem="gNA-pI-FQe" firstAttribute="top" secondItem="TD0-KW-4Dr" secondAttribute="top" constant="9" id="ZTv-R7-Kng"/>
+                                                <constraint firstAttribute="trailing" secondItem="gNA-pI-FQe" secondAttribute="trailing" constant="18" id="qFa-Ym-hqY"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="60" id="rre-pN-yYF">
+                                        <rect key="frame" x="0.0" y="372" width="348" height="60"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="rre-pN-yYF" id="F28-QT-NNo">
+                                            <rect key="frame" x="0.0" y="0.0" width="348" height="59.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Saurabh Suman" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iIy-K8-gWs" customClass="CustomBrownTextColorLabel" customModule="mNet" customModuleProvider="target">
+                                                    <rect key="frame" x="0.0" y="0.0" width="101" height="17"/>
+                                                    <fontDescription key="fontDescription" name="SanFranciscoDisplay-Bold" family="San Francisco Display" pointSize="14"/>
+                                                    <color key="textColor" red="0.3803921569" green="0.28235294119999998" blue="0.22352941179999999" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Approver" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="v1N-BW-4Xc" customClass="CustomBrownTextColorLabel" customModule="mNet" customModuleProvider="target">
+                                                    <rect key="frame" x="0.0" y="22" width="54" height="17"/>
+                                                    <fontDescription key="fontDescription" name="SanFranciscoDisplay-Light" family="San Francisco Display" pointSize="14"/>
+                                                    <color key="textColor" red="0.3803921569" green="0.28235294119999998" blue="0.22352941179999999" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Q2v-m7-don">
+                                                    <rect key="frame" x="312" y="9" width="18" height="18"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="18" id="J83-pj-spp"/>
+                                                        <constraint firstAttribute="width" secondItem="Q2v-m7-don" secondAttribute="height" multiplier="1:1" id="Loj-uR-LqU"/>
+                                                    </constraints>
+                                                    <state key="normal" image="deleteBin"/>
+                                                </button>
+                                            </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <constraints>
+                                                <constraint firstItem="v1N-BW-4Xc" firstAttribute="top" secondItem="iIy-K8-gWs" secondAttribute="bottom" constant="5" id="AbF-JD-uIQ"/>
+                                                <constraint firstItem="v1N-BW-4Xc" firstAttribute="leading" secondItem="iIy-K8-gWs" secondAttribute="leading" id="If7-py-UrK"/>
+                                                <constraint firstItem="Q2v-m7-don" firstAttribute="top" secondItem="F28-QT-NNo" secondAttribute="top" constant="9" id="Moj-Up-xiF"/>
+                                                <constraint firstAttribute="trailing" secondItem="Q2v-m7-don" secondAttribute="trailing" constant="18" id="ldM-bA-IRv"/>
+                                                <constraint firstItem="iIy-K8-gWs" firstAttribute="top" secondItem="F28-QT-NNo" secondAttribute="top" id="yFR-Ao-Ivm"/>
+                                                <constraint firstItem="iIy-K8-gWs" firstAttribute="leading" secondItem="F28-QT-NNo" secondAttribute="leading" id="zK7-gU-bN0"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="60" id="lBP-S2-ge7">
+                                        <rect key="frame" x="0.0" y="432" width="348" height="60"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="lBP-S2-ge7" id="Qfn-LE-Juj">
+                                            <rect key="frame" x="0.0" y="0.0" width="348" height="59.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Saurabh Suman" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XXI-2v-sSK" customClass="CustomBrownTextColorLabel" customModule="mNet" customModuleProvider="target">
+                                                    <rect key="frame" x="0.0" y="0.0" width="101" height="17"/>
+                                                    <fontDescription key="fontDescription" name="SanFranciscoDisplay-Bold" family="San Francisco Display" pointSize="14"/>
+                                                    <color key="textColor" red="0.3803921569" green="0.28235294119999998" blue="0.22352941179999999" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Approver" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Iqj-LZ-q1h" customClass="CustomBrownTextColorLabel" customModule="mNet" customModuleProvider="target">
+                                                    <rect key="frame" x="0.0" y="22" width="54" height="17"/>
+                                                    <fontDescription key="fontDescription" name="SanFranciscoDisplay-Light" family="San Francisco Display" pointSize="14"/>
+                                                    <color key="textColor" red="0.3803921569" green="0.28235294119999998" blue="0.22352941179999999" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gly-3q-Ubq">
+                                                    <rect key="frame" x="312" y="9" width="18" height="18"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="18" id="XEa-mb-tVk"/>
+                                                        <constraint firstAttribute="width" secondItem="Gly-3q-Ubq" secondAttribute="height" multiplier="1:1" id="fGS-kv-hGS"/>
+                                                    </constraints>
+                                                    <state key="normal" image="deleteBin"/>
+                                                </button>
+                                            </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <constraints>
+                                                <constraint firstItem="XXI-2v-sSK" firstAttribute="top" secondItem="Qfn-LE-Juj" secondAttribute="top" id="N7P-oB-3Np"/>
+                                                <constraint firstItem="Iqj-LZ-q1h" firstAttribute="leading" secondItem="XXI-2v-sSK" secondAttribute="leading" id="Ofb-59-NlV"/>
+                                                <constraint firstItem="XXI-2v-sSK" firstAttribute="leading" secondItem="Qfn-LE-Juj" secondAttribute="leading" id="WCJ-zh-SmD"/>
+                                                <constraint firstAttribute="trailing" secondItem="Gly-3q-Ubq" secondAttribute="trailing" constant="18" id="ZUM-52-e9N"/>
+                                                <constraint firstItem="Gly-3q-Ubq" firstAttribute="top" secondItem="Qfn-LE-Juj" secondAttribute="top" constant="9" id="bG3-AV-wnL"/>
+                                                <constraint firstItem="Iqj-LZ-q1h" firstAttribute="top" secondItem="XXI-2v-sSK" secondAttribute="bottom" constant="5" id="j36-Fg-Gkm"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="60" id="cek-e1-5XV">
+                                        <rect key="frame" x="0.0" y="492" width="348" height="60"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="cek-e1-5XV" id="8jE-P9-ejX">
+                                            <rect key="frame" x="0.0" y="0.0" width="348" height="59.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Saurabh Suman" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hnw-PD-BTR" customClass="CustomBrownTextColorLabel" customModule="mNet" customModuleProvider="target">
+                                                    <rect key="frame" x="0.0" y="0.0" width="101" height="17"/>
+                                                    <fontDescription key="fontDescription" name="SanFranciscoDisplay-Bold" family="San Francisco Display" pointSize="14"/>
+                                                    <color key="textColor" red="0.3803921569" green="0.28235294119999998" blue="0.22352941179999999" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Approver" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aVY-Ee-qrj" customClass="CustomBrownTextColorLabel" customModule="mNet" customModuleProvider="target">
+                                                    <rect key="frame" x="0.0" y="22" width="54" height="17"/>
+                                                    <fontDescription key="fontDescription" name="SanFranciscoDisplay-Light" family="San Francisco Display" pointSize="14"/>
+                                                    <color key="textColor" red="0.3803921569" green="0.28235294119999998" blue="0.22352941179999999" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a5B-C6-b3S">
+                                                    <rect key="frame" x="312" y="9" width="18" height="18"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" secondItem="a5B-C6-b3S" secondAttribute="height" multiplier="1:1" id="XWJ-00-nd6"/>
+                                                        <constraint firstAttribute="width" constant="18" id="kzO-sx-kHV"/>
+                                                    </constraints>
+                                                    <state key="normal" image="deleteBin"/>
+                                                </button>
+                                            </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <constraints>
+                                                <constraint firstItem="aVY-Ee-qrj" firstAttribute="top" secondItem="hnw-PD-BTR" secondAttribute="bottom" constant="5" id="6xI-Et-YMJ"/>
+                                                <constraint firstItem="aVY-Ee-qrj" firstAttribute="leading" secondItem="hnw-PD-BTR" secondAttribute="leading" id="Egh-uP-b4t"/>
+                                                <constraint firstAttribute="trailing" secondItem="a5B-C6-b3S" secondAttribute="trailing" constant="18" id="YYh-gr-YA7"/>
+                                                <constraint firstItem="a5B-C6-b3S" firstAttribute="top" secondItem="8jE-P9-ejX" secondAttribute="top" constant="9" id="d7c-jc-okl"/>
+                                                <constraint firstItem="hnw-PD-BTR" firstAttribute="top" secondItem="8jE-P9-ejX" secondAttribute="top" id="xhd-Gz-6Qf"/>
+                                                <constraint firstItem="hnw-PD-BTR" firstAttribute="leading" secondItem="8jE-P9-ejX" secondAttribute="leading" id="yuV-TM-kAS"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="60" id="wlc-MN-4bl">
+                                        <rect key="frame" x="0.0" y="552" width="348" height="60"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="wlc-MN-4bl" id="P8s-v7-Lb5">
+                                            <rect key="frame" x="0.0" y="0.0" width="348" height="59.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Saurabh Suman" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jxm-on-JDN" customClass="CustomBrownTextColorLabel" customModule="mNet" customModuleProvider="target">
+                                                    <rect key="frame" x="0.0" y="0.0" width="101" height="17"/>
+                                                    <fontDescription key="fontDescription" name="SanFranciscoDisplay-Bold" family="San Francisco Display" pointSize="14"/>
+                                                    <color key="textColor" red="0.3803921569" green="0.28235294119999998" blue="0.22352941179999999" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Approver" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JON-rz-zhw" customClass="CustomBrownTextColorLabel" customModule="mNet" customModuleProvider="target">
+                                                    <rect key="frame" x="0.0" y="22" width="54" height="17"/>
+                                                    <fontDescription key="fontDescription" name="SanFranciscoDisplay-Light" family="San Francisco Display" pointSize="14"/>
+                                                    <color key="textColor" red="0.3803921569" green="0.28235294119999998" blue="0.22352941179999999" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cuh-ix-3PX">
+                                                    <rect key="frame" x="312" y="9" width="18" height="18"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" secondItem="cuh-ix-3PX" secondAttribute="height" multiplier="1:1" id="DRS-cN-ufU"/>
+                                                        <constraint firstAttribute="width" constant="18" id="jSR-V6-rPz"/>
+                                                    </constraints>
+                                                    <state key="normal" image="deleteBin"/>
+                                                </button>
+                                            </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <constraints>
+                                                <constraint firstItem="JON-rz-zhw" firstAttribute="top" secondItem="jxm-on-JDN" secondAttribute="bottom" constant="5" id="8oP-gu-aMU"/>
+                                                <constraint firstItem="cuh-ix-3PX" firstAttribute="top" secondItem="P8s-v7-Lb5" secondAttribute="top" constant="9" id="aL8-1g-RDf"/>
+                                                <constraint firstItem="JON-rz-zhw" firstAttribute="leading" secondItem="jxm-on-JDN" secondAttribute="leading" id="f7o-HC-EgR"/>
+                                                <constraint firstAttribute="trailing" secondItem="cuh-ix-3PX" secondAttribute="trailing" constant="18" id="r80-1R-Tc0"/>
+                                                <constraint firstItem="jxm-on-JDN" firstAttribute="leading" secondItem="P8s-v7-Lb5" secondAttribute="leading" id="t6a-bb-1oe"/>
+                                                <constraint firstItem="jxm-on-JDN" firstAttribute="top" secondItem="P8s-v7-Lb5" secondAttribute="top" id="vuH-EG-kb7"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="60" id="9sD-FN-DXl">
+                                        <rect key="frame" x="0.0" y="612" width="348" height="60"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="9sD-FN-DXl" id="ru0-Vj-pcm">
+                                            <rect key="frame" x="0.0" y="0.0" width="348" height="59.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Saurabh Suman" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="t9B-8F-T5R" customClass="CustomBrownTextColorLabel" customModule="mNet" customModuleProvider="target">
+                                                    <rect key="frame" x="0.0" y="0.0" width="101" height="17"/>
+                                                    <fontDescription key="fontDescription" name="SanFranciscoDisplay-Bold" family="San Francisco Display" pointSize="14"/>
+                                                    <color key="textColor" red="0.3803921569" green="0.28235294119999998" blue="0.22352941179999999" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Approver" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2QK-mQ-nhx" customClass="CustomBrownTextColorLabel" customModule="mNet" customModuleProvider="target">
+                                                    <rect key="frame" x="0.0" y="22" width="54" height="17"/>
+                                                    <fontDescription key="fontDescription" name="SanFranciscoDisplay-Light" family="San Francisco Display" pointSize="14"/>
+                                                    <color key="textColor" red="0.3803921569" green="0.28235294119999998" blue="0.22352941179999999" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wpR-lP-UgP">
+                                                    <rect key="frame" x="312" y="9" width="18" height="18"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" secondItem="wpR-lP-UgP" secondAttribute="height" multiplier="1:1" id="0IK-Mk-cp2"/>
+                                                        <constraint firstAttribute="width" constant="18" id="2SI-b3-olU"/>
+                                                    </constraints>
+                                                    <state key="normal" image="deleteBin"/>
+                                                </button>
+                                            </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <constraints>
+                                                <constraint firstItem="t9B-8F-T5R" firstAttribute="leading" secondItem="ru0-Vj-pcm" secondAttribute="leading" id="Ero-CJ-95P"/>
+                                                <constraint firstItem="t9B-8F-T5R" firstAttribute="top" secondItem="ru0-Vj-pcm" secondAttribute="top" id="Ffq-IA-PVU"/>
+                                                <constraint firstItem="2QK-mQ-nhx" firstAttribute="top" secondItem="t9B-8F-T5R" secondAttribute="bottom" constant="5" id="FqY-k6-w5Y"/>
+                                                <constraint firstItem="wpR-lP-UgP" firstAttribute="top" secondItem="ru0-Vj-pcm" secondAttribute="top" constant="9" id="Vlb-kU-BUc"/>
+                                                <constraint firstItem="2QK-mQ-nhx" firstAttribute="leading" secondItem="t9B-8F-T5R" secondAttribute="leading" id="gpi-PO-q6R"/>
+                                                <constraint firstAttribute="trailing" secondItem="wpR-lP-UgP" secondAttribute="trailing" constant="18" id="gqE-Z7-xAh"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="60" id="XOP-do-VFI">
+                                        <rect key="frame" x="0.0" y="672" width="348" height="60"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="XOP-do-VFI" id="Iqg-5R-oKS">
+                                            <rect key="frame" x="0.0" y="0.0" width="348" height="59.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Saurabh Suman" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OcK-Ls-IqN" customClass="CustomBrownTextColorLabel" customModule="mNet" customModuleProvider="target">
+                                                    <rect key="frame" x="0.0" y="0.0" width="101" height="17"/>
+                                                    <fontDescription key="fontDescription" name="SanFranciscoDisplay-Bold" family="San Francisco Display" pointSize="14"/>
+                                                    <color key="textColor" red="0.3803921569" green="0.28235294119999998" blue="0.22352941179999999" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Approver" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pd2-si-AuL" customClass="CustomBrownTextColorLabel" customModule="mNet" customModuleProvider="target">
+                                                    <rect key="frame" x="0.0" y="22" width="54" height="17"/>
+                                                    <fontDescription key="fontDescription" name="SanFranciscoDisplay-Light" family="San Francisco Display" pointSize="14"/>
+                                                    <color key="textColor" red="0.3803921569" green="0.28235294119999998" blue="0.22352941179999999" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8xn-JQ-YYD">
+                                                    <rect key="frame" x="312" y="9" width="18" height="18"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" secondItem="8xn-JQ-YYD" secondAttribute="height" multiplier="1:1" id="N3J-2e-qad"/>
+                                                        <constraint firstAttribute="width" constant="18" id="sxd-h2-xtu"/>
+                                                    </constraints>
+                                                    <state key="normal" image="deleteBin"/>
+                                                </button>
+                                            </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <constraints>
+                                                <constraint firstItem="OcK-Ls-IqN" firstAttribute="top" secondItem="Iqg-5R-oKS" secondAttribute="top" id="E9a-vL-XQM"/>
+                                                <constraint firstItem="8xn-JQ-YYD" firstAttribute="top" secondItem="Iqg-5R-oKS" secondAttribute="top" constant="9" id="EB0-3a-C0r"/>
+                                                <constraint firstAttribute="trailing" secondItem="8xn-JQ-YYD" secondAttribute="trailing" constant="18" id="UaZ-Ee-enh"/>
+                                                <constraint firstItem="OcK-Ls-IqN" firstAttribute="leading" secondItem="Iqg-5R-oKS" secondAttribute="leading" id="b3s-8p-qGs"/>
+                                                <constraint firstItem="Pd2-si-AuL" firstAttribute="top" secondItem="OcK-Ls-IqN" secondAttribute="bottom" constant="5" id="kaZ-jw-Z9V"/>
+                                                <constraint firstItem="Pd2-si-AuL" firstAttribute="leading" secondItem="OcK-Ls-IqN" secondAttribute="leading" id="nM5-Rw-0hc"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="60" id="meJ-rr-Bpb">
+                                        <rect key="frame" x="0.0" y="732" width="348" height="60"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="meJ-rr-Bpb" id="FBC-wf-NyR">
+                                            <rect key="frame" x="0.0" y="0.0" width="348" height="59.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Saurabh Suman" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GOx-Dz-lke" customClass="CustomBrownTextColorLabel" customModule="mNet" customModuleProvider="target">
+                                                    <rect key="frame" x="0.0" y="0.0" width="101" height="17"/>
+                                                    <fontDescription key="fontDescription" name="SanFranciscoDisplay-Bold" family="San Francisco Display" pointSize="14"/>
+                                                    <color key="textColor" red="0.3803921569" green="0.28235294119999998" blue="0.22352941179999999" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Approver" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JdJ-0N-jTl" customClass="CustomBrownTextColorLabel" customModule="mNet" customModuleProvider="target">
+                                                    <rect key="frame" x="0.0" y="22" width="54" height="17"/>
+                                                    <fontDescription key="fontDescription" name="SanFranciscoDisplay-Light" family="San Francisco Display" pointSize="14"/>
+                                                    <color key="textColor" red="0.3803921569" green="0.28235294119999998" blue="0.22352941179999999" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xjF-PJ-Xdi">
+                                                    <rect key="frame" x="312" y="9" width="18" height="18"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" secondItem="xjF-PJ-Xdi" secondAttribute="height" multiplier="1:1" id="Bpz-Cq-49t"/>
+                                                        <constraint firstAttribute="width" constant="18" id="cbt-eb-SqZ"/>
+                                                    </constraints>
+                                                    <state key="normal" image="deleteBin"/>
+                                                </button>
+                                            </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <constraints>
+                                                <constraint firstItem="JdJ-0N-jTl" firstAttribute="top" secondItem="GOx-Dz-lke" secondAttribute="bottom" constant="5" id="P6w-Ei-oZB"/>
+                                                <constraint firstItem="GOx-Dz-lke" firstAttribute="leading" secondItem="FBC-wf-NyR" secondAttribute="leading" id="QRH-fz-5sS"/>
+                                                <constraint firstItem="xjF-PJ-Xdi" firstAttribute="top" secondItem="FBC-wf-NyR" secondAttribute="top" constant="9" id="SWN-0f-r3F"/>
+                                                <constraint firstItem="JdJ-0N-jTl" firstAttribute="leading" secondItem="GOx-Dz-lke" secondAttribute="leading" id="axN-hN-h1G"/>
+                                                <constraint firstAttribute="trailing" secondItem="xjF-PJ-Xdi" secondAttribute="trailing" constant="18" id="evw-it-0rS"/>
+                                                <constraint firstItem="GOx-Dz-lke" firstAttribute="top" secondItem="FBC-wf-NyR" secondAttribute="top" id="yYo-3A-atg"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.98039215686274506" green="0.98431372549019602" blue="0.9882352941176471" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="vYp-h3-imR" firstAttribute="centerY" secondItem="HBB-M5-ImA" secondAttribute="centerY" id="2Qp-IK-Nhg"/>
+                            <constraint firstItem="nYm-cy-Bhx" firstAttribute="trailing" secondItem="rLJ-hv-ANX" secondAttribute="trailing" constant="31" id="Aik-GJ-Z7c"/>
+                            <constraint firstItem="nYm-cy-Bhx" firstAttribute="bottom" secondItem="kee-iy-cV3" secondAttribute="bottom" id="BCM-In-0DO"/>
+                            <constraint firstItem="HlG-X9-bkc" firstAttribute="leading" secondItem="vYp-h3-imR" secondAttribute="trailing" constant="4" id="Drr-bV-CEK"/>
+                            <constraint firstItem="kee-iy-cV3" firstAttribute="leading" secondItem="PcV-nP-Nfi" secondAttribute="leading" id="Lqu-zl-5Gv"/>
+                            <constraint firstItem="nYm-cy-Bhx" firstAttribute="trailing" secondItem="kee-iy-cV3" secondAttribute="trailing" id="MOX-pr-Lly"/>
+                            <constraint firstItem="HlG-X9-bkc" firstAttribute="centerY" secondItem="HBB-M5-ImA" secondAttribute="centerY" id="Mnb-Lt-v4u"/>
+                            <constraint firstItem="rLJ-hv-ANX" firstAttribute="centerY" secondItem="HlG-X9-bkc" secondAttribute="centerY" id="O5D-LF-yKy"/>
+                            <constraint firstItem="PcV-nP-Nfi" firstAttribute="top" secondItem="HBB-M5-ImA" secondAttribute="bottom" constant="35" id="SGF-ab-gZy"/>
+                            <constraint firstItem="vYp-h3-imR" firstAttribute="leading" secondItem="HBB-M5-ImA" secondAttribute="trailing" constant="2" id="ZsA-Mf-vPI"/>
+                            <constraint firstItem="PcV-nP-Nfi" firstAttribute="leading" secondItem="HBB-M5-ImA" secondAttribute="leading" id="bNM-aD-rb7"/>
+                            <constraint firstItem="HBB-M5-ImA" firstAttribute="top" secondItem="nYm-cy-Bhx" secondAttribute="top" constant="24" id="dX9-gV-rcu"/>
+                            <constraint firstItem="kee-iy-cV3" firstAttribute="top" secondItem="PcV-nP-Nfi" secondAttribute="bottom" constant="15" id="gEe-J6-uMF"/>
+                            <constraint firstItem="HBB-M5-ImA" firstAttribute="leading" secondItem="nYm-cy-Bhx" secondAttribute="leading" constant="27" id="xkR-2V-TXW"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="nYm-cy-Bhx"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Conversation Info" id="SQi-zq-UNS">
+                        <barButtonItem key="leftBarButtonItem" title="Item" image="backButtonImage" id="Xlz-hG-RMf">
+                            <color key="tintColor" red="0.3803921569" green="0.28235294119999998" blue="0.22352941179999999" alpha="1" colorSpace="calibratedRGB"/>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="Item" image="infoIcon" id="0b6-bd-Qdg">
+                            <color key="tintColor" red="0.3803921569" green="0.28235294119999998" blue="0.22352941179999999" alpha="1" colorSpace="calibratedRGB"/>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="dateAndTimeLabel" destination="rLJ-hv-ANX" id="6Kf-Yw-oLc"/>
+                        <outlet property="membersLabel" destination="PcV-nP-Nfi" id="Tiy-NY-5SP"/>
+                        <outlet property="membersTableView" destination="kee-iy-cV3" id="VkO-Ht-SY0"/>
+                        <outlet property="searchBar" destination="FkQ-Gp-PUH" id="AWy-2x-HcY"/>
+                        <outlet property="searchDisplayController" destination="pg1-fK-OeO" id="LIw-N6-qz1"/>
+                        <outlet property="user1Label" destination="HBB-M5-ImA" id="Ut4-cW-gyM"/>
+                        <outlet property="user2Label" destination="HlG-X9-bkc" id="kg1-N7-vta"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9JK-h8-9nu" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <searchDisplayController id="pg1-fK-OeO">
+                    <connections>
+                        <outlet property="delegate" destination="aCR-hy-R2J" id="Gep-xb-FuF"/>
+                        <outlet property="searchBar" destination="FkQ-Gp-PUH" id="FRU-aR-x7a"/>
+                        <outlet property="searchContentsController" destination="aCR-hy-R2J" id="auc-eR-4aR"/>
+                        <outlet property="searchResultsDataSource" destination="aCR-hy-R2J" id="Yzh-0v-3nk"/>
+                        <outlet property="searchResultsDelegate" destination="aCR-hy-R2J" id="ylh-Qq-gP4"/>
+                    </connections>
+                </searchDisplayController>
+            </objects>
+            <point key="canvasLocation" x="1639.5" y="1920.5"/>
+        </scene>
         <!--Conversations-->
         <scene sceneID="3OY-xt-RlD">
             <objects>
@@ -2127,13 +2710,33 @@ Analyse your own data with customized reports. Correlate parameters to reach con
             </objects>
             <point key="canvasLocation" x="-127" y="2675"/>
         </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="hL5-ew-YVW">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="zou-l8-CG4" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="VgK-uz-ieD">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="aCR-hy-R2J" kind="relationship" relationship="rootViewController" id="Uk3-XD-8Ys"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="kAb-mf-WeK" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1140" y="1921"/>
+        </scene>
     </scenes>
     <resources>
         <image name="attachmentIcon" width="64" height="64"/>
         <image name="backButtonImage" width="24" height="24"/>
         <image name="banner" width="375" height="253"/>
         <image name="conversationIcon" width="24" height="24"/>
+        <image name="deleteBin" width="24" height="24"/>
         <image name="heroLogo" width="87" height="100"/>
+        <image name="infoIcon" width="24" height="24"/>
         <image name="newsIcon" width="133" height="133"/>
         <image name="plusIcon" width="80" height="92"/>
         <image name="tickmark" width="17" height="17"/>

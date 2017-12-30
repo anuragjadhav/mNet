@@ -16,6 +16,7 @@
 		05A7A8FB1FF7FEEC00472A60 /* NewConversationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05A7A8FA1FF7FEEC00472A60 /* NewConversationViewController.swift */; };
 		05A7A8FD1FF802BC00472A60 /* ApprovalsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05A7A8FC1FF802BC00472A60 /* ApprovalsViewController.swift */; };
 		05A7A8FF1FF80B7700472A60 /* SelectUserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05A7A8FE1FF80B7700472A60 /* SelectUserViewController.swift */; };
+		05A7A9011FF815A000472A60 /* ConversationInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05A7A9001FF8159F00472A60 /* ConversationInfoViewController.swift */; };
 		5E183E961FF3791D00368DE1 /* ApproveReject.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5E183E951FF3791D00368DE1 /* ApproveReject.storyboard */; };
 		5E183E9B1FF37B7C00368DE1 /* RejectApplicationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E183E9A1FF37B7C00368DE1 /* RejectApplicationViewController.swift */; };
 		5E183E9D1FF385AD00368DE1 /* CustomBrownColorTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E183E9C1FF385AD00368DE1 /* CustomBrownColorTextView.swift */; };
@@ -69,6 +70,7 @@
 		05A7A8FA1FF7FEEC00472A60 /* NewConversationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewConversationViewController.swift; sourceTree = "<group>"; };
 		05A7A8FC1FF802BC00472A60 /* ApprovalsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApprovalsViewController.swift; sourceTree = "<group>"; };
 		05A7A8FE1FF80B7700472A60 /* SelectUserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectUserViewController.swift; sourceTree = "<group>"; };
+		05A7A9001FF8159F00472A60 /* ConversationInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConversationInfoViewController.swift; sourceTree = "<group>"; };
 		5E183E951FF3791D00368DE1 /* ApproveReject.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = ApproveReject.storyboard; sourceTree = "<group>"; };
 		5E183E9A1FF37B7C00368DE1 /* RejectApplicationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RejectApplicationViewController.swift; sourceTree = "<group>"; };
 		5E183E9C1FF385AD00368DE1 /* CustomBrownColorTextView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomBrownColorTextView.swift; sourceTree = "<group>"; };
@@ -221,6 +223,7 @@
 				05A7A8FA1FF7FEEC00472A60 /* NewConversationViewController.swift */,
 				058A0ED91FF7CA2D00147238 /* ConversationsListViewController.swift */,
 				05A7A8FE1FF80B7700472A60 /* SelectUserViewController.swift */,
+				05A7A9001FF8159F00472A60 /* ConversationInfoViewController.swift */,
 			);
 			name = "View Controllers";
 			sourceTree = "<group>";
@@ -560,6 +563,7 @@
 				5E21A6F51FF28E4700DBB157 /* ProfileViewController.swift in Sources */,
 				5E20CDC21FE9724A004ACE0D /* SettingsViewController.swift in Sources */,
 				058A0ED21FF7C50400147238 /* DashboardMyAppsTableViewCell.swift in Sources */,
+				05A7A9011FF815A000472A60 /* ConversationInfoViewController.swift in Sources */,
 				5EC3005A1FEBEBFA00229516 /* AppSettingsViewController.swift in Sources */,
 				05A7A8FB1FF7FEEC00472A60 /* NewConversationViewController.swift in Sources */,
 				5E1C499D1FEA80A1007CE624 /* ViewBorder.swift in Sources */,
