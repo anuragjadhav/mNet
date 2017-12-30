@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		058A0E4C1FF7C44D00147238 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 058A0E4B1FF7C44D00147238 /* Login.storyboard */; };
+		058A0ECC1FF7C4DD00147238 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 058A0ECB1FF7C4DD00147238 /* LoginViewController.swift */; };
+		058A0ED21FF7C50400147238 /* DashboardMyAppsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 058A0ED11FF7C50400147238 /* DashboardMyAppsTableViewCell.swift */; };
+		058A0ED41FF7C50D00147238 /* DashboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 058A0ED31FF7C50D00147238 /* DashboardViewController.swift */; };
 		5E183E961FF3791D00368DE1 /* ApproveReject.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5E183E951FF3791D00368DE1 /* ApproveReject.storyboard */; };
 		5E183E9B1FF37B7C00368DE1 /* RejectApplicationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E183E9A1FF37B7C00368DE1 /* RejectApplicationViewController.swift */; };
 		5E183E9D1FF385AD00368DE1 /* CustomBrownColorTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E183E9C1FF385AD00368DE1 /* CustomBrownColorTextView.swift */; };
@@ -51,6 +55,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		058A0E4B1FF7C44D00147238 /* Login.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
+		058A0ECB1FF7C4DD00147238 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		058A0ED11FF7C50400147238 /* DashboardMyAppsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DashboardMyAppsTableViewCell.swift; sourceTree = "<group>"; };
+		058A0ED31FF7C50D00147238 /* DashboardViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DashboardViewController.swift; sourceTree = "<group>"; };
 		5E183E951FF3791D00368DE1 /* ApproveReject.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = ApproveReject.storyboard; sourceTree = "<group>"; };
 		5E183E9A1FF37B7C00368DE1 /* RejectApplicationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RejectApplicationViewController.swift; sourceTree = "<group>"; };
 		5E183E9C1FF385AD00368DE1 /* CustomBrownColorTextView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomBrownColorTextView.swift; sourceTree = "<group>"; };
@@ -107,6 +115,71 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		058A0E8B1FF7C4AA00147238 /* Login Module */ = {
+			isa = PBXGroup;
+			children = (
+				058A0ECA1FF7C4D000147238 /* View Controllers */,
+				058A0EC91FF7C4CA00147238 /* Data Controller */,
+				058A0EC81FF7C4C500147238 /* Views */,
+			);
+			name = "Login Module";
+			sourceTree = "<group>";
+		};
+		058A0EC81FF7C4C500147238 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		058A0EC91FF7C4CA00147238 /* Data Controller */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = "Data Controller";
+			sourceTree = "<group>";
+		};
+		058A0ECA1FF7C4D000147238 /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				058A0ECB1FF7C4DD00147238 /* LoginViewController.swift */,
+			);
+			name = "View Controllers";
+			sourceTree = "<group>";
+		};
+		058A0ECD1FF7C4E800147238 /* Dashboard */ = {
+			isa = PBXGroup;
+			children = (
+				058A0ED01FF7C4F800147238 /* View Controllers */,
+				058A0ECF1FF7C4F200147238 /* Data Controller */,
+				058A0ECE1FF7C4EE00147238 /* Views */,
+			);
+			name = Dashboard;
+			sourceTree = "<group>";
+		};
+		058A0ECE1FF7C4EE00147238 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				058A0ED11FF7C50400147238 /* DashboardMyAppsTableViewCell.swift */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		058A0ECF1FF7C4F200147238 /* Data Controller */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = "Data Controller";
+			sourceTree = "<group>";
+		};
+		058A0ED01FF7C4F800147238 /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				058A0ED31FF7C50D00147238 /* DashboardViewController.swift */,
+			);
+			name = "View Controllers";
+			sourceTree = "<group>";
+		};
 		5E183E971FF37A5700368DE1 /* Approve Reject Application Module */ = {
 			isa = PBXGroup;
 			children = (
@@ -200,11 +273,13 @@
 			children = (
 				5E1C49911FEA45F6007CE624 /* Constants.swift */,
 				5E20CD921FE952BE004ACE0D /* AppDelegate.swift */,
-				5E183E971FF37A5700368DE1 /* Approve Reject Application Module */,
 				5EC300631FEC0A6100229516 /* Models */,
 				5E1C499E1FEA845B007CE624 /* Base classes */,
 				5E1C499B1FEA8072007CE624 /* Extensions */,
 				5E1C498B1FEA442C007CE624 /* Custom View Classes */,
+				058A0E8B1FF7C4AA00147238 /* Login Module */,
+				058A0ECD1FF7C4E800147238 /* Dashboard */,
+				5E183E971FF37A5700368DE1 /* Approve Reject Application Module */,
 				5E20CDBD1FE971FD004ACE0D /* Settings Module */,
 				5E21A6F21FF28CF000DBB157 /* Profile Module */,
 				5E1B6CFB1FED2AB900C307B3 /* Xibs */,
@@ -243,6 +318,7 @@
 		5E20CDBA1FE9718F004ACE0D /* Storyboards */ = {
 			isa = PBXGroup;
 			children = (
+				058A0E4B1FF7C44D00147238 /* Login.storyboard */,
 				5E20CDBB1FE971A7004ACE0D /* Settings.storyboard */,
 				5E21A6F01FF28CA100DBB157 /* Profile.storyboard */,
 				5E20CD9B1FE952BE004ACE0D /* LaunchScreen.storyboard */,
@@ -391,6 +467,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				058A0E4C1FF7C44D00147238 /* Login.storyboard in Resources */,
 				5E20CDB41FE962F2004ACE0D /* SanFranciscoDisplay-Semibold.otf in Resources */,
 				5E20CD9D1FE952BE004ACE0D /* LaunchScreen.storyboard in Resources */,
 				5E20CD9A1FE952BE004ACE0D /* Assets.xcassets in Resources */,
@@ -416,6 +493,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				058A0ECC1FF7C4DD00147238 /* LoginViewController.swift in Sources */,
 				5EC3005C1FEC002000229516 /* SettingsDataController.swift in Sources */,
 				5E1C49961FEA4EB8007CE624 /* EmailPreferencesViewController.swift in Sources */,
 				5E1C49941FEA494B007CE624 /* PrivacySettingsViewController.swift in Sources */,
@@ -429,11 +507,13 @@
 				5E1C498F1FEA4468007CE624 /* CustomBlueTextColorLabel.swift in Sources */,
 				5E21A6F51FF28E4700DBB157 /* ProfileViewController.swift in Sources */,
 				5E20CDC21FE9724A004ACE0D /* SettingsViewController.swift in Sources */,
+				058A0ED21FF7C50400147238 /* DashboardMyAppsTableViewCell.swift in Sources */,
 				5EC3005A1FEBEBFA00229516 /* AppSettingsViewController.swift in Sources */,
 				5E1C499D1FEA80A1007CE624 /* ViewBorder.swift in Sources */,
 				5E1C49981FEA73F8007CE624 /* AboutMeViewController.swift in Sources */,
 				5E183E9F1FF3887600368DE1 /* CustomBlueTextColorButton.swift in Sources */,
 				5EC3005E1FEC03FE00229516 /* SettingOptionsTableViewCell.swift in Sources */,
+				058A0ED41FF7C50D00147238 /* DashboardViewController.swift in Sources */,
 				5E1C49921FEA45F6007CE624 /* Constants.swift in Sources */,
 				5E4A8D3D1FF4FB6600086667 /* PeopleViewController.swift in Sources */,
 				5E1B6D011FED33A800C307B3 /* CustomPickerView.swift in Sources */,
