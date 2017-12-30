@@ -490,8 +490,8 @@
 				TargetAttributes = {
 					5E20CD8E1FE952BE004ACE0D = {
 						CreatedOnToolsVersion = 8.3.3;
-						DevelopmentTeam = HWKAT35H4R;
-						ProvisioningStyle = Automatic;
+						DevelopmentTeam = 3J7U28GXGW;
+						ProvisioningStyle = Manual;
 					};
 				};
 			};
@@ -694,14 +694,15 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = HWKAT35H4R;
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = 3J7U28GXGW;
 				INFOPLIST_FILE = mNet/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = mNet.mNet;
+				PRODUCT_BUNDLE_IDENTIFIER = com.mediaware.mNet;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = "";
+				PROVISIONING_PROFILE = "7825225e-6766-4167-911c-40e3c620daa8";
+				PROVISIONING_PROFILE_SPECIFIER = mNetDevelopment;
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
@@ -711,14 +712,15 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = HWKAT35H4R;
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = 3J7U28GXGW;
 				INFOPLIST_FILE = mNet/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = mNet.mNet;
+				PRODUCT_BUNDLE_IDENTIFIER = com.mediaware.mNet;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = "";
+				PROVISIONING_PROFILE = "7825225e-6766-4167-911c-40e3c620daa8";
+				PROVISIONING_PROFILE_SPECIFIER = mNetDevelopment;
 				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
