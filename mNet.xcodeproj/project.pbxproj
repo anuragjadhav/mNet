@@ -30,6 +30,9 @@
 		5E18AE421FF81B45007AA461 /* AttachmentsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E18AE411FF81B45007AA461 /* AttachmentsViewController.swift */; };
 		5E18AE441FF81B59007AA461 /* DocumentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E18AE431FF81B59007AA461 /* DocumentViewController.swift */; };
 		5E18AE461FF8238A007AA461 /* AttachmentsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E18AE451FF8238A007AA461 /* AttachmentsTableViewCell.swift */; };
+		5E18AE481FF82E0E007AA461 /* TabBar.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5E18AE471FF82E0E007AA461 /* TabBar.storyboard */; };
+		5E18AE4A1FF82F94007AA461 /* Conversation.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5E18AE491FF82F94007AA461 /* Conversation.storyboard */; };
+		5E18AE4C1FF82FA4007AA461 /* Dashboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5E18AE4B1FF82FA3007AA461 /* Dashboard.storyboard */; };
 		5E1B6CFD1FED2C8500C307B3 /* CustomPickerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5E1B6CFC1FED2C8500C307B3 /* CustomPickerView.xib */; };
 		5E1B6D011FED33A800C307B3 /* CustomPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E1B6D001FED33A800C307B3 /* CustomPickerView.swift */; };
 		5E1C498D1FEA4455007CE624 /* CustomBrownTextColorLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E1C498C1FEA4455007CE624 /* CustomBrownTextColorLabel.swift */; };
@@ -91,6 +94,9 @@
 		5E18AE411FF81B45007AA461 /* AttachmentsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AttachmentsViewController.swift; sourceTree = "<group>"; };
 		5E18AE431FF81B59007AA461 /* DocumentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DocumentViewController.swift; sourceTree = "<group>"; };
 		5E18AE451FF8238A007AA461 /* AttachmentsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AttachmentsTableViewCell.swift; sourceTree = "<group>"; };
+		5E18AE471FF82E0E007AA461 /* TabBar.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = TabBar.storyboard; sourceTree = "<group>"; };
+		5E18AE491FF82F94007AA461 /* Conversation.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Conversation.storyboard; sourceTree = "<group>"; };
+		5E18AE4B1FF82FA3007AA461 /* Dashboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Dashboard.storyboard; sourceTree = "<group>"; };
 		5E1B6CFC1FED2C8500C307B3 /* CustomPickerView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CustomPickerView.xib; sourceTree = "<group>"; };
 		5E1B6D001FED33A800C307B3 /* CustomPickerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomPickerView.swift; sourceTree = "<group>"; };
 		5E1C498C1FEA4455007CE624 /* CustomBrownTextColorLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomBrownTextColorLabel.swift; sourceTree = "<group>"; };
@@ -260,6 +266,7 @@
 				5E18AE381FF8092E007AA461 /* ApprovalVerificationViewController.swift */,
 				5E18AE411FF81B45007AA461 /* AttachmentsViewController.swift */,
 				5E18AE431FF81B59007AA461 /* DocumentViewController.swift */,
+				05A7A8FC1FF802BC00472A60 /* ApprovalsViewController.swift */,
 			);
 			name = "View Controllers";
 			sourceTree = "<group>";
@@ -350,7 +357,6 @@
 				5E1C49911FEA45F6007CE624 /* Constants.swift */,
 				5E20CD921FE952BE004ACE0D /* AppDelegate.swift */,
 				5E18AE3A1FF8099C007AA461 /* Radio Button */,
-				5E183E971FF37A5700368DE1 /* Approve Reject Application Module */,
 				5EC300631FEC0A6100229516 /* Models */,
 				5E1C499E1FEA845B007CE624 /* Base classes */,
 				5E1C499B1FEA8072007CE624 /* Extensions */,
@@ -402,6 +408,9 @@
 				5E21A6F01FF28CA100DBB157 /* Profile.storyboard */,
 				5E20CD9B1FE952BE004ACE0D /* LaunchScreen.storyboard */,
 				5E183E951FF3791D00368DE1 /* ApproveReject.storyboard */,
+				5E18AE471FF82E0E007AA461 /* TabBar.storyboard */,
+				5E18AE491FF82F94007AA461 /* Conversation.storyboard */,
+				5E18AE4B1FF82FA3007AA461 /* Dashboard.storyboard */,
 			);
 			name = Storyboards;
 			sourceTree = "<group>";
@@ -553,15 +562,18 @@
 				5E20CD9A1FE952BE004ACE0D /* Assets.xcassets in Resources */,
 				5E183E961FF3791D00368DE1 /* ApproveReject.storyboard in Resources */,
 				5E20CDAE1FE962E1004ACE0D /* SanFranciscoDisplay-Black.otf in Resources */,
+				5E18AE4C1FF82FA4007AA461 /* Dashboard.storyboard in Resources */,
 				5E20CDB21FE962EC004ACE0D /* SanFranciscoDisplay-Medium.otf in Resources */,
 				5E20CDB51FE962F4004ACE0D /* SanFranciscoDisplay-Thin.otf in Resources */,
 				5E20CDB01FE962E7004ACE0D /* SanFranciscoDisplay-Heavy.otf in Resources */,
+				5E18AE4A1FF82F94007AA461 /* Conversation.storyboard in Resources */,
 				5E1B6CFD1FED2C8500C307B3 /* CustomPickerView.xib in Resources */,
 				5E20CDB31FE962F0004ACE0D /* SanFranciscoDisplay-Regular.otf in Resources */,
 				5E20CDAF1FE962E4004ACE0D /* SanFranciscoDisplay-Bold.otf in Resources */,
 				5E20CDB61FE962F7004ACE0D /* SanFranciscoDisplay-Ultralight.otf in Resources */,
 				5E20CDBC1FE971A7004ACE0D /* Settings.storyboard in Resources */,
 				5E21A6F11FF28CA100DBB157 /* Profile.storyboard in Resources */,
+				5E18AE481FF82E0E007AA461 /* TabBar.storyboard in Resources */,
 				5E20CDB11FE962EA004ACE0D /* SanFranciscoDisplay-Light.otf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -586,6 +598,8 @@
 				5E183E9B1FF37B7C00368DE1 /* RejectApplicationViewController.swift in Sources */,
 				5E1C498D1FEA4455007CE624 /* CustomBrownTextColorLabel.swift in Sources */,
 				5E18AE461FF8238A007AA461 /* AttachmentsTableViewCell.swift in Sources */,
+				058A0EDC1FF7CA4800147238 /* ConversationListTableViewCell.swift in Sources */,
+				05A7A8FF1FF80B7700472A60 /* SelectUserViewController.swift in Sources */,
 				5E1C499A1FEA7F30007CE624 /* CustomBrownTextColorTextfield.swift in Sources */,
 				5E183EA11FF3CA4800368DE1 /* DocumentDetailsViewController.swift in Sources */,
 				5EC300621FEC0A5A00229516 /* Option.swift in Sources */,
