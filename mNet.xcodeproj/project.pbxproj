@@ -13,6 +13,13 @@
 		5E183E9F1FF3887600368DE1 /* CustomBlueTextColorButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E183E9E1FF3887600368DE1 /* CustomBlueTextColorButton.swift */; };
 		5E183EA11FF3CA4800368DE1 /* DocumentDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E183EA01FF3CA4800368DE1 /* DocumentDetailsViewController.swift */; };
 		5E183EA41FF3F97600368DE1 /* PeopleListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E183EA31FF3F97600368DE1 /* PeopleListTableViewCell.swift */; };
+		5E18AE391FF8092E007AA461 /* ApprovalVerificationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E18AE381FF8092E007AA461 /* ApprovalVerificationViewController.swift */; };
+		5E18AE3C1FF809EE007AA461 /* ISRadioButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E18AE3B1FF809EE007AA461 /* ISRadioButton.swift */; };
+		5E18AE3E1FF8113A007AA461 /* CustomBlueBackgroundButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E18AE3D1FF8113A007AA461 /* CustomBlueBackgroundButton.swift */; };
+		5E18AE401FF818FC007AA461 /* SendPeopleListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E18AE3F1FF818FC007AA461 /* SendPeopleListTableViewCell.swift */; };
+		5E18AE421FF81B45007AA461 /* AttachmentsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E18AE411FF81B45007AA461 /* AttachmentsViewController.swift */; };
+		5E18AE441FF81B59007AA461 /* DocumentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E18AE431FF81B59007AA461 /* DocumentViewController.swift */; };
+		5E18AE461FF8238A007AA461 /* AttachmentsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E18AE451FF8238A007AA461 /* AttachmentsTableViewCell.swift */; };
 		5E1B6CFD1FED2C8500C307B3 /* CustomPickerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5E1B6CFC1FED2C8500C307B3 /* CustomPickerView.xib */; };
 		5E1B6D011FED33A800C307B3 /* CustomPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E1B6D001FED33A800C307B3 /* CustomPickerView.swift */; };
 		5E1C498D1FEA4455007CE624 /* CustomBrownTextColorLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E1C498C1FEA4455007CE624 /* CustomBrownTextColorLabel.swift */; };
@@ -57,6 +64,13 @@
 		5E183E9E1FF3887600368DE1 /* CustomBlueTextColorButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomBlueTextColorButton.swift; sourceTree = "<group>"; };
 		5E183EA01FF3CA4800368DE1 /* DocumentDetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DocumentDetailsViewController.swift; sourceTree = "<group>"; };
 		5E183EA31FF3F97600368DE1 /* PeopleListTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PeopleListTableViewCell.swift; sourceTree = "<group>"; };
+		5E18AE381FF8092E007AA461 /* ApprovalVerificationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApprovalVerificationViewController.swift; sourceTree = "<group>"; };
+		5E18AE3B1FF809EE007AA461 /* ISRadioButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ISRadioButton.swift; sourceTree = "<group>"; };
+		5E18AE3D1FF8113A007AA461 /* CustomBlueBackgroundButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomBlueBackgroundButton.swift; sourceTree = "<group>"; };
+		5E18AE3F1FF818FC007AA461 /* SendPeopleListTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SendPeopleListTableViewCell.swift; sourceTree = "<group>"; };
+		5E18AE411FF81B45007AA461 /* AttachmentsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AttachmentsViewController.swift; sourceTree = "<group>"; };
+		5E18AE431FF81B59007AA461 /* DocumentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DocumentViewController.swift; sourceTree = "<group>"; };
+		5E18AE451FF8238A007AA461 /* AttachmentsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AttachmentsTableViewCell.swift; sourceTree = "<group>"; };
 		5E1B6CFC1FED2C8500C307B3 /* CustomPickerView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CustomPickerView.xib; sourceTree = "<group>"; };
 		5E1B6D001FED33A800C307B3 /* CustomPickerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomPickerView.swift; sourceTree = "<group>"; };
 		5E1C498C1FEA4455007CE624 /* CustomBrownTextColorLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomBrownTextColorLabel.swift; sourceTree = "<group>"; };
@@ -122,6 +136,9 @@
 			children = (
 				5E183E9A1FF37B7C00368DE1 /* RejectApplicationViewController.swift */,
 				5E183EA01FF3CA4800368DE1 /* DocumentDetailsViewController.swift */,
+				5E18AE381FF8092E007AA461 /* ApprovalVerificationViewController.swift */,
+				5E18AE411FF81B45007AA461 /* AttachmentsViewController.swift */,
+				5E18AE431FF81B59007AA461 /* DocumentViewController.swift */,
 			);
 			name = "View Controllers";
 			sourceTree = "<group>";
@@ -137,8 +154,18 @@
 			isa = PBXGroup;
 			children = (
 				5E183EA31FF3F97600368DE1 /* PeopleListTableViewCell.swift */,
+				5E18AE3F1FF818FC007AA461 /* SendPeopleListTableViewCell.swift */,
+				5E18AE451FF8238A007AA461 /* AttachmentsTableViewCell.swift */,
 			);
 			name = Views;
+			sourceTree = "<group>";
+		};
+		5E18AE3A1FF8099C007AA461 /* Radio Button */ = {
+			isa = PBXGroup;
+			children = (
+				5E18AE3B1FF809EE007AA461 /* ISRadioButton.swift */,
+			);
+			name = "Radio Button";
 			sourceTree = "<group>";
 		};
 		5E1B6CFB1FED2AB900C307B3 /* Xibs */ = {
@@ -159,6 +186,7 @@
 				5E183E9C1FF385AD00368DE1 /* CustomBrownColorTextView.swift */,
 				5E183E9E1FF3887600368DE1 /* CustomBlueTextColorButton.swift */,
 				5E1B6D001FED33A800C307B3 /* CustomPickerView.swift */,
+				5E18AE3D1FF8113A007AA461 /* CustomBlueBackgroundButton.swift */,
 			);
 			name = "Custom View Classes";
 			sourceTree = "<group>";
@@ -200,6 +228,7 @@
 			children = (
 				5E1C49911FEA45F6007CE624 /* Constants.swift */,
 				5E20CD921FE952BE004ACE0D /* AppDelegate.swift */,
+				5E18AE3A1FF8099C007AA461 /* Radio Button */,
 				5E183E971FF37A5700368DE1 /* Approve Reject Application Module */,
 				5EC300631FEC0A6100229516 /* Models */,
 				5E1C499E1FEA845B007CE624 /* Base classes */,
@@ -417,11 +446,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				5EC3005C1FEC002000229516 /* SettingsDataController.swift in Sources */,
+				5E18AE391FF8092E007AA461 /* ApprovalVerificationViewController.swift in Sources */,
+				5E18AE401FF818FC007AA461 /* SendPeopleListTableViewCell.swift in Sources */,
 				5E1C49961FEA4EB8007CE624 /* EmailPreferencesViewController.swift in Sources */,
 				5E1C49941FEA494B007CE624 /* PrivacySettingsViewController.swift in Sources */,
 				5E1C49A01FEA847B007CE624 /* BaseViewController.swift in Sources */,
+				5E18AE3E1FF8113A007AA461 /* CustomBlueBackgroundButton.swift in Sources */,
+				5E18AE3C1FF809EE007AA461 /* ISRadioButton.swift in Sources */,
 				5E183E9B1FF37B7C00368DE1 /* RejectApplicationViewController.swift in Sources */,
 				5E1C498D1FEA4455007CE624 /* CustomBrownTextColorLabel.swift in Sources */,
+				5E18AE461FF8238A007AA461 /* AttachmentsTableViewCell.swift in Sources */,
 				5E1C499A1FEA7F30007CE624 /* CustomBrownTextColorTextfield.swift in Sources */,
 				5E183EA11FF3CA4800368DE1 /* DocumentDetailsViewController.swift in Sources */,
 				5EC300621FEC0A5A00229516 /* Option.swift in Sources */,
@@ -433,11 +467,13 @@
 				5E1C499D1FEA80A1007CE624 /* ViewBorder.swift in Sources */,
 				5E1C49981FEA73F8007CE624 /* AboutMeViewController.swift in Sources */,
 				5E183E9F1FF3887600368DE1 /* CustomBlueTextColorButton.swift in Sources */,
+				5E18AE441FF81B59007AA461 /* DocumentViewController.swift in Sources */,
 				5EC3005E1FEC03FE00229516 /* SettingOptionsTableViewCell.swift in Sources */,
 				5E1C49921FEA45F6007CE624 /* Constants.swift in Sources */,
 				5E4A8D3D1FF4FB6600086667 /* PeopleViewController.swift in Sources */,
 				5E1B6D011FED33A800C307B3 /* CustomPickerView.swift in Sources */,
 				5E4A8D3B1FF4FB4900086667 /* PeopleTableViewCell.swift in Sources */,
+				5E18AE421FF81B45007AA461 /* AttachmentsViewController.swift in Sources */,
 				5E183EA41FF3F97600368DE1 /* PeopleListTableViewCell.swift in Sources */,
 				5E183E9D1FF385AD00368DE1 /* CustomBrownColorTextView.swift in Sources */,
 				5EC300651FEC106600229516 /* PrivacySettingOptionTableViewCell.swift in Sources */,
