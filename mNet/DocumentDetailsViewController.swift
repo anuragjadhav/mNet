@@ -31,18 +31,12 @@ class DocumentDetailsViewController: BaseViewController,UITableViewDelegate,UITa
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated);
         
-        self.setupNavigationBar()
-        
         //TODO: remove this hardcoding
         self.peopleListTableViewHeightConstraint.constant = 3 * 50
         
         self.view.layoutIfNeeded()
     }
     
-    func setupNavigationBar(){
-        
-        self.navigationController?.navigationBar.isHidden = false
-    }
     
     //Mark: tableview delegates and data source
     
@@ -73,11 +67,5 @@ class DocumentDetailsViewController: BaseViewController,UITableViewDelegate,UITa
     @IBAction func rejectButtonAction(_ sender: Any) {
         
     }
- 
-    @IBAction func backButtonAction(_ sender: Any) {
-        
-        self.navigationController?.popViewController(animated: true)
-    }
-
 
 }
