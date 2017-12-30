@@ -66,5 +66,11 @@ struct PrivacySettingOptions {
 }
 
 
-
+struct CellIdentifiers {
+    
+    static let dashboardMyAppsTableView:String = "DashboardMyAppsTableViewCell"
+    static let conversationListTableView:String = "conversationListTableViewCell"
+    static let approvalsSectionsCollectionView:String = "approvalSectionsCollectionViewCell"
+    static let pendingApprovalsTableViewCell:String = "pendingApprovalsTableViewCell"
+}
 
