@@ -5,9 +5,10 @@
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
+        <development version="8000" identifier="xcode"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
-        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
@@ -36,6 +37,10 @@
         <scene sceneID="dnM-5H-Gf3">
             <objects>
                 <viewController id="2et-bw-37B" customClass="DashboardViewController" customModule="mNet" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="bnS-DV-tYL"/>
+                        <viewControllerLayoutGuide type="bottom" id="jch-go-Mms"/>
+                    </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="y6R-1a-6Ni">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -183,14 +188,14 @@
                         <color key="backgroundColor" red="0.98039215686274506" green="0.98431372549019602" blue="0.9882352941176471" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="KIF-Yw-Mjx" firstAttribute="trailing" secondItem="iJh-AQ-zQv" secondAttribute="trailing" id="2tN-BK-vOh"/>
-                            <constraint firstItem="lRi-r7-A85" firstAttribute="leading" secondItem="rar-vn-1UL" secondAttribute="leading" constant="27" id="7Is-qY-C42"/>
+                            <constraint firstItem="lRi-r7-A85" firstAttribute="leading" secondItem="y6R-1a-6Ni" secondAttribute="leading" constant="27" id="7Is-qY-C42"/>
                             <constraint firstItem="KIF-Yw-Mjx" firstAttribute="top" secondItem="5B0-jr-XOV" secondAttribute="top" id="A7S-aT-ypv"/>
                             <constraint firstItem="iJh-AQ-zQv" firstAttribute="top" secondItem="5B0-jr-XOV" secondAttribute="bottom" constant="9" id="BrM-k2-HDg"/>
                             <constraint firstItem="81l-S9-JtD" firstAttribute="bottom" secondItem="oje-k1-kif" secondAttribute="bottom" id="D9K-oe-ewJ"/>
                             <constraint firstItem="Ged-rx-uAh" firstAttribute="leading" secondItem="lRi-r7-A85" secondAttribute="leading" id="F7z-0v-FoL"/>
                             <constraint firstItem="RGf-E3-2cA" firstAttribute="leading" secondItem="N7A-b8-8yo" secondAttribute="leading" id="FAN-pv-TfB"/>
                             <constraint firstItem="nYu-DI-ubE" firstAttribute="leading" secondItem="RGf-E3-2cA" secondAttribute="leading" id="FLa-95-FhW"/>
-                            <constraint firstItem="rar-vn-1UL" firstAttribute="trailing" secondItem="iJh-AQ-zQv" secondAttribute="trailing" constant="8" id="Fse-uR-Ki2"/>
+                            <constraint firstAttribute="trailing" secondItem="iJh-AQ-zQv" secondAttribute="trailing" constant="8" id="Fse-uR-Ki2"/>
                             <constraint firstItem="81l-S9-JtD" firstAttribute="trailing" secondItem="oje-k1-kif" secondAttribute="trailing" id="GP1-ML-ufn"/>
                             <constraint firstItem="oje-k1-kif" firstAttribute="width" secondItem="RGf-E3-2cA" secondAttribute="width" id="HPL-87-2Tj"/>
                             <constraint firstItem="oje-k1-kif" firstAttribute="leading" secondItem="ick-1G-BxN" secondAttribute="leading" id="I1A-zM-eoi"/>
@@ -199,16 +204,16 @@
                             <constraint firstItem="KIF-Yw-Mjx" firstAttribute="bottom" secondItem="iJh-AQ-zQv" secondAttribute="bottom" id="OS5-l4-kM0"/>
                             <constraint firstItem="81l-S9-JtD" firstAttribute="leading" secondItem="ick-1G-BxN" secondAttribute="leading" id="PN4-je-e0i"/>
                             <constraint firstItem="oje-k1-kif" firstAttribute="width" secondItem="iJh-AQ-zQv" secondAttribute="width" id="Tmf-s2-GrN"/>
-                            <constraint firstItem="rar-vn-1UL" firstAttribute="bottom" secondItem="h8D-tq-Tg1" secondAttribute="bottom" id="Xbc-bx-42R"/>
+                            <constraint firstItem="jch-go-Mms" firstAttribute="top" secondItem="h8D-tq-Tg1" secondAttribute="bottom" id="Xbc-bx-42R"/>
                             <constraint firstItem="RGf-E3-2cA" firstAttribute="leading" secondItem="oje-k1-kif" secondAttribute="trailing" constant="20" id="clD-wz-0Ha"/>
                             <constraint firstItem="ick-1G-BxN" firstAttribute="leading" secondItem="lRi-r7-A85" secondAttribute="leading" id="czX-G4-h4D"/>
                             <constraint firstItem="81l-S9-JtD" firstAttribute="top" secondItem="ick-1G-BxN" secondAttribute="top" id="d3M-dT-4Mf"/>
                             <constraint firstItem="h8D-tq-Tg1" firstAttribute="leading" secondItem="Ged-rx-uAh" secondAttribute="leading" id="dS5-qv-rWn"/>
                             <constraint firstItem="S1N-TR-5NP" firstAttribute="top" secondItem="y6R-1a-6Ni" secondAttribute="top" id="dVb-rv-zAQ"/>
-                            <constraint firstItem="S1N-TR-5NP" firstAttribute="trailing" secondItem="rar-vn-1UL" secondAttribute="trailing" id="fok-Hv-FYg"/>
-                            <constraint firstItem="S1N-TR-5NP" firstAttribute="leading" secondItem="rar-vn-1UL" secondAttribute="leading" id="fp0-JV-dEz"/>
+                            <constraint firstItem="S1N-TR-5NP" firstAttribute="trailing" secondItem="y6R-1a-6Ni" secondAttribute="trailing" id="fok-Hv-FYg"/>
+                            <constraint firstItem="S1N-TR-5NP" firstAttribute="leading" secondItem="y6R-1a-6Ni" secondAttribute="leading" id="fp0-JV-dEz"/>
                             <constraint firstItem="iJh-AQ-zQv" firstAttribute="leading" secondItem="RGf-E3-2cA" secondAttribute="trailing" constant="20" id="grr-5b-pzF"/>
-                            <constraint firstItem="rar-vn-1UL" firstAttribute="trailing" secondItem="h8D-tq-Tg1" secondAttribute="trailing" constant="21" id="hmo-pj-cq6"/>
+                            <constraint firstAttribute="trailing" secondItem="h8D-tq-Tg1" secondAttribute="trailing" constant="21" id="hmo-pj-cq6"/>
                             <constraint firstItem="nYu-DI-ubE" firstAttribute="trailing" secondItem="RGf-E3-2cA" secondAttribute="trailing" id="kSu-mw-HWy"/>
                             <constraint firstItem="N7A-b8-8yo" firstAttribute="centerY" secondItem="ick-1G-BxN" secondAttribute="centerY" id="koY-Z7-VNJ"/>
                             <constraint firstItem="iJh-AQ-zQv" firstAttribute="leading" secondItem="5B0-jr-XOV" secondAttribute="leading" id="mcG-XP-wgO"/>
@@ -217,11 +222,10 @@
                             <constraint firstItem="Ged-rx-uAh" firstAttribute="top" secondItem="S1N-TR-5NP" secondAttribute="bottom" constant="21" id="qya-gt-Tit"/>
                             <constraint firstItem="ick-1G-BxN" firstAttribute="top" secondItem="lRi-r7-A85" secondAttribute="bottom" constant="44" id="rkR-eE-n6Y"/>
                             <constraint firstItem="oje-k1-kif" firstAttribute="top" secondItem="ick-1G-BxN" secondAttribute="bottom" constant="9" id="w3h-Dj-Bnk"/>
-                            <constraint firstItem="lRi-r7-A85" firstAttribute="top" secondItem="rar-vn-1UL" secondAttribute="top" constant="63" id="wNA-33-Dx0"/>
+                            <constraint firstItem="lRi-r7-A85" firstAttribute="top" secondItem="bnS-DV-tYL" secondAttribute="bottom" constant="63" id="wNA-33-Dx0"/>
                             <constraint firstItem="nYu-DI-ubE" firstAttribute="bottom" secondItem="RGf-E3-2cA" secondAttribute="bottom" id="xLy-dn-sb2"/>
                             <constraint firstItem="KIF-Yw-Mjx" firstAttribute="leading" secondItem="iJh-AQ-zQv" secondAttribute="leading" id="ylZ-4D-E49"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="rar-vn-1UL"/>
                     </view>
                     <connections>
                         <outlet property="bannerImageView" destination="S1N-TR-5NP" id="hKz-sS-1RW"/>
@@ -244,6 +248,10 @@
         <scene sceneID="1S2-Hg-pxG">
             <objects>
                 <viewController id="OM2-0e-Tyo" customClass="LoginViewController" customModule="mNet" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="67L-p5-Lzf"/>
+                        <viewControllerLayoutGuide type="bottom" id="tFQ-hh-1ux"/>
+                    </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="Z5M-RV-jZv">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -425,12 +433,11 @@ Analyse your own data with customized reports. Correlate parameters to reach con
                         </subviews>
                         <color key="backgroundColor" red="0.84705882352941175" green="0.84705882352941175" blue="0.84705882352941175" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="Riz-YZ-c81" firstAttribute="trailing" secondItem="ZpG-Y4-Epn" secondAttribute="trailing" id="8SK-t7-eNb"/>
-                            <constraint firstItem="ZpG-Y4-Epn" firstAttribute="top" secondItem="Riz-YZ-c81" secondAttribute="top" id="IDa-n8-Mqj"/>
-                            <constraint firstItem="ZpG-Y4-Epn" firstAttribute="leading" secondItem="Riz-YZ-c81" secondAttribute="leading" id="iur-9m-kMB"/>
-                            <constraint firstItem="Riz-YZ-c81" firstAttribute="bottom" secondItem="ZpG-Y4-Epn" secondAttribute="bottom" id="mvA-cC-be5"/>
+                            <constraint firstAttribute="trailing" secondItem="ZpG-Y4-Epn" secondAttribute="trailing" id="8SK-t7-eNb"/>
+                            <constraint firstItem="ZpG-Y4-Epn" firstAttribute="top" secondItem="67L-p5-Lzf" secondAttribute="bottom" id="IDa-n8-Mqj"/>
+                            <constraint firstItem="ZpG-Y4-Epn" firstAttribute="leading" secondItem="Z5M-RV-jZv" secondAttribute="leading" id="iur-9m-kMB"/>
+                            <constraint firstItem="tFQ-hh-1ux" firstAttribute="top" secondItem="ZpG-Y4-Epn" secondAttribute="bottom" id="mvA-cC-be5"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="Riz-YZ-c81"/>
                     </view>
                     <connections>
                         <outlet property="captchaView" destination="K5R-aY-fbv" id="pI2-Pi-kP2"/>
@@ -452,6 +459,10 @@ Analyse your own data with customized reports. Correlate parameters to reach con
         <scene sceneID="y9n-14-6QE">
             <objects>
                 <viewController id="wZP-9G-v6h" userLabel="Notification View Controller" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="IIE-ws-ReA"/>
+                        <viewControllerLayoutGuide type="bottom" id="Iot-yA-eq7"/>
+                    </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="hq3-bJ-08s">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -521,12 +532,11 @@ Analyse your own data with customized reports. Correlate parameters to reach con
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="2mB-e9-8qv" firstAttribute="leading" secondItem="pg6-Kh-l9O" secondAttribute="leading" id="8IM-il-8mH"/>
-                            <constraint firstItem="pg6-Kh-l9O" firstAttribute="bottom" secondItem="2mB-e9-8qv" secondAttribute="bottom" id="ZQi-Ax-4HY"/>
-                            <constraint firstItem="2mB-e9-8qv" firstAttribute="top" secondItem="pg6-Kh-l9O" secondAttribute="top" id="qK7-Kr-EWP"/>
-                            <constraint firstItem="pg6-Kh-l9O" firstAttribute="trailing" secondItem="2mB-e9-8qv" secondAttribute="trailing" id="vbA-IW-nVc"/>
+                            <constraint firstItem="2mB-e9-8qv" firstAttribute="leading" secondItem="hq3-bJ-08s" secondAttribute="leading" id="8IM-il-8mH"/>
+                            <constraint firstItem="Iot-yA-eq7" firstAttribute="top" secondItem="2mB-e9-8qv" secondAttribute="bottom" id="ZQi-Ax-4HY"/>
+                            <constraint firstItem="2mB-e9-8qv" firstAttribute="top" secondItem="IIE-ws-ReA" secondAttribute="bottom" id="qK7-Kr-EWP"/>
+                            <constraint firstAttribute="trailing" secondItem="2mB-e9-8qv" secondAttribute="trailing" id="vbA-IW-nVc"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="pg6-Kh-l9O"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4XM-5e-ee9" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -537,6 +547,10 @@ Analyse your own data with customized reports. Correlate parameters to reach con
         <scene sceneID="F4t-eS-4sO">
             <objects>
                 <viewController id="kym-IU-75f" customClass="NewConversationViewController" customModule="mNet" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="0Tb-R5-9Dy"/>
+                        <viewControllerLayoutGuide type="bottom" id="htH-BQ-iBE"/>
+                    </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="9ZF-tK-k8A">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -810,19 +824,18 @@ Analyse your own data with customized reports. Correlate parameters to reach con
                         </subviews>
                         <color key="backgroundColor" red="0.98039215686274506" green="0.98431372549019602" blue="0.9882352941176471" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="vwB-Ir-5BP" firstAttribute="trailing" secondItem="1Lg-qe-ugc" secondAttribute="trailing" id="0e8-IP-zcb"/>
-                            <constraint firstItem="vwB-Ir-5BP" firstAttribute="bottom" secondItem="1Lg-qe-ugc" secondAttribute="bottom" id="5sN-jW-dD9"/>
-                            <constraint firstItem="vwB-Ir-5BP" firstAttribute="trailing" secondItem="gHT-65-9v3" secondAttribute="trailing" id="Dfi-2r-Nv2"/>
-                            <constraint firstItem="vwB-Ir-5BP" firstAttribute="bottom" secondItem="gHT-65-9v3" secondAttribute="bottom" id="Fh5-0i-gC6"/>
-                            <constraint firstItem="gHT-65-9v3" firstAttribute="leading" secondItem="vwB-Ir-5BP" secondAttribute="leading" id="HZK-Co-SYj"/>
+                            <constraint firstAttribute="trailing" secondItem="1Lg-qe-ugc" secondAttribute="trailing" id="0e8-IP-zcb"/>
+                            <constraint firstItem="htH-BQ-iBE" firstAttribute="top" secondItem="1Lg-qe-ugc" secondAttribute="bottom" id="5sN-jW-dD9"/>
+                            <constraint firstAttribute="trailing" secondItem="gHT-65-9v3" secondAttribute="trailing" id="Dfi-2r-Nv2"/>
+                            <constraint firstItem="htH-BQ-iBE" firstAttribute="top" secondItem="gHT-65-9v3" secondAttribute="bottom" id="Fh5-0i-gC6"/>
+                            <constraint firstItem="gHT-65-9v3" firstAttribute="leading" secondItem="9ZF-tK-k8A" secondAttribute="leading" id="HZK-Co-SYj"/>
                             <constraint firstItem="Mxt-Hl-rMS" firstAttribute="trailing" secondItem="gHT-65-9v3" secondAttribute="trailing" id="MTJ-xw-iIa"/>
                             <constraint firstItem="Mxt-Hl-rMS" firstAttribute="leading" secondItem="gHT-65-9v3" secondAttribute="leading" id="MuS-mw-BV1"/>
                             <constraint firstItem="Mxt-Hl-rMS" firstAttribute="bottom" secondItem="gHT-65-9v3" secondAttribute="bottom" id="qxD-Qr-eCs"/>
-                            <constraint firstItem="1Lg-qe-ugc" firstAttribute="leading" secondItem="vwB-Ir-5BP" secondAttribute="leading" id="tf1-LT-gnL"/>
-                            <constraint firstItem="1Lg-qe-ugc" firstAttribute="top" secondItem="vwB-Ir-5BP" secondAttribute="top" id="wQ3-GU-nrF"/>
+                            <constraint firstItem="1Lg-qe-ugc" firstAttribute="leading" secondItem="9ZF-tK-k8A" secondAttribute="leading" id="tf1-LT-gnL"/>
+                            <constraint firstItem="1Lg-qe-ugc" firstAttribute="top" secondItem="0Tb-R5-9Dy" secondAttribute="bottom" id="wQ3-GU-nrF"/>
                             <constraint firstItem="Mxt-Hl-rMS" firstAttribute="top" secondItem="gHT-65-9v3" secondAttribute="top" id="z6F-vB-edZ"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="vwB-Ir-5BP"/>
                     </view>
                     <navigationItem key="navigationItem" title="New Conversation" id="fF5-Hf-bEf">
                         <barButtonItem key="leftBarButtonItem" title=" X " id="byj-ZE-Pfp">
@@ -872,6 +885,10 @@ Analyse your own data with customized reports. Correlate parameters to reach con
         <scene sceneID="gQY-ea-S0Q">
             <objects>
                 <viewController id="aCR-hy-R2J" customClass="ConversationInfoViewController" customModule="mNet" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="s27-wt-Hx0"/>
+                        <viewControllerLayoutGuide type="bottom" id="kCn-Rk-P8Q"/>
+                    </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="NrG-9X-3zv">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1404,21 +1421,20 @@ Analyse your own data with customized reports. Correlate parameters to reach con
                         <color key="backgroundColor" red="0.98039215686274506" green="0.98431372549019602" blue="0.9882352941176471" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="vYp-h3-imR" firstAttribute="centerY" secondItem="HBB-M5-ImA" secondAttribute="centerY" id="2Qp-IK-Nhg"/>
-                            <constraint firstItem="nYm-cy-Bhx" firstAttribute="trailing" secondItem="rLJ-hv-ANX" secondAttribute="trailing" constant="31" id="Aik-GJ-Z7c"/>
-                            <constraint firstItem="nYm-cy-Bhx" firstAttribute="bottom" secondItem="kee-iy-cV3" secondAttribute="bottom" id="BCM-In-0DO"/>
+                            <constraint firstAttribute="trailing" secondItem="rLJ-hv-ANX" secondAttribute="trailing" constant="31" id="Aik-GJ-Z7c"/>
+                            <constraint firstItem="kCn-Rk-P8Q" firstAttribute="top" secondItem="kee-iy-cV3" secondAttribute="bottom" id="BCM-In-0DO"/>
                             <constraint firstItem="HlG-X9-bkc" firstAttribute="leading" secondItem="vYp-h3-imR" secondAttribute="trailing" constant="4" id="Drr-bV-CEK"/>
                             <constraint firstItem="kee-iy-cV3" firstAttribute="leading" secondItem="PcV-nP-Nfi" secondAttribute="leading" id="Lqu-zl-5Gv"/>
-                            <constraint firstItem="nYm-cy-Bhx" firstAttribute="trailing" secondItem="kee-iy-cV3" secondAttribute="trailing" id="MOX-pr-Lly"/>
+                            <constraint firstAttribute="trailing" secondItem="kee-iy-cV3" secondAttribute="trailing" id="MOX-pr-Lly"/>
                             <constraint firstItem="HlG-X9-bkc" firstAttribute="centerY" secondItem="HBB-M5-ImA" secondAttribute="centerY" id="Mnb-Lt-v4u"/>
                             <constraint firstItem="rLJ-hv-ANX" firstAttribute="centerY" secondItem="HlG-X9-bkc" secondAttribute="centerY" id="O5D-LF-yKy"/>
                             <constraint firstItem="PcV-nP-Nfi" firstAttribute="top" secondItem="HBB-M5-ImA" secondAttribute="bottom" constant="35" id="SGF-ab-gZy"/>
                             <constraint firstItem="vYp-h3-imR" firstAttribute="leading" secondItem="HBB-M5-ImA" secondAttribute="trailing" constant="2" id="ZsA-Mf-vPI"/>
                             <constraint firstItem="PcV-nP-Nfi" firstAttribute="leading" secondItem="HBB-M5-ImA" secondAttribute="leading" id="bNM-aD-rb7"/>
-                            <constraint firstItem="HBB-M5-ImA" firstAttribute="top" secondItem="nYm-cy-Bhx" secondAttribute="top" constant="24" id="dX9-gV-rcu"/>
+                            <constraint firstItem="HBB-M5-ImA" firstAttribute="top" secondItem="s27-wt-Hx0" secondAttribute="bottom" constant="24" id="dX9-gV-rcu"/>
                             <constraint firstItem="kee-iy-cV3" firstAttribute="top" secondItem="PcV-nP-Nfi" secondAttribute="bottom" constant="15" id="gEe-J6-uMF"/>
-                            <constraint firstItem="HBB-M5-ImA" firstAttribute="leading" secondItem="nYm-cy-Bhx" secondAttribute="leading" constant="27" id="xkR-2V-TXW"/>
+                            <constraint firstItem="HBB-M5-ImA" firstAttribute="leading" secondItem="NrG-9X-3zv" secondAttribute="leading" constant="27" id="xkR-2V-TXW"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="nYm-cy-Bhx"/>
                     </view>
                     <navigationItem key="navigationItem" title="Conversation Info" id="SQi-zq-UNS">
                         <barButtonItem key="leftBarButtonItem" title="Item" image="backButtonImage" id="Xlz-hG-RMf">
@@ -1572,14 +1588,13 @@ Analyse your own data with customized reports. Correlate parameters to reach con
                         <constraints>
                             <constraint firstItem="2qv-W7-wUq" firstAttribute="width" secondItem="Kwb-52-Qd5" secondAttribute="width" id="8t8-dF-1Pz"/>
                             <constraint firstItem="I5M-OC-TFO" firstAttribute="top" secondItem="odA-bI-S6V" secondAttribute="bottom" constant="14" id="DJV-4f-sUw"/>
-                            <constraint firstItem="I5M-OC-TFO" firstAttribute="leading" secondItem="DFn-ql-F11" secondAttribute="leading" constant="28" id="EIk-6e-phh"/>
+                            <constraint firstItem="I5M-OC-TFO" firstAttribute="leading" secondItem="Kwb-52-Qd5" secondAttribute="leading" constant="28" id="EIk-6e-phh"/>
                             <constraint firstItem="2qv-W7-wUq" firstAttribute="centerX" secondItem="Kwb-52-Qd5" secondAttribute="centerX" id="PxS-nS-yeT"/>
                             <constraint firstItem="2qv-W7-wUq" firstAttribute="top" secondItem="I5M-OC-TFO" secondAttribute="bottom" constant="24" id="R2e-a8-rXV"/>
                             <constraint firstItem="51l-1h-7kf" firstAttribute="top" secondItem="8jU-AG-0xF" secondAttribute="bottom" id="dQn-nr-730"/>
                             <constraint firstItem="51l-1h-7kf" firstAttribute="top" secondItem="2qv-W7-wUq" secondAttribute="bottom" id="ss8-EY-yVm"/>
-                            <constraint firstItem="DFn-ql-F11" firstAttribute="trailing" secondItem="8jU-AG-0xF" secondAttribute="trailing" id="tcI-XJ-Tif"/>
+                            <constraint firstAttribute="trailing" secondItem="8jU-AG-0xF" secondAttribute="trailing" id="tcI-XJ-Tif"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="DFn-ql-F11"/>
                     </view>
                     <navigationItem key="navigationItem" title="Conversations" id="G7Q-JU-Dfc">
                         <barButtonItem key="leftBarButtonItem" image="conversationIcon" id="pjF-HY-KV8">
@@ -1612,6 +1627,10 @@ Analyse your own data with customized reports. Correlate parameters to reach con
         <scene sceneID="Pvg-op-NcG">
             <objects>
                 <viewController id="oCX-I9-o69" customClass="ApprovalsViewController" customModule="mNet" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="fJB-BH-NLh"/>
+                        <viewControllerLayoutGuide type="bottom" id="bfx-6B-RIM"/>
+                    </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="fsa-xa-U5o">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1929,16 +1948,15 @@ Analyse your own data with customized reports. Correlate parameters to reach con
                         <color key="backgroundColor" red="0.98039215686274506" green="0.98431372549019602" blue="0.9882352941176471" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="60F-Ai-laq" firstAttribute="top" secondItem="KiV-lW-lWP" secondAttribute="bottom" constant="27" id="0MX-N7-q45"/>
-                            <constraint firstItem="KiV-lW-lWP" firstAttribute="top" secondItem="L8I-Qw-D77" secondAttribute="top" id="JGF-Dz-Ggt"/>
+                            <constraint firstItem="KiV-lW-lWP" firstAttribute="top" secondItem="fJB-BH-NLh" secondAttribute="bottom" id="JGF-Dz-Ggt"/>
                             <constraint firstItem="TYZ-kc-Ecp" firstAttribute="top" secondItem="60F-Ai-laq" secondAttribute="bottom" constant="9" id="Jqm-oH-6iK"/>
-                            <constraint firstItem="L8I-Qw-D77" firstAttribute="trailing" secondItem="KiV-lW-lWP" secondAttribute="trailing" id="Nyy-G0-Pgn"/>
-                            <constraint firstItem="60F-Ai-laq" firstAttribute="leading" secondItem="L8I-Qw-D77" secondAttribute="leading" constant="27" id="PDt-14-ryL"/>
-                            <constraint firstItem="TYZ-kc-Ecp" firstAttribute="leading" secondItem="L8I-Qw-D77" secondAttribute="leading" id="Vd2-om-M7L"/>
-                            <constraint firstItem="TYZ-kc-Ecp" firstAttribute="trailing" secondItem="L8I-Qw-D77" secondAttribute="trailing" id="XGI-T8-Ffz"/>
-                            <constraint firstItem="L8I-Qw-D77" firstAttribute="bottom" secondItem="TYZ-kc-Ecp" secondAttribute="bottom" id="gHY-je-6T5"/>
-                            <constraint firstItem="KiV-lW-lWP" firstAttribute="leading" secondItem="L8I-Qw-D77" secondAttribute="leading" id="gcA-g4-cNo"/>
+                            <constraint firstAttribute="trailing" secondItem="KiV-lW-lWP" secondAttribute="trailing" id="Nyy-G0-Pgn"/>
+                            <constraint firstItem="60F-Ai-laq" firstAttribute="leading" secondItem="fsa-xa-U5o" secondAttribute="leading" constant="27" id="PDt-14-ryL"/>
+                            <constraint firstItem="TYZ-kc-Ecp" firstAttribute="leading" secondItem="fsa-xa-U5o" secondAttribute="leading" id="Vd2-om-M7L"/>
+                            <constraint firstItem="TYZ-kc-Ecp" firstAttribute="trailing" secondItem="fsa-xa-U5o" secondAttribute="trailing" id="XGI-T8-Ffz"/>
+                            <constraint firstItem="bfx-6B-RIM" firstAttribute="top" secondItem="TYZ-kc-Ecp" secondAttribute="bottom" id="gHY-je-6T5"/>
+                            <constraint firstItem="KiV-lW-lWP" firstAttribute="leading" secondItem="fsa-xa-U5o" secondAttribute="leading" id="gcA-g4-cNo"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="L8I-Qw-D77"/>
                     </view>
                     <navigationItem key="navigationItem" title="Approvals" id="7KF-Gb-bUv"/>
                     <connections>
@@ -1956,6 +1974,10 @@ Analyse your own data with customized reports. Correlate parameters to reach con
         <scene sceneID="a48-A4-ueU">
             <objects>
                 <viewController id="8v9-IX-hRg" userLabel="Select User" customClass="SelectUserViewController" customModule="mNet" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="UFn-hA-PZh"/>
+                        <viewControllerLayoutGuide type="bottom" id="ArD-Dt-Zds"/>
+                    </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="zGf-5M-ors">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -2561,11 +2583,11 @@ Analyse your own data with customized reports. Correlate parameters to reach con
                             <constraint firstItem="b4m-h3-FQp" firstAttribute="leading" secondItem="yAY-tM-eEU" secondAttribute="leading" id="4Lf-pK-V4Z"/>
                             <constraint firstItem="hT5-2b-Q90" firstAttribute="width" secondItem="hT5-2b-Q90" secondAttribute="height" multiplier="1:1" id="7ea-xL-1tW"/>
                             <constraint firstItem="vFt-hH-jEi" firstAttribute="leading" secondItem="hvs-sr-Da6" secondAttribute="leading" id="8JW-xM-fHd"/>
-                            <constraint firstItem="yAY-tM-eEU" firstAttribute="leading" secondItem="Nxg-sM-tPw" secondAttribute="leading" id="8fC-Ac-64W"/>
-                            <constraint firstItem="wzb-Xl-cM4" firstAttribute="top" secondItem="Nxg-sM-tPw" secondAttribute="top" constant="28" id="8ol-9p-nPa"/>
-                            <constraint firstItem="wzb-Xl-cM4" firstAttribute="leading" secondItem="Nxg-sM-tPw" secondAttribute="leading" constant="27" id="Abt-qf-VGM"/>
+                            <constraint firstItem="yAY-tM-eEU" firstAttribute="leading" secondItem="zGf-5M-ors" secondAttribute="leading" id="8fC-Ac-64W"/>
+                            <constraint firstItem="wzb-Xl-cM4" firstAttribute="top" secondItem="UFn-hA-PZh" secondAttribute="bottom" constant="28" id="8ol-9p-nPa"/>
+                            <constraint firstItem="wzb-Xl-cM4" firstAttribute="leading" secondItem="zGf-5M-ors" secondAttribute="leading" constant="27" id="Abt-qf-VGM"/>
                             <constraint firstItem="hvs-sr-Da6" firstAttribute="top" secondItem="wzb-Xl-cM4" secondAttribute="bottom" constant="15" id="BJN-TB-3nx"/>
-                            <constraint firstItem="Nxg-sM-tPw" firstAttribute="trailing" secondItem="vFt-hH-jEi" secondAttribute="trailing" id="Cck-Yh-RUx"/>
+                            <constraint firstAttribute="trailing" secondItem="vFt-hH-jEi" secondAttribute="trailing" id="Cck-Yh-RUx"/>
                             <constraint firstItem="0sp-5G-wOK" firstAttribute="top" secondItem="hvs-sr-Da6" secondAttribute="top" constant="-6" id="JMo-Kl-Rxy"/>
                             <constraint firstItem="hT5-2b-Q90" firstAttribute="leading" secondItem="hvs-sr-Da6" secondAttribute="trailing" constant="6" id="Jsj-fZ-vv0"/>
                             <constraint firstItem="DYM-tT-ehp" firstAttribute="width" secondItem="DYM-tT-ehp" secondAttribute="height" multiplier="1:1" id="L8q-qb-Q61"/>
@@ -2588,7 +2610,6 @@ Analyse your own data with customized reports. Correlate parameters to reach con
                             <constraint firstItem="hvs-sr-Da6" firstAttribute="leading" secondItem="wzb-Xl-cM4" secondAttribute="leading" id="zLz-gj-irB"/>
                             <constraint firstItem="b4m-h3-FQp" firstAttribute="bottom" secondItem="yAY-tM-eEU" secondAttribute="bottom" id="zhe-p9-2ms"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="Nxg-sM-tPw"/>
                     </view>
                     <navigationItem key="navigationItem" title="Select User" id="uga-Cc-7OH">
                         <barButtonItem key="leftBarButtonItem" image="backButtonImage" id="nzb-k4-GRr">
