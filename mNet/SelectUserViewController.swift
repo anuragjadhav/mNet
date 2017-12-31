@@ -28,24 +28,25 @@ class SelectUserViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
-        setUpViewController()
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        self.setUpNavigationController()
     }
     
     //MARK: Setup
-    func setUpViewController() {
+    func setUpNavigationController() {
         
-        
+        self.navigationController?.navigationBar.isHidden = false
     }
     
     //MARK: Button Actions
     
     @IBAction func backButtonAction(_ sender: UIBarButtonItem) {
+        
+        self.navigationController?.popViewController(animated: true)
     }
     
     
@@ -53,5 +54,6 @@ class SelectUserViewController: BaseViewController {
     }
     
     @IBAction func selectUsersButtonAction(_ sender: UIButton) {
+        
     }
 }

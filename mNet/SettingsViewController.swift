@@ -9,6 +9,8 @@
 import UIKit
 
 class SettingsViewController: BaseViewController,UITableViewDelegate,UITableViewDataSource {
+    
+    @IBOutlet weak var profileBackgroundView: UIView!
 
     let dataCtrl = SettingsDataController()
     
@@ -16,6 +18,7 @@ class SettingsViewController: BaseViewController,UITableViewDelegate,UITableView
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        profileBackgroundView.addGestureRecognizer(UITapGestureRecognizer.init(target: self, action: #selector(profileBackgroundViewClicked(gesture:))))
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -96,6 +99,15 @@ class SettingsViewController: BaseViewController,UITableViewDelegate,UITableView
         default: break
             
         }
+    }
+    
+    
+    //MARK: Gesture recognizer methods
+    
+    func profileBackgroundViewClicked(gesture:UITapGestureRecognizer){
+        
+        let profileVC = (UIStoryboard.init(name:"Profile", bundle: Bundle.main)).instantiateViewController(withIdentifier: "ProfileViewController")
+        self.navigationController?.pushViewController(profileVC, animated: true)
     }
     
     //Mark: Button Actions

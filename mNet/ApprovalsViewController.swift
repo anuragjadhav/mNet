@@ -23,18 +23,17 @@ class ApprovalsViewController: BaseViewController,UICollectionViewDelegate, UICo
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        setUpViewController()
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated);
+        
+        self.setupNavigationBar()
     }
     
-    //MARK: Setup
-    func setUpViewController() {
+    func setupNavigationBar(){
         
-        
+        self.navigationController?.navigationBar.isHidden = false
     }
 
     //MARK: Collection View Methods
@@ -61,4 +60,28 @@ class ApprovalsViewController: BaseViewController,UICollectionViewDelegate, UICo
         return cell
     }
     
+    //MARK: Button Actions
+
+    @IBAction func backButtonAction(_ sender: Any) {
+        
+        self.navigationController?.popViewController(animated: true)
+    }
+    
+    @IBAction func approveButtonAction(_ sender: Any) {
+        
+        let documentVc = (UIStoryboard.init(name:"ApproveReject", bundle: Bundle.main)).instantiateViewController(withIdentifier: "ApprovalVerificationViewController")
+        self.navigationController?.pushViewController(documentVc, animated: true)
+    }
+
+    @IBAction func rejectButtonAction(_ sender: Any) {
+        
+        let rejectApprovalVc = (UIStoryboard.init(name:"ApproveReject", bundle: Bundle.main)).instantiateViewController(withIdentifier: "RejectApplicationViewController")
+        self.navigationController?.pushViewController(rejectApprovalVc, animated: true)
+    }
+    
+    @IBAction func attachmentButtonAction(_ sender: Any) {
+        
+        let documentVc = (UIStoryboard.init(name:"ApproveReject", bundle: Bundle.main)).instantiateViewController(withIdentifier: "DocumentViewController")
+        self.navigationController?.pushViewController(documentVc, animated: true)
+    }
 }

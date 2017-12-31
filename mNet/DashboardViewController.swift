@@ -31,17 +31,20 @@ class DashboardViewController: BaseViewController, UITableViewDataSource, UITabl
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        setUpViewController()
+        
+        myAppsTableView.tableFooterView = UIView()
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        self.setUpNavigationController()
     }
 
     //MARK:Setup
-    func setUpViewController()  {
+    func setUpNavigationController()  {
         
+        self.navigationController?.navigationBar.isHidden = true
     }
     
     //MARK: Table View Methods
@@ -56,12 +59,11 @@ class DashboardViewController: BaseViewController, UITableViewDataSource, UITabl
         cell.setUpCell()
         return cell
     }
-
+    
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
-        tableView.deselectRow(at: indexPath, animated: true)
+        let approvalsVC = (UIStoryboard.init(name:"ApproveReject", bundle: Bundle.main)).instantiateViewController(withIdentifier: "ApprovalsViewController")
+        self.navigationController?.pushViewController(approvalsVC, animated: true)
     }
-    
-    
     
 }

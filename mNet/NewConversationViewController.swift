@@ -48,42 +48,56 @@ class NewConversationViewController: BaseViewController {
     
     //MARK: View Controller Delegates
     override func viewDidLoad() {
+        
         super.viewDidLoad()
         
-        // Do any additional setup after loading the view.
-        setUpViewController()
     }
     
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        self.setUpNavigationController()
     }
     
     //MARK: Setup
-    func setUpViewController() {
+    func setUpNavigationController() {
         
-        
+        self.navigationController?.navigationBar.isHidden = false
     }
     
 
     //MARK: Button Actions
     
     @IBAction func toButtonAction(_ sender: UIButton) {
+        
+        let selectUserVC = (UIStoryboard.init(name:"Conversation", bundle: Bundle.main)).instantiateViewController(withIdentifier: "SelectUserViewController")
+        self.navigationController?.pushViewController(selectUserVC, animated: true)
     }
     
     @IBAction func bccButtonAction(_ sender: UIButton) {
+        
+        let selectUserVC = (UIStoryboard.init(name:"Conversation", bundle: Bundle.main)).instantiateViewController(withIdentifier: "SelectUserViewController")
+        self.navigationController?.pushViewController(selectUserVC, animated: true)
     }
     
     @IBAction func approvalButtonAction(_ sender: UIButton) {
+        
+        let selectUserVC = (UIStoryboard.init(name:"Conversation", bundle: Bundle.main)).instantiateViewController(withIdentifier: "SelectUserViewController")
+        self.navigationController?.pushViewController(selectUserVC, animated: true)
     }
     
     @IBAction func verificationButtonAction(_ sender: UIButton) {
+        
+        let selectUserVC = (UIStoryboard.init(name:"Conversation", bundle: Bundle.main)).instantiateViewController(withIdentifier: "SelectUserViewController")
+        self.navigationController?.pushViewController(selectUserVC, animated: true)
     }
     
     @IBAction func tickButtonAction(_ sender: UIBarButtonItem) {
     }
     
     @IBAction func crossButtonAction(_ sender: UIBarButtonItem) {
+        
+        self.navigationController?.popViewController(animated: true)
     }
     
     

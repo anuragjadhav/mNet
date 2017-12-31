@@ -27,20 +27,21 @@ class ConversationsListViewController: BaseViewController, UITableViewDelegate, 
     //MARK: View Controller Delegates
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        conversationListTableView.contentInset = UIEdgeInsets(top: -searchBar.frame.height, left: 0, bottom: 100, right: 0)
 
-        // Do any additional setup after loading the view.
-        setUpViewController()
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        self.setUpNavigationController()
     }
     
     //MARK: Setup
-    func setUpViewController() {
+    func setUpNavigationController() {
         
-        conversationListTableView.contentInset = UIEdgeInsets(top: -searchBar.frame.height, left: 0, bottom: 100, right: 0)
+        self.navigationController?.navigationBar.isHidden = false
     }
     
     
@@ -59,7 +60,8 @@ class ConversationsListViewController: BaseViewController, UITableViewDelegate, 
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
-        tableView.deselectRow(at: indexPath, animated: true)
+        let conversationInfoVC = (UIStoryboard.init(name:"Conversation", bundle: Bundle.main)).instantiateViewController(withIdentifier: "ConversationInfoViewController")
+        self.navigationController?.pushViewController(conversationInfoVC, animated: true)
     }
     
     //MARK: Button Actions
@@ -73,6 +75,8 @@ class ConversationsListViewController: BaseViewController, UITableViewDelegate, 
     
     @IBAction func newConversationButtonAction(_ sender: UIButton) {
         
+        let newConversationVC = (UIStoryboard.init(name:"Conversation", bundle: Bundle.main)).instantiateViewController(withIdentifier: "NewConversationViewController")
+        self.navigationController?.pushViewController(newConversationVC, animated: true)
     }
     
 }

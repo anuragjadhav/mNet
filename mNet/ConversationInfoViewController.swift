@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ConversationInfoViewController: BaseViewController {
+class ConversationInfoViewController: BaseViewController,UITableViewDelegate,UITableViewDataSource {
 
     //MARK: Outlets and Properties
     @IBOutlet weak var user1Label: CustomBrownTextColorLabel!
@@ -28,17 +28,41 @@ class ConversationInfoViewController: BaseViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        setUpViewController()
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        self.setUpNavigationController()
     }
     
     //MARK: Setup
-    func setUpViewController()  {
+    func setUpNavigationController() {
         
+        self.navigationController?.navigationBar.isHidden = false
+    }
+    
+    
+    //MARK: Table View Methods
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
+        return 5;
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        let cell:MembersTableViewCell = tableView.dequeueReusableCell(withIdentifier:"MembersTableViewCell") as! MembersTableViewCell
+        return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+    }
+    
+    //MARK: Button Actions
+ 
+    @IBAction func backButtonAction(_ sender: Any) {
+        
+        self.navigationController?.popViewController(animated: true)
     }
 }

@@ -10,10 +10,13 @@ import UIKit
 
 class AttachmentsViewController: UIViewController ,UITableViewDataSource,UITableViewDelegate{
 
+    @IBOutlet weak var attachmentsTableView: UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        
+        attachmentsTableView.tableFooterView = UIView()
     }
 
 

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="dIh-qy-eeo">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="QCm-fJ-5PU">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -9,6 +9,9 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
+        <array key="HelveticaNeue.ttc">
+            <string>HelveticaNeue-Bold</string>
+        </array>
         <array key="SanFranciscoDisplay-Bold.otf">
             <string>SanFranciscoDisplay-Bold</string>
         </array>
@@ -32,6 +35,10 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="y5z-w0-4Wt">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="250"/>
                                 <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2AJ-g3-Nko">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="250"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    </view>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="defaultProfileImage" translatesAutoresizingMaskIntoConstraints="NO" id="oYU-Kn-a2d">
                                         <rect key="frame" x="28" y="27" width="60" height="60"/>
                                         <constraints>
@@ -96,11 +103,15 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstItem="wd0-5K-2SV" firstAttribute="leading" secondItem="oYU-Kn-a2d" secondAttribute="leading" id="4np-KP-Dnh"/>
+                                    <constraint firstAttribute="bottom" secondItem="2AJ-g3-Nko" secondAttribute="bottom" id="715-cb-PyX"/>
+                                    <constraint firstItem="2AJ-g3-Nko" firstAttribute="leading" secondItem="y5z-w0-4Wt" secondAttribute="leading" id="8aG-hM-bdx"/>
                                     <constraint firstItem="yL6-Og-mVa" firstAttribute="centerY" secondItem="wd0-5K-2SV" secondAttribute="centerY" id="AbP-cR-hIS"/>
                                     <constraint firstItem="S2c-R4-V3x" firstAttribute="leading" secondItem="oYU-Kn-a2d" secondAttribute="leading" id="FzE-zv-Fdn"/>
                                     <constraint firstItem="S2c-R4-V3x" firstAttribute="top" secondItem="wd0-5K-2SV" secondAttribute="bottom" constant="10" id="Gva-kU-Hga"/>
                                     <constraint firstItem="jTv-wM-oHG" firstAttribute="leading" secondItem="oYU-Kn-a2d" secondAttribute="leading" id="HUM-YD-HWw"/>
+                                    <constraint firstItem="2AJ-g3-Nko" firstAttribute="top" secondItem="y5z-w0-4Wt" secondAttribute="top" id="HlE-dH-DzY"/>
                                     <constraint firstItem="VOu-9j-aMw" firstAttribute="leading" secondItem="qxK-H7-jIR" secondAttribute="trailing" constant="20" id="JhL-bH-Esx"/>
+                                    <constraint firstAttribute="trailing" secondItem="2AJ-g3-Nko" secondAttribute="trailing" id="O8l-A4-1NW"/>
                                     <constraint firstItem="4JD-5g-alu" firstAttribute="centerY" secondItem="wd0-5K-2SV" secondAttribute="centerY" id="Q6l-Mn-wlr"/>
                                     <constraint firstItem="qxK-H7-jIR" firstAttribute="leading" secondItem="S2c-R4-V3x" secondAttribute="trailing" constant="20" id="Rsg-Rz-OAV"/>
                                     <constraint firstItem="wd0-5K-2SV" firstAttribute="top" secondItem="jTv-wM-oHG" secondAttribute="bottom" constant="23" id="UBS-Ax-KC2"/>
@@ -176,6 +187,9 @@
                     </view>
                     <navigationItem key="navigationItem" id="Dol-k0-tBv"/>
                     <nil key="simulatedTopBarMetrics"/>
+                    <connections>
+                        <outlet property="profileBackgroundView" destination="2AJ-g3-Nko" id="546-oT-HeB"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8Cy-AP-WVH" sceneMemberID="firstResponder"/>
             </objects>
@@ -334,7 +348,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="53j-AR-RLw">
-                                        <rect key="frame" x="300" y="47" width="51" height="31"/>
+                                        <rect key="frame" x="300" y="46.5" width="51" height="31"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="49" id="9Bn-D6-knE"/>
                                             <constraint firstAttribute="height" constant="31" id="vso-ff-sAj"/>
@@ -372,7 +386,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="XXn-4Q-o4L">
-                                        <rect key="frame" x="300" y="190" width="51" height="31"/>
+                                        <rect key="frame" x="300" y="189.5" width="51" height="31"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="49" id="Hno-dk-OQU"/>
                                             <constraint firstAttribute="height" constant="31" id="V7X-Vo-zVY"/>
@@ -613,13 +627,13 @@
                                                 </constraints>
                                             </imageView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Birthday" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="50m-Km-EFj" customClass="CustomBrownTextColorLabel" customModule="mNet" customModuleProvider="target">
-                                                <rect key="frame" x="28" y="207" width="55" height="17"/>
+                                                <rect key="frame" x="28" y="207" width="52.5" height="17"/>
                                                 <fontDescription key="fontDescription" name="SanFranciscoDisplay-Bold" family="San Francisco Display" pointSize="14"/>
                                                 <color key="textColor" red="0.3803921569" green="0.28235294119999998" blue="0.22352941179999999" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Designation" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7Vf-Pl-OZN" customClass="CustomBrownTextColorLabel" customModule="mNet" customModuleProvider="target">
-                                                <rect key="frame" x="28" y="282" width="77" height="17"/>
+                                                <rect key="frame" x="28" y="282" width="74.5" height="17"/>
                                                 <fontDescription key="fontDescription" name="SanFranciscoDisplay-Bold" family="San Francisco Display" pointSize="14"/>
                                                 <color key="textColor" red="0.3803921569" green="0.28235294119999998" blue="0.22352941179999999" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
@@ -661,7 +675,7 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Landline" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="s31-bP-pSo" customClass="CustomBrownTextColorLabel" customModule="mNet" customModuleProvider="target">
-                                                <rect key="frame" x="28" y="466.5" width="54.5" height="17"/>
+                                                <rect key="frame" x="28" y="466.5" width="53" height="17"/>
                                                 <fontDescription key="fontDescription" name="SanFranciscoDisplay-Bold" family="San Francisco Display" pointSize="14"/>
                                                 <color key="textColor" red="0.3803921569" green="0.28235294119999998" blue="0.22352941179999999" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
@@ -679,7 +693,7 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Email" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qyg-fK-TlQ" customClass="CustomBrownTextColorLabel" customModule="mNet" customModuleProvider="target">
-                                                <rect key="frame" x="28" y="691.5" width="35.5" height="17"/>
+                                                <rect key="frame" x="28" y="691.5" width="34.5" height="17"/>
                                                 <fontDescription key="fontDescription" name="SanFranciscoDisplay-Bold" family="San Francisco Display" pointSize="14"/>
                                                 <color key="textColor" red="0.3803921569" green="0.28235294119999998" blue="0.22352941179999999" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
@@ -1027,7 +1041,7 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="v0X-71-0EV">
-                                                <rect key="frame" x="299" y="126.5" width="51" height="31"/>
+                                                <rect key="frame" x="299" y="127" width="51" height="31"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="49" id="DQ3-fa-sRO"/>
                                                     <constraint firstAttribute="height" constant="31" id="Dmy-Rn-4Qk"/>
@@ -1053,7 +1067,7 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Y5I-Gz-wUU">
-                                                <rect key="frame" x="299" y="237.5" width="51" height="31"/>
+                                                <rect key="frame" x="299" y="237" width="51" height="31"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="31" id="Vid-n7-wM4"/>
                                                     <constraint firstAttribute="width" constant="49" id="dh4-Tc-AET"/>
@@ -1197,24 +1211,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="A4n-bj-aEb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2501.5999999999999" y="2439.130434782609"/>
-        </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="xdI-eM-caF">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="dIh-qy-eeo" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="dXu-l2-4Ih">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="QCm-fJ-5PU" kind="relationship" relationship="rootViewController" id="4bA-VJ-JTR"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="gzB-LX-3AI" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="136.80000000000001" y="138.98050974512745"/>
         </scene>
     </scenes>
     <resources>

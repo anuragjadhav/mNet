@@ -26,23 +26,15 @@ class LoginViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
-        setUpViewController()
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
 
-    //MARK: Setup
-    func setUpViewController() {
-        
-    }
-    
     //MARK:Button Actions
     
     @IBAction func signInButtonClicked(_ sender: UIButton) {
+        
+        let tabBarNavigationController = (UIStoryboard.init(name:"TabBar", bundle: Bundle.main)).instantiateViewController(withIdentifier: "TabBarNavigationController")
+        self.present(tabBarNavigationController, animated: true, completion: nil)
     }
     
     

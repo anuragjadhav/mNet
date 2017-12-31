@@ -1,7 +1,240 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11134" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="lrb-xA-0fc">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11106"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
-    <scenes/>
+    <customFonts key="customFonts">
+        <array key="HelveticaNeue.ttc">
+            <string>HelveticaNeue-Bold</string>
+        </array>
+        <array key="SanFranciscoDisplay-Bold.otf">
+            <string>SanFranciscoDisplay-Bold</string>
+        </array>
+        <array key="SanFranciscoDisplay-Light.otf">
+            <string>SanFranciscoDisplay-Light</string>
+        </array>
+    </customFonts>
+    <scenes>
+        <!--Dashboard View Controller-->
+        <scene sceneID="vcr-oA-YaG">
+            <objects>
+                <viewController id="lrb-xA-0fc" customClass="DashboardViewController" customModule="mNet" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="cpO-rz-OH5"/>
+                        <viewControllerLayoutGuide type="bottom" id="dte-GQ-vIq"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Xc9-uK-V8a">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="dashboardBackground" translatesAutoresizingMaskIntoConstraints="NO" id="LO5-Ab-vbT">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="258"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="258" id="WWJ-dH-bbf"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Dashboard" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dka-Gt-J5X">
+                                <rect key="frame" x="27" y="83" width="149" height="36"/>
+                                <fontDescription key="fontDescription" name="SanFranciscoDisplay-Bold" family="San Francisco Display" pointSize="30"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gfB-ab-tfT">
+                                <rect key="frame" x="27" y="163" width="8" height="24"/>
+                                <fontDescription key="fontDescription" name="SanFranciscoDisplay-Light" family="San Francisco Display" pointSize="20"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pending Approvals" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gg2-fU-KFW">
+                                <rect key="frame" x="27" y="196" width="100" height="33.5"/>
+                                <fontDescription key="fontDescription" name="SanFranciscoDisplay-Bold" family="San Francisco Display" pointSize="14"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="q5q-Xy-Pbt" userLabel="Pending Approvals Button">
+                                <rect key="frame" x="27" y="163" width="100" height="66.5"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="3" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="x55-qU-at0">
+                                <rect key="frame" x="147" y="163" width="11" height="24"/>
+                                <fontDescription key="fontDescription" name="SanFranciscoDisplay-Light" family="San Francisco Display" pointSize="20"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pending Verifications" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XYB-iN-OEW">
+                                <rect key="frame" x="147" y="196" width="100" height="33.5"/>
+                                <fontDescription key="fontDescription" name="SanFranciscoDisplay-Bold" family="San Francisco Display" pointSize="14"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dY6-rQ-dpZ" userLabel="Pending Verifications Button">
+                                <rect key="frame" x="147" y="163" width="100" height="66.5"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="12" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="F8l-RN-ukK">
+                                <rect key="frame" x="267" y="163" width="18.5" height="24"/>
+                                <fontDescription key="fontDescription" name="SanFranciscoDisplay-Light" family="San Francisco Display" pointSize="20"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Unread Messages" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fMS-BN-x7b">
+                                <rect key="frame" x="267" y="196" width="100" height="33.5"/>
+                                <fontDescription key="fontDescription" name="SanFranciscoDisplay-Bold" family="San Francisco Display" pointSize="14"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ElN-kT-jmc" userLabel="Unread Messages Button">
+                                <rect key="frame" x="267" y="163" width="100" height="66.5"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="MY APPS" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aY6-xW-7a7" customClass="CustomBlueTextColorLabel" customModule="mNet" customModuleProvider="target">
+                                <rect key="frame" x="27" y="279" width="72.5" height="19.5"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="16"/>
+                                <color key="textColor" red="0.2901960784" green="0.56470588239999997" blue="0.8862745098" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="mUh-uh-gsA">
+                                <rect key="frame" x="27" y="331" width="327" height="336"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="sectionIndexBackgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="DashboardMyAppsTableViewCell" rowHeight="98" id="B92-1R-Cs1" customClass="DashboardMyAppsTableViewCell" customModule="mNet" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="327" height="98"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" tableViewCell="B92-1R-Cs1" id="1n1-pd-lvG">
+                                            <rect key="frame" x="0.0" y="0.0" width="327" height="98"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="newsIcon" translatesAutoresizingMaskIntoConstraints="NO" id="1aE-gd-m96">
+                                                    <rect key="frame" x="0.0" y="0.0" width="72" height="72"/>
+                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" secondItem="1aE-gd-m96" secondAttribute="height" multiplier="1:1" id="E4H-0K-Vd5"/>
+                                                        <constraint firstAttribute="height" constant="72" id="ab6-Yu-0Dd"/>
+                                                    </constraints>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                            <real key="value" value="36"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                    </userDefinedRuntimeAttributes>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Approvals" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dml-Bx-XC8" customClass="CustomBrownTextColorLabel" customModule="mNet" customModuleProvider="target">
+                                                    <rect key="frame" x="99" y="0.0" width="228" height="17"/>
+                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="17" id="CVL-TX-LDF"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" name="SanFranciscoDisplay-Bold" family="San Francisco Display" pointSize="14"/>
+                                                    <color key="textColor" red="0.3803921569" green="0.28235294119999998" blue="0.22352941179999999" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Find all info on ATL Estimates / ATL POs / BTL POs and also some more information" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="m1u-mc-a5D" customClass="CustomBrownTextColorLabel" customModule="mNet" customModuleProvider="target">
+                                                    <rect key="frame" x="99" y="23" width="228" height="50.5"/>
+                                                    <fontDescription key="fontDescription" name="SanFranciscoDisplay-Light" family="San Francisco Display" pointSize="14"/>
+                                                    <color key="textColor" red="0.3803921569" green="0.28235294119999998" blue="0.22352941179999999" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <constraints>
+                                                <constraint firstItem="m1u-mc-a5D" firstAttribute="leading" secondItem="Dml-Bx-XC8" secondAttribute="leading" id="0k5-mY-atH"/>
+                                                <constraint firstAttribute="trailing" secondItem="Dml-Bx-XC8" secondAttribute="trailing" id="6TY-ZS-nSD"/>
+                                                <constraint firstItem="Dml-Bx-XC8" firstAttribute="top" secondItem="1aE-gd-m96" secondAttribute="top" id="6yR-I0-inA"/>
+                                                <constraint firstItem="1aE-gd-m96" firstAttribute="leading" secondItem="1n1-pd-lvG" secondAttribute="leading" id="8MX-OY-3hj"/>
+                                                <constraint firstItem="1aE-gd-m96" firstAttribute="top" secondItem="1n1-pd-lvG" secondAttribute="top" id="VyR-ax-kng"/>
+                                                <constraint firstItem="Dml-Bx-XC8" firstAttribute="leading" secondItem="1aE-gd-m96" secondAttribute="trailing" constant="27" id="aWy-FS-S8c"/>
+                                                <constraint firstAttribute="bottom" secondItem="m1u-mc-a5D" secondAttribute="bottom" constant="24" id="cKY-F2-U3X"/>
+                                                <constraint firstItem="m1u-mc-a5D" firstAttribute="top" secondItem="Dml-Bx-XC8" secondAttribute="bottom" constant="6" id="h4P-TB-xOh"/>
+                                                <constraint firstItem="m1u-mc-a5D" firstAttribute="trailing" secondItem="Dml-Bx-XC8" secondAttribute="trailing" id="lPP-Yl-nd8"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <connections>
+                                            <outlet property="appImageView" destination="1aE-gd-m96" id="IGL-Ib-rNp"/>
+                                            <outlet property="descriptionLabel" destination="m1u-mc-a5D" id="aQd-mL-btc"/>
+                                            <outlet property="titleLabel" destination="Dml-Bx-XC8" id="aTo-ew-VT6"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                        <color key="value" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <outlet property="dataSource" destination="lrb-xA-0fc" id="gdu-w1-32Q"/>
+                                    <outlet property="delegate" destination="lrb-xA-0fc" id="aLJ-Fn-gZN"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.98039215690000003" green="0.98431372549999996" blue="0.98823529409999999" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="mUh-uh-gsA" secondAttribute="trailing" constant="21" id="1Du-90-NlG"/>
+                            <constraint firstItem="ElN-kT-jmc" firstAttribute="bottom" secondItem="fMS-BN-x7b" secondAttribute="bottom" id="2uQ-02-Lca"/>
+                            <constraint firstItem="LO5-Ab-vbT" firstAttribute="trailing" secondItem="Xc9-uK-V8a" secondAttribute="trailing" id="3vr-8b-qIF"/>
+                            <constraint firstItem="q5q-Xy-Pbt" firstAttribute="trailing" secondItem="gg2-fU-KFW" secondAttribute="trailing" id="5d8-xe-gb3"/>
+                            <constraint firstItem="F8l-RN-ukK" firstAttribute="centerY" secondItem="x55-qU-at0" secondAttribute="centerY" id="6c3-vi-SdN"/>
+                            <constraint firstItem="dte-GQ-vIq" firstAttribute="top" secondItem="mUh-uh-gsA" secondAttribute="bottom" id="6zf-VV-eGp"/>
+                            <constraint firstItem="gfB-ab-tfT" firstAttribute="top" secondItem="Dka-Gt-J5X" secondAttribute="bottom" constant="44" id="Bm9-EB-CMG"/>
+                            <constraint firstItem="LO5-Ab-vbT" firstAttribute="top" secondItem="Xc9-uK-V8a" secondAttribute="top" id="F2p-2K-0bY"/>
+                            <constraint firstItem="x55-qU-at0" firstAttribute="centerY" secondItem="gfB-ab-tfT" secondAttribute="centerY" id="GSg-wG-9Yq"/>
+                            <constraint firstItem="mUh-uh-gsA" firstAttribute="leading" secondItem="aY6-xW-7a7" secondAttribute="leading" id="ImY-PJ-Tlw"/>
+                            <constraint firstItem="q5q-Xy-Pbt" firstAttribute="bottom" secondItem="gg2-fU-KFW" secondAttribute="bottom" id="KGt-7p-0Re"/>
+                            <constraint firstItem="ElN-kT-jmc" firstAttribute="leading" secondItem="fMS-BN-x7b" secondAttribute="leading" id="LfH-ou-DAk"/>
+                            <constraint firstItem="dY6-rQ-dpZ" firstAttribute="trailing" secondItem="XYB-iN-OEW" secondAttribute="trailing" id="MD9-dc-enL"/>
+                            <constraint firstItem="aY6-xW-7a7" firstAttribute="leading" secondItem="Dka-Gt-J5X" secondAttribute="leading" id="OVI-ol-R2O"/>
+                            <constraint firstItem="Dka-Gt-J5X" firstAttribute="top" secondItem="cpO-rz-OH5" secondAttribute="bottom" constant="63" id="OXJ-qa-NJX"/>
+                            <constraint firstItem="aY6-xW-7a7" firstAttribute="top" secondItem="LO5-Ab-vbT" secondAttribute="bottom" constant="21" id="QkP-1h-Dja"/>
+                            <constraint firstItem="dY6-rQ-dpZ" firstAttribute="leading" secondItem="XYB-iN-OEW" secondAttribute="leading" id="S50-7H-cjb"/>
+                            <constraint firstItem="gg2-fU-KFW" firstAttribute="leading" secondItem="gfB-ab-tfT" secondAttribute="leading" id="TH3-Lf-fko"/>
+                            <constraint firstItem="XYB-iN-OEW" firstAttribute="leading" secondItem="gg2-fU-KFW" secondAttribute="trailing" constant="20" id="YTq-gU-wX9"/>
+                            <constraint firstItem="gg2-fU-KFW" firstAttribute="width" secondItem="XYB-iN-OEW" secondAttribute="width" id="Z8u-bj-K72"/>
+                            <constraint firstItem="fMS-BN-x7b" firstAttribute="leading" secondItem="XYB-iN-OEW" secondAttribute="trailing" constant="20" id="a8Q-1u-7Ap"/>
+                            <constraint firstItem="LO5-Ab-vbT" firstAttribute="leading" secondItem="Xc9-uK-V8a" secondAttribute="leading" id="aAP-eI-eAe"/>
+                            <constraint firstItem="Dka-Gt-J5X" firstAttribute="leading" secondItem="Xc9-uK-V8a" secondAttribute="leading" constant="27" id="anj-rw-ES6"/>
+                            <constraint firstItem="XYB-iN-OEW" firstAttribute="leading" secondItem="x55-qU-at0" secondAttribute="leading" id="bSn-0F-Jqx"/>
+                            <constraint firstItem="dY6-rQ-dpZ" firstAttribute="bottom" secondItem="XYB-iN-OEW" secondAttribute="bottom" id="dvr-aM-pbm"/>
+                            <constraint firstItem="q5q-Xy-Pbt" firstAttribute="leading" secondItem="gfB-ab-tfT" secondAttribute="leading" id="fNA-SO-7aS"/>
+                            <constraint firstItem="gg2-fU-KFW" firstAttribute="top" secondItem="gfB-ab-tfT" secondAttribute="bottom" constant="9" id="fn4-s9-lKO"/>
+                            <constraint firstItem="fMS-BN-x7b" firstAttribute="top" secondItem="F8l-RN-ukK" secondAttribute="bottom" constant="9" id="gMF-2Z-Mvk"/>
+                            <constraint firstItem="gfB-ab-tfT" firstAttribute="leading" secondItem="Dka-Gt-J5X" secondAttribute="leading" id="jfM-Uc-ff5"/>
+                            <constraint firstAttribute="trailing" secondItem="fMS-BN-x7b" secondAttribute="trailing" constant="8" id="jwX-tQ-jXJ"/>
+                            <constraint firstItem="ElN-kT-jmc" firstAttribute="top" secondItem="F8l-RN-ukK" secondAttribute="top" id="kDm-sf-EJf"/>
+                            <constraint firstItem="mUh-uh-gsA" firstAttribute="top" secondItem="aY6-xW-7a7" secondAttribute="bottom" constant="32" id="lbu-S2-5KO"/>
+                            <constraint firstItem="ElN-kT-jmc" firstAttribute="trailing" secondItem="fMS-BN-x7b" secondAttribute="trailing" id="sN4-L4-Zas"/>
+                            <constraint firstItem="fMS-BN-x7b" firstAttribute="leading" secondItem="F8l-RN-ukK" secondAttribute="leading" id="sWg-Yj-OOc"/>
+                            <constraint firstItem="dY6-rQ-dpZ" firstAttribute="top" secondItem="x55-qU-at0" secondAttribute="top" id="tiz-Dq-dLy"/>
+                            <constraint firstItem="q5q-Xy-Pbt" firstAttribute="top" secondItem="gfB-ab-tfT" secondAttribute="top" id="tqD-2L-TLi"/>
+                            <constraint firstItem="gg2-fU-KFW" firstAttribute="width" secondItem="fMS-BN-x7b" secondAttribute="width" id="vLy-MW-tPS"/>
+                            <constraint firstItem="XYB-iN-OEW" firstAttribute="top" secondItem="x55-qU-at0" secondAttribute="bottom" constant="9" id="y71-n7-tKL"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="bannerImageView" destination="LO5-Ab-vbT" id="UNX-Fn-OeX"/>
+                        <outlet property="dashboardTitleLabel" destination="Dka-Gt-J5X" id="Px6-Vr-qbp"/>
+                        <outlet property="myAppsLabel" destination="aY6-xW-7a7" id="FwO-u8-g33"/>
+                        <outlet property="myAppsTableView" destination="mUh-uh-gsA" id="tdg-tK-xcJ"/>
+                        <outlet property="pendingApprovalsCountLabel" destination="gfB-ab-tfT" id="Rh2-Qa-zAw"/>
+                        <outlet property="pendingApprovalsLabel" destination="gg2-fU-KFW" id="vNC-42-5sB"/>
+                        <outlet property="pendingVerificationsCountLabel" destination="x55-qU-at0" id="XQ5-8j-rgK"/>
+                        <outlet property="pendingVerificationsLabel" destination="XYB-iN-OEW" id="Aiv-kE-iro"/>
+                        <outlet property="unreadMessagesCountLabel" destination="F8l-RN-ukK" id="YTc-cv-ZGi"/>
+                        <outlet property="unreadMessagesLabel" destination="fMS-BN-x7b" id="NIT-Oq-Y2e"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="jAP-mN-B3c" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-375.5" y="213.5"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="dashboardBackground" width="2016" height="1512"/>
+        <image name="newsIcon" width="133" height="133"/>
+    </resources>
 </document>
