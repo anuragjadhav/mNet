@@ -28,7 +28,7 @@ class ConversationsListViewController: BaseViewController, UITableViewDelegate, 
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        conversationListTableView.contentInset = UIEdgeInsets(top: -searchBar.frame.height, left: 0, bottom: 100, right: 0)
+//        conversationListTableView.contentInset = UIEdgeInsets(top: -searchBar.frame.height, left: 0, bottom: 100, right: 0)
 
     }
 

@@ -74,3 +74,17 @@ struct CellIdentifiers {
     static let pendingApprovalsTableViewCell:String = "pendingApprovalsTableViewCell"
 }
 
+struct TabNames {
+    
+    static let dashboard:String = "Dashboard"
+    static let conversations:String = "Conversations"
+    static let settings:String = "Settings"
+}
+
+extension UIStoryboard {
+    
+    static let dashboard:UIStoryboard = UIStoryboard(name: "Dashboard", bundle: nil)
+    static let conversations:UIStoryboard = UIStoryboard(name: "Conversation", bundle: nil)
+    static let settings:UIStoryboard = UIStoryboard(name: "Settings", bundle: nil)
+}
+
