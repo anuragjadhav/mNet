@@ -765,7 +765,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.mediaware.mNet;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "7825225e-6766-4167-911c-40e3c620daa8";
+				PROVISIONING_PROFILE = "452e8e1a-759d-42ec-94ea-ba925d2f9628";
 				PROVISIONING_PROFILE_SPECIFIER = mNetDevelopment;
 				SWIFT_VERSION = 3.0;
 			};

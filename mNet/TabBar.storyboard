@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="We7-dJ-bLG">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="17C88" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="We7-dJ-bLG">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -35,11 +35,6 @@
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     </tabBar>
-                    <connections>
-                        <segue destination="BgK-U0-9pc" kind="relationship" relationship="viewControllers" id="xiv-e4-sTy"/>
-                        <segue destination="BJB-Ny-A9c" kind="relationship" relationship="viewControllers" id="tzZ-yj-Gob"/>
-                        <segue destination="8YZ-ZX-2YE" kind="relationship" relationship="viewControllers" id="fqR-10-ub0"/>
-                    </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0z8-pf-OLJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -49,7 +44,7 @@
         <scene sceneID="Izv-fN-xki">
             <objects>
                 <viewControllerPlaceholder storyboardName="Conversation" id="BJB-Ny-A9c" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Conversations" id="Im6-b9-UF5"/>
+                    <tabBarItem key="tabBarItem" title="Conversations" image="conversationIcon" id="Im6-b9-UF5"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jr0-6A-07U" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -59,7 +54,7 @@
         <scene sceneID="o6a-Uc-yxA">
             <objects>
                 <viewControllerPlaceholder storyboardName="Settings" id="8YZ-ZX-2YE" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Setting" id="Euz-NA-c0p"/>
+                    <tabBarItem key="tabBarItem" title="Setting" image="infoIcon" id="Euz-NA-c0p"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TH8-Ip-KM1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -69,11 +64,16 @@
         <scene sceneID="NMQ-Hy-Bae">
             <objects>
                 <viewControllerPlaceholder storyboardName="Dashboard" id="BgK-U0-9pc" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Dashboard" id="Knz-yg-qbT"/>
+                    <tabBarItem key="tabBarItem" title="Dashboard" image="heroLogo" id="Knz-yg-qbT"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sSX-ah-lBS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="801" y="-154"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="conversationIcon" width="24" height="24"/>
+        <image name="heroLogo" width="87" height="100"/>
+        <image name="infoIcon" width="24" height="24"/>
+    </resources>
 </document>
