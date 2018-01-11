@@ -63,6 +63,9 @@
 		5E20CDC21FE9724A004ACE0D /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E20CDC11FE9724A004ACE0D /* SettingsViewController.swift */; };
 		5E21A6F11FF28CA100DBB157 /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5E21A6F01FF28CA100DBB157 /* Profile.storyboard */; };
 		5E21A6F51FF28E4700DBB157 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E21A6F41FF28E4700DBB157 /* ProfileViewController.swift */; };
+		5E3A046E2007A64D004EE2D7 /* ConversationDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E3A046D2007A64D004EE2D7 /* ConversationDetailViewController.swift */; };
+		5E3A04702007C302004EE2D7 /* SentMessageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E3A046F2007C302004EE2D7 /* SentMessageTableViewCell.swift */; };
+		5E3A04722007C313004EE2D7 /* ReceivedMessageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E3A04712007C313004EE2D7 /* ReceivedMessageTableViewCell.swift */; };
 		5E4A8D3B1FF4FB4900086667 /* PeopleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E4A8D3A1FF4FB4900086667 /* PeopleTableViewCell.swift */; };
 		5E4A8D3D1FF4FB6600086667 /* PeopleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E4A8D3C1FF4FB6600086667 /* PeopleViewController.swift */; };
 		5EC3005A1FEBEBFA00229516 /* AppSettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EC300591FEBEBFA00229516 /* AppSettingsViewController.swift */; };
@@ -131,6 +134,9 @@
 		5E20CDC11FE9724A004ACE0D /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		5E21A6F01FF28CA100DBB157 /* Profile.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Profile.storyboard; sourceTree = "<group>"; };
 		5E21A6F41FF28E4700DBB157 /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		5E3A046D2007A64D004EE2D7 /* ConversationDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConversationDetailViewController.swift; sourceTree = "<group>"; };
+		5E3A046F2007C302004EE2D7 /* SentMessageTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SentMessageTableViewCell.swift; sourceTree = "<group>"; };
+		5E3A04712007C313004EE2D7 /* ReceivedMessageTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReceivedMessageTableViewCell.swift; sourceTree = "<group>"; };
 		5E4A8D3A1FF4FB4900086667 /* PeopleTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PeopleTableViewCell.swift; sourceTree = "<group>"; };
 		5E4A8D3C1FF4FB6600086667 /* PeopleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PeopleViewController.swift; sourceTree = "<group>"; };
 		5EC300591FEBEBFA00229516 /* AppSettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppSettingsViewController.swift; sourceTree = "<group>"; };
@@ -231,6 +237,8 @@
 			children = (
 				058A0EDB1FF7CA4800147238 /* ConversationListTableViewCell.swift */,
 				5E184EC41FF8A6210000D7C7 /* MembersTableViewCell.swift */,
+				5E3A046F2007C302004EE2D7 /* SentMessageTableViewCell.swift */,
+				5E3A04712007C313004EE2D7 /* ReceivedMessageTableViewCell.swift */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -249,6 +257,7 @@
 				058A0ED91FF7CA2D00147238 /* ConversationsListViewController.swift */,
 				05A7A8FE1FF80B7700472A60 /* SelectUserViewController.swift */,
 				05A7A9001FF8159F00472A60 /* ConversationInfoViewController.swift */,
+				5E3A046D2007A64D004EE2D7 /* ConversationDetailViewController.swift */,
 			);
 			name = "View Controllers";
 			sourceTree = "<group>";
@@ -610,14 +619,17 @@
 				5E18AE3E1FF8113A007AA461 /* CustomBlueBackgroundButton.swift in Sources */,
 				5E18AE3C1FF809EE007AA461 /* ISRadioButton.swift in Sources */,
 				5E183E9B1FF37B7C00368DE1 /* RejectApplicationViewController.swift in Sources */,
+				5E3A04702007C302004EE2D7 /* SentMessageTableViewCell.swift in Sources */,
 				5E1C498D1FEA4455007CE624 /* CustomBrownTextColorLabel.swift in Sources */,
 				5E18AE461FF8238A007AA461 /* AttachmentsTableViewCell.swift in Sources */,
 				5E184EC81FF8A8590000D7C7 /* TabBarController.swift in Sources */,
 				058A0EDC1FF7CA4800147238 /* ConversationListTableViewCell.swift in Sources */,
 				05A7A8FF1FF80B7700472A60 /* SelectUserViewController.swift in Sources */,
 				5E1C499A1FEA7F30007CE624 /* CustomBrownTextColorTextfield.swift in Sources */,
+				5E3A046E2007A64D004EE2D7 /* ConversationDetailViewController.swift in Sources */,
 				5E183EA11FF3CA4800368DE1 /* DocumentDetailsViewController.swift in Sources */,
 				5EC300621FEC0A5A00229516 /* Option.swift in Sources */,
+				5E3A04722007C313004EE2D7 /* ReceivedMessageTableViewCell.swift in Sources */,
 				5E20CD931FE952BE004ACE0D /* AppDelegate.swift in Sources */,
 				058A0EDA1FF7CA2D00147238 /* ConversationsListViewController.swift in Sources */,
 				5E1C498F1FEA4468007CE624 /* CustomBlueTextColorLabel.swift in Sources */,
