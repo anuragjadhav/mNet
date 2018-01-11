@@ -7,6 +7,7 @@
         <deployment identifier="iOS"/>
         <development version="8000" identifier="xcode"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="Navigation items with more than one left or right bar item" minToolsVersion="7.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
@@ -83,8 +84,8 @@
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                     </textField>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Password" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ATu-5p-PAU" customClass="CustomBrownTextColorLabel" customModule="mNet" customModuleProvider="target">
-                                        <rect key="frame" x="30" y="313.5" width="62" height="17"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Password" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ATu-5p-PAU" customClass="CustomBrownTextColorLabel" customModule="mNet" customModuleProvider="target">
+                                        <rect key="frame" x="30" y="314" width="90" height="17"/>
                                         <fontDescription key="fontDescription" name="SanFranciscoDisplay-Bold" family="San Francisco Display" pointSize="14"/>
                                         <color key="textColor" red="0.3803921569" green="0.28235294119999998" blue="0.22352941179999999" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
@@ -118,7 +119,7 @@
                                             <constraint firstAttribute="height" constant="60" id="O6b-f0-ygL"/>
                                         </constraints>
                                     </view>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kKd-RF-tff">
+                                    <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kKd-RF-tff" customClass="CustomBlueBackgroundButton" customModule="mNet" customModuleProvider="target">
                                         <rect key="frame" x="27" y="490" width="320" height="36"/>
                                         <color key="backgroundColor" red="0.011764705882352941" green="0.51764705882352935" blue="0.80784313725490198" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
@@ -127,9 +128,22 @@
                                         <fontDescription key="fontDescription" name="SanFranciscoDisplay-Bold" family="San Francisco Display" pointSize="14"/>
                                         <state key="normal" title="SIGN IN">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <color key="titleShadowColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </state>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="2"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="size" keyPath="shadowOffset">
+                                                <size key="value" width="0.0" height="2"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="shadowColor">
+                                                <color key="value" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="shadowOpacity">
+                                                <real key="value" value="1"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="shadowRadius">
                                                 <real key="value" value="2"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
@@ -143,7 +157,7 @@
                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="0.38" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Y0I-hd-kCF">
+                                    <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Y0I-hd-kCF" customClass="CustomRedBackgroundColorButton" customModule="mNet" customModuleProvider="target">
                                         <rect key="frame" x="27" y="584" width="320" height="36"/>
                                         <color key="backgroundColor" red="0.8666666666666667" green="0.29411764705882354" blue="0.22352941176470587" alpha="1" colorSpace="calibratedRGB"/>
                                         <fontDescription key="fontDescription" name="SanFranciscoDisplay-Bold" family="San Francisco Display" pointSize="14"/>
@@ -152,6 +166,18 @@
                                         </state>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="2"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="shadowColor">
+                                                <color key="value" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="size" keyPath="shadowOffset">
+                                                <size key="value" width="0.0" height="2"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="shadowOpacity">
+                                                <real key="value" value="1"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="shadowRadius">
                                                 <real key="value" value="2"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
@@ -239,10 +265,126 @@ Analyse your own data with customized reports. Correlate parameters to reach con
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8LS-Ns-WeX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-128" y="-1096"/>
+            <point key="canvasLocation" x="-128.5" y="-1096.5"/>
+        </scene>
+        <!--Filter-->
+        <scene sceneID="jhw-ji-DKP">
+            <objects>
+                <viewController id="UFg-Tu-Wb4" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="tXi-Dx-7Pv"/>
+                        <viewControllerLayoutGuide type="bottom" id="czK-yE-hvK"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="GC4-cz-cXB">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Conversations" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Y2g-3b-8xX" customClass="CustomBrownTextColorLabel" customModule="mNet" customModuleProvider="target">
+                                <rect key="frame" x="28" y="78" width="85.5" height="17"/>
+                                <fontDescription key="fontDescription" name="SanFranciscoDisplay-Light" family="San Francisco Display" pointSize="14"/>
+                                <color key="textColor" red="0.3803921569" green="0.28235294119999998" blue="0.22352941179999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="66" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="qFX-vX-USz">
+                                <rect key="frame" x="0.0" y="128" width="111" height="539"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="111" id="bBH-hH-0iI"/>
+                                </constraints>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="pSy-BX-qd8">
+                                        <rect key="frame" x="0.0" y="28" width="111" height="66"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="pSy-BX-qd8" id="BZp-q8-cJV">
+                                            <rect key="frame" x="0.0" y="0.0" width="111" height="65.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Filter 1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rxq-yb-AX7" customClass="CustomBlueTextColorLabel" customModule="mNet" customModuleProvider="target">
+                                                    <rect key="frame" x="27" y="19" width="42" height="17"/>
+                                                    <fontDescription key="fontDescription" name="SanFranciscoDisplay-Bold" family="San Francisco Display" pointSize="14"/>
+                                                    <color key="textColor" red="0.29019607843137252" green="0.56470588235294117" blue="0.88627450980392153" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kRV-sm-4pi">
+                                                    <rect key="frame" x="77" y="24.5" width="6" height="6"/>
+                                                    <color key="backgroundColor" red="0.2901960784" green="0.56470588239999997" blue="0.8862745098" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="6" id="6yN-27-oJu"/>
+                                                        <constraint firstAttribute="height" constant="6" id="vxU-s4-cSf"/>
+                                                    </constraints>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                            <real key="value" value="3"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                            <real key="value" value="2"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                            <color key="value" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                    </userDefinedRuntimeAttributes>
+                                                </view>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="kRV-sm-4pi" firstAttribute="centerY" secondItem="Rxq-yb-AX7" secondAttribute="centerY" id="0iR-Bx-nfD"/>
+                                                <constraint firstAttribute="bottom" secondItem="Rxq-yb-AX7" secondAttribute="bottom" constant="29" id="AQc-aN-Dq0"/>
+                                                <constraint firstItem="Rxq-yb-AX7" firstAttribute="top" secondItem="BZp-q8-cJV" secondAttribute="top" constant="19" id="MFB-tV-QfL"/>
+                                                <constraint firstItem="kRV-sm-4pi" firstAttribute="leading" secondItem="Rxq-yb-AX7" secondAttribute="trailing" constant="8" id="i7w-cL-lgs"/>
+                                                <constraint firstItem="Rxq-yb-AX7" firstAttribute="leading" secondItem="BZp-q8-cJV" secondAttribute="leading" constant="27" id="mNh-jV-OWI"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Y2g-3b-8xX" firstAttribute="top" secondItem="tXi-Dx-7Pv" secondAttribute="bottom" constant="14" id="3BD-3F-nfk"/>
+                            <constraint firstItem="qFX-vX-USz" firstAttribute="top" secondItem="Y2g-3b-8xX" secondAttribute="bottom" constant="33" id="Usm-jk-sMe"/>
+                            <constraint firstItem="qFX-vX-USz" firstAttribute="leading" secondItem="GC4-cz-cXB" secondAttribute="leading" id="aC2-yD-1tb"/>
+                            <constraint firstItem="czK-yE-hvK" firstAttribute="top" secondItem="qFX-vX-USz" secondAttribute="bottom" id="b6R-w7-hKr"/>
+                            <constraint firstItem="Y2g-3b-8xX" firstAttribute="leading" secondItem="GC4-cz-cXB" secondAttribute="leading" constant="28" id="kTD-9V-vsi"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Filter" id="eP2-hs-bcF">
+                        <barButtonItem key="leftBarButtonItem" image="backButtonImage" id="zxY-OD-B4X">
+                            <color key="tintColor" red="0.3803921569" green="0.28235294119999998" blue="0.22352941179999999" alpha="1" colorSpace="calibratedRGB"/>
+                        </barButtonItem>
+                        <rightBarButtonItems>
+                            <barButtonItem title="Close" id="4oa-px-h2e">
+                                <color key="tintColor" red="0.3803921569" green="0.28235294119999998" blue="0.22352941179999999" alpha="1" colorSpace="calibratedRGB"/>
+                            </barButtonItem>
+                            <barButtonItem title="Filter" id="COv-bp-TEe">
+                                <color key="tintColor" red="0.3803921569" green="0.28235294119999998" blue="0.22352941179999999" alpha="1" colorSpace="calibratedRGB"/>
+                            </barButtonItem>
+                        </rightBarButtonItems>
+                    </navigationItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="SkN-wD-dHf" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1035.5" y="-1082.5"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="MTU-hH-Qbq">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="oTq-sc-9LP" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="UGY-lj-gDx">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="UFg-Tu-Wb4" kind="relationship" relationship="rootViewController" id="0cm-L0-DXF"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="kaG-ft-rmB" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="448.5" y="-1082.5"/>
         </scene>
     </scenes>
     <resources>
+        <image name="backButtonImage" width="24" height="24"/>
         <image name="heroLogo" width="87" height="100"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">

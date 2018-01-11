@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0531A5792007CCC600F2232C /* CustomRedBackgroundColorButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0531A5782007CCC600F2232C /* CustomRedBackgroundColorButton.swift */; };
 		058A0E4C1FF7C44D00147238 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 058A0E4B1FF7C44D00147238 /* Login.storyboard */; };
 		058A0ECC1FF7C4DD00147238 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 058A0ECB1FF7C4DD00147238 /* LoginViewController.swift */; };
 		058A0ED21FF7C50400147238 /* DashboardMyAppsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 058A0ED11FF7C50400147238 /* DashboardMyAppsTableViewCell.swift */; };
@@ -73,6 +74,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0531A5782007CCC600F2232C /* CustomRedBackgroundColorButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomRedBackgroundColorButton.swift; sourceTree = "<group>"; };
 		058A0E4B1FF7C44D00147238 /* Login.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
 		058A0ECB1FF7C4DD00147238 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		058A0ED11FF7C50400147238 /* DashboardMyAppsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DashboardMyAppsTableViewCell.swift; sourceTree = "<group>"; };
@@ -328,6 +330,7 @@
 				5E183E9E1FF3887600368DE1 /* CustomBlueTextColorButton.swift */,
 				5E1B6D001FED33A800C307B3 /* CustomPickerView.swift */,
 				5E18AE3D1FF8113A007AA461 /* CustomBlueBackgroundButton.swift */,
+				0531A5782007CCC600F2232C /* CustomRedBackgroundColorButton.swift */,
 			);
 			name = "Custom View Classes";
 			sourceTree = "<group>";
@@ -613,6 +616,7 @@
 				5E1C498D1FEA4455007CE624 /* CustomBrownTextColorLabel.swift in Sources */,
 				5E18AE461FF8238A007AA461 /* AttachmentsTableViewCell.swift in Sources */,
 				5E184EC81FF8A8590000D7C7 /* TabBarController.swift in Sources */,
+				0531A5792007CCC600F2232C /* CustomRedBackgroundColorButton.swift in Sources */,
 				058A0EDC1FF7CA4800147238 /* ConversationListTableViewCell.swift in Sources */,
 				05A7A8FF1FF80B7700472A60 /* SelectUserViewController.swift in Sources */,
 				5E1C499A1FEA7F30007CE624 /* CustomBrownTextColorTextfield.swift in Sources */,
