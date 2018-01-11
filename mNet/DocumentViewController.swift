@@ -41,6 +41,12 @@ class DocumentViewController: UIViewController {
 
     // MARK: - Button Action
 
+    @IBAction func approveButtonAction(_ sender: Any) {
+    }
+    
+    @IBAction func rejectButtonAction(_ sender: Any) {
+    }
+    
     @IBAction func backButtonAction(_ sender: Any) {
         
         self.navigationController?.popViewController(animated: true)

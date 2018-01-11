@@ -60,8 +60,8 @@ class ConversationsListViewController: BaseViewController, UITableViewDelegate, 
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
-        let conversationInfoVC = (UIStoryboard.init(name:"Conversation", bundle: Bundle.main)).instantiateViewController(withIdentifier: "ConversationInfoViewController")
-        self.navigationController?.pushViewController(conversationInfoVC, animated: true)
+        let conversationDetailVC = (UIStoryboard.init(name:"Conversation", bundle: Bundle.main)).instantiateViewController(withIdentifier: "ConversationDetailViewController")
+        self.navigationController?.pushViewController(conversationDetailVC, animated: true)
     }
     
     //MARK: Button Actions

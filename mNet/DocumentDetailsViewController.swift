@@ -58,14 +58,4 @@ class DocumentDetailsViewController: BaseViewController,UITableViewDelegate,UITa
         
     }
 
-    // MARK: - Button Actions
-
-    @IBAction func approveButtonAction(_ sender: Any) {
-        
-    }
-
-    @IBAction func rejectButtonAction(_ sender: Any) {
-        
-    }
-
 }
