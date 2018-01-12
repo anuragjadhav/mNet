@@ -74,6 +74,8 @@ struct CellIdentifiers {
     static let conversationListTableView:String = "conversationListTableViewCell"
     static let approvalsSectionsCollectionView:String = "approvalSectionsCollectionViewCell"
     static let pendingApprovalsTableViewCell:String = "pendingApprovalsTableViewCell"
+    static let filterTableViewCell:String = "filterTableViewCell"
+    static let optionTableViewCell:String = "optionTableViewCell"
 }
 
 struct TabNames {
