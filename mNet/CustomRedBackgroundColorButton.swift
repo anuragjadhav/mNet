@@ -1,20 +1,20 @@
 //
-//  CustomBlueBackgroundButton.swift
+//  CustomRedBackgroundColorButton.swift
 //  mNet
 //
-//  Created by Anurag Jadhav on 12/30/17.
-//  Copyright © 2017 mNet. All rights reserved.
+//  Created by Nachiket Vaidya on 11/01/18.
+//  Copyright © 2018 mNet. All rights reserved.
 //
 
 import UIKit
 
-class CustomBlueBackgroundButton: UIButton {
-
+class CustomRedBackgroundColorButton: UIButton {
+    
     override func awakeFromNib() {
         
         super.awakeFromNib();
         self.titleLabel?.textColor = UIColor.white;
-        self.backgroundColor = ColorConstants.kBlueColor
+        self.backgroundColor = ColorConstants.kRedColor
         self.layer.shadowColor = UIColor.black.cgColor
         self.layer.shadowOffset = CGSize(width: 0, height: 2)
         self.layer.shadowOpacity = 0.24

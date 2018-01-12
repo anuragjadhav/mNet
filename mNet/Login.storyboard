@@ -84,7 +84,7 @@
                                         </userDefinedRuntimeAttributes>
                                     </textField>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Password" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ATu-5p-PAU" customClass="CustomBrownTextColorLabel" customModule="mNet" customModuleProvider="target">
-                                        <rect key="frame" x="30" y="313.5" width="62" height="17"/>
+                                        <rect key="frame" x="30" y="314" width="62" height="17"/>
                                         <fontDescription key="fontDescription" name="SanFranciscoDisplay-Bold" family="San Francisco Display" pointSize="14"/>
                                         <color key="textColor" red="0.3803921569" green="0.28235294119999998" blue="0.22352941179999999" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
@@ -118,7 +118,7 @@
                                             <constraint firstAttribute="height" constant="60" id="O6b-f0-ygL"/>
                                         </constraints>
                                     </view>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kKd-RF-tff">
+                                    <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kKd-RF-tff" customClass="CustomBlueBackgroundButton" customModule="mNet" customModuleProvider="target">
                                         <rect key="frame" x="27" y="490" width="320" height="36"/>
                                         <color key="backgroundColor" red="0.011764705882352941" green="0.51764705882352935" blue="0.80784313725490198" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
@@ -127,6 +127,7 @@
                                         <fontDescription key="fontDescription" name="SanFranciscoDisplay-Bold" family="San Francisco Display" pointSize="14"/>
                                         <state key="normal" title="SIGN IN">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <color key="titleShadowColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </state>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
@@ -143,7 +144,7 @@
                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="0.38" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Y0I-hd-kCF">
+                                    <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Y0I-hd-kCF" customClass="CustomRedBackgroundColorButton" customModule="mNet" customModuleProvider="target">
                                         <rect key="frame" x="27" y="584" width="320" height="36"/>
                                         <color key="backgroundColor" red="0.8666666666666667" green="0.29411764705882354" blue="0.22352941176470587" alpha="1" colorSpace="calibratedRGB"/>
                                         <fontDescription key="fontDescription" name="SanFranciscoDisplay-Bold" family="San Francisco Display" pointSize="14"/>
@@ -239,7 +240,7 @@ Analyse your own data with customized reports. Correlate parameters to reach con
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8LS-Ns-WeX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-128" y="-1096"/>
+            <point key="canvasLocation" x="-128.5" y="-1096.5"/>
         </scene>
     </scenes>
     <resources>
