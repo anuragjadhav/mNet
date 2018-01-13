@@ -25,7 +25,25 @@ class BaseViewController: UIViewController {
         NotificationCenter.default.addObserver(self, selector: #selector(keyBoardWillShow(notification:)), name: .UIKeyboardWillShow, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(keyBoardWillHide(notification:)), name: .UIKeyboardWillHide, object: nil)
         
-       tapGestureToMoveKbDown =  UITapGestureRecognizer.init(target: self, action: #selector(moveKeyboardDown(gesture:)))
+        tapGestureToMoveKbDown =  UITapGestureRecognizer.init(target: self, action: #selector(moveKeyboardDown(gesture:)))
+    }
+    
+    
+    //MARK: Navigation Bar Setup
+    func showLargeTitle() {
+        
+        guard let baseNavigationController:BaseNavigationController = self.navigationController as? BaseNavigationController else {
+            return
+        }
+        baseNavigationController.showLargeTitles()
+    }
+    
+    func hideLargeTitle() {
+        
+        guard let baseNavigationController:BaseNavigationController = self.navigationController as? BaseNavigationController else {
+            return
+        }
+        baseNavigationController.hideLargeTitles()
     }
     
     //MARK: Loading view methods
@@ -35,7 +53,7 @@ class BaseViewController: UIViewController {
         
         var tabBarHeight:CGFloat = 0
         
-        if(self.loadingViewOnVC != nil){
+        if(self.loadingViewOnVC != nil) {
             
             if(self.tabBarController != nil){
                 

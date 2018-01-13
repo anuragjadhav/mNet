@@ -11,6 +11,7 @@
 		0531A57B2007E1F900F2232C /* FilterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0531A57A2007E1F900F2232C /* FilterViewController.swift */; };
 		0531A57D2007EA4200F2232C /* FilterSectionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0531A57C2007EA4200F2232C /* FilterSectionTableViewCell.swift */; };
 		0531A57F2007EA5100F2232C /* FilterOptionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0531A57E2007EA5100F2232C /* FilterOptionTableViewCell.swift */; };
+		0575623A200A34110010CBB1 /* BaseNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05756239200A34110010CBB1 /* BaseNavigationController.swift */; };
 		058A0E4C1FF7C44D00147238 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 058A0E4B1FF7C44D00147238 /* Login.storyboard */; };
 		058A0ECC1FF7C4DD00147238 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 058A0ECB1FF7C4DD00147238 /* LoginViewController.swift */; };
 		058A0ED21FF7C50400147238 /* DashboardMyAppsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 058A0ED11FF7C50400147238 /* DashboardMyAppsTableViewCell.swift */; };
@@ -84,6 +85,7 @@
 		0531A57A2007E1F900F2232C /* FilterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FilterViewController.swift; sourceTree = "<group>"; };
 		0531A57C2007EA4200F2232C /* FilterSectionTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FilterSectionTableViewCell.swift; sourceTree = "<group>"; };
 		0531A57E2007EA5100F2232C /* FilterOptionTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FilterOptionTableViewCell.swift; sourceTree = "<group>"; };
+		05756239200A34110010CBB1 /* BaseNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseNavigationController.swift; sourceTree = "<group>"; };
 		058A0E4B1FF7C44D00147238 /* Login.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
 		058A0ECB1FF7C4DD00147238 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		058A0ED11FF7C50400147238 /* DashboardMyAppsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DashboardMyAppsTableViewCell.swift; sourceTree = "<group>"; };
@@ -365,6 +367,7 @@
 			isa = PBXGroup;
 			children = (
 				5E1C499F1FEA847B007CE624 /* BaseViewController.swift */,
+				05756239200A34110010CBB1 /* BaseNavigationController.swift */,
 			);
 			name = "Base classes";
 			sourceTree = "<group>";
@@ -620,6 +623,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0575623A200A34110010CBB1 /* BaseNavigationController.swift in Sources */,
 				058A0ECC1FF7C4DD00147238 /* LoginViewController.swift in Sources */,
 				5EC3005C1FEC002000229516 /* SettingsDataController.swift in Sources */,
 				5E18AE391FF8092E007AA461 /* ApprovalVerificationViewController.swift in Sources */,

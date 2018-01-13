@@ -45,6 +45,7 @@ class DashboardViewController: BaseViewController, UITableViewDataSource, UITabl
     func setUpNavigationController()  {
         
         self.navigationController?.navigationBar.isHidden = true
+        self.showLargeTitle()
     }
     
     //MARK: Table View Methods
@@ -65,5 +66,6 @@ class DashboardViewController: BaseViewController, UITableViewDataSource, UITabl
         let approvalsVC = (UIStoryboard.init(name:"ApproveReject", bundle: Bundle.main)).instantiateViewController(withIdentifier: "ApprovalsViewController")
         self.navigationController?.pushViewController(approvalsVC, animated: true)
     }
+    
     
 }
