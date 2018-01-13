@@ -22,6 +22,14 @@ class TabBarController: UITabBarController {
         // Dispose of any resources that can be recreated.
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+        guard let baseNavigationController:BaseNavigationController = self.navigationController as? BaseNavigationController else {
+            return
+        }
+        baseNavigationController.showLargeTitles()
+    }
+    
     //MARK: Configure the tab bar
     func configureTabBar() {
         
@@ -34,8 +42,7 @@ class TabBarController: UITabBarController {
         
         let settingsViewController:UIViewController = UIStoryboard.settings.instantiateInitialViewController()!
         settingsViewController.tabBarItem = UITabBarItem(title:TabNames.settings , image: #imageLiteral(resourceName: "infoIcon"), tag: 3)
-        
-        self.setViewControllers([dashboardViewController,conversationsViewController,settingsViewController], animated: true)
+    self.setViewControllers([dashboardViewController,conversationsViewController,settingsViewController], animated: true)
     }
 
 }

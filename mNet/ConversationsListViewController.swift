@@ -42,6 +42,7 @@ class ConversationsListViewController: BaseViewController, UITableViewDelegate, 
     func setUpNavigationController() {
         
         self.navigationController?.navigationBar.isHidden = false
+        self.showLargeTitle()
     }
     
     

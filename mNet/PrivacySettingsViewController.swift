@@ -77,6 +77,15 @@ class PrivacySettingsViewController: BaseViewController,UITableViewDelegate,UITa
         return UITableViewAutomaticDimension
     }
 
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        
+        if scrollView.contentOffset.y > 20 {
+            self.hideLargeTitle()
+        }
+        else {
+            self.showLargeTitle()
+        }
+    }
     
     //Mark: Button Actions
     

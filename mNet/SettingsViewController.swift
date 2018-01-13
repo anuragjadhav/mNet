@@ -16,23 +16,17 @@ class SettingsViewController: BaseViewController,UITableViewDelegate,UITableView
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated);
-        
         self.setupNavigationBar()
     }
 
     func setupNavigationBar(){
         
         self.navigationController?.navigationBar.isHidden = true
-//        if #available(iOS 11.0, *) {
-//            self.navigationController?.navigationBar.prefersLargeTitles = true
-//        } else {
-//            // Fallback on earlier versions
-//        }
+        self.showLargeTitle()
     }
     
     //Mark: tableview delegates and data source
@@ -103,7 +97,6 @@ class SettingsViewController: BaseViewController,UITableViewDelegate,UITableView
             
         }
     }
-    
     
     //Mark: Button Actions
 

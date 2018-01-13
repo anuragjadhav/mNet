@@ -13,9 +13,7 @@ struct ColorConstants {
     static let kBrownColor: UIColor = UIColor(red: 97.0/255.0, green: 72.0/255.0, blue: 57.0/255.0, alpha: 1.0)
     static let kBlueColor: UIColor = UIColor(red: 74.0/255.0, green: 144.0/255.0, blue: 226.0/255.0, alpha: 1.0)
     static let kRedColor: UIColor = UIColor(red: 221.0/255.0, green: 75.0/255.0, blue: 57.0/255.0, alpha: 1.0)
-    
 }
-
 
 struct SettingOptions {
     
@@ -90,5 +88,33 @@ extension UIStoryboard {
     static let dashboard:UIStoryboard = UIStoryboard(name: "Dashboard", bundle: nil)
     static let conversations:UIStoryboard = UIStoryboard(name: "Conversation", bundle: nil)
     static let settings:UIStoryboard = UIStoryboard(name: "Settings", bundle: nil)
+}
+
+extension UIFont {
+    
+    static func boldAppFont(fontSize: CGFloat) -> UIFont {
+        
+        return UIFont(name: "SanFranciscoDisplay-Bold", size: fontSize)!
+    }
+    
+    static func semiBoldAppFont(fontSize: CGFloat) -> UIFont {
+        
+        return UIFont(name: "SanFranciscoDisplay-Semibold", size: fontSize)!
+    }
+    
+    static func mediumAppFont(fontSize: CGFloat) -> UIFont {
+        
+        return UIFont(name: "SanFranciscoDisplay-Medium", size: fontSize)!
+    }
+    
+    static func regularAppFont(fontSize: CGFloat) -> UIFont {
+        
+        return UIFont(name: "SanFranciscoDisplay-Regular", size: fontSize)!
+    }
+    
+    static func lightAppFont(fontSize: CGFloat) -> UIFont {
+        
+        return UIFont(name: "SanFranciscoDisplay-Light", size: fontSize)!
+    }
 }
 
