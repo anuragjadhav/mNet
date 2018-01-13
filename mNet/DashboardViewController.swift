@@ -44,8 +44,12 @@ class DashboardViewController: BaseViewController, UITableViewDataSource, UITabl
     //MARK:Setup
     func setUpNavigationController()  {
         
+        guard let baseNavigationController:BaseNavigationController = self.navigationController as? BaseNavigationController else {
+            return
+        }
+        baseNavigationController.showLargeTitles()
+        
         self.navigationController?.navigationBar.isHidden = true
-        self.showLargeTitle()
     }
     
     //MARK: Table View Methods

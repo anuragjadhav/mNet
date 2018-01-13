@@ -711,6 +711,9 @@
                                                         <constraint firstAttribute="height" constant="20" id="haH-wz-MeK"/>
                                                     </constraints>
                                                     <state key="normal" image="uncheckedBox"/>
+                                                    <connections>
+                                                        <action selector="checkBoxButtonAction:" destination="fW2-d9-Ri5" eventType="touchUpInside" id="eIB-dz-YGe"/>
+                                                    </connections>
                                                 </button>
                                             </subviews>
                                             <constraints>
@@ -751,10 +754,10 @@
                                     <action selector="sendButtonAction:" destination="fW2-d9-Ri5" eventType="touchUpInside" id="3Vg-Td-Ohr"/>
                                 </connections>
                             </button>
-                            <searchBar contentMode="redraw" searchBarStyle="minimal" translatesAutoresizingMaskIntoConstraints="NO" id="B8m-wq-RSr">
+                            <searchBar contentMode="redraw" searchBarStyle="minimal" showsCancelButton="YES" translatesAutoresizingMaskIntoConstraints="NO" id="B8m-wq-RSr">
                                 <rect key="frame" x="27" y="251" width="321" height="56"/>
                                 <color key="backgroundColor" red="0.96862745100000003" green="0.97254901959999995" blue="0.97647058819999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <color key="barTintColor" red="0.96862745100000003" green="0.97254901959999995" blue="0.97647058819999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="barTintColor" red="0.2901960784" green="0.56470588239999997" blue="0.8862745098" alpha="1" colorSpace="calibratedRGB"/>
                                 <textInputTraits key="textInputTraits"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">

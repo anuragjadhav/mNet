@@ -20,13 +20,17 @@ class SettingsViewController: BaseViewController,UITableViewDelegate,UITableView
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated);
+    
         self.setupNavigationBar()
     }
 
     func setupNavigationBar(){
         
+        guard let baseNavigationController:BaseNavigationController = self.navigationController as? BaseNavigationController else {
+            return
+        }
+        baseNavigationController.showLargeTitles()
         self.navigationController?.navigationBar.isHidden = true
-        self.showLargeTitle()
     }
     
     //Mark: tableview delegates and data source

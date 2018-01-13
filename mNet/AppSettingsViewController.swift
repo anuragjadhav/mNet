@@ -105,9 +105,7 @@ class AppSettingsViewController: BaseViewController,UIPickerViewDelegate,UIPicke
         
         self.navigationController?.popViewController(animated: true)
     }
-    
-    @IBAction func saveButtonAction(_ sender: Any) {
-    }
+
 
     @IBAction func selectAppsButtonAction(_ sender: Any) {
         

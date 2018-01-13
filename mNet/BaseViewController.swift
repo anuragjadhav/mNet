@@ -31,15 +31,15 @@ class BaseViewController: UIViewController {
     
     //MARK: Navigation Bar Setup
     func showLargeTitle() {
-        
+
         guard let baseNavigationController:BaseNavigationController = self.navigationController as? BaseNavigationController else {
             return
         }
         baseNavigationController.showLargeTitles()
     }
-    
+
     func hideLargeTitle() {
-        
+
         guard let baseNavigationController:BaseNavigationController = self.navigationController as? BaseNavigationController else {
             return
         }

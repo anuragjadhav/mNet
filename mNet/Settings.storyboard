@@ -302,13 +302,6 @@
                                 <action selector="backButtonAction:" destination="UUW-Du-HoL" id="Tat-fb-mxG"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" image="tickmark" id="I7e-sl-le8">
-                            <inset key="imageInsets" minX="0.0" minY="2" maxX="-2" maxY="0.0"/>
-                            <color key="tintColor" red="0.45882352939999999" green="0.45882352939999999" blue="0.45882352939999999" alpha="1" colorSpace="calibratedRGB"/>
-                            <connections>
-                                <action selector="saveButtonAction:" destination="UUW-Du-HoL" id="Ocz-SD-h07"/>
-                            </connections>
-                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="optionsTableView" destination="n3Z-73-hpT" id="0xP-33-lm3"/>
@@ -712,7 +705,7 @@
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <color key="textColor" red="0.3803921569" green="0.28235294119999998" blue="0.22352941179999999" alpha="1" colorSpace="calibratedRGB"/>
                                                 <fontDescription key="fontDescription" name="SanFranciscoDisplay-Light" family="San Francisco Display" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits"/>
+                                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                                                 <userDefinedRuntimeAttributes>
                                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
                                                         <real key="value" value="0.0"/>
@@ -736,7 +729,7 @@
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <color key="textColor" red="0.3803921569" green="0.28235294119999998" blue="0.22352941179999999" alpha="1" colorSpace="calibratedRGB"/>
                                                 <fontDescription key="fontDescription" name="SanFranciscoDisplay-Light" family="San Francisco Display" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits"/>
+                                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                                                 <userDefinedRuntimeAttributes>
                                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
                                                         <real key="value" value="0.0"/>
@@ -1179,13 +1172,6 @@
                             <color key="tintColor" red="0.45882352939999999" green="0.45882352939999999" blue="0.45882352939999999" alpha="1" colorSpace="calibratedRGB"/>
                             <connections>
                                 <action selector="backButtonAction:" destination="837-dQ-klA" id="lK7-eb-XLX"/>
-                            </connections>
-                        </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" image="tickmark" id="Y3e-R7-BHf">
-                            <inset key="imageInsets" minX="0.0" minY="2" maxX="-2" maxY="0.0"/>
-                            <color key="tintColor" red="0.45882352939999999" green="0.45882352939999999" blue="0.45882352939999999" alpha="1" colorSpace="calibratedRGB"/>
-                            <connections>
-                                <action selector="saveButtonAction:" destination="837-dQ-klA" id="wRN-At-EQy"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>

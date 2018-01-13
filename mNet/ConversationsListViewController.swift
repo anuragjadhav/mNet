@@ -28,8 +28,6 @@ class ConversationsListViewController: BaseViewController, UITableViewDelegate, 
     override func viewDidLoad() {
         super.viewDidLoad()
         
-//        conversationListTableView.contentInset = UIEdgeInsets(top: -searchBar.frame.height, left: 0, bottom: 100, right: 0)
-
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -41,8 +39,12 @@ class ConversationsListViewController: BaseViewController, UITableViewDelegate, 
     //MARK: Setup
     func setUpNavigationController() {
         
+        guard let baseNavigationController:BaseNavigationController = self.navigationController as? BaseNavigationController else {
+            return
+        }
+        baseNavigationController.showLargeTitles()
+        
         self.navigationController?.navigationBar.isHidden = false
-        self.showLargeTitle()
     }
     
     

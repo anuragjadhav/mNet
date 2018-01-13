@@ -24,10 +24,6 @@ class TabBarController: UITabBarController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
-        guard let baseNavigationController:BaseNavigationController = self.navigationController as? BaseNavigationController else {
-            return
-        }
-        baseNavigationController.showLargeTitles()
     }
     
     //MARK: Configure the tab bar

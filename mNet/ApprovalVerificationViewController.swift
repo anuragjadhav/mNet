@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ApprovalVerificationViewController: UIViewController,UISearchBarDelegate,UITableViewDelegate,UITableViewDataSource {
+class ApprovalVerificationViewController: BaseViewController,UISearchBarDelegate,UITableViewDelegate,UITableViewDataSource {
     
     @IBOutlet weak var approvalRadioButton: ISRadioButton!
     @IBOutlet weak var verificationRadioButton: ISRadioButton!
@@ -55,23 +55,47 @@ class ApprovalVerificationViewController: UIViewController,UISearchBarDelegate,U
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
-       let cell:SendPeopleListTableViewCell =  tableView.cellForRow(at: indexPath) as! SendPeopleListTableViewCell
-        
-       cell.checkBoxButton.setImage(UIImage.init(named: "checkedBox"), for: UIControlState.normal)
+
     }
     
     func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
         
-        let cell:SendPeopleListTableViewCell =  tableView.cellForRow(at: indexPath) as! SendPeopleListTableViewCell
+    }
+    
+    @IBAction func checkBoxButtonAction(_ sender: UIButton) {
         
-        cell.checkBoxButton.setImage(UIImage.init(named: "uncheckedBox"), for: UIControlState.normal)
+        let buttonPoint:CGPoint = sender.convert(CGPoint.zero, to: self.sendPeopleListTableView)
+        let indexPath:IndexPath = self.sendPeopleListTableView.indexPathForRow(at: buttonPoint)!
+        
+        let cell:SendPeopleListTableViewCell =  self.sendPeopleListTableView.cellForRow(at: indexPath) as! SendPeopleListTableViewCell
+        
+         if(cell.isSelected == true)
+         {
+               cell.isSelected = false
+               cell.checkBoxButton.setImage(UIImage.init(named: "uncheckedBox"), for: UIControlState.normal)
+         }
+        else
+         {
+            cell.checkBoxButton.setImage(UIImage.init(named: "checkedBox"), for: UIControlState.normal)
+            cell.isSelected = true
+
+         }
     }
     
     //Mark: search bar delegates
     
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         
+    }
+    
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        
+        self.view.endEditing(true)
+    }
+    
+    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+        
+        self.view.endEditing(true)
     }
 
     

@@ -79,12 +79,12 @@ class PrivacySettingsViewController: BaseViewController,UITableViewDelegate,UITa
 
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         
-        if scrollView.contentOffset.y > 20 {
-            self.hideLargeTitle()
-        }
-        else {
-            self.showLargeTitle()
-        }
+//        if scrollView.contentOffset.y > 20 {
+//            self.hideLargeTitle()
+//        }
+//        else {
+//            self.showLargeTitle()
+//        }
     }
     
     //Mark: Button Actions
@@ -96,10 +96,5 @@ class PrivacySettingsViewController: BaseViewController,UITableViewDelegate,UITa
     @IBAction func backButtonAction(_ sender: Any) {
         self.navigationController?.popViewController(animated: true)
     }
-    
-    @IBAction func saveButtonAction(_ sender: Any) {
-    }
-    
-    
 
 }

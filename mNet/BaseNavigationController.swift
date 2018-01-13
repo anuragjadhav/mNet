@@ -14,7 +14,7 @@ class BaseNavigationController: UINavigationController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        setUpNavigationBarForLargeTitle()
+        self.setUpNavigationBarForLargeTitle()
     }
 
     override func didReceiveMemoryWarning() {
