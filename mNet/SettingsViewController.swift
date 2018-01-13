@@ -28,6 +28,11 @@ class SettingsViewController: BaseViewController,UITableViewDelegate,UITableView
     func setupNavigationBar(){
         
         self.navigationController?.navigationBar.isHidden = true
+        if #available(iOS 11.0, *) {
+            self.navigationController?.navigationBar.prefersLargeTitles = true
+        } else {
+            // Fallback on earlier versions
+        }
     }
     
     //Mark: tableview delegates and data source
