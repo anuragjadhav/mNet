@@ -12,6 +12,8 @@
 		0531A57D2007EA4200F2232C /* FilterSectionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0531A57C2007EA4200F2232C /* FilterSectionTableViewCell.swift */; };
 		0531A57F2007EA5100F2232C /* FilterOptionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0531A57E2007EA5100F2232C /* FilterOptionTableViewCell.swift */; };
 		0575623A200A34110010CBB1 /* BaseNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05756239200A34110010CBB1 /* BaseNavigationController.swift */; };
+		0575623C200AB33A0010CBB1 /* PendingApprovalsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0575623B200AB33A0010CBB1 /* PendingApprovalsTableViewCell.swift */; };
+		0575623E200AB3540010CBB1 /* PendingApprovalsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0575623D200AB3540010CBB1 /* PendingApprovalsCollectionViewCell.swift */; };
 		058A0E4C1FF7C44D00147238 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 058A0E4B1FF7C44D00147238 /* Login.storyboard */; };
 		058A0ECC1FF7C4DD00147238 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 058A0ECB1FF7C4DD00147238 /* LoginViewController.swift */; };
 		058A0ED21FF7C50400147238 /* DashboardMyAppsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 058A0ED11FF7C50400147238 /* DashboardMyAppsTableViewCell.swift */; };
@@ -86,6 +88,8 @@
 		0531A57C2007EA4200F2232C /* FilterSectionTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FilterSectionTableViewCell.swift; sourceTree = "<group>"; };
 		0531A57E2007EA5100F2232C /* FilterOptionTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FilterOptionTableViewCell.swift; sourceTree = "<group>"; };
 		05756239200A34110010CBB1 /* BaseNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseNavigationController.swift; sourceTree = "<group>"; };
+		0575623B200AB33A0010CBB1 /* PendingApprovalsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PendingApprovalsTableViewCell.swift; sourceTree = "<group>"; };
+		0575623D200AB3540010CBB1 /* PendingApprovalsCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PendingApprovalsCollectionViewCell.swift; sourceTree = "<group>"; };
 		058A0E4B1FF7C44D00147238 /* Login.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
 		058A0ECB1FF7C4DD00147238 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		058A0ED11FF7C50400147238 /* DashboardMyAppsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DashboardMyAppsTableViewCell.swift; sourceTree = "<group>"; };
@@ -311,6 +315,8 @@
 				5E183EA31FF3F97600368DE1 /* PeopleListTableViewCell.swift */,
 				5E18AE3F1FF818FC007AA461 /* SendPeopleListTableViewCell.swift */,
 				5E18AE451FF8238A007AA461 /* AttachmentsTableViewCell.swift */,
+				0575623B200AB33A0010CBB1 /* PendingApprovalsTableViewCell.swift */,
+				0575623D200AB3540010CBB1 /* PendingApprovalsCollectionViewCell.swift */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -645,6 +651,7 @@
 				05A7A8FF1FF80B7700472A60 /* SelectUserViewController.swift in Sources */,
 				5E1C499A1FEA7F30007CE624 /* CustomBrownTextColorTextfield.swift in Sources */,
 				5E3A046E2007A64D004EE2D7 /* ConversationDetailViewController.swift in Sources */,
+				0575623C200AB33A0010CBB1 /* PendingApprovalsTableViewCell.swift in Sources */,
 				5E183EA11FF3CA4800368DE1 /* DocumentDetailsViewController.swift in Sources */,
 				5EC300621FEC0A5A00229516 /* Option.swift in Sources */,
 				5E3A04722007C313004EE2D7 /* ReceivedMessageTableViewCell.swift in Sources */,
@@ -669,6 +676,7 @@
 				5E4A8D3D1FF4FB6600086667 /* PeopleViewController.swift in Sources */,
 				5E1B6D011FED33A800C307B3 /* CustomPickerView.swift in Sources */,
 				5E4A8D3B1FF4FB4900086667 /* PeopleTableViewCell.swift in Sources */,
+				0575623E200AB3540010CBB1 /* PendingApprovalsCollectionViewCell.swift in Sources */,
 				0531A57D2007EA4200F2232C /* FilterSectionTableViewCell.swift in Sources */,
 				5E18AE421FF81B45007AA461 /* AttachmentsViewController.swift in Sources */,
 				5E183EA41FF3F97600368DE1 /* PeopleListTableViewCell.swift in Sources */,

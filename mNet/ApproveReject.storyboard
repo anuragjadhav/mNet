@@ -1024,165 +1024,201 @@
                                     <constraint firstAttribute="height" constant="102" id="sP4-0r-VET"/>
                                 </constraints>
                             </view>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="204" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="FlS-pH-e24">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="215" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="FlS-pH-e24">
                                 <rect key="frame" x="0.0" y="221.5" width="375" height="445.5"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <searchBar key="tableHeaderView" contentMode="redraw" searchBarStyle="minimal" id="DHT-Qm-mhZ">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                    <textInputTraits key="textInputTraits"/>
+                                </searchBar>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="pendingApprovalsTableViewCell" rowHeight="204" id="SP2-8A-oCE">
-                                        <rect key="frame" x="0.0" y="28" width="375" height="204"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="pendingApprovalsTableViewCell" rowHeight="204" id="SP2-8A-oCE" customClass="PendingApprovalsTableViewCell" customModule="mNet" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="72" width="375" height="204"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" tableViewCell="SP2-8A-oCE" id="2Qt-wT-KXh">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="203.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8ny-bQ-mWf">
-                                                    <rect key="frame" x="27" y="25" width="32" height="32"/>
+                                                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" directionalLockEnabled="YES" pagingEnabled="YES" dataMode="prototypes" prefetchingEnabled="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wq4-tO-dxi">
+                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="203.5"/>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="width" secondItem="8ny-bQ-mWf" secondAttribute="height" multiplier="1:1" id="G8J-4s-Ycg"/>
-                                                        <constraint firstAttribute="height" constant="32" id="cTv-ZN-MBZ"/>
-                                                    </constraints>
-                                                    <userDefinedRuntimeAttributes>
-                                                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                            <real key="value" value="16"/>
-                                                        </userDefinedRuntimeAttribute>
-                                                    </userDefinedRuntimeAttributes>
-                                                </view>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="upArrow" translatesAutoresizingMaskIntoConstraints="NO" id="HIu-TY-fuK">
-                                                    <rect key="frame" x="35" y="32.5" width="16" height="16"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="width" secondItem="HIu-TY-fuK" secondAttribute="height" multiplier="1:1" id="BgS-UW-xtv"/>
-                                                        <constraint firstAttribute="height" constant="16" id="n4Q-YV-kRs"/>
-                                                    </constraints>
-                                                </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="PUB:16-17:000015 (PO)  | 19-12-2016" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bsc-Ax-L7U" customClass="CustomBrownTextColorLabel" customModule="mNet" customModuleProvider="target">
-                                                    <rect key="frame" x="76" y="26" width="191" height="14.5"/>
-                                                    <fontDescription key="fontDescription" name="SanFranciscoDisplay-Bold" family="San Francisco Display" pointSize="12"/>
-                                                    <color key="textColor" red="0.3803921569" green="0.28235294119999998" blue="0.22352941179999999" alpha="0.59999999999999998" colorSpace="calibratedRGB"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Rs 11,61,22,912.00" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hvi-3r-RzS" customClass="CustomBrownTextColorLabel" customModule="mNet" customModuleProvider="target">
-                                                    <rect key="frame" x="76" y="56.5" width="198.5" height="31.5"/>
-                                                    <fontDescription key="fontDescription" name="SanFranciscoDisplay-Medium" family="San Francisco Display" pointSize="26"/>
-                                                    <color key="textColor" red="0.3803921569" green="0.28235294119999998" blue="0.22352941179999999" alpha="1" colorSpace="calibratedRGB"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="BRAND" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NNS-rr-OdH" customClass="CustomBrownTextColorLabel" customModule="mNet" customModuleProvider="target">
-                                                    <rect key="frame" x="76" y="105" width="32" height="12"/>
-                                                    <fontDescription key="fontDescription" name="SanFranciscoDisplay-Bold" family="San Francisco Display" pointSize="10"/>
-                                                    <color key="textColor" red="0.3803921569" green="0.28235294119999998" blue="0.22352941179999999" alpha="0.59999999999999998" colorSpace="calibratedRGB"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Super Splendor" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="39I-fR-eUL" customClass="CustomBrownTextColorLabel" customModule="mNet" customModuleProvider="target">
-                                                    <rect key="frame" x="76" y="119" width="100" height="17"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="width" constant="100" id="ALi-fS-Tik"/>
-                                                    </constraints>
-                                                    <fontDescription key="fontDescription" name="SanFranciscoDisplay-Medium" family="San Francisco Display" pointSize="14"/>
-                                                    <color key="textColor" red="0.3803921569" green="0.28235294119999998" blue="0.22352941179999999" alpha="1" colorSpace="calibratedRGB"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="VENDOR" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GaL-7T-a0P" customClass="CustomBrownTextColorLabel" customModule="mNet" customModuleProvider="target">
-                                                    <rect key="frame" x="288" y="105" width="38" height="12"/>
-                                                    <fontDescription key="fontDescription" name="SanFranciscoDisplay-Bold" family="San Francisco Display" pointSize="10"/>
-                                                    <color key="textColor" red="0.3803921569" green="0.28235294119999998" blue="0.22352941179999999" alpha="0.59999999999999998" colorSpace="calibratedRGB"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="4 Creations" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RNz-LA-Gck" customClass="CustomBrownTextColorLabel" customModule="mNet" customModuleProvider="target">
-                                                    <rect key="frame" x="288" y="119" width="79" height="17"/>
-                                                    <fontDescription key="fontDescription" name="SanFranciscoDisplay-Medium" family="San Francisco Display" pointSize="14"/>
-                                                    <color key="textColor" red="0.3803921569" green="0.28235294119999998" blue="0.22352941179999999" alpha="1" colorSpace="calibratedRGB"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jCZ-2o-qFW">
-                                                    <rect key="frame" x="76" y="151" width="90" height="30"/>
-                                                    <color key="backgroundColor" red="0.89019607840000003" green="0.89019607840000003" blue="0.89019607840000003" alpha="1" colorSpace="calibratedRGB"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="height" constant="30" id="VQ3-lD-4yt"/>
-                                                        <constraint firstAttribute="width" constant="90" id="lpe-GX-ncE"/>
-                                                    </constraints>
-                                                    <fontDescription key="fontDescription" name="SanFranciscoDisplay-Semibold" family="San Francisco Display" pointSize="14"/>
-                                                    <state key="normal" title="APPROVE">
-                                                        <color key="titleColor" red="0.01176470588" green="0.51764705879999995" blue="0.80784313730000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                    </state>
-                                                    <connections>
-                                                        <action selector="approveButtonAction:" destination="xyC-99-u6T" eventType="touchUpInside" id="yWH-aN-oag"/>
-                                                    </connections>
-                                                </button>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MWW-Ss-1xA">
-                                                    <rect key="frame" x="188" y="156" width="50" height="20"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="height" constant="20" id="qOx-wh-szK"/>
-                                                        <constraint firstAttribute="width" constant="50" id="zyP-Z9-2Aa"/>
-                                                    </constraints>
-                                                    <fontDescription key="fontDescription" name="SanFranciscoDisplay-Semibold" family="San Francisco Display" pointSize="14"/>
-                                                    <state key="normal" title="REJECT">
-                                                        <color key="titleColor" red="0.81568627449999997" green="0.0078431372550000003" blue="0.1058823529" alpha="1" colorSpace="calibratedRGB"/>
-                                                    </state>
-                                                    <connections>
-                                                        <action selector="rejectButtonAction:" destination="xyC-99-u6T" eventType="touchUpInside" id="PxW-NO-4Dj"/>
-                                                    </connections>
-                                                </button>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="MEDIUM" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ll2-xe-2IP" customClass="CustomBrownTextColorLabel" customModule="mNet" customModuleProvider="target">
-                                                    <rect key="frame" x="192" y="105" width="38" height="12"/>
-                                                    <fontDescription key="fontDescription" name="SanFranciscoDisplay-Bold" family="San Francisco Display" pointSize="10"/>
-                                                    <color key="textColor" red="0.3803921569" green="0.28235294119999998" blue="0.22352941179999999" alpha="0.59999999999999998" colorSpace="calibratedRGB"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="TV" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b72-Xq-oIx" customClass="CustomBrownTextColorLabel" customModule="mNet" customModuleProvider="target">
-                                                    <rect key="frame" x="192" y="119" width="80" height="17"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="width" constant="80" id="WjE-xI-aHo"/>
-                                                    </constraints>
-                                                    <fontDescription key="fontDescription" name="SanFranciscoDisplay-Medium" family="San Francisco Display" pointSize="14"/>
-                                                    <color key="textColor" red="0.3803921569" green="0.28235294119999998" blue="0.22352941179999999" alpha="1" colorSpace="calibratedRGB"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sD0-uv-WSt">
-                                                    <rect key="frame" x="326" y="21" width="28" height="24"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="height" constant="24" id="5ba-mL-JfB"/>
-                                                        <constraint firstAttribute="width" constant="28" id="UwT-ae-e4R"/>
-                                                    </constraints>
-                                                    <state key="normal" image="attachmentIcon"/>
-                                                    <connections>
-                                                        <action selector="attachmentButtonAction:" destination="xyC-99-u6T" eventType="touchUpInside" id="g5S-Cq-xUX"/>
-                                                    </connections>
-                                                </button>
+                                                    <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="ZnA-cF-9bm">
+                                                        <size key="itemSize" width="367" height="209"/>
+                                                        <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                                        <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                                        <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                                    </collectionViewFlowLayout>
+                                                    <cells>
+                                                        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="pendingApprovalsCollectionViewCell" id="cz7-uG-gS7" customClass="PendingApprovalsCollectionViewCell" customModule="mNet" customModuleProvider="target">
+                                                            <rect key="frame" x="0.0" y="-3" width="367" height="209"/>
+                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
+                                                                <rect key="frame" x="0.0" y="0.0" width="367" height="209"/>
+                                                                <autoresizingMask key="autoresizingMask"/>
+                                                                <subviews>
+                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Super Splendor" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5kT-OB-URu" customClass="CustomBrownTextColorLabel" customModule="mNet" customModuleProvider="target">
+                                                                        <rect key="frame" x="68" y="127" width="100" height="17"/>
+                                                                        <constraints>
+                                                                            <constraint firstAttribute="width" constant="100" id="ate-MR-jmQ"/>
+                                                                        </constraints>
+                                                                        <fontDescription key="fontDescription" name="SanFranciscoDisplay-Medium" family="San Francisco Display" pointSize="14"/>
+                                                                        <color key="textColor" red="0.3803921569" green="0.28235294119999998" blue="0.22352941179999999" alpha="1" colorSpace="calibratedRGB"/>
+                                                                        <nil key="highlightedColor"/>
+                                                                    </label>
+                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="BRAND" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ICP-eM-bDh" customClass="CustomBrownTextColorLabel" customModule="mNet" customModuleProvider="target">
+                                                                        <rect key="frame" x="68" y="113" width="32" height="12"/>
+                                                                        <fontDescription key="fontDescription" name="SanFranciscoDisplay-Bold" family="San Francisco Display" pointSize="10"/>
+                                                                        <color key="textColor" red="0.3803921569" green="0.28235294119999998" blue="0.22352941179999999" alpha="0.59999999999999998" colorSpace="calibratedRGB"/>
+                                                                        <nil key="highlightedColor"/>
+                                                                    </label>
+                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="TV" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="564-IU-vcP" customClass="CustomBrownTextColorLabel" customModule="mNet" customModuleProvider="target">
+                                                                        <rect key="frame" x="184" y="127" width="80" height="17"/>
+                                                                        <constraints>
+                                                                            <constraint firstAttribute="width" constant="80" id="pG7-bw-lc0"/>
+                                                                        </constraints>
+                                                                        <fontDescription key="fontDescription" name="SanFranciscoDisplay-Medium" family="San Francisco Display" pointSize="14"/>
+                                                                        <color key="textColor" red="0.3803921569" green="0.28235294119999998" blue="0.22352941179999999" alpha="1" colorSpace="calibratedRGB"/>
+                                                                        <nil key="highlightedColor"/>
+                                                                    </label>
+                                                                    <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Urb-ot-LHi">
+                                                                        <rect key="frame" x="19" y="17" width="32" height="32"/>
+                                                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                        <constraints>
+                                                                            <constraint firstAttribute="width" secondItem="Urb-ot-LHi" secondAttribute="height" multiplier="1:1" id="hId-QP-2g0"/>
+                                                                            <constraint firstAttribute="height" constant="32" id="qy1-Fd-weX"/>
+                                                                        </constraints>
+                                                                        <userDefinedRuntimeAttributes>
+                                                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                                                <real key="value" value="16"/>
+                                                                            </userDefinedRuntimeAttribute>
+                                                                        </userDefinedRuntimeAttributes>
+                                                                    </view>
+                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="PUB:16-17:000015 (PO)  | 19-12-2016" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MkY-GG-0ib" customClass="CustomBrownTextColorLabel" customModule="mNet" customModuleProvider="target">
+                                                                        <rect key="frame" x="68" y="34" width="191" height="14.5"/>
+                                                                        <fontDescription key="fontDescription" name="SanFranciscoDisplay-Bold" family="San Francisco Display" pointSize="12"/>
+                                                                        <color key="textColor" red="0.3803921569" green="0.28235294119999998" blue="0.22352941179999999" alpha="0.59999999999999998" colorSpace="calibratedRGB"/>
+                                                                        <nil key="highlightedColor"/>
+                                                                    </label>
+                                                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="upArrow" translatesAutoresizingMaskIntoConstraints="NO" id="cxR-cA-ckU">
+                                                                        <rect key="frame" x="27" y="25" width="16" height="16"/>
+                                                                        <constraints>
+                                                                            <constraint firstAttribute="height" constant="16" id="3zu-9g-kTF"/>
+                                                                            <constraint firstAttribute="width" secondItem="cxR-cA-ckU" secondAttribute="height" multiplier="1:1" id="Y5m-Ju-dRE"/>
+                                                                        </constraints>
+                                                                    </imageView>
+                                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="N38-l1-zO1">
+                                                                        <rect key="frame" x="180" y="164" width="50" height="20"/>
+                                                                        <constraints>
+                                                                            <constraint firstAttribute="height" constant="20" id="8G8-BC-LfI"/>
+                                                                            <constraint firstAttribute="width" constant="50" id="GuQ-Vz-D2P"/>
+                                                                        </constraints>
+                                                                        <fontDescription key="fontDescription" name="SanFranciscoDisplay-Semibold" family="San Francisco Display" pointSize="14"/>
+                                                                        <state key="normal" title="REJECT">
+                                                                            <color key="titleColor" red="0.81568627449999997" green="0.0078431372550000003" blue="0.1058823529" alpha="1" colorSpace="calibratedRGB"/>
+                                                                        </state>
+                                                                        <connections>
+                                                                            <action selector="rejectButtonAction:" destination="xyC-99-u6T" eventType="touchUpInside" id="LUb-n7-KtO"/>
+                                                                        </connections>
+                                                                    </button>
+                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="MEDIUM" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iEn-B4-OKh" customClass="CustomBrownTextColorLabel" customModule="mNet" customModuleProvider="target">
+                                                                        <rect key="frame" x="184" y="113" width="38" height="12"/>
+                                                                        <fontDescription key="fontDescription" name="SanFranciscoDisplay-Bold" family="San Francisco Display" pointSize="10"/>
+                                                                        <color key="textColor" red="0.3803921569" green="0.28235294119999998" blue="0.22352941179999999" alpha="0.59999999999999998" colorSpace="calibratedRGB"/>
+                                                                        <nil key="highlightedColor"/>
+                                                                    </label>
+                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="VENDOR" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zXB-fT-60L" customClass="CustomBrownTextColorLabel" customModule="mNet" customModuleProvider="target">
+                                                                        <rect key="frame" x="280" y="113" width="38" height="12"/>
+                                                                        <fontDescription key="fontDescription" name="SanFranciscoDisplay-Bold" family="San Francisco Display" pointSize="10"/>
+                                                                        <color key="textColor" red="0.3803921569" green="0.28235294119999998" blue="0.22352941179999999" alpha="0.59999999999999998" colorSpace="calibratedRGB"/>
+                                                                        <nil key="highlightedColor"/>
+                                                                    </label>
+                                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lzO-rd-psY">
+                                                                        <rect key="frame" x="68" y="159" width="90" height="30"/>
+                                                                        <color key="backgroundColor" red="0.89019607840000003" green="0.89019607840000003" blue="0.89019607840000003" alpha="1" colorSpace="calibratedRGB"/>
+                                                                        <constraints>
+                                                                            <constraint firstAttribute="height" constant="30" id="4O2-T7-pX4"/>
+                                                                            <constraint firstAttribute="width" constant="90" id="ASU-RJ-Wgx"/>
+                                                                        </constraints>
+                                                                        <fontDescription key="fontDescription" name="SanFranciscoDisplay-Semibold" family="San Francisco Display" pointSize="14"/>
+                                                                        <state key="normal" title="APPROVE">
+                                                                            <color key="titleColor" red="0.01176470588" green="0.51764705879999995" blue="0.80784313730000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                        </state>
+                                                                        <connections>
+                                                                            <action selector="approveButtonAction:" destination="xyC-99-u6T" eventType="touchUpInside" id="N6o-Xr-Wg9"/>
+                                                                        </connections>
+                                                                    </button>
+                                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8oJ-Sx-wh9">
+                                                                        <rect key="frame" x="317" y="29" width="28" height="24"/>
+                                                                        <constraints>
+                                                                            <constraint firstAttribute="height" constant="24" id="9E5-rt-rDo"/>
+                                                                            <constraint firstAttribute="width" constant="28" id="qxa-fv-vxB"/>
+                                                                        </constraints>
+                                                                        <state key="normal" image="attachmentIcon"/>
+                                                                        <connections>
+                                                                            <action selector="attachmentButtonAction:" destination="xyC-99-u6T" eventType="touchUpInside" id="ovH-VP-378"/>
+                                                                        </connections>
+                                                                    </button>
+                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Rs 11,61,22,912.00" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MzK-Dn-7oa" customClass="CustomBrownTextColorLabel" customModule="mNet" customModuleProvider="target">
+                                                                        <rect key="frame" x="68" y="64" width="198.5" height="31.5"/>
+                                                                        <fontDescription key="fontDescription" name="SanFranciscoDisplay-Medium" family="San Francisco Display" pointSize="26"/>
+                                                                        <color key="textColor" red="0.3803921569" green="0.28235294119999998" blue="0.22352941179999999" alpha="1" colorSpace="calibratedRGB"/>
+                                                                        <nil key="highlightedColor"/>
+                                                                    </label>
+                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="4 Creations" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DSf-Sv-5yv" customClass="CustomBrownTextColorLabel" customModule="mNet" customModuleProvider="target">
+                                                                        <rect key="frame" x="280" y="127" width="70.5" height="17"/>
+                                                                        <fontDescription key="fontDescription" name="SanFranciscoDisplay-Medium" family="San Francisco Display" pointSize="14"/>
+                                                                        <color key="textColor" red="0.3803921569" green="0.28235294119999998" blue="0.22352941179999999" alpha="1" colorSpace="calibratedRGB"/>
+                                                                        <nil key="highlightedColor"/>
+                                                                    </label>
+                                                                </subviews>
+                                                            </view>
+                                                            <constraints>
+                                                                <constraint firstItem="DSf-Sv-5yv" firstAttribute="leading" secondItem="zXB-fT-60L" secondAttribute="leading" id="5nV-fY-7a3"/>
+                                                                <constraint firstItem="MzK-Dn-7oa" firstAttribute="top" secondItem="MkY-GG-0ib" secondAttribute="bottom" constant="16" id="BkO-Mg-eou"/>
+                                                                <constraint firstItem="564-IU-vcP" firstAttribute="top" secondItem="iEn-B4-OKh" secondAttribute="bottom" constant="2" id="By7-w6-Nre"/>
+                                                                <constraint firstItem="lzO-rd-psY" firstAttribute="leading" secondItem="5kT-OB-URu" secondAttribute="leading" id="JAE-tf-jLo"/>
+                                                                <constraint firstAttribute="bottom" secondItem="lzO-rd-psY" secondAttribute="bottom" constant="20" id="JRh-dF-9bf"/>
+                                                                <constraint firstItem="zXB-fT-60L" firstAttribute="centerY" secondItem="iEn-B4-OKh" secondAttribute="centerY" id="Kr7-3Q-8l6"/>
+                                                                <constraint firstItem="N38-l1-zO1" firstAttribute="leading" secondItem="lzO-rd-psY" secondAttribute="trailing" constant="22" id="L9f-dh-vVU"/>
+                                                                <constraint firstItem="cxR-cA-ckU" firstAttribute="width" secondItem="cxR-cA-ckU" secondAttribute="height" multiplier="1:1" id="QIz-zV-Mcj"/>
+                                                                <constraint firstItem="ICP-eM-bDh" firstAttribute="top" secondItem="MzK-Dn-7oa" secondAttribute="bottom" constant="17" id="Rcq-dc-JMD"/>
+                                                                <constraint firstItem="ICP-eM-bDh" firstAttribute="leading" secondItem="MzK-Dn-7oa" secondAttribute="leading" id="SLY-9v-Mp3"/>
+                                                                <constraint firstItem="cxR-cA-ckU" firstAttribute="leading" secondItem="cz7-uG-gS7" secondAttribute="leading" constant="27" id="Ujs-f9-8WZ"/>
+                                                                <constraint firstItem="564-IU-vcP" firstAttribute="leading" secondItem="iEn-B4-OKh" secondAttribute="leading" id="VHe-2p-1F4"/>
+                                                                <constraint firstItem="cxR-cA-ckU" firstAttribute="top" secondItem="cz7-uG-gS7" secondAttribute="top" constant="25" id="VVz-q1-0MG"/>
+                                                                <constraint firstItem="iEn-B4-OKh" firstAttribute="centerY" secondItem="ICP-eM-bDh" secondAttribute="centerY" id="YV7-8y-4Kj"/>
+                                                                <constraint firstItem="MkY-GG-0ib" firstAttribute="leading" secondItem="Urb-ot-LHi" secondAttribute="trailing" constant="17" id="cy5-IQ-X8e"/>
+                                                                <constraint firstItem="564-IU-vcP" firstAttribute="leading" secondItem="5kT-OB-URu" secondAttribute="trailing" constant="16" id="dvb-R1-Pjh"/>
+                                                                <constraint firstItem="8oJ-Sx-wh9" firstAttribute="centerY" secondItem="MkY-GG-0ib" secondAttribute="centerY" id="ezq-mW-vv6"/>
+                                                                <constraint firstItem="cxR-cA-ckU" firstAttribute="centerX" secondItem="Urb-ot-LHi" secondAttribute="centerX" id="gmB-sf-1uS"/>
+                                                                <constraint firstItem="cxR-cA-ckU" firstAttribute="centerY" secondItem="Urb-ot-LHi" secondAttribute="centerY" id="h2N-Ee-FAU"/>
+                                                                <constraint firstItem="5kT-OB-URu" firstAttribute="leading" secondItem="ICP-eM-bDh" secondAttribute="leading" id="h5O-Cb-rkH"/>
+                                                                <constraint firstItem="5kT-OB-URu" firstAttribute="top" secondItem="ICP-eM-bDh" secondAttribute="bottom" constant="2" id="ipy-1i-ElB"/>
+                                                                <constraint firstItem="Urb-ot-LHi" firstAttribute="width" secondItem="Urb-ot-LHi" secondAttribute="height" multiplier="1:1" id="jM5-o2-Q2y"/>
+                                                                <constraint firstItem="MzK-Dn-7oa" firstAttribute="leading" secondItem="MkY-GG-0ib" secondAttribute="leading" id="kEw-qD-LzH"/>
+                                                                <constraint firstItem="DSf-Sv-5yv" firstAttribute="leading" secondItem="564-IU-vcP" secondAttribute="trailing" constant="16" id="kzS-Qu-bOl"/>
+                                                                <constraint firstAttribute="trailing" secondItem="8oJ-Sx-wh9" secondAttribute="trailing" constant="22" id="nOM-fM-np1"/>
+                                                                <constraint firstItem="DSf-Sv-5yv" firstAttribute="top" secondItem="zXB-fT-60L" secondAttribute="bottom" constant="2" id="onV-CD-orH"/>
+                                                                <constraint firstItem="lzO-rd-psY" firstAttribute="top" secondItem="5kT-OB-URu" secondAttribute="bottom" constant="15" id="wPk-PG-qRE"/>
+                                                                <constraint firstItem="N38-l1-zO1" firstAttribute="centerY" secondItem="lzO-rd-psY" secondAttribute="centerY" id="ziW-Io-zhN"/>
+                                                            </constraints>
+                                                        </collectionViewCell>
+                                                    </cells>
+                                                </collectionView>
                                             </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <constraints>
-                                                <constraint firstItem="RNz-LA-Gck" firstAttribute="leading" secondItem="GaL-7T-a0P" secondAttribute="leading" id="0JN-X6-xOs"/>
-                                                <constraint firstItem="bsc-Ax-L7U" firstAttribute="leading" secondItem="8ny-bQ-mWf" secondAttribute="trailing" constant="17" id="3Gu-hb-12F"/>
-                                                <constraint firstItem="b72-Xq-oIx" firstAttribute="leading" secondItem="39I-fR-eUL" secondAttribute="trailing" constant="16" id="3Kx-Td-atb"/>
-                                                <constraint firstItem="bsc-Ax-L7U" firstAttribute="top" secondItem="2Qt-wT-KXh" secondAttribute="top" constant="26" id="59R-Ol-o9m"/>
-                                                <constraint firstItem="Hvi-3r-RzS" firstAttribute="top" secondItem="bsc-Ax-L7U" secondAttribute="bottom" constant="16" id="5u3-PQ-D7o"/>
-                                                <constraint firstItem="MWW-Ss-1xA" firstAttribute="centerY" secondItem="jCZ-2o-qFW" secondAttribute="centerY" id="7w5-6H-crf"/>
-                                                <constraint firstAttribute="trailing" secondItem="RNz-LA-Gck" secondAttribute="trailing" constant="8" id="IaS-OS-DqR"/>
-                                                <constraint firstAttribute="bottom" secondItem="jCZ-2o-qFW" secondAttribute="bottom" constant="22" id="JkN-1W-33C"/>
-                                                <constraint firstItem="RNz-LA-Gck" firstAttribute="leading" secondItem="b72-Xq-oIx" secondAttribute="trailing" constant="16" id="L7p-fU-QA5"/>
-                                                <constraint firstItem="jCZ-2o-qFW" firstAttribute="top" secondItem="39I-fR-eUL" secondAttribute="bottom" constant="15" id="Pqx-jM-F5c"/>
-                                                <constraint firstItem="RNz-LA-Gck" firstAttribute="top" secondItem="GaL-7T-a0P" secondAttribute="bottom" constant="2" id="TNg-KH-8sq"/>
-                                                <constraint firstItem="HIu-TY-fuK" firstAttribute="centerY" secondItem="8ny-bQ-mWf" secondAttribute="centerY" id="Vqe-Rq-iAD"/>
-                                                <constraint firstItem="8ny-bQ-mWf" firstAttribute="leading" secondItem="2Qt-wT-KXh" secondAttribute="leading" constant="27" id="W3q-3t-3jd"/>
-                                                <constraint firstItem="NNS-rr-OdH" firstAttribute="leading" secondItem="Hvi-3r-RzS" secondAttribute="leading" id="Xmh-kO-VaJ"/>
-                                                <constraint firstItem="sD0-uv-WSt" firstAttribute="centerY" secondItem="bsc-Ax-L7U" secondAttribute="centerY" id="cuN-t9-WxI"/>
-                                                <constraint firstItem="Hvi-3r-RzS" firstAttribute="leading" secondItem="bsc-Ax-L7U" secondAttribute="leading" id="f8P-qf-6zE"/>
-                                                <constraint firstItem="39I-fR-eUL" firstAttribute="leading" secondItem="NNS-rr-OdH" secondAttribute="leading" id="fad-ij-9MM"/>
-                                                <constraint firstItem="HIu-TY-fuK" firstAttribute="centerX" secondItem="8ny-bQ-mWf" secondAttribute="centerX" id="fem-fj-qWv"/>
-                                                <constraint firstItem="NNS-rr-OdH" firstAttribute="top" secondItem="Hvi-3r-RzS" secondAttribute="bottom" constant="17" id="lRc-p4-2zt"/>
-                                                <constraint firstItem="jCZ-2o-qFW" firstAttribute="leading" secondItem="39I-fR-eUL" secondAttribute="leading" id="n9w-XW-PKS"/>
-                                                <constraint firstAttribute="trailing" secondItem="sD0-uv-WSt" secondAttribute="trailing" constant="21" id="nwj-dc-3ax"/>
-                                                <constraint firstItem="39I-fR-eUL" firstAttribute="top" secondItem="NNS-rr-OdH" secondAttribute="bottom" constant="2" id="pPz-y8-1na"/>
-                                                <constraint firstItem="MWW-Ss-1xA" firstAttribute="leading" secondItem="jCZ-2o-qFW" secondAttribute="trailing" constant="22" id="sBx-y7-qse"/>
-                                                <constraint firstItem="ll2-xe-2IP" firstAttribute="centerY" secondItem="NNS-rr-OdH" secondAttribute="centerY" id="uIY-kS-75h"/>
-                                                <constraint firstItem="b72-Xq-oIx" firstAttribute="top" secondItem="ll2-xe-2IP" secondAttribute="bottom" constant="2" id="upS-b3-GaO"/>
-                                                <constraint firstItem="8ny-bQ-mWf" firstAttribute="top" secondItem="2Qt-wT-KXh" secondAttribute="top" constant="25" id="wYz-LS-WRN"/>
-                                                <constraint firstItem="b72-Xq-oIx" firstAttribute="leading" secondItem="ll2-xe-2IP" secondAttribute="leading" id="yQm-ec-A1g"/>
-                                                <constraint firstItem="GaL-7T-a0P" firstAttribute="centerY" secondItem="ll2-xe-2IP" secondAttribute="centerY" id="yno-of-xyw"/>
+                                                <constraint firstAttribute="bottom" secondItem="wq4-tO-dxi" secondAttribute="bottom" id="DZT-cC-jjO"/>
+                                                <constraint firstItem="wq4-tO-dxi" firstAttribute="leading" secondItem="2Qt-wT-KXh" secondAttribute="leading" id="Jep-y1-HYb"/>
+                                                <constraint firstItem="wq4-tO-dxi" firstAttribute="top" secondItem="2Qt-wT-KXh" secondAttribute="top" id="YuM-ry-Bhb"/>
+                                                <constraint firstAttribute="trailing" secondItem="wq4-tO-dxi" secondAttribute="trailing" id="kv0-ys-pie"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <connections>
+                                            <outlet property="pendingApprovalsCollectionView" destination="wq4-tO-dxi" id="N1m-A3-x3u"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>
