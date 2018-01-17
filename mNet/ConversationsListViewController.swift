@@ -68,6 +68,9 @@ class ConversationsListViewController: BaseViewController, UITableViewDelegate, 
     }
     
     @IBAction func filterButtonAction(_ sender: UIButton) {
+        
+        let filterVC = (UIStoryboard.init(name:"Conversation", bundle: Bundle.main)).instantiateViewController(withIdentifier: "FilterViewController")
+        self.navigationController?.pushViewController(filterVC, animated: true)
     }
     
     

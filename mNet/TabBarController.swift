@@ -31,7 +31,7 @@ class TabBarController: UITabBarController {
         
         //Configure the View controllers
         let dashboardViewController:UIViewController = UIStoryboard.dashboard.instantiateInitialViewController()!
-        dashboardViewController.tabBarItem = UITabBarItem(title:TabNames.dashboard , image: nil, tag: 1)
+        dashboardViewController.tabBarItem = UITabBarItem(title:TabNames.dashboard , image: #imageLiteral(resourceName: "dashboard"), tag: 1)
         
         let conversationsViewController:UIViewController = UIStoryboard.conversations.instantiateInitialViewController()!
         conversationsViewController.tabBarItem = UITabBarItem(title:TabNames.conversations , image: #imageLiteral(resourceName: "conversationIcon"), tag: 2)

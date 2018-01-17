@@ -112,7 +112,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="a5o-Jr-Qs0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="743.5" y="158.5"/>
+            <point key="canvasLocation" x="1082.4000000000001" y="157.87106446776613"/>
         </scene>
         <!--New Conversation-->
         <scene sceneID="x7W-21-AQc">
@@ -421,7 +421,7 @@
                         <viewLayoutGuide key="safeArea" id="CfA-n9-NIj"/>
                     </view>
                     <navigationItem key="navigationItem" title="New Conversation" id="z9x-kw-gPI">
-                        <barButtonItem key="leftBarButtonItem" title=" X " id="XsW-Tr-32K">
+                        <barButtonItem key="leftBarButtonItem" title="  " image="close" id="XsW-Tr-32K">
                             <color key="tintColor" red="0.3803921569" green="0.28235294119999998" blue="0.22352941179999999" alpha="1" colorSpace="calibratedRGB"/>
                             <connections>
                                 <action selector="crossButtonAction:" destination="t0F-g9-TKV" id="Pq4-Kw-Wfd"/>
@@ -1814,19 +1814,19 @@
         <!--Filter-->
         <scene sceneID="IgR-fs-s6H">
             <objects>
-                <viewController id="LrF-Jh-7PH" customClass="FilterViewController" customModule="mNet" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="FilterViewController" id="LrF-Jh-7PH" customClass="FilterViewController" customModule="mNet" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="68f-fo-Kwb">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Conversations" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3ei-bD-40X" customClass="CustomBrownTextColorLabel" customModule="mNet" customModuleProvider="target">
-                                <rect key="frame" x="28" y="34" width="85.5" height="17"/>
+                                <rect key="frame" x="28" y="78" width="85.5" height="17"/>
                                 <fontDescription key="fontDescription" name="SanFranciscoDisplay-Light" family="San Francisco Display" pointSize="14"/>
                                 <color key="textColor" red="0.3803921569" green="0.28235294119999998" blue="0.22352941179999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="66" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="PyV-Fa-lw5">
-                                <rect key="frame" x="0.0" y="84" width="111" height="583"/>
+                                <rect key="frame" x="0.0" y="128" width="111" height="539"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="111" id="27o-9z-Bzb"/>
@@ -1885,7 +1885,7 @@
                                 </connections>
                             </tableView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" allowsSelection="NO" rowHeight="51" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="JEh-AZ-804">
-                                <rect key="frame" x="111" y="100" width="264" height="567"/>
+                                <rect key="frame" x="111" y="144" width="264" height="523"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <color key="separatorColor" red="0.59215686274509804" green="0.59215686274509804" blue="0.59215686274509804" alpha="0.01" colorSpace="custom" customColorSpace="sRGB"/>
                                 <prototypes>
@@ -1952,7 +1952,7 @@
                                 <action selector="backBarButtonAction:" destination="LrF-Jh-7PH" id="lNU-YA-WZz"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" title="Clear" id="Rzy-pC-bRf">
+                        <barButtonItem key="rightBarButtonItem" image="close" id="Rzy-pC-bRf">
                             <color key="tintColor" red="0.3803921569" green="0.28235294119999998" blue="0.22352941179999999" alpha="1" colorSpace="calibratedRGB"/>
                             <connections>
                                 <action selector="clearBarButtonAction:" destination="LrF-Jh-7PH" id="A1e-Ub-zcG"/>
@@ -1969,12 +1969,31 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0D6-Oa-LPw" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-7.2000000000000002" y="303.59820089955025"/>
+            <point key="canvasLocation" x="332" y="303.59820089955025"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="BfZ-4R-fdy">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="k75-nQ-UfN" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="YWx-vY-thx">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="LrF-Jh-7PH" kind="relationship" relationship="rootViewController" id="uYe-g6-6pB"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4rW-E5-uBD" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-393" y="304"/>
         </scene>
     </scenes>
     <resources>
         <image name="attachmentIcon" width="64" height="64"/>
         <image name="backButtonImage" width="24" height="24"/>
+        <image name="close" width="16" height="16"/>
         <image name="conversationIcon" width="24" height="24"/>
         <image name="deleteBin" width="24" height="24"/>
         <image name="filterIcon" width="21" height="21"/>
