@@ -23,6 +23,7 @@ class ApprovalsViewController: BaseViewController,UICollectionViewDelegate, UICo
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -58,6 +59,12 @@ class ApprovalsViewController: BaseViewController,UICollectionViewDelegate, UICo
         
         let cell:PendingApprovalsTableViewCell = tableView.dequeueReusableCell(withIdentifier: CellIdentifiers.pendingApprovalsTableViewCell) as! PendingApprovalsTableViewCell
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        let documentVc = (UIStoryboard.init(name:"ApproveReject", bundle: Bundle.main)).instantiateViewController(withIdentifier: "DocumentViewController")
+        self.navigationController?.pushViewController(documentVc, animated: true)
     }
     
     //MARK: Button Actions

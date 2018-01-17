@@ -33,7 +33,6 @@
 		5E184EC51FF8A6210000D7C7 /* MembersTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E184EC41FF8A6210000D7C7 /* MembersTableViewCell.swift */; };
 		5E184EC81FF8A8590000D7C7 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E184EC71FF8A8590000D7C7 /* TabBarController.swift */; };
 		5E18AE391FF8092E007AA461 /* ApprovalVerificationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E18AE381FF8092E007AA461 /* ApprovalVerificationViewController.swift */; };
-		5E18AE3C1FF809EE007AA461 /* ISRadioButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E18AE3B1FF809EE007AA461 /* ISRadioButton.swift */; };
 		5E18AE3E1FF8113A007AA461 /* CustomBlueBackgroundButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E18AE3D1FF8113A007AA461 /* CustomBlueBackgroundButton.swift */; };
 		5E18AE401FF818FC007AA461 /* SendPeopleListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E18AE3F1FF818FC007AA461 /* SendPeopleListTableViewCell.swift */; };
 		5E18AE421FF81B45007AA461 /* AttachmentsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E18AE411FF81B45007AA461 /* AttachmentsViewController.swift */; };
@@ -54,6 +53,8 @@
 		5E1C499D1FEA80A1007CE624 /* ViewBorder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E1C499C1FEA80A1007CE624 /* ViewBorder.swift */; };
 		5E1C49A01FEA847B007CE624 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E1C499F1FEA847B007CE624 /* BaseViewController.swift */; };
 		5E1C49A21FEA84F2007CE624 /* CustomerBrownTextColorButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E1C49A11FEA84F2007CE624 /* CustomerBrownTextColorButton.swift */; };
+		5E1E4215200F537800FB46C1 /* PVRadioButtonGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E1E4214200F537800FB46C1 /* PVRadioButtonGroup.swift */; };
+		5E1E4217200F537F00FB46C1 /* PVRadioButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E1E4216200F537F00FB46C1 /* PVRadioButton.swift */; };
 		5E20CD931FE952BE004ACE0D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E20CD921FE952BE004ACE0D /* AppDelegate.swift */; };
 		5E20CD9A1FE952BE004ACE0D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5E20CD991FE952BE004ACE0D /* Assets.xcassets */; };
 		5E20CD9D1FE952BE004ACE0D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5E20CD9B1FE952BE004ACE0D /* LaunchScreen.storyboard */; };
@@ -70,6 +71,9 @@
 		5E20CDC21FE9724A004ACE0D /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E20CDC11FE9724A004ACE0D /* SettingsViewController.swift */; };
 		5E21A6F11FF28CA100DBB157 /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5E21A6F01FF28CA100DBB157 /* Profile.storyboard */; };
 		5E21A6F51FF28E4700DBB157 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E21A6F41FF28E4700DBB157 /* ProfileViewController.swift */; };
+		5E21B322200F40660045CDA3 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E21B321200F40660045CDA3 /* CoreGraphics.framework */; };
+		5E21B324200F40820045CDA3 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E21B323200F40820045CDA3 /* Foundation.framework */; };
+		5E21B326200F40930045CDA3 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E21B325200F40930045CDA3 /* UIKit.framework */; };
 		5E3A046E2007A64D004EE2D7 /* ConversationDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E3A046D2007A64D004EE2D7 /* ConversationDetailViewController.swift */; };
 		5E3A04702007C302004EE2D7 /* SentMessageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E3A046F2007C302004EE2D7 /* SentMessageTableViewCell.swift */; };
 		5E3A04722007C313004EE2D7 /* ReceivedMessageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E3A04712007C313004EE2D7 /* ReceivedMessageTableViewCell.swift */; };
@@ -109,7 +113,6 @@
 		5E184EC41FF8A6210000D7C7 /* MembersTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MembersTableViewCell.swift; sourceTree = "<group>"; };
 		5E184EC71FF8A8590000D7C7 /* TabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		5E18AE381FF8092E007AA461 /* ApprovalVerificationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApprovalVerificationViewController.swift; sourceTree = "<group>"; };
-		5E18AE3B1FF809EE007AA461 /* ISRadioButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ISRadioButton.swift; sourceTree = "<group>"; };
 		5E18AE3D1FF8113A007AA461 /* CustomBlueBackgroundButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomBlueBackgroundButton.swift; sourceTree = "<group>"; };
 		5E18AE3F1FF818FC007AA461 /* SendPeopleListTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SendPeopleListTableViewCell.swift; sourceTree = "<group>"; };
 		5E18AE411FF81B45007AA461 /* AttachmentsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AttachmentsViewController.swift; sourceTree = "<group>"; };
@@ -130,6 +133,8 @@
 		5E1C499C1FEA80A1007CE624 /* ViewBorder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewBorder.swift; sourceTree = "<group>"; };
 		5E1C499F1FEA847B007CE624 /* BaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		5E1C49A11FEA84F2007CE624 /* CustomerBrownTextColorButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomerBrownTextColorButton.swift; sourceTree = "<group>"; };
+		5E1E4214200F537800FB46C1 /* PVRadioButtonGroup.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PVRadioButtonGroup.swift; sourceTree = "<group>"; };
+		5E1E4216200F537F00FB46C1 /* PVRadioButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PVRadioButton.swift; sourceTree = "<group>"; };
 		5E20CD8F1FE952BE004ACE0D /* mNet.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = mNet.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5E20CD921FE952BE004ACE0D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5E20CD991FE952BE004ACE0D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -148,6 +153,9 @@
 		5E20CDC11FE9724A004ACE0D /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		5E21A6F01FF28CA100DBB157 /* Profile.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Profile.storyboard; sourceTree = "<group>"; };
 		5E21A6F41FF28E4700DBB157 /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		5E21B321200F40660045CDA3 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		5E21B323200F40820045CDA3 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		5E21B325200F40930045CDA3 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		5E3A046D2007A64D004EE2D7 /* ConversationDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConversationDetailViewController.swift; sourceTree = "<group>"; };
 		5E3A046F2007C302004EE2D7 /* SentMessageTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SentMessageTableViewCell.swift; sourceTree = "<group>"; };
 		5E3A04712007C313004EE2D7 /* ReceivedMessageTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReceivedMessageTableViewCell.swift; sourceTree = "<group>"; };
@@ -165,6 +173,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5E21B326200F40930045CDA3 /* UIKit.framework in Frameworks */,
+				5E21B324200F40820045CDA3 /* Foundation.framework in Frameworks */,
+				5E21B322200F40660045CDA3 /* CoreGraphics.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -329,14 +340,6 @@
 			name = TabBarController;
 			sourceTree = "<group>";
 		};
-		5E18AE3A1FF8099C007AA461 /* Radio Button */ = {
-			isa = PBXGroup;
-			children = (
-				5E18AE3B1FF809EE007AA461 /* ISRadioButton.swift */,
-			);
-			name = "Radio Button";
-			sourceTree = "<group>";
-		};
 		5E1B6CFB1FED2AB900C307B3 /* Xibs */ = {
 			isa = PBXGroup;
 			children = (
@@ -357,6 +360,8 @@
 				5E1B6D001FED33A800C307B3 /* CustomPickerView.swift */,
 				5E18AE3D1FF8113A007AA461 /* CustomBlueBackgroundButton.swift */,
 				0531A5782007CCC600F2232C /* CustomRedBackgroundColorButton.swift */,
+				5E1E4214200F537800FB46C1 /* PVRadioButtonGroup.swift */,
+				5E1E4216200F537F00FB46C1 /* PVRadioButton.swift */,
 			);
 			name = "Custom View Classes";
 			sourceTree = "<group>";
@@ -383,6 +388,7 @@
 			children = (
 				5E20CD911FE952BE004ACE0D /* mNet */,
 				5E20CD901FE952BE004ACE0D /* Products */,
+				5E21B320200F40660045CDA3 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -400,7 +406,6 @@
 				5E1C49911FEA45F6007CE624 /* Constants.swift */,
 				5E20CD921FE952BE004ACE0D /* AppDelegate.swift */,
 				5E184EC61FF8A8320000D7C7 /* TabBarController */,
-				5E18AE3A1FF8099C007AA461 /* Radio Button */,
 				5EC300631FEC0A6100229516 /* Models */,
 				5E1C499E1FEA845B007CE624 /* Base classes */,
 				5E1C499B1FEA8072007CE624 /* Extensions */,
@@ -515,6 +520,16 @@
 				5E4A8D3C1FF4FB6600086667 /* PeopleViewController.swift */,
 			);
 			name = "View Controllers";
+			sourceTree = "<group>";
+		};
+		5E21B320200F40660045CDA3 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				5E21B325200F40930045CDA3 /* UIKit.framework */,
+				5E21B323200F40820045CDA3 /* Foundation.framework */,
+				5E21B321200F40660045CDA3 /* CoreGraphics.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		5E4A8D381FF4FAF600086667 /* Data Controller */ = {
@@ -640,7 +655,6 @@
 				0531A57B2007E1F900F2232C /* FilterViewController.swift in Sources */,
 				5E1C49A01FEA847B007CE624 /* BaseViewController.swift in Sources */,
 				5E18AE3E1FF8113A007AA461 /* CustomBlueBackgroundButton.swift in Sources */,
-				5E18AE3C1FF809EE007AA461 /* ISRadioButton.swift in Sources */,
 				5E183E9B1FF37B7C00368DE1 /* RejectApplicationViewController.swift in Sources */,
 				5E3A04702007C302004EE2D7 /* SentMessageTableViewCell.swift in Sources */,
 				5E1C498D1FEA4455007CE624 /* CustomBrownTextColorLabel.swift in Sources */,
@@ -653,11 +667,13 @@
 				5E3A046E2007A64D004EE2D7 /* ConversationDetailViewController.swift in Sources */,
 				0575623C200AB33A0010CBB1 /* PendingApprovalsTableViewCell.swift in Sources */,
 				5E183EA11FF3CA4800368DE1 /* DocumentDetailsViewController.swift in Sources */,
+				5E1E4215200F537800FB46C1 /* PVRadioButtonGroup.swift in Sources */,
 				5EC300621FEC0A5A00229516 /* Option.swift in Sources */,
 				5E3A04722007C313004EE2D7 /* ReceivedMessageTableViewCell.swift in Sources */,
 				0531A57F2007EA5100F2232C /* FilterOptionTableViewCell.swift in Sources */,
 				5E20CD931FE952BE004ACE0D /* AppDelegate.swift in Sources */,
 				058A0EDA1FF7CA2D00147238 /* ConversationsListViewController.swift in Sources */,
+				5E1E4217200F537F00FB46C1 /* PVRadioButton.swift in Sources */,
 				5E1C498F1FEA4468007CE624 /* CustomBlueTextColorLabel.swift in Sources */,
 				5E21A6F51FF28E4700DBB157 /* ProfileViewController.swift in Sources */,
 				5E20CDC21FE9724A004ACE0D /* SettingsViewController.swift in Sources */,
@@ -812,6 +828,10 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = 3J7U28GXGW;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/mNet",
+				);
 				INFOPLIST_FILE = mNet/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -830,6 +850,10 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = 3J7U28GXGW;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/mNet",
+				);
 				INFOPLIST_FILE = mNet/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

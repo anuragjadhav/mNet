@@ -13,6 +13,7 @@ class DashboardMyAppsTableViewCell: UITableViewCell {
     @IBOutlet weak var appImageView: UIImageView!
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var descriptionLabel: UILabel!
+    @IBOutlet weak var starButton: UIButton!
     
     func setUpCell() {
         

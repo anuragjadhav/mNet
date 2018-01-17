@@ -13,13 +13,8 @@ class ConversationsListViewController: BaseViewController, UITableViewDelegate, 
     //MARK: Outlets and Properties
     
     @IBOutlet weak var conversationListTableView: UITableView!
-    
-    @IBOutlet weak var conversationBarButtonItem: UIBarButtonItem!
-    
-    @IBOutlet weak var filterBarButtonItem: UIBarButtonItem!
-    
     @IBOutlet weak var unreadConversationsLabel: CustomBrownTextColorLabel!
-    
+    @IBOutlet weak var lineLabel: UILabel!
     @IBOutlet weak var newConversationButton: UIButton!
     
     @IBOutlet weak var searchBar: UISearchBar!
@@ -27,6 +22,11 @@ class ConversationsListViewController: BaseViewController, UITableViewDelegate, 
     //MARK: View Controller Delegates
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        lineLabel.layer.shadowColor = UIColor.lightGray.cgColor
+        lineLabel.layer.shadowOffset = CGSize(width: 0, height: 0.6)
+        lineLabel.layer.shadowOpacity = 1
+        lineLabel.layer.shadowRadius = 1.0
         
     }
 
@@ -39,12 +39,7 @@ class ConversationsListViewController: BaseViewController, UITableViewDelegate, 
     //MARK: Setup
     func setUpNavigationController() {
         
-        guard let baseNavigationController:BaseNavigationController = self.navigationController as? BaseNavigationController else {
-            return
-        }
-        baseNavigationController.showLargeTitles()
-        
-        self.navigationController?.navigationBar.isHidden = false
+        self.navigationController?.navigationBar.isHidden = true
     }
     
     
@@ -69,10 +64,10 @@ class ConversationsListViewController: BaseViewController, UITableViewDelegate, 
     
     //MARK: Button Actions
     
-    @IBAction func conversationsBarButtonAction(_ sender: UIBarButtonItem) {
+    @IBAction func conversationsBarButtonAction(_ sender: UIButton) {
     }
     
-    @IBAction func filterButtonAction(_ sender: UIBarButtonItem) {
+    @IBAction func filterButtonAction(_ sender: UIButton) {
     }
     
     

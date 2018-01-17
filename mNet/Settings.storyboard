@@ -486,13 +486,6 @@
                                 <action selector="backButtonAction:" destination="3Cn-0j-gUv" id="2JA-Q9-z0f"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" image="tickmark" id="QvB-4V-fcD">
-                            <inset key="imageInsets" minX="0.0" minY="2" maxX="-2" maxY="0.0"/>
-                            <color key="tintColor" red="0.45882352941176469" green="0.45882352941176469" blue="0.45882352941176469" alpha="1" colorSpace="calibratedRGB"/>
-                            <connections>
-                                <action selector="saveButtonAction:" destination="3Cn-0j-gUv" id="Aqm-mQ-O8j"/>
-                            </connections>
-                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="approvalReminderSettingSwitch" destination="DcO-Oo-Zhq" id="0vs-hn-D53"/>

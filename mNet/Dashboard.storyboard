@@ -96,7 +96,7 @@
                                 <color key="textColor" red="0.2901960784" green="0.56470588239999997" blue="0.8862745098" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="98" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="mUh-uh-gsA">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="mUh-uh-gsA">
                                 <rect key="frame" x="27" y="331" width="327" height="336"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="sectionIndexBackgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -132,11 +132,22 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Find all info on ATL Estimates / ATL POs / BTL POs and also some more information" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="m1u-mc-a5D" customClass="CustomBrownTextColorLabel" customModule="mNet" customModuleProvider="target">
-                                                    <rect key="frame" x="99" y="23" width="228" height="50.5"/>
+                                                    <rect key="frame" x="99" y="23" width="188" height="50.5"/>
                                                     <fontDescription key="fontDescription" name="SanFranciscoDisplay-Light" family="San Francisco Display" pointSize="14"/>
                                                     <color key="textColor" red="0.3803921569" green="0.28235294119999998" blue="0.22352941179999999" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IMO-k9-hdK">
+                                                    <rect key="frame" x="285" y="26" width="42" height="35"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="42" id="Rn4-SI-uml"/>
+                                                        <constraint firstAttribute="height" constant="35" id="WXv-pQ-8lQ"/>
+                                                    </constraints>
+                                                    <state key="normal" image="star_empty"/>
+                                                    <connections>
+                                                        <action selector="starButtonAction:" destination="lrb-xA-0fc" eventType="touchUpInside" id="c6E-Sb-mWC"/>
+                                                    </connections>
+                                                </button>
                                             </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <constraints>
@@ -147,14 +158,17 @@
                                                 <constraint firstItem="1aE-gd-m96" firstAttribute="top" secondItem="1n1-pd-lvG" secondAttribute="top" id="VyR-ax-kng"/>
                                                 <constraint firstItem="Dml-Bx-XC8" firstAttribute="leading" secondItem="1aE-gd-m96" secondAttribute="trailing" constant="27" id="aWy-FS-S8c"/>
                                                 <constraint firstAttribute="bottom" secondItem="m1u-mc-a5D" secondAttribute="bottom" constant="24" id="cKY-F2-U3X"/>
+                                                <constraint firstItem="IMO-k9-hdK" firstAttribute="centerY" secondItem="m1u-mc-a5D" secondAttribute="centerY" constant="-5" id="ccJ-fF-HEp"/>
+                                                <constraint firstAttribute="trailing" secondItem="IMO-k9-hdK" secondAttribute="trailing" id="e9u-OX-CWb"/>
                                                 <constraint firstItem="m1u-mc-a5D" firstAttribute="top" secondItem="Dml-Bx-XC8" secondAttribute="bottom" constant="6" id="h4P-TB-xOh"/>
-                                                <constraint firstItem="m1u-mc-a5D" firstAttribute="trailing" secondItem="Dml-Bx-XC8" secondAttribute="trailing" id="lPP-Yl-nd8"/>
+                                                <constraint firstItem="m1u-mc-a5D" firstAttribute="trailing" secondItem="Dml-Bx-XC8" secondAttribute="trailing" constant="-40" id="lPP-Yl-nd8"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <connections>
                                             <outlet property="appImageView" destination="1aE-gd-m96" id="IGL-Ib-rNp"/>
                                             <outlet property="descriptionLabel" destination="m1u-mc-a5D" id="aQd-mL-btc"/>
+                                            <outlet property="starButton" destination="IMO-k9-hdK" id="z59-1Q-H4e"/>
                                             <outlet property="titleLabel" destination="Dml-Bx-XC8" id="aTo-ew-VT6"/>
                                         </connections>
                                     </tableViewCell>
@@ -228,11 +242,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jAP-mN-B3c" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-375.5" y="213.5"/>
+            <point key="canvasLocation" x="-376.80000000000001" y="212.74362818590706"/>
         </scene>
     </scenes>
     <resources>
         <image name="dashboardBackground" width="2016" height="1512"/>
         <image name="newsIcon" width="133" height="133"/>
+        <image name="star_empty" width="16" height="16"/>
     </resources>
 </document>

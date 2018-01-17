@@ -8,19 +8,24 @@
 
 import UIKit
 
-class ApprovalVerificationViewController: BaseViewController,UISearchBarDelegate,UITableViewDelegate,UITableViewDataSource {
+class ApprovalVerificationViewController: BaseViewController,UISearchBarDelegate,UITableViewDelegate,UITableViewDataSource,RadioButtonGroupDelegate {
     
-    @IBOutlet weak var approvalRadioButton: ISRadioButton!
-    @IBOutlet weak var verificationRadioButton: ISRadioButton!
+    @IBOutlet weak var approvalRadioButton: PVRadioButton!
+    @IBOutlet weak var verificationRadioButton: PVRadioButton!
     @IBOutlet weak var messageTextView: CustomBrownColorTextView!
     @IBOutlet weak var searchBar: UISearchBar!
     
     @IBOutlet weak var sendPeopleListTableView: UITableView!
     
+    var radioButtonGroup:PVRadioButtonGroup?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        radioButtonGroup = PVRadioButtonGroup()
+        radioButtonGroup!.appendToRadioGroup(radioButtons: [approvalRadioButton,verificationRadioButton])
+        radioButtonGroup!.delegate = self as RadioButtonGroupDelegate
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -110,8 +115,12 @@ class ApprovalVerificationViewController: BaseViewController,UISearchBarDelegate
     @IBAction func sendButtonAction(_ sender: Any) {
     }
 
-    @IBAction func radioButtonAction(_ sender: Any) {
+    // MARK: - Radio Button Delegate
+    
+    func radioButtonClicked(button: PVRadioButton) {
+        
+
     }
- 
+
 
 }

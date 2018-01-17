@@ -84,11 +84,4 @@ class EmailPreferencesViewController: BaseViewController,UIPickerViewDelegate,UI
         self.navigationController?.popViewController(animated: true)
     }
     
-    @IBAction func saveButtonAction(_ sender: Any) {
-        
-    }
-   
-   
-    
-    
 }

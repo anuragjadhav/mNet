@@ -71,5 +71,24 @@ class DashboardViewController: BaseViewController, UITableViewDataSource, UITabl
         self.navigationController?.pushViewController(approvalsVC, animated: true)
     }
     
-    
+    //Mark: Button Actions
+    @IBAction func starButtonAction(_ sender: UIButton) {
+        
+        let buttonPoint:CGPoint = sender.convert(CGPoint.zero, to: self.myAppsTableView)
+        let indexPath:IndexPath = self.myAppsTableView.indexPathForRow(at: buttonPoint)!
+        
+        let cell:DashboardMyAppsTableViewCell =  self.myAppsTableView.cellForRow(at: indexPath) as! DashboardMyAppsTableViewCell
+        
+        if(cell.isSelected == true)
+        {
+            cell.isSelected = false
+            cell.starButton.setImage(UIImage.init(named: "star_empty"), for: UIControlState.normal)
+        }
+        else
+        {
+            cell.starButton.setImage(UIImage.init(named: "star_filled"), for: UIControlState.normal)
+            cell.isSelected = true
+            
+        }
+    }
 }
