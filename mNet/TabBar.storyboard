@@ -41,40 +41,5 @@
             </objects>
             <point key="canvasLocation" x="49" y="155"/>
         </scene>
-        <!--Conversation-->
-        <scene sceneID="Izv-fN-xki">
-            <objects>
-                <viewControllerPlaceholder storyboardName="Conversation" id="BJB-Ny-A9c" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Conversations" image="conversationIcon" id="Im6-b9-UF5"/>
-                </viewControllerPlaceholder>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="jr0-6A-07U" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="916" y="113"/>
-        </scene>
-        <!--Settings-->
-        <scene sceneID="o6a-Uc-yxA">
-            <objects>
-                <viewControllerPlaceholder storyboardName="Settings" id="8YZ-ZX-2YE" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Setting" image="infoIcon" id="Euz-NA-c0p"/>
-                </viewControllerPlaceholder>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="TH8-Ip-KM1" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="889" y="377"/>
-        </scene>
-        <!--Dashboard-->
-        <scene sceneID="NMQ-Hy-Bae">
-            <objects>
-                <viewControllerPlaceholder storyboardName="Dashboard" id="BgK-U0-9pc" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Dashboard" image="heroLogo" id="Knz-yg-qbT"/>
-                </viewControllerPlaceholder>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="sSX-ah-lBS" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="801" y="-154"/>
-        </scene>
     </scenes>
-    <resources>
-        <image name="conversationIcon" width="24" height="24"/>
-        <image name="heroLogo" width="87" height="100"/>
-        <image name="infoIcon" width="24" height="24"/>
-    </resources>
 </document>

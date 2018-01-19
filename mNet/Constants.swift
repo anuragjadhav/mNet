@@ -82,6 +82,7 @@ struct TabNames {
     static let dashboard:String = "Dashboard"
     static let conversations:String = "Conversations"
     static let settings:String = "Settings"
+    static let notifications:String = "Notifications"
 }
 
 extension UIStoryboard {
@@ -89,6 +90,7 @@ extension UIStoryboard {
     static let dashboard:UIStoryboard = UIStoryboard(name: "Dashboard", bundle: nil)
     static let conversations:UIStoryboard = UIStoryboard(name: "Conversation", bundle: nil)
     static let settings:UIStoryboard = UIStoryboard(name: "Settings", bundle: nil)
+    static let notifications:UIStoryboard = UIStoryboard(name: "Notifications", bundle: nil)
 }
 
 extension UIFont {

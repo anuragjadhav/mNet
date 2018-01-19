@@ -38,7 +38,10 @@ class TabBarController: UITabBarController {
         
         let settingsViewController:UIViewController = UIStoryboard.settings.instantiateInitialViewController()!
         settingsViewController.tabBarItem = UITabBarItem(title:TabNames.settings , image: #imageLiteral(resourceName: "infoIcon"), tag: 3)
-    self.setViewControllers([dashboardViewController,conversationsViewController,settingsViewController], animated: true)
+        
+        let notificationsViewController:UIViewController = UIStoryboard.notifications.instantiateInitialViewController()!
+        notificationsViewController.tabBarItem = UITabBarItem(title:TabNames.notifications , image: #imageLiteral(resourceName: "notification"), tag: 4)
+    self.setViewControllers([dashboardViewController,conversationsViewController,notificationsViewController,settingsViewController], animated: true)
     }
 
 }

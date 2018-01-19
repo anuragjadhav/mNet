@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="qRk-iR-RcP">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="SanFranciscoDisplay-Bold.otf">
+            <string>SanFranciscoDisplay-Bold</string>
+        </array>
+        <array key="SanFranciscoDisplay-Light.otf">
+            <string>SanFranciscoDisplay-Light</string>
+        </array>
+        <array key="SanFranciscoDisplay-Medium.otf">
+            <string>SanFranciscoDisplay-Medium</string>
+        </array>
+    </customFonts>
+    <scenes>
+        <!--Notification View Controller-->
+        <scene sceneID="XFJ-DK-i44">
+            <objects>
+                <viewController storyboardIdentifier="NotificationsViewController" id="qRk-iR-RcP" userLabel="Notification View Controller" customClass="NotificationsViewController" customModule="mNet" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="dF8-dL-FN1">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="R80-cT-9et">
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="rSM-nA-dej">
+                                <rect key="frame" x="0.0" y="137" width="375" height="530"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="NotificationTableViewCell" rowHeight="107" id="vah-Ja-kNf" customClass="NotificationTableViewCell" customModule="mNet" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="107"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" tableViewCell="vah-Ja-kNf" id="hgC-hX-3xR">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="106.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Vinay Singh has commented on &quot;Join application request to Approvals (New Delhi)&quot;" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e7K-kv-ANA" customClass="CustomBrownTextColorLabel" customModule="mNet" customModuleProvider="target">
+                                                    <rect key="frame" x="88" y="12" width="264" height="51"/>
+                                                    <fontDescription key="fontDescription" name="SanFranciscoDisplay-Medium" family="San Francisco Display" pointSize="14"/>
+                                                    <color key="textColor" red="0.3803921569" green="0.28235294119999998" blue="0.22352941179999999" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="RD" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A5v-Do-mH5">
+                                                    <rect key="frame" x="26" y="16" width="40" height="40"/>
+                                                    <color key="backgroundColor" red="0.01176470588" green="0.51764705879999995" blue="0.80784313730000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="40" id="2hM-wF-8iV"/>
+                                                        <constraint firstAttribute="width" constant="40" id="5Ks-6l-age"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" name="SanFranciscoDisplay-Bold" family="San Francisco Display" pointSize="14"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <nil key="highlightedColor"/>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                            <color key="value" red="0.2901960784" green="0.56470588239999997" blue="0.8862745098" alpha="1" colorSpace="calibratedRGB"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                            <real key="value" value="20"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                    </userDefinedRuntimeAttributes>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Thu 06, Apr 2017, 10:26 pm" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zsr-bZ-3pI">
+                                                    <rect key="frame" x="88" y="71.5" width="263" height="21"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="21" id="ard-d9-yP2"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" name="SanFranciscoDisplay-Light" family="San Francisco Display" pointSize="12"/>
+                                                    <color key="textColor" red="0.54901960780000003" green="0.54901960780000003" blue="0.54901960780000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="Zsr-bZ-3pI" firstAttribute="leading" secondItem="e7K-kv-ANA" secondAttribute="leading" id="0rS-Be-AZo"/>
+                                                <constraint firstAttribute="trailing" secondItem="Zsr-bZ-3pI" secondAttribute="trailing" constant="24" id="457-Uc-3Zy"/>
+                                                <constraint firstItem="e7K-kv-ANA" firstAttribute="leading" secondItem="A5v-Do-mH5" secondAttribute="trailing" constant="21.300000000000001" id="5Zh-yg-4cE"/>
+                                                <constraint firstItem="A5v-Do-mH5" firstAttribute="leading" secondItem="hgC-hX-3xR" secondAttribute="leading" constant="26" id="7Bp-Rh-iaX"/>
+                                                <constraint firstItem="e7K-kv-ANA" firstAttribute="top" secondItem="hgC-hX-3xR" secondAttribute="top" constant="12" id="eab-jG-mtl"/>
+                                                <constraint firstItem="A5v-Do-mH5" firstAttribute="top" secondItem="hgC-hX-3xR" secondAttribute="top" constant="16" id="fTQ-IL-4e7"/>
+                                                <constraint firstItem="Zsr-bZ-3pI" firstAttribute="top" secondItem="e7K-kv-ANA" secondAttribute="bottom" constant="8" id="jN5-Bj-Liy"/>
+                                                <constraint firstAttribute="bottom" secondItem="Zsr-bZ-3pI" secondAttribute="bottom" constant="14" id="n5z-NH-obg"/>
+                                                <constraint firstAttribute="trailing" secondItem="e7K-kv-ANA" secondAttribute="trailing" constant="23" id="pDT-DO-sKn"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" red="0.96862745100000003" green="0.97254901959999995" blue="0.97647058819999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="qRk-iR-RcP" id="QAd-jn-iH0"/>
+                                    <outlet property="delegate" destination="qRk-iR-RcP" id="wUw-nM-Dh0"/>
+                                </connections>
+                            </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vwS-Jt-OSm">
+                                <rect key="frame" x="16" y="25" width="24" height="24"/>
+                                <state key="normal" image="notification_large"/>
+                                <connections>
+                                    <action selector="notificationButtonAction:" destination="qRk-iR-RcP" eventType="touchUpInside" id="ZCd-ge-mul"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Notifications" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nO5-QB-XL0" customClass="CustomBrownTextColorLabel" customModule="mNet" customModuleProvider="target">
+                                <rect key="frame" x="22" y="66" width="118.5" height="24"/>
+                                <fontDescription key="fontDescription" name="SanFranciscoDisplay-Bold" family="San Francisco Display" pointSize="20"/>
+                                <color key="textColor" red="0.3803921569" green="0.28235294119999998" blue="0.22352941179999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="26 unread notifications" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="y36-WG-8d8" customClass="CustomBrownTextColorLabel" customModule="mNet" customModuleProvider="target">
+                                <rect key="frame" x="22" y="104" width="138" height="17"/>
+                                <fontDescription key="fontDescription" name="SanFranciscoDisplay-Light" family="San Francisco Display" pointSize="14"/>
+                                <color key="textColor" red="0.3803921569" green="0.28235294119999998" blue="0.22352941179999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="blZ-Wy-6Cb">
+                                <rect key="frame" x="0.0" y="135" width="375" height="1"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="1" id="cDR-zY-5Q2"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.3803921569" green="0.28235294119999998" blue="0.22352941179999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="vwS-Jt-OSm" firstAttribute="top" secondItem="qVl-Pt-RRc" secondAttribute="top" constant="5" id="5NK-da-44v"/>
+                            <constraint firstItem="rSM-nA-dej" firstAttribute="top" secondItem="blZ-Wy-6Cb" secondAttribute="bottom" constant="1" id="Cfq-dE-UO8"/>
+                            <constraint firstItem="qVl-Pt-RRc" firstAttribute="bottom" secondItem="rSM-nA-dej" secondAttribute="bottom" id="D0W-Cr-FzW"/>
+                            <constraint firstItem="qVl-Pt-RRc" firstAttribute="trailing" secondItem="blZ-Wy-6Cb" secondAttribute="trailing" id="HFV-8p-f6H"/>
+                            <constraint firstItem="rSM-nA-dej" firstAttribute="leading" secondItem="qVl-Pt-RRc" secondAttribute="leading" id="PEI-sK-CRu"/>
+                            <constraint firstItem="nO5-QB-XL0" firstAttribute="top" secondItem="vwS-Jt-OSm" secondAttribute="bottom" constant="17" id="Y2k-KP-rRu"/>
+                            <constraint firstItem="vwS-Jt-OSm" firstAttribute="leading" secondItem="qVl-Pt-RRc" secondAttribute="leading" constant="16" id="Ybd-cY-9q3"/>
+                            <constraint firstItem="y36-WG-8d8" firstAttribute="top" secondItem="nO5-QB-XL0" secondAttribute="bottom" constant="14" id="ZTS-Wj-l1h"/>
+                            <constraint firstItem="blZ-Wy-6Cb" firstAttribute="top" secondItem="y36-WG-8d8" secondAttribute="bottom" constant="14" id="bb1-L5-JO4"/>
+                            <constraint firstItem="nO5-QB-XL0" firstAttribute="leading" secondItem="vwS-Jt-OSm" secondAttribute="leading" constant="6" id="hsK-Sx-48M"/>
+                            <constraint firstItem="qVl-Pt-RRc" firstAttribute="trailing" secondItem="rSM-nA-dej" secondAttribute="trailing" id="pbo-4l-8M7"/>
+                            <constraint firstItem="y36-WG-8d8" firstAttribute="leading" secondItem="nO5-QB-XL0" secondAttribute="leading" id="pyJ-Q4-PQ5"/>
+                            <constraint firstItem="blZ-Wy-6Cb" firstAttribute="leading" secondItem="qVl-Pt-RRc" secondAttribute="leading" id="tOL-uM-TGq"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="qVl-Pt-RRc"/>
+                    </view>
+                    <connections>
+                        <outlet property="lineLabel" destination="blZ-Wy-6Cb" id="SlR-o4-85O"/>
+                        <outlet property="notificationsTableView" destination="rSM-nA-dej" id="6xf-fJ-5D3"/>
+                        <outlet property="unreadNotificationLabel" destination="y36-WG-8d8" id="byT-Jq-wWc"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="kGg-Fn-8Wj" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1082.4000000000001" y="157.87106446776613"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="notification_large" width="24" height="24"/>
+    </resources>
+</document>

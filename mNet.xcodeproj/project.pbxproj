@@ -74,6 +74,9 @@
 		5E21B322200F40660045CDA3 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E21B321200F40660045CDA3 /* CoreGraphics.framework */; };
 		5E21B324200F40820045CDA3 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E21B323200F40820045CDA3 /* Foundation.framework */; };
 		5E21B326200F40930045CDA3 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E21B325200F40930045CDA3 /* UIKit.framework */; };
+		5E37E4CE2012004100088001 /* Notifications.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5E37E4CD2012004100088001 /* Notifications.storyboard */; };
+		5E37E4D4201204BC00088001 /* NotificationsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E37E4D3201204BC00088001 /* NotificationsViewController.swift */; };
+		5E37E4D62012050200088001 /* NotificationTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E37E4D52012050200088001 /* NotificationTableViewCell.swift */; };
 		5E3A046E2007A64D004EE2D7 /* ConversationDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E3A046D2007A64D004EE2D7 /* ConversationDetailViewController.swift */; };
 		5E3A04702007C302004EE2D7 /* SentMessageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E3A046F2007C302004EE2D7 /* SentMessageTableViewCell.swift */; };
 		5E3A04722007C313004EE2D7 /* ReceivedMessageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E3A04712007C313004EE2D7 /* ReceivedMessageTableViewCell.swift */; };
@@ -156,6 +159,9 @@
 		5E21B321200F40660045CDA3 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		5E21B323200F40820045CDA3 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		5E21B325200F40930045CDA3 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		5E37E4CD2012004100088001 /* Notifications.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Notifications.storyboard; sourceTree = "<group>"; };
+		5E37E4D3201204BC00088001 /* NotificationsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsViewController.swift; sourceTree = "<group>"; };
+		5E37E4D52012050200088001 /* NotificationTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationTableViewCell.swift; sourceTree = "<group>"; };
 		5E3A046D2007A64D004EE2D7 /* ConversationDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConversationDetailViewController.swift; sourceTree = "<group>"; };
 		5E3A046F2007C302004EE2D7 /* SentMessageTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SentMessageTableViewCell.swift; sourceTree = "<group>"; };
 		5E3A04712007C313004EE2D7 /* ReceivedMessageTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReceivedMessageTableViewCell.swift; sourceTree = "<group>"; };
@@ -414,6 +420,7 @@
 				058A0ECD1FF7C4E800147238 /* Dashboard */,
 				058A0ED51FF7C9E400147238 /* Conversations Module */,
 				5E183E971FF37A5700368DE1 /* Approve Reject Application Module */,
+				5E37E4CF2012016B00088001 /* Notification Module */,
 				5E20CDBD1FE971FD004ACE0D /* Settings Module */,
 				5E21A6F21FF28CF000DBB157 /* Profile Module */,
 				5E1B6CFB1FED2AB900C307B3 /* Xibs */,
@@ -460,6 +467,7 @@
 				5E18AE471FF82E0E007AA461 /* TabBar.storyboard */,
 				5E18AE491FF82F94007AA461 /* Conversation.storyboard */,
 				5E18AE4B1FF82FA3007AA461 /* Dashboard.storyboard */,
+				5E37E4CD2012004100088001 /* Notifications.storyboard */,
 			);
 			name = Storyboards;
 			sourceTree = "<group>";
@@ -530,6 +538,39 @@
 				5E21B321200F40660045CDA3 /* CoreGraphics.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		5E37E4CF2012016B00088001 /* Notification Module */ = {
+			isa = PBXGroup;
+			children = (
+				5E37E4D22012019000088001 /* Data Controller */,
+				5E37E4D12012018500088001 /* Views */,
+				5E37E4D02012017C00088001 /* View Controllers */,
+			);
+			name = "Notification Module";
+			sourceTree = "<group>";
+		};
+		5E37E4D02012017C00088001 /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				5E37E4D3201204BC00088001 /* NotificationsViewController.swift */,
+			);
+			name = "View Controllers";
+			sourceTree = "<group>";
+		};
+		5E37E4D12012018500088001 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				5E37E4D52012050200088001 /* NotificationTableViewCell.swift */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		5E37E4D22012019000088001 /* Data Controller */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = "Data Controller";
 			sourceTree = "<group>";
 		};
 		5E4A8D381FF4FAF600086667 /* Data Controller */ = {
@@ -616,6 +657,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				058A0E4C1FF7C44D00147238 /* Login.storyboard in Resources */,
+				5E37E4CE2012004100088001 /* Notifications.storyboard in Resources */,
 				5E20CDB41FE962F2004ACE0D /* SanFranciscoDisplay-Semibold.otf in Resources */,
 				5E20CD9D1FE952BE004ACE0D /* LaunchScreen.storyboard in Resources */,
 				5E20CD9A1FE952BE004ACE0D /* Assets.xcassets in Resources */,
@@ -650,6 +692,7 @@
 				5E18AE391FF8092E007AA461 /* ApprovalVerificationViewController.swift in Sources */,
 				5E18AE401FF818FC007AA461 /* SendPeopleListTableViewCell.swift in Sources */,
 				5E1C49961FEA4EB8007CE624 /* EmailPreferencesViewController.swift in Sources */,
+				5E37E4D62012050200088001 /* NotificationTableViewCell.swift in Sources */,
 				05A7A8FD1FF802BC00472A60 /* ApprovalsViewController.swift in Sources */,
 				5E1C49941FEA494B007CE624 /* PrivacySettingsViewController.swift in Sources */,
 				0531A57B2007E1F900F2232C /* FilterViewController.swift in Sources */,
@@ -691,6 +734,7 @@
 				5E1C49921FEA45F6007CE624 /* Constants.swift in Sources */,
 				5E4A8D3D1FF4FB6600086667 /* PeopleViewController.swift in Sources */,
 				5E1B6D011FED33A800C307B3 /* CustomPickerView.swift in Sources */,
+				5E37E4D4201204BC00088001 /* NotificationsViewController.swift in Sources */,
 				5E4A8D3B1FF4FB4900086667 /* PeopleTableViewCell.swift in Sources */,
 				0575623E200AB3540010CBB1 /* PendingApprovalsCollectionViewCell.swift in Sources */,
 				0531A57D2007EA4200F2232C /* FilterSectionTableViewCell.swift in Sources */,
