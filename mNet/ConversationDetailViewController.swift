@@ -14,6 +14,7 @@ class ConversationDetailViewController: BaseViewController,UITableViewDelegate,U
     @IBOutlet weak var sendButton: CustomBlueTextColorButton!
     @IBOutlet weak var messageTextView: UITextView!
     @IBOutlet weak var messageViewBottomConstraint: NSLayoutConstraint!
+    @IBOutlet weak var uploadButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -112,5 +113,38 @@ class ConversationDetailViewController: BaseViewController,UITableViewDelegate,U
         
     }
 
+    @IBAction func uploadButtonAction(_ sender: UIButton) {
+        
+        let alertController:UIAlertController = UIAlertController(title: "Select Option:", message: nil, preferredStyle: .actionSheet)
+        
+        alertController.view.tintColor = ColorConstants.kBlueColor
+        
+        let photos:UIAlertAction = UIAlertAction(title: "Photos and Video Library", style: .default) { (photosAction) in
+                self.openDocuments()
+        }
+        
+        let docs:UIAlertAction = UIAlertAction(title: "Document", style: .default) { (docssAction) in
+            self.openDocuments()
+        }
+        
+        let cancelAction:UIAlertAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+        
+        alertController.addAction(photos)
+        alertController.addAction(docs)
+        alertController.addAction(cancelAction)
+        
+        present(alertController, animated: true, completion: nil)
+    }
+    
+    func openPhotos() {
+        
+        UIAlertView(title: "Coming Soon", message: nil, delegate: nil, cancelButtonTitle: "OK").show()
+    }
+    
+    func openDocuments() {
+        
+        UIAlertView(title: "Coming Soon", message: nil, delegate: nil, cancelButtonTitle: "OK").show()
+    }
+    
 
 }

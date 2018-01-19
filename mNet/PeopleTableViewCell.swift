@@ -11,7 +11,6 @@ import UIKit
 class PeopleTableViewCell: UITableViewCell {
 
     @IBOutlet weak var personNameLabel: CustomBrownTextColorLabel!
-  
     @IBOutlet weak var personRoleLabel: CustomBrownTextColorLabel!
 
 }

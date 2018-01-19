@@ -23,6 +23,7 @@ struct SettingOptions {
     static let appSettings = "App Settings"
     static let emailPreferences = "Email Preferences"
     static let groups = "Groups"
+    static let people = "People"
 }
 
 
@@ -85,12 +86,18 @@ struct TabNames {
     static let notifications:String = "Notifications"
 }
 
+struct StoryboardIDs {
+    
+    static let peopleViewController:String = "PeopleViewController"
+}
+
 extension UIStoryboard {
     
     static let dashboard:UIStoryboard = UIStoryboard(name: "Dashboard", bundle: nil)
     static let conversations:UIStoryboard = UIStoryboard(name: "Conversation", bundle: nil)
     static let settings:UIStoryboard = UIStoryboard(name: "Settings", bundle: nil)
     static let notifications:UIStoryboard = UIStoryboard(name: "Notifications", bundle: nil)
+    static let profile:UIStoryboard = UIStoryboard(name: "Profile", bundle: nil)
 }
 
 extension UIFont {
