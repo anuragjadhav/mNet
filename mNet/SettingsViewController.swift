@@ -94,9 +94,17 @@ class SettingsViewController: BaseViewController,UITableViewDelegate,UITableView
             
         case SettingOptions.groups:
            
-            //TODO :
+            let peopleViewController:PeopleViewController = UIStoryboard.profile.instantiateViewController(withIdentifier: StoryboardIDs.peopleViewController) as! PeopleViewController
+            peopleViewController.isForGroups = true
+            self.navigationController?.pushViewController(peopleViewController, animated: true)
             break;
+        
+        case SettingOptions.people:
             
+            let peopleViewController:PeopleViewController = UIStoryboard.profile.instantiateViewController(withIdentifier: StoryboardIDs.peopleViewController) as! PeopleViewController
+            self.navigationController?.pushViewController(peopleViewController, animated: true)
+            break;
+        
         default: break
             
         }

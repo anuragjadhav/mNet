@@ -13,9 +13,10 @@
         <scene sceneID="gwZ-Tu-t9S">
             <objects>
                 <navigationController storyboardIdentifier="TabBarNavigationController" id="We7-dJ-bLG" customClass="BaseNavigationController" customModule="mNet" customModuleProvider="target" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="Oif-0e-BW6">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" translucent="NO" id="Oif-0e-BW6">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </navigationBar>
                     <connections>
                         <segue destination="pU0-d6-EZt" kind="relationship" relationship="rootViewController" id="bxb-eY-nLL"/>

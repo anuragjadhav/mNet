@@ -13,7 +13,6 @@
 		0531A57F2007EA5100F2232C /* FilterOptionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0531A57E2007EA5100F2232C /* FilterOptionTableViewCell.swift */; };
 		0575623A200A34110010CBB1 /* BaseNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05756239200A34110010CBB1 /* BaseNavigationController.swift */; };
 		0575623C200AB33A0010CBB1 /* PendingApprovalsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0575623B200AB33A0010CBB1 /* PendingApprovalsTableViewCell.swift */; };
-		0575623E200AB3540010CBB1 /* PendingApprovalsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0575623D200AB3540010CBB1 /* PendingApprovalsCollectionViewCell.swift */; };
 		058A0E4C1FF7C44D00147238 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 058A0E4B1FF7C44D00147238 /* Login.storyboard */; };
 		058A0ECC1FF7C4DD00147238 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 058A0ECB1FF7C4DD00147238 /* LoginViewController.swift */; };
 		058A0ED21FF7C50400147238 /* DashboardMyAppsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 058A0ED11FF7C50400147238 /* DashboardMyAppsTableViewCell.swift */; };
@@ -24,6 +23,7 @@
 		05A7A8FD1FF802BC00472A60 /* ApprovalsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05A7A8FC1FF802BC00472A60 /* ApprovalsViewController.swift */; };
 		05A7A8FF1FF80B7700472A60 /* SelectUserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05A7A8FE1FF80B7700472A60 /* SelectUserViewController.swift */; };
 		05A7A9011FF815A000472A60 /* ConversationInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05A7A9001FF8159F00472A60 /* ConversationInfoViewController.swift */; };
+		05CC51C320123AAA00EA6D55 /* ApprovalSectionCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05CC51C220123AAA00EA6D55 /* ApprovalSectionCollectionViewCell.swift */; };
 		5E183E961FF3791D00368DE1 /* ApproveReject.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5E183E951FF3791D00368DE1 /* ApproveReject.storyboard */; };
 		5E183E9B1FF37B7C00368DE1 /* RejectApplicationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E183E9A1FF37B7C00368DE1 /* RejectApplicationViewController.swift */; };
 		5E183E9D1FF385AD00368DE1 /* CustomBrownColorTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E183E9C1FF385AD00368DE1 /* CustomBrownColorTextView.swift */; };
@@ -96,7 +96,6 @@
 		0531A57E2007EA5100F2232C /* FilterOptionTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FilterOptionTableViewCell.swift; sourceTree = "<group>"; };
 		05756239200A34110010CBB1 /* BaseNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseNavigationController.swift; sourceTree = "<group>"; };
 		0575623B200AB33A0010CBB1 /* PendingApprovalsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PendingApprovalsTableViewCell.swift; sourceTree = "<group>"; };
-		0575623D200AB3540010CBB1 /* PendingApprovalsCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PendingApprovalsCollectionViewCell.swift; sourceTree = "<group>"; };
 		058A0E4B1FF7C44D00147238 /* Login.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
 		058A0ECB1FF7C4DD00147238 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		058A0ED11FF7C50400147238 /* DashboardMyAppsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DashboardMyAppsTableViewCell.swift; sourceTree = "<group>"; };
@@ -107,6 +106,7 @@
 		05A7A8FC1FF802BC00472A60 /* ApprovalsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApprovalsViewController.swift; sourceTree = "<group>"; };
 		05A7A8FE1FF80B7700472A60 /* SelectUserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectUserViewController.swift; sourceTree = "<group>"; };
 		05A7A9001FF8159F00472A60 /* ConversationInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConversationInfoViewController.swift; sourceTree = "<group>"; };
+		05CC51C220123AAA00EA6D55 /* ApprovalSectionCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApprovalSectionCollectionViewCell.swift; sourceTree = "<group>"; };
 		5E183E951FF3791D00368DE1 /* ApproveReject.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = ApproveReject.storyboard; sourceTree = "<group>"; };
 		5E183E9A1FF37B7C00368DE1 /* RejectApplicationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RejectApplicationViewController.swift; sourceTree = "<group>"; };
 		5E183E9C1FF385AD00368DE1 /* CustomBrownColorTextView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomBrownColorTextView.swift; sourceTree = "<group>"; };
@@ -333,7 +333,7 @@
 				5E18AE3F1FF818FC007AA461 /* SendPeopleListTableViewCell.swift */,
 				5E18AE451FF8238A007AA461 /* AttachmentsTableViewCell.swift */,
 				0575623B200AB33A0010CBB1 /* PendingApprovalsTableViewCell.swift */,
-				0575623D200AB3540010CBB1 /* PendingApprovalsCollectionViewCell.swift */,
+				05CC51C220123AAA00EA6D55 /* ApprovalSectionCollectionViewCell.swift */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -727,6 +727,7 @@
 				5E1C499D1FEA80A1007CE624 /* ViewBorder.swift in Sources */,
 				5E1C49981FEA73F8007CE624 /* AboutMeViewController.swift in Sources */,
 				5E183E9F1FF3887600368DE1 /* CustomBlueTextColorButton.swift in Sources */,
+				05CC51C320123AAA00EA6D55 /* ApprovalSectionCollectionViewCell.swift in Sources */,
 				5E18AE441FF81B59007AA461 /* DocumentViewController.swift in Sources */,
 				5EC3005E1FEC03FE00229516 /* SettingOptionsTableViewCell.swift in Sources */,
 				058A0ED41FF7C50D00147238 /* DashboardViewController.swift in Sources */,
@@ -736,7 +737,6 @@
 				5E1B6D011FED33A800C307B3 /* CustomPickerView.swift in Sources */,
 				5E37E4D4201204BC00088001 /* NotificationsViewController.swift in Sources */,
 				5E4A8D3B1FF4FB4900086667 /* PeopleTableViewCell.swift in Sources */,
-				0575623E200AB3540010CBB1 /* PendingApprovalsCollectionViewCell.swift in Sources */,
 				0531A57D2007EA4200F2232C /* FilterSectionTableViewCell.swift in Sources */,
 				5E18AE421FF81B45007AA461 /* AttachmentsViewController.swift in Sources */,
 				5E183EA41FF3F97600368DE1 /* PeopleListTableViewCell.swift in Sources */,

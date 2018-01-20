@@ -251,30 +251,31 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="LVo-Fo-KyN">
-                                <rect key="frame" x="0.0" y="64" width="375" height="44"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="44" id="5oA-gG-lhk"/>
-                                </constraints>
-                                <textInputTraits key="textInputTraits"/>
-                                <connections>
-                                    <outlet property="delegate" destination="5j4-VK-qkj" id="jKa-Vi-7Ym"/>
-                                </connections>
-                            </searchBar>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="68" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="1sW-wb-J2l">
-                                <rect key="frame" x="0.0" y="108" width="375" height="559"/>
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                                 <color key="backgroundColor" red="0.96862745100000003" green="0.97254901959999995" blue="0.97647058819999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                <searchBar key="tableHeaderView" contentMode="redraw" searchBarStyle="minimal" id="LVo-Fo-KyN">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="44" id="5oA-gG-lhk"/>
+                                    </constraints>
+                                    <textInputTraits key="textInputTraits"/>
+                                    <connections>
+                                        <outlet property="delegate" destination="5j4-VK-qkj" id="jKa-Vi-7Ym"/>
+                                    </connections>
+                                </searchBar>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="PeopleTableViewCell" rowHeight="68" id="sds-lT-Rz9" customClass="PeopleTableViewCell" customModule="mNet" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="375" height="68"/>
+                                        <rect key="frame" x="0.0" y="72" width="375" height="68"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="sds-lT-Rz9" id="80j-Rl-n56">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="67.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Saurabh Suman" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KTd-xX-vQB" customClass="CustomBrownTextColorLabel" customModule="mNet" customModuleProvider="target">
-                                                    <rect key="frame" x="27" y="10" width="101" height="19"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Saurabh Suman" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KTd-xX-vQB" customClass="CustomBrownTextColorLabel" customModule="mNet" customModuleProvider="target">
+                                                    <rect key="frame" x="27" y="10" width="101" height="17"/>
                                                     <fontDescription key="fontDescription" name="SanFranciscoDisplay-Bold" family="San Francisco Display" pointSize="14"/>
                                                     <color key="textColor" red="0.3803921569" green="0.28235294119999998" blue="0.22352941179999999" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
@@ -309,12 +310,9 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="1sW-wb-J2l" firstAttribute="leading" secondItem="0xK-53-G5L" secondAttribute="leading" id="3lm-6i-gai"/>
-                            <constraint firstItem="LVo-Fo-KyN" firstAttribute="leading" secondItem="0xK-53-G5L" secondAttribute="leading" id="AhA-Q5-55W"/>
-                            <constraint firstItem="LVo-Fo-KyN" firstAttribute="top" secondItem="0xK-53-G5L" secondAttribute="top" id="GLF-Cf-Cov"/>
                             <constraint firstItem="0xK-53-G5L" firstAttribute="trailing" secondItem="1sW-wb-J2l" secondAttribute="trailing" id="HZs-J7-u60"/>
                             <constraint firstItem="0xK-53-G5L" firstAttribute="bottom" secondItem="1sW-wb-J2l" secondAttribute="bottom" id="Ug0-rJ-G9g"/>
-                            <constraint firstItem="1sW-wb-J2l" firstAttribute="top" secondItem="LVo-Fo-KyN" secondAttribute="bottom" id="vPZ-UD-L3E"/>
-                            <constraint firstItem="0xK-53-G5L" firstAttribute="trailing" secondItem="LVo-Fo-KyN" secondAttribute="trailing" id="wzo-qz-AzU"/>
+                            <constraint firstItem="1sW-wb-J2l" firstAttribute="top" secondItem="0xK-53-G5L" secondAttribute="top" id="jIn-vq-q4e"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="0xK-53-G5L"/>
                     </view>

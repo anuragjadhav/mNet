@@ -13,6 +13,8 @@ class PeopleViewController: UIViewController,UITableViewDataSource,UITableViewDe
     @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var peopleTableView: UITableView!
     
+    var isForGroups:Bool = false
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -28,6 +30,13 @@ class PeopleViewController: UIViewController,UITableViewDataSource,UITableViewDe
     func setupNavigationBar(){
         
         self.navigationController?.navigationBar.isHidden = false
+        
+        if isForGroups {
+            self.navigationItem.title = SettingOptions.groups
+        }
+        else {
+            self.navigationItem.title = SettingOptions.people
+        }
     }
     
     //Mark: tableview delegates and data source
@@ -39,15 +48,19 @@ class PeopleViewController: UIViewController,UITableViewDataSource,UITableViewDe
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
-        return 3
+        return 15
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell:PeopleTableViewCell = tableView.dequeueReusableCell(withIdentifier:"PeopleTableViewCell") as! PeopleTableViewCell
         
+        if isForGroups {
+            cell.personNameLabel.text = "Group Name"
+            cell.personRoleLabel.text = "Group Details"
+        }
+
         return cell
-        
     }
 
     // MARK: - Search bar delegates
