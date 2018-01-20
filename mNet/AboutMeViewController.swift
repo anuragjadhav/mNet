@@ -33,11 +33,6 @@ class AboutMeViewController: BaseViewController,UITextFieldDelegate,CustomPicker
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // add custom picker view
-        self.customerPickerView = UINib(nibName: "CustomPickerView", bundle: nil).instantiate(withOwner: nil, options: nil)[0] as? CustomPickerView
-        self.customerPickerView?.frame = CGRect(x: 0, y: self.view.frame.height, width: self.view.frame.size.width, height: (self.customerPickerView?.frame.size.height)!)
-        self.view.addSubview(self.customerPickerView!)
-        
         self.genderButton.titleLabel?.text = self.genderArray[0]
     }
 
@@ -45,6 +40,14 @@ class AboutMeViewController: BaseViewController,UITextFieldDelegate,CustomPicker
         super.viewWillAppear(animated);
         
         self.setupNavigationBar()
+        
+        if(self.customerPickerView == nil)
+        {
+            // add custom picker view
+            self.customerPickerView = UINib(nibName: "CustomPickerView", bundle: nil).instantiate(withOwner: nil, options: nil)[0] as? CustomPickerView
+            self.customerPickerView?.frame = CGRect(x: 0, y: self.view.frame.height, width: self.view.frame.size.width, height: (self.customerPickerView?.frame.size.height)!)
+            self.view.addSubview(self.customerPickerView!)
+        }
     }
     
     func setupNavigationBar(){
