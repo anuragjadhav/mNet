@@ -28,17 +28,20 @@ class AppSettingsViewController: BaseViewController,UIPickerViewDelegate,UIPicke
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // add custom picker view
-        self.customerPickerView = UINib(nibName: "CustomPickerView", bundle: nil).instantiate(withOwner: nil, options: nil)[0] as? CustomPickerView
-        self.customerPickerView?.frame = CGRect(x: 0, y: self.view.frame.height, width: self.view.frame.size.width, height: (self.customerPickerView?.frame.size.height)!)
-        self.view.addSubview(self.customerPickerView!)
     }
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated);
         
         self.setupNavigationBar()
+        
+        if(self.customerPickerView == nil)
+        {
+            // add custom picker view
+            self.customerPickerView = UINib(nibName: "CustomPickerView", bundle: nil).instantiate(withOwner: nil, options: nil)[0] as? CustomPickerView
+            self.customerPickerView?.frame = CGRect(x: 0, y: self.view.frame.height, width: self.view.frame.size.width, height: (self.customerPickerView?.frame.size.height)!)
+            self.view.addSubview(self.customerPickerView!)
+        }
     }
     
     func setupNavigationBar(){
