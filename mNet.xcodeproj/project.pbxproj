@@ -19,6 +19,48 @@
 		058A0ED41FF7C50D00147238 /* DashboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 058A0ED31FF7C50D00147238 /* DashboardViewController.swift */; };
 		058A0EDA1FF7CA2D00147238 /* ConversationsListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 058A0ED91FF7CA2D00147238 /* ConversationsListViewController.swift */; };
 		058A0EDC1FF7CA4800147238 /* ConversationListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 058A0EDB1FF7CA4800147238 /* ConversationListTableViewCell.swift */; };
+		05A569962017B74B00C6F713 /* ResponseSerialization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05A569852017B74800C6F713 /* ResponseSerialization.swift */; };
+		05A569972017B74B00C6F713 /* Timeline.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05A569862017B74900C6F713 /* Timeline.swift */; };
+		05A569982017B74B00C6F713 /* AFError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05A569872017B74900C6F713 /* AFError.swift */; };
+		05A569992017B74B00C6F713 /* NetworkReachabilityManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05A569882017B74900C6F713 /* NetworkReachabilityManager.swift */; };
+		05A5699A2017B74B00C6F713 /* SessionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05A569892017B74900C6F713 /* SessionDelegate.swift */; };
+		05A5699B2017B74B00C6F713 /* Notifications.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05A5698A2017B74900C6F713 /* Notifications.swift */; };
+		05A5699C2017B74B00C6F713 /* ServerTrustPolicy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05A5698B2017B74900C6F713 /* ServerTrustPolicy.swift */; };
+		05A5699D2017B74B00C6F713 /* ParameterEncoding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05A5698C2017B74900C6F713 /* ParameterEncoding.swift */; };
+		05A5699E2017B74B00C6F713 /* Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05A5698D2017B74A00C6F713 /* Request.swift */; };
+		05A5699F2017B74B00C6F713 /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05A5698E2017B74A00C6F713 /* Result.swift */; };
+		05A569A02017B74B00C6F713 /* Validation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05A5698F2017B74A00C6F713 /* Validation.swift */; };
+		05A569A12017B74B00C6F713 /* MultipartFormData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05A569902017B74A00C6F713 /* MultipartFormData.swift */; };
+		05A569A22017B74B00C6F713 /* DispatchQueue+Alamofire.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05A569912017B74A00C6F713 /* DispatchQueue+Alamofire.swift */; };
+		05A569A32017B74B00C6F713 /* TaskDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05A569922017B74A00C6F713 /* TaskDelegate.swift */; };
+		05A569A42017B74B00C6F713 /* Alamofire.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05A569932017B74A00C6F713 /* Alamofire.swift */; };
+		05A569A52017B74B00C6F713 /* SessionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05A569942017B74A00C6F713 /* SessionManager.swift */; };
+		05A569A62017B74B00C6F713 /* Response.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05A569952017B74A00C6F713 /* Response.swift */; };
+		05A569BE2017B7B300C6F713 /* HexColorTransform.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05A569A72017B7B000C6F713 /* HexColorTransform.swift */; };
+		05A569BF2017B7B300C6F713 /* NSDecimalNumberTransform.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05A569A82017B7B000C6F713 /* NSDecimalNumberTransform.swift */; };
+		05A569C02017B7B300C6F713 /* DictionaryTransform.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05A569A92017B7B000C6F713 /* DictionaryTransform.swift */; };
+		05A569C12017B7B300C6F713 /* EnumOperators.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05A569AA2017B7B000C6F713 /* EnumOperators.swift */; };
+		05A569C22017B7B300C6F713 /* Map.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05A569AB2017B7B000C6F713 /* Map.swift */; };
+		05A569C32017B7B300C6F713 /* ImmutableMappable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05A569AC2017B7B000C6F713 /* ImmutableMappable.swift */; };
+		05A569C42017B7B300C6F713 /* URLTransform.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05A569AD2017B7B000C6F713 /* URLTransform.swift */; };
+		05A569C52017B7B300C6F713 /* IntegerOperators.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05A569AE2017B7B000C6F713 /* IntegerOperators.swift */; };
+		05A569C62017B7B300C6F713 /* DataTransform.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05A569AF2017B7B000C6F713 /* DataTransform.swift */; };
+		05A569C72017B7B300C6F713 /* ToJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05A569B02017B7B100C6F713 /* ToJSON.swift */; };
+		05A569C82017B7B300C6F713 /* CustomDateFormatTransform.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05A569B12017B7B100C6F713 /* CustomDateFormatTransform.swift */; };
+		05A569C92017B7B300C6F713 /* TransformOf.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05A569B22017B7B100C6F713 /* TransformOf.swift */; };
+		05A569CA2017B7B300C6F713 /* TransformType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05A569B32017B7B100C6F713 /* TransformType.swift */; };
+		05A569CB2017B7B300C6F713 /* DateFormatterTransform.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05A569B42017B7B100C6F713 /* DateFormatterTransform.swift */; };
+		05A569CC2017B7B300C6F713 /* ISO8601DateTransform.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05A569B52017B7B100C6F713 /* ISO8601DateTransform.swift */; };
+		05A569CD2017B7B300C6F713 /* FromJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05A569B62017B7B100C6F713 /* FromJSON.swift */; };
+		05A569CE2017B7B300C6F713 /* Mapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05A569B72017B7B100C6F713 /* Mapper.swift */; };
+		05A569CF2017B7B300C6F713 /* MapError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05A569B82017B7B200C6F713 /* MapError.swift */; };
+		05A569D02017B7B300C6F713 /* EnumTransform.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05A569B92017B7B200C6F713 /* EnumTransform.swift */; };
+		05A569D12017B7B300C6F713 /* TransformOperators.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05A569BA2017B7B200C6F713 /* TransformOperators.swift */; };
+		05A569D22017B7B300C6F713 /* DateTransform.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05A569BB2017B7B200C6F713 /* DateTransform.swift */; };
+		05A569D32017B7B300C6F713 /* Mappable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05A569BC2017B7B200C6F713 /* Mappable.swift */; };
+		05A569D42017B7B300C6F713 /* Operators.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05A569BD2017B7B300C6F713 /* Operators.swift */; };
+		05A569D62017B7C300C6F713 /* AlamofireObjectMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05A569D52017B7C300C6F713 /* AlamofireObjectMapper.swift */; };
+		05A569DA2017B85100C6F713 /* mNetService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05A569D92017B85100C6F713 /* mNetService.swift */; };
 		05A7A8FB1FF7FEEC00472A60 /* NewConversationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05A7A8FA1FF7FEEC00472A60 /* NewConversationViewController.swift */; };
 		05A7A8FD1FF802BC00472A60 /* ApprovalsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05A7A8FC1FF802BC00472A60 /* ApprovalsViewController.swift */; };
 		05A7A8FF1FF80B7700472A60 /* SelectUserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05A7A8FE1FF80B7700472A60 /* SelectUserViewController.swift */; };
@@ -102,6 +144,48 @@
 		058A0ED31FF7C50D00147238 /* DashboardViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DashboardViewController.swift; sourceTree = "<group>"; };
 		058A0ED91FF7CA2D00147238 /* ConversationsListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConversationsListViewController.swift; sourceTree = "<group>"; };
 		058A0EDB1FF7CA4800147238 /* ConversationListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConversationListTableViewCell.swift; sourceTree = "<group>"; };
+		05A569852017B74800C6F713 /* ResponseSerialization.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResponseSerialization.swift; sourceTree = "<group>"; };
+		05A569862017B74900C6F713 /* Timeline.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Timeline.swift; sourceTree = "<group>"; };
+		05A569872017B74900C6F713 /* AFError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AFError.swift; sourceTree = "<group>"; };
+		05A569882017B74900C6F713 /* NetworkReachabilityManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkReachabilityManager.swift; sourceTree = "<group>"; };
+		05A569892017B74900C6F713 /* SessionDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SessionDelegate.swift; sourceTree = "<group>"; };
+		05A5698A2017B74900C6F713 /* Notifications.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Notifications.swift; sourceTree = "<group>"; };
+		05A5698B2017B74900C6F713 /* ServerTrustPolicy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServerTrustPolicy.swift; sourceTree = "<group>"; };
+		05A5698C2017B74900C6F713 /* ParameterEncoding.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParameterEncoding.swift; sourceTree = "<group>"; };
+		05A5698D2017B74A00C6F713 /* Request.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Request.swift; sourceTree = "<group>"; };
+		05A5698E2017B74A00C6F713 /* Result.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
+		05A5698F2017B74A00C6F713 /* Validation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Validation.swift; sourceTree = "<group>"; };
+		05A569902017B74A00C6F713 /* MultipartFormData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MultipartFormData.swift; sourceTree = "<group>"; };
+		05A569912017B74A00C6F713 /* DispatchQueue+Alamofire.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "DispatchQueue+Alamofire.swift"; sourceTree = "<group>"; };
+		05A569922017B74A00C6F713 /* TaskDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskDelegate.swift; sourceTree = "<group>"; };
+		05A569932017B74A00C6F713 /* Alamofire.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Alamofire.swift; sourceTree = "<group>"; };
+		05A569942017B74A00C6F713 /* SessionManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SessionManager.swift; sourceTree = "<group>"; };
+		05A569952017B74A00C6F713 /* Response.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Response.swift; sourceTree = "<group>"; };
+		05A569A72017B7B000C6F713 /* HexColorTransform.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HexColorTransform.swift; sourceTree = "<group>"; };
+		05A569A82017B7B000C6F713 /* NSDecimalNumberTransform.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSDecimalNumberTransform.swift; sourceTree = "<group>"; };
+		05A569A92017B7B000C6F713 /* DictionaryTransform.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DictionaryTransform.swift; sourceTree = "<group>"; };
+		05A569AA2017B7B000C6F713 /* EnumOperators.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EnumOperators.swift; sourceTree = "<group>"; };
+		05A569AB2017B7B000C6F713 /* Map.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Map.swift; sourceTree = "<group>"; };
+		05A569AC2017B7B000C6F713 /* ImmutableMappable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImmutableMappable.swift; sourceTree = "<group>"; };
+		05A569AD2017B7B000C6F713 /* URLTransform.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = URLTransform.swift; sourceTree = "<group>"; };
+		05A569AE2017B7B000C6F713 /* IntegerOperators.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IntegerOperators.swift; sourceTree = "<group>"; };
+		05A569AF2017B7B000C6F713 /* DataTransform.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataTransform.swift; sourceTree = "<group>"; };
+		05A569B02017B7B100C6F713 /* ToJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ToJSON.swift; sourceTree = "<group>"; };
+		05A569B12017B7B100C6F713 /* CustomDateFormatTransform.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomDateFormatTransform.swift; sourceTree = "<group>"; };
+		05A569B22017B7B100C6F713 /* TransformOf.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransformOf.swift; sourceTree = "<group>"; };
+		05A569B32017B7B100C6F713 /* TransformType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransformType.swift; sourceTree = "<group>"; };
+		05A569B42017B7B100C6F713 /* DateFormatterTransform.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateFormatterTransform.swift; sourceTree = "<group>"; };
+		05A569B52017B7B100C6F713 /* ISO8601DateTransform.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ISO8601DateTransform.swift; sourceTree = "<group>"; };
+		05A569B62017B7B100C6F713 /* FromJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FromJSON.swift; sourceTree = "<group>"; };
+		05A569B72017B7B100C6F713 /* Mapper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Mapper.swift; sourceTree = "<group>"; };
+		05A569B82017B7B200C6F713 /* MapError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapError.swift; sourceTree = "<group>"; };
+		05A569B92017B7B200C6F713 /* EnumTransform.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EnumTransform.swift; sourceTree = "<group>"; };
+		05A569BA2017B7B200C6F713 /* TransformOperators.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransformOperators.swift; sourceTree = "<group>"; };
+		05A569BB2017B7B200C6F713 /* DateTransform.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateTransform.swift; sourceTree = "<group>"; };
+		05A569BC2017B7B200C6F713 /* Mappable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Mappable.swift; sourceTree = "<group>"; };
+		05A569BD2017B7B300C6F713 /* Operators.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Operators.swift; sourceTree = "<group>"; };
+		05A569D52017B7C300C6F713 /* AlamofireObjectMapper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlamofireObjectMapper.swift; sourceTree = "<group>"; };
+		05A569D92017B85100C6F713 /* mNetService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = mNetService.swift; path = mNet/Libraries/mNetService.swift; sourceTree = SOURCE_ROOT; };
 		05A7A8FA1FF7FEEC00472A60 /* NewConversationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewConversationViewController.swift; sourceTree = "<group>"; };
 		05A7A8FC1FF802BC00472A60 /* ApprovalsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApprovalsViewController.swift; sourceTree = "<group>"; };
 		05A7A8FE1FF80B7700472A60 /* SelectUserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectUserViewController.swift; sourceTree = "<group>"; };
@@ -296,6 +380,86 @@
 			name = "View Controllers";
 			sourceTree = "<group>";
 		};
+		05A569812017B71600C6F713 /* Libraries */ = {
+			isa = PBXGroup;
+			children = (
+				05A569842017B73800C6F713 /* Alamofire + Object Mapper */,
+				05A569832017B72F00C6F713 /* Object Mapper */,
+				05A569822017B72800C6F713 /* Alamofire */,
+			);
+			path = Libraries;
+			sourceTree = "<group>";
+		};
+		05A569822017B72800C6F713 /* Alamofire */ = {
+			isa = PBXGroup;
+			children = (
+				05A569872017B74900C6F713 /* AFError.swift */,
+				05A569932017B74A00C6F713 /* Alamofire.swift */,
+				05A569912017B74A00C6F713 /* DispatchQueue+Alamofire.swift */,
+				05A569902017B74A00C6F713 /* MultipartFormData.swift */,
+				05A569882017B74900C6F713 /* NetworkReachabilityManager.swift */,
+				05A5698A2017B74900C6F713 /* Notifications.swift */,
+				05A5698C2017B74900C6F713 /* ParameterEncoding.swift */,
+				05A5698D2017B74A00C6F713 /* Request.swift */,
+				05A569952017B74A00C6F713 /* Response.swift */,
+				05A569852017B74800C6F713 /* ResponseSerialization.swift */,
+				05A5698E2017B74A00C6F713 /* Result.swift */,
+				05A5698B2017B74900C6F713 /* ServerTrustPolicy.swift */,
+				05A569892017B74900C6F713 /* SessionDelegate.swift */,
+				05A569942017B74A00C6F713 /* SessionManager.swift */,
+				05A569922017B74A00C6F713 /* TaskDelegate.swift */,
+				05A569862017B74900C6F713 /* Timeline.swift */,
+				05A5698F2017B74A00C6F713 /* Validation.swift */,
+			);
+			path = Alamofire;
+			sourceTree = "<group>";
+		};
+		05A569832017B72F00C6F713 /* Object Mapper */ = {
+			isa = PBXGroup;
+			children = (
+				05A569B12017B7B100C6F713 /* CustomDateFormatTransform.swift */,
+				05A569AF2017B7B000C6F713 /* DataTransform.swift */,
+				05A569B42017B7B100C6F713 /* DateFormatterTransform.swift */,
+				05A569BB2017B7B200C6F713 /* DateTransform.swift */,
+				05A569A92017B7B000C6F713 /* DictionaryTransform.swift */,
+				05A569AA2017B7B000C6F713 /* EnumOperators.swift */,
+				05A569B92017B7B200C6F713 /* EnumTransform.swift */,
+				05A569B62017B7B100C6F713 /* FromJSON.swift */,
+				05A569A72017B7B000C6F713 /* HexColorTransform.swift */,
+				05A569AC2017B7B000C6F713 /* ImmutableMappable.swift */,
+				05A569AE2017B7B000C6F713 /* IntegerOperators.swift */,
+				05A569B52017B7B100C6F713 /* ISO8601DateTransform.swift */,
+				05A569AB2017B7B000C6F713 /* Map.swift */,
+				05A569B82017B7B200C6F713 /* MapError.swift */,
+				05A569BC2017B7B200C6F713 /* Mappable.swift */,
+				05A569B72017B7B100C6F713 /* Mapper.swift */,
+				05A569A82017B7B000C6F713 /* NSDecimalNumberTransform.swift */,
+				05A569BD2017B7B300C6F713 /* Operators.swift */,
+				05A569B02017B7B100C6F713 /* ToJSON.swift */,
+				05A569B22017B7B100C6F713 /* TransformOf.swift */,
+				05A569BA2017B7B200C6F713 /* TransformOperators.swift */,
+				05A569B32017B7B100C6F713 /* TransformType.swift */,
+				05A569AD2017B7B000C6F713 /* URLTransform.swift */,
+			);
+			path = "Object Mapper";
+			sourceTree = "<group>";
+		};
+		05A569842017B73800C6F713 /* Alamofire + Object Mapper */ = {
+			isa = PBXGroup;
+			children = (
+				05A569D52017B7C300C6F713 /* AlamofireObjectMapper.swift */,
+			);
+			path = "Alamofire + Object Mapper";
+			sourceTree = "<group>";
+		};
+		05A569D82017B82A00C6F713 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				05A569D92017B85100C6F713 /* mNetService.swift */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
 		5E183E971FF37A5700368DE1 /* Approve Reject Application Module */ = {
 			isa = PBXGroup;
 			children = (
@@ -411,6 +575,8 @@
 			children = (
 				5E1C49911FEA45F6007CE624 /* Constants.swift */,
 				5E20CD921FE952BE004ACE0D /* AppDelegate.swift */,
+				05A569812017B71600C6F713 /* Libraries */,
+				05A569D82017B82A00C6F713 /* Service */,
 				5E184EC61FF8A8320000D7C7 /* TabBarController */,
 				5EC300631FEC0A6100229516 /* Models */,
 				5E1C499E1FEA845B007CE624 /* Base classes */,
@@ -629,6 +795,7 @@
 					5E20CD8E1FE952BE004ACE0D = {
 						CreatedOnToolsVersion = 8.3.3;
 						DevelopmentTeam = 3J7U28GXGW;
+						LastSwiftMigration = 0920;
 						ProvisioningStyle = Manual;
 					};
 				};
@@ -691,8 +858,10 @@
 				5EC3005C1FEC002000229516 /* SettingsDataController.swift in Sources */,
 				5E18AE391FF8092E007AA461 /* ApprovalVerificationViewController.swift in Sources */,
 				5E18AE401FF818FC007AA461 /* SendPeopleListTableViewCell.swift in Sources */,
+				05A569CB2017B7B300C6F713 /* DateFormatterTransform.swift in Sources */,
 				5E1C49961FEA4EB8007CE624 /* EmailPreferencesViewController.swift in Sources */,
 				5E37E4D62012050200088001 /* NotificationTableViewCell.swift in Sources */,
+				05A5699D2017B74B00C6F713 /* ParameterEncoding.swift in Sources */,
 				05A7A8FD1FF802BC00472A60 /* ApprovalsViewController.swift in Sources */,
 				5E1C49941FEA494B007CE624 /* PrivacySettingsViewController.swift in Sources */,
 				0531A57B2007E1F900F2232C /* FilterViewController.swift in Sources */,
@@ -702,29 +871,50 @@
 				5E3A04702007C302004EE2D7 /* SentMessageTableViewCell.swift in Sources */,
 				5E1C498D1FEA4455007CE624 /* CustomBrownTextColorLabel.swift in Sources */,
 				5E18AE461FF8238A007AA461 /* AttachmentsTableViewCell.swift in Sources */,
+				05A569D62017B7C300C6F713 /* AlamofireObjectMapper.swift in Sources */,
 				5E184EC81FF8A8590000D7C7 /* TabBarController.swift in Sources */,
+				05A569BE2017B7B300C6F713 /* HexColorTransform.swift in Sources */,
+				05A569982017B74B00C6F713 /* AFError.swift in Sources */,
 				0531A5792007CCC600F2232C /* CustomRedBackgroundColorButton.swift in Sources */,
 				058A0EDC1FF7CA4800147238 /* ConversationListTableViewCell.swift in Sources */,
+				05A569C52017B7B300C6F713 /* IntegerOperators.swift in Sources */,
+				05A569A32017B74B00C6F713 /* TaskDelegate.swift in Sources */,
 				05A7A8FF1FF80B7700472A60 /* SelectUserViewController.swift in Sources */,
+				05A569A22017B74B00C6F713 /* DispatchQueue+Alamofire.swift in Sources */,
 				5E1C499A1FEA7F30007CE624 /* CustomBrownTextColorTextfield.swift in Sources */,
 				5E3A046E2007A64D004EE2D7 /* ConversationDetailViewController.swift in Sources */,
 				0575623C200AB33A0010CBB1 /* PendingApprovalsTableViewCell.swift in Sources */,
 				5E183EA11FF3CA4800368DE1 /* DocumentDetailsViewController.swift in Sources */,
+				05A569A02017B74B00C6F713 /* Validation.swift in Sources */,
+				05A569C92017B7B300C6F713 /* TransformOf.swift in Sources */,
+				05A5699F2017B74B00C6F713 /* Result.swift in Sources */,
+				05A569C72017B7B300C6F713 /* ToJSON.swift in Sources */,
 				5E1E4215200F537800FB46C1 /* PVRadioButtonGroup.swift in Sources */,
 				5EC300621FEC0A5A00229516 /* Option.swift in Sources */,
+				05A569A52017B74B00C6F713 /* SessionManager.swift in Sources */,
+				05A569CA2017B7B300C6F713 /* TransformType.swift in Sources */,
 				5E3A04722007C313004EE2D7 /* ReceivedMessageTableViewCell.swift in Sources */,
 				0531A57F2007EA5100F2232C /* FilterOptionTableViewCell.swift in Sources */,
 				5E20CD931FE952BE004ACE0D /* AppDelegate.swift in Sources */,
+				05A569A12017B74B00C6F713 /* MultipartFormData.swift in Sources */,
+				05A569D32017B7B300C6F713 /* Mappable.swift in Sources */,
+				05A569962017B74B00C6F713 /* ResponseSerialization.swift in Sources */,
 				058A0EDA1FF7CA2D00147238 /* ConversationsListViewController.swift in Sources */,
 				5E1E4217200F537F00FB46C1 /* PVRadioButton.swift in Sources */,
 				5E1C498F1FEA4468007CE624 /* CustomBlueTextColorLabel.swift in Sources */,
 				5E21A6F51FF28E4700DBB157 /* ProfileViewController.swift in Sources */,
+				05A569C82017B7B300C6F713 /* CustomDateFormatTransform.swift in Sources */,
+				05A569A62017B74B00C6F713 /* Response.swift in Sources */,
 				5E20CDC21FE9724A004ACE0D /* SettingsViewController.swift in Sources */,
+				05A569D02017B7B300C6F713 /* EnumTransform.swift in Sources */,
+				05A569A42017B74B00C6F713 /* Alamofire.swift in Sources */,
+				05A5699E2017B74B00C6F713 /* Request.swift in Sources */,
 				058A0ED21FF7C50400147238 /* DashboardMyAppsTableViewCell.swift in Sources */,
 				05A7A9011FF815A000472A60 /* ConversationInfoViewController.swift in Sources */,
 				5EC3005A1FEBEBFA00229516 /* AppSettingsViewController.swift in Sources */,
 				05A7A8FB1FF7FEEC00472A60 /* NewConversationViewController.swift in Sources */,
 				5E1C499D1FEA80A1007CE624 /* ViewBorder.swift in Sources */,
+				05A569CE2017B7B300C6F713 /* Mapper.swift in Sources */,
 				5E1C49981FEA73F8007CE624 /* AboutMeViewController.swift in Sources */,
 				5E183E9F1FF3887600368DE1 /* CustomBlueTextColorButton.swift in Sources */,
 				05CC51C320123AAA00EA6D55 /* ApprovalSectionCollectionViewCell.swift in Sources */,
@@ -732,15 +922,34 @@
 				5EC3005E1FEC03FE00229516 /* SettingOptionsTableViewCell.swift in Sources */,
 				058A0ED41FF7C50D00147238 /* DashboardViewController.swift in Sources */,
 				5E184EC51FF8A6210000D7C7 /* MembersTableViewCell.swift in Sources */,
+				05A569CD2017B7B300C6F713 /* FromJSON.swift in Sources */,
 				5E1C49921FEA45F6007CE624 /* Constants.swift in Sources */,
 				5E4A8D3D1FF4FB6600086667 /* PeopleViewController.swift in Sources */,
+				05A569C22017B7B300C6F713 /* Map.swift in Sources */,
+				05A569972017B74B00C6F713 /* Timeline.swift in Sources */,
+				05A569BF2017B7B300C6F713 /* NSDecimalNumberTransform.swift in Sources */,
 				5E1B6D011FED33A800C307B3 /* CustomPickerView.swift in Sources */,
+				05A569C42017B7B300C6F713 /* URLTransform.swift in Sources */,
+				05A569C12017B7B300C6F713 /* EnumOperators.swift in Sources */,
+				05A569C02017B7B300C6F713 /* DictionaryTransform.swift in Sources */,
 				5E37E4D4201204BC00088001 /* NotificationsViewController.swift in Sources */,
+				05A569C32017B7B300C6F713 /* ImmutableMappable.swift in Sources */,
 				5E4A8D3B1FF4FB4900086667 /* PeopleTableViewCell.swift in Sources */,
+				05A569D12017B7B300C6F713 /* TransformOperators.swift in Sources */,
+				05A569D22017B7B300C6F713 /* DateTransform.swift in Sources */,
 				0531A57D2007EA4200F2232C /* FilterSectionTableViewCell.swift in Sources */,
 				5E18AE421FF81B45007AA461 /* AttachmentsViewController.swift in Sources */,
+				05A569D42017B7B300C6F713 /* Operators.swift in Sources */,
 				5E183EA41FF3F97600368DE1 /* PeopleListTableViewCell.swift in Sources */,
+				05A569CC2017B7B300C6F713 /* ISO8601DateTransform.swift in Sources */,
+				05A5699B2017B74B00C6F713 /* Notifications.swift in Sources */,
+				05A5699A2017B74B00C6F713 /* SessionDelegate.swift in Sources */,
+				05A569CF2017B7B300C6F713 /* MapError.swift in Sources */,
+				05A569DA2017B85100C6F713 /* mNetService.swift in Sources */,
+				05A569C62017B7B300C6F713 /* DataTransform.swift in Sources */,
+				05A5699C2017B74B00C6F713 /* ServerTrustPolicy.swift in Sources */,
 				5E183E9D1FF385AD00368DE1 /* CustomBrownColorTextView.swift in Sources */,
+				05A569992017B74B00C6F713 /* NetworkReachabilityManager.swift in Sources */,
 				5EC300651FEC106600229516 /* PrivacySettingOptionTableViewCell.swift in Sources */,
 				5E1C49A21FEA84F2007CE624 /* CustomerBrownTextColorButton.swift in Sources */,
 			);
@@ -883,7 +1092,8 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "452e8e1a-759d-42ec-94ea-ba925d2f9628";
 				PROVISIONING_PROFILE_SPECIFIER = mNetDevelopment;
-				SWIFT_VERSION = 3.0;
+				SWIFT_SWIFT3_OBJC_INFERENCE = On;
+				SWIFT_VERSION = 4.0;
 			};
 			name = Debug;
 		};
@@ -905,7 +1115,8 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "7825225e-6766-4167-911c-40e3c620daa8";
 				PROVISIONING_PROFILE_SPECIFIER = mNetDevelopment;
-				SWIFT_VERSION = 3.0;
+				SWIFT_SWIFT3_OBJC_INFERENCE = On;
+				SWIFT_VERSION = 4.0;
 			};
 			name = Release;
 		};
