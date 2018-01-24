@@ -24,7 +24,7 @@ class BaseNavigationController: UINavigationController {
 
     func setUpNavigationBarForLargeTitle() {
         
-        let titleAttributes:[String:Any] = [NSFontAttributeName:UIFont.boldAppFont(fontSize: 20),NSForegroundColorAttributeName:ColorConstants.kBrownColor]
+        let titleAttributes:[NSAttributedStringKey:Any] = [NSAttributedStringKey(rawValue: NSAttributedStringKey.font.rawValue):UIFont.boldAppFont(fontSize: 20),NSAttributedStringKey(rawValue: NSAttributedStringKey.foregroundColor.rawValue):ColorConstants.kBrownColor]
         
         if #available(iOS 11.0, *) {
             self.navigationBar.largeTitleTextAttributes = titleAttributes

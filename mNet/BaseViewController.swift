@@ -184,7 +184,7 @@ class BaseViewController: UIViewController {
     
     //MARK: Keyboard notification listners
     
-    func keyBoardWillShow(notification: NSNotification) {
+    @objc func keyBoardWillShow(notification: NSNotification) {
         
         //add gesture recognizer
         self.view.addGestureRecognizer(self.tapGestureToMoveKbDown!)
@@ -206,7 +206,7 @@ class BaseViewController: UIViewController {
     }
     
     
-    func keyBoardWillHide(notification: NSNotification) {
+    @objc func keyBoardWillHide(notification: NSNotification) {
         
         //add gesture recognizer
         self.view.removeGestureRecognizer(self.tapGestureToMoveKbDown!)
@@ -228,7 +228,7 @@ class BaseViewController: UIViewController {
     
     //MARK: Gesture recognizer methods
     
-    func moveKeyboardDown(gesture:UITapGestureRecognizer){
+    @objc func moveKeyboardDown(gesture:UITapGestureRecognizer){
         
         self.view.endEditing(true)
     }
