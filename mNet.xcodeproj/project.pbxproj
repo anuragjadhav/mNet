@@ -60,7 +60,6 @@
 		05A569D32017B7B300C6F713 /* Mappable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05A569BC2017B7B200C6F713 /* Mappable.swift */; };
 		05A569D42017B7B300C6F713 /* Operators.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05A569BD2017B7B300C6F713 /* Operators.swift */; };
 		05A569D62017B7C300C6F713 /* AlamofireObjectMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05A569D52017B7C300C6F713 /* AlamofireObjectMapper.swift */; };
-		05A569DA2017B85100C6F713 /* mNetService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05A569D92017B85100C6F713 /* mNetService.swift */; };
 		05A7A8FB1FF7FEEC00472A60 /* NewConversationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05A7A8FA1FF7FEEC00472A60 /* NewConversationViewController.swift */; };
 		05A7A8FD1FF802BC00472A60 /* ApprovalsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05A7A8FC1FF802BC00472A60 /* ApprovalsViewController.swift */; };
 		05A7A8FF1FF80B7700472A60 /* SelectUserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05A7A8FE1FF80B7700472A60 /* SelectUserViewController.swift */; };
@@ -185,7 +184,6 @@
 		05A569BC2017B7B200C6F713 /* Mappable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Mappable.swift; sourceTree = "<group>"; };
 		05A569BD2017B7B300C6F713 /* Operators.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Operators.swift; sourceTree = "<group>"; };
 		05A569D52017B7C300C6F713 /* AlamofireObjectMapper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlamofireObjectMapper.swift; sourceTree = "<group>"; };
-		05A569D92017B85100C6F713 /* mNetService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = mNetService.swift; path = mNet/Libraries/mNetService.swift; sourceTree = SOURCE_ROOT; };
 		05A7A8FA1FF7FEEC00472A60 /* NewConversationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewConversationViewController.swift; sourceTree = "<group>"; };
 		05A7A8FC1FF802BC00472A60 /* ApprovalsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApprovalsViewController.swift; sourceTree = "<group>"; };
 		05A7A8FE1FF80B7700472A60 /* SelectUserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectUserViewController.swift; sourceTree = "<group>"; };
@@ -452,14 +450,6 @@
 			path = "Alamofire + Object Mapper";
 			sourceTree = "<group>";
 		};
-		05A569D82017B82A00C6F713 /* Service */ = {
-			isa = PBXGroup;
-			children = (
-				05A569D92017B85100C6F713 /* mNetService.swift */,
-			);
-			path = Service;
-			sourceTree = "<group>";
-		};
 		5E183E971FF37A5700368DE1 /* Approve Reject Application Module */ = {
 			isa = PBXGroup;
 			children = (
@@ -576,7 +566,6 @@
 				5E1C49911FEA45F6007CE624 /* Constants.swift */,
 				5E20CD921FE952BE004ACE0D /* AppDelegate.swift */,
 				05A569812017B71600C6F713 /* Libraries */,
-				05A569D82017B82A00C6F713 /* Service */,
 				5E184EC61FF8A8320000D7C7 /* TabBarController */,
 				5EC300631FEC0A6100229516 /* Models */,
 				5E1C499E1FEA845B007CE624 /* Base classes */,
@@ -945,7 +934,6 @@
 				05A5699B2017B74B00C6F713 /* Notifications.swift in Sources */,
 				05A5699A2017B74B00C6F713 /* SessionDelegate.swift in Sources */,
 				05A569CF2017B7B300C6F713 /* MapError.swift in Sources */,
-				05A569DA2017B85100C6F713 /* mNetService.swift in Sources */,
 				05A569C62017B7B300C6F713 /* DataTransform.swift in Sources */,
 				05A5699C2017B74B00C6F713 /* ServerTrustPolicy.swift in Sources */,
 				5E183E9D1FF385AD00368DE1 /* CustomBrownColorTextView.swift in Sources */,
