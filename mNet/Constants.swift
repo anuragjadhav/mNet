@@ -8,6 +8,13 @@
 
 import UIKit
 
+struct URLS {
+    
+    static let baseURL:String = "Dashboard"
+    static let getSettings:String = "Dashboard"
+    static let setSettings:String = "Dashboard"
+}
+
 struct ColorConstants {
     
     static let kBrownColor: UIColor = UIColor(red: 97.0/255.0, green: 72.0/255.0, blue: 57.0/255.0, alpha: 1.0)

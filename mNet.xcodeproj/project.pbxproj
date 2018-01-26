@@ -128,6 +128,10 @@
 		5EC3005E1FEC03FE00229516 /* SettingOptionsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EC3005D1FEC03FE00229516 /* SettingOptionsTableViewCell.swift */; };
 		5EC300621FEC0A5A00229516 /* Option.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EC300611FEC0A5A00229516 /* Option.swift */; };
 		5EC300651FEC106600229516 /* PrivacySettingOptionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EC300641FEC106600229516 /* PrivacySettingOptionTableViewCell.swift */; };
+		5EF31C83201B57E9007727D8 /* PrivacySettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EF31C82201B57E9007727D8 /* PrivacySettings.swift */; };
+		5EF31C86201B5E93007727D8 /* WrapperManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EF31C85201B5E93007727D8 /* WrapperManager.swift */; };
+		5EF31C88201B5F18007727D8 /* SettingsWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EF31C87201B5F18007727D8 /* SettingsWrapper.swift */; };
+		5EF31C8A201B6231007727D8 /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EF31C89201B6231007727D8 /* Profile.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -254,6 +258,10 @@
 		5EC3005D1FEC03FE00229516 /* SettingOptionsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingOptionsTableViewCell.swift; sourceTree = "<group>"; };
 		5EC300611FEC0A5A00229516 /* Option.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Option.swift; sourceTree = "<group>"; };
 		5EC300641FEC106600229516 /* PrivacySettingOptionTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PrivacySettingOptionTableViewCell.swift; sourceTree = "<group>"; };
+		5EF31C82201B57E9007727D8 /* PrivacySettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrivacySettings.swift; sourceTree = "<group>"; };
+		5EF31C85201B5E93007727D8 /* WrapperManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WrapperManager.swift; sourceTree = "<group>"; };
+		5EF31C87201B5F18007727D8 /* SettingsWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsWrapper.swift; sourceTree = "<group>"; };
+		5EF31C89201B6231007727D8 /* Profile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Profile.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -565,6 +573,8 @@
 			children = (
 				5E1C49911FEA45F6007CE624 /* Constants.swift */,
 				5E20CD921FE952BE004ACE0D /* AppDelegate.swift */,
+				5EF31C84201B5D62007727D8 /* Wrappers */,
+				5EF31C81201B5664007727D8 /* Models */,
 				05A569812017B71600C6F713 /* Libraries */,
 				5E184EC61FF8A8320000D7C7 /* TabBarController */,
 				5EC300631FEC0A6100229516 /* Models */,
@@ -751,6 +761,24 @@
 			name = Models;
 			sourceTree = "<group>";
 		};
+		5EF31C81201B5664007727D8 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				5EF31C82201B57E9007727D8 /* PrivacySettings.swift */,
+				5EF31C89201B6231007727D8 /* Profile.swift */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		5EF31C84201B5D62007727D8 /* Wrappers */ = {
+			isa = PBXGroup;
+			children = (
+				5EF31C85201B5E93007727D8 /* WrapperManager.swift */,
+				5EF31C87201B5F18007727D8 /* SettingsWrapper.swift */,
+			);
+			name = Wrappers;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -869,6 +897,7 @@
 				05A569C52017B7B300C6F713 /* IntegerOperators.swift in Sources */,
 				05A569A32017B74B00C6F713 /* TaskDelegate.swift in Sources */,
 				05A7A8FF1FF80B7700472A60 /* SelectUserViewController.swift in Sources */,
+				5EF31C86201B5E93007727D8 /* WrapperManager.swift in Sources */,
 				05A569A22017B74B00C6F713 /* DispatchQueue+Alamofire.swift in Sources */,
 				5E1C499A1FEA7F30007CE624 /* CustomBrownTextColorTextfield.swift in Sources */,
 				5E3A046E2007A64D004EE2D7 /* ConversationDetailViewController.swift in Sources */,
@@ -906,6 +935,7 @@
 				05A569CE2017B7B300C6F713 /* Mapper.swift in Sources */,
 				5E1C49981FEA73F8007CE624 /* AboutMeViewController.swift in Sources */,
 				5E183E9F1FF3887600368DE1 /* CustomBlueTextColorButton.swift in Sources */,
+				5EF31C83201B57E9007727D8 /* PrivacySettings.swift in Sources */,
 				05CC51C320123AAA00EA6D55 /* ApprovalSectionCollectionViewCell.swift in Sources */,
 				5E18AE441FF81B59007AA461 /* DocumentViewController.swift in Sources */,
 				5EC3005E1FEC03FE00229516 /* SettingOptionsTableViewCell.swift in Sources */,
@@ -925,9 +955,11 @@
 				05A569C32017B7B300C6F713 /* ImmutableMappable.swift in Sources */,
 				5E4A8D3B1FF4FB4900086667 /* PeopleTableViewCell.swift in Sources */,
 				05A569D12017B7B300C6F713 /* TransformOperators.swift in Sources */,
+				5EF31C8A201B6231007727D8 /* Profile.swift in Sources */,
 				05A569D22017B7B300C6F713 /* DateTransform.swift in Sources */,
 				0531A57D2007EA4200F2232C /* FilterSectionTableViewCell.swift in Sources */,
 				5E18AE421FF81B45007AA461 /* AttachmentsViewController.swift in Sources */,
+				5EF31C88201B5F18007727D8 /* SettingsWrapper.swift in Sources */,
 				05A569D42017B7B300C6F713 /* Operators.swift in Sources */,
 				5E183EA41FF3F97600368DE1 /* PeopleListTableViewCell.swift in Sources */,
 				05A569CC2017B7B300C6F713 /* ISO8601DateTransform.swift in Sources */,
