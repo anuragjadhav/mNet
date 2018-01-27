@@ -8,7 +8,8 @@
 
 import UIKit
 
-class PrivacySettings: NSObject {
+
+class PrivacySettings: Mappable {
     
     var show_email : Int?
     var show_address : Int?
@@ -24,5 +25,13 @@ class PrivacySettings: NSObject {
     var show_schedule : Int?
     var post_email_notification : Int?
     var reply_email_notification : Int?
+    
+    required init?(map: Map){
+        
+    }
+    
+    func mapping(map: Map) {
+      
+    }
 
 }

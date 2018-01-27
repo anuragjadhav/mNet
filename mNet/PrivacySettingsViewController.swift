@@ -58,33 +58,38 @@ class PrivacySettingsViewController: BaseViewController,UITableViewDelegate,UITa
         
     }
     
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
-        let option:Option = self.dataCtrl.privacySettingOptionsArray[indexPath.row]
-        
-        switch option.settingOptionName {
-            
-            //TODO:
-            
-        default: break
-            
-        }
-        
-    }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         
         return UITableViewAutomaticDimension
     }
-
-    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+    
+    //Mark: Get Settings
+    func getPrivacySettings(){
         
-//        if scrollView.contentOffset.y > 20 {
-//            self.hideLargeTitle()
-//        }
-//        else {
-//            self.showLargeTitle()
-//        }
+        if Reachability.isConnectedToNetwork(){
+            
+            self.showLoadingOnViewController()
+            
+            self.dataCtrl.getPrivacySettingOfUser(onSuccess: { [unowned self] in
+                
+                DispatchQueue.main.async {
+                    
+                    self.removeLoadingFromViewController()
+                    self.optionsTableView.reloadData()
+                    
+                }
+                
+            }, onFailure: { [unowned self] (displayMessage) in
+                
+                self.removeLoadingFromViewController()
+                self.showRetryView(message:displayMessage)
+            })
+
+        }else{
+            
+           self.showRetryView(message: AlertMessages.networkUnavailable)
+        }
     }
     
     //Mark: Button Actions
@@ -95,6 +100,13 @@ class PrivacySettingsViewController: BaseViewController,UITableViewDelegate,UITa
     
     @IBAction func backButtonAction(_ sender: Any) {
         self.navigationController?.popViewController(animated: true)
+    }
+    
+    //Mark: Retry view delegate
+
+    override func retryButtonClicked() {
+        
+        self.getPrivacySettings()
     }
 
 }

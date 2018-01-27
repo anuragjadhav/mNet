@@ -82,6 +82,10 @@
 		5E18AE481FF82E0E007AA461 /* TabBar.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5E18AE471FF82E0E007AA461 /* TabBar.storyboard */; };
 		5E18AE4A1FF82F94007AA461 /* Conversation.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5E18AE491FF82F94007AA461 /* Conversation.storyboard */; };
 		5E18AE4C1FF82FA4007AA461 /* Dashboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5E18AE4B1FF82FA3007AA461 /* Dashboard.storyboard */; };
+		5E1A8D07201C49C700BFAF10 /* LoginWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E1A8D06201C49C700BFAF10 /* LoginWrapper.swift */; };
+		5E1A8D09201C6A6300BFAF10 /* RetryView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5E1A8D08201C6A6300BFAF10 /* RetryView.xib */; };
+		5E1A8D0B201C6CD200BFAF10 /* RetryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E1A8D0A201C6CD200BFAF10 /* RetryView.swift */; };
+		5E1A8D0D201C78D600BFAF10 /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E1A8D0C201C78D600BFAF10 /* Reachability.swift */; };
 		5E1B6CFD1FED2C8500C307B3 /* CustomPickerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5E1B6CFC1FED2C8500C307B3 /* CustomPickerView.xib */; };
 		5E1B6D011FED33A800C307B3 /* CustomPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E1B6D001FED33A800C307B3 /* CustomPickerView.swift */; };
 		5E1C498D1FEA4455007CE624 /* CustomBrownTextColorLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E1C498C1FEA4455007CE624 /* CustomBrownTextColorLabel.swift */; };
@@ -126,7 +130,7 @@
 		5EC3005A1FEBEBFA00229516 /* AppSettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EC300591FEBEBFA00229516 /* AppSettingsViewController.swift */; };
 		5EC3005C1FEC002000229516 /* SettingsDataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EC3005B1FEC002000229516 /* SettingsDataController.swift */; };
 		5EC3005E1FEC03FE00229516 /* SettingOptionsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EC3005D1FEC03FE00229516 /* SettingOptionsTableViewCell.swift */; };
-		5EC300621FEC0A5A00229516 /* Option.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EC300611FEC0A5A00229516 /* Option.swift */; };
+		5EC300621FEC0A5A00229516 /* SettingOption.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EC300611FEC0A5A00229516 /* SettingOption.swift */; };
 		5EC300651FEC106600229516 /* PrivacySettingOptionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EC300641FEC106600229516 /* PrivacySettingOptionTableViewCell.swift */; };
 		5EF31C83201B57E9007727D8 /* PrivacySettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EF31C82201B57E9007727D8 /* PrivacySettings.swift */; };
 		5EF31C86201B5E93007727D8 /* WrapperManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EF31C85201B5E93007727D8 /* WrapperManager.swift */; };
@@ -210,6 +214,10 @@
 		5E18AE471FF82E0E007AA461 /* TabBar.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = TabBar.storyboard; sourceTree = "<group>"; };
 		5E18AE491FF82F94007AA461 /* Conversation.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Conversation.storyboard; sourceTree = "<group>"; };
 		5E18AE4B1FF82FA3007AA461 /* Dashboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Dashboard.storyboard; sourceTree = "<group>"; };
+		5E1A8D06201C49C700BFAF10 /* LoginWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginWrapper.swift; sourceTree = "<group>"; };
+		5E1A8D08201C6A6300BFAF10 /* RetryView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RetryView.xib; sourceTree = "<group>"; };
+		5E1A8D0A201C6CD200BFAF10 /* RetryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RetryView.swift; sourceTree = "<group>"; };
+		5E1A8D0C201C78D600BFAF10 /* Reachability.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
 		5E1B6CFC1FED2C8500C307B3 /* CustomPickerView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CustomPickerView.xib; sourceTree = "<group>"; };
 		5E1B6D001FED33A800C307B3 /* CustomPickerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomPickerView.swift; sourceTree = "<group>"; };
 		5E1C498C1FEA4455007CE624 /* CustomBrownTextColorLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomBrownTextColorLabel.swift; sourceTree = "<group>"; };
@@ -256,7 +264,7 @@
 		5EC300591FEBEBFA00229516 /* AppSettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppSettingsViewController.swift; sourceTree = "<group>"; };
 		5EC3005B1FEC002000229516 /* SettingsDataController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsDataController.swift; sourceTree = "<group>"; };
 		5EC3005D1FEC03FE00229516 /* SettingOptionsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingOptionsTableViewCell.swift; sourceTree = "<group>"; };
-		5EC300611FEC0A5A00229516 /* Option.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Option.swift; sourceTree = "<group>"; };
+		5EC300611FEC0A5A00229516 /* SettingOption.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingOption.swift; sourceTree = "<group>"; };
 		5EC300641FEC106600229516 /* PrivacySettingOptionTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PrivacySettingOptionTableViewCell.swift; sourceTree = "<group>"; };
 		5EF31C82201B57E9007727D8 /* PrivacySettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrivacySettings.swift; sourceTree = "<group>"; };
 		5EF31C85201B5E93007727D8 /* WrapperManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WrapperManager.swift; sourceTree = "<group>"; };
@@ -508,10 +516,19 @@
 			name = TabBarController;
 			sourceTree = "<group>";
 		};
+		5E1A8D0E201C78DF00BFAF10 /* Reachability */ = {
+			isa = PBXGroup;
+			children = (
+				5E1A8D0C201C78D600BFAF10 /* Reachability.swift */,
+			);
+			name = Reachability;
+			sourceTree = "<group>";
+		};
 		5E1B6CFB1FED2AB900C307B3 /* Xibs */ = {
 			isa = PBXGroup;
 			children = (
 				5E1B6CFC1FED2C8500C307B3 /* CustomPickerView.xib */,
+				5E1A8D08201C6A6300BFAF10 /* RetryView.xib */,
 			);
 			name = Xibs;
 			sourceTree = "<group>";
@@ -530,6 +547,7 @@
 				0531A5782007CCC600F2232C /* CustomRedBackgroundColorButton.swift */,
 				5E1E4214200F537800FB46C1 /* PVRadioButtonGroup.swift */,
 				5E1E4216200F537F00FB46C1 /* PVRadioButton.swift */,
+				5E1A8D0A201C6CD200BFAF10 /* RetryView.swift */,
 			);
 			name = "Custom View Classes";
 			sourceTree = "<group>";
@@ -573,8 +591,8 @@
 			children = (
 				5E1C49911FEA45F6007CE624 /* Constants.swift */,
 				5E20CD921FE952BE004ACE0D /* AppDelegate.swift */,
+				5E1A8D0E201C78DF00BFAF10 /* Reachability */,
 				5EF31C84201B5D62007727D8 /* Wrappers */,
-				5EF31C81201B5664007727D8 /* Models */,
 				05A569812017B71600C6F713 /* Libraries */,
 				5E184EC61FF8A8320000D7C7 /* TabBarController */,
 				5EC300631FEC0A6100229516 /* Models */,
@@ -756,14 +774,7 @@
 		5EC300631FEC0A6100229516 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				5EC300611FEC0A5A00229516 /* Option.swift */,
-			);
-			name = Models;
-			sourceTree = "<group>";
-		};
-		5EF31C81201B5664007727D8 /* Models */ = {
-			isa = PBXGroup;
-			children = (
+				5EC300611FEC0A5A00229516 /* SettingOption.swift */,
 				5EF31C82201B57E9007727D8 /* PrivacySettings.swift */,
 				5EF31C89201B6231007727D8 /* Profile.swift */,
 			);
@@ -775,6 +786,7 @@
 			children = (
 				5EF31C85201B5E93007727D8 /* WrapperManager.swift */,
 				5EF31C87201B5F18007727D8 /* SettingsWrapper.swift */,
+				5E1A8D06201C49C700BFAF10 /* LoginWrapper.swift */,
 			);
 			name = Wrappers;
 			sourceTree = "<group>";
@@ -853,6 +865,7 @@
 				5E20CDB01FE962E7004ACE0D /* SanFranciscoDisplay-Heavy.otf in Resources */,
 				5E18AE4A1FF82F94007AA461 /* Conversation.storyboard in Resources */,
 				5E1B6CFD1FED2C8500C307B3 /* CustomPickerView.xib in Resources */,
+				5E1A8D09201C6A6300BFAF10 /* RetryView.xib in Resources */,
 				5E20CDB31FE962F0004ACE0D /* SanFranciscoDisplay-Regular.otf in Resources */,
 				5E20CDAF1FE962E4004ACE0D /* SanFranciscoDisplay-Bold.otf in Resources */,
 				5E20CDB61FE962F7004ACE0D /* SanFranciscoDisplay-Ultralight.otf in Resources */,
@@ -908,17 +921,19 @@
 				05A5699F2017B74B00C6F713 /* Result.swift in Sources */,
 				05A569C72017B7B300C6F713 /* ToJSON.swift in Sources */,
 				5E1E4215200F537800FB46C1 /* PVRadioButtonGroup.swift in Sources */,
-				5EC300621FEC0A5A00229516 /* Option.swift in Sources */,
+				5EC300621FEC0A5A00229516 /* SettingOption.swift in Sources */,
 				05A569A52017B74B00C6F713 /* SessionManager.swift in Sources */,
 				05A569CA2017B7B300C6F713 /* TransformType.swift in Sources */,
 				5E3A04722007C313004EE2D7 /* ReceivedMessageTableViewCell.swift in Sources */,
 				0531A57F2007EA5100F2232C /* FilterOptionTableViewCell.swift in Sources */,
+				5E1A8D0B201C6CD200BFAF10 /* RetryView.swift in Sources */,
 				5E20CD931FE952BE004ACE0D /* AppDelegate.swift in Sources */,
 				05A569A12017B74B00C6F713 /* MultipartFormData.swift in Sources */,
 				05A569D32017B7B300C6F713 /* Mappable.swift in Sources */,
 				05A569962017B74B00C6F713 /* ResponseSerialization.swift in Sources */,
 				058A0EDA1FF7CA2D00147238 /* ConversationsListViewController.swift in Sources */,
 				5E1E4217200F537F00FB46C1 /* PVRadioButton.swift in Sources */,
+				5E1A8D07201C49C700BFAF10 /* LoginWrapper.swift in Sources */,
 				5E1C498F1FEA4468007CE624 /* CustomBlueTextColorLabel.swift in Sources */,
 				5E21A6F51FF28E4700DBB157 /* ProfileViewController.swift in Sources */,
 				05A569C82017B7B300C6F713 /* CustomDateFormatTransform.swift in Sources */,
@@ -966,6 +981,7 @@
 				05A5699B2017B74B00C6F713 /* Notifications.swift in Sources */,
 				05A5699A2017B74B00C6F713 /* SessionDelegate.swift in Sources */,
 				05A569CF2017B7B300C6F713 /* MapError.swift in Sources */,
+				5E1A8D0D201C78D600BFAF10 /* Reachability.swift in Sources */,
 				05A569C62017B7B300C6F713 /* DataTransform.swift in Sources */,
 				05A5699C2017B74B00C6F713 /* ServerTrustPolicy.swift in Sources */,
 				5E183E9D1FF385AD00368DE1 /* CustomBrownColorTextView.swift in Sources */,

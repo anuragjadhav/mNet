@@ -15,13 +15,21 @@ class PrivacySettingOptionTableViewCell: UITableViewCell {
     @IBOutlet weak public private(set) var switchButton: UISwitch!
     
     
-    func loadCellWithOption(_ option:Option)  {
+    func loadCellWithOption(_ option:SettingOption)  {
         
         self.optionNameLabel.text = option.settingOptionName
-        self.optionDescriptionLabel.text = option.settingOptionDescription
         
-        if(option.isSettingOn != nil){
-            self.switchButton.setOn(option.isSettingOn!, animated: false)
+        if(option.isSettingOn == 1){
+            
+            self.switchButton.setOn(true, animated: true)
+            //replase show word with hide to show proper description if switch id on
+            let newDescriptionString:String = (option.settingOptionDescription?.replacingOccurrences(of: "Show", with: "Hide"))!
+            self.optionDescriptionLabel.text = newDescriptionString
+        }
+        else{
+            
+            self.switchButton.setOn(false, animated: false)
+            self.optionDescriptionLabel.text = option.settingOptionDescription
         }
     }
 }

@@ -10,9 +10,15 @@ import UIKit
 
 struct URLS {
     
-    static let baseURL:String = "Dashboard"
-    static let getSettings:String = "Dashboard"
-    static let setSettings:String = "Dashboard"
+    static let baseURL:String = ""
+    static let getPrivacySettings:String = ""
+    static let setSettings:String = ""
+}
+
+
+struct AlertMessages {
+    
+    static let networkUnavailable:String = "Network Unavailable"
 }
 
 struct ColorConstants {

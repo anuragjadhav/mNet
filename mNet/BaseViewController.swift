@@ -8,13 +8,13 @@
 
 import UIKit
 
-class BaseViewController: UIViewController {
+class BaseViewController: UIViewController,RetryViewProtocol {
     
     var transperantLoadingOnVC :UIView?
     var loadingViewOnVC : UIView?
     var transaperantLoadingViewOnWindow : UIView?
     var loadingViewOnWindow : UIView?
-    
+    var retryView : RetryView?
     var tapGestureToMoveKbDown : UITapGestureRecognizer?
 
     override func viewDidLoad() {
@@ -231,6 +231,25 @@ class BaseViewController: UIViewController {
     @objc func moveKeyboardDown(gesture:UITapGestureRecognizer){
         
         self.view.endEditing(true)
+    }
+    
+    //MARK: Retry view methods
+
+    func showRetryView(message:String) {
+        
+        if(self.retryView != nil){
+
+            self.retryView = RetryView.init(frame: self.view.frame, delegate: self)
+        }
+        
+        self.retryView?.messageLabel.text = message
+        self.view.addSubview(retryView!)
+    }
+    
+    //MARK: Retry view delegate
+    
+    func retryButtonClicked() {
+        
     }
 
 }

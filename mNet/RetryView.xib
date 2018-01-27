@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="HelveticaNeue.ttc">
+            <string>HelveticaNeue</string>
+        </array>
+        <array key="SanFranciscoDisplay-Regular.otf">
+            <string>SanFranciscoDisplay-Regular</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="RetryView" customModule="mNet" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Something went wrong" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bv5-89-TYj" customClass="CustomBrownTextColorLabel" customModule="mNet" customModuleProvider="target">
+                    <rect key="frame" x="25" y="294.5" width="325" height="18"/>
+                    <viewLayoutGuide key="safeArea" id="66f-EK-mcx"/>
+                    <fontDescription key="fontDescription" name="SanFranciscoDisplay-Regular" family="San Francisco Display" pointSize="15"/>
+                    <color key="textColor" red="0.3803921569" green="0.28235294119999998" blue="0.22352941179999999" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="leQ-ec-HSl">
+                    <rect key="frame" x="151" y="333" width="73" height="30"/>
+                    <color key="backgroundColor" red="0.3803921569" green="0.28235294119999998" blue="0.22352941179999999" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="73" id="Hvx-uL-yNv"/>
+                        <constraint firstAttribute="height" constant="30" id="ueL-s6-Mrr"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
+                    <state key="normal" title="Retry">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                            <real key="value" value="8"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                    <connections>
+                        <action selector="retryButtonAction:" destination="iN0-l3-epB" eventType="touchUpInside" id="FgX-Hm-Vad"/>
+                    </connections>
+                </button>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="bv5-89-TYj" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="25" id="4SL-7B-Ari"/>
+                <constraint firstItem="bv5-89-TYj" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="Lvh-6W-ApP"/>
+                <constraint firstItem="leQ-ec-HSl" firstAttribute="centerX" secondItem="bv5-89-TYj" secondAttribute="centerX" id="jrn-Ad-Ouv"/>
+                <constraint firstItem="leQ-ec-HSl" firstAttribute="top" secondItem="bv5-89-TYj" secondAttribute="bottom" constant="20.5" id="lxC-79-bnM"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="bv5-89-TYj" secondAttribute="trailing" constant="25" id="rVY-cr-sd7"/>
+                <constraint firstItem="bv5-89-TYj" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" constant="-30" id="z70-yA-IzH"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <connections>
+                <outlet property="messageLabel" destination="bv5-89-TYj" id="wbx-yQ-MQz"/>
+                <outlet property="retryButton" destination="leQ-ec-HSl" id="2RP-SB-Tmh"/>
+            </connections>
+            <point key="canvasLocation" x="33.5" y="82.5"/>
+        </view>
+    </objects>
+</document>

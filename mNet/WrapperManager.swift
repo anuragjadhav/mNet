@@ -13,9 +13,11 @@ let sharedManager = WrapperManager()
 class WrapperManager: NSObject {
     
     let settingsWrapper:SettingsWrapper
+    let loginWrapper:LoginWrapper
     
     override init() {
         
         self.settingsWrapper = SettingsWrapper()
+        self.loginWrapper = LoginWrapper()
     }
 }

@@ -23,7 +23,7 @@ class Profile: NSObject {
     var user_department : String?
     var user_mobile : String?
     var comp_id : Int16?
-    var org_id : Int16?
+    var org_id : Int?
     var org_name : String?
 
 }
