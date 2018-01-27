@@ -15,7 +15,7 @@ class SettingsWrapper: NSObject {
        
         request(URLS.getPrivacySettings).responseObject { (response: DataResponse<PrivacySettings>) in
             
-            if let privacySetting:PrivacySettings = response.result.value{
+            if let privacySetting:PrivacySettings = response.result.value {
                 
                 onSuccess(privacySetting)
             }

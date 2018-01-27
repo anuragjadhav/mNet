@@ -8,14 +8,14 @@
 
 import UIKit
 
-let sharedManager = WrapperManager()
-
 class WrapperManager: NSObject {
+    
+    static let shared:WrapperManager = WrapperManager()
     
     let settingsWrapper:SettingsWrapper
     let loginWrapper:LoginWrapper
-    
-    override init() {
+
+    private override init() {
         
         self.settingsWrapper = SettingsWrapper()
         self.loginWrapper = LoginWrapper()

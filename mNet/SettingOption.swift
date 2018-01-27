@@ -14,17 +14,11 @@ class SettingOption: NSObject {
     var settingOptionDescription:String?
     var isSettingOn:Int?
     
-    override init() {
-        super.init()
-    }
-    
-    class func initWith(_ optionName:String , _ optionDescription:String ,_ isSettingOn:Int) -> SettingOption {
+    convenience init(_ optionName:String, _ optionDescription:String, _ isSettingOn:Int) {
         
-        let option = SettingOption()
-        option.settingOptionName = optionName
-        option.settingOptionDescription = optionDescription
-        option.isSettingOn = isSettingOn
-        
-        return option
+        self.init()
+        self.settingOptionName = optionName
+        self.settingOptionDescription = optionDescription
+        self.isSettingOn = isSettingOn
     }
 }
