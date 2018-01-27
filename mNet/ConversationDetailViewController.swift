@@ -138,12 +138,12 @@ class ConversationDetailViewController: BaseViewController,UITableViewDelegate,U
     
     func openPhotos() {
         
-        UIAlertView(title: "Coming Soon", message: nil, delegate: nil, cancelButtonTitle: "OK").show()
+        
     }
     
     func openDocuments() {
         
-        UIAlertView(title: "Coming Soon", message: nil, delegate: nil, cancelButtonTitle: "OK").show()
+        
     }
     
 

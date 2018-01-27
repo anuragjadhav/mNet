@@ -501,7 +501,7 @@
                                 <action selector="backButtonAction:" destination="fMR-Vp-zRQ" id="1mI-ul-xHW"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" title="Item" image="infoIcon" id="RfH-j4-Bq2">
+                        <barButtonItem key="rightBarButtonItem" image="infoIcon" id="RfH-j4-Bq2">
                             <color key="tintColor" red="0.3803921569" green="0.28235294119999998" blue="0.22352941179999999" alpha="1" colorSpace="calibratedRGB"/>
                         </barButtonItem>
                     </navigationItem>
@@ -856,7 +856,7 @@
                                     </connections>
                                 </searchBar>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="55" id="Upp-8Y-T0w">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="userListTableViewCell" rowHeight="55" id="Upp-8Y-T0w">
                                         <rect key="frame" x="0.0" y="72" width="348" height="55"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" tableViewCell="Upp-8Y-T0w" id="vb4-Ta-clW">

@@ -12,12 +12,12 @@ class WrapperManager: NSObject {
     
     static let shared:WrapperManager = WrapperManager()
     
-    let settingsWrapper:SettingsWrapper
-    let loginWrapper:LoginWrapper
-
+    let settingsWrapper:SettingsWrapper = SettingsWrapper()
+    let loginWrapper:LoginWrapper = LoginWrapper()
+    let conversationWrapper:ConversationsWrapper = ConversationsWrapper()
+    
     private override init() {
         
-        self.settingsWrapper = SettingsWrapper()
-        self.loginWrapper = LoginWrapper()
+        super.init()
     }
 }

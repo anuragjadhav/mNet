@@ -10,7 +10,7 @@ import UIKit
 
 
 class SettingsWrapper: NSObject {
-    
+        
     func getPrivacySettingOfUser(onSuccess:@escaping (PrivacySettings) -> Void , onFailure : @escaping (String) -> Void){
        
         request(URLS.getPrivacySettings).responseObject { (response: DataResponse<PrivacySettings>) in
