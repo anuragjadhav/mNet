@@ -36,47 +36,47 @@ class SettingsDataController: NSObject {
         
         privacySettingOptionsArray.removeAll()
         
-        let emailSettingOption = SettingOption.initWith(PrivacySettingOptions.myEmailID, PrivacySettingOptions.myEmailIDDescription,(privacySettings?.show_email)!)
+        let emailSettingOption = SettingOption(PrivacySettingOptions.myEmailID, PrivacySettingOptions.myEmailIDDescription,(privacySettings?.show_email)!)
         privacySettingOptionsArray.append(emailSettingOption)
         
-        let addressSettingOption = SettingOption.initWith(PrivacySettingOptions.myAddress, PrivacySettingOptions.myAddressDescription,(privacySettings?.show_address)!)
+        let addressSettingOption = SettingOption(PrivacySettingOptions.myAddress, PrivacySettingOptions.myAddressDescription,(privacySettings?.show_address)!)
         privacySettingOptionsArray.append(addressSettingOption)
         
-        let mobileSettingOption = SettingOption.initWith(PrivacySettingOptions.myMobile, PrivacySettingOptions.myMobileDescription,(privacySettings?.show_mobile)!)
+        let mobileSettingOption = SettingOption(PrivacySettingOptions.myMobile, PrivacySettingOptions.myMobileDescription,(privacySettings?.show_mobile)!)
         privacySettingOptionsArray.append(mobileSettingOption)
         
-        let birthdaySettingOption = SettingOption.initWith(PrivacySettingOptions.myBirthday, PrivacySettingOptions.myBirthdayDescription,(privacySettings?.show_dob)!)
+        let birthdaySettingOption = SettingOption(PrivacySettingOptions.myBirthday, PrivacySettingOptions.myBirthdayDescription,(privacySettings?.show_dob)!)
         privacySettingOptionsArray.append(birthdaySettingOption)
         
-        let designationSettingOption = SettingOption.initWith(PrivacySettingOptions.mydesignation, PrivacySettingOptions.mydesignationDescription,(privacySettings?.show_designation)!)
+        let designationSettingOption = SettingOption(PrivacySettingOptions.mydesignation, PrivacySettingOptions.mydesignationDescription,(privacySettings?.show_designation)!)
         privacySettingOptionsArray.append(designationSettingOption)
         
-        let departmentSettingOption = SettingOption.initWith(PrivacySettingOptions.mydepartment, PrivacySettingOptions.mydepartmentDescription,(privacySettings?.show_department)!)
+        let departmentSettingOption = SettingOption(PrivacySettingOptions.mydepartment, PrivacySettingOptions.mydepartmentDescription,(privacySettings?.show_department)!)
         privacySettingOptionsArray.append(departmentSettingOption)
         
-        let organizationSettingOption = SettingOption.initWith(PrivacySettingOptions.myOrganization, PrivacySettingOptions.myOrganizationDescription,(privacySettings?.show_org)!)
+        let organizationSettingOption = SettingOption(PrivacySettingOptions.myOrganization, PrivacySettingOptions.myOrganizationDescription,(privacySettings?.show_org)!)
         privacySettingOptionsArray.append(organizationSettingOption)
         
-        let companySettingOption = SettingOption.initWith(PrivacySettingOptions.myCompany, PrivacySettingOptions.myCompanyDescription,(privacySettings?.show_company)!)
+        let companySettingOption = SettingOption(PrivacySettingOptions.myCompany, PrivacySettingOptions.myCompanyDescription,(privacySettings?.show_company)!)
         privacySettingOptionsArray.append(companySettingOption)
         
-        let applicationsSettingOption = SettingOption.initWith(PrivacySettingOptions.myApplication, PrivacySettingOptions.myApplicationDescription,(privacySettings?.show_apps)!)
+        let applicationsSettingOption = SettingOption(PrivacySettingOptions.myApplication, PrivacySettingOptions.myApplicationDescription,(privacySettings?.show_apps)!)
         privacySettingOptionsArray.append(applicationsSettingOption)
         
-        let groupSettingOption = SettingOption.initWith(PrivacySettingOptions.myGroup, PrivacySettingOptions.myGroupDescription,(privacySettings?.show_group)!)
+        let groupSettingOption = SettingOption(PrivacySettingOptions.myGroup, PrivacySettingOptions.myGroupDescription,(privacySettings?.show_group)!)
         privacySettingOptionsArray.append(groupSettingOption)
         
-        let taskSettingOption = SettingOption.initWith(PrivacySettingOptions.myTask, PrivacySettingOptions.myTaskDescription,(privacySettings?.show_task)!)
+        let taskSettingOption = SettingOption(PrivacySettingOptions.myTask, PrivacySettingOptions.myTaskDescription,(privacySettings?.show_task)!)
         privacySettingOptionsArray.append(taskSettingOption)
         
-        let scheduleSettingOption = SettingOption.initWith(PrivacySettingOptions.mySchedule, PrivacySettingOptions.myScheduleDescription,(privacySettings?.show_schedule)!)
+        let scheduleSettingOption = SettingOption(PrivacySettingOptions.mySchedule, PrivacySettingOptions.myScheduleDescription,(privacySettings?.show_schedule)!)
         privacySettingOptionsArray.append(scheduleSettingOption)
     }
     
     
     func getPrivacySettingOfUser(onSuccess:@escaping () -> Void , onFailure : @escaping (String) -> Void){
         
-        sharedManager.settingsWrapper.getPrivacySettingOfUser(onSuccess: { [unowned self] (privacySettings) in
+        WrapperManager.shared.settingsWrapper.getPrivacySettingOfUser(onSuccess: { [unowned self] (privacySettings) in
             
             self.privacySettings = privacySettings
             

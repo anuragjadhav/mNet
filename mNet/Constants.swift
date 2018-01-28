@@ -10,9 +10,10 @@ import UIKit
 
 struct URLS {
     
-    static let baseURL:String = ""
-    static let getPrivacySettings:String = ""
-    static let setSettings:String = ""
+    static let baseURL:URL = URL(string: "")!
+    static let getPrivacySettings:URL = URL(string: "", relativeTo: baseURL)!
+    static let setSettings:URL = URL(string: "", relativeTo: baseURL)!
+    static let conversationsList:URL = URL(string: "GetPost", relativeTo: baseURL)!
 }
 
 
@@ -89,6 +90,7 @@ struct CellIdentifiers {
     static let filterTableViewCell:String = "filterTableViewCell"
     static let optionTableViewCell:String = "optionTableViewCell"
     static let pendingApprovalsCollectionView:String = "pendingApprovalsCollectionViewCell"
+    static let userListTableView:String = "userListTableViewCell"
 }
 
 struct TabNames {
@@ -97,6 +99,11 @@ struct TabNames {
     static let conversations:String = "Conversations"
     static let settings:String = "Settings"
     static let notifications:String = "Notifications"
+}
+
+struct UserDefaultsKeys {
+    
+    static let loggedInUser:String = "loggedInUser"
 }
 
 struct StoryboardIDs {

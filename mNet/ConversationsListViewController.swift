@@ -16,8 +16,9 @@ class ConversationsListViewController: BaseViewController, UITableViewDelegate, 
     @IBOutlet weak var unreadConversationsLabel: CustomBrownTextColorLabel!
     @IBOutlet weak var lineLabel: UILabel!
     @IBOutlet weak var newConversationButton: UIButton!
-    
     @IBOutlet weak var searchBar: UISearchBar!
+
+    let dataController:ConversationsDataController = ConversationsDataController()
     
     //MARK: View Controller Delegates
     override func viewDidLoad() {
@@ -27,7 +28,6 @@ class ConversationsListViewController: BaseViewController, UITableViewDelegate, 
         lineLabel.layer.shadowOffset = CGSize(width: 0, height: 0.6)
         lineLabel.layer.shadowOpacity = 1
         lineLabel.layer.shadowRadius = 1.0
-        
     }
 
     override func viewWillAppear(_ animated: Bool) {
