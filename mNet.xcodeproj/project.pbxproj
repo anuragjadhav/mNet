@@ -93,6 +93,9 @@
 		5E1A8D09201C6A6300BFAF10 /* RetryView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5E1A8D08201C6A6300BFAF10 /* RetryView.xib */; };
 		5E1A8D0B201C6CD200BFAF10 /* RetryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E1A8D0A201C6CD200BFAF10 /* RetryView.swift */; };
 		5E1A8D0D201C78D600BFAF10 /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E1A8D0C201C78D600BFAF10 /* Reachability.swift */; };
+		5E1A8D10201DF57400BFAF10 /* ProfileWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E1A8D0F201DF57400BFAF10 /* ProfileWrapper.swift */; };
+		5E1A8D12201E221600BFAF10 /* ProfileDataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E1A8D11201E221600BFAF10 /* ProfileDataController.swift */; };
+		5E1A8D14201E24AD00BFAF10 /* AboutMeDataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E1A8D13201E24AD00BFAF10 /* AboutMeDataController.swift */; };
 		5E1B6CFD1FED2C8500C307B3 /* CustomPickerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5E1B6CFC1FED2C8500C307B3 /* CustomPickerView.xib */; };
 		5E1B6D011FED33A800C307B3 /* CustomPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E1B6D001FED33A800C307B3 /* CustomPickerView.swift */; };
 		5E1C498D1FEA4455007CE624 /* CustomBrownTextColorLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E1C498C1FEA4455007CE624 /* CustomBrownTextColorLabel.swift */; };
@@ -135,11 +138,11 @@
 		5E4A8D3B1FF4FB4900086667 /* PeopleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E4A8D3A1FF4FB4900086667 /* PeopleTableViewCell.swift */; };
 		5E4A8D3D1FF4FB6600086667 /* PeopleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E4A8D3C1FF4FB6600086667 /* PeopleViewController.swift */; };
 		5EC3005A1FEBEBFA00229516 /* AppSettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EC300591FEBEBFA00229516 /* AppSettingsViewController.swift */; };
-		5EC3005C1FEC002000229516 /* SettingsDataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EC3005B1FEC002000229516 /* SettingsDataController.swift */; };
+		5EC3005C1FEC002000229516 /* SettingsProfileDataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EC3005B1FEC002000229516 /* SettingsProfileDataController.swift */; };
 		5EC3005E1FEC03FE00229516 /* SettingOptionsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EC3005D1FEC03FE00229516 /* SettingOptionsTableViewCell.swift */; };
 		5EC300621FEC0A5A00229516 /* SettingOption.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EC300611FEC0A5A00229516 /* SettingOption.swift */; };
 		5EC300651FEC106600229516 /* PrivacySettingOptionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EC300641FEC106600229516 /* PrivacySettingOptionTableViewCell.swift */; };
-		5EF31C83201B57E9007727D8 /* PrivacySettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EF31C82201B57E9007727D8 /* PrivacySettings.swift */; };
+		5EF31C83201B57E9007727D8 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EF31C82201B57E9007727D8 /* Settings.swift */; };
 		5EF31C86201B5E93007727D8 /* WrapperManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EF31C85201B5E93007727D8 /* WrapperManager.swift */; };
 		5EF31C88201B5F18007727D8 /* SettingsWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EF31C87201B5F18007727D8 /* SettingsWrapper.swift */; };
 		5EF31C8A201B6231007727D8 /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EF31C89201B6231007727D8 /* Profile.swift */; };
@@ -232,6 +235,9 @@
 		5E1A8D08201C6A6300BFAF10 /* RetryView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RetryView.xib; sourceTree = "<group>"; };
 		5E1A8D0A201C6CD200BFAF10 /* RetryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RetryView.swift; sourceTree = "<group>"; };
 		5E1A8D0C201C78D600BFAF10 /* Reachability.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
+		5E1A8D0F201DF57400BFAF10 /* ProfileWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileWrapper.swift; sourceTree = "<group>"; };
+		5E1A8D11201E221600BFAF10 /* ProfileDataController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileDataController.swift; sourceTree = "<group>"; };
+		5E1A8D13201E24AD00BFAF10 /* AboutMeDataController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutMeDataController.swift; sourceTree = "<group>"; };
 		5E1B6CFC1FED2C8500C307B3 /* CustomPickerView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CustomPickerView.xib; sourceTree = "<group>"; };
 		5E1B6D001FED33A800C307B3 /* CustomPickerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomPickerView.swift; sourceTree = "<group>"; };
 		5E1C498C1FEA4455007CE624 /* CustomBrownTextColorLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomBrownTextColorLabel.swift; sourceTree = "<group>"; };
@@ -276,11 +282,11 @@
 		5E4A8D3A1FF4FB4900086667 /* PeopleTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PeopleTableViewCell.swift; sourceTree = "<group>"; };
 		5E4A8D3C1FF4FB6600086667 /* PeopleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PeopleViewController.swift; sourceTree = "<group>"; };
 		5EC300591FEBEBFA00229516 /* AppSettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppSettingsViewController.swift; sourceTree = "<group>"; };
-		5EC3005B1FEC002000229516 /* SettingsDataController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsDataController.swift; sourceTree = "<group>"; };
+		5EC3005B1FEC002000229516 /* SettingsProfileDataController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsProfileDataController.swift; sourceTree = "<group>"; };
 		5EC3005D1FEC03FE00229516 /* SettingOptionsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingOptionsTableViewCell.swift; sourceTree = "<group>"; };
 		5EC300611FEC0A5A00229516 /* SettingOption.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingOption.swift; sourceTree = "<group>"; };
 		5EC300641FEC106600229516 /* PrivacySettingOptionTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PrivacySettingOptionTableViewCell.swift; sourceTree = "<group>"; };
-		5EF31C82201B57E9007727D8 /* PrivacySettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrivacySettings.swift; sourceTree = "<group>"; };
+		5EF31C82201B57E9007727D8 /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
 		5EF31C85201B5E93007727D8 /* WrapperManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WrapperManager.swift; sourceTree = "<group>"; };
 		5EF31C87201B5F18007727D8 /* SettingsWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsWrapper.swift; sourceTree = "<group>"; };
 		5EF31C89201B6231007727D8 /* Profile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Profile.swift; sourceTree = "<group>"; };
@@ -688,6 +694,7 @@
 				5E1C49951FEA4EB8007CE624 /* EmailPreferencesViewController.swift */,
 				5E1C49971FEA73F8007CE624 /* AboutMeViewController.swift */,
 				5EC300591FEBEBFA00229516 /* AppSettingsViewController.swift */,
+				5E4A8D3C1FF4FB6600086667 /* PeopleViewController.swift */,
 			);
 			name = "View Controllers";
 			sourceTree = "<group>";
@@ -695,7 +702,8 @@
 		5E20CDBF1FE97212004ACE0D /* Data Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				5EC3005B1FEC002000229516 /* SettingsDataController.swift */,
+				5EC3005B1FEC002000229516 /* SettingsProfileDataController.swift */,
+				5E1A8D13201E24AD00BFAF10 /* AboutMeDataController.swift */,
 			);
 			name = "Data Controllers";
 			sourceTree = "<group>";
@@ -723,7 +731,6 @@
 			isa = PBXGroup;
 			children = (
 				5E21A6F41FF28E4700DBB157 /* ProfileViewController.swift */,
-				5E4A8D3C1FF4FB6600086667 /* PeopleViewController.swift */,
 			);
 			name = "View Controllers";
 			sourceTree = "<group>";
@@ -774,6 +781,7 @@
 		5E4A8D381FF4FAF600086667 /* Data Controller */ = {
 			isa = PBXGroup;
 			children = (
+				5E1A8D11201E221600BFAF10 /* ProfileDataController.swift */,
 			);
 			name = "Data Controller";
 			sourceTree = "<group>";
@@ -790,12 +798,13 @@
 			isa = PBXGroup;
 			children = (
 				5EC300611FEC0A5A00229516 /* SettingOption.swift */,
-				5EF31C82201B57E9007727D8 /* PrivacySettings.swift */,
+				5EF31C82201B57E9007727D8 /* Settings.swift */,
 				5EF31C89201B6231007727D8 /* Profile.swift */,
 				05501F87201D10F300831A08 /* Conversation.swift */,
 				05501F91201D2ABC00831A08 /* ConversationMember.swift */,
 				05501F8F201D262C00831A08 /* ConversationReply.swift */,
 				05501F89201D119B00831A08 /* User.swift */,
+				05501F8B201D11C500831A08 /* ConversationsPostObject.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -807,7 +816,7 @@
 				5EF31C87201B5F18007727D8 /* SettingsWrapper.swift */,
 				5E1A8D06201C49C700BFAF10 /* LoginWrapper.swift */,
 				05501F85201D10AA00831A08 /* ConversationsWrapper.swift */,
-				05501F8B201D11C500831A08 /* ConversationsPostObject.swift */,
+				5E1A8D0F201DF57400BFAF10 /* ProfileWrapper.swift */,
 			);
 			name = Wrappers;
 			sourceTree = "<group>";
@@ -906,7 +915,7 @@
 			files = (
 				0575623A200A34110010CBB1 /* BaseNavigationController.swift in Sources */,
 				058A0ECC1FF7C4DD00147238 /* LoginViewController.swift in Sources */,
-				5EC3005C1FEC002000229516 /* SettingsDataController.swift in Sources */,
+				5EC3005C1FEC002000229516 /* SettingsProfileDataController.swift in Sources */,
 				5E18AE391FF8092E007AA461 /* ApprovalVerificationViewController.swift in Sources */,
 				5E18AE401FF818FC007AA461 /* SendPeopleListTableViewCell.swift in Sources */,
 				05A569CB2017B7B300C6F713 /* DateFormatterTransform.swift in Sources */,
@@ -917,6 +926,7 @@
 				5E1C49941FEA494B007CE624 /* PrivacySettingsViewController.swift in Sources */,
 				0531A57B2007E1F900F2232C /* FilterViewController.swift in Sources */,
 				5E1C49A01FEA847B007CE624 /* BaseViewController.swift in Sources */,
+				5E1A8D12201E221600BFAF10 /* ProfileDataController.swift in Sources */,
 				5E18AE3E1FF8113A007AA461 /* CustomBlueBackgroundButton.swift in Sources */,
 				5E183E9B1FF37B7C00368DE1 /* RejectApplicationViewController.swift in Sources */,
 				5E3A04702007C302004EE2D7 /* SentMessageTableViewCell.swift in Sources */,
@@ -935,6 +945,7 @@
 				05501F90201D262C00831A08 /* ConversationReply.swift in Sources */,
 				05A7A8FF1FF80B7700472A60 /* SelectUserViewController.swift in Sources */,
 				5EF31C86201B5E93007727D8 /* WrapperManager.swift in Sources */,
+				5E1A8D14201E24AD00BFAF10 /* AboutMeDataController.swift in Sources */,
 				05A569A22017B74B00C6F713 /* DispatchQueue+Alamofire.swift in Sources */,
 				5E1C499A1FEA7F30007CE624 /* CustomBrownTextColorTextfield.swift in Sources */,
 				5E3A046E2007A64D004EE2D7 /* ConversationDetailViewController.swift in Sources */,
@@ -977,7 +988,7 @@
 				05A569CE2017B7B300C6F713 /* Mapper.swift in Sources */,
 				5E1C49981FEA73F8007CE624 /* AboutMeViewController.swift in Sources */,
 				5E183E9F1FF3887600368DE1 /* CustomBlueTextColorButton.swift in Sources */,
-				5EF31C83201B57E9007727D8 /* PrivacySettings.swift in Sources */,
+				5EF31C83201B57E9007727D8 /* Settings.swift in Sources */,
 				05CC51C320123AAA00EA6D55 /* ApprovalSectionCollectionViewCell.swift in Sources */,
 				5E18AE441FF81B59007AA461 /* DocumentViewController.swift in Sources */,
 				5EC3005E1FEC03FE00229516 /* SettingOptionsTableViewCell.swift in Sources */,
@@ -996,6 +1007,7 @@
 				5E37E4D4201204BC00088001 /* NotificationsViewController.swift in Sources */,
 				05A569C32017B7B300C6F713 /* ImmutableMappable.swift in Sources */,
 				5E4A8D3B1FF4FB4900086667 /* PeopleTableViewCell.swift in Sources */,
+				5E1A8D10201DF57400BFAF10 /* ProfileWrapper.swift in Sources */,
 				05A569D12017B7B300C6F713 /* TransformOperators.swift in Sources */,
 				5EF31C8A201B6231007727D8 /* Profile.swift in Sources */,
 				05A569D22017B7B300C6F713 /* DateTransform.swift in Sources */,

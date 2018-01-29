@@ -11,15 +11,23 @@ import UIKit
 struct URLS {
     
     static let baseURL:URL = URL(string: "")!
-    static let getPrivacySettings:URL = URL(string: "", relativeTo: baseURL)!
-    static let setSettings:URL = URL(string: "", relativeTo: baseURL)!
+    static let getSettings:URL = URL(string: "getsetting", relativeTo: baseURL)!
+    static let setSettings:URL = URL(string: "setsetting", relativeTo: baseURL)!
     static let conversationsList:URL = URL(string: "GetPost", relativeTo: baseURL)!
+    static let getProfile:URL = URL(string: "GetUserDetails", relativeTo: baseURL)!
+    static let updateProfile:URL = URL(string: "updateProfile", relativeTo: baseURL)!
 }
 
 
 struct AlertMessages {
     
     static let networkUnavailable:String = "Network Unavailable"
+    static let success:String = "Success"
+    static let failure:String = "Failure"
+    static let error:String = "Error"
+    static let ok:String = "Ok"
+    static let sorry:String = "Sorry"
+
 }
 
 struct ColorConstants {

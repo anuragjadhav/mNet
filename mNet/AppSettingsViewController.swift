@@ -17,7 +17,7 @@ class AppSettingsViewController: BaseViewController,UIPickerViewDelegate,UIPicke
     @IBOutlet weak var setupAmountInRoundFigureSwitch: UISwitch!
     @IBOutlet weak var setupAMountInWordsSwitch: UISwitch!
     
-    let dataCtrl = SettingsDataController()
+    let dataCtrl = SettingsProfileDataController()
     var customerPickerView : CustomPickerView?
     
     var tempLandingPageArray:[String] = ["1 day","2 days","3 days","4 days"]

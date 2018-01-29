@@ -19,7 +19,7 @@ class ConversationsPostObject: NSObject, Mappable {
     var postType:String = ""
     var postTypeId:String = ""
     
-    required convenience init?(map: Map) {
+    required init?(map: Map) {
         
     }
     

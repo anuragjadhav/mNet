@@ -528,7 +528,7 @@
                                                 <color key="textColor" red="0.3803921569" green="0.28235294119999998" blue="0.22352941179999999" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="Enter name" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Uyp-Gj-rD7" customClass="CustomBrownTextColorTextfield" customModule="mNet" customModuleProvider="target">
+                                            <textField opaque="NO" clipsSubviews="YES" tag="11" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="Enter name" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Uyp-Gj-rD7" customClass="CustomBrownTextColorTextfield" customModule="mNet" customModuleProvider="target">
                                                 <rect key="frame" x="28" y="85" width="319" height="36"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <constraints>
@@ -536,7 +536,7 @@
                                                 </constraints>
                                                 <color key="textColor" red="0.3803921569" green="0.28235294119999998" blue="0.22352941179999999" alpha="1" colorSpace="calibratedRGB"/>
                                                 <fontDescription key="fontDescription" name="SanFranciscoDisplay-Light" family="San Francisco Display" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits"/>
+                                                <textInputTraits key="textInputTraits" returnKeyType="done"/>
                                                 <userDefinedRuntimeAttributes>
                                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
                                                         <real key="value" value="0.0"/>
@@ -633,12 +633,12 @@
                                                 <color key="textColor" red="0.3803921569" green="0.28235294119999998" blue="0.22352941179999999" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="Enter designation" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Hy4-cy-E9r" customClass="CustomBrownTextColorTextfield" customModule="mNet" customModuleProvider="target">
+                                            <textField opaque="NO" clipsSubviews="YES" tag="12" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="Enter designation" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Hy4-cy-E9r" customClass="CustomBrownTextColorTextfield" customModule="mNet" customModuleProvider="target">
                                                 <rect key="frame" x="28" y="310" width="319" height="36"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <color key="textColor" red="0.3803921569" green="0.28235294119999998" blue="0.22352941179999999" alpha="1" colorSpace="calibratedRGB"/>
                                                 <fontDescription key="fontDescription" name="SanFranciscoDisplay-Light" family="San Francisco Display" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits"/>
+                                                <textInputTraits key="textInputTraits" returnKeyType="done"/>
                                                 <userDefinedRuntimeAttributes>
                                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
                                                         <real key="value" value="0.0"/>
@@ -693,12 +693,12 @@
                                                 <color key="textColor" red="0.3803921569" green="0.28235294119999998" blue="0.22352941179999999" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="Enter mobile number" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ybH-hk-Mb2" customClass="CustomBrownTextColorTextfield" customModule="mNet" customModuleProvider="target">
+                                            <textField opaque="NO" clipsSubviews="YES" tag="13" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="Enter mobile number" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ybH-hk-Mb2" customClass="CustomBrownTextColorTextfield" customModule="mNet" customModuleProvider="target">
                                                 <rect key="frame" x="28" y="419.5" width="319" height="36"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <color key="textColor" red="0.3803921569" green="0.28235294119999998" blue="0.22352941179999999" alpha="1" colorSpace="calibratedRGB"/>
                                                 <fontDescription key="fontDescription" name="SanFranciscoDisplay-Light" family="San Francisco Display" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                                                <textInputTraits key="textInputTraits" keyboardType="numberPad" returnKeyType="done"/>
                                                 <userDefinedRuntimeAttributes>
                                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
                                                         <real key="value" value="0.0"/>
@@ -717,12 +717,12 @@
                                                     <outlet property="delegate" destination="u55-vt-yFX" id="PHj-Ee-X9Z"/>
                                                 </connections>
                                             </textField>
-                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="Enter landline number" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="cFw-gL-pYO" customClass="CustomBrownTextColorTextfield" customModule="mNet" customModuleProvider="target">
+                                            <textField opaque="NO" clipsSubviews="YES" tag="14" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="Enter landline number" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="cFw-gL-pYO" customClass="CustomBrownTextColorTextfield" customModule="mNet" customModuleProvider="target">
                                                 <rect key="frame" x="28" y="494.5" width="319" height="36"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <color key="textColor" red="0.3803921569" green="0.28235294119999998" blue="0.22352941179999999" alpha="1" colorSpace="calibratedRGB"/>
                                                 <fontDescription key="fontDescription" name="SanFranciscoDisplay-Light" family="San Francisco Display" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                                                <textInputTraits key="textInputTraits" keyboardType="numberPad" returnKeyType="done"/>
                                                 <userDefinedRuntimeAttributes>
                                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
                                                         <real key="value" value="0.0"/>
@@ -741,12 +741,12 @@
                                                     <outlet property="delegate" destination="u55-vt-yFX" id="g6H-tk-vzS"/>
                                                 </connections>
                                             </textField>
-                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="Enter your address" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="M9Z-ZL-EJr" customClass="CustomBrownTextColorTextfield" customModule="mNet" customModuleProvider="target">
+                                            <textField opaque="NO" clipsSubviews="YES" tag="15" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="Enter your address" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="M9Z-ZL-EJr" customClass="CustomBrownTextColorTextfield" customModule="mNet" customModuleProvider="target">
                                                 <rect key="frame" x="28" y="569.5" width="319" height="36"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <color key="textColor" red="0.3803921569" green="0.28235294119999998" blue="0.22352941179999999" alpha="1" colorSpace="calibratedRGB"/>
                                                 <fontDescription key="fontDescription" name="SanFranciscoDisplay-Light" family="San Francisco Display" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits"/>
+                                                <textInputTraits key="textInputTraits" returnKeyType="done"/>
                                                 <userDefinedRuntimeAttributes>
                                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
                                                         <real key="value" value="0.0"/>
@@ -765,12 +765,12 @@
                                                     <outlet property="delegate" destination="u55-vt-yFX" id="C3Z-Az-z2T"/>
                                                 </connections>
                                             </textField>
-                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="Write somethimg about yourself" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Tgg-uP-KoJ" customClass="CustomBrownTextColorTextfield" customModule="mNet" customModuleProvider="target">
+                                            <textField opaque="NO" clipsSubviews="YES" tag="16" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="Write somethimg about yourself" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Tgg-uP-KoJ" customClass="CustomBrownTextColorTextfield" customModule="mNet" customModuleProvider="target">
                                                 <rect key="frame" x="28" y="644.5" width="319" height="36"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <color key="textColor" red="0.3803921569" green="0.28235294119999998" blue="0.22352941179999999" alpha="1" colorSpace="calibratedRGB"/>
                                                 <fontDescription key="fontDescription" name="SanFranciscoDisplay-Light" family="San Francisco Display" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits"/>
+                                                <textInputTraits key="textInputTraits" returnKeyType="done"/>
                                                 <userDefinedRuntimeAttributes>
                                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
                                                         <real key="value" value="0.0"/>
@@ -789,12 +789,12 @@
                                                     <outlet property="delegate" destination="u55-vt-yFX" id="zDt-Pg-mSR"/>
                                                 </connections>
                                             </textField>
-                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="Enter your email id" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="FMQ-uN-YDp" customClass="CustomBrownTextColorTextfield" customModule="mNet" customModuleProvider="target">
+                                            <textField opaque="NO" clipsSubviews="YES" tag="17" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="Enter your email id" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="FMQ-uN-YDp" customClass="CustomBrownTextColorTextfield" customModule="mNet" customModuleProvider="target">
                                                 <rect key="frame" x="28" y="719.5" width="319" height="36"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <color key="textColor" red="0.3803921569" green="0.28235294119999998" blue="0.22352941179999999" alpha="1" colorSpace="calibratedRGB"/>
                                                 <fontDescription key="fontDescription" name="SanFranciscoDisplay-Light" family="San Francisco Display" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits"/>
+                                                <textInputTraits key="textInputTraits" keyboardType="emailAddress"/>
                                                 <userDefinedRuntimeAttributes>
                                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
                                                         <real key="value" value="0.0"/>
@@ -1197,6 +1197,96 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="A4n-bj-aEb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2501.5999999999999" y="2439.130434782609"/>
+        </scene>
+        <!--People-->
+        <scene sceneID="ETP-Wn-pJI">
+            <objects>
+                <viewController storyboardIdentifier="PeopleViewController" id="Odi-K0-KHh" customClass="PeopleViewController" customModule="mNet" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="g2G-H3-hmU">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="68" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="SJB-Kn-Ho0">
+                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                                <color key="backgroundColor" red="0.96862745100000003" green="0.97254901959999995" blue="0.97647058819999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                <searchBar key="tableHeaderView" contentMode="redraw" searchBarStyle="minimal" id="Zk1-dP-qYl">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="44" id="Gtm-Ei-eE2"/>
+                                    </constraints>
+                                    <textInputTraits key="textInputTraits"/>
+                                    <connections>
+                                        <outlet property="delegate" destination="Odi-K0-KHh" id="yC4-N1-Bzf"/>
+                                    </connections>
+                                </searchBar>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="PeopleTableViewCell" rowHeight="68" id="2dt-PI-PAG" customClass="PeopleTableViewCell" customModule="mNet" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="72" width="375" height="68"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="2dt-PI-PAG" id="qbL-oZ-Srb">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="67.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Saurabh Suman" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0aB-wn-IdW" customClass="CustomBrownTextColorLabel" customModule="mNet" customModuleProvider="target">
+                                                    <rect key="frame" x="27" y="10" width="101" height="17"/>
+                                                    <fontDescription key="fontDescription" name="SanFranciscoDisplay-Bold" family="San Francisco Display" pointSize="14"/>
+                                                    <color key="textColor" red="0.3803921569" green="0.28235294119999998" blue="0.22352941179999999" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Manager" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ou6-EG-fF5" customClass="CustomBrownTextColorLabel" customModule="mNet" customModuleProvider="target">
+                                                    <rect key="frame" x="27" y="37" width="52.5" height="17"/>
+                                                    <fontDescription key="fontDescription" name="SanFranciscoDisplay-Light" family="San Francisco Display" pointSize="14"/>
+                                                    <color key="textColor" red="0.3803921569" green="0.28235294119999998" blue="0.22352941179999999" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="Ou6-EG-fF5" firstAttribute="leading" secondItem="0aB-wn-IdW" secondAttribute="leading" id="8SO-HL-1Df"/>
+                                                <constraint firstItem="0aB-wn-IdW" firstAttribute="leading" secondItem="qbL-oZ-Srb" secondAttribute="leading" constant="27" id="BqL-xK-L3U"/>
+                                                <constraint firstItem="0aB-wn-IdW" firstAttribute="top" secondItem="qbL-oZ-Srb" secondAttribute="top" constant="10" id="FAP-eE-XD5"/>
+                                                <constraint firstItem="Ou6-EG-fF5" firstAttribute="top" secondItem="0aB-wn-IdW" secondAttribute="bottom" constant="10" id="kvx-cZ-t3D"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" red="0.96862745100000003" green="0.97254901959999995" blue="0.97647058819999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <connections>
+                                            <outlet property="personNameLabel" destination="0aB-wn-IdW" id="32t-PJ-SCY"/>
+                                            <outlet property="personRoleLabel" destination="Ou6-EG-fF5" id="hxo-rV-MC6"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="Odi-K0-KHh" id="Ew2-KP-HHE"/>
+                                    <outlet property="delegate" destination="Odi-K0-KHh" id="NUd-mO-EpX"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="SJB-Kn-Ho0" firstAttribute="top" secondItem="Hkx-la-TQC" secondAttribute="top" id="6vQ-NX-pko"/>
+                            <constraint firstItem="SJB-Kn-Ho0" firstAttribute="leading" secondItem="Hkx-la-TQC" secondAttribute="leading" id="Ox8-hO-DWe"/>
+                            <constraint firstItem="Hkx-la-TQC" firstAttribute="trailing" secondItem="SJB-Kn-Ho0" secondAttribute="trailing" id="SIH-FM-Dnu"/>
+                            <constraint firstItem="Hkx-la-TQC" firstAttribute="bottom" secondItem="SJB-Kn-Ho0" secondAttribute="bottom" id="qff-QM-n3f"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="Hkx-la-TQC"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="People" id="4DF-H8-jei">
+                        <barButtonItem key="leftBarButtonItem" image="backButtonImage" id="ooq-vP-WP2">
+                            <color key="tintColor" red="0.45882352939999999" green="0.45882352939999999" blue="0.45882352939999999" alpha="1" colorSpace="calibratedRGB"/>
+                            <connections>
+                                <action selector="backButtonAction:" destination="Odi-K0-KHh" id="QWW-d9-8Zi"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="peopleTableView" destination="SJB-Kn-Ho0" id="oHp-cc-lYl"/>
+                        <outlet property="searchBar" destination="Zk1-dP-qYl" id="vMU-Ih-7F3"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4Jx-Ix-nD1" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="5144.8000000000002" y="1574.6626686656673"/>
         </scene>
     </scenes>
     <resources>

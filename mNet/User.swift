@@ -20,9 +20,9 @@ class User: NSObject, Mappable {
     
     func mapping(map: Map) {
         
-        email <- map["email"]
-        password <- map["password"]
-        userId <- map["userId"]
+        email <- map["UserEmail"]
+        password <- map["UserPass"]
+        userId <- map["UserId"]
     }
     
     

@@ -10,19 +10,4 @@ import UIKit
 
 class LoginWrapper: NSObject {
     
-    func getUserEmailID() -> String {
-        
-        return ""
-    }
-    
-    func getUserPassword() -> String {
-        
-        return ""
-    }
-    
-    func getUserID() -> String {
-        
-        return ""
-    }
-
 }

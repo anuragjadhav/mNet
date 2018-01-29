@@ -8,22 +8,47 @@
 
 import UIKit
 
-class Profile: NSObject {
+class Profile: NSObject,Mappable {
     
-    var user_first_name : String?
-    var user_last_name : String?
-    var user_dob : String?
-    var user_gender : String?
-    var user_phone : String?
-    var user_address : String?
-    var user_about : String?
-    var branch_name : String?
-    var user_designation : String?
-    var comp_name : String?
-    var user_department : String?
-    var user_mobile : String?
-    var comp_id : Int16?
-    var org_id : Int?
-    var org_name : String?
+    var firstName : String?
+    var lastName : String?
+    var dob : String?
+    var gender : String?
+    var phoneNo : String?
+    var address : String?
+    var about : String?
+    var branchName : String?
+    var designation : String?
+    var companyName : String?
+    var department : String?
+    var mobileNo : String?
+    var companyId : Int16?
+    var organizationId : Int?
+    var organizationName : String?
+    var imageUrl :URL?
+    
+    required init?(map: Map) {
+        
+    }
+    
+    func mapping(map: Map) {
+        
+        firstName <- map["user_first_name"]
+        lastName <- map["user_last_name"]
+        dob <- map["user_dob"]
+        gender <- map["user_gender"]
+        phoneNo <- map["user_phone"]
+        address <- map["user_address"]
+        about <- map["user_about"]
+        branchName <- map["branch_name"]
+        designation <- map["user_designation"]
+        companyName <- map["comp_name"]
+        department <- map["user_department"]
+        mobileNo <- map["user_mobile"]
+        companyId <- map["comp_id"]
+        organizationId <- map["org_id"]
+        organizationName <- map["org_name"]
+        imageUrl <- (map["image_link"],URLTransform())
 
+    }
 }

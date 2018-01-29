@@ -15,7 +15,7 @@ class EmailPreferencesViewController: BaseViewController,UIPickerViewDelegate,UI
     @IBOutlet weak var commentsSettingSwitch: UISwitch!
     @IBOutlet weak var remindMebutton: CustomBrownTextColorButton!
     
-    let dataCtrl = SettingsDataController()
+    let dataCtrl = SettingsProfileDataController()
     var customerPickerView : CustomPickerView?
     
     var tempDaysArray:[String] = ["1 day","2 days","3 days","4 days"]

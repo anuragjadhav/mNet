@@ -12,7 +12,7 @@ class SettingsViewController: BaseViewController,UITableViewDelegate,UITableView
     
     @IBOutlet weak var profileBackgroundView: UIView!
 
-    let dataCtrl = SettingsDataController()
+    let dataCtrl = SettingsProfileDataController()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -65,7 +65,8 @@ class SettingsViewController: BaseViewController,UITableViewDelegate,UITableView
             
         case SettingOptions.aboutMe:
             
-            let aboutMeVC = (UIStoryboard.init(name:"Settings", bundle: Bundle.main)).instantiateViewController(withIdentifier: "AboutMeViewController")
+            let aboutMeVC = (UIStoryboard.init(name:"Settings", bundle: Bundle.main)).instantiateViewController(withIdentifier: "AboutMeViewController") as! AboutMeViewController
+            aboutMeVC.dataCtrl.profile = self.dataCtrl.profile
             self.navigationController?.pushViewController(aboutMeVC, animated: true)
             break
             
@@ -94,14 +95,14 @@ class SettingsViewController: BaseViewController,UITableViewDelegate,UITableView
             
         case SettingOptions.groups:
            
-            let peopleViewController:PeopleViewController = UIStoryboard.profile.instantiateViewController(withIdentifier: StoryboardIDs.peopleViewController) as! PeopleViewController
+            let peopleViewController:PeopleViewController = UIStoryboard.settings.instantiateViewController(withIdentifier: StoryboardIDs.peopleViewController) as! PeopleViewController
             peopleViewController.isForGroups = true
             self.navigationController?.pushViewController(peopleViewController, animated: true)
             break;
         
         case SettingOptions.people:
             
-            let peopleViewController:PeopleViewController = UIStoryboard.profile.instantiateViewController(withIdentifier: StoryboardIDs.peopleViewController) as! PeopleViewController
+            let peopleViewController:PeopleViewController = UIStoryboard.settings.instantiateViewController(withIdentifier: StoryboardIDs.peopleViewController) as! PeopleViewController
             self.navigationController?.pushViewController(peopleViewController, animated: true)
             break;
         
@@ -114,9 +115,63 @@ class SettingsViewController: BaseViewController,UITableViewDelegate,UITableView
 
     @IBAction func gotoButtonAction(_ sender: Any) {
         
-        let profileVC = (UIStoryboard.init(name:"Profile", bundle: Bundle.main)).instantiateViewController(withIdentifier: "ProfileViewController")
+        let profileVC = (UIStoryboard.init(name:"Profile", bundle: Bundle.main)).instantiateViewController(withIdentifier: "ProfileViewController") as! ProfileViewController
+        profileVC.dataCtrl?.profile = self.dataCtrl.profile
         self.navigationController?.pushViewController(profileVC, animated: true)
     }
+        
+    //Mark: Get Settings And Profile
+    
+    func getUserSettings(){
+        
+        if Reachability.isConnectedToNetwork(){
+            
+            self.showLoadingOnViewController()
+            
+            self.dataCtrl.getSettingOfUser(onSuccess: { [unowned self] in
+                
+                DispatchQueue.main.async {
+                    self.getUserProfile()
+                }
+                
+                }, onFailure: { [unowned self] (errorMessage) in
+                    
+                    DispatchQueue.main.async {
+                        self.removeLoadingFromViewController()
+                        self.showRetryView(message:errorMessage)
+                    }
+            })
+            
+        }else{
+            
+            self.showRetryView(message: AlertMessages.networkUnavailable)
+        }
+    }
+    
+    func getUserProfile(){
+        
+        self.dataCtrl.getUserProfile(onSuccess: { [unowned self] in
+            
+            DispatchQueue.main.async {
+                self.removeLoadingFromViewController()
+                
+                //TODO: set profile picture , company name and groups interactions value
+            }
+            
+            }, onFailure: { [unowned self] (errorMessage) in
+                
+                DispatchQueue.main.async {
+                    self.removeLoadingFromViewController()
+                    self.showRetryView(message:errorMessage)
+                }
+        })
+    }
 
+    //Mark: Retry view delegate
+    
+    override func retryButtonClicked() {
+        
+        self.getUserSettings()
+    }
     
 }

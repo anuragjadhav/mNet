@@ -22,7 +22,7 @@ class ConversationsWrapper: NSObject {
             }
             else{
                 
-                onFailure("Unable to conversation list")
+                onFailure("Unable to fetch conversation list")
             }
         }
     }

@@ -8,6 +8,17 @@
 
 import UIKit
 
+struct TextFieldTags {
+    
+    static let name = 11
+    static let designation = 12
+    static let mobilenumber = 13
+    static let landline = 14
+    static let address = 15
+    static let about = 16
+    static let email = 17
+}
+
 class AboutMeViewController: BaseViewController,UITextFieldDelegate,CustomPickerViewDelegate,UIPickerViewDelegate,UIPickerViewDataSource {
     
     @IBOutlet weak var nameTextField: CustomBrownTextColorTextfield!
@@ -27,13 +38,12 @@ class AboutMeViewController: BaseViewController,UITextFieldDelegate,CustomPicker
     @IBOutlet weak var emailIDTextField: CustomBrownTextColorTextfield!
     
     var customerPickerView : CustomPickerView?
-    let dataCtrl = SettingsDataController()
     var genderArray:[String] = ["male","female"]
+    
+    let dataCtrl = AboutMeDataController()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        self.genderButton.titleLabel?.text = self.genderArray[0]
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -54,6 +64,123 @@ class AboutMeViewController: BaseViewController,UITextFieldDelegate,CustomPicker
         
         self.navigationController?.navigationBar.isHidden = false
     }
+    
+    //Mark: Setup user details
+    
+    func setupUserDetails()
+    {
+        if(dataCtrl.profile?.firstName != nil && dataCtrl.profile?.lastName != nil){
+            nameTextField.text =  String(format:"%@ %@",(dataCtrl.profile?.firstName)!,(dataCtrl.profile?.lastName)!)
+        }
+        else{
+            nameTextField.text = ""
+        }
+        
+        if(User.loggedInUser()?.email != nil){
+            emailIDTextField.text = User.loggedInUser()?.email
+        }
+        else{
+            emailIDTextField.text = ""
+        }
+        
+        if(dataCtrl.profile?.about != nil){
+            abouttextField.text = dataCtrl.profile?.about
+        }
+        else{
+            abouttextField.text = ""
+        }
+        
+        if(dataCtrl.profile?.address != nil){
+            addressTextField.text = dataCtrl.profile?.address
+        }
+        else{
+            addressTextField.text = ""
+        }
+        
+        if(dataCtrl.profile?.phoneNo != nil){
+            landlineNumberTextField.text = dataCtrl.profile?.phoneNo
+        }
+        else{
+            landlineNumberTextField.text = ""
+        }
+        
+        if(dataCtrl.profile?.mobileNo != nil){
+            mobileNumberTextField.text = dataCtrl.profile?.mobileNo
+        }
+        else{
+            mobileNumberTextField.text = ""
+        }
+        
+        if(dataCtrl.profile?.designation != nil){
+            designationTextfield.text = dataCtrl.profile?.designation
+        }
+        else{
+            designationTextfield.text = ""
+        }
+        
+        if(dataCtrl.profile?.dob != nil && dataCtrl.profile?.dob != ""){
+            
+            birthdayButton.setTitle(dataCtrl.profile?.dob, for: .normal)
+            
+            //set selected date in picker view
+            let dateFormatter : DateFormatter = DateFormatter()
+            dateFormatter.dateFormat = "dd-mm-yyyy"
+            
+            let selectedDate:Date = dateFormatter.date(from: (dataCtrl.profile?.dob)!)!
+            
+            customerPickerView?.datePickerView.setDate(selectedDate, animated: true)
+            
+            dataCtrl.editedDob = dataCtrl.profile?.dob
+        }
+        else{
+            birthdayButton.setTitle("--/--/----", for: .normal)
+        }
+        
+        if(dataCtrl.profile?.gender != nil){
+            
+            for gender in genderArray
+            {
+                if(gender == dataCtrl.profile?.gender){
+                    
+                    genderButton.setTitle(gender, for: .normal)
+                    dataCtrl.editedGender = gender
+                }
+            }
+        }
+        else{
+            genderButton.setTitle(genderArray[0], for: .normal)
+            dataCtrl.editedGender = genderArray[0]
+        }
+
+    }
+    
+    
+    //Mark: Textfield Delegates
+
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        
+        if textField.tag == TextFieldTags.mobilenumber
+        {
+            guard let text = textField.text else { return true }
+            let newLength = text.count + string.count - range.length
+            return newLength <= 10
+        }
+        
+        if textField.tag == TextFieldTags.landline
+        {
+            guard let text = textField.text else { return true }
+            let newLength = text.count + string.count - range.length
+            return newLength <= 11
+        }
+        
+        return true
+    }
+    
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        
+        textField.layer.borderColor = UIColor.lightGray.cgColor;
+    }
+    
     
     //Mark: Picker View Delegates and Data Source
     
@@ -90,6 +217,67 @@ class AboutMeViewController: BaseViewController,UITextFieldDelegate,CustomPicker
     }
 
     @IBAction func saveButtonAction(_ sender: Any) {
+        
+        if Reachability.isConnectedToNetwork(){
+            
+            if(isAllDetailsValid())
+            {
+                //set data controller values
+                var fullNameArray = nameTextField.text?.split(separator: " ")
+                let firstName: String = String(fullNameArray![0])
+                let lastName: String? = (fullNameArray?.count)! > 1 ? String(fullNameArray![1]) : ""
+                
+                dataCtrl.editedFirstName = firstName
+                dataCtrl.editedLastName = lastName
+                dataCtrl.editedAbout = abouttextField.text
+                dataCtrl.editedDesignation = designationTextfield.text
+                dataCtrl.editedAddress = addressTextField.text
+                dataCtrl.editedPhoneNo = landlineNumberTextField.text
+                dataCtrl.editedMobileNo = mobileNumberTextField.text
+                dataCtrl.editedEmailId = emailIDTextField.text
+
+                self.showTransperantLoadingOnViewController()
+                
+                dataCtrl.updateUserDetails(onSuccess: { [unowned self] (displayMessage) in
+                    
+                    DispatchQueue.main.async {
+                        
+                        self.removeTransperantLoadingFromViewController()
+                        
+                        let alert = UIAlertController(title:AlertMessages.success, message:displayMessage, preferredStyle: .alert)
+                        alert.addAction(UIAlertAction(title:AlertMessages.ok, style:.default, handler: { _ in
+                        }))
+                        self.present(alert, animated: true, completion: nil)
+                    }
+                    
+                    }, onFailure: { [unowned self] (errorMessage) in
+                        
+                        DispatchQueue.main.async {
+                            
+                            self.removeTransperantLoadingFromViewController()
+                        
+                            let alert = UIAlertController(title:AlertMessages.failure, message:errorMessage, preferredStyle: .alert)
+                            alert.addAction(UIAlertAction(title:AlertMessages.ok, style:.default, handler: { _ in
+                            }))
+                            self.present(alert, animated: true, completion: nil)
+                        }
+                })
+            }
+            else
+            {
+                let alert = UIAlertController(title:AlertMessages.sorry, message:"Please enter valid details", preferredStyle: .alert)
+                alert.addAction(UIAlertAction(title:AlertMessages.ok, style:.default, handler: { _ in
+                }))
+                self.present(alert, animated: true, completion: nil)
+            }
+            
+        }else{
+            
+            let alert = UIAlertController(title:AlertMessages.failure, message:AlertMessages.networkUnavailable, preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title:AlertMessages.ok, style:.default, handler: { _ in
+            }))
+            self.present(alert, animated: true, completion: nil)
+        }
     }
     
     
@@ -97,24 +285,88 @@ class AboutMeViewController: BaseViewController,UITextFieldDelegate,CustomPicker
     
     func selectedPickerViewIndex(index: Int) {
         
-        let selectedTitle = self.genderArray[index]
+        let selectedGender = self.genderArray[index]
         
-        self.genderButton.setTitle(selectedTitle, for:UIControlState.normal)
+        self.genderButton.setTitle(selectedGender, for:UIControlState.normal)
         
-        //TODO:set selected object in data controller
+        dataCtrl.editedGender = selectedGender
     }
 
     func selectedDateOnPickerView(date: Date) {
         
         let dateFormatter : DateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "dd-MMM-yyyy"
+        dateFormatter.dateFormat = "dd-mm-yyyy"
         
         let selectedDateInString = dateFormatter.string(from: date)
         
         self.birthdayButton.setTitle(selectedDateInString, for:UIControlState.normal)
         
-        //TODO:set selected object in data controller
+        self.dataCtrl.editedDob = selectedDateInString
+    }
+    
+    //Mark: Validations
+    
+    func isAllDetailsValid() -> Bool {
         
+        var isDetailsValid:Bool = true
+        
+        if((nameTextField.text?.count)! < 5 || containsSpace(testStr: nameTextField.text!) == false)
+        {
+            isDetailsValid = false
+            
+            // set border to red to indicate invalid field
+            nameTextField.layer.borderColor = (UIColor.red).cgColor
+        }
+        
+        if((mobileNumberTextField.text?.count) != 10 )
+        {
+            isDetailsValid = false
+            
+            // set border to red to indicate invalid field
+            mobileNumberTextField.layer.borderColor = UIColor.red.cgColor
+        }
+        
+        if((landlineNumberTextField.text?.count)! > 0 && (landlineNumberTextField.text?.count)! < 8)
+        {
+            isDetailsValid = false
+            
+            // set border to red to indicate invalid field
+            landlineNumberTextField.layer.borderColor = UIColor.red.cgColor
+        }
+        
+        if((emailIDTextField.text?.count)! > 0 && isValidEmail(testStr: emailIDTextField.text!) == false)
+        {
+            isDetailsValid = false
+            
+            // set border to red to indicate invalid field
+            emailIDTextField.layer.borderColor = UIColor.red.cgColor
+        }
+        
+        return isDetailsValid
+    }
+    
+    
+    func isValidEmail(testStr:String) -> Bool {
+        let emailRegEx = "^(?:(?:(?:(?: )*(?:(?:(?:\\t| )*\\r\\n)?(?:\\t| )+))+(?: )*)|(?: )+)?(?:(?:(?:[-A-Za-z0-9!#$%&’*+/=?^_'{|}~]+(?:\\.[-A-Za-z0-9!#$%&’*+/=?^_'{|}~]+)*)|(?:\"(?:(?:(?:(?: )*(?:(?:[!#-Z^-~]|\\[|\\])|(?:\\\\(?:\\t|[ -~]))))+(?: )*)|(?: )+)\"))(?:@)(?:(?:(?:[A-Za-z0-9](?:[-A-Za-z0-9]{0,61}[A-Za-z0-9])?)(?:\\.[A-Za-z0-9](?:[-A-Za-z0-9]{0,61}[A-Za-z0-9])?)*)|(?:\\[(?:(?:(?:(?:(?:[0-9]|(?:[1-9][0-9])|(?:1[0-9][0-9])|(?:2[0-4][0-9])|(?:25[0-5]))\\.){3}(?:[0-9]|(?:[1-9][0-9])|(?:1[0-9][0-9])|(?:2[0-4][0-9])|(?:25[0-5]))))|(?:(?:(?: )*[!-Z^-~])*(?: )*)|(?:[Vv][0-9A-Fa-f]+\\.[-A-Za-z0-9._~!$&'()*+,;=:]+))\\])))(?:(?:(?:(?: )*(?:(?:(?:\\t| )*\\r\\n)?(?:\\t| )+))+(?: )*)|(?: )+)?$"
+        let emailTest = NSPredicate(format:"SELF MATCHES %@", emailRegEx)
+        let result = emailTest.evaluate(with: testStr)
+        return result
+    }
+    
+    func containsSpace(testStr:String) -> Bool {
+        
+        let whitespace = NSCharacterSet.whitespaces
+        let range = testStr.rangeOfCharacter(from:whitespace)
+        
+        // range will be nil if no whitespace is found
+        if  range == nil {
+            
+            return false
+        }
+        else {
+           
+            return true
+        }
     }
     
 }
