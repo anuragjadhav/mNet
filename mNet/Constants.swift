@@ -156,3 +156,31 @@ extension UIFont {
     }
 }
 
+extension UIImage {
+    
+   static let imageDownloader = ImageDownloader(
+        configuration: ImageDownloader.defaultURLSessionConfiguration(),
+        downloadPrioritization: .fifo,
+        maximumActiveDownloads: 4,
+        imageCache: AutoPurgingImageCache()
+    )
+}
+
+extension URLRequest
+{
+    static func getRequest(_ urlString:String?) -> URLRequest?
+    {
+        if let urlstring = urlString
+        {
+            let urlRequest:URLRequest =  URLRequest.init(url: URL.init(string:urlstring)!)
+            
+            return urlRequest
+        }
+        else
+        {
+            let urlRequest:URLRequest = URLRequest.init(url: URL.init(string:"")!)
+           return urlRequest
+        }
+    }
+}
+

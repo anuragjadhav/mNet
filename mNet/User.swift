@@ -10,9 +10,9 @@ import UIKit
 
 class User: NSObject, Mappable {
     
-    var email:String = "falgunip@mediawareonline.com"
-    var password:String = "Tt@123456"
-    var userId:String = "70"
+    var email:String = "sreekumaran.p@heromotocorp.com"
+    var password:String = "Sree@123"
+    var userId:String = "42"
     
     required init?(map: Map) {
         

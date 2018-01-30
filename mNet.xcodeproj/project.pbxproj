@@ -129,6 +129,15 @@
 		5E21B322200F40660045CDA3 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E21B321200F40660045CDA3 /* CoreGraphics.framework */; };
 		5E21B324200F40820045CDA3 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E21B323200F40820045CDA3 /* Foundation.framework */; };
 		5E21B326200F40930045CDA3 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E21B325200F40930045CDA3 /* UIKit.framework */; };
+		5E2D373C2020667F0013A138 /* ImageFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E2D37342020667C0013A138 /* ImageFilter.swift */; };
+		5E2D373D2020667F0013A138 /* ImageDownloader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E2D37352020667C0013A138 /* ImageDownloader.swift */; };
+		5E2D373E2020667F0013A138 /* UIButton+AlamofireImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E2D37362020667D0013A138 /* UIButton+AlamofireImage.swift */; };
+		5E2D373F2020667F0013A138 /* ImageCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E2D37372020667D0013A138 /* ImageCache.swift */; };
+		5E2D37402020667F0013A138 /* UIImage+AlamofireImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E2D37382020667E0013A138 /* UIImage+AlamofireImage.swift */; };
+		5E2D37412020667F0013A138 /* UIImageView+AlamofireImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E2D37392020667E0013A138 /* UIImageView+AlamofireImage.swift */; };
+		5E2D37422020667F0013A138 /* Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E2D373A2020667F0013A138 /* Image.swift */; };
+		5E2D37432020667F0013A138 /* Request+AlamofireImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E2D373B2020667F0013A138 /* Request+AlamofireImage.swift */; };
+		5E2D3745202066D00013A138 /* AFIError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E2D3744202066CF0013A138 /* AFIError.swift */; };
 		5E37E4CE2012004100088001 /* Notifications.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5E37E4CD2012004100088001 /* Notifications.storyboard */; };
 		5E37E4D4201204BC00088001 /* NotificationsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E37E4D3201204BC00088001 /* NotificationsViewController.swift */; };
 		5E37E4D62012050200088001 /* NotificationTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E37E4D52012050200088001 /* NotificationTableViewCell.swift */; };
@@ -273,6 +282,15 @@
 		5E21B321200F40660045CDA3 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		5E21B323200F40820045CDA3 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		5E21B325200F40930045CDA3 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		5E2D37342020667C0013A138 /* ImageFilter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageFilter.swift; sourceTree = "<group>"; };
+		5E2D37352020667C0013A138 /* ImageDownloader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageDownloader.swift; sourceTree = "<group>"; };
+		5E2D37362020667D0013A138 /* UIButton+AlamofireImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIButton+AlamofireImage.swift"; sourceTree = "<group>"; };
+		5E2D37372020667D0013A138 /* ImageCache.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageCache.swift; sourceTree = "<group>"; };
+		5E2D37382020667E0013A138 /* UIImage+AlamofireImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+AlamofireImage.swift"; sourceTree = "<group>"; };
+		5E2D37392020667E0013A138 /* UIImageView+AlamofireImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImageView+AlamofireImage.swift"; sourceTree = "<group>"; };
+		5E2D373A2020667F0013A138 /* Image.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Image.swift; sourceTree = "<group>"; };
+		5E2D373B2020667F0013A138 /* Request+AlamofireImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Request+AlamofireImage.swift"; sourceTree = "<group>"; };
+		5E2D3744202066CF0013A138 /* AFIError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AFIError.swift; sourceTree = "<group>"; };
 		5E37E4CD2012004100088001 /* Notifications.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Notifications.storyboard; sourceTree = "<group>"; };
 		5E37E4D3201204BC00088001 /* NotificationsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsViewController.swift; sourceTree = "<group>"; };
 		5E37E4D52012050200088001 /* NotificationTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationTableViewCell.swift; sourceTree = "<group>"; };
@@ -428,6 +446,7 @@
 		05A569822017B72800C6F713 /* Alamofire */ = {
 			isa = PBXGroup;
 			children = (
+				5E2D3744202066CF0013A138 /* AFIError.swift */,
 				05A569872017B74900C6F713 /* AFError.swift */,
 				05A569932017B74A00C6F713 /* Alamofire.swift */,
 				05A569912017B74A00C6F713 /* DispatchQueue+Alamofire.swift */,
@@ -445,6 +464,14 @@
 				05A569922017B74A00C6F713 /* TaskDelegate.swift */,
 				05A569862017B74900C6F713 /* Timeline.swift */,
 				05A5698F2017B74A00C6F713 /* Validation.swift */,
+				5E2D373A2020667F0013A138 /* Image.swift */,
+				5E2D37372020667D0013A138 /* ImageCache.swift */,
+				5E2D37352020667C0013A138 /* ImageDownloader.swift */,
+				5E2D37342020667C0013A138 /* ImageFilter.swift */,
+				5E2D373B2020667F0013A138 /* Request+AlamofireImage.swift */,
+				5E2D37362020667D0013A138 /* UIButton+AlamofireImage.swift */,
+				5E2D37382020667E0013A138 /* UIImage+AlamofireImage.swift */,
+				5E2D37392020667E0013A138 /* UIImageView+AlamofireImage.swift */,
 			);
 			path = Alamofire;
 			sourceTree = "<group>";
@@ -923,18 +950,22 @@
 				5E37E4D62012050200088001 /* NotificationTableViewCell.swift in Sources */,
 				05A5699D2017B74B00C6F713 /* ParameterEncoding.swift in Sources */,
 				05A7A8FD1FF802BC00472A60 /* ApprovalsViewController.swift in Sources */,
+				5E2D373E2020667F0013A138 /* UIButton+AlamofireImage.swift in Sources */,
 				5E1C49941FEA494B007CE624 /* PrivacySettingsViewController.swift in Sources */,
 				0531A57B2007E1F900F2232C /* FilterViewController.swift in Sources */,
 				5E1C49A01FEA847B007CE624 /* BaseViewController.swift in Sources */,
 				5E1A8D12201E221600BFAF10 /* ProfileDataController.swift in Sources */,
+				5E2D37412020667F0013A138 /* UIImageView+AlamofireImage.swift in Sources */,
 				5E18AE3E1FF8113A007AA461 /* CustomBlueBackgroundButton.swift in Sources */,
 				5E183E9B1FF37B7C00368DE1 /* RejectApplicationViewController.swift in Sources */,
 				5E3A04702007C302004EE2D7 /* SentMessageTableViewCell.swift in Sources */,
 				5E1C498D1FEA4455007CE624 /* CustomBrownTextColorLabel.swift in Sources */,
+				5E2D373F2020667F0013A138 /* ImageCache.swift in Sources */,
 				5E18AE461FF8238A007AA461 /* AttachmentsTableViewCell.swift in Sources */,
 				05A569D62017B7C300C6F713 /* AlamofireObjectMapper.swift in Sources */,
 				5E184EC81FF8A8590000D7C7 /* TabBarController.swift in Sources */,
 				05A569BE2017B7B300C6F713 /* HexColorTransform.swift in Sources */,
+				5E2D37422020667F0013A138 /* Image.swift in Sources */,
 				05501F8C201D11C500831A08 /* ConversationsPostObject.swift in Sources */,
 				05A569982017B74B00C6F713 /* AFError.swift in Sources */,
 				0531A5792007CCC600F2232C /* CustomRedBackgroundColorButton.swift in Sources */,
@@ -949,6 +980,7 @@
 				05A569A22017B74B00C6F713 /* DispatchQueue+Alamofire.swift in Sources */,
 				5E1C499A1FEA7F30007CE624 /* CustomBrownTextColorTextfield.swift in Sources */,
 				5E3A046E2007A64D004EE2D7 /* ConversationDetailViewController.swift in Sources */,
+				5E2D37402020667F0013A138 /* UIImage+AlamofireImage.swift in Sources */,
 				0575623C200AB33A0010CBB1 /* PendingApprovalsTableViewCell.swift in Sources */,
 				05501F8A201D119B00831A08 /* User.swift in Sources */,
 				5E183EA11FF3CA4800368DE1 /* DocumentDetailsViewController.swift in Sources */,
@@ -1010,14 +1042,18 @@
 				5E1A8D10201DF57400BFAF10 /* ProfileWrapper.swift in Sources */,
 				05A569D12017B7B300C6F713 /* TransformOperators.swift in Sources */,
 				5EF31C8A201B6231007727D8 /* Profile.swift in Sources */,
+				5E2D373C2020667F0013A138 /* ImageFilter.swift in Sources */,
 				05A569D22017B7B300C6F713 /* DateTransform.swift in Sources */,
 				0531A57D2007EA4200F2232C /* FilterSectionTableViewCell.swift in Sources */,
+				5E2D37432020667F0013A138 /* Request+AlamofireImage.swift in Sources */,
 				5E18AE421FF81B45007AA461 /* AttachmentsViewController.swift in Sources */,
+				5E2D3745202066D00013A138 /* AFIError.swift in Sources */,
 				5EF31C88201B5F18007727D8 /* SettingsWrapper.swift in Sources */,
 				05A569D42017B7B300C6F713 /* Operators.swift in Sources */,
 				5E183EA41FF3F97600368DE1 /* PeopleListTableViewCell.swift in Sources */,
 				05A569CC2017B7B300C6F713 /* ISO8601DateTransform.swift in Sources */,
 				05A5699B2017B74B00C6F713 /* Notifications.swift in Sources */,
+				5E2D373D2020667F0013A138 /* ImageDownloader.swift in Sources */,
 				05A5699A2017B74B00C6F713 /* SessionDelegate.swift in Sources */,
 				05A569CF2017B7B300C6F713 /* MapError.swift in Sources */,
 				5E1A8D0D201C78D600BFAF10 /* Reachability.swift in Sources */,

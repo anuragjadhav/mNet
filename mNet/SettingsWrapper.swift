@@ -15,15 +15,28 @@ class SettingsWrapper: NSObject {
         
         let postParams:[String:Any] = postObject.toJSON()
         
-        request(URLS.getSettings, method: .get, parameters: postParams, encoding: JSONEncoding() as ParameterEncoding, headers: nil).responseObject { (response: DataResponse<Settings>) in
+        request(URLS.getSettings, method: .post, parameters: postParams, encoding: JSONEncoding() as ParameterEncoding, headers: nil).responseJSON { response in
             
-            if let setting:Settings = response.result.value {
+            if let responseDict:[String:Any] = response.result.value as? [String:Any] {
                 
-                onSuccess(setting)
+                let error:String = responseDict["error"] as! String
+                
+                if(error == "0")
+                {
+                    let responseArray:[[String:Any]] = responseDict["status"] as! [[String:Any]]
+                    
+                    let settings:Settings = Settings(JSON: responseArray[0] )!
+                    
+                    onSuccess(settings)
+                }
+                else
+                {
+                    onFailure("Unable to fetch settings data")
+                }
             }
             else{
                 
-                onFailure("Unable to fetch privacy settings data")
+                onFailure("Unable to fetch setings data")
             }
         }
     }
@@ -31,13 +44,20 @@ class SettingsWrapper: NSObject {
     
     func setSettingOfUser(postParams:[String:Any], onSuccess:@escaping (String) -> Void , onFailure : @escaping (String) -> Void){
                 
-        request(URLS.setSettings, method: .put, parameters: postParams, encoding: JSONEncoding() as ParameterEncoding, headers: nil).responseString { response in
+        request(URLS.setSettings, method: .post, parameters: postParams, encoding: JSONEncoding() as ParameterEncoding, headers: nil).responseJSON { response in
             
-            let statusCode:Int = (response.response?.statusCode)!
-            
-            if statusCode == 200 || statusCode == 201 {
+            if let responseDict:[String:Any] = response.result.value as? [String:Any] {
                 
-                onSuccess("Setting updated")
+                let error:String = responseDict["error"] as! String
+                
+                if(error == "0")
+                {                    
+                    onSuccess("Setting saved")
+                }
+                else
+                {
+                    onFailure("Unable to update setting")
+                }
             }
             else{
                 

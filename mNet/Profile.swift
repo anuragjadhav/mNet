@@ -22,10 +22,14 @@ class Profile: NSObject,Mappable {
     var companyName : String?
     var department : String?
     var mobileNo : String?
-    var companyId : Int16?
-    var organizationId : Int?
+    var companyId : String?
+    var organizationId : String?
     var organizationName : String?
-    var imageUrl :URL?
+    var imageUrl :String?
+    var applicationCount : String?
+    var profileVisitsCount : String?
+    var groupCount : String?
+
     
     required init?(map: Map) {
         
@@ -48,7 +52,9 @@ class Profile: NSObject,Mappable {
         companyId <- map["comp_id"]
         organizationId <- map["org_id"]
         organizationName <- map["org_name"]
-        imageUrl <- (map["image_link"],URLTransform())
-
+        imageUrl <- map["image_link"]
+        applicationCount <- map["application_count"]
+        profileVisitsCount <- map["profile_visits_count"]
+        groupCount <- map["group_count"]
     }
 }

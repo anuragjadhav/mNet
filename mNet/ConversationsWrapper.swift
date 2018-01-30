@@ -14,15 +14,34 @@ class ConversationsWrapper: NSObject {
         
         let postParams:[String:Any] = postObject.toJSON()
         
-        request(URLS.conversationsList, method: .post, parameters: postParams, encoding: JSONEncoding() as ParameterEncoding, headers: nil).responseArray { (response: DataResponse<[Conversation]>) in
+        request(URLS.conversationsList, method: .post, parameters: postParams, encoding: JSONEncoding() as ParameterEncoding, headers: nil).responseJSON { response in
            
-            if let mappedConversationList:[Conversation] = response.result.value {
+            if let responseDict:[String:Any] = response.result.value as? [String:Any] {
                 
-                onSuccess(mappedConversationList)
+                let error:String = responseDict["error"] as! String
+                
+                if(error == "0")
+                {
+                    let conversationDictArray:[[String:Any]] = responseDict["status"] as! [[String:Any]]
+                    
+                    var conversationArray:[Conversation] = []
+                    
+                    for conversationDict in conversationDictArray
+                    {
+                        let conversation:Conversation = Conversation(JSON: conversationDict)!
+                        conversationArray.append(conversation)
+                    }
+                    
+                    onSuccess(conversationArray)
+                }
+                else
+                {
+                    onFailure("Unable to fetch conversations")
+                }
             }
             else{
                 
-                onFailure("Unable to fetch conversation list")
+                onFailure("Unable to fetch conversations")
             }
         }
     }

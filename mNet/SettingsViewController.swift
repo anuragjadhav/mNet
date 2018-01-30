@@ -11,7 +11,13 @@ import UIKit
 class SettingsViewController: BaseViewController,UITableViewDelegate,UITableViewDataSource {
     
     @IBOutlet weak var profileBackgroundView: UIView!
-
+    @IBOutlet weak var profileImageView: UIImageView!
+    @IBOutlet weak var userNameLabel: CustomBrownTextColorLabel!
+    @IBOutlet weak var companyNameLabel: CustomBrownTextColorLabel!
+    @IBOutlet weak var groupsLabel: CustomBrownTextColorLabel!
+    
+    @IBOutlet weak var applicationsLabel: CustomBrownTextColorLabel!
+    @IBOutlet weak var interactionsLabel: CustomBrownTextColorLabel!
     let dataCtrl = SettingsProfileDataController()
     
     override func viewDidLoad() {
@@ -155,7 +161,18 @@ class SettingsViewController: BaseViewController,UITableViewDelegate,UITableView
             DispatchQueue.main.async {
                 self.removeLoadingFromViewController()
                 
-                //TODO: set profile picture , company name and groups interactions value
+                self.userNameLabel.text = (self.dataCtrl.profile?.firstName)! + " " + (self.dataCtrl.profile?.lastName)!
+                self.interactionsLabel.text = self.dataCtrl.profile?.profileVisitsCount
+                self.companyNameLabel.text = self.dataCtrl.profile?.companyName
+                self.applicationsLabel.text = self.dataCtrl.profile?.applicationCount
+                self.groupsLabel.text = self.dataCtrl.profile?.groupCount
+            UIImage.imageDownloader.download((URLRequest.getRequest(self.dataCtrl.profile?.imageUrl))!) { response in
+            
+                    if let image = response.result.value {
+                        
+                        self.profileImageView.image = image
+                    }
+               }
             }
             
             }, onFailure: { [unowned self] (errorMessage) in

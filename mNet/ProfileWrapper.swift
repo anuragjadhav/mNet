@@ -14,11 +14,22 @@ class ProfileWrapper: NSObject {
         
         let postParams:[String:Any] = postObject.toJSON()
         
-        request(URLS.getProfile, method: .get, parameters: postParams, encoding: JSONEncoding() as ParameterEncoding, headers: nil).responseObject { (response: DataResponse<Profile>) in
+        request(URLS.getProfile, method: .post, parameters: postParams, encoding: JSONEncoding() as ParameterEncoding, headers: nil).responseJSON { response in
             
-            if let profile:Profile = response.result.value {
+            if let responseDict:[String:Any] = response.result.value as? [String:Any] {
                 
-                onSuccess(profile)
+                let error:String = responseDict["error"] as! String
+                
+                if(error == "0")
+                {
+                    let profile:Profile = Profile(JSON: responseDict["status"] as! [String:Any])!
+                    
+                    onSuccess(profile)
+                }
+                else
+                {
+                    onFailure("Unable to fetch profile data")
+                }
             }
             else{
                 
@@ -29,13 +40,20 @@ class ProfileWrapper: NSObject {
     
     func updateUserProfileWithParams(postParams:[String:Any], onSuccess:@escaping (String) -> Void , onFailure : @escaping (String) -> Void){
         
-        request(URLS.updateProfile, method: .put, parameters: postParams, encoding: JSONEncoding() as ParameterEncoding, headers: nil).responseString { response in
+        request(URLS.updateProfile, method: .post, parameters: postParams, encoding: JSONEncoding() as ParameterEncoding, headers: nil).responseJSON{ response in
             
-            let statusCode:Int = (response.response?.statusCode)!
-            
-            if statusCode == 200 || statusCode == 201 {
+            if let responseDict:[String:Any] = response.result.value as? [String:Any] {
                 
-                onSuccess("Profile Updated")
+                let error:String = responseDict["error"] as! String
+                
+                if(error == "0")
+                {
+                    onSuccess("Profile updated")
+                }
+                else
+                {
+                    onFailure("Unable to update profile data")
+                }
             }
             else{
                 

@@ -207,7 +207,13 @@
                     <navigationItem key="navigationItem" id="Dol-k0-tBv"/>
                     <nil key="simulatedTopBarMetrics"/>
                     <connections>
+                        <outlet property="applicationsLabel" destination="yL6-Og-mVa" id="9jO-IM-0k0"/>
+                        <outlet property="companyNameLabel" destination="jTv-wM-oHG" id="y7v-gU-G0R"/>
+                        <outlet property="groupsLabel" destination="4JD-5g-alu" id="dIr-Ss-OGy"/>
+                        <outlet property="interactionsLabel" destination="wd0-5K-2SV" id="cg9-pc-4xk"/>
                         <outlet property="profileBackgroundView" destination="2AJ-g3-Nko" id="546-oT-HeB"/>
+                        <outlet property="profileImageView" destination="oYU-Kn-a2d" id="UB4-hA-sGu"/>
+                        <outlet property="userNameLabel" destination="opZ-hF-CiW" id="sRN-i7-Ow4"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8Cy-AP-WVH" sceneMemberID="firstResponder"/>
