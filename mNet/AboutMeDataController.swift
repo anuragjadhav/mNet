@@ -21,51 +21,35 @@ class AboutMeDataController: NSObject {
     var editedAbout : String?
     var editedDesignation : String?
     var editedMobileNo : String?
-    var editedEmailId : String?
 
     func updateUserDetails(onSuccess:@escaping (String) -> Void , onFailure : @escaping (String) -> Void){
 
         //set parameters to post
         let user:User = User.loggedInUser()!
-        var postParams:[String:Any] = user.toJSON()
-        postParams[""] = editedFirstName
-        postParams[""] = editedLastName
-        postParams[""] = editedPhoneNo
-        postParams[""] = editedDesignation
-        postParams[""] = editedMobileNo
-        postParams[""] = editedAddress
-        postParams[""] = editedAbout
-        postParams[""] = editedGender
-        postParams[""] = editedEmailId
+        var postParams:[String:Any] = [String:Any]()
+        postParams["user_id"] = user.userId
+        postParams["password"] = user.password
+        postParams["user_first_name"] = editedFirstName
+        postParams["user_last_name"] = editedLastName
+        postParams["user_phone"] = editedPhoneNo
+        postParams["user_designation"] = editedDesignation
+        postParams["user_mobile"] = editedMobileNo
+        postParams["user_address"] = editedAddress
+        postParams["user_about"] = editedAbout
+        postParams["user_gender"] = editedGender
 
         if(editedDob != nil)
         {
-            postParams[""] = editedDob
+            postParams["user_dob"] = editedDob
         }
         else
         {
             editedDob = ""
-            postParams[""] = editedDob
+            postParams["user_dob"] = editedDob
         }
         
-        WrapperManager.shared.profileWrapper.updateUserProfileWithParams(postParams: postParams, onSuccess: { [unowned self] (displayMessage) in
+        WrapperManager.shared.profileWrapper.updateUserProfileWithParams(postParams: postParams, onSuccess: {  displayMessage in
             
-            //update all values in profile object
-            self.profile?.firstName = self.editedFirstName
-            self.profile?.lastName = self.editedLastName
-            self.profile?.phoneNo = self.editedPhoneNo
-            self.profile?.designation = self.editedDesignation
-            self.profile?.mobileNo = self.editedMobileNo
-            self.profile?.address = self.editedAddress
-            self.profile?.about = self.editedAbout
-            self.profile?.gender = self.editedGender
-            self.profile?.dob = self.editedDob
-            
-            //set edited email id in user defailts
-            let user:User  = User.loggedInUser()!
-            user.email = self.editedEmailId!
-            user.saveToUserDefaults()
-
             onSuccess(displayMessage)
             
         }) { (errorMessage) in

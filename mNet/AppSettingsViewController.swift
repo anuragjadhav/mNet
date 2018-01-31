@@ -35,6 +35,11 @@ class AppSettingsViewController: BaseViewController,UIPickerViewDelegate,UIPicke
         
         self.setupNavigationBar()
         
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
         if(self.customerPickerView == nil)
         {
             // add custom picker view

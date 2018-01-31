@@ -28,6 +28,8 @@ class SettingsViewController: BaseViewController,UITableViewDelegate,UITableView
         super.viewWillAppear(animated);
     
         self.setupNavigationBar()
+        
+        self.getUserSettings()
     }
 
     func setupNavigationBar(){
@@ -83,7 +85,8 @@ class SettingsViewController: BaseViewController,UITableViewDelegate,UITableView
             
         case SettingOptions.privacySettings:
             
-            let privacySettingsVC = (UIStoryboard.init(name:"Settings", bundle: Bundle.main)).instantiateViewController(withIdentifier: "PrivacySettingsViewController")
+            let privacySettingsVC = (UIStoryboard.init(name:"Settings", bundle: Bundle.main)).instantiateViewController(withIdentifier: "PrivacySettingsViewController") as! PrivacySettingsViewController
+            privacySettingsVC.dataCtrl = self.dataCtrl
             self.navigationController?.pushViewController(privacySettingsVC, animated: true)
             break
             
@@ -122,7 +125,7 @@ class SettingsViewController: BaseViewController,UITableViewDelegate,UITableView
     @IBAction func gotoButtonAction(_ sender: Any) {
         
         let profileVC = (UIStoryboard.init(name:"Profile", bundle: Bundle.main)).instantiateViewController(withIdentifier: "ProfileViewController") as! ProfileViewController
-        profileVC.dataCtrl?.profile = self.dataCtrl.profile
+        profileVC.dataCtrl.profile = self.dataCtrl.profile
         self.navigationController?.pushViewController(profileVC, animated: true)
     }
         

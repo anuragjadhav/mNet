@@ -21,7 +21,7 @@ class ConversationsDataController: NSObject {
             return
         }
         
-        let conversationsPostData:ConversationsPostObject = ConversationsPostObject()
+        let conversationsPostData:ConversationsPostObject = ConversationsPostObject(JSON:[String:Any]())!
         conversationsPostData.userId = loggedInUser.userId
         conversationsPostData.userEmail = loggedInUser.email
         conversationsPostData.userPassword = loggedInUser.password

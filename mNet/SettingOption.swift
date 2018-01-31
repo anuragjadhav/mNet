@@ -12,9 +12,9 @@ class SettingOption: NSObject {
     
     var settingOptionName:String?
     var settingOptionDescription:String?
-    var isSettingOn:Int?
+    var isSettingOn:String?
     
-    convenience init(_ optionName:String, _ optionDescription:String, _ isSettingOn:Int) {
+    convenience init(_ optionName:String, _ optionDescription:String, _ isSettingOn:String) {
         
         self.init()
         self.settingOptionName = optionName

@@ -11,20 +11,20 @@ import UIKit
 
 class Settings:NSObject, Mappable {
     
-    var showEmail : Int?
-    var showAddress : Int?
-    var showMobile : Int?
-    var showDob : Int?
-    var showDesignation :Int?
-    var showDepartment : Int?
-    var showOrg : Int?
-    var showCompany :Int?
-    var showApps : Int?
-    var showGroup : Int?
-    var showTask : Int?
-    var showSchedule : Int?
-    var postEmailNotification : Int?
-    var replyEmailNotification : Int?
+    var showEmail : String?
+    var showAddress : String?
+    var showMobile : String?
+    var showDob : String?
+    var showDesignation :String?
+    var showDepartment : String?
+    var showOrg : String?
+    var showCompany :String?
+    var showApps : String?
+    var showGroup : String?
+    var showTask : String?
+    var showSchedule : String?
+    var postEmailNotification : String?
+    var replyEmailNotification : String?
     
     required init?(map: Map){
         

@@ -53,7 +53,7 @@ class BaseViewController: UIViewController,RetryViewProtocol {
         
         var tabBarHeight:CGFloat = 0
         
-        if(self.loadingViewOnVC != nil) {
+        if(self.loadingViewOnVC == nil) {
             
             if(self.tabBarController != nil){
                 
@@ -84,7 +84,7 @@ class BaseViewController: UIViewController,RetryViewProtocol {
         
         let appDelegate:AppDelegate = AppDelegate.appDelegate()
         
-        if(self.loadingViewOnWindow != nil){
+        if(self.loadingViewOnWindow == nil){
             
             self.loadingViewOnWindow = UIView.init(frame:(appDelegate.window?.frame)!)
             self.loadingViewOnWindow?.backgroundColor = UIColor.white
@@ -110,7 +110,7 @@ class BaseViewController: UIViewController,RetryViewProtocol {
         
         var tabBarHeight:CGFloat = 0
         
-        if(self.transperantLoadingOnVC != nil){
+        if(self.transperantLoadingOnVC == nil){
             
             if(self.tabBarController != nil){
                 
@@ -141,7 +141,7 @@ class BaseViewController: UIViewController,RetryViewProtocol {
         
         let appDelegate:AppDelegate = AppDelegate.appDelegate()
         
-        if(self.transaperantLoadingViewOnWindow != nil){
+        if(self.transaperantLoadingViewOnWindow == nil){
             
             self.transaperantLoadingViewOnWindow = UIView.init(frame:(appDelegate.window?.frame)!)
             self.transaperantLoadingViewOnWindow?.backgroundColor = UIColor.lightGray
@@ -237,9 +237,13 @@ class BaseViewController: UIViewController,RetryViewProtocol {
 
     func showRetryView(message:String) {
         
-        if(self.retryView != nil){
+        if(self.retryView == nil){
 
-            self.retryView = RetryView.init(frame: self.view.frame, delegate: self)
+            // add custom picker view
+            self.retryView = UINib(nibName: "RetryView", bundle: nil).instantiate(withOwner: nil, options: nil)[0] as? RetryView
+            self.retryView?.frame = self.view.frame
+            self.retryView?.delegate = self
+            self.view.addSubview(self.retryView!)
         }
         
         self.retryView?.messageLabel.text = message

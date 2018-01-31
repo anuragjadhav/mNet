@@ -12,7 +12,7 @@ class PrivacySettingsViewController: BaseViewController,UITableViewDelegate,UITa
 
     @IBOutlet weak private var optionsTableView: UITableView!
     
-    let dataCtrl = SettingsProfileDataController()
+    var dataCtrl:SettingsProfileDataController?
     var selectedIndexPath:IndexPath?
     
     override func viewDidLoad() {
@@ -28,6 +28,7 @@ class PrivacySettingsViewController: BaseViewController,UITableViewDelegate,UITa
         super.viewWillAppear(animated);
         
         self.setupNavigationBar()
+        self.dataCtrl?.setupPrivacySettingOptionsArray()
     }
     
     func setupNavigationBar(){
@@ -44,16 +45,16 @@ class PrivacySettingsViewController: BaseViewController,UITableViewDelegate,UITa
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
-        return self.dataCtrl.privacySettingOptionsArray.count
+        return self.dataCtrl!.privacySettingOptionsArray.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell:PrivacySettingOptionTableViewCell = tableView.dequeueReusableCell(withIdentifier:"PrivacySettingOptionTableViewCell") as! PrivacySettingOptionTableViewCell
         
-        let option = self.dataCtrl.privacySettingOptionsArray[indexPath.row]
+        let option = self.dataCtrl?.privacySettingOptionsArray[indexPath.row]
         
-        cell.loadCellWithOption(option)
+        cell.loadCellWithOption(option!)
         
         return cell
         
@@ -74,10 +75,10 @@ class PrivacySettingsViewController: BaseViewController,UITableViewDelegate,UITa
         
         selectedIndexPath = indexPath
         
-        let selectedOption = self.dataCtrl.privacySettingOptionsArray[indexPath.row]
-        selectedOption.isSettingOn = sender.isOn ? 1 :0
+        let selectedOption = self.dataCtrl?.privacySettingOptionsArray[indexPath.row]
+        selectedOption?.isSettingOn = sender.isOn ? "1" :"0"
         
-        self.dataCtrl.selectedPrivacySettingOption = selectedOption
+        self.dataCtrl?.selectedPrivacySettingOption = selectedOption
         
         self.setSelectedPrivacySetting()
         
@@ -102,7 +103,7 @@ class PrivacySettingsViewController: BaseViewController,UITableViewDelegate,UITa
             
             self.showTransperantLoadingOnViewController()
             
-            self.dataCtrl.setPrivacySettingOfUser(onSuccess: { [unowned self] (displayMessage) in
+            self.dataCtrl?.setPrivacySettingOfUser(onSuccess: { [unowned self] (displayMessage) in
                 
                 DispatchQueue.main.async {
                     
@@ -122,11 +123,11 @@ class PrivacySettingsViewController: BaseViewController,UITableViewDelegate,UITa
                         
                         //revert the selected changes
                         
-                        self.dataCtrl.selectedPrivacySettingOption?.isSettingOn = self.dataCtrl.selectedPrivacySettingOption?.isSettingOn == 1 ? 0 : 1
+                        self.dataCtrl?.selectedPrivacySettingOption?.isSettingOn = self.dataCtrl?.selectedPrivacySettingOption?.isSettingOn == "1" ? "0" : "1"
                         
                         let cell:PrivacySettingOptionTableViewCell =  self.optionsTableView.cellForRow(at: self.selectedIndexPath!) as! PrivacySettingOptionTableViewCell
                         
-                        cell.loadCellWithOption( self.dataCtrl.selectedPrivacySettingOption!)
+                        cell.loadCellWithOption( (self.dataCtrl?.selectedPrivacySettingOption!)!)
                         
                         let alert = UIAlertController(title:AlertMessages.failure, message:errorMessage, preferredStyle: .alert)
                         alert.addAction(UIAlertAction(title:AlertMessages.ok, style:.default, handler: { _ in

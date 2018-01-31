@@ -8,11 +8,13 @@
 
 import UIKit
 
-class NotificationsViewController: BaseViewController, UITableViewDelegate, UITableViewDataSource {
+class NotificationsViewController: BaseViewController, UITableViewDelegate, UITableViewDataSource,KRPullLoadViewDelegate {
 
     @IBOutlet weak var notificationsTableView: UITableView!
     @IBOutlet weak var unreadNotificationLabel: CustomBrownTextColorLabel!
     @IBOutlet weak var lineLabel: UILabel!
+    
+    let dataCtrl:NotificationDataController = NotificationDataController()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,12 +23,19 @@ class NotificationsViewController: BaseViewController, UITableViewDelegate, UITa
         lineLabel.layer.shadowOffset = CGSize(width: 0, height: 0.6)
         lineLabel.layer.shadowOpacity = 1
         lineLabel.layer.shadowRadius = 1.0
+        
+        // add pull down refresh control
+        let loadMoreView = KRPullLoadView()
+        loadMoreView.delegate = self as KRPullLoadViewDelegate
+        notificationsTableView.addPullLoadableView(loadMoreView, type: .loadMore)
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
         self.setUpNavigationController()
+        
+        getNotifications(isReload: true)
     }
     
     //MARK: Setup
@@ -38,20 +47,81 @@ class NotificationsViewController: BaseViewController, UITableViewDelegate, UITa
     //MARK: Table View Methods
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
-        return 5;
+        return dataCtrl.notifications.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell:NotificationTableViewCell = tableView.dequeueReusableCell(withIdentifier: "NotificationTableViewCell") as! NotificationTableViewCell
+        
+        let notification:NotificationObject = dataCtrl.notifications[indexPath.row]
+        
+        cell.loadCellWith(notification)
+        
         return cell
     }
     
-
-    // MARK: - Button Actions
+    //MARK: Get Notifications
     
-    @IBAction func notificationButtonAction(_ sender: Any){
-        
+    func getNotifications(isReload:Bool)
+    {
+        if Reachability.isConnectedToNetwork(){
+            
+            if(isReload){
+                
+                self.showLoadingOnViewController()
+            }
+            
+            dataCtrl.getNotifcations(isReload:isReload , onSuccess: { [unowned self] in
+                
+                DispatchQueue.main.async {
+                    
+                    if(isReload){
+                        
+                        self.removeLoadingFromViewController()
+                    }
+
+                    self.notificationsTableView.reloadData()
+                 }
+                
+                }, onFailure: { [unowned self] (errorMessage) in
+                    
+                    DispatchQueue.main.async {
+                        
+                        if(isReload){
+                            
+                            self.removeLoadingFromViewController()
+                            self.showRetryView(message:errorMessage)
+                        }
+                    }
+            })
+            
+        }else{
+            
+            self.showRetryView(message: AlertMessages.networkUnavailable)
+        }
     }
     
+    //MARK: Pull Up refresh control delegate
+    
+    func pullLoadView(_ pullLoadView: KRPullLoadView, didChangeState state: KRPullLoaderState, viewType type: KRPullLoaderType) {
+        if type == .loadMore {
+            switch state {
+            case let .loading(completionHandler):
+               completionHandler()
+                self.getNotifications(isReload: false)
+                
+            default: break
+            }
+            return
+        }
+    }
+    
+    //MARK: retry view delegate
+    
+    override func retryButtonClicked() {
+        
+        getNotifications(isReload: true)
+    }
+
 }

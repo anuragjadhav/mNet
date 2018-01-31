@@ -24,12 +24,6 @@ class EmailPreferencesViewController: BaseViewController,UIPickerViewDelegate,UI
         
         super.viewDidLoad()
 
-       // add custom picker view
-       self.customerPickerView = UINib(nibName: "CustomPickerView", bundle: nil).instantiate(withOwner: nil, options: nil)[0] as? CustomPickerView
-       self.customerPickerView?.frame = CGRect(x: 0, y: self.view.frame.height, width: self.view.frame.size.width, height: (self.customerPickerView?.frame.size.height)!)
-       self.view.addSubview(self.customerPickerView!)
-       
-
        self.remindMebutton.titleLabel?.text = self.tempDaysArray[0]
 
     }
@@ -38,6 +32,11 @@ class EmailPreferencesViewController: BaseViewController,UIPickerViewDelegate,UI
         super.viewWillAppear(animated);
         
         self.setupNavigationBar()
+
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
         
         if(self.customerPickerView == nil)
         {

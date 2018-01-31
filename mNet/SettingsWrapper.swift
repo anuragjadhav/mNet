@@ -25,7 +25,7 @@ class SettingsWrapper: NSObject {
                 {
                     let responseArray:[[String:Any]] = responseDict["status"] as! [[String:Any]]
                     
-                    let settings:Settings = Settings(JSON: responseArray[0] )!
+                    let settings:Settings = Settings(JSON: responseArray[0] as [String:Any])!
                     
                     onSuccess(settings)
                 }

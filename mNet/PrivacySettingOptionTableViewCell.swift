@@ -19,7 +19,7 @@ class PrivacySettingOptionTableViewCell: UITableViewCell {
         
         self.optionNameLabel.text = option.settingOptionName
         
-        if(option.isSettingOn == 1){
+        if(option.isSettingOn! == "1"){
             
             self.switchButton.setOn(true, animated: true)
             //replase show word with hide to show proper description if switch id on

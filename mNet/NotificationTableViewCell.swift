@@ -10,15 +10,13 @@ import UIKit
 
 class NotificationTableViewCell: UITableViewCell {
 
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
+    @IBOutlet weak var readLabel: UILabel!
+    @IBOutlet weak var messageLabel: CustomBrownTextColorLabel!
+    @IBOutlet weak var dateTimeLabel: UILabel!
+    
+    func loadCellWith(_ notification:NotificationObject)
+    {
+        messageLabel.text = notification.notificationMessage
+        dateTimeLabel.text = notification.createdOn
     }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
-    }
-
 }

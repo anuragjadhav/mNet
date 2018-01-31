@@ -20,15 +20,6 @@ class RetryView: UIView {
     
     weak var delegate:RetryViewProtocol?
     
-    init(frame:CGRect,delegate:RetryViewProtocol) {
-        super.init(frame: frame)
-        self.delegate = delegate
-        return
-    }
-    
-    required init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
     
     @IBAction func retryButtonAction(_
         sender: Any) {

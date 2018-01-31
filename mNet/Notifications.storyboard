@@ -92,6 +92,11 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" red="0.96862745100000003" green="0.97254901959999995" blue="0.97647058819999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <connections>
+                                            <outlet property="dateTimeLabel" destination="Zsr-bZ-3pI" id="llo-ld-OqM"/>
+                                            <outlet property="messageLabel" destination="e7K-kv-ANA" id="dWO-aj-hYa"/>
+                                            <outlet property="readLabel" destination="A5v-Do-mH5" id="f2J-DB-Kfj"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>
@@ -102,9 +107,6 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vwS-Jt-OSm">
                                 <rect key="frame" x="16" y="25" width="24" height="24"/>
                                 <state key="normal" image="notification_large"/>
-                                <connections>
-                                    <action selector="notificationButtonAction:" destination="qRk-iR-RcP" eventType="touchUpInside" id="ZCd-ge-mul"/>
-                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Notifications" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nO5-QB-XL0" customClass="CustomBrownTextColorLabel" customModule="mNet" customModuleProvider="target">
                                 <rect key="frame" x="22" y="66" width="118.5" height="24"/>

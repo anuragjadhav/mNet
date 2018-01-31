@@ -16,6 +16,7 @@ class WrapperManager: NSObject {
     let loginWrapper:LoginWrapper = LoginWrapper()
     let conversationWrapper:ConversationsWrapper = ConversationsWrapper()
     let profileWrapper:ProfileWrapper = ProfileWrapper()
+    let notifiactionWrapper:NotificationWrapper = NotificationWrapper()
     
     private override init() {
         

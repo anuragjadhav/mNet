@@ -47,9 +47,15 @@ class AboutMeViewController: BaseViewController,UITextFieldDelegate,CustomPicker
     }
 
     override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated);
+        super.viewWillAppear(animated)
         
         self.setupNavigationBar()
+        
+        self.setupUserDetails()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
         
         if(self.customerPickerView == nil)
         {
@@ -124,32 +130,34 @@ class AboutMeViewController: BaseViewController,UITextFieldDelegate,CustomPicker
             
             //set selected date in picker view
             let dateFormatter : DateFormatter = DateFormatter()
-            dateFormatter.dateFormat = "dd-mm-yyyy"
+            dateFormatter.dateFormat = "yyyy-MM-dd"
             
-            let selectedDate:Date = dateFormatter.date(from: (dataCtrl.profile?.dob)!)!
+            guard let selectedDate:Date = dateFormatter.date(from: (dataCtrl.profile?.dob)!)
+                else {return}
             
             customerPickerView?.datePickerView.setDate(selectedDate, animated: true)
             
             dataCtrl.editedDob = dataCtrl.profile?.dob
         }
         else{
-            birthdayButton.setTitle("--/--/----", for: .normal)
+            birthdayButton.setTitle("----/--/--", for: .normal)
         }
         
         if(dataCtrl.profile?.gender != nil){
             
-            for gender in genderArray
+            if(dataCtrl.profile?.gender! == "0")
             {
-                if(gender == dataCtrl.profile?.gender){
-                    
-                    genderButton.setTitle(gender, for: .normal)
-                    dataCtrl.editedGender = gender
-                }
+                genderButton.setTitle("male", for: .normal)
+                dataCtrl.editedGender = "0"            }
+            else
+            {
+                genderButton.setTitle("female", for: .normal)
+                dataCtrl.editedGender = "1"
             }
         }
         else{
             genderButton.setTitle(genderArray[0], for: .normal)
-            dataCtrl.editedGender = genderArray[0]
+            dataCtrl.editedGender = "0"
         }
 
     }
@@ -234,7 +242,6 @@ class AboutMeViewController: BaseViewController,UITextFieldDelegate,CustomPicker
                 dataCtrl.editedAddress = addressTextField.text
                 dataCtrl.editedPhoneNo = landlineNumberTextField.text
                 dataCtrl.editedMobileNo = mobileNumberTextField.text
-                dataCtrl.editedEmailId = emailIDTextField.text
 
                 self.showTransperantLoadingOnViewController()
                 
@@ -287,15 +294,22 @@ class AboutMeViewController: BaseViewController,UITextFieldDelegate,CustomPicker
         
         let selectedGender = self.genderArray[index]
         
-        self.genderButton.setTitle(selectedGender, for:UIControlState.normal)
+        if(index == 0)
+        {
+            dataCtrl.editedGender = "0"
+        }
+        else
+        {
+            dataCtrl.editedGender = "1"
+        }
         
-        dataCtrl.editedGender = selectedGender
+        self.genderButton.setTitle(selectedGender, for:UIControlState.normal)
     }
 
     func selectedDateOnPickerView(date: Date) {
         
         let dateFormatter : DateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "dd-mm-yyyy"
+        dateFormatter.dateFormat = "yyyy-MM-dd"
         
         let selectedDateInString = dateFormatter.string(from: date)
         

@@ -20,7 +20,7 @@ class ProfileViewController: BaseViewController {
     @IBOutlet weak var genderLabel: CustomBrownTextColorLabel!
     @IBOutlet weak var nameLabel: CustomBrownTextColorLabel!
     
-    var dataCtrl:ProfileDataController?
+    let dataCtrl:ProfileDataController = ProfileDataController()
     var didComeFromPeopleVC:Bool = false
     
     override func viewDidLoad() {
@@ -45,67 +45,75 @@ class ProfileViewController: BaseViewController {
     
     func setupProfileData()
     {
-        if(dataCtrl?.profile?.firstName != nil && dataCtrl?.profile?.lastName != nil){
-            nameLabel.text =  String(format:"%@ %@",(dataCtrl?.profile?.firstName)!,(dataCtrl?.profile?.lastName)!)
+        if(dataCtrl.profile?.firstName != nil && dataCtrl.profile?.lastName != nil){
+            nameLabel.text =  String(format:"%@ %@",(dataCtrl.profile?.firstName)!,(dataCtrl.profile?.lastName)!)
         }
         else{
-            nameLabel.text = ""
+            nameLabel.text = "-"
         }
         
         if(User.loggedInUser()?.email != nil){
             emailLabel.text = User.loggedInUser()?.email
         }
         else{
-             emailLabel.text = ""
+             emailLabel.text = "-"
         }
         
-        if(dataCtrl?.profile?.about != nil){
-            aboutLabel.text = dataCtrl?.profile?.about
+        if(dataCtrl.profile?.about != nil){
+            aboutLabel.text = dataCtrl.profile?.about
         }
         else{
-            aboutLabel.text = ""
+            aboutLabel.text = "-"
         }
         
-        if(dataCtrl?.profile?.address != nil){
-            addressLabel.text = dataCtrl?.profile?.address
+        if(dataCtrl.profile?.address != nil){
+            addressLabel.text = dataCtrl.profile?.address
         }
         else{
-            addressLabel.text = ""
+            addressLabel.text = "-"
         }
         
-        if(dataCtrl?.profile?.phoneNo != nil){
-            landlineNumberLabel.text = dataCtrl?.profile?.phoneNo
+        if(dataCtrl.profile?.phoneNo != nil){
+            landlineNumberLabel.text = dataCtrl.profile?.phoneNo
         }
         else{
-            landlineNumberLabel.text = ""
+            landlineNumberLabel.text = "-"
         }
         
-        if(dataCtrl?.profile?.mobileNo != nil){
-            mobileNumberLabel.text = dataCtrl?.profile?.mobileNo
+        if(dataCtrl.profile?.mobileNo != nil){
+            mobileNumberLabel.text = dataCtrl.profile?.mobileNo
         }
         else{
-            mobileNumberLabel.text = ""
+            mobileNumberLabel.text = "-"
         }
         
-        if(dataCtrl?.profile?.designation != nil){
-            designationLabel.text = dataCtrl?.profile?.designation
+        if(dataCtrl.profile?.designation != nil){
+            designationLabel.text = dataCtrl.profile?.designation
         }
         else{
-            designationLabel.text = ""
+            designationLabel.text = "-"
         }
         
-        if(dataCtrl?.profile?.dob != nil){
-            birthdayLabel.text = dataCtrl?.profile?.dob
+        if(dataCtrl.profile?.dob != nil){
+            birthdayLabel.text = dataCtrl.profile?.dob
         }
         else{
-            birthdayLabel.text = ""
+            birthdayLabel.text = "----/--/--"
         }
         
-        if(dataCtrl?.profile?.gender != nil){
-            genderLabel.text = dataCtrl?.profile?.gender
+        if(dataCtrl.profile?.gender != nil){
+            
+            if(dataCtrl.profile?.gender! == "0")
+            {
+                genderLabel.text = "male"
+            }
+            else
+            {
+                genderLabel.text = "female"
+            }
         }
         else{
-            genderLabel.text = ""
+            genderLabel.text = "-"
         }
     }
 

@@ -34,7 +34,7 @@ class SettingsProfileDataController: NSObject {
         settingOptionsArray.append(SettingOptions.people)
     }
     
-    private func setupPrivacySettingOptionsArray() {
+     func setupPrivacySettingOptionsArray() {
         
         privacySettingOptionsArray.removeAll()
         
@@ -147,9 +147,7 @@ class SettingsProfileDataController: NSObject {
         
         //set parameters to post
         let user:User = User.loggedInUser()!
-        var postParams:[String:Any] = [String: String]()
-        postParams["user_id"] = user.userId
-        postParams["password"] = user.password
+        var postParams:[String:Any] = user.toJSON()
         postParams["parameter"] = parameter
         postParams["value"] = selectedPrivacySettingOption?.isSettingOn
         
