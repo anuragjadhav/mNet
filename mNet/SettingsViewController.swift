@@ -104,9 +104,9 @@ class SettingsViewController: BaseViewController,UITableViewDelegate,UITableView
             
         case SettingOptions.groups:
            
-            let peopleViewController:PeopleViewController = UIStoryboard.settings.instantiateViewController(withIdentifier: StoryboardIDs.peopleViewController) as! PeopleViewController
-            peopleViewController.isForGroups = true
-            self.navigationController?.pushViewController(peopleViewController, animated: true)
+//            let peopleViewController:PeopleViewController = UIStoryboard.settings.instantiateViewController(withIdentifier: StoryboardIDs.peopleViewController) as! PeopleViewController
+//            peopleViewController.isForGroups = true
+//            self.navigationController?.pushViewController(peopleViewController, animated: true)
             break;
         
         case SettingOptions.people:
@@ -125,7 +125,7 @@ class SettingsViewController: BaseViewController,UITableViewDelegate,UITableView
     @IBAction func gotoButtonAction(_ sender: Any) {
         
         let profileVC = (UIStoryboard.init(name:"Profile", bundle: Bundle.main)).instantiateViewController(withIdentifier: "ProfileViewController") as! ProfileViewController
-        profileVC.dataCtrl.profile = self.dataCtrl.profile
+        profileVC.dataCtrl.profile = self.dataCtrl.profile?.copy() as? Profile
         self.navigationController?.pushViewController(profileVC, animated: true)
     }
         

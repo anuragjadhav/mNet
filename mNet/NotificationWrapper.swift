@@ -12,7 +12,7 @@ class NotificationWrapper: NSObject {
     
     func getNotificationList(postParams:[String:Any], onSuccess:@escaping ([NotificationObject]) -> Void , onFailure : @escaping (String) -> Void){
         
-        request(URLS.notificationsList, method: .post, parameters: postParams, encoding: JSONEncoding() as ParameterEncoding, headers: nil).responseJSON { response in
+        request(URLS.getNotificationsList, method: .post, parameters: postParams, encoding: JSONEncoding() as ParameterEncoding, headers: nil).responseJSON { response in
             
             if let responseDict:[String:Any] = response.result.value as? [String:Any] {
                 

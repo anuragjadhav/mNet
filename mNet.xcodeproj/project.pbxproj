@@ -158,6 +158,8 @@
 		5EC3005E1FEC03FE00229516 /* SettingOptionsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EC3005D1FEC03FE00229516 /* SettingOptionsTableViewCell.swift */; };
 		5EC300621FEC0A5A00229516 /* SettingOption.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EC300611FEC0A5A00229516 /* SettingOption.swift */; };
 		5EC300651FEC106600229516 /* PrivacySettingOptionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EC300641FEC106600229516 /* PrivacySettingOptionTableViewCell.swift */; };
+		5EEFC9BF2021E5C300648F17 /* PeopleWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EEFC9BE2021E5C200648F17 /* PeopleWrapper.swift */; };
+		5EEFC9C12021E84900648F17 /* PeopleDataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EEFC9C02021E84900648F17 /* PeopleDataController.swift */; };
 		5EF31C83201B57E9007727D8 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EF31C82201B57E9007727D8 /* Settings.swift */; };
 		5EF31C86201B5E93007727D8 /* WrapperManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EF31C85201B5E93007727D8 /* WrapperManager.swift */; };
 		5EF31C88201B5F18007727D8 /* SettingsWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EF31C87201B5F18007727D8 /* SettingsWrapper.swift */; };
@@ -318,6 +320,8 @@
 		5EC3005D1FEC03FE00229516 /* SettingOptionsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingOptionsTableViewCell.swift; sourceTree = "<group>"; };
 		5EC300611FEC0A5A00229516 /* SettingOption.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingOption.swift; sourceTree = "<group>"; };
 		5EC300641FEC106600229516 /* PrivacySettingOptionTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PrivacySettingOptionTableViewCell.swift; sourceTree = "<group>"; };
+		5EEFC9BE2021E5C200648F17 /* PeopleWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeopleWrapper.swift; sourceTree = "<group>"; };
+		5EEFC9C02021E84900648F17 /* PeopleDataController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeopleDataController.swift; sourceTree = "<group>"; };
 		5EF31C82201B57E9007727D8 /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
 		5EF31C85201B5E93007727D8 /* WrapperManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WrapperManager.swift; sourceTree = "<group>"; };
 		5EF31C87201B5F18007727D8 /* SettingsWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsWrapper.swift; sourceTree = "<group>"; };
@@ -746,6 +750,7 @@
 			children = (
 				5EC3005B1FEC002000229516 /* SettingsProfileDataController.swift */,
 				5E1A8D13201E24AD00BFAF10 /* AboutMeDataController.swift */,
+				5EEFC9C02021E84900648F17 /* PeopleDataController.swift */,
 			);
 			name = "Data Controllers";
 			sourceTree = "<group>";
@@ -755,6 +760,7 @@
 			children = (
 				5EC3005D1FEC03FE00229516 /* SettingOptionsTableViewCell.swift */,
 				5EC300641FEC106600229516 /* PrivacySettingOptionTableViewCell.swift */,
+				5E4A8D3A1FF4FB4900086667 /* PeopleTableViewCell.swift */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -842,7 +848,6 @@
 		5E4A8D391FF4FB0400086667 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				5E4A8D3A1FF4FB4900086667 /* PeopleTableViewCell.swift */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -873,6 +878,7 @@
 				05501F85201D10AA00831A08 /* ConversationsWrapper.swift */,
 				5E1A8D0F201DF57400BFAF10 /* ProfileWrapper.swift */,
 				5E2D375220209DB60013A138 /* NotificationWrapper.swift */,
+				5EEFC9BE2021E5C200648F17 /* PeopleWrapper.swift */,
 			);
 			name = Wrappers;
 			sourceTree = "<group>";
@@ -984,11 +990,13 @@
 				0531A57B2007E1F900F2232C /* FilterViewController.swift in Sources */,
 				5E1C49A01FEA847B007CE624 /* BaseViewController.swift in Sources */,
 				5E1A8D12201E221600BFAF10 /* ProfileDataController.swift in Sources */,
+				5EEFC9C12021E84900648F17 /* PeopleDataController.swift in Sources */,
 				5E2D37412020667F0013A138 /* UIImageView+AlamofireImage.swift in Sources */,
 				5E18AE3E1FF8113A007AA461 /* CustomBlueBackgroundButton.swift in Sources */,
 				5E183E9B1FF37B7C00368DE1 /* RejectApplicationViewController.swift in Sources */,
 				5E2D374F2020929A0013A138 /* KRPullLoader.swift in Sources */,
 				5E3A04702007C302004EE2D7 /* SentMessageTableViewCell.swift in Sources */,
+				5EEFC9BF2021E5C300648F17 /* PeopleWrapper.swift in Sources */,
 				5E2D3747202087BD0013A138 /* People.swift in Sources */,
 				5E1C498D1FEA4455007CE624 /* CustomBrownTextColorLabel.swift in Sources */,
 				5E2D373F2020667F0013A138 /* ImageCache.swift in Sources */,

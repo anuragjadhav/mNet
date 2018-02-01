@@ -13,4 +13,17 @@ class PeopleTableViewCell: UITableViewCell {
     @IBOutlet weak var personNameLabel: CustomBrownTextColorLabel!
     @IBOutlet weak var personRoleLabel: CustomBrownTextColorLabel!
 
+    func loadCellWithPeople(_ people:People) {
+        
+        personNameLabel.text = people.userName
+        
+        if(people.designation != nil)
+        {
+            personRoleLabel.text = people.designation
+        }
+        else
+        {
+            personRoleLabel.text = "-"
+        }
+    }
 }

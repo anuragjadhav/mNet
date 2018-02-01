@@ -36,7 +36,7 @@ class NotificationDataController: NSObject {
             }
             
             //change start
-            self.start += notificationArray.count
+            self.start += self.notifications.count
             
             onSuccess()
             

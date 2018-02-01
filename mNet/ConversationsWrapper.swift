@@ -14,7 +14,7 @@ class ConversationsWrapper: NSObject {
         
         let postParams:[String:Any] = postObject.toJSON()
         
-        request(URLS.conversationsList, method: .post, parameters: postParams, encoding: JSONEncoding() as ParameterEncoding, headers: nil).responseJSON { response in
+        request(URLS.getConversationsList, method: .post, parameters: postParams, encoding: JSONEncoding() as ParameterEncoding, headers: nil).responseJSON { response in
            
             if let responseDict:[String:Any] = response.result.value as? [String:Any] {
                 
