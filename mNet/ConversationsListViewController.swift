@@ -28,6 +28,9 @@ class ConversationsListViewController: BaseViewController, UITableViewDelegate, 
         lineLabel.layer.shadowOffset = CGSize(width: 0, height: 0.6)
         lineLabel.layer.shadowOpacity = 1
         lineLabel.layer.shadowRadius = 1.0
+        
+        conversationListTableView.tableFooterView = UIView()
+
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -79,5 +82,4 @@ class ConversationsListViewController: BaseViewController, UITableViewDelegate, 
         let newConversationVC = (UIStoryboard.init(name:"Conversation", bundle: Bundle.main)).instantiateViewController(withIdentifier: "NewConversationViewController")
         self.navigationController?.pushViewController(newConversationVC, animated: true)
     }
-    
 }

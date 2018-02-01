@@ -28,6 +28,9 @@ class NotificationsViewController: BaseViewController, UITableViewDelegate, UITa
         let loadMoreView = KRPullLoadView()
         loadMoreView.delegate = self as KRPullLoadViewDelegate
         notificationsTableView.addPullLoadableView(loadMoreView, type: .loadMore)
+        
+        notificationsTableView.tableFooterView = UIView()
+
     }
     
     override func viewWillAppear(_ animated: Bool) {

@@ -22,6 +22,8 @@ class PeopleViewController: BaseViewController,UITableViewDataSource,UITableView
         let loadMoreView = KRPullLoadView()
         loadMoreView.delegate = self as KRPullLoadViewDelegate
         peopleTableView.addPullLoadableView(loadMoreView, type: .loadMore)
+        
+        peopleTableView.tableFooterView = UIView()
     }
 
     override func viewWillAppear(_ animated: Bool) {
