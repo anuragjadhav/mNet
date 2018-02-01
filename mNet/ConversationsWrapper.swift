@@ -10,9 +10,7 @@ import UIKit
 
 class ConversationsWrapper: NSObject {
     
-    func getConversationsList(postObject:ConversationsPostObject, onSuccess:@escaping ([Conversation]) -> Void , onFailure : @escaping (String) -> Void){
-        
-        let postParams:[String:Any] = postObject.toJSON()
+    func getConversationsList(postParams:[String:Any], onSuccess:@escaping ([Conversation]) -> Void , onFailure : @escaping (String) -> Void){
         
         request(URLS.getConversationsList, method: .post, parameters: postParams, encoding: JSONEncoding() as ParameterEncoding, headers: nil).responseJSON { response in
            

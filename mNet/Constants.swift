@@ -18,6 +18,7 @@ struct URLS {
     static let getProfile:URL = URL(string: "GetUserDetails", relativeTo: baseURL)!
     static let updateProfile:URL = URL(string: "updateProfile", relativeTo: baseURL)!
     static let getPeopleList:URL = URL(string: "getUserList", relativeTo: baseURL)!
+    static let profileImageBaseURLString:String = "http://52.187.131.90:81/d_mnetv2/public/images/"
 }
 
 

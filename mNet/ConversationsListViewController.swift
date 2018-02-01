@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ConversationsListViewController: BaseViewController, UITableViewDelegate, UITableViewDataSource {
+class ConversationsListViewController: BaseViewController, UITableViewDelegate, UITableViewDataSource,KRPullLoadViewDelegate,UISearchBarDelegate {
 
     //MARK: Outlets and Properties
     
@@ -18,7 +18,7 @@ class ConversationsListViewController: BaseViewController, UITableViewDelegate, 
     @IBOutlet weak var newConversationButton: UIButton!
     @IBOutlet weak var searchBar: UISearchBar!
 
-    let dataController:ConversationsDataController = ConversationsDataController()
+    let dataCtrl:ConversationsDataController = ConversationsDataController()
     
     //MARK: View Controller Delegates
     override func viewDidLoad() {
@@ -29,8 +29,19 @@ class ConversationsListViewController: BaseViewController, UITableViewDelegate, 
         lineLabel.layer.shadowOpacity = 1
         lineLabel.layer.shadowRadius = 1.0
         
+        // add pull down and up refresh control
+        let loadMoreView = KRPullLoadView()
+        loadMoreView.delegate = self as KRPullLoadViewDelegate
+        conversationListTableView.addPullLoadableView(loadMoreView, type: .loadMore)
+        
+        let refreshView = KRPullLoadView()
+        refreshView.delegate = self
+        conversationListTableView.addPullLoadableView(refreshView, type: .refresh)
+        
         conversationListTableView.tableFooterView = UIView()
-
+        searchBar.text = ""
+        
+        getConversations(isReload: true, searchText: searchBar.text!)
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -49,20 +60,79 @@ class ConversationsListViewController: BaseViewController, UITableViewDelegate, 
     //MARK: Table View Methods
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
-        return 5;
+        return dataCtrl.conversations.count;
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell:ConversationListTableViewCell = tableView.dequeueReusableCell(withIdentifier: CellIdentifiers.conversationListTableView) as! ConversationListTableViewCell
-        cell.setUpCell()
+        
+        let conversation:Conversation = dataCtrl.conversations[indexPath.row]
+        
+        cell.loadCellWithConversation(conversation: conversation)
+        
         return cell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
-        let conversationDetailVC = (UIStoryboard.init(name:"Conversation", bundle: Bundle.main)).instantiateViewController(withIdentifier: "ConversationDetailViewController")
+        let conversationDetailVC = (UIStoryboard.init(name:"Conversation", bundle: Bundle.main)).instantiateViewController(withIdentifier: "ConversationDetailViewController") as! ConversationDetailViewController
         self.navigationController?.pushViewController(conversationDetailVC, animated: true)
+    }
+    
+    
+    //MARK: Get Notifications
+    
+    func getConversations(isReload:Bool,searchText:String)
+    {
+        if Reachability.isConnectedToNetwork(){
+            
+            if(isReload){
+                
+                self.showLoadingOnViewController()
+            }
+            
+            dataCtrl.getConversations(searchText:searchText , onSuccess: { [unowned self] in
+                
+                DispatchQueue.main.async {
+                    
+                    if(isReload){
+                        
+                        self.removeLoadingFromViewController()
+                    }
+                    
+                    self.conversationListTableView.reloadData()
+                }
+                
+                }, onFailure: { [unowned self] (errorMessage) in
+                    
+                    DispatchQueue.main.async {
+                        
+                        if(isReload){
+                            
+                            self.removeLoadingFromViewController()
+                            self.showRetryView(message:errorMessage)
+                        }
+                    }
+            })
+            
+        }else{
+            
+            self.showRetryView(message: AlertMessages.networkUnavailable)
+        }
+    }
+    
+    //MARK: search bar delegate
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        
+        if(searchText == ""){
+            
+            getConversations(isReload: false, searchText: searchText)
+        }
+        else if (searchText.count > 2)
+        {
+            getConversations(isReload: false, searchText: searchText)
+        }
     }
     
     //MARK: Button Actions
@@ -81,5 +151,43 @@ class ConversationsListViewController: BaseViewController, UITableViewDelegate, 
         
         let newConversationVC = (UIStoryboard.init(name:"Conversation", bundle: Bundle.main)).instantiateViewController(withIdentifier: "NewConversationViewController")
         self.navigationController?.pushViewController(newConversationVC, animated: true)
+    }
+    
+    //MARK: Pull Up refresh control delegate
+    
+    func pullLoadView(_ pullLoadView: KRPullLoadView, didChangeState state: KRPullLoaderState, viewType type: KRPullLoaderType) {
+        if type == .loadMore {
+            switch state {
+            case let .loading(completionHandler):
+                completionHandler()
+                self.getConversations(isReload: false, searchText: searchBar.text!)
+                
+            default: break
+            }
+            return
+        }
+        
+    switch state {
+    
+      case let .pulling(offset, threshould):
+        if offset.y < threshould {
+            
+            self.getConversations(isReload: false, searchText: searchBar.text!)
+        }
+        
+     case .none:
+        break
+        
+     case .loading(let completionHandler):
+        completionHandler()
+        break
+        }
+    }
+    
+    //MARK: retry view delegate
+    
+    override func retryButtonClicked() {
+        
+        getConversations(isReload: true, searchText: searchBar.text!)
     }
 }

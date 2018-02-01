@@ -11,13 +11,14 @@ import UIKit
 class ConversationMember: NSObject, Mappable {
     
     var memberReadState:String = ""
-    var profileImage:URL?
+    var profileImage:String?
     var memberType:String = ""
     var userName:String = ""
     var userId:String = ""
     var askForAgree:String = ""
     var askForApprove:String = ""
     var approveStatus:String = ""
+    var agreeStatus:String = ""
     
     required init?(map: Map) {
         
@@ -26,12 +27,13 @@ class ConversationMember: NSObject, Mappable {
     func mapping(map: Map) {
         
         memberReadState     <- map["member_read_state"]
-        profileImage        <- (map["profileImage"],URLTransform())
-        memberType          <- map["memberType"]
-        userName            <- map["userName"]
-        userId              <- map["userId"]
-        askForAgree         <- map["askForAgree"]
-        askForApprove       <- map["askForApprove"]
-        approveStatus       <- map["approveStatus"]
+        profileImage        <- map["profile_img_link"]
+        memberType          <- map["member_type"]
+        userName            <- map["user_name"]
+        userId              <- map["user_id"]
+        askForAgree         <- map["ask_for_agree"]
+        askForApprove       <- map["ask_for_approve"]
+        approveStatus       <- map["agree_status"]
+        agreeStatus       <- map["agree_status"]
     }
 }

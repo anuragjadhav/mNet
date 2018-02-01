@@ -466,7 +466,7 @@
                                                 <constraint firstItem="5Tu-XR-wE8" firstAttribute="top" secondItem="B62-qP-U61" secondAttribute="top" id="zLA-vY-IaP"/>
                                             </constraints>
                                         </tableViewCellContentView>
-                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="backgroundColor" red="0.96862745100000003" green="0.97254901959999995" blue="0.97647058819999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>
@@ -536,8 +536,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="26 unread conversations" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gKb-7E-VrU" customClass="CustomBrownTextColorLabel" customModule="mNet" customModuleProvider="target">
-                                <rect key="frame" x="24" y="117" width="147" height="17"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0 unread conversations" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gKb-7E-VrU" customClass="CustomBrownTextColorLabel" customModule="mNet" customModuleProvider="target">
+                                <rect key="frame" x="24" y="117" width="140" height="17"/>
                                 <fontDescription key="fontDescription" name="SanFranciscoDisplay-Light" family="San Francisco Display" pointSize="14"/>
                                 <color key="textColor" red="0.3803921569" green="0.28235294119999998" blue="0.22352941179999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -549,6 +549,9 @@
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                     <textInputTraits key="textInputTraits"/>
+                                    <connections>
+                                        <outlet property="delegate" destination="QBC-0E-HPL" id="BUS-gD-L0W"/>
+                                    </connections>
                                 </searchBar>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="conversationListTableViewCell" rowHeight="84" id="Iyz-14-hMF" customClass="ConversationListTableViewCell" customModule="mNet" customModuleProvider="target">
@@ -598,8 +601,17 @@
                                                     <color key="textColor" red="0.3803921569" green="0.28235294119999998" blue="0.22352941179999999" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="defaultProfileImage" translatesAutoresizingMaskIntoConstraints="NO" id="c6g-ya-io0">
+                                                    <rect key="frame" x="27" y="16" width="40" height="40"/>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                            <real key="value" value="20"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                    </userDefinedRuntimeAttributes>
+                                                </imageView>
                                             </subviews>
                                             <constraints>
+                                                <constraint firstItem="c6g-ya-io0" firstAttribute="height" secondItem="Htp-iD-esS" secondAttribute="height" id="4mk-YH-mwh"/>
                                                 <constraint firstItem="ODh-q4-c6M" firstAttribute="top" secondItem="1mh-cr-fBh" secondAttribute="top" constant="15" id="MOE-9e-G0o"/>
                                                 <constraint firstItem="Htp-iD-esS" firstAttribute="top" secondItem="1mh-cr-fBh" secondAttribute="top" constant="16" id="PPE-eS-lad"/>
                                                 <constraint firstItem="IxZ-5M-Zlg" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="fli-4i-yTG" secondAttribute="trailing" constant="7" id="R6b-6Q-pTn"/>
@@ -610,15 +622,19 @@
                                                 <constraint firstItem="fli-4i-yTG" firstAttribute="centerY" secondItem="ODh-q4-c6M" secondAttribute="centerY" id="f22-Nt-NPl"/>
                                                 <constraint firstAttribute="trailing" secondItem="gRV-hL-hXt" secondAttribute="trailing" constant="45" id="hcP-W8-3sp"/>
                                                 <constraint firstItem="Htp-iD-esS" firstAttribute="leading" secondItem="1mh-cr-fBh" secondAttribute="leading" constant="27" id="klL-dk-fqa"/>
+                                                <constraint firstItem="c6g-ya-io0" firstAttribute="width" secondItem="Htp-iD-esS" secondAttribute="width" id="llx-uu-4vx"/>
                                                 <constraint firstItem="gRV-hL-hXt" firstAttribute="top" secondItem="ODh-q4-c6M" secondAttribute="bottom" constant="4" id="r8B-4C-ofV"/>
+                                                <constraint firstItem="c6g-ya-io0" firstAttribute="centerX" secondItem="Htp-iD-esS" secondAttribute="centerX" id="sDo-T4-a8e"/>
                                                 <constraint firstAttribute="trailing" secondItem="IxZ-5M-Zlg" secondAttribute="trailing" constant="30" id="tjW-j4-4cL"/>
                                                 <constraint firstItem="IxZ-5M-Zlg" firstAttribute="top" secondItem="1mh-cr-fBh" secondAttribute="top" constant="18" id="yc7-SV-Qni"/>
+                                                <constraint firstItem="c6g-ya-io0" firstAttribute="centerY" secondItem="Htp-iD-esS" secondAttribute="centerY" id="ynv-zR-llI"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="messageLabel" destination="gRV-hL-hXt" id="Y7O-wp-tvs"/>
                                             <outlet property="nameInitialsLabel" destination="Htp-iD-esS" id="7Gc-3w-BcJ"/>
                                             <outlet property="nameLabel" destination="ODh-q4-c6M" id="bku-4Q-3uc"/>
+                                            <outlet property="profileImageView" destination="c6g-ya-io0" id="oCg-sT-zep"/>
                                             <outlet property="roleLabel" destination="fli-4i-yTG" id="Cf0-3M-26u"/>
                                             <outlet property="timeLabel" destination="IxZ-5M-Zlg" id="B01-mG-uXy"/>
                                         </connections>
@@ -1025,7 +1041,7 @@
             </objects>
             <point key="canvasLocation" x="921" y="1034"/>
         </scene>
-        <!--Sending for approval to Robin-->
+        <!--Conversation Detail Title-->
         <scene sceneID="OQ1-BE-R44">
             <objects>
                 <viewController storyboardIdentifier="ConversationDetailViewController" id="ZDB-Oo-0rh" customClass="ConversationDetailViewController" customModule="mNet" customModuleProvider="target" sceneMemberID="viewController">
@@ -1062,7 +1078,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
-                                <color key="backgroundColor" red="0.98039215690000003" green="0.98431372549999996" blue="0.98823529409999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" red="0.97254901960784312" green="0.97254901960784312" blue="0.97254901960784312" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstItem="d5j-wV-ww7" firstAttribute="leading" secondItem="nnu-1h-S89" secondAttribute="trailing" constant="5" id="CnA-j1-JKr"/>
                                     <constraint firstItem="d5j-wV-ww7" firstAttribute="centerY" secondItem="ipo-sW-iIR" secondAttribute="centerY" id="Dar-rK-2JS"/>
@@ -1077,7 +1093,7 @@
                             </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="66" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="8bi-AF-q3O">
                                 <rect key="frame" x="0.0" y="103" width="375" height="514"/>
-                                <color key="backgroundColor" red="0.98039215690000003" green="0.98431372549999996" blue="0.98823529409999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" red="0.97254901960784312" green="0.97254901960784312" blue="0.97254901960784312" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="SentMessageTableViewCell" rowHeight="66" id="0t6-33-K6a" customClass="SentMessageTableViewCell" customModule="mNet" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="66"/>
@@ -1129,7 +1145,7 @@
                                                 <constraint firstItem="JLI-Eu-BqP" firstAttribute="top" secondItem="Em7-6U-DGv" secondAttribute="top" constant="-5" id="rbb-oX-uDW"/>
                                             </constraints>
                                         </tableViewCellContentView>
-                                        <color key="backgroundColor" red="0.98039215690000003" green="0.98431372549999996" blue="0.98823529409999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="backgroundColor" red="0.97254901960784312" green="0.97254901960784312" blue="0.97254901960784312" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="ReceivedMessageTableViewCell" rowHeight="58" id="Hw3-9P-z8G" customClass="ReceivedMessageTableViewCell" customModule="mNet" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="94" width="375" height="58"/>
@@ -1179,7 +1195,7 @@
                                                 <constraint firstItem="r4S-wr-Les" firstAttribute="top" secondItem="sgj-HJ-98o" secondAttribute="bottom" constant="4" id="yn4-hi-axn"/>
                                             </constraints>
                                         </tableViewCellContentView>
-                                        <color key="backgroundColor" red="0.98039215690000003" green="0.98431372549999996" blue="0.98823529409999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="backgroundColor" red="0.97254901960784312" green="0.97254901960784312" blue="0.97254901960784312" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>
@@ -1269,7 +1285,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="pQd-EZ-OD3"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Sending for approval to Robin" id="Afq-jm-cWq">
+                    <navigationItem key="navigationItem" title="Conversation Detail Title" id="Afq-jm-cWq">
                         <barButtonItem key="leftBarButtonItem" image="backButtonImage" id="2ql-lg-XrN">
                             <color key="tintColor" red="0.45882352939999999" green="0.45882352939999999" blue="0.45882352939999999" alpha="1" colorSpace="calibratedRGB"/>
                             <connections>
@@ -1533,6 +1549,7 @@
         <image name="backButtonImage" width="24" height="24"/>
         <image name="close" width="16" height="16"/>
         <image name="conversationIcon" width="24" height="24"/>
+        <image name="defaultProfileImage" width="64" height="64"/>
         <image name="deleteBin" width="24" height="24"/>
         <image name="filterIcon" width="21" height="21"/>
         <image name="infoIcon" width="24" height="24"/>

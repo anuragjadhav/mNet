@@ -12,12 +12,12 @@ class Conversation: NSObject, Mappable {
 
     var postId:String = ""
     var senderName:String = ""
-    var senderImage:URL?
+    var senderImage:String?
     var postTitle:String = ""
     var postMessage:String = ""
     var postLink:String = ""
     var postClient:String = ""
-    var postComments:[String] = [String]()
+    var postComments:[String] = []
     var postModifiedOn:String = ""
     var postCreator:String = ""
     var postEmailNotification:String = ""
@@ -25,12 +25,14 @@ class Conversation: NSObject, Mappable {
     var readState:String = ""
     var createdOn:String = ""
     var latestReplierName:String = ""
-    var latesReplierImage:URL?
+    var latesReplierImage:String?
     var latestReplierMessage:String = ""
     var latestReplierDate:String = ""
-    
-    var membersList:String = ""
-    var reply:ConversationReply?
+    var postType:String = ""
+    var postTypeId:String = ""
+    var approvalType:String = ""
+    var membersList:[ConversationMember] = []
+    var reply:[ConversationReply] = []
     
     required init?(map: Map) {
         
@@ -40,7 +42,7 @@ class Conversation: NSObject, Mappable {
         
         postId <- map["post_id"]
         senderName <- map["post_sender_name"]
-        senderImage <- (map["post_sender_profile_img_link"],URLTransform())
+        senderImage <- map["post_sender_profile_img_link"]
         postTitle <- map["post_title"]
         postMessage <- map["post_message"]
         postLink <- map["post_link"]
@@ -53,10 +55,13 @@ class Conversation: NSObject, Mappable {
         readState <- map["read_state"]
         createdOn <- map["created_on"]
         latestReplierName <- map["latest_replyer_name"]
-        latesReplierImage <- (map["latest_replyer_image"],URLTransform())
+        latesReplierImage <- map["latest_replyer_image"]
         latestReplierMessage <- map["latest_replyer_message"]
         latestReplierDate <- map["latest_replyer_date"]
         membersList <- map["memberlist"]
-        reply <- map["reply"]       
+        reply <- map["reply"]
+        postType <- map["post_type"]
+        postTypeId <- map["post_type_id"]
+        approvalType <- map["approval_type"]
     }
 }
