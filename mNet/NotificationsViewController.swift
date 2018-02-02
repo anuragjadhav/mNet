@@ -24,12 +24,18 @@ class NotificationsViewController: BaseViewController, UITableViewDelegate, UITa
         lineLabel.layer.shadowOpacity = 1
         lineLabel.layer.shadowRadius = 1.0
         
-        // add pull down refresh control
+        // add pull down and up refresh control
         let loadMoreView = KRPullLoadView()
         loadMoreView.delegate = self as KRPullLoadViewDelegate
         notificationsTableView.addPullLoadableView(loadMoreView, type: .loadMore)
         
+        let refreshView = KRPullLoadView()
+        refreshView.delegate = self
+        notificationsTableView.addPullLoadableView(refreshView, type: .refresh)
+        
         notificationsTableView.tableFooterView = UIView()
+        
+        getNotifications(isReload: true,isRefresh: false)
 
     }
     
@@ -37,8 +43,6 @@ class NotificationsViewController: BaseViewController, UITableViewDelegate, UITa
         super.viewWillAppear(animated)
         
         self.setUpNavigationController()
-        
-        getNotifications(isReload: true)
     }
     
     //MARK: Setup
@@ -66,11 +70,11 @@ class NotificationsViewController: BaseViewController, UITableViewDelegate, UITa
     
     //MARK: Get Notifications
     
-    func getNotifications(isReload:Bool)
+    func getNotifications(isReload:Bool,isRefresh:Bool)
     {
         if Reachability.isConnectedToNetwork(){
             
-            if(isReload){
+            if(isRefresh == false){
                 
                 self.showLoadingOnViewController()
             }
@@ -79,7 +83,7 @@ class NotificationsViewController: BaseViewController, UITableViewDelegate, UITa
                 
                 DispatchQueue.main.async {
                     
-                    if(isReload){
+                    if(isRefresh == false){
                         
                         self.removeLoadingFromViewController()
                     }
@@ -91,7 +95,7 @@ class NotificationsViewController: BaseViewController, UITableViewDelegate, UITa
                     
                     DispatchQueue.main.async {
                         
-                        if(isReload){
+                        if(isRefresh == false){
                             
                             self.removeLoadingFromViewController()
                             self.showRetryView(message:errorMessage)
@@ -112,11 +116,27 @@ class NotificationsViewController: BaseViewController, UITableViewDelegate, UITa
             switch state {
             case let .loading(completionHandler):
                completionHandler()
-                self.getNotifications(isReload: false)
+                self.getNotifications(isReload: false,isRefresh: true)
                 
             default: break
             }
             return
+        }
+        
+        switch state {
+            
+        case let .pulling(offset, threshould):
+            if offset.y < threshould {
+                
+                self.getNotifications(isReload: true,isRefresh: true)
+            }
+            
+        case .none:
+            break
+            
+        case .loading(let completionHandler):
+            completionHandler()
+            break
         }
     }
     
@@ -124,7 +144,7 @@ class NotificationsViewController: BaseViewController, UITableViewDelegate, UITa
     
     override func retryButtonClicked() {
         
-        getNotifications(isReload: true)
+        getNotifications(isReload: true , isRefresh: false)
     }
 
 }
