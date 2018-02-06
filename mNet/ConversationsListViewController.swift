@@ -48,6 +48,10 @@ class ConversationsListViewController: BaseViewController, UITableViewDelegate, 
         super.viewWillAppear(animated)
         
         self.setUpNavigationController()
+        
+        conversationListTableView.reloadData()
+        
+        self.unreadConversationsLabel.text = String(dataCtrl.getUnreadConversationCount()) + " unread conversations"
     }
     
     //MARK: Setup
@@ -76,7 +80,13 @@ class ConversationsListViewController: BaseViewController, UITableViewDelegate, 
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
+        let conversation:Conversation = dataCtrl.conversations[indexPath.row]
+        dataCtrl.selectedCoversation = conversation
+        
+        dataCtrl.markCOnversationAsRead()
+        
         let conversationDetailVC = (UIStoryboard.init(name:"Conversation", bundle: Bundle.main)).instantiateViewController(withIdentifier: "ConversationDetailViewController") as! ConversationDetailViewController
+        conversationDetailVC.dataCtrl = self.dataCtrl
         self.navigationController?.pushViewController(conversationDetailVC, animated: true)
     }
     
@@ -92,7 +102,7 @@ class ConversationsListViewController: BaseViewController, UITableViewDelegate, 
                 self.showLoadingOnViewController()
             }
             
-            dataCtrl.getConversations(searchText:searchText , onSuccess: { [unowned self] in
+            dataCtrl.getConversations(searchText:searchText , onSuccess: { [unowned self] (unreadConversationCount) in
                 
                 DispatchQueue.main.async {
                     
@@ -100,6 +110,8 @@ class ConversationsListViewController: BaseViewController, UITableViewDelegate, 
                         
                         self.removeLoadingFromViewController()
                     }
+                    
+                    self.unreadConversationsLabel.text = String(unreadConversationCount) + " unread conversations"
                     
                     self.conversationListTableView.reloadData()
                 }

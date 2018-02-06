@@ -59,6 +59,15 @@ class ConversationListTableViewCell: UITableViewCell {
         //TODO: set designation label
         self.roleLabel.text = ""
         
+        //set read unread background color
+        if(conversation.readState == "1"){
+            
+            self.contentView.backgroundColor = UIColor.clear
+        }
+        else
+        {
+            self.contentView.backgroundColor = ColorConstants.kBackgroundColor
+        }
     }
 
 }

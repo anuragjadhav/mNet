@@ -43,4 +43,29 @@ class NotificationWrapper: NSObject {
             }
         }
     }
+    
+    
+    func markNotificationAsRead(postParams:[String:Any], onSuccess:@escaping () -> Void , onFailure : @escaping () -> Void){
+        
+        request(URLS.markNotificationAsRead, method: .post, parameters: postParams, encoding: JSONEncoding() as ParameterEncoding, headers: nil).responseJSON { response in
+            
+            if let responseDict:[String:Any] = response.result.value as? [String:Any] {
+                
+                let error:String = responseDict["error"] as! String
+                
+                if(error == "0")
+                {
+                    onSuccess()
+                }
+                else
+                {
+                    onFailure()
+                }
+            }
+            else{
+                
+                onFailure()
+            }
+        }
+    }
 }

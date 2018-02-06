@@ -79,7 +79,7 @@ class NotificationsViewController: BaseViewController, UITableViewDelegate, UITa
                 self.showLoadingOnViewController()
             }
             
-            dataCtrl.getNotifcations(isReload:isReload , onSuccess: { [unowned self] in
+            dataCtrl.getNotifcations(isReload:isReload , onSuccess: { [unowned self] (unreadNotificationCount) in
                 
                 DispatchQueue.main.async {
                     
@@ -87,6 +87,8 @@ class NotificationsViewController: BaseViewController, UITableViewDelegate, UITa
                         
                         self.removeLoadingFromViewController()
                     }
+                    
+                   self.unreadNotificationLabel.text = String(unreadNotificationCount) + " unread notifications"
 
                     self.notificationsTableView.reloadData()
                  }

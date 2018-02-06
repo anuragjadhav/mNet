@@ -18,5 +18,15 @@ class NotificationTableViewCell: UITableViewCell {
     {
         messageLabel.text = notification.notificationMessage
         dateTimeLabel.text = notification.createdOn
+        
+        //set read unread background color
+        if(notification.status == "1"){
+            
+            self.contentView.backgroundColor = UIColor.clear
+        }
+        else
+        {
+            self.contentView.backgroundColor = ColorConstants.kBackgroundColor
+        }
     }
 }

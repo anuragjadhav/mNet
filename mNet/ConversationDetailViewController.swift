@@ -16,6 +16,8 @@ class ConversationDetailViewController: BaseViewController,UITableViewDelegate,U
     @IBOutlet weak var messageViewBottomConstraint: NSLayoutConstraint!
     @IBOutlet weak var uploadButton: UIButton!
     
+    var dataCtrl:ConversationsDataController?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
