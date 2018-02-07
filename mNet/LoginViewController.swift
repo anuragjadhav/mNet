@@ -36,6 +36,11 @@ class LoginViewController: BaseViewController, UITextFieldDelegate {
         dataController.userName = emailTextField.text ?? ""
         dataController.password = passwordTextField.text ?? ""
         
+        if !Reachability.isConnectedToNetwork() {
+            showNoInternetAlert()
+            return
+        }
+        
         let validation = dataController.validateEmailAndPassword()
         
         if validation.valid {
@@ -45,8 +50,7 @@ class LoginViewController: BaseViewController, UITextFieldDelegate {
             dataController.postLogin(onSuccess: { [unowned self] in
                 
                 self.removeTransperantLoadingFromViewController()
-                let tabBarNavigationController = UIStoryboard.tabBar.instantiateInitialViewController()!
-                self.present(tabBarNavigationController, animated: true, completion: nil)
+                AppDelegate.sharedInstance.makeDashboardPageHome(true)
                 
                 }, onFailure: { [unowned self] (errorMessage) in
                     

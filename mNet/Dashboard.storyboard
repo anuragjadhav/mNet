@@ -36,6 +36,18 @@
                                     <constraint firstAttribute="height" constant="258" id="WWJ-dH-bbf"/>
                                 </constraints>
                             </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2MU-AG-Ute">
+                                <rect key="frame" x="336" y="16" width="23" height="23"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="23" id="FVc-qg-eL4"/>
+                                    <constraint firstAttribute="width" constant="23" id="jmz-le-6vT"/>
+                                </constraints>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" image="gotoImage"/>
+                                <connections>
+                                    <action selector="logOutAction:" destination="lrb-xA-0fc" eventType="touchUpInside" id="hS8-1x-DWI"/>
+                                </connections>
+                            </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Dashboard" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dka-Gt-J5X">
                                 <rect key="frame" x="27" y="83" width="149" height="36"/>
                                 <fontDescription key="fontDescription" name="SanFranciscoDisplay-Bold" family="San Francisco Display" pointSize="30"/>
@@ -194,6 +206,7 @@
                             <constraint firstItem="wv2-VT-8yh" firstAttribute="bottom" secondItem="mUh-uh-gsA" secondAttribute="bottom" id="6zf-VV-eGp"/>
                             <constraint firstItem="gfB-ab-tfT" firstAttribute="top" secondItem="Dka-Gt-J5X" secondAttribute="bottom" constant="44" id="Bm9-EB-CMG"/>
                             <constraint firstItem="LO5-Ab-vbT" firstAttribute="top" secondItem="Xc9-uK-V8a" secondAttribute="top" id="F2p-2K-0bY"/>
+                            <constraint firstItem="2MU-AG-Ute" firstAttribute="top" secondItem="Xc9-uK-V8a" secondAttribute="top" constant="16" id="F72-NH-Jdw"/>
                             <constraint firstItem="x55-qU-at0" firstAttribute="centerY" secondItem="gfB-ab-tfT" secondAttribute="centerY" id="GSg-wG-9Yq"/>
                             <constraint firstItem="mUh-uh-gsA" firstAttribute="leading" secondItem="aY6-xW-7a7" secondAttribute="leading" id="ImY-PJ-Tlw"/>
                             <constraint firstItem="q5q-Xy-Pbt" firstAttribute="bottom" secondItem="gg2-fU-KFW" secondAttribute="bottom" id="KGt-7p-0Re"/>
@@ -214,6 +227,7 @@
                             <constraint firstItem="q5q-Xy-Pbt" firstAttribute="leading" secondItem="gfB-ab-tfT" secondAttribute="leading" id="fNA-SO-7aS"/>
                             <constraint firstItem="gg2-fU-KFW" firstAttribute="top" secondItem="gfB-ab-tfT" secondAttribute="bottom" constant="9" id="fn4-s9-lKO"/>
                             <constraint firstItem="fMS-BN-x7b" firstAttribute="top" secondItem="F8l-RN-ukK" secondAttribute="bottom" constant="9" id="gMF-2Z-Mvk"/>
+                            <constraint firstItem="wv2-VT-8yh" firstAttribute="trailing" secondItem="2MU-AG-Ute" secondAttribute="trailing" constant="16" id="gse-uA-nz9"/>
                             <constraint firstItem="gfB-ab-tfT" firstAttribute="leading" secondItem="Dka-Gt-J5X" secondAttribute="leading" id="jfM-Uc-ff5"/>
                             <constraint firstItem="wv2-VT-8yh" firstAttribute="trailing" secondItem="fMS-BN-x7b" secondAttribute="trailing" constant="8" id="jwX-tQ-jXJ"/>
                             <constraint firstItem="ElN-kT-jmc" firstAttribute="top" secondItem="F8l-RN-ukK" secondAttribute="top" id="kDm-sf-EJf"/>
@@ -230,6 +244,7 @@
                     <connections>
                         <outlet property="bannerImageView" destination="LO5-Ab-vbT" id="UNX-Fn-OeX"/>
                         <outlet property="dashboardTitleLabel" destination="Dka-Gt-J5X" id="Px6-Vr-qbp"/>
+                        <outlet property="logoutButton" destination="2MU-AG-Ute" id="z0u-7m-7tU"/>
                         <outlet property="myAppsLabel" destination="aY6-xW-7a7" id="FwO-u8-g33"/>
                         <outlet property="myAppsTableView" destination="mUh-uh-gsA" id="tdg-tK-xcJ"/>
                         <outlet property="pendingApprovalsCountLabel" destination="gfB-ab-tfT" id="Rh2-Qa-zAw"/>
@@ -247,6 +262,7 @@
     </scenes>
     <resources>
         <image name="dashboardBackground" width="2016" height="1512"/>
+        <image name="gotoImage" width="32" height="32"/>
         <image name="newsIcon" width="133" height="133"/>
         <image name="star_empty" width="16" height="16"/>
     </resources>

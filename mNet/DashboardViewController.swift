@@ -26,6 +26,8 @@ class DashboardViewController: BaseViewController, UITableViewDataSource, UITabl
     @IBOutlet weak var myAppsLabel: UILabel!
     @IBOutlet weak var myAppsTableView: UITableView!
     
+    @IBOutlet weak var logoutButton: UIButton!
+    
     //MARK: View Controller Delegates
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,6 +35,8 @@ class DashboardViewController: BaseViewController, UITableViewDataSource, UITabl
         // Do any additional setup after loading the view.
         
         myAppsTableView.tableFooterView = UIView()
+        logoutButton.imageView?.image = logoutButton.imageView?.image?.withRenderingMode(.alwaysTemplate)
+        logoutButton.imageView?.tintColor = ColorConstants.kWhiteColor
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -91,4 +95,10 @@ class DashboardViewController: BaseViewController, UITableViewDataSource, UITabl
             
         }
     }
+    
+    @IBAction func logOutAction(_ sender: UIButton) {
+        
+        AppDelegate.sharedInstance.logout()
+    }
+    
 }

@@ -82,7 +82,7 @@ class BaseViewController: UIViewController,RetryViewProtocol {
 
     func showLoadingOnWindow() {
         
-        let appDelegate:AppDelegate = AppDelegate.appDelegate()
+        let appDelegate:AppDelegate = AppDelegate.sharedInstance
         
         if(self.loadingViewOnWindow == nil){
             
@@ -139,7 +139,7 @@ class BaseViewController: UIViewController,RetryViewProtocol {
 
     func showTransperantLoadingOnWindow() {
         
-        let appDelegate:AppDelegate = AppDelegate.appDelegate()
+        let appDelegate:AppDelegate = AppDelegate.sharedInstance
         
         if(self.transaperantLoadingViewOnWindow == nil){
             
@@ -274,6 +274,13 @@ class BaseViewController: UIViewController,RetryViewProtocol {
     func showQuickErrorAlert(message:String) {
         
         let alertController:UIAlertController = UIAlertController(title: AlertMessages.error, message: message, preferredStyle: .alert)
+        alertController.addAction(UIAlertAction(title: AlertMessages.ok, style: .cancel, handler: nil))
+        present(alertController, animated: true, completion: nil)
+    }
+    
+    func showNoInternetAlert() {
+        
+        let alertController:UIAlertController = UIAlertController(title: AlertMessages.networkUnavailable, message: AlertMessages.connectToInternet, preferredStyle: .alert)
         alertController.addAction(UIAlertAction(title: AlertMessages.ok, style: .cancel, handler: nil))
         present(alertController, animated: true, completion: nil)
     }

@@ -15,7 +15,7 @@ class LoginDataController: NSObject {
     var loginType:String = LoginType.normal
     
     func validateEmailAndPassword() -> (valid:Bool, errorMessage:String) {
-    
+        
         if userName.isEmpty {
             return (false,"Please enter Email-ID")
         }

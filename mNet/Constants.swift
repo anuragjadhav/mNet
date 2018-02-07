@@ -61,6 +61,7 @@ struct AlertMessages {
     static let error:String = "Error"
     static let ok:String = "OK"
     static let sorry:String = "Sorry"
+    static let connectToInternet:String = "Please connect to the Internet to continue"
 
 }
 
@@ -70,6 +71,7 @@ struct ColorConstants {
     static let kBlueColor: UIColor = UIColor(red: 74.0/255.0, green: 144.0/255.0, blue: 226.0/255.0, alpha: 1.0)
     static let kRedColor: UIColor = UIColor(red: 221.0/255.0, green: 75.0/255.0, blue: 57.0/255.0, alpha: 1.0)
     static let kBackgroundColor: UIColor = UIColor(red: 247.0/255.0, green: 248.0/255.0, blue: 249.0/255.0, alpha: 1.0)
+    static let kWhiteColor:UIColor = UIColor.white
 }
 
 struct SettingOptions {
@@ -147,6 +149,7 @@ struct TabNames {
 struct UserDefaultsKeys {
     
     static let loggedInUser:String = "loggedInUser"
+    static let loginStatus:String = "isUserLoggedIn"
 }
 
 struct StoryboardIDs {
@@ -162,6 +165,7 @@ extension UIStoryboard {
     static let notifications:UIStoryboard = UIStoryboard(name: "Notifications", bundle: nil)
     static let profile:UIStoryboard = UIStoryboard(name: "Profile", bundle: nil)
     static let tabBar:UIStoryboard = UIStoryboard(name: "TabBar", bundle: nil)
+    static let login:UIStoryboard = UIStoryboard(name: "Login", bundle: nil)
 }
 
 extension UIFont {
