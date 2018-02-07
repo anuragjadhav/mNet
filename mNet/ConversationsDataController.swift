@@ -11,17 +11,20 @@ import UIKit
 class ConversationsDataController: NSObject {
     
     var conversations:[Conversation] = []
+    var selectedCoversation:Conversation?
     var pageStart:Int = 0
     var previousSearchText:String = ""
     var currentSearchText:String = ""
     let pageLength:Int = 10
     
-    func getConversations(searchText:String,onSuccess:@escaping () -> Void , onFailure : @escaping (String) -> Void) {
+    var newConversationReply:Conversation?
+    
+    func getConversations(searchText:String,onSuccess:@escaping (Int) -> Void , onFailure : @escaping (String) -> Void) {
         
         self.currentSearchText = searchText
 
         //increment page start count only if prevoius search text and latest search text is same
-        if(self.previousSearchText == self.currentSearchText)
+        if(self.previousSearchText == self.currentSearchText && self.currentSearchText != "")
         {
             self.pageStart += self.conversations.count
         }
@@ -43,7 +46,7 @@ class ConversationsDataController: NSObject {
         
         WrapperManager.shared.conversationWrapper.getConversationsList(postParams: postParams, onSuccess: { [unowned self] (newConversationList) in
 
-            if(self.currentSearchText == self.previousSearchText)
+            if(self.currentSearchText == self.previousSearchText && self.currentSearchText != "")
             {
                 //add received new array objects
                 for conversation in newConversationList
@@ -58,11 +61,46 @@ class ConversationsDataController: NSObject {
             
             self.previousSearchText = self.currentSearchText
             
-            onSuccess()
+            onSuccess(self.getUnreadConversationCount())
             
         }) { (errorMessage) in
             
             onFailure(errorMessage)
         }
+    }
+    
+    
+    func markCOnversationAsRead() {
+        
+        if(self.selectedCoversation?.readState == "0")
+        {
+            let user:User = User.loggedInUser()!
+            var postParams:[String:Any] = [String:Any]()
+            postParams["user_id"] = user.userId
+            postParams["notification_id"] = selectedCoversation?.postId
+            
+            WrapperManager.shared.conversationWrapper.markConversationAsRead(postParams: postParams, onSuccess: { [unowned self] in
+                
+                self.selectedCoversation?.readState = "1"
+            }) {
+                
+            }
+        }
+    }
+    
+    func getUnreadConversationCount() -> Int
+    {
+        let filteredArray:[Conversation] =  self.conversations.filter{$0.readState == "0" }
+        return filteredArray.count
+    }
+    
+    func postNewConversationMessageReplyWith(message:String)
+    {
+        
+    }
+    
+    func postNewConversationMediaMessageWithMedia(media:String)
+    {
+        
     }
 }

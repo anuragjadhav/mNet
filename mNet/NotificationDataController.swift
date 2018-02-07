@@ -14,7 +14,7 @@ class NotificationDataController: NSObject {
     let limit:Int = 10
     var start:Int = 0
 
-    func getNotifcations(isReload:Bool,onSuccess:@escaping () -> Void , onFailure : @escaping (String) -> Void) {
+    func getNotifcations(isReload:Bool,onSuccess:@escaping (Int) -> Void , onFailure : @escaping (String) -> Void) {
         
         if(isReload){
             
@@ -38,11 +38,18 @@ class NotificationDataController: NSObject {
             //change start
             self.start += self.notifications.count
             
-            onSuccess()
+            onSuccess(self.getUnreadNotificationCount())
             
         }) { (errorMessage) in
             
             onFailure(errorMessage)
         }
+    }
+    
+    
+    func getUnreadNotificationCount() -> Int
+    {
+        let filteredArray:[NotificationObject] =  self.notifications.filter{$0.status == "0" }
+        return filteredArray.count
     }
 }
