@@ -57,4 +57,10 @@ class Profile: NSObject,Mappable {
         profileVisitsCount <- map["profile_visits_count"]
         groupCount <- map["group_count"]
     }
+    
+    override func copy() -> Any {
+        
+        let json:[String:Any] = self.toJSON()
+        return Profile(JSON: json) as Any
+    }
 }

@@ -40,7 +40,6 @@ class ConversationsDataController: NSObject {
         postParams["post_start"] = "\(self.pageStart)"
         postParams["post_limit"] = "\(self.pageLength)"
         postParams["search_value"] = self.currentSearchText
-
         
         WrapperManager.shared.conversationWrapper.getConversationsList(postParams: postParams, onSuccess: { [unowned self] (newConversationList) in
 

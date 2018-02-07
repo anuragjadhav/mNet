@@ -70,6 +70,8 @@
 		05A7A8FD1FF802BC00472A60 /* ApprovalsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05A7A8FC1FF802BC00472A60 /* ApprovalsViewController.swift */; };
 		05A7A8FF1FF80B7700472A60 /* SelectUserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05A7A8FE1FF80B7700472A60 /* SelectUserViewController.swift */; };
 		05A7A9011FF815A000472A60 /* ConversationInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05A7A9001FF8159F00472A60 /* ConversationInfoViewController.swift */; };
+		05AB7F29202B65330059ED56 /* LoginDataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05AB7F28202B65330059ED56 /* LoginDataController.swift */; };
+		05AB7F2B202B68B60059ED56 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05AB7F2A202B68B60059ED56 /* Extensions.swift */; };
 		05CC51C320123AAA00EA6D55 /* ApprovalSectionCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05CC51C220123AAA00EA6D55 /* ApprovalSectionCollectionViewCell.swift */; };
 		5E183E961FF3791D00368DE1 /* ApproveReject.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5E183E951FF3791D00368DE1 /* ApproveReject.storyboard */; };
 		5E183E9B1FF37B7C00368DE1 /* RejectApplicationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E183E9A1FF37B7C00368DE1 /* RejectApplicationViewController.swift */; };
@@ -229,6 +231,8 @@
 		05A7A8FC1FF802BC00472A60 /* ApprovalsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApprovalsViewController.swift; sourceTree = "<group>"; };
 		05A7A8FE1FF80B7700472A60 /* SelectUserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectUserViewController.swift; sourceTree = "<group>"; };
 		05A7A9001FF8159F00472A60 /* ConversationInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConversationInfoViewController.swift; sourceTree = "<group>"; };
+		05AB7F28202B65330059ED56 /* LoginDataController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginDataController.swift; sourceTree = "<group>"; };
+		05AB7F2A202B68B60059ED56 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		05CC51C220123AAA00EA6D55 /* ApprovalSectionCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApprovalSectionCollectionViewCell.swift; sourceTree = "<group>"; };
 		5E183E951FF3791D00368DE1 /* ApproveReject.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = ApproveReject.storyboard; sourceTree = "<group>"; };
 		5E183E9A1FF37B7C00368DE1 /* RejectApplicationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RejectApplicationViewController.swift; sourceTree = "<group>"; };
@@ -360,6 +364,7 @@
 		058A0EC91FF7C4CA00147238 /* Data Controller */ = {
 			isa = PBXGroup;
 			children = (
+				05AB7F28202B65330059ED56 /* LoginDataController.swift */,
 			);
 			name = "Data Controller";
 			sourceTree = "<group>";
@@ -621,6 +626,7 @@
 			isa = PBXGroup;
 			children = (
 				5E1C499C1FEA80A1007CE624 /* ViewBorder.swift */,
+				05AB7F2A202B68B60059ED56 /* Extensions.swift */,
 			);
 			name = Extensions;
 			sourceTree = "<group>";
@@ -1077,6 +1083,7 @@
 				05A569C02017B7B300C6F713 /* DictionaryTransform.swift in Sources */,
 				5E37E4D4201204BC00088001 /* NotificationsViewController.swift in Sources */,
 				05A569C32017B7B300C6F713 /* ImmutableMappable.swift in Sources */,
+				05AB7F2B202B68B60059ED56 /* Extensions.swift in Sources */,
 				5E4A8D3B1FF4FB4900086667 /* PeopleTableViewCell.swift in Sources */,
 				5E1A8D10201DF57400BFAF10 /* ProfileWrapper.swift in Sources */,
 				05A569D12017B7B300C6F713 /* TransformOperators.swift in Sources */,
@@ -1092,6 +1099,7 @@
 				5E183EA41FF3F97600368DE1 /* PeopleListTableViewCell.swift in Sources */,
 				05A569CC2017B7B300C6F713 /* ISO8601DateTransform.swift in Sources */,
 				5E2D37512020929A0013A138 /* UIScrollViewExtensions.swift in Sources */,
+				05AB7F29202B65330059ED56 /* LoginDataController.swift in Sources */,
 				05A5699B2017B74B00C6F713 /* Notifications.swift in Sources */,
 				5E2D373D2020667F0013A138 /* ImageDownloader.swift in Sources */,
 				05A5699A2017B74B00C6F713 /* SessionDelegate.swift in Sources */,

@@ -14,17 +14,34 @@ class User: NSObject, Mappable {
     var password:String = "Sree@123"
     var userId:String = "42"
     
+//    var email:String = ""
+//    var password:String = ""
+//    var userId:String = ""
+    var name:String = ""
+    var status:String = ""
+    
     required init?(map: Map) {
         
     }
     
     func mapping(map: Map) {
         
-        email <- map["UserEmail"]
-        password <- map["UserPass"]
-        userId <- map["UserId"]
+//        email <- map["LoginEmail"]
+//        password <- map["password"]
+//        userId <- map["user_id"]
+        name <- map["LoginName"]
+        status <- map["Status"]
     }
     
+    //MARK: To Dictionary
+    func toJSONPost() -> [String:Any] {
+        
+        var dictionary:[String:Any] = [String:Any]()
+        dictionary["UserEmail"] = email
+        dictionary["UserPass"] = password
+        dictionary["UserId"] = userId
+        return dictionary
+    }
     
     //MARK: Save And Retrieve
     func saveToUserDefaults() {
@@ -52,7 +69,7 @@ class User: NSObject, Mappable {
             return false
         }
         
-        return user.userId != ""
+        return !user.userId.isEmpty
     }
     
     static func logoutUser() {

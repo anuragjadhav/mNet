@@ -16,20 +16,12 @@ class ConversationsWrapper: NSObject {
            
             if let responseDict:[String:Any] = response.result.value as? [String:Any] {
                 
-                let error:String = responseDict["error"] as! String
+                let error:String = responseDict[DictionaryKeys.APIResponse.error] as! String
                 
-                if(error == "0")
+                if(error == DictionaryKeys.APIResponse.noError)
                 {
-                    let conversationDictArray:[[String:Any]] = responseDict["status"] as! [[String:Any]]
-                    
-                    var conversationArray:[Conversation] = []
-                    
-                    for conversationDict in conversationDictArray
-                    {
-                        let conversation:Conversation = Conversation(JSON: conversationDict)!
-                        conversationArray.append(conversation)
-                    }
-                    
+                    let conversationDictArray:[[String:Any]] = responseDict[DictionaryKeys.APIResponse.responseData] as! [[String:Any]]
+                    let conversationArray:[Conversation] = [Conversation].init(JSONArray: conversationDictArray)
                     onSuccess(conversationArray)
                 }
                 else

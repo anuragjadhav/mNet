@@ -72,7 +72,7 @@ class NotificationsViewController: BaseViewController, UITableViewDelegate, UITa
     
     func getNotifications(isReload:Bool,isRefresh:Bool)
     {
-        if Reachability.isConnectedToNetwork(){
+        if Reachability.isConnectedToNetwork() {
             
             if(isRefresh == false){
                 
