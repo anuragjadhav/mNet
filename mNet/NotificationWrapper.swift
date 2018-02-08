@@ -43,9 +43,9 @@ class NotificationWrapper: NSObject {
             
             if let responseDict:[String:Any] = response.result.value as? [String:Any] {
                 
-                let error:String = responseDict["error"] as! String
+                let error:String = responseDict[DictionaryKeys.APIResponse.error] as! String
                 
-                if(error == "0")
+                if(error == DictionaryKeys.APIResponse.noError)
                 {
                     onSuccess()
                 }

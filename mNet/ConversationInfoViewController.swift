@@ -12,11 +12,8 @@ class ConversationInfoViewController: BaseViewController,UITableViewDelegate,UIT
 
     //MARK: Outlets and Properties
     @IBOutlet weak var user1Label: CustomBrownTextColorLabel!
-    
     @IBOutlet weak var user2Label: CustomBrownTextColorLabel!
-    
     @IBOutlet weak var dateAndTimeLabel: UILabel!
-    
     @IBOutlet weak var membersLabel: CustomBlueTextColorLabel!
     
     @IBOutlet weak var membersTableView: UITableView!

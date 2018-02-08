@@ -43,9 +43,9 @@ class ConversationsWrapper: NSObject {
             
             if let responseDict:[String:Any] = response.result.value as? [String:Any] {
                 
-                let error:String = responseDict["error"] as! String
+                let error:String = responseDict[DictionaryKeys.APIResponse.error] as! String
                 
-                if(error == "0")
+                if(error == DictionaryKeys.APIResponse.noError)
                 {
                     onSuccess()
                 }
@@ -67,9 +67,9 @@ class ConversationsWrapper: NSObject {
             
             if let responseDict:[String:Any] = response.result.value as? [String:Any] {
                 
-                let error:String = responseDict["error"] as! String
+                let error:String = responseDict[DictionaryKeys.APIResponse.error] as! String
                 
-                if(error == "0")
+                if(error == DictionaryKeys.APIResponse.noError)
                 {
                     let conversationId:String = responseDict["post_id"] as! String
                     onSuccess(conversationId)

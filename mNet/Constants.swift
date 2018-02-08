@@ -10,7 +10,7 @@ import UIKit
 
 struct URLS {
     
-    static let baseURL:URL = URL(string:"http://52.187.131.90:81/d_mnetv2/d_MNetV2Service/MnetV2WebService/")!
+    static let baseURL:URL = URL(string:"http://brandintell-hero.com:81/d_mnetv2/d_MNetV2Service/MnetV2WebService/")!
     static let getSettings:URL = URL(string: "getsetting", relativeTo: baseURL)!
     static let setSettings:URL = URL(string: "setsetting", relativeTo: baseURL)!
     static let getConversationsList:URL = URL(string: "GetPost", relativeTo: baseURL)!
