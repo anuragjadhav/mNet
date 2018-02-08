@@ -8,7 +8,7 @@
 
 import UIKit
 
-class LoginViewController: BaseViewController {
+class LoginViewController: BaseViewController, UITextFieldDelegate {
 
     //MARK: Outlets and Properties
     @IBOutlet weak var logoImageView: UIImageView!
@@ -21,24 +21,52 @@ class LoginViewController: BaseViewController {
     @IBOutlet weak var signInButton: UIButton!
     @IBOutlet weak var loginWithGoogleButton: UIButton!
     
+    var dataController:LoginDataController = LoginDataController()
     
     //MARK: View Controller Delegates
     override func viewDidLoad() {
         super.viewDidLoad()
-
     }
-
+    
 
     //MARK:Button Actions
     
     @IBAction func signInButtonClicked(_ sender: UIButton) {
         
-        let tabBarNavigationController = (UIStoryboard.init(name:"TabBar", bundle: Bundle.main)).instantiateViewController(withIdentifier: "TabBarNavigationController")
-        self.present(tabBarNavigationController, animated: true, completion: nil)
+        dataController.userName = emailTextField.text ?? ""
+        dataController.password = passwordTextField.text ?? ""
+        
+        if !Reachability.isConnectedToNetwork() {
+            showNoInternetAlert()
+            return
+        }
+        
+        let validation = dataController.validateEmailAndPassword()
+        
+        if validation.valid {
+            
+            self.showTransperantLoadingOnViewController()
+            dataController.loginType = LoginType.normal
+            dataController.postLogin(onSuccess: { [unowned self] in
+                
+                self.removeTransperantLoadingFromViewController()
+                AppDelegate.sharedInstance.makeDashboardPageHome(true)
+                
+                }, onFailure: { [unowned self] (errorMessage) in
+                    
+                    self.removeTransperantLoadingFromViewController()
+                    self.showQuickFailureAlert(message: errorMessage)
+            })
+        }
+        else {
+            showQuickErrorAlert(message: validation.errorMessage)
+        }
+        
     }
     
     
     @IBAction func loginWithGoogleButtonAction(_ sender: UIButton) {
+        
     }
     
     

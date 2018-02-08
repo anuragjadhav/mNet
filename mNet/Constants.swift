@@ -21,8 +21,37 @@ struct URLS {
     static let updateProfile:URL = URL(string: "updateProfile", relativeTo: baseURL)!
     static let getPeopleList:URL = URL(string: "getUserList", relativeTo: baseURL)!
     static let profileImageBaseURLString:String = "http://52.187.131.90:81/d_mnetv2/public/images/"
+    
+    static let liveBaseURL:URL = URL(string:"http://www.m-net.in/p_MNetV2Service/MnetV2WebService/")!
+    static let loginAuthenticate:URL = URL(string: "public_authenticate", relativeTo: liveBaseURL)!
 }
 
+
+struct LoginType {
+    
+    static let normal:String = "0"
+    static let googleSSO:String = "GmailSSO"
+}
+
+struct DictionaryKeys {
+    
+    struct APIResponse {
+        
+        static let error:String = "error"
+        static let responseData:String = "status"
+        static let noError:String = "0"
+        static let noErrorInt:Int = 0
+    }
+    
+    struct LoginPost {
+        
+        static let username:String = "username"
+        static let password:String = "password"
+        static let requestFrom:String = "request_from"
+        static let loginType:String = "is_authenticate_from"
+        static let requestFromApp:String = "App"
+    }
+}
 
 struct AlertMessages {
     
@@ -30,8 +59,9 @@ struct AlertMessages {
     static let success:String = "Success"
     static let failure:String = "Failure"
     static let error:String = "Error"
-    static let ok:String = "Ok"
+    static let ok:String = "OK"
     static let sorry:String = "Sorry"
+    static let connectToInternet:String = "Please connect to the Internet to continue"
 
 }
 
@@ -41,6 +71,7 @@ struct ColorConstants {
     static let kBlueColor: UIColor = UIColor(red: 74.0/255.0, green: 144.0/255.0, blue: 226.0/255.0, alpha: 1.0)
     static let kRedColor: UIColor = UIColor(red: 221.0/255.0, green: 75.0/255.0, blue: 57.0/255.0, alpha: 1.0)
     static let kBackgroundColor: UIColor = UIColor(red: 247.0/255.0, green: 248.0/255.0, blue: 249.0/255.0, alpha: 1.0)
+    static let kWhiteColor:UIColor = UIColor.white
 }
 
 struct SettingOptions {
@@ -118,6 +149,7 @@ struct TabNames {
 struct UserDefaultsKeys {
     
     static let loggedInUser:String = "loggedInUser"
+    static let loginStatus:String = "isUserLoggedIn"
 }
 
 struct StoryboardIDs {
@@ -132,6 +164,8 @@ extension UIStoryboard {
     static let settings:UIStoryboard = UIStoryboard(name: "Settings", bundle: nil)
     static let notifications:UIStoryboard = UIStoryboard(name: "Notifications", bundle: nil)
     static let profile:UIStoryboard = UIStoryboard(name: "Profile", bundle: nil)
+    static let tabBar:UIStoryboard = UIStoryboard(name: "TabBar", bundle: nil)
+    static let login:UIStoryboard = UIStoryboard(name: "Login", bundle: nil)
 }
 
 extension UIFont {

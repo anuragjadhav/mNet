@@ -147,7 +147,7 @@ class SettingsProfileDataController: NSObject {
         
         //set parameters to post
         let user:User = User.loggedInUser()!
-        var postParams:[String:Any] = user.toJSON()
+        var postParams:[String:Any] = user.toJSONPost()
         postParams["parameter"] = parameter
         postParams["value"] = selectedPrivacySettingOption?.isSettingOn
         

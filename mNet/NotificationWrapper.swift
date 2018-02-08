@@ -16,20 +16,12 @@ class NotificationWrapper: NSObject {
             
             if let responseDict:[String:Any] = response.result.value as? [String:Any] {
                 
-                let error:String = responseDict["error"] as! String
+                let error:String = responseDict[DictionaryKeys.APIResponse.error] as! String
                 
-                if(error == "0")
+                if(error == DictionaryKeys.APIResponse.noError)
                 {
-                    let notificationDictArray:[[String:Any]] = responseDict["status"] as! [[String:Any]]
-                    
-                    var notificationsArray:[NotificationObject] = []
-                    
-                    for notificationDict in notificationDictArray
-                    {
-                        let notification:NotificationObject = NotificationObject(JSON: notificationDict)!
-                        notificationsArray.append(notification)
-                    }
-                    
+                    let notificationDictArray:[[String:Any]] = responseDict[DictionaryKeys.APIResponse.responseData] as! [[String:Any]]
+                    let notificationsArray:[NotificationObject] = [NotificationObject].init(JSONArray: notificationDictArray)
                     onSuccess(notificationsArray)
                 }
                 else

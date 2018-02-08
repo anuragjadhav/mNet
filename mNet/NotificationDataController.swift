@@ -24,7 +24,7 @@ class NotificationDataController: NSObject {
         
         let user:User = User.loggedInUser()!
         
-        var postParams:[String:Any] = user.toJSON()
+        var postParams:[String:Any] = user.toJSONPost()
         postParams["limit"] = "\(limit)"
         postParams["start"] = "\(start)"
 
