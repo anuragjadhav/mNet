@@ -24,6 +24,9 @@ struct URLS {
     
     static let liveBaseURL:URL = URL(string:"http://www.m-net.in/p_MNetV2Service/MnetV2WebService/")!
     static let loginAuthenticate:URL = URL(string: "public_authenticate", relativeTo: liveBaseURL)!
+    static let registerDevice:URL = URL(string: "registerToken", relativeTo: liveBaseURL)!
+    static let deRegisterDevice:URL = URL(string: "deregisterToken", relativeTo: liveBaseURL)!
+    
 }
 
 
@@ -50,6 +53,11 @@ struct DictionaryKeys {
         static let requestFrom:String = "request_from"
         static let loginType:String = "is_authenticate_from"
         static let requestFromApp:String = "App"
+    }
+    
+    struct DeviceRegistration {
+        
+        static let deviceToken:String = "token_id"
     }
 }
 
@@ -150,6 +158,7 @@ struct UserDefaultsKeys {
     
     static let loggedInUser:String = "loggedInUser"
     static let loginStatus:String = "isUserLoggedIn"
+    static let deviceToken:String = "deviceTokenForRemoteNotifications"
 }
 
 struct StoryboardIDs {

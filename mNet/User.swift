@@ -128,6 +128,14 @@ class User: NSObject, Mappable {
         return dictionary
     }
     
+    func toJSONPostWithoutEmail() -> [String:Any] {
+        
+        var dictionary:[String:Any] = [String:Any]()
+        dictionary["UserPass"] = password
+        dictionary["UserId"] = userId
+        return dictionary
+    }
+    
     //MARK: Save And Retrieve
     func saveToUserDefaults() {
         
