@@ -454,6 +454,9 @@
                                                         <constraint firstAttribute="width" constant="18" id="yyt-9e-niD"/>
                                                     </constraints>
                                                     <state key="normal" image="deleteBin"/>
+                                                    <connections>
+                                                        <action selector="deleteButtonAction:" destination="fMR-Vp-zRQ" eventType="touchUpInside" id="4B9-l5-0FQ"/>
+                                                    </connections>
                                                 </button>
                                             </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -467,6 +470,11 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" red="0.96862745100000003" green="0.97254901959999995" blue="0.97647058819999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <connections>
+                                            <outlet property="deleteButton" destination="Tha-DT-pen" id="w12-7I-BrC"/>
+                                            <outlet property="memberNameLabel" destination="5Tu-XR-wE8" id="0vf-bG-e9H"/>
+                                            <outlet property="memberTypeLabel" destination="Msh-un-Xr9" id="XhT-jr-oHU"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>
@@ -519,7 +527,6 @@
                 <searchDisplayController id="Wbs-ZM-LZl">
                     <connections>
                         <outlet property="delegate" destination="fMR-Vp-zRQ" id="2Ir-jA-fPh"/>
-                        <outlet property="searchBar" destination="PMA-t4-ljf" id="uls-yg-U2Y"/>
                         <outlet property="searchContentsController" destination="fMR-Vp-zRQ" id="hco-n5-tUW"/>
                         <outlet property="searchResultsDataSource" destination="fMR-Vp-zRQ" id="wEn-5D-D0V"/>
                         <outlet property="searchResultsDelegate" destination="fMR-Vp-zRQ" id="F2H-lW-3Ck"/>

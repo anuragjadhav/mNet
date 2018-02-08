@@ -14,6 +14,7 @@ struct URLS {
     static let getSettings:URL = URL(string: "getsetting", relativeTo: baseURL)!
     static let setSettings:URL = URL(string: "setsetting", relativeTo: baseURL)!
     static let getConversationsList:URL = URL(string: "GetPost", relativeTo: baseURL)!
+    static let deleteUserFromConversation:URL = URL(string:"deletepostuser", relativeTo: baseURL)!
     static let markConversationAsRead:URL = URL(string: "markPostAsRead", relativeTo: baseURL)!
     static let markNotificationAsRead:URL = URL(string: "", relativeTo: baseURL)!
     static let getNotificationsList:URL = URL(string: "NotificationList", relativeTo: baseURL)!

@@ -16,8 +16,9 @@ class ConversationsDataController: NSObject {
     var previousSearchText:String = ""
     var currentSearchText:String = ""
     let pageLength:Int = 10
-    
     var newConversationReply:Conversation?
+    var memberList:[ConversationMember]?
+    var memberToDelete:ConversationMember?
     
     func getConversations(searchText:String,onSuccess:@escaping (Int) -> Void , onFailure : @escaping (String) -> Void) {
         
@@ -88,6 +89,52 @@ class ConversationsDataController: NSObject {
         }
     }
     
+    func setupMemberList()
+    {
+        memberList = selectedCoversation?.membersList
+    }
+    
+    func filterMemberListWithSearchTerm(searchTerm:String?)
+    {
+        if(searchTerm != nil && searchTerm != "")
+        {
+            let filteredMemberArray:[ConversationMember] = (selectedCoversation?.membersList.filter { $0.userName.contains(searchTerm!) })!
+            memberList = filteredMemberArray
+        }
+        else
+        {
+            memberList = selectedCoversation?.membersList
+        }
+    }
+    
+    func deleteUserFromConversation(onSuccess:@escaping () -> Void , onFailure : @escaping (String) -> Void) {
+        
+        var postParams:[String:Any] = [String:Any]()
+        postParams["UserId"] = memberToDelete?.userId
+        postParams["post_id"] = selectedCoversation?.postId
+        
+        WrapperManager.shared.conversationWrapper.deleteUserFromConversation(postParams: postParams, onSuccess: { [unowned self] in
+            
+            self.deleteMemberFromList()
+            
+            onSuccess()
+            
+        }) { (errorMessage) in
+            
+            onFailure(errorMessage)
+        }
+    }
+    
+    func deleteMemberFromList()
+    {
+        let newFilteredMemberArray1:[ConversationMember] = (memberList!.filter { $0.userId == memberToDelete?.userId})
+        let newFilteredMemberArray2:[ConversationMember] = (selectedCoversation?.membersList.filter { $0.userId == memberToDelete?.userId})!
+        
+        memberList = newFilteredMemberArray1
+        selectedCoversation?.membersList = newFilteredMemberArray2
+    }
+
+    
     func getUnreadConversationCount() -> Int
     {
         let filteredArray:[Conversation] =  self.conversations.filter{$0.readState == "0" }
@@ -103,4 +150,6 @@ class ConversationsDataController: NSObject {
     {
         
     }
+    
+    
 }

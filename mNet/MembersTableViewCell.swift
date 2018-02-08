@@ -10,15 +10,24 @@ import UIKit
 
 class MembersTableViewCell: UITableViewCell {
 
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
+    @IBOutlet weak var memberNameLabel: CustomBrownTextColorLabel!
+    
+    @IBOutlet weak var memberTypeLabel: CustomBrownTextColorLabel!
+    
+    @IBOutlet weak var deleteButton: UIButton!
+    
+    func loadCellWithMember(member:ConversationMember , isPostCreator:Bool)
+    {
+        memberNameLabel.text = member.userName
+        memberNameLabel.text = member.memberType
+        
+        if(isPostCreator)
+        {
+            deleteButton.isHidden = false
+        }
+        else
+        {
+            deleteButton.isHidden = true
+        }
     }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
-    }
-
 }

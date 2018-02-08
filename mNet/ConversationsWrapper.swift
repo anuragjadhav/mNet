@@ -61,9 +61,9 @@ class ConversationsWrapper: NSObject {
         }
     }
     
-    func postNewConversationReply(postParams:[String:Any], onSuccess:@escaping (String) -> Void , onFailure : @escaping (String) -> Void){
+    func deleteUserFromConversation(postParams:[String:Any], onSuccess:@escaping () -> Void , onFailure : @escaping (String) -> Void){
         
-        request(URLS.getConversationsList, method: .post, parameters: postParams, encoding: JSONEncoding() as ParameterEncoding, headers: nil).responseJSON { response in
+        request(URLS.deleteUserFromConversation, method: .post, parameters: postParams, encoding: JSONEncoding() as ParameterEncoding, headers: nil).responseJSON { response in
             
             if let responseDict:[String:Any] = response.result.value as? [String:Any] {
                 
@@ -71,17 +71,16 @@ class ConversationsWrapper: NSObject {
                 
                 if(error == DictionaryKeys.APIResponse.noError)
                 {
-                    let conversationId:String = responseDict["post_id"] as! String
-                    onSuccess(conversationId)
+                    onSuccess()
                 }
                 else
                 {
-                    onFailure("Unable to send reply")
+                    onFailure("Unable to delete user")
                 }
             }
             else{
                 
-                onFailure("Unable to send reply")
+                onFailure("Unable to delete user")
             }
         }
     }
