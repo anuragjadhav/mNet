@@ -165,6 +165,9 @@
 		5EF31C86201B5E93007727D8 /* WrapperManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EF31C85201B5E93007727D8 /* WrapperManager.swift */; };
 		5EF31C88201B5F18007727D8 /* SettingsWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EF31C87201B5F18007727D8 /* SettingsWrapper.swift */; };
 		5EF31C8A201B6231007727D8 /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EF31C89201B6231007727D8 /* Profile.swift */; };
+		8BE5DA88202D8DED00E412A7 /* DashboardStats.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BE5DA87202D8DED00E412A7 /* DashboardStats.swift */; };
+		8BE5DA8A202D91CE00E412A7 /* UserApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BE5DA89202D91CE00E412A7 /* UserApp.swift */; };
+		8BE5DA8C202D929E00E412A7 /* CommonResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BE5DA8B202D929E00E412A7 /* CommonResponse.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -328,6 +331,9 @@
 		5EF31C85201B5E93007727D8 /* WrapperManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WrapperManager.swift; sourceTree = "<group>"; };
 		5EF31C87201B5F18007727D8 /* SettingsWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsWrapper.swift; sourceTree = "<group>"; };
 		5EF31C89201B6231007727D8 /* Profile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Profile.swift; sourceTree = "<group>"; };
+		8BE5DA87202D8DED00E412A7 /* DashboardStats.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardStats.swift; sourceTree = "<group>"; };
+		8BE5DA89202D91CE00E412A7 /* UserApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserApp.swift; sourceTree = "<group>"; };
+		8BE5DA8B202D929E00E412A7 /* CommonResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonResponse.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -868,6 +874,8 @@
 				05501F89201D119B00831A08 /* User.swift */,
 				5E2D3746202087BD0013A138 /* People.swift */,
 				5E2D3748202087D50013A138 /* NotificationObject.swift */,
+				8BE5DA87202D8DED00E412A7 /* DashboardStats.swift */,
+				8BE5DA89202D91CE00E412A7 /* UserApp.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -882,6 +890,7 @@
 				5E1A8D0F201DF57400BFAF10 /* ProfileWrapper.swift */,
 				5E2D375220209DB60013A138 /* NotificationWrapper.swift */,
 				5EEFC9BE2021E5C200648F17 /* PeopleWrapper.swift */,
+				8BE5DA8B202D929E00E412A7 /* CommonResponse.swift */,
 			);
 			name = Wrappers;
 			sourceTree = "<group>";
@@ -981,6 +990,7 @@
 				0575623A200A34110010CBB1 /* BaseNavigationController.swift in Sources */,
 				058A0ECC1FF7C4DD00147238 /* LoginViewController.swift in Sources */,
 				5EC3005C1FEC002000229516 /* SettingsProfileDataController.swift in Sources */,
+				8BE5DA88202D8DED00E412A7 /* DashboardStats.swift in Sources */,
 				5E18AE391FF8092E007AA461 /* ApprovalVerificationViewController.swift in Sources */,
 				5E18AE401FF818FC007AA461 /* SendPeopleListTableViewCell.swift in Sources */,
 				05A569CB2017B7B300C6F713 /* DateFormatterTransform.swift in Sources */,
@@ -993,6 +1003,7 @@
 				0531A57B2007E1F900F2232C /* FilterViewController.swift in Sources */,
 				5E1C49A01FEA847B007CE624 /* BaseViewController.swift in Sources */,
 				5E1A8D12201E221600BFAF10 /* ProfileDataController.swift in Sources */,
+				8BE5DA8C202D929E00E412A7 /* CommonResponse.swift in Sources */,
 				5EEFC9C12021E84900648F17 /* PeopleDataController.swift in Sources */,
 				5E2D37412020667F0013A138 /* UIImageView+AlamofireImage.swift in Sources */,
 				5E18AE3E1FF8113A007AA461 /* CustomBlueBackgroundButton.swift in Sources */,
@@ -1057,6 +1068,7 @@
 				058A0ED21FF7C50400147238 /* DashboardMyAppsTableViewCell.swift in Sources */,
 				5E2D375320209DB60013A138 /* NotificationWrapper.swift in Sources */,
 				05A7A9011FF815A000472A60 /* ConversationInfoViewController.swift in Sources */,
+				8BE5DA8A202D91CE00E412A7 /* UserApp.swift in Sources */,
 				5EC3005A1FEBEBFA00229516 /* AppSettingsViewController.swift in Sources */,
 				05501F86201D10AA00831A08 /* ConversationsWrapper.swift in Sources */,
 				05A7A8FB1FF7FEEC00472A60 /* NewConversationViewController.swift in Sources */,
@@ -1176,7 +1188,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -1226,7 +1238,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
@@ -1238,7 +1250,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Developer: enterprise@mediawareonline.com (QJ2624LY4P)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: enterprise@mediawareonline.com (QJ2624LY4P)";
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = 3J7U28GXGW;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -1246,11 +1259,11 @@
 					"$(PROJECT_DIR)/mNet",
 				);
 				INFOPLIST_FILE = mNet/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.mediaware.mNet;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "452e8e1a-759d-42ec-94ea-ba925d2f9628";
+				PROVISIONING_PROFILE = "02c9d8d1-97f9-4692-acb9-cc956cc96ae9";
 				PROVISIONING_PROFILE_SPECIFIER = mNetDevelopment;
 				SWIFT_SWIFT3_OBJC_INFERENCE = On;
 				SWIFT_VERSION = 4.0;
@@ -1261,7 +1274,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Developer: enterprise@mediawareonline.com (QJ2624LY4P)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: enterprise@mediawareonline.com (QJ2624LY4P)";
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = 3J7U28GXGW;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -1269,11 +1283,11 @@
 					"$(PROJECT_DIR)/mNet",
 				);
 				INFOPLIST_FILE = mNet/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.mediaware.mNet;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "7825225e-6766-4167-911c-40e3c620daa8";
+				PROVISIONING_PROFILE = "02c9d8d1-97f9-4692-acb9-cc956cc96ae9";
 				PROVISIONING_PROFILE_SPECIFIER = mNetDevelopment;
 				SWIFT_SWIFT3_OBJC_INFERENCE = On;
 				SWIFT_VERSION = 4.0;

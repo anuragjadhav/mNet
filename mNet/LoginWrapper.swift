@@ -47,6 +47,38 @@ class LoginWrapper: NSObject {
                 onFailure("Login Failed. Please try again.")
             }
         }
+    }
+    
+    func registerDeviceToken(isLogout:Bool, postParams:[String : Any], onSuccess:@escaping () -> Void , onFailure : @escaping () -> Void) {
         
+        var urlToHit:URL = URLS.registerDevice
+        
+        if isLogout {
+            urlToHit = URLS.deRegisterDevice
+        }
+        
+        request(urlToHit, method: .post, parameters: postParams, encoding: JSONEncoding() as ParameterEncoding, headers: nil).responseJSON { (response) in
+            
+            if let responseDict:[String:Any] = response.result.value as? [String:Any] {
+                
+                let error:String = responseDict[DictionaryKeys.APIResponse.error] as! String
+                
+                if error == DictionaryKeys.APIResponse.noError {
+                    
+                    onSuccess()
+                    return
+                }
+                
+                else {
+                    onFailure()
+                    return
+                }
+            }
+            
+            else {
+                onFailure()
+                return
+            }
+        }
     }
 }

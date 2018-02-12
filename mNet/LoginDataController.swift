@@ -39,7 +39,7 @@ class LoginDataController: NSObject {
         loginParams[DictionaryKeys.LoginPost.loginType] = loginType
         loginParams[DictionaryKeys.LoginPost.requestFrom] = DictionaryKeys.LoginPost.requestFromApp
         
-        WrapperManager.shared.loginWrapper.authenticateUser(postParams: loginParams, onSuccess: { (userObject) in
+        WrapperManager.shared.loginWrapper.authenticateUser(postParams: loginParams, onSuccess: { [unowned self] (userObject) in
             
             if userObject.userId.isEmpty {
                 onFailure("Something went wrong. Please try again.")
@@ -48,10 +48,27 @@ class LoginDataController: NSObject {
             else {
                 userObject.saveToUserDefaults()
                 onSuccess()
+                self.registerDeviceToken(userObject)
             }
             
             onSuccess()
         }, onFailure: onFailure)
     }
     
+    func registerDeviceToken(_ user:User) {
+        
+        var postParams:[String:Any] = user.toJSONPostWithoutEmail()
+        
+        guard let deviceToken:String = UserDefaults.standard.string(forKey: UserDefaultsKeys.deviceToken) else {
+            return
+        }
+        
+        postParams[DictionaryKeys.DeviceRegistration.deviceToken] = deviceToken
+        
+        WrapperManager.shared.loginWrapper.registerDeviceToken(isLogout: false, postParams:postParams, onSuccess: {
+            print("Device Registration Success")
+        }) {
+            print("Device Registration Failed")
+        }
+    }
 }

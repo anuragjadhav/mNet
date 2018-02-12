@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import UserNotifications
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -26,6 +27,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func performAppStartTasks(_ app:UIApplication) {
         
         checkLoginStatus()
+        registerForPushNotifications(app)
     }
     
     func checkLoginStatus() {
@@ -78,10 +80,56 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func logout() {
         
+        //TODO: Perform these 2 actions on success of server call
         User.logoutUser()
         makeLoginPageHome(true)
+        deRegisterDeviceToken()
+    }
+    
+    func deRegisterDeviceToken() {
+        
+        var postParams:[String:Any] = User.loggedInUser()!.toJSONPostWithoutEmail()
+        
+        guard let deviceToken:String = UserDefaults.standard.string(forKey: UserDefaultsKeys.deviceToken) else {
+            return
+        }
+        
+        postParams[DictionaryKeys.DeviceRegistration.deviceToken] = deviceToken
+        
+        WrapperManager.shared.loginWrapper.registerDeviceToken(isLogout: true, postParams:postParams, onSuccess: {
+            print("Device UnRegistration Success")
+        }) {
+            print("Device UnRegistration Failed")
+        }
     }
 
+    //MARK: Push Notifications
+    func registerForPushNotifications(_ app:UIApplication) {
+        
+        //For iOS 10 and above
+        if #available(iOS 10, *) {
+            UNUserNotificationCenter.current().requestAuthorization(options:[.badge, .alert, .sound]){ (granted, error) in }
+        }
+        
+        // iOS 9 support
+        else {
+            app.registerUserNotificationSettings(UIUserNotificationSettings(types: [.badge, .sound, .alert], categories: nil))
+        }
+        
+        app.registerForRemoteNotifications()
+    }
+    
+    func application(_ application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
+        
+        let deviceTokenString:String = deviceToken.reduce("", {$0 + String(format: "%02X", $1)})
+        UserDefaults.standard.set(deviceTokenString, forKey: UserDefaultsKeys.deviceToken)
+    }
+    
+    func application(_ application: UIApplication, didFailToRegisterForRemoteNotificationsWithError error: Error) {
+        
+        print("Failed To Register for remote notification - ",error.localizedDescription)
+    }
+    
     //MARK: Application Life Cycle
     func applicationWillResignActive(_ application: UIApplication) {
         // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
