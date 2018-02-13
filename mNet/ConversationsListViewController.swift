@@ -161,7 +161,8 @@ class ConversationsListViewController: BaseViewController, UITableViewDelegate, 
     
     @IBAction func newConversationButtonAction(_ sender: UIButton) {
         
-        let newConversationVC = (UIStoryboard.init(name:"Conversation", bundle: Bundle.main)).instantiateViewController(withIdentifier: "NewConversationViewController")
+        let newConversationVC = (UIStoryboard.init(name:"Conversation", bundle: Bundle.main)).instantiateViewController(withIdentifier: "NewConversationViewController") as! NewConversationViewController
+        newConversationVC.dataCtrl = dataCtrl
         self.navigationController?.pushViewController(newConversationVC, animated: true)
     }
     

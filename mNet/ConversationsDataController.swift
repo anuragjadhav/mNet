@@ -19,15 +19,15 @@ class ConversationsDataController: NSObject {
     
     var newConversationReply:Conversation?
     
-    var memberList:[ConversationMember]?
+    var memberList:[ConversationMember]? = []
     var memberToDelete:ConversationMember?
     
-    var toUserList:[People]?
-    var bccUserList:[People]?
-    var forApprovalUserList:[People]?
-    var forVerificationUserList:[People]?
-    var selectUserList:[People]?
-    var originalSelectUserList:[People]?
+    var toUserList:[People]? = []
+    var bccUserList:[People]? = []
+    var forApprovalUserList:[People]? = []
+    var forVerificationUserList:[People]? = []
+    var selectUserList:[People]? = []
+    var originalSelectUserList:[People]? = []
     var selectUserPageStart:Int = 0
     var selectUserPageLength:Int = 10
     var previousSelectUserSearchText:String = ""

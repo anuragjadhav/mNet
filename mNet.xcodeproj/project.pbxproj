@@ -257,6 +257,7 @@
 		5E18AE491FF82F94007AA461 /* Conversation.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Conversation.storyboard; sourceTree = "<group>"; };
 		5E18AE4B1FF82FA3007AA461 /* Dashboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Dashboard.storyboard; sourceTree = "<group>"; };
 		5E190A772032CB9000EEE97B /* SelectedUsersCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectedUsersCollectionViewCell.swift; sourceTree = "<group>"; };
+		5E190A79203313C800EEE97B /* mNet.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = mNet.entitlements; sourceTree = "<group>"; };
 		5E1A8D06201C49C700BFAF10 /* LoginWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginWrapper.swift; sourceTree = "<group>"; };
 		5E1A8D08201C6A6300BFAF10 /* RetryView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RetryView.xib; sourceTree = "<group>"; };
 		5E1A8D0A201C6CD200BFAF10 /* RetryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RetryView.swift; sourceTree = "<group>"; };
@@ -672,6 +673,7 @@
 		5E20CD911FE952BE004ACE0D /* mNet */ = {
 			isa = PBXGroup;
 			children = (
+				5E190A79203313C800EEE97B /* mNet.entitlements */,
 				5E1C49911FEA45F6007CE624 /* Constants.swift */,
 				5E20CD921FE952BE004ACE0D /* AppDelegate.swift */,
 				5E1A8D0E201C78DF00BFAF10 /* Reachability */,
@@ -936,6 +938,17 @@
 						DevelopmentTeam = 3J7U28GXGW;
 						LastSwiftMigration = 0920;
 						ProvisioningStyle = Manual;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+							com.apple.Push = {
+								enabled = 1;
+							};
+							com.apple.iCloud = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -1258,8 +1271,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = mNet/mNet.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer: enterprise@mediawareonline.com (QJ2624LY4P)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: enterprise@mediawareonline.com (QJ2624LY4P)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = 3J7U28GXGW;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -1271,7 +1285,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.mediaware.mNet;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "02c9d8d1-97f9-4692-acb9-cc956cc96ae9";
+				PROVISIONING_PROFILE = "40a5028c-977e-4eee-8e71-54e2b7454ec0";
 				PROVISIONING_PROFILE_SPECIFIER = mNetDevelopment;
 				SWIFT_SWIFT3_OBJC_INFERENCE = On;
 				SWIFT_VERSION = 4.0;
@@ -1282,8 +1296,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = mNet/mNet.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer: enterprise@mediawareonline.com (QJ2624LY4P)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: enterprise@mediawareonline.com (QJ2624LY4P)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = 3J7U28GXGW;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -1295,8 +1310,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.mediaware.mNet;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "02c9d8d1-97f9-4692-acb9-cc956cc96ae9";
-				PROVISIONING_PROFILE_SPECIFIER = mNetDevelopment;
+				PROVISIONING_PROFILE = "1a8aacf4-cc8b-460d-9bc3-81b9eb37a900";
+				PROVISIONING_PROFILE_SPECIFIER = mNetAppStore;
 				SWIFT_SWIFT3_OBJC_INFERENCE = On;
 				SWIFT_VERSION = 4.0;
 			};

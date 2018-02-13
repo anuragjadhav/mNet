@@ -8,55 +8,31 @@
 
 import UIKit
 
-class NewConversationViewController: BaseViewController {
-
-    //MARK: Outlets and Properties
+class NewConversationViewController: BaseViewController,UICollectionViewDelegate,UICollectionViewDataSource {
     
-    @IBOutlet weak var toLabel: CustomBrownTextColorLabel!
-    @IBOutlet weak var toPlusLabel: CustomBlueTextColorLabel!
-    @IBOutlet weak var toPlusButton: UIButton!
-    
-    @IBOutlet weak var bccLabel: CustomBrownTextColorLabel!
-    @IBOutlet weak var bccPlusLabel: UILabel!
-    @IBOutlet weak var bccPlusButton: UIButton!
-    
-    @IBOutlet weak var approvalLabel: CustomBrownTextColorLabel!
-    @IBOutlet weak var approvalPlusLabel: CustomBlueTextColorLabel!
-    @IBOutlet weak var approvalButton: UIButton!
-    
-    @IBOutlet weak var verificationLabel: CustomBrownTextColorLabel!
-    @IBOutlet weak var verificationPlusLabel: CustomBlueTextColorLabel!
-    @IBOutlet weak var verificationButton: UIButton!
-    
-    @IBOutlet weak var subjectLabel: CustomBrownTextColorLabel!
     @IBOutlet weak var subjectTextField: CustomBrownTextColorTextfield!
+    @IBOutlet weak var messageTextView: CustomBrownColorTextView!
+    @IBOutlet weak var attachmentNameLabel: CustomBlueTextColorLabel!
+    @IBOutlet weak var selectedToUsersCollectionView: UICollectionView!
+    @IBOutlet weak var selectedForVerificationUsersCollectionView: UICollectionView!
+    @IBOutlet weak var selectedForApprovalUsersCollectionView: UICollectionView!
+    @IBOutlet weak var selectedBccUsersCollectionView: UICollectionView!
+
+    var dataCtrl:ConversationsDataController?
     
-    @IBOutlet weak var attachmentLabel: CustomBrownTextColorLabel!
-    @IBOutlet weak var attachmentTextField: CustomBrownTextColorTextfield!
-    
-    @IBOutlet weak var messageLabel: CustomBrownTextColorLabel!
-    @IBOutlet weak var messageTextField: CustomBrownTextColorTextfield!
-    
-    @IBOutlet weak var contentScrollView: UIScrollView!
-    
-    @IBOutlet weak var startConversationLabel: CustomBlueTextColorLabel!
-    @IBOutlet weak var startConversationButton: UIButton!
-    
-    @IBOutlet weak var tickButton: UIBarButtonItem!
-    
-    @IBOutlet weak var crossButton: UIBarButtonItem!
-    
-    //MARK: View Controller Delegates
     override func viewDidLoad() {
-        
         super.viewDidLoad()
-        
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
         self.setUpNavigationController()
+        
+        selectedToUsersCollectionView.reloadData()
+        selectedBccUsersCollectionView.reloadData()
+        selectedForVerificationUsersCollectionView.reloadData()
+        selectedForApprovalUsersCollectionView.reloadData()
     }
     
     //MARK: Setup
@@ -65,42 +41,108 @@ class NewConversationViewController: BaseViewController {
         self.navigationController?.navigationBar.isHidden = false
     }
     
+    //MARK: Collection view delegates
+    
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        
+        if(collectionView === selectedToUsersCollectionView)
+        {
+            return (dataCtrl?.toUserList!.count)!
+        }
+        else if(collectionView === selectedBccUsersCollectionView)
+        {
+           return (dataCtrl?.bccUserList!.count)!
+        }
+        else if(collectionView === selectedForApprovalUsersCollectionView)
+        {
+             return (dataCtrl?.forApprovalUserList!.count)!
+        }
+        else if(collectionView === selectedForVerificationUsersCollectionView)
+        {
+             return (dataCtrl?.forVerificationUserList!.count)!
+        }
+        
+        return 0
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        
+        let cell: SelectedUsersCollectionViewCell = collectionView.dequeueReusableCell(withReuseIdentifier:"SelectedUsersCollectionViewCell", for: indexPath) as! SelectedUsersCollectionViewCell
+        
+        if(collectionView === selectedToUsersCollectionView)
+        {
+            let user:People = (dataCtrl?.toUserList![indexPath.row])!
+            cell.loadCellWithUser(user: user, showDeleteButton:false)
+            
+        }
+        else if(collectionView === selectedBccUsersCollectionView)
+        {
+            let user:People = (dataCtrl?.bccUserList![indexPath.row])!
+            cell.loadCellWithUser(user: user, showDeleteButton:false)
+        }
+        else if(collectionView === selectedForApprovalUsersCollectionView)
+        {
+            let user:People = (dataCtrl?.forApprovalUserList![indexPath.row])!
+            cell.loadCellWithUser(user: user, showDeleteButton:false)
+        }
+        else if(collectionView === selectedForVerificationUsersCollectionView)
+        {
+            let user:People = (dataCtrl?.forVerificationUserList![indexPath.row])!
+            cell.loadCellWithUser(user: user, showDeleteButton:false)
+        }
+        
+        return cell
+        
+    }
+
+    
 
     //MARK: Button Actions
     
     @IBAction func toButtonAction(_ sender: UIButton) {
         
-        let selectUserVC = (UIStoryboard.init(name:"Conversation", bundle: Bundle.main)).instantiateViewController(withIdentifier: "SelectUserViewController")
+        let selectUserVC = (UIStoryboard.init(name:"Conversation", bundle: Bundle.main)).instantiateViewController(withIdentifier: "SelectUserViewController") as! SelectUserViewController
+        selectUserVC.dataCtrl = dataCtrl
+        selectUserVC.userType = NewConversationUserType.to
         self.navigationController?.pushViewController(selectUserVC, animated: true)
     }
     
     @IBAction func bccButtonAction(_ sender: UIButton) {
         
-        let selectUserVC = (UIStoryboard.init(name:"Conversation", bundle: Bundle.main)).instantiateViewController(withIdentifier: "SelectUserViewController")
+        let selectUserVC = (UIStoryboard.init(name:"Conversation", bundle: Bundle.main)).instantiateViewController(withIdentifier: "SelectUserViewController") as! SelectUserViewController
+        selectUserVC.dataCtrl = dataCtrl
+        selectUserVC.userType = NewConversationUserType.bcc
         self.navigationController?.pushViewController(selectUserVC, animated: true)
     }
     
     @IBAction func approvalButtonAction(_ sender: UIButton) {
         
-        let selectUserVC = (UIStoryboard.init(name:"Conversation", bundle: Bundle.main)).instantiateViewController(withIdentifier: "SelectUserViewController")
+        let selectUserVC = (UIStoryboard.init(name:"Conversation", bundle: Bundle.main)).instantiateViewController(withIdentifier: "SelectUserViewController") as! SelectUserViewController
+        selectUserVC.dataCtrl = dataCtrl
+        selectUserVC.userType = NewConversationUserType.forApproval
         self.navigationController?.pushViewController(selectUserVC, animated: true)
     }
     
     @IBAction func verificationButtonAction(_ sender: UIButton) {
         
-        let selectUserVC = (UIStoryboard.init(name:"Conversation", bundle: Bundle.main)).instantiateViewController(withIdentifier: "SelectUserViewController")
+        let selectUserVC = (UIStoryboard.init(name:"Conversation", bundle: Bundle.main)).instantiateViewController(withIdentifier: "SelectUserViewController") as! SelectUserViewController
+        selectUserVC.dataCtrl = dataCtrl
+        selectUserVC.userType = NewConversationUserType.forVerification
         self.navigationController?.pushViewController(selectUserVC, animated: true)
     }
     
-    @IBAction func tickButtonAction(_ sender: UIBarButtonItem) {
+    @IBAction func attachmentButtonAction(_ sender: Any) {
+        
     }
     
-    @IBAction func crossButtonAction(_ sender: UIBarButtonItem) {
+    @IBAction func closeButtonAction(_ sender: UIBarButtonItem) {
         
         self.navigationController?.popViewController(animated: true)
     }
     
     
     @IBAction func startConversationButtonAction(_ sender: UIButton) {
+        
+        //check for validation and do post call
     }
 }

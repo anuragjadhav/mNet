@@ -11,10 +11,20 @@ import UIKit
 class SelectedUsersCollectionViewCell: UICollectionViewCell {
     
     @IBOutlet weak var nameInitialsLabel: UILabel!
+    @IBOutlet weak var deleteButton: UIButton!
     
-    func loadCellWithUser(_ user:People)
+    func loadCellWithUser(user:People,showDeleteButton:Bool)
     {
-        var initials = user.userName?.components(separatedBy: " ").reduce("") { ($0 == "" ? "" : "\($0.first!)") + ($1 == "" ? "" : "\($1.first!)") }
+        let initials = user.userName?.components(separatedBy: " ").reduce("") { ($0 == "" ? "" : "\($0.first!)") + ($1 == "" ? "" : "\($1.first!)") }
         nameInitialsLabel.text = initials?.uppercased()
+        
+        if(showDeleteButton)
+        {
+            deleteButton.isHidden = false
+        }
+        else
+        {
+            deleteButton.isHidden = true
+        }
     }
 }

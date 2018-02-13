@@ -41,6 +41,17 @@ class SelectUserViewController: BaseViewController,UITableViewDelegate,UITableVi
         super.viewWillAppear(animated)
         
         self.setUpNavigationController()
+        
+        if(dataCtrl?.selectUserList?.count == 0)
+        {
+            getSelectUserList(isReload: true, searchText: searchBar.text!)
+        }
+        else
+        {
+            dataCtrl?.filterSelectUserListWithSearchTerm(searchTerm: searchBar.text!)
+            selectUserTableView.reloadData()
+            selectUserCollectionView.reloadData()
+        }
     }
     
     //MARK: Setup
@@ -112,22 +123,22 @@ class SelectUserViewController: BaseViewController,UITableViewDelegate,UITableVi
         if(userType == NewConversationUserType.bcc)
         {
             let user:People = (dataCtrl?.bccUserList![indexPath.row])!
-            cell.loadCellWithUser(user)
+            cell.loadCellWithUser(user: user, showDeleteButton:true)
         }
         else if(userType == NewConversationUserType.to)
         {
             let user:People = (dataCtrl?.toUserList![indexPath.row])!
-            cell.loadCellWithUser(user)
+            cell.loadCellWithUser(user: user, showDeleteButton:true)
         }
         else if(userType == NewConversationUserType.forVerification)
         {
             let user:People = (dataCtrl?.forVerificationUserList![indexPath.row])!
-            cell.loadCellWithUser(user)
+            cell.loadCellWithUser(user: user, showDeleteButton:true)
         }
         else if(userType == NewConversationUserType.forApproval)
         {
             let user:People = (dataCtrl?.forApprovalUserList![indexPath.row])!
-            cell.loadCellWithUser(user)
+            cell.loadCellWithUser(user: user, showDeleteButton:true)
         }
         
         return cell
@@ -287,5 +298,7 @@ class SelectUserViewController: BaseViewController,UITableViewDelegate,UITableVi
     
     @IBAction func selectUsersButtonAction(_ sender: UIButton) {
         
+        self.navigationController?.popViewController(animated: true)
+
     }
 }
