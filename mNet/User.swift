@@ -10,13 +10,9 @@ import UIKit
 
 class User: NSObject, Mappable {
     
-    var email:String = "sreekumaran.p@heromotocorp.com"
-    var password:String = "Sree@123"
-    var userId:String = "42"
-    
-//    var email:String = ""
-//    var password:String = ""
-//    var userId:String = ""
+    var email:String = ""
+    var password:String = ""
+    var userId:String = ""
     var name:String = ""
     var status:String = ""
     
@@ -69,9 +65,9 @@ class User: NSObject, Mappable {
     
     func mapping(map: Map) {
         
-//        email <- map["LoginEmail"]
-//        password <- map["password"]
-//        userId <- map["user_id"]
+        email <- map["LoginEmail"]
+        password <- map["password"]
+        userId <- map["user_id"]
         name <- map["LoginName"]
         status <- map["Status"]
         companyEmail <- map["user_comp_email"]
@@ -133,6 +129,21 @@ class User: NSObject, Mappable {
         var dictionary:[String:Any] = [String:Any]()
         dictionary["UserPass"] = password
         dictionary["UserId"] = userId
+        return dictionary
+    }
+    
+    func toJSONPostWithoutEmailDashboard() -> [String:Any] {
+        
+        var dictionary:[String:Any] = [String:Any]()
+        dictionary["password"] = password
+        dictionary["userid"] = 69
+        return dictionary
+    }
+    
+    func toJSONPostOnlyId() -> [String:Any] {
+        
+        var dictionary:[String:Any] = [String:Any]()
+        dictionary["user_id"] = 69
         return dictionary
     }
     

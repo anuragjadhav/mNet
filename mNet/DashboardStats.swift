@@ -10,7 +10,7 @@ import UIKit
 
 class DashboardStats: NSObject, Mappable {
     
-    var unreadPosts:String = ""
+    var unreadPosts:String = "-"
     var totalPosts:String = ""
     var pendingApprovalRequests:Int = 0
     var totalApprovalRequests:Int = 0

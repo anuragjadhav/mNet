@@ -63,6 +63,11 @@ struct DictionaryKeys {
         
         static let deviceToken:String = "token_id"
     }
+    
+    struct Dashboard {
+        
+        static let days:String = "days"
+    }
 }
 
 struct AlertMessages {
@@ -176,6 +181,12 @@ struct UserDefaultsKeys {
 struct StoryboardIDs {
     
     static let peopleViewController:String = "PeopleViewController"
+    static let webViewController:String = "mNetWebViewController"
+}
+
+struct ConstantStrings {
+    
+    static let appName:String = "mNet"
 }
 
 extension UIStoryboard {

@@ -81,14 +81,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func logout() {
         
         //TODO: Perform these 2 actions on success of server call
-        User.logoutUser()
         makeLoginPageHome(true)
         deRegisterDeviceToken()
+        User.logoutUser()
     }
     
     func deRegisterDeviceToken() {
         
-        var postParams:[String:Any] = User.loggedInUser()!.toJSONPostWithoutEmail()
+        guard var postParams:[String:Any] = User.loggedInUser()?.toJSONPostWithoutEmail() else {
+            return
+        }
         
         guard let deviceToken:String = UserDefaults.standard.string(forKey: UserDefaultsKeys.deviceToken) else {
             return

@@ -28,15 +28,14 @@ class DashboardViewController: BaseViewController, UITableViewDataSource, UITabl
     
     @IBOutlet weak var logoutButton: UIButton!
     
+    var dataController:DashboardDataController = DashboardDataController()
+    
     //MARK: View Controller Delegates
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        
-        myAppsTableView.tableFooterView = UIView()
-        logoutButton.imageView?.image = logoutButton.imageView?.image?.withRenderingMode(.alwaysTemplate)
-        logoutButton.imageView?.tintColor = ColorConstants.kWhiteColor
+        setUpViewController()
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -46,6 +45,14 @@ class DashboardViewController: BaseViewController, UITableViewDataSource, UITabl
     }
 
     //MARK:Setup
+    func setUpViewController() {
+        
+        getData()
+        myAppsTableView.tableFooterView = UIView()
+        logoutButton.imageView?.image = logoutButton.imageView?.image?.withRenderingMode(.alwaysTemplate)
+        logoutButton.imageView?.tintColor = ColorConstants.kWhiteColor
+    }
+    
     func setUpNavigationController()  {
         
         guard let baseNavigationController:BaseNavigationController = self.navigationController as? BaseNavigationController else {
@@ -56,23 +63,59 @@ class DashboardViewController: BaseViewController, UITableViewDataSource, UITabl
         self.navigationController?.navigationBar.isHidden = true
     }
     
+    func getData() {
+        
+        self.showLoadingOnViewController()
+        
+        dataController.getDashboardData(onSuccess: { [unowned self] in
+            
+            self.removeLoadingFromViewController()
+            self.setData()
+            
+        }) { [unowned self] (errorMessage) in
+            
+            self.removeLoadingFromViewController()
+            self.showRetryView(message: errorMessage)
+        }
+    }
+    
+    func setData() {
+        
+        pendingApprovalsCountLabel.text = String(describing: dataController.stats?.pendingApprovalRequests ?? 0)
+        pendingVerificationsCountLabel.text = String(describing: dataController.stats?.pendingAgreeRequests ?? 0)
+        unreadMessagesCountLabel.text = dataController.stats?.unreadPosts ?? "-"
+        self.myAppsTableView.reloadData()
+    }
+    
     //MARK: Table View Methods
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
-        return 3
+        return dataController.appsList.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell: DashboardMyAppsTableViewCell = tableView.dequeueReusableCell(withIdentifier: CellIdentifiers.dashboardMyAppsTableView) as! DashboardMyAppsTableViewCell
-        cell.setUpCell()
+        cell.setUpCell(app: dataController.appsList[indexPath.row])
         return cell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
-        let approvalsVC = (UIStoryboard.init(name:"ApproveReject", bundle: Bundle.main)).instantiateViewController(withIdentifier: "ApprovalsViewController")
-        self.navigationController?.pushViewController(approvalsVC, animated: true)
+        tableView.deselectRow(at: indexPath, animated: true)
+        
+        let app:UserApp = dataController.appsList[indexPath.row]
+        
+        if app.appId == "3" {
+            let approvalsVC = (UIStoryboard.init(name:"ApproveReject", bundle: Bundle.main)).instantiateViewController(withIdentifier: "ApprovalsViewController")
+            self.navigationController?.pushViewController(approvalsVC, animated: true)
+        }
+        
+        else {
+            let webViewController:WebViewController = UIStoryboard.login.instantiateViewController(withIdentifier: StoryboardIDs.webViewController) as! WebViewController
+            webViewController.setData(url: app.appURL, header: app.appName)
+            navigationController?.pushViewController(webViewController, animated: true)
+        }
     }
     
     //Mark: Button Actions
@@ -94,6 +137,11 @@ class DashboardViewController: BaseViewController, UITableViewDataSource, UITabl
             cell.isSelected = true
             
         }
+    }
+    
+    override func retryButtonClicked() {
+        
+        getData()
     }
     
     @IBAction func logOutAction(_ sender: UIButton) {
