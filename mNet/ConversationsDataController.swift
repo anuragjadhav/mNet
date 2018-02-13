@@ -27,11 +27,13 @@ class ConversationsDataController: NSObject {
     var forApprovalUserList:[People]? = []
     var forVerificationUserList:[People]? = []
     var selectUserList:[People]? = []
-    var originalSelectUserList:[People]? = []
     var selectUserPageStart:Int = 0
     var selectUserPageLength:Int = 10
     var previousSelectUserSearchText:String = ""
     var currentSelectUserSearchText:String = ""
+    
+    var selectedFilenameInNewConversation:String?
+    var selectedFileDataInNewConversation:Data?
 
     func getConversations(searchText:String,onSuccess:@escaping (Int) -> Void , onFailure : @escaping (String) -> Void) {
         
@@ -140,8 +142,8 @@ class ConversationsDataController: NSObject {
     
     func deleteMemberFromList()
     {
-        let newFilteredMemberArray1:[ConversationMember] = (memberList!.filter { $0.userId == memberToDelete?.userId})
-        let newFilteredMemberArray2:[ConversationMember] = (selectedCoversation?.membersList.filter { $0.userId == memberToDelete?.userId})!
+        let newFilteredMemberArray1:[ConversationMember] = (memberList!.filter { $0.userId != memberToDelete?.userId})
+        let newFilteredMemberArray2:[ConversationMember] = (selectedCoversation?.membersList.filter { $0.userId != memberToDelete?.userId})!
         
         memberList = newFilteredMemberArray1
         selectedCoversation?.membersList = newFilteredMemberArray2
@@ -162,7 +164,7 @@ class ConversationsDataController: NSObject {
         //increment page start count only if prevoius search text and latest search text is same
         if(self.previousSelectUserSearchText == self.currentSelectUserSearchText && self.currentSelectUserSearchText != "")
         {
-            self.selectUserPageStart += self.conversations.count
+            self.selectUserPageStart += (self.selectUserList?.count)!
         }
         else
         {
@@ -204,25 +206,22 @@ class ConversationsDataController: NSObject {
     }
     
     
-    func filterSelectUserListWithSearchTerm(searchTerm:String?)
-    {
-        if(searchTerm != nil && searchTerm != "")
-        {
-            let filteredUserListArray:[People] = (originalSelectUserList!.filter { $0.userName!.contains(searchTerm!) })
-            selectUserList = filteredUserListArray
-        }
-        else
-        {
-            selectUserList = originalSelectUserList
-        }
-    }
-    
     func setupSelectedUsersArray()
     {
        bccUserList = selectUserList!.filter { $0.isSelectedForBcc == true}
        toUserList = selectUserList!.filter { $0.isSelectedForTo == true}
        forVerificationUserList = selectUserList!.filter { $0.isSelectedForVerification == true}
        forApprovalUserList = selectUserList!.filter { $0.isSelectedForApproval == true}
+    }
+    
+    
+    func refreshPreviouslySelectedData()
+    {
+        bccUserList = []
+        toUserList = []
+        forVerificationUserList = []
+        forApprovalUserList = []
+        selectUserList = []
     }
     
     func getBccSelectedUsersCount() -> Int

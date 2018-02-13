@@ -97,6 +97,7 @@ class ConversationInfoViewController: BaseViewController,UITableViewDelegate,UIT
         alert.addAction(UIAlertAction(title:"No", style:.default, handler: { _ in
         }))
         alert.addAction(UIAlertAction(title:"Yes", style:.default, handler: { _ in
+            self.deleteUser()
         }))
         self.present(alert, animated: true, completion: nil)
     }

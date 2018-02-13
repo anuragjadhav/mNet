@@ -35,6 +35,10 @@
 			</dict>
 		</dict>
 	</dict>
+	<key>NSCameraUsageDescription</key>
+	<string>To take image of documents that has to be sent for verification for upper management using the app</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>To pic images of documents that has to be sent for verification for upper management using the app</string>
 	<key>UIAppFonts</key>
 	<array>
 		<string>SanFranciscoDisplay-Thin.otf</string>

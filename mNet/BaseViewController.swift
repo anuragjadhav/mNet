@@ -20,7 +20,10 @@ class BaseViewController: UIViewController,RetryViewProtocol {
     override func viewDidLoad() {
         
         super.viewDidLoad()
-        
+    }
+    
+    func addkeyBoardListners()
+    {
         //add keyboard notificaton listner
         NotificationCenter.default.addObserver(self, selector: #selector(keyBoardWillShow(notification:)), name: .UIKeyboardWillShow, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(keyBoardWillHide(notification:)), name: .UIKeyboardWillHide, object: nil)
@@ -189,7 +192,7 @@ class BaseViewController: UIViewController,RetryViewProtocol {
         //add gesture recognizer
         self.view.addGestureRecognizer(self.tapGestureToMoveKbDown!)
         
-        if let keyboardSize = (notification.userInfo?[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue
+        if let keyboardSize = (notification.userInfo?[UIKeyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue
         {
             if let foundScrollView = view.viewWithTag(12345) {
                 

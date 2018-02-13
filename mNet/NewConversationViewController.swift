@@ -7,8 +7,11 @@
 //
 
 import UIKit
+import MobileCoreServices
+import AssetsLibrary
+import Photos
 
-class NewConversationViewController: BaseViewController,UICollectionViewDelegate,UICollectionViewDataSource {
+class NewConversationViewController: BaseViewController,UICollectionViewDelegate,UICollectionViewDataSource,UIDocumentMenuDelegate,UIDocumentPickerDelegate,UINavigationControllerDelegate,UIImagePickerControllerDelegate {
     
     @IBOutlet weak var subjectTextField: CustomBrownTextColorTextfield!
     @IBOutlet weak var messageTextView: CustomBrownColorTextView!
@@ -19,9 +22,13 @@ class NewConversationViewController: BaseViewController,UICollectionViewDelegate
     @IBOutlet weak var selectedBccUsersCollectionView: UICollectionView!
 
     var dataCtrl:ConversationsDataController?
+    let imagePicker = UIImagePickerController()
+    var documentController:UIDocumentMenuViewController?
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.addkeyBoardListners()
+        dataCtrl?.refreshPreviouslySelectedData()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -94,6 +101,92 @@ class NewConversationViewController: BaseViewController,UICollectionViewDelegate
         return cell
         
     }
+    
+    
+    //MARK: Image Picker Delegates
+    
+   func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any])
+    {
+        let chosenImage = info[UIImagePickerControllerOriginalImage] as! UIImage
+        
+        let currentTimeStamp:String = String(UInt64((Date.init().timeIntervalSince1970 + 62_135_596_800) * 10_000_000)) + "_doc.jpg"
+        
+        dataCtrl?.selectedFilenameInNewConversation = currentTimeStamp
+        dataCtrl?.selectedFileDataInNewConversation = UIImageJPEGRepresentation(chosenImage, 1.0)
+        
+        picker.dismiss(animated: true, completion: nil)
+    }
+    
+    
+    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+        picker.dismiss(animated: true, completion: nil)
+    }
+    
+    //MARK: Document Picker Delegates
+    
+    public func documentPicker(_ controller: UIDocumentPickerViewController, didPickDocumentAt url: URL) {
+        
+        dataCtrl?.selectedFilenameInNewConversation = (url.absoluteString as NSString).lastPathComponent
+        
+        do
+        {
+            try self.dataCtrl?.selectedFileDataInNewConversation = Data.init(contentsOf: url)
+        }
+        catch
+        {
+            self.dataCtrl?.selectedFileDataInNewConversation = nil
+        }
+        
+        //optional, case PDF -> render
+        //displayPDFweb.loadRequest(NSURLRequest(url: cico) as URLRequest)
+  
+    }
+    
+    public func documentMenu(_ documentMenu:     UIDocumentMenuViewController, didPickDocumentPicker documentPicker: UIDocumentPickerViewController) {
+        
+        documentPicker.delegate = self
+        present(documentPicker, animated: true, completion: nil)
+    }
+    
+    
+    func documentPickerWasCancelled(_ controller: UIDocumentPickerViewController) {
+        
+        controller.dismiss(animated: true, completion: nil)
+    }
+    
+    
+    //MARK: Open Camera and Gallery
+    
+    func openPhotoLibrary()
+    {
+        imagePicker.delegate = self
+        imagePicker.allowsEditing = false
+        imagePicker.sourceType = .photoLibrary
+        imagePicker.mediaTypes = UIImagePickerController.availableMediaTypes(for: .photoLibrary)!
+        present(imagePicker, animated: true, completion: nil)
+    }
+    
+    func openCamera()
+    {
+        imagePicker.delegate = self
+        imagePicker.allowsEditing = false
+        imagePicker.sourceType = UIImagePickerControllerSourceType.camera
+        imagePicker.cameraCaptureMode = .photo
+        imagePicker.modalPresentationStyle = .fullScreen
+        
+        present(imagePicker, animated: true, completion: nil)
+    }
+    
+    //MARK: Open Document Menu
+
+    func openDocuments()
+    {
+        documentController = UIDocumentMenuViewController(documentTypes: [String(kUTTypePDF),String(kUTTypeTXNTextAndMultimediaData)], in: .import)
+        documentController?.delegate = self
+        documentController?.modalPresentationStyle = .formSheet
+        present(documentController!, animated: true, completion: nil)
+    }
+
 
     
 
@@ -133,6 +226,25 @@ class NewConversationViewController: BaseViewController,UICollectionViewDelegate
     
     @IBAction func attachmentButtonAction(_ sender: Any) {
         
+        let alert = UIAlertController(title:"Select Media", message: "Please Select an Option", preferredStyle: .actionSheet)
+        
+        alert.addAction(UIAlertAction(title: "Take An Image", style: .default , handler:{ (UIAlertAction)in
+            
+                self.openCamera()
+        }))
+        
+        alert.addAction(UIAlertAction(title: "Open Photo Gallery", style: .default , handler:{ (UIAlertAction)in
+            self.openPhotoLibrary()
+        }))
+        
+        alert.addAction(UIAlertAction(title: "Document", style: .default , handler:{ (UIAlertAction)in
+             self.openDocuments()
+        }))
+        
+        alert.addAction(UIAlertAction(title: "Cancel", style: .cancel , handler:{ (UIAlertAction)in
+        }))
+        
+        present(alert, animated: true, completion: nil)
     }
     
     @IBAction func closeButtonAction(_ sender: UIBarButtonItem) {

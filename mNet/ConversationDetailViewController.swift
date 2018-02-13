@@ -102,7 +102,8 @@ class ConversationDetailViewController: BaseViewController,UITableViewDelegate,U
 
     @IBAction func infoButtonAction(_ sender: Any) {
         
-        let conversationInfoVC = (UIStoryboard.init(name:"Conversation", bundle: Bundle.main)).instantiateViewController(withIdentifier: "ConversationInfoViewController")
+        let conversationInfoVC = (UIStoryboard.init(name:"Conversation", bundle: Bundle.main)).instantiateViewController(withIdentifier: "ConversationInfoViewController") as! ConversationInfoViewController
+        conversationInfoVC.dataCtrl = dataCtrl
         self.navigationController?.pushViewController(conversationInfoVC, animated: true)
     }
  

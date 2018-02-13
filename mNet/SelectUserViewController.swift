@@ -16,7 +16,6 @@ class SelectUserViewController: BaseViewController,UITableViewDelegate,UITableVi
     @IBOutlet weak var selectUserTableView: UITableView!
     @IBOutlet weak var selectUserCollectionView: UICollectionView!
     @IBOutlet weak var backBarButton: UIBarButtonItem!
-    @IBOutlet weak var selectUsersLabel: CustomBlueTextColorLabel!
     @IBOutlet weak var selectUsersButton: UIButton!
     @IBOutlet weak var searchBar: UISearchBar!
     
@@ -48,7 +47,6 @@ class SelectUserViewController: BaseViewController,UITableViewDelegate,UITableVi
         }
         else
         {
-            dataCtrl?.filterSelectUserListWithSearchTerm(searchTerm: searchBar.text!)
             selectUserTableView.reloadData()
             selectUserCollectionView.reloadData()
         }

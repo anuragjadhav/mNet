@@ -91,6 +91,9 @@
 		5E18AE4A1FF82F94007AA461 /* Conversation.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5E18AE491FF82F94007AA461 /* Conversation.storyboard */; };
 		5E18AE4C1FF82FA4007AA461 /* Dashboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5E18AE4B1FF82FA3007AA461 /* Dashboard.storyboard */; };
 		5E190A782032CB9000EEE97B /* SelectedUsersCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E190A772032CB9000EEE97B /* SelectedUsersCollectionViewCell.swift */; };
+		5E190A7B2033291800EEE97B /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E190A7A2033291800EEE97B /* MobileCoreServices.framework */; };
+		5E190A7D2033292200EEE97B /* AssetsLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E190A7C2033292200EEE97B /* AssetsLibrary.framework */; };
+		5E190A7F20332A2E00EEE97B /* Photos.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E190A7E20332A2E00EEE97B /* Photos.framework */; };
 		5E1A8D07201C49C700BFAF10 /* LoginWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E1A8D06201C49C700BFAF10 /* LoginWrapper.swift */; };
 		5E1A8D09201C6A6300BFAF10 /* RetryView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5E1A8D08201C6A6300BFAF10 /* RetryView.xib */; };
 		5E1A8D0B201C6CD200BFAF10 /* RetryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E1A8D0A201C6CD200BFAF10 /* RetryView.swift */; };
@@ -258,6 +261,9 @@
 		5E18AE4B1FF82FA3007AA461 /* Dashboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Dashboard.storyboard; sourceTree = "<group>"; };
 		5E190A772032CB9000EEE97B /* SelectedUsersCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectedUsersCollectionViewCell.swift; sourceTree = "<group>"; };
 		5E190A79203313C800EEE97B /* mNet.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = mNet.entitlements; sourceTree = "<group>"; };
+		5E190A7A2033291800EEE97B /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
+		5E190A7C2033292200EEE97B /* AssetsLibrary.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AssetsLibrary.framework; path = System/Library/Frameworks/AssetsLibrary.framework; sourceTree = SDKROOT; };
+		5E190A7E20332A2E00EEE97B /* Photos.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Photos.framework; path = System/Library/Frameworks/Photos.framework; sourceTree = SDKROOT; };
 		5E1A8D06201C49C700BFAF10 /* LoginWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginWrapper.swift; sourceTree = "<group>"; };
 		5E1A8D08201C6A6300BFAF10 /* RetryView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RetryView.xib; sourceTree = "<group>"; };
 		5E1A8D0A201C6CD200BFAF10 /* RetryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RetryView.swift; sourceTree = "<group>"; };
@@ -346,6 +352,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5E190A7F20332A2E00EEE97B /* Photos.framework in Frameworks */,
+				5E190A7D2033292200EEE97B /* AssetsLibrary.framework in Frameworks */,
+				5E190A7B2033291800EEE97B /* MobileCoreServices.framework in Frameworks */,
 				5E21B326200F40930045CDA3 /* UIKit.framework in Frameworks */,
 				5E21B324200F40820045CDA3 /* Foundation.framework in Frameworks */,
 				5E21B322200F40660045CDA3 /* CoreGraphics.framework in Frameworks */,
@@ -804,6 +813,9 @@
 		5E21B320200F40660045CDA3 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				5E190A7E20332A2E00EEE97B /* Photos.framework */,
+				5E190A7C2033292200EEE97B /* AssetsLibrary.framework */,
+				5E190A7A2033291800EEE97B /* MobileCoreServices.framework */,
 				5E21B325200F40930045CDA3 /* UIKit.framework */,
 				5E21B323200F40820045CDA3 /* Foundation.framework */,
 				5E21B321200F40660045CDA3 /* CoreGraphics.framework */,
