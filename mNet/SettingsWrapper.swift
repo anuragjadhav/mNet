@@ -15,32 +15,28 @@ class SettingsWrapper: NSObject {
         
         let postParams:[String:Any] = postObject.toJSONPost()
         
-        request(URLS.getSettings, method: .post, parameters: postParams, encoding: JSONEncoding() as ParameterEncoding, headers: nil).responseObject { (response:DataResponse<CommonResponse>) in
+        request(URLS.getSettings, method: .post, parameters: postParams, encoding: JSONEncoding() as ParameterEncoding, headers: nil).responseJSON { response in
             
-            guard let commonResponse:CommonResponse = response.result.value else {
-                onFailure("Unable to fetch setings data")
-                return
-            }
-            
-            let error:String = commonResponse.errorString
-        
-            if(error == CommonResponse.noError)
-            {
-                guard let responseArray:[[String:Any]] = commonResponse.responseData as? [[String:Any]] else {
-                    onFailure("Unable to fetch settings data")
-                    return
-                }
-
-                guard let settings:Settings = Settings(JSON: responseArray[0] as [String:Any]) else {
-                    onFailure("Unable to fetch settings data")
-                    return
-                }
+            if let responseDict:[String:Any] = response.result.value as? [String:Any] {
                 
-                onSuccess(settings)
+                let error:String = responseDict[DictionaryKeys.APIResponse.error] as! String
+                
+                if(error == DictionaryKeys.APIResponse.noError)
+                {
+                    let responseArray:[[String:Any]] = responseDict[DictionaryKeys.APIResponse.responseData] as! [[String:Any]]
+                    
+                    let settings:Settings = Settings(JSON: responseArray[0] as [String:Any])!
+                    
+                    onSuccess(settings)
+                }
+                else
+                {
+                    onFailure("Unable to fetch settings data")
+                }
             }
-            else
-            {
-                onFailure("Unable to fetch settings data")
+            else{
+                
+                onFailure("Unable to fetch setings data")
             }
         }
     }

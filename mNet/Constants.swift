@@ -15,6 +15,7 @@ struct URLS {
     static let setSettings:URL = URL(string: "setsetting", relativeTo: baseURL)!
     static let getConversationsList:URL = URL(string: "GetPost", relativeTo: baseURL)!
     static let deleteUserFromConversation:URL = URL(string:"deletepostuser", relativeTo: baseURL)!
+    static let getSelectUserList:URL = URL(string:"findUsersfuncTo", relativeTo: baseURL)!
     static let markConversationAsRead:URL = URL(string: "markPostAsRead", relativeTo: baseURL)!
     static let markNotificationAsRead:URL = URL(string: "", relativeTo: baseURL)!
     static let getNotificationsList:URL = URL(string: "NotificationList", relativeTo: baseURL)!
@@ -83,6 +84,14 @@ struct ColorConstants {
     static let kRedColor: UIColor = UIColor(red: 221.0/255.0, green: 75.0/255.0, blue: 57.0/255.0, alpha: 1.0)
     static let kBackgroundColor: UIColor = UIColor(red: 247.0/255.0, green: 248.0/255.0, blue: 249.0/255.0, alpha: 1.0)
     static let kWhiteColor:UIColor = UIColor.white
+}
+
+struct NewConversationUserType {
+    
+    static let to:String = "To"
+    static let bcc:String = "BCC"
+    static let forApproval:String = "for Approval"
+    static let forVerification:String = "for Verification"
 }
 
 struct SettingOptions {

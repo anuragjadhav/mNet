@@ -12,26 +12,39 @@ class ConversationsDataController: NSObject {
     
     var conversations:[Conversation] = []
     var selectedCoversation:Conversation?
-    var pageStart:Int = 0
-    var previousSearchText:String = ""
-    var currentSearchText:String = ""
-    let pageLength:Int = 10
+    var conversationPageStart:Int = 0
+    var previousConversationSearchText:String = ""
+    var currentConversationSearchText:String = ""
+    let conversationPageLength:Int = 10
+    
     var newConversationReply:Conversation?
+    
     var memberList:[ConversationMember]?
     var memberToDelete:ConversationMember?
     
+    var toUserList:[People]?
+    var bccUserList:[People]?
+    var forApprovalUserList:[People]?
+    var forVerificationUserList:[People]?
+    var selectUserList:[People]?
+    var originalSelectUserList:[People]?
+    var selectUserPageStart:Int = 0
+    var selectUserPageLength:Int = 10
+    var previousSelectUserSearchText:String = ""
+    var currentSelectUserSearchText:String = ""
+
     func getConversations(searchText:String,onSuccess:@escaping (Int) -> Void , onFailure : @escaping (String) -> Void) {
         
-        self.currentSearchText = searchText
+        self.currentConversationSearchText = searchText
 
         //increment page start count only if prevoius search text and latest search text is same
-        if(self.previousSearchText == self.currentSearchText && self.currentSearchText != "")
+        if(self.previousConversationSearchText == self.currentConversationSearchText && self.currentConversationSearchText != "")
         {
-            self.pageStart += self.conversations.count
+            self.conversationPageStart += self.conversations.count
         }
         else
         {
-            self.pageStart = 0
+            self.conversationPageStart = 0
         }
         
         let user:User = User.loggedInUser()!
@@ -41,13 +54,13 @@ class ConversationsDataController: NSObject {
         postParams["post_sender_email"] = user.email
         postParams["post_type"] = "0"
         postParams["post_type_id"] = "0"
-        postParams["post_start"] = "\(self.pageStart)"
-        postParams["post_limit"] = "\(self.pageLength)"
-        postParams["search_value"] = self.currentSearchText
+        postParams["post_start"] = "\(self.conversationPageStart)"
+        postParams["post_limit"] = "\(self.conversationPageLength)"
+        postParams["search_value"] = self.currentConversationSearchText
         
         WrapperManager.shared.conversationWrapper.getConversationsList(postParams: postParams, onSuccess: { [unowned self] (newConversationList) in
 
-            if(self.currentSearchText == self.previousSearchText && self.currentSearchText != "")
+            if(self.currentConversationSearchText == self.previousConversationSearchText && self.currentConversationSearchText != "")
             {
                 //add received new array objects
                 for conversation in newConversationList
@@ -60,7 +73,7 @@ class ConversationsDataController: NSObject {
                 self.conversations = newConversationList
             }
             
-            self.previousSearchText = self.currentSearchText
+            self.previousConversationSearchText = self.currentConversationSearchText
             
             onSuccess(self.getUnreadConversationCount())
             
@@ -141,15 +154,99 @@ class ConversationsDataController: NSObject {
         return filteredArray.count
     }
     
-    func postNewConversationMessageReplyWith(message:String)
-    {
+
+    func getSelectUserList(searchText:String,onSuccess:@escaping () -> Void , onFailure : @escaping (String) -> Void) {
         
+        self.currentSelectUserSearchText = searchText
+        
+        //increment page start count only if prevoius search text and latest search text is same
+        if(self.previousSelectUserSearchText == self.currentSelectUserSearchText && self.currentSelectUserSearchText != "")
+        {
+            self.selectUserPageStart += self.conversations.count
+        }
+        else
+        {
+            self.selectUserPageStart = 0
+        }
+        
+        let user:User = User.loggedInUser()!
+        var postParams:[String:Any] = [String:Any]()
+        postParams["user_id"] = user.userId
+        postParams["group_id"] = "1"
+        postParams["data_type_id"] = "B2B User"
+        postParams["start"] = "\(self.selectUserPageStart)"
+        postParams["limit"] = "\(self.selectUserPageLength)"
+        postParams["query"] = self.currentSelectUserSearchText
+        
+        WrapperManager.shared.conversationWrapper.getSelectUserList(postParams: postParams, onSuccess: { [unowned self] (newSelectUserList) in
+            
+            if(self.currentSelectUserSearchText == self.previousSelectUserSearchText && self.currentSelectUserSearchText != "")
+            {
+                //add received new array objects
+                for user in newSelectUserList
+                {
+                    self.selectUserList?.append(user)
+                }
+            }
+            else
+            {
+                self.selectUserList = newSelectUserList
+            }
+            
+            self.previousSelectUserSearchText = self.currentSelectUserSearchText
+            
+            onSuccess()
+            
+        }) { (errorMessage) in
+            
+            onFailure(errorMessage)
+        }
     }
     
-    func postNewConversationMediaMessageWithMedia(media:String)
+    
+    func filterSelectUserListWithSearchTerm(searchTerm:String?)
     {
-        
+        if(searchTerm != nil && searchTerm != "")
+        {
+            let filteredUserListArray:[People] = (originalSelectUserList!.filter { $0.userName!.contains(searchTerm!) })
+            selectUserList = filteredUserListArray
+        }
+        else
+        {
+            selectUserList = originalSelectUserList
+        }
     }
     
+    func setupSelectedUsersArray()
+    {
+       bccUserList = selectUserList!.filter { $0.isSelectedForBcc == true}
+       toUserList = selectUserList!.filter { $0.isSelectedForTo == true}
+       forVerificationUserList = selectUserList!.filter { $0.isSelectedForVerification == true}
+       forApprovalUserList = selectUserList!.filter { $0.isSelectedForApproval == true}
+    }
+    
+    func getBccSelectedUsersCount() -> Int
+    {
+        setupSelectedUsersArray()
+        return (bccUserList?.count)!
+    }
+    
+    func getToSelectedUsersCount() -> Int
+    {
+        setupSelectedUsersArray()
+        return (toUserList?.count)!
+    }
+    
+    func getVerificationSelectedUsersCount() -> Int
+    {
+        setupSelectedUsersArray()
+        return (forVerificationUserList?.count)!
+    }
+    
+    func getApprovalSelectedUsersCount() -> Int
+    {
+        setupSelectedUsersArray()
+        return (forApprovalUserList?.count)!
+    }
     
 }

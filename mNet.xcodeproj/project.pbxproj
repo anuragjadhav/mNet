@@ -90,6 +90,7 @@
 		5E18AE481FF82E0E007AA461 /* TabBar.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5E18AE471FF82E0E007AA461 /* TabBar.storyboard */; };
 		5E18AE4A1FF82F94007AA461 /* Conversation.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5E18AE491FF82F94007AA461 /* Conversation.storyboard */; };
 		5E18AE4C1FF82FA4007AA461 /* Dashboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5E18AE4B1FF82FA3007AA461 /* Dashboard.storyboard */; };
+		5E190A782032CB9000EEE97B /* SelectedUsersCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E190A772032CB9000EEE97B /* SelectedUsersCollectionViewCell.swift */; };
 		5E1A8D07201C49C700BFAF10 /* LoginWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E1A8D06201C49C700BFAF10 /* LoginWrapper.swift */; };
 		5E1A8D09201C6A6300BFAF10 /* RetryView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5E1A8D08201C6A6300BFAF10 /* RetryView.xib */; };
 		5E1A8D0B201C6CD200BFAF10 /* RetryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E1A8D0A201C6CD200BFAF10 /* RetryView.swift */; };
@@ -154,6 +155,7 @@
 		5E3A04722007C313004EE2D7 /* ReceivedMessageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E3A04712007C313004EE2D7 /* ReceivedMessageTableViewCell.swift */; };
 		5E4A8D3B1FF4FB4900086667 /* PeopleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E4A8D3A1FF4FB4900086667 /* PeopleTableViewCell.swift */; };
 		5E4A8D3D1FF4FB6600086667 /* PeopleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E4A8D3C1FF4FB6600086667 /* PeopleViewController.swift */; };
+		5E622D502031A22F0013EA86 /* SelectUserTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E622D4F2031A22F0013EA86 /* SelectUserTableViewCell.swift */; };
 		5EC3005A1FEBEBFA00229516 /* AppSettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EC300591FEBEBFA00229516 /* AppSettingsViewController.swift */; };
 		5EC3005C1FEC002000229516 /* SettingsProfileDataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EC3005B1FEC002000229516 /* SettingsProfileDataController.swift */; };
 		5EC3005E1FEC03FE00229516 /* SettingOptionsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EC3005D1FEC03FE00229516 /* SettingOptionsTableViewCell.swift */; };
@@ -254,6 +256,7 @@
 		5E18AE471FF82E0E007AA461 /* TabBar.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = TabBar.storyboard; sourceTree = "<group>"; };
 		5E18AE491FF82F94007AA461 /* Conversation.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Conversation.storyboard; sourceTree = "<group>"; };
 		5E18AE4B1FF82FA3007AA461 /* Dashboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Dashboard.storyboard; sourceTree = "<group>"; };
+		5E190A772032CB9000EEE97B /* SelectedUsersCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectedUsersCollectionViewCell.swift; sourceTree = "<group>"; };
 		5E1A8D06201C49C700BFAF10 /* LoginWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginWrapper.swift; sourceTree = "<group>"; };
 		5E1A8D08201C6A6300BFAF10 /* RetryView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RetryView.xib; sourceTree = "<group>"; };
 		5E1A8D0A201C6CD200BFAF10 /* RetryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RetryView.swift; sourceTree = "<group>"; };
@@ -320,6 +323,7 @@
 		5E3A04712007C313004EE2D7 /* ReceivedMessageTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReceivedMessageTableViewCell.swift; sourceTree = "<group>"; };
 		5E4A8D3A1FF4FB4900086667 /* PeopleTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PeopleTableViewCell.swift; sourceTree = "<group>"; };
 		5E4A8D3C1FF4FB6600086667 /* PeopleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PeopleViewController.swift; sourceTree = "<group>"; };
+		5E622D4F2031A22F0013EA86 /* SelectUserTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectUserTableViewCell.swift; sourceTree = "<group>"; };
 		5EC300591FEBEBFA00229516 /* AppSettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppSettingsViewController.swift; sourceTree = "<group>"; };
 		5EC3005B1FEC002000229516 /* SettingsProfileDataController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsProfileDataController.swift; sourceTree = "<group>"; };
 		5EC3005D1FEC03FE00229516 /* SettingOptionsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingOptionsTableViewCell.swift; sourceTree = "<group>"; };
@@ -435,6 +439,8 @@
 				5E3A04712007C313004EE2D7 /* ReceivedMessageTableViewCell.swift */,
 				0531A57C2007EA4200F2232C /* FilterSectionTableViewCell.swift */,
 				0531A57E2007EA5100F2232C /* FilterOptionTableViewCell.swift */,
+				5E622D4F2031A22F0013EA86 /* SelectUserTableViewCell.swift */,
+				5E190A772032CB9000EEE97B /* SelectedUsersCollectionViewCell.swift */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -1033,6 +1039,7 @@
 				05A569A22017B74B00C6F713 /* DispatchQueue+Alamofire.swift in Sources */,
 				5E1C499A1FEA7F30007CE624 /* CustomBrownTextColorTextfield.swift in Sources */,
 				5E3A046E2007A64D004EE2D7 /* ConversationDetailViewController.swift in Sources */,
+				5E190A782032CB9000EEE97B /* SelectedUsersCollectionViewCell.swift in Sources */,
 				5E2D37402020667F0013A138 /* UIImage+AlamofireImage.swift in Sources */,
 				0575623C200AB33A0010CBB1 /* PendingApprovalsTableViewCell.swift in Sources */,
 				05501F8A201D119B00831A08 /* User.swift in Sources */,
@@ -1117,6 +1124,7 @@
 				05A5699A2017B74B00C6F713 /* SessionDelegate.swift in Sources */,
 				05A569CF2017B7B300C6F713 /* MapError.swift in Sources */,
 				5E1A8D0D201C78D600BFAF10 /* Reachability.swift in Sources */,
+				5E622D502031A22F0013EA86 /* SelectUserTableViewCell.swift in Sources */,
 				05A569C62017B7B300C6F713 /* DataTransform.swift in Sources */,
 				05A5699C2017B74B00C6F713 /* ServerTrustPolicy.swift in Sources */,
 				5E183E9D1FF385AD00368DE1 /* CustomBrownColorTextView.swift in Sources */,

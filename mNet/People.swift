@@ -20,7 +20,12 @@ class People: NSObject,Mappable {
     var blockStatus :String?
     var iblocked :String?
     var meblocked :String?
-    
+    var email:String?
+    var isSelectedForBcc:Bool = false
+    var isSelectedForTo:Bool = false
+    var isSelectedForVerification:Bool = false
+    var isSelectedForApproval:Bool = false
+
     required init?(map: Map) {
         
     }
@@ -37,6 +42,7 @@ class People: NSObject,Mappable {
         blockStatus <- map["BlockStatus"]
         iblocked <- map["Iblocked"]
         meblocked <- map["meblocked"]
+        email <- map["user_email"]
     }
 
 }

@@ -91,7 +91,7 @@ class ConversationsListViewController: BaseViewController, UITableViewDelegate, 
     }
     
     
-    //MARK: Get Notifications
+    //MARK: Get Conversations
     
     func getConversations(isReload:Bool,searchText:String)
     {
