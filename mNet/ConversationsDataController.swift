@@ -31,9 +31,10 @@ class ConversationsDataController: NSObject {
     var selectUserPageLength:Int = 10
     var previousSelectUserSearchText:String = ""
     var currentSelectUserSearchText:String = ""
-    
     var selectedFilenameInNewConversation:String?
     var selectedFileDataInNewConversation:Data?
+    var newConversationSubject:String?
+    var newConversationMessage:String?
 
     func getConversations(searchText:String,onSuccess:@escaping (Int) -> Void , onFailure : @escaping (String) -> Void) {
         
@@ -222,6 +223,10 @@ class ConversationsDataController: NSObject {
         forVerificationUserList = []
         forApprovalUserList = []
         selectUserList = []
+        selectedFilenameInNewConversation = nil
+        selectedFileDataInNewConversation = nil
+        newConversationSubject = nil
+        newConversationMessage = nil
     }
     
     func getBccSelectedUsersCount() -> Int
