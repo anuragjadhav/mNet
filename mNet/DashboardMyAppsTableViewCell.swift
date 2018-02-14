@@ -15,9 +15,23 @@ class DashboardMyAppsTableViewCell: UITableViewCell {
     @IBOutlet weak var descriptionLabel: UILabel!
     @IBOutlet weak var starButton: UIButton!
     
-    func setUpCell() {
+    func setUpCell(app:UserApp) {
         
+        titleLabel.text = app.appName
+        descriptionLabel.text = app.appDescription
         
+        let imageUrlString = app.appLogoLink.components(separatedBy: .whitespaces).joined()
+        UIImage.imageDownloader.download(URLRequest.getRequest(URLS.profileImageBaseURLString + imageUrlString)!) { [unowned self] response in
+            
+            if let image = response.result.value {
+                
+                self.appImageView.image = image
+            }
+            else
+            {
+                self.appImageView.image = nil
+            }
+        }
     }
     
 }

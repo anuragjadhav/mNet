@@ -8,6 +8,29 @@
 
 import UIKit
 
-class CommonResponse: NSObject {
+class CommonResponse: NSObject, Mappable {
 
+    static let noErrorString:String = "0"
+    static let noErrorInt:Int = 0
+    
+    var errorString:String = "0"
+    var errorInt:Int = 0
+    var responseData:Any?
+    var noError:Bool {
+        
+        return errorString == CommonResponse.noErrorString && errorInt == CommonResponse.noErrorInt
+    }
+    
+    
+    required init?(map: Map) {
+        
+    }
+    
+    func mapping(map: Map) {
+        
+        errorString     <- map["error"]
+        errorInt        <- map["error"]
+        responseData    <- map["status"]
+    }
+    
 }

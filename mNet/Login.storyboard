@@ -49,7 +49,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Email" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kCb-WY-YI5" customClass="CustomBrownTextColorLabel" customModule="mNet" customModuleProvider="target">
-                                        <rect key="frame" x="30" y="235.5" width="34.5" height="17"/>
+                                        <rect key="frame" x="30" y="235.5" width="35.5" height="17"/>
                                         <fontDescription key="fontDescription" name="SanFranciscoDisplay-Bold" family="San Francisco Display" pointSize="14"/>
                                         <color key="textColor" red="0.3803921569" green="0.28235294119999998" blue="0.22352941179999999" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
@@ -141,7 +141,7 @@
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Alternatively, you may," textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oeW-Wm-4b3">
-                                        <rect key="frame" x="30" y="557" width="119.5" height="14"/>
+                                        <rect key="frame" x="30" y="557" width="113" height="14"/>
                                         <fontDescription key="fontDescription" name="SanFranciscoDisplay-Regular" family="San Francisco Display" pointSize="12"/>
                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="0.38" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
@@ -172,7 +172,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HNB-Qu-MZa">
-                                        <rect key="frame" x="30" y="693.5" width="300" height="163.5"/>
+                                        <rect key="frame" x="30" y="693.5" width="300" height="167.5"/>
                                         <string key="text">We link to all your existing apps to bring together your marketing data.
 
 Brandintell helps classify all your brand data for the myriad types of activities by medium, market, performance.
@@ -245,8 +245,78 @@ Analyse your own data with customized reports. Correlate parameters to reach con
             </objects>
             <point key="canvasLocation" x="-128.5" y="-1096.5"/>
         </scene>
+        <!--Web View Controller-->
+        <scene sceneID="krQ-0U-hHN">
+            <objects>
+                <viewController storyboardIdentifier="mNetWebViewController" id="B9e-l2-gga" customClass="WebViewController" customModule="mNet" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="gMS-XK-Nwj">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HTY-Ge-txS">
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </webView>
+                            <progressView contentMode="scaleToFill" verticalHuggingPriority="750" progressViewStyle="bar" translatesAutoresizingMaskIntoConstraints="NO" id="PgN-l0-y4w">
+                                <rect key="frame" x="0.0" y="64" width="375" height="2.5"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="2" id="5Wf-dd-Ncy"/>
+                                </constraints>
+                            </progressView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="cUa-yF-A9v" firstAttribute="trailing" secondItem="HTY-Ge-txS" secondAttribute="trailing" id="08z-lN-wcb"/>
+                            <constraint firstItem="HTY-Ge-txS" firstAttribute="top" secondItem="cUa-yF-A9v" secondAttribute="top" id="0D8-pF-5JJ"/>
+                            <constraint firstAttribute="trailing" secondItem="PgN-l0-y4w" secondAttribute="trailing" id="C4A-sI-WUZ"/>
+                            <constraint firstItem="PgN-l0-y4w" firstAttribute="leading" secondItem="gMS-XK-Nwj" secondAttribute="leading" id="ejK-f7-5ml"/>
+                            <constraint firstItem="HTY-Ge-txS" firstAttribute="leading" secondItem="cUa-yF-A9v" secondAttribute="leading" id="epM-Zh-P4Z"/>
+                            <constraint firstItem="cUa-yF-A9v" firstAttribute="bottom" secondItem="HTY-Ge-txS" secondAttribute="bottom" id="gWQ-Pv-CeU"/>
+                            <constraint firstItem="PgN-l0-y4w" firstAttribute="top" secondItem="cUa-yF-A9v" secondAttribute="top" id="xdo-xG-LlL"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="cUa-yF-A9v"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="pL4-NB-9OQ">
+                        <barButtonItem key="leftBarButtonItem" image="backButtonImage" id="RTN-qP-N3Y">
+                            <color key="tintColor" red="0.3803921569" green="0.28235294119999998" blue="0.22352941179999999" alpha="1" colorSpace="calibratedRGB"/>
+                            <connections>
+                                <action selector="backButtonAction:" destination="B9e-l2-gga" id="YIi-CV-nly"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="backBarButton" destination="RTN-qP-N3Y" id="ZS3-tw-hGZ"/>
+                        <outlet property="progressBar" destination="PgN-l0-y4w" id="pm8-7M-bbG"/>
+                        <outlet property="progressBarHeight" destination="5Wf-dd-Ncy" id="I7D-BB-vru"/>
+                        <outlet property="webView" destination="HTY-Ge-txS" id="kkW-j8-VxI"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Dup-qg-xfS" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="724" y="-1091"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="lBH-zQ-ySm">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="irI-vQ-nvn" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="2v7-i1-JN3">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="B9e-l2-gga" kind="relationship" relationship="rootViewController" id="KFV-8G-uUR"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Hn1-5W-KZX" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="298" y="-1090"/>
+        </scene>
     </scenes>
     <resources>
+        <image name="backButtonImage" width="24" height="24"/>
         <image name="heroLogo" width="87" height="100"/>
     </resources>
 </document>

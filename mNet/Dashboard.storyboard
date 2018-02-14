@@ -143,7 +143,7 @@
                                                     <color key="textColor" red="0.3803921569" green="0.28235294119999998" blue="0.22352941179999999" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Find all info on ATL Estimates / ATL POs / BTL POs and also some more information" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="m1u-mc-a5D" customClass="CustomBrownTextColorLabel" customModule="mNet" customModuleProvider="target">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Find all info on ATL Estimates / ATL POs / BTL POs and also some more information" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="m1u-mc-a5D" customClass="CustomBrownTextColorLabel" customModule="mNet" customModuleProvider="target">
                                                     <rect key="frame" x="99" y="23" width="188" height="50.5"/>
                                                     <fontDescription key="fontDescription" name="SanFranciscoDisplay-Light" family="San Francisco Display" pointSize="14"/>
                                                     <color key="textColor" red="0.3803921569" green="0.28235294119999998" blue="0.22352941179999999" alpha="1" colorSpace="calibratedRGB"/>
@@ -167,9 +167,10 @@
                                                 <constraint firstAttribute="trailing" secondItem="Dml-Bx-XC8" secondAttribute="trailing" id="6TY-ZS-nSD"/>
                                                 <constraint firstItem="Dml-Bx-XC8" firstAttribute="top" secondItem="1aE-gd-m96" secondAttribute="top" id="6yR-I0-inA"/>
                                                 <constraint firstItem="1aE-gd-m96" firstAttribute="leading" secondItem="1n1-pd-lvG" secondAttribute="leading" id="8MX-OY-3hj"/>
+                                                <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="1aE-gd-m96" secondAttribute="bottom" constant="26" id="HnN-4J-r1t"/>
                                                 <constraint firstItem="1aE-gd-m96" firstAttribute="top" secondItem="1n1-pd-lvG" secondAttribute="top" id="VyR-ax-kng"/>
                                                 <constraint firstItem="Dml-Bx-XC8" firstAttribute="leading" secondItem="1aE-gd-m96" secondAttribute="trailing" constant="27" id="aWy-FS-S8c"/>
-                                                <constraint firstAttribute="bottom" secondItem="m1u-mc-a5D" secondAttribute="bottom" constant="24" id="cKY-F2-U3X"/>
+                                                <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="m1u-mc-a5D" secondAttribute="bottom" constant="24" id="cKY-F2-U3X"/>
                                                 <constraint firstItem="IMO-k9-hdK" firstAttribute="centerY" secondItem="m1u-mc-a5D" secondAttribute="centerY" constant="-5" id="ccJ-fF-HEp"/>
                                                 <constraint firstAttribute="trailing" secondItem="IMO-k9-hdK" secondAttribute="trailing" id="e9u-OX-CWb"/>
                                                 <constraint firstItem="m1u-mc-a5D" firstAttribute="top" secondItem="Dml-Bx-XC8" secondAttribute="bottom" constant="6" id="h4P-TB-xOh"/>

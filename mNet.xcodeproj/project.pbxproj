@@ -72,6 +72,9 @@
 		05A7A9011FF815A000472A60 /* ConversationInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05A7A9001FF8159F00472A60 /* ConversationInfoViewController.swift */; };
 		05AB7F29202B65330059ED56 /* LoginDataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05AB7F28202B65330059ED56 /* LoginDataController.swift */; };
 		05AB7F2B202B68B60059ED56 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05AB7F2A202B68B60059ED56 /* Extensions.swift */; };
+		05B49A0820337D7D00EDAC5F /* DashboardDataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05B49A0720337D7D00EDAC5F /* DashboardDataController.swift */; };
+		05B49A0A20337D9300EDAC5F /* DashboardWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05B49A0920337D9300EDAC5F /* DashboardWrapper.swift */; };
+		05B49A0C203390AF00EDAC5F /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05B49A0B203390AF00EDAC5F /* WebViewController.swift */; };
 		05CC51C320123AAA00EA6D55 /* ApprovalSectionCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05CC51C220123AAA00EA6D55 /* ApprovalSectionCollectionViewCell.swift */; };
 		5E183E961FF3791D00368DE1 /* ApproveReject.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5E183E951FF3791D00368DE1 /* ApproveReject.storyboard */; };
 		5E183E9B1FF37B7C00368DE1 /* RejectApplicationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E183E9A1FF37B7C00368DE1 /* RejectApplicationViewController.swift */; };
@@ -241,6 +244,9 @@
 		05A7A9001FF8159F00472A60 /* ConversationInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConversationInfoViewController.swift; sourceTree = "<group>"; };
 		05AB7F28202B65330059ED56 /* LoginDataController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginDataController.swift; sourceTree = "<group>"; };
 		05AB7F2A202B68B60059ED56 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		05B49A0720337D7D00EDAC5F /* DashboardDataController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardDataController.swift; sourceTree = "<group>"; };
+		05B49A0920337D9300EDAC5F /* DashboardWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardWrapper.swift; sourceTree = "<group>"; };
+		05B49A0B203390AF00EDAC5F /* WebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
 		05CC51C220123AAA00EA6D55 /* ApprovalSectionCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApprovalSectionCollectionViewCell.swift; sourceTree = "<group>"; };
 		5E183E951FF3791D00368DE1 /* ApproveReject.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = ApproveReject.storyboard; sourceTree = "<group>"; };
 		5E183E9A1FF37B7C00368DE1 /* RejectApplicationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RejectApplicationViewController.swift; sourceTree = "<group>"; };
@@ -393,6 +399,7 @@
 			isa = PBXGroup;
 			children = (
 				058A0ECB1FF7C4DD00147238 /* LoginViewController.swift */,
+				05B49A0B203390AF00EDAC5F /* WebViewController.swift */,
 			);
 			name = "View Controllers";
 			sourceTree = "<group>";
@@ -418,6 +425,7 @@
 		058A0ECF1FF7C4F200147238 /* Data Controller */ = {
 			isa = PBXGroup;
 			children = (
+				05B49A0720337D7D00EDAC5F /* DashboardDataController.swift */,
 			);
 			name = "Data Controller";
 			sourceTree = "<group>";
@@ -904,13 +912,14 @@
 			isa = PBXGroup;
 			children = (
 				5EF31C85201B5E93007727D8 /* WrapperManager.swift */,
+				8BE5DA8B202D929E00E412A7 /* CommonResponse.swift */,
 				5EF31C87201B5F18007727D8 /* SettingsWrapper.swift */,
 				5E1A8D06201C49C700BFAF10 /* LoginWrapper.swift */,
 				05501F85201D10AA00831A08 /* ConversationsWrapper.swift */,
 				5E1A8D0F201DF57400BFAF10 /* ProfileWrapper.swift */,
 				5E2D375220209DB60013A138 /* NotificationWrapper.swift */,
 				5EEFC9BE2021E5C200648F17 /* PeopleWrapper.swift */,
-				8BE5DA8B202D929E00E412A7 /* CommonResponse.swift */,
+				05B49A0920337D9300EDAC5F /* DashboardWrapper.swift */,
 			);
 			name = Wrappers;
 			sourceTree = "<group>";
@@ -1075,6 +1084,7 @@
 				05A569C72017B7B300C6F713 /* ToJSON.swift in Sources */,
 				5E1E4215200F537800FB46C1 /* PVRadioButtonGroup.swift in Sources */,
 				5EC300621FEC0A5A00229516 /* SettingOption.swift in Sources */,
+				05B49A0C203390AF00EDAC5F /* WebViewController.swift in Sources */,
 				05A569A52017B74B00C6F713 /* SessionManager.swift in Sources */,
 				05A569CA2017B7B300C6F713 /* TransformType.swift in Sources */,
 				5E3A04722007C313004EE2D7 /* ReceivedMessageTableViewCell.swift in Sources */,
@@ -1084,6 +1094,7 @@
 				05A569A12017B74B00C6F713 /* MultipartFormData.swift in Sources */,
 				05A569D32017B7B300C6F713 /* Mappable.swift in Sources */,
 				05A569962017B74B00C6F713 /* ResponseSerialization.swift in Sources */,
+				05B49A0820337D7D00EDAC5F /* DashboardDataController.swift in Sources */,
 				058A0EDA1FF7CA2D00147238 /* ConversationsListViewController.swift in Sources */,
 				5E1E4217200F537F00FB46C1 /* PVRadioButton.swift in Sources */,
 				5E1A8D07201C49C700BFAF10 /* LoginWrapper.swift in Sources */,
@@ -1151,6 +1162,7 @@
 				5E1A8D0D201C78D600BFAF10 /* Reachability.swift in Sources */,
 				5E622D502031A22F0013EA86 /* SelectUserTableViewCell.swift in Sources */,
 				05A569C62017B7B300C6F713 /* DataTransform.swift in Sources */,
+				05B49A0A20337D9300EDAC5F /* DashboardWrapper.swift in Sources */,
 				05A5699C2017B74B00C6F713 /* ServerTrustPolicy.swift in Sources */,
 				5E183E9D1FF385AD00368DE1 /* CustomBrownColorTextView.swift in Sources */,
 				05501F88201D10F300831A08 /* Conversation.swift in Sources */,

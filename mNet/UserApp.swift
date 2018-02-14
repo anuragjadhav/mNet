@@ -39,7 +39,7 @@ class UserApp: NSObject, Mappable {
         
         appId <- map["app_id"]
         appAdminId <- map["app_admin_id"]
-        appURL <- map["app_url"]
+        appURL <- (map["app_url"],URLTransform())
         appUserId <- map["app_userid"]
         appType <- map["app_type"]
         createdOn <- map["created_on"]
