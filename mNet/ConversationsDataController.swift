@@ -27,6 +27,7 @@ class ConversationsDataController: NSObject {
     var forApprovalUserList:[People]? = []
     var forVerificationUserList:[People]? = []
     var selectUserList:[People]? = []
+    var originalSelectUserList:[People]? = []
     var selectUserPageStart:Int = 0
     var selectUserPageLength:Int = 10
     var previousSelectUserSearchText:String = ""
@@ -35,6 +36,9 @@ class ConversationsDataController: NSObject {
     var selectedFileDataInNewConversation:Data?
     var newConversationSubject:String?
     var newConversationMessage:String?
+    var isDocumentSelected:Bool? = false
+    var selectedUserType:String?
+    var isNewConversationAdded:Bool? = false
 
     func getConversations(searchText:String,onSuccess:@escaping (Int) -> Void , onFailure : @escaping (String) -> Void) {
         
@@ -196,6 +200,10 @@ class ConversationsDataController: NSObject {
                 self.selectUserList = newSelectUserList
             }
             
+            self.originalSelectUserList = self.selectUserList
+            
+            self.filterSelectUsersListBasedOnSelectedUserType()
+            
             self.previousSelectUserSearchText = self.currentSelectUserSearchText
             
             onSuccess()
@@ -209,10 +217,106 @@ class ConversationsDataController: NSObject {
     
     func setupSelectedUsersArray()
     {
-       bccUserList = selectUserList!.filter { $0.isSelectedForBcc == true}
-       toUserList = selectUserList!.filter { $0.isSelectedForTo == true}
-       forVerificationUserList = selectUserList!.filter { $0.isSelectedForVerification == true}
-       forApprovalUserList = selectUserList!.filter { $0.isSelectedForApproval == true}
+       bccUserList = originalSelectUserList!.filter { $0.isSelectedForBcc == true}
+       toUserList = originalSelectUserList!.filter { $0.isSelectedForTo == true}
+       forVerificationUserList = originalSelectUserList!.filter { $0.isSelectedForVerification == true}
+       forApprovalUserList = originalSelectUserList!.filter { $0.isSelectedForApproval == true}
+    }
+    
+    func filterSelectUsersListBasedOnSelectedUserType()
+    {
+        var otherSelectedArray:[People]? = []
+        
+        if(selectedUserType == NewConversationUserType.bcc)
+        {
+            for user in toUserList!
+            {
+                otherSelectedArray?.append(user)
+            }
+            
+            for user in forVerificationUserList!
+            {
+                otherSelectedArray?.append(user)
+            }
+            
+            for user in forApprovalUserList!
+            {
+                otherSelectedArray?.append(user)
+            }
+        }
+        else if(selectedUserType == NewConversationUserType.to)
+        {
+            for user in bccUserList!
+            {
+                otherSelectedArray?.append(user)
+            }
+            
+            for user in forVerificationUserList!
+            {
+                otherSelectedArray?.append(user)
+            }
+            
+            for user in forApprovalUserList!
+            {
+                otherSelectedArray?.append(user)
+            }
+        }
+        else if(selectedUserType == NewConversationUserType.forVerification)
+        {
+            for user in toUserList!
+            {
+                otherSelectedArray?.append(user)
+            }
+            
+            for user in bccUserList!
+            {
+                otherSelectedArray?.append(user)
+            }
+            
+            for user in forApprovalUserList!
+            {
+                otherSelectedArray?.append(user)
+            }
+        }
+        else if(selectedUserType == NewConversationUserType.forApproval)
+        {
+            for user in toUserList!
+            {
+                otherSelectedArray?.append(user)
+            }
+            
+            for user in forVerificationUserList!
+            {
+                otherSelectedArray?.append(user)
+            }
+            
+            for user in bccUserList!
+            {
+                otherSelectedArray?.append(user)
+            }
+        }
+        
+        var newFilteredArray:[People]? = []
+        
+        for user1:People in originalSelectUserList!
+        {
+            var doesContain:Bool? = false
+            
+            for user2:People in otherSelectedArray!
+            {
+                 if(user1.userId == user2.userId)
+                 {
+                    doesContain = true
+                 }
+            }
+            
+            if(doesContain == false)
+            {
+                newFilteredArray?.append(user1)
+            }
+        }
+        
+        selectUserList = newFilteredArray
     }
     
     
@@ -253,4 +357,97 @@ class ConversationsDataController: NSObject {
         return (forApprovalUserList?.count)!
     }
     
+    func createNewConversation(onSuccess:@escaping () -> Void , onFailure : @escaping (String) -> Void) {
+        
+        let user:User = User.loggedInUser()!
+        var postParams:[String:Any] = [String:Any]()
+        postParams["sender_id"] = user.userId
+        postParams["sender_password"] = user.password
+        postParams["sender_email"] = user.email
+        postParams["post_type"] = "4"
+        postParams["post_type_id"] = "0"
+        postParams["post_title"] = newConversationSubject
+        postParams["post_message"] = newConversationMessage
+        
+        var mimeType:String?
+        var documentName:String?
+        
+        //select file parameters
+        if(isDocumentSelected == true)
+        {
+            mimeType = "application/pdf"
+            documentName = "document"
+        }
+        else
+        {
+            mimeType = "image/jpeg"
+            documentName = "image"
+        }
+
+        //add bcc to verification and approval emails
+        var toEmailArray:[String]? = []
+        var bccEmailArray:[String]? = []
+        var verificationEmailArray:[String]? = []
+        var approvalEmailArray:[String]? = []
+        
+        //add all emails except bcc in to email
+        for user:People in toUserList!
+        {
+            if(user.email != nil){
+                toEmailArray?.append(user.email!)
+            }
+        }
+        
+        for user:People in forVerificationUserList!
+        {
+            if(user.email != nil){
+                toEmailArray?.append(user.email!)
+            }
+        }
+        
+        for user:People in forApprovalUserList!
+        {
+            if(user.email != nil){
+                toEmailArray?.append(user.email!)
+            }
+        }
+        
+        //add bcc emails
+        for user:People in bccUserList!
+        {
+            if(user.email != nil){
+                bccEmailArray?.append(user.email!)
+            }
+        }
+        
+        //add verification emails
+        for user:People in forVerificationUserList!
+        {
+            if(user.email != nil){
+                verificationEmailArray?.append(user.email!)
+            }
+        }
+        
+        //add approval emails
+        for user:People in forApprovalUserList!
+        {
+            if(user.email != nil){
+                approvalEmailArray?.append(user.email!)
+            }
+        }
+        
+        postParams["to_id"] = toEmailArray
+        postParams["bcc_id"] = bccEmailArray
+        postParams["agree_id"] = verificationEmailArray
+        postParams["approve"] = approvalEmailArray
+        
+        WrapperManager.shared.conversationWrapper.createNewConversation(postParams: postParams, fileName:selectedFilenameInNewConversation! , fileData: selectedFileDataInNewConversation!, type: mimeType!, name: documentName!, onSuccess: {
+            
+            onSuccess()
+            
+        }) { (errorMessage) in
+            
+            onFailure(errorMessage)
+        }
+    }
 }

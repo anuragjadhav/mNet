@@ -52,6 +52,12 @@ class ConversationsListViewController: BaseViewController, UITableViewDelegate, 
         conversationListTableView.reloadData()
         
         self.unreadConversationsLabel.text = String(dataCtrl.getUnreadConversationCount()) + " unread conversations"
+        
+        if(dataCtrl.isNewConversationAdded == true)
+        {
+            dataCtrl.isNewConversationAdded = false
+            getConversations(isReload: false, searchText: searchBar.text!)
+        }
     }
     
     //MARK: Setup

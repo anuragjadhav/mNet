@@ -114,6 +114,8 @@ class NewConversationViewController: BaseViewController,UICollectionViewDelegate
         dataCtrl?.selectedFilenameInNewConversation = currentTimeStamp
         dataCtrl?.selectedFileDataInNewConversation = UIImageJPEGRepresentation(chosenImage, 1.0)
         
+        attachmentNameLabel.text = dataCtrl?.selectedFilenameInNewConversation
+        
         picker.dismiss(animated: true, completion: nil)
     }
     
@@ -127,6 +129,8 @@ class NewConversationViewController: BaseViewController,UICollectionViewDelegate
     public func documentPicker(_ controller: UIDocumentPickerViewController, didPickDocumentAt url: URL) {
         
         dataCtrl?.selectedFilenameInNewConversation = (url.absoluteString as NSString).lastPathComponent
+        
+        attachmentNameLabel.text = dataCtrl?.selectedFilenameInNewConversation
         
         do
         {
@@ -181,14 +185,12 @@ class NewConversationViewController: BaseViewController,UICollectionViewDelegate
 
     func openDocuments()
     {
-        documentController = UIDocumentMenuViewController(documentTypes: [String(kUTTypePDF),String(kUTTypeTXNTextAndMultimediaData)], in: .import)
+        documentController = UIDocumentMenuViewController(documentTypes: [String(kUTTypePDF)], in: .import)
         documentController?.delegate = self
         documentController?.modalPresentationStyle = .formSheet
         present(documentController!, animated: true, completion: nil)
     }
 
-
-    
 
     //MARK: Button Actions
     
@@ -229,15 +231,17 @@ class NewConversationViewController: BaseViewController,UICollectionViewDelegate
         let alert = UIAlertController(title:"Select Media", message: "Please Select an Option", preferredStyle: .actionSheet)
         
         alert.addAction(UIAlertAction(title: "Take An Image", style: .default , handler:{ (UIAlertAction)in
-            
+                self.dataCtrl?.isDocumentSelected = false
                 self.openCamera()
         }))
         
         alert.addAction(UIAlertAction(title: "Open Photo Gallery", style: .default , handler:{ (UIAlertAction)in
+            self.dataCtrl?.isDocumentSelected = false
             self.openPhotoLibrary()
         }))
         
         alert.addAction(UIAlertAction(title: "Document", style: .default , handler:{ (UIAlertAction)in
+            self.dataCtrl?.isDocumentSelected = true
              self.openDocuments()
         }))
         
@@ -255,6 +259,38 @@ class NewConversationViewController: BaseViewController,UICollectionViewDelegate
     
     @IBAction func startConversationButtonAction(_ sender: UIButton) {
         
-        //check for validation and do post call
+        if((dataCtrl?.toUserList?.count)! > 0 && subjectTextField.text != nil && (subjectTextField.text?.count)! > 0 && messageTextView.text != nil && messageTextView.text.count > 0 && dataCtrl?.selectedFilenameInNewConversation != nil && dataCtrl?.selectedFileDataInNewConversation != nil)
+        {
+            dataCtrl?.newConversationSubject = subjectTextField.text
+            dataCtrl?.newConversationMessage = messageTextView.text
+            
+            self.showTransperantLoadingOnViewController()
+            
+            dataCtrl?.createNewConversation(onSuccess: { [unowned self] in
+                
+                DispatchQueue.main.async {
+                    
+                    self.dataCtrl?.isNewConversationAdded = true
+                    self.navigationController?.popViewController(animated: true)
+                }
+                
+            }, onFailure: { [unowned self] (errorMessage) in
+                
+                DispatchQueue.main.async {
+                    
+                    let alert = UIAlertController(title:AlertMessages.sorry, message:errorMessage, preferredStyle: .alert)
+                    alert.addAction(UIAlertAction(title:AlertMessages.ok, style:.default, handler: { _ in
+                    }))
+                    self.present(alert, animated: true, completion: nil)
+                }
+            })
+        }
+        else
+        {
+            let alert = UIAlertController(title:AlertMessages.sorry, message:"Please enter valid data to start new conversation", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title:AlertMessages.ok, style:.default, handler: { _ in
+            }))
+            self.present(alert, animated: true, completion: nil)
+        }
     }
 }

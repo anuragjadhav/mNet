@@ -110,4 +110,46 @@ class ConversationsWrapper: NSObject {
             }
         }
     }
+    
+    
+    func createNewConversation(postParams:[String:Any],fileName:String,fileData:Data,type:String,name:String, onSuccess:@escaping () -> Void , onFailure : @escaping (String) -> Void){
+        
+        upload(multipartFormData: { (multipartFormData) in
+            
+            for (key, value) in postParams {
+                multipartFormData.append("\(value)".data(using: String.Encoding.utf8)!, withName: key as String)
+            }
+            
+            multipartFormData.append(fileData, withName:name, fileName:fileName, mimeType: type)
+            
+        }, usingThreshold: UInt64.init(), to: URLS.createNewConversation, method: .post, headers: nil) { (result) in
+            switch result{
+            case .success(let upload, _, _):
+                
+                upload.responseJSON { response in
+                    
+                    if let responseDict:[String:Any] = response.result.value as? [String:Any] {
+                        
+                        let error:String = responseDict[DictionaryKeys.APIResponse.error] as! String
+                        
+                        if(error == DictionaryKeys.APIResponse.noError)
+                        {
+                            onSuccess()
+                        }
+                        else
+                        {
+                            onFailure("Unable to upload file")
+                        }
+                    }
+                    else{
+                        
+                        onFailure("Unable to upload file")
+                    }
+                }
+            case .failure(_):
+              
+                 onFailure("Unable to upload file")
+            }
+        }
+    }
 }

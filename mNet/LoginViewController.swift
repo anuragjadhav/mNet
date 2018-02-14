@@ -49,13 +49,19 @@ class LoginViewController: BaseViewController, UITextFieldDelegate {
             dataController.loginType = LoginType.normal
             dataController.postLogin(onSuccess: { [unowned self] in
                 
-                self.removeTransperantLoadingFromViewController()
-                AppDelegate.sharedInstance.makeDashboardPageHome(true)
+                    DispatchQueue.main.async {
+                        
+                        self.removeTransperantLoadingFromViewController()
+                        AppDelegate.sharedInstance.makeDashboardPageHome(true)
+                    }
                 
                 }, onFailure: { [unowned self] (errorMessage) in
                     
-                    self.removeTransperantLoadingFromViewController()
-                    self.showQuickFailureAlert(message: errorMessage)
+                    DispatchQueue.main.async {
+                        
+                        self.removeTransperantLoadingFromViewController()
+                        self.showQuickFailureAlert(message: errorMessage)
+                    }
             })
         }
         else {

@@ -69,13 +69,17 @@ class DashboardViewController: BaseViewController, UITableViewDataSource, UITabl
         
         dataController.getDashboardData(onSuccess: { [unowned self] in
             
-            self.removeLoadingFromViewController()
-            self.setData()
+            DispatchQueue.main.async {
+                self.removeLoadingFromViewController()
+                self.setData()
+            }
             
         }) { [unowned self] (errorMessage) in
             
-            self.removeLoadingFromViewController()
-            self.showRetryView(message: errorMessage)
+            DispatchQueue.main.async {
+                self.removeLoadingFromViewController()
+                self.showRetryView(message: errorMessage)
+            }
         }
     }
     

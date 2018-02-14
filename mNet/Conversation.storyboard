@@ -231,7 +231,7 @@
                                         <constraints>
                                             <constraint firstAttribute="height" constant="69" id="liv-hZ-26A"/>
                                         </constraints>
-                                        <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="5" minimumInteritemSpacing="5" id="2pB-OH-slu">
+                                        <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="5" minimumInteritemSpacing="0.0" id="2pB-OH-slu">
                                             <size key="itemSize" width="52" height="67"/>
                                             <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                             <size key="footerReferenceSize" width="0.0" height="0.0"/>
@@ -312,7 +312,7 @@
                                         <constraints>
                                             <constraint firstAttribute="height" constant="69" id="oVM-j9-N9K"/>
                                         </constraints>
-                                        <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="5" minimumInteritemSpacing="5" id="zKz-42-rrb">
+                                        <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="5" minimumInteritemSpacing="0.0" id="zKz-42-rrb">
                                             <size key="itemSize" width="52" height="67"/>
                                             <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                             <size key="footerReferenceSize" width="0.0" height="0.0"/>
@@ -393,7 +393,7 @@
                                         <constraints>
                                             <constraint firstAttribute="height" constant="69" id="d4T-ME-zG9"/>
                                         </constraints>
-                                        <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="5" minimumInteritemSpacing="5" id="jJU-Ml-EU0">
+                                        <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="5" minimumInteritemSpacing="0.0" id="jJU-Ml-EU0">
                                             <size key="itemSize" width="52" height="67"/>
                                             <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                             <size key="footerReferenceSize" width="0.0" height="0.0"/>
@@ -474,7 +474,7 @@
                                         <constraints>
                                             <constraint firstAttribute="height" constant="69" id="LL9-Vc-0kg"/>
                                         </constraints>
-                                        <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="5" minimumInteritemSpacing="5" id="JjE-xx-het">
+                                        <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="5" minimumInteritemSpacing="0.0" id="JjE-xx-het">
                                             <size key="itemSize" width="52" height="67"/>
                                             <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                             <size key="footerReferenceSize" width="0.0" height="0.0"/>
@@ -1076,25 +1076,25 @@
                                     <outlet property="delegate" destination="j5b-dt-cpm" id="qVU-56-dr0"/>
                                 </connections>
                             </searchBar>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="CLu-4U-jYC">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="CLu-4U-jYC">
                                 <rect key="frame" x="27" y="268" width="348" height="351"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="SelectUserTableViewCell" rowHeight="55" id="Upp-8Y-T0w" customClass="SelectUserTableViewCell" customModule="mNet" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="348" height="55"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="SelectUserTableViewCell" rowHeight="63" id="Upp-8Y-T0w" customClass="SelectUserTableViewCell" customModule="mNet" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="348" height="63"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" tableViewCell="Upp-8Y-T0w" id="vb4-Ta-clW">
-                                            <rect key="frame" x="0.0" y="0.0" width="348" height="54.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="348" height="62.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Saurabh Suman" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="llt-yv-6Oh" customClass="CustomBrownTextColorLabel" customModule="mNet" customModuleProvider="target">
-                                                    <rect key="frame" x="0.0" y="0.0" width="101" height="17"/>
+                                                    <rect key="frame" x="0.0" y="10" width="101" height="17"/>
                                                     <fontDescription key="fontDescription" name="SanFranciscoDisplay-Bold" family="San Francisco Display" pointSize="14"/>
                                                     <color key="textColor" red="0.3803921569" green="0.28235294119999998" blue="0.22352941179999999" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Manager" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="34j-4x-DqI" customClass="CustomBrownTextColorLabel" customModule="mNet" customModuleProvider="target">
-                                                    <rect key="frame" x="0.0" y="22" width="52.5" height="17"/>
+                                                    <rect key="frame" x="0.0" y="32" width="52.5" height="17"/>
                                                     <fontDescription key="fontDescription" name="SanFranciscoDisplay-Light" family="San Francisco Display" pointSize="14"/>
                                                     <color key="textColor" red="0.3803921569" green="0.28235294119999998" blue="0.22352941179999999" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
@@ -1125,8 +1125,9 @@
                                             <constraints>
                                                 <constraint firstItem="llt-yv-6Oh" firstAttribute="leading" secondItem="vb4-Ta-clW" secondAttribute="leading" id="9PK-hW-hZO"/>
                                                 <constraint firstItem="34j-4x-DqI" firstAttribute="leading" secondItem="llt-yv-6Oh" secondAttribute="leading" id="T3m-5S-uM2"/>
+                                                <constraint firstAttribute="bottom" secondItem="34j-4x-DqI" secondAttribute="bottom" constant="13.5" id="Xu3-29-dMX"/>
                                                 <constraint firstItem="Gk4-xd-R3A" firstAttribute="top" secondItem="vb4-Ta-clW" secondAttribute="top" constant="6" id="sa6-ya-chr"/>
-                                                <constraint firstItem="llt-yv-6Oh" firstAttribute="top" secondItem="vb4-Ta-clW" secondAttribute="top" id="ttA-gO-OUr"/>
+                                                <constraint firstItem="llt-yv-6Oh" firstAttribute="top" secondItem="vb4-Ta-clW" secondAttribute="top" constant="10" id="ttA-gO-OUr"/>
                                                 <constraint firstAttribute="trailing" secondItem="Gk4-xd-R3A" secondAttribute="trailing" constant="33" id="w6h-2F-VZl"/>
                                                 <constraint firstItem="34j-4x-DqI" firstAttribute="top" secondItem="llt-yv-6Oh" secondAttribute="bottom" constant="5" id="yQw-zr-fu5"/>
                                             </constraints>
@@ -1163,7 +1164,7 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="69" id="fTb-mw-YAF"/>
                                 </constraints>
-                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="5" minimumInteritemSpacing="5" id="1jL-s2-7Mn">
+                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="5" minimumInteritemSpacing="0.0" id="1jL-s2-7Mn">
                                     <size key="itemSize" width="52" height="67"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>

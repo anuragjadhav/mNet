@@ -27,9 +27,9 @@ class SelectUserViewController: BaseViewController,UITableViewDelegate,UITableVi
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let refreshView = KRPullLoadView()
-        refreshView.delegate = self
-        selectUserTableView.addPullLoadableView(refreshView, type: .refresh)
+        let loadMoreView = KRPullLoadView()
+        loadMoreView.delegate = self
+        selectUserTableView.addPullLoadableView(loadMoreView, type: .loadMore)
         
         selectUserTableView.tableFooterView = UIView()
         searchBar.text = ""
@@ -41,12 +41,15 @@ class SelectUserViewController: BaseViewController,UITableViewDelegate,UITableVi
         
         self.setUpNavigationController()
         
+        dataCtrl?.selectedUserType = userType
+        
         if(dataCtrl?.selectUserList?.count == 0)
         {
             getSelectUserList(isReload: true, searchText: searchBar.text!)
         }
         else
         {
+            dataCtrl?.filterSelectUsersListBasedOnSelectedUserType()
             selectUserTableView.reloadData()
             selectUserCollectionView.reloadData()
         }
