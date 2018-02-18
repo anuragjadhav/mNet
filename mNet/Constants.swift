@@ -30,8 +30,11 @@ struct URLS {
     static let registerDevice:URL = URL(string: "registerToken", relativeTo: liveBaseURL)!
     static let deRegisterDevice:URL = URL(string: "deregisterToken", relativeTo: liveBaseURL)!
     
-    static let getDashboardStatistics = URL(string: "GetDashBoardStatistics", relativeTo: baseURL)!
-    static let getUserAppsList = URL(string: "getUserAppList", relativeTo: baseURL)!
+    static let getDashboardStatistics:URL = URL(string: "GetDashBoardStatistics", relativeTo: baseURL)!
+    static let getUserAppsList:URL = URL(string: "getUserAppList", relativeTo: baseURL)!
+    static let getApprovalList:URL = URL(string: "GetApprovedData", relativeTo: baseURL)!
+    static let approvePost:URL = URL(string: "setVerifyRepliesToPost", relativeTo: baseURL)!
+    static let rejectPost:URL = URL(string: "rejectRepliesToPost", relativeTo: baseURL)!
 }
 
 

@@ -118,9 +118,9 @@ class User: NSObject, Mappable {
     func toJSONPost() -> [String:Any] {
         
         var dictionary:[String:Any] = [String:Any]()
-        dictionary["UserEmail"] = email
-        dictionary["UserPass"] = password
-        dictionary["UserId"] = userId
+        dictionary["UserEmail"] = "neha.kandpal@heromotocorp.com" //email
+        dictionary["UserPass"] = "Neha@1234" //password
+        dictionary["UserId"] = "66" //userId
         return dictionary
     }
     

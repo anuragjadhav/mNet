@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import UIKit
 
 extension String {
     
@@ -15,5 +16,42 @@ extension String {
         let emailTest = NSPredicate(format:"SELF MATCHES %@", emailRegEx)
         return emailTest.evaluate(with: self)
     }
+    
+    func getWidthForfont(_ font:UIFont, forHeight height:CGFloat) -> CGFloat{
+        
+        let constrainedSize = CGSize(width: CGFloat(HUGE), height: height)
+        let attributesDictionary = [
+            NSAttributedStringKey.font : font
+        ]
+        
+        let string = NSMutableAttributedString(string: self, attributes: attributesDictionary)
+        let requiredWidth = string.boundingRect(with: constrainedSize, options: .usesLineFragmentOrigin, context: nil)
+        return ceil(requiredWidth.size.width)
+    }
+    
+    func getHeightForfont(_ font:UIFont, forWidth width:CGFloat) -> CGFloat{
+        
+        let constrainedSize = CGSize(width: width, height: CGFloat(HUGE))
+        let attributesDictionary = [
+            NSAttributedStringKey.font : font
+        ]
+        
+        let string = NSMutableAttributedString(string: self, attributes: attributesDictionary)
+        let requiredHeight = string.boundingRect(with: constrainedSize, options: .usesLineFragmentOrigin, context: nil)
+        return ceil(requiredHeight.size.height)
+    }
+    
+    func removeHTMLTags() -> String {
+        
+        return self.replacingOccurrences(of: "<[^>]+>", with: "", options: .regularExpression, range: nil)        
+    }
 }
+
+extension Array
+{
+    subscript (safe index: Index) -> Element? {
+        return indices.contains(index) ? self[index] : nil
+    }
+}
+
 

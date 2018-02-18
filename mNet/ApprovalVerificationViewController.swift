@@ -24,6 +24,8 @@ class ApprovalVerificationViewController: BaseViewController,UISearchBarDelegate
 
         // Do any additional setup after loading the view.
         radioButtonGroup = PVRadioButtonGroup()
+        approvalRadioButton.tag = 1
+        verificationRadioButton.tag = 2
         radioButtonGroup!.appendToRadioGroup(radioButtons: [approvalRadioButton,verificationRadioButton])
         radioButtonGroup!.delegate = self as RadioButtonGroupDelegate
     }
@@ -113,13 +115,14 @@ class ApprovalVerificationViewController: BaseViewController,UISearchBarDelegate
     
 
     @IBAction func sendButtonAction(_ sender: Any) {
+        
+        
     }
 
     // MARK: - Radio Button Delegate
     
     func radioButtonClicked(button: PVRadioButton) {
         
-
     }
 
 

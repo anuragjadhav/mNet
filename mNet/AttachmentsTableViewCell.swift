@@ -9,16 +9,13 @@
 import UIKit
 
 class AttachmentsTableViewCell: UITableViewCell {
-
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
+    
+    @IBOutlet weak var filenameLabel: CustomBrownTextColorLabel!
+    @IBOutlet weak var dateLabel: CustomBrownTextColorLabel!
+    @IBOutlet weak var downloadButton: UIButton!
+    
+    func setUpCell(fileNameString:String) {
+        
+        filenameLabel.text = fileNameString.components(separatedBy: "/").last ?? fileNameString
     }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
-    }
-
 }

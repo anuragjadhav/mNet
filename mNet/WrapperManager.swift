@@ -19,6 +19,7 @@ class WrapperManager: NSObject {
     let notifiactionWrapper:NotificationWrapper = NotificationWrapper()
     let peopleWrapper:PeopleWrapper = PeopleWrapper()
     let dashboardWrapper:DashboardWrapper = DashboardWrapper()
+    let approvalWrapper:ApprovalWrapper = ApprovalWrapper()
     
     private override init() {
         

@@ -106,7 +106,7 @@ class WebViewController: BaseViewController, UIWebViewDelegate {
         progressBar.setProgress(0, animated: true)
     }
     
-    func timerCallback() {
+    @objc func timerCallback() {
         
         if !isLoading {
             
