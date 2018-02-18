@@ -436,10 +436,10 @@ class ConversationsDataController: NSObject {
             }
         }
         
-        postParams["to_id"] = toEmailArray
-        postParams["bcc_id"] = bccEmailArray
-        postParams["agree_id"] = verificationEmailArray
-        postParams["approve"] = approvalEmailArray
+        postParams["to_id"] = toEmailArray?.joined()
+        postParams["bcc_id"] = bccEmailArray?.joined()
+        postParams["agree_id"] = verificationEmailArray?.joined()
+        postParams["approve"] = approvalEmailArray?.joined()
         
         WrapperManager.shared.conversationWrapper.createNewConversation(postParams: postParams, fileName:selectedFilenameInNewConversation! , fileData: selectedFileDataInNewConversation!, type: mimeType!, name: documentName!, onSuccess: {
             
