@@ -20,6 +20,9 @@ class ApprovalsViewController: BaseViewController,UICollectionViewDelegate, UICo
     @IBOutlet weak var pendingApprovalsTableView: UITableView!
     @IBOutlet weak var filterBarButton: UIBarButtonItem!
 
+    @IBOutlet weak var filterLabel: CustomBrownTextColorLabel!
+    
+    @IBOutlet weak var filterLabelWidth: NSLayoutConstraint!
     var dataController:ApprovalsDataController = ApprovalsDataController()
     var isLoading:Bool = false
     
@@ -71,6 +74,28 @@ class ApprovalsViewController: BaseViewController,UICollectionViewDelegate, UICo
                 self.pendingApprovalsTableView.reloadData()
                 self.pendingApprovalsLabel.text = self.dataController.selectedSection?.name
                 self.isLoading = false
+                
+                switch self.dataController.filterString ?? "" {
+                    
+                case "1":   self.filterLabel.isHidden = false
+                            self.filterLabel.text = "Today"
+                
+                case "2":   self.filterLabel.isHidden = false
+                            self.filterLabel.text = "Past Week"
+                    
+                case "3":   self.filterLabel.isHidden = false
+                            self.filterLabel.text = "Past Fifteen Days"
+                    
+                case "4":  self.filterLabel.isHidden = false
+                            self.filterLabel.text = "Past Month"
+                    
+                default:    self.filterLabel.isHidden = true
+                            self.filterLabel.text = ""
+                    
+                }
+                
+                self.filterLabelWidth.constant = (self.filterLabel.text ?? "").getWidthForfont(self.filterLabel.font, forHeight: 18) + 12
+                
                 self.removeTransperantLoadingFromViewController()
             }
             
@@ -90,6 +115,7 @@ class ApprovalsViewController: BaseViewController,UICollectionViewDelegate, UICo
         dataController.reachedEnd = false
         dataController.searchValue = ""
         dataController.startIndex = 0
+        dataController.filterString = nil
         searchBar.text = ""
     }
     
@@ -152,7 +178,6 @@ class ApprovalsViewController: BaseViewController,UICollectionViewDelegate, UICo
             let maximumOffset = scrollView.contentSize.height - scrollView.frame.size.height;
             
             if maximumOffset - contentOffset <= 100 {
-                
                 getData()
             }
         }
@@ -167,6 +192,7 @@ class ApprovalsViewController: BaseViewController,UICollectionViewDelegate, UICo
             dataController.reachedEnd = false
             dataController.searchValue = searchBar.text!
             dataController.startIndex = 0
+            dataController.reachedEnd = false
             getData()
         }
     }
@@ -178,6 +204,7 @@ class ApprovalsViewController: BaseViewController,UICollectionViewDelegate, UICo
             dataController.reachedEnd = false
             dataController.searchValue = searchBar.text!
             dataController.startIndex = 0
+            dataController.reachedEnd = false
             getData()
         }
     }
@@ -189,6 +216,7 @@ class ApprovalsViewController: BaseViewController,UICollectionViewDelegate, UICo
             dataController.reachedEnd = false
             dataController.searchValue = ""
             dataController.startIndex = 0
+            dataController.reachedEnd = false
             getData()
         }
     }
@@ -233,6 +261,59 @@ class ApprovalsViewController: BaseViewController,UICollectionViewDelegate, UICo
     
     @IBAction func filterButtonAction(_ sender: UIBarButtonItem) {
         
+        showFilterActionSheet()
+    }
+    
+    func showFilterActionSheet() {
+        
+        let actionSheet:UIAlertController = UIAlertController(title: "Date Filter", message: "Select an option", preferredStyle: .actionSheet)
+        actionSheet.view.tintColor = ColorConstants.kBlueColor
+        
+        let allAction:UIAlertAction = UIAlertAction(title: "All", style: .default) { (alertAction) in
+            self.dataController.filterString = nil
+            self.dataController.startIndex = 0
+            self.dataController.reachedEnd = false
+            self.getData()
+        }
+        
+        let todayAction:UIAlertAction = UIAlertAction(title: "Today", style: .default) { (alertAction) in
+            self.dataController.filterString = "1"
+            self.dataController.startIndex = 0
+            self.dataController.reachedEnd = false
+            self.getData()
+        }
+        
+        let pastWeekAction:UIAlertAction = UIAlertAction(title: "Past Week", style: .default) { (alertAction) in
+            self.dataController.filterString = "2"
+            self.dataController.startIndex = 0
+            self.dataController.reachedEnd = false
+            self.getData()
+        }
+        
+        let pastFifteenDaysAction:UIAlertAction = UIAlertAction(title: "Past Fifteen Days", style: .default) { (alertAction) in
+            self.dataController.filterString = "3"
+            self.dataController.startIndex = 0
+            self.dataController.reachedEnd = false
+            self.getData()
+        }
+        
+        let pastMonthAction:UIAlertAction = UIAlertAction(title: "Past Month", style: .default) { (alertAction) in
+            self.dataController.filterString = "4"
+            self.dataController.startIndex = 0
+            self.dataController.reachedEnd = false
+            self.getData()
+        }
+        
+        let cancelAction:UIAlertAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+        
+        actionSheet.addAction(allAction)
+        actionSheet.addAction(todayAction)
+        actionSheet.addAction(pastWeekAction)
+        actionSheet.addAction(pastFifteenDaysAction)
+        actionSheet.addAction(pastMonthAction)
+        actionSheet.addAction(cancelAction)
+        
+        self.present(actionSheet, animated: true, completion: nil)
     }
     
     

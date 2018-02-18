@@ -1200,17 +1200,36 @@
                                 <color key="textColor" red="0.01176470588" green="0.51764705879999995" blue="0.80784313730000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qIi-UL-WLO">
+                                <rect key="frame" x="217.5" y="194" width="120" height="18"/>
+                                <color key="backgroundColor" red="0.3803921569" green="0.28235294119999998" blue="0.22352941179999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="18" id="8nC-Z1-Lzn"/>
+                                    <constraint firstAttribute="width" priority="999" constant="120" id="Gnt-wc-WHy"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="SanFranciscoDisplay-Semibold" family="San Francisco Display" pointSize="13"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="4"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="0.98039215690000003" green="0.98431372549999996" blue="0.98823529409999999" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="nDM-H3-xll" firstAttribute="trailing" secondItem="ZGD-TU-vEI" secondAttribute="trailing" id="4NY-EN-Q23"/>
+                            <constraint firstItem="qIi-UL-WLO" firstAttribute="centerY" secondItem="t3M-kU-cBe" secondAttribute="centerY" id="4yT-oi-KBZ"/>
                             <constraint firstItem="FlS-pH-e24" firstAttribute="leading" secondItem="nDM-H3-xll" secondAttribute="leading" id="8VD-U5-Nk1"/>
                             <constraint firstItem="t3M-kU-cBe" firstAttribute="leading" secondItem="nDM-H3-xll" secondAttribute="leading" constant="27" id="FpL-6d-Y1g"/>
                             <constraint firstItem="ZGD-TU-vEI" firstAttribute="leading" secondItem="nDM-H3-xll" secondAttribute="leading" id="KZO-Gd-h7f"/>
                             <constraint firstItem="FlS-pH-e24" firstAttribute="top" secondItem="t3M-kU-cBe" secondAttribute="bottom" constant="9" id="U83-Xw-KpX"/>
                             <constraint firstItem="nDM-H3-xll" firstAttribute="bottom" secondItem="FlS-pH-e24" secondAttribute="bottom" id="Ueg-76-mgj"/>
+                            <constraint firstItem="qIi-UL-WLO" firstAttribute="leading" secondItem="t3M-kU-cBe" secondAttribute="trailing" constant="16" id="ZVc-v2-Duy"/>
                             <constraint firstItem="FlS-pH-e24" firstAttribute="trailing" secondItem="nDM-H3-xll" secondAttribute="trailing" id="dKM-CU-IU7"/>
                             <constraint firstItem="t3M-kU-cBe" firstAttribute="top" secondItem="ZGD-TU-vEI" secondAttribute="bottom" constant="27" id="hKb-dh-yqM"/>
+                            <constraint firstItem="nDM-H3-xll" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="qIi-UL-WLO" secondAttribute="trailing" constant="16" id="hX8-ov-Stf"/>
                             <constraint firstItem="ZGD-TU-vEI" firstAttribute="top" secondItem="nDM-H3-xll" secondAttribute="top" id="ySs-w1-nay"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="nDM-H3-xll"/>
@@ -1232,6 +1251,8 @@
                     <connections>
                         <outlet property="collectionViewContainer" destination="ZGD-TU-vEI" id="wem-qW-8Vc"/>
                         <outlet property="filterBarButton" destination="t76-rW-xUd" id="9lf-DY-NEP"/>
+                        <outlet property="filterLabel" destination="qIi-UL-WLO" id="KUk-qD-bna"/>
+                        <outlet property="filterLabelWidth" destination="Gnt-wc-WHy" id="lln-kD-eck"/>
                         <outlet property="pendingApprovalsLabel" destination="t3M-kU-cBe" id="LPk-g3-2Tm"/>
                         <outlet property="pendingApprovalsTableView" destination="FlS-pH-e24" id="xIo-9f-4Ig"/>
                         <outlet property="searchBar" destination="DHT-Qm-mhZ" id="wDZ-Yf-6Jg"/>
