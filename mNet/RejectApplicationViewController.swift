@@ -35,14 +35,14 @@ class RejectApplicationViewController: BaseViewController {
     @IBAction func rejectButtonAction(_ sender: Any) {
         
         self.showTransperantLoadingOnViewController()
-        dataController.rejectPost(replyMessage: messageTextView.text, onSuccess: { [unowned self] (message) in
+        dataController.rejectPost(replyMessage: messageTextView.text, onSuccess: { (message) in
             
             DispatchQueue.main.async {
                 self.removeTransperantLoadingFromViewController()
                 self.showQuickSuccessAlert(message: message)
             }
 
-        }) { [unowned self] (errorMessage) in
+        }) { (errorMessage) in
             
             DispatchQueue.main.async {
                 self.removeTransperantLoadingFromViewController()
