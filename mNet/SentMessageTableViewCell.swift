@@ -10,15 +10,45 @@ import UIKit
 
 class SentMessageTableViewCell: UITableViewCell {
 
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
+    @IBOutlet weak var linkTextView: UITextView!
+    @IBOutlet weak var userNameLabel: UILabel!
+    @IBOutlet weak var timeLabel: UILabel!
+    @IBOutlet weak var messageLabel: UILabel!
+    
+    @IBOutlet weak var linkViewHeightConstraint: NSLayoutConstraint!
+    @IBOutlet weak var linkViewTopConstraint: NSLayoutConstraint!
+    
+    func loadCellWithConversationReply(reply:ConversationReply,link:String?)
+    {
+        //set time label
+        let dateFormatter : DateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
+        
+        //convert received string into date and then format it in required format
+        let receivedDate = dateFormatter.date(from:reply.createdOn)
+        dateFormatter.dateFormat = "h:mm a"
+        
+        let timeStringToSet = dateFormatter.string(from: receivedDate!)
+        self.timeLabel.text = timeStringToSet
+        
+        //set namd and message
+        userNameLabel.text = reply.fullName
+        messageLabel.text = reply.replyMessage
+        
+        //set link if present
+        if(link == nil || link == "")
+        {
+            linkViewTopConstraint.constant = 2
+            linkViewHeightConstraint.constant = 0
+            linkTextView.text = nil
+        }
+        else
+        {
+            linkTextView.text = link
+            linkViewTopConstraint.constant = 6.5
+            linkViewHeightConstraint.constant = 15
+        }
+        
+        contentView.layoutIfNeeded()
     }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
-    }
-
 }

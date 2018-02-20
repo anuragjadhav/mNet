@@ -19,7 +19,6 @@ class NotificationDataController: NSObject {
         if(isReload){
             
             start = 0
-            notifications.removeAll()
         }
         
         let user:User = User.loggedInUser()!
@@ -30,9 +29,16 @@ class NotificationDataController: NSObject {
 
         WrapperManager.shared.notifiactionWrapper.getNotificationList(postParams: postParams, onSuccess: { [unowned self] (notificationArray) in
             
-            for notification in notificationArray
+            if(isReload)
             {
-                self.notifications.append(notification)
+                self.notifications = notificationArray
+            }
+            else
+            {
+                for notification in notificationArray
+                {
+                    self.notifications.append(notification)
+                }
             }
             
             //change start
