@@ -12,6 +12,8 @@ class RejectApplicationViewController: BaseViewController {
 
     @IBOutlet weak var messageTextView: CustomBrownColorTextView!
     
+    var dataController:ApprovalsDataController = ApprovalsDataController()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -30,8 +32,23 @@ class RejectApplicationViewController: BaseViewController {
     }
   
     // MARK: - Button Actions
-
     @IBAction func rejectButtonAction(_ sender: Any) {
+        
+        self.showTransperantLoadingOnViewController()
+        dataController.rejectPost(replyMessage: messageTextView.text, onSuccess: { (message) in
+            
+            DispatchQueue.main.async {
+                self.removeTransperantLoadingFromViewController()
+                self.showQuickSuccessAlert(message: message)
+            }
+
+        }) { (errorMessage) in
+            
+            DispatchQueue.main.async {
+                self.removeTransperantLoadingFromViewController()
+                self.showQuickErrorAlert(message: errorMessage)
+            }
+        }
     }
 
     @IBAction func backButtonAction(_ sender: Any) {

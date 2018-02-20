@@ -17,9 +17,10 @@ class CommonResponse: NSObject, Mappable {
     var errorInt:Int = 0
     var responseData:Any?
     var noError:Bool {
-        
         return errorString == CommonResponse.noErrorString && errorInt == CommonResponse.noErrorInt
     }
+    
+    var approvalTabCounter:ApprovalTabCounter?
     
     
     required init?(map: Map) {
@@ -31,6 +32,7 @@ class CommonResponse: NSObject, Mappable {
         errorString     <- map["error"]
         errorInt        <- map["error"]
         responseData    <- map["status"]
+        approvalTabCounter <- map["tabCounter"]
     }
     
 }

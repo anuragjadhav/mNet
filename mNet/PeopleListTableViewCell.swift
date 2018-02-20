@@ -10,15 +10,18 @@ import UIKit
 
 class PeopleListTableViewCell: UITableViewCell {
 
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
+    @IBOutlet weak var nameLabel: CustomBrownTextColorLabel!
+    @IBOutlet weak var roleLabel: CustomBrownTextColorLabel!
+    @IBOutlet weak var dateLabel: CustomBrownTextColorLabel!
+    
+    func setUpCell(history:ApprovalHistory?) {
+        
+        if history == nil {
+            return
+        }
+        
+        nameLabel.text = history!.userName
+        roleLabel.text = history!.approvalUserRole
+        dateLabel.text = history!.createdOn.components(separatedBy: " ").first ?? history!.createdOn
     }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
-    }
-
 }

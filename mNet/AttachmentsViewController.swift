@@ -11,33 +11,41 @@ import UIKit
 class AttachmentsViewController: UIViewController ,UITableViewDataSource,UITableViewDelegate{
 
     @IBOutlet weak var attachmentsTableView: UITableView!
+    
+    var documentVC:DocumentViewController?
+    var documents:[String] = [String]()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        
+        attachmentsTableView.reloadData()
         attachmentsTableView.tableFooterView = UIView()
     }
 
 
     //Mark: tableview delegates and data source
-    
-    func numberOfSections(in tableView: UITableView) -> Int {
-        
-        return 1
-    }
-    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
-        return 3
+        return documents.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell:AttachmentsTableViewCell = tableView.dequeueReusableCell(withIdentifier:"AttachmentsTableViewCell") as! AttachmentsTableViewCell
-        
+        cell.setUpCell(fileNameString: documents[indexPath.row])
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
+        tableView.deselectRow(at: indexPath, animated: true)
+        
+        let urlString:String = documents[indexPath.row]
+        
+        let webViewController:WebViewController = UIStoryboard.login.instantiateViewController(withIdentifier: StoryboardIDs.webViewController) as! WebViewController
+        webViewController.setData(url: URL(string: urlString), header: urlString.components(separatedBy: "/").last)
+        documentVC?.navigationController?.pushViewController(webViewController, animated: true)
     }
 
 }
