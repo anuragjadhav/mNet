@@ -33,6 +33,37 @@ class ConversationInfoViewController: BaseViewController,UITableViewDelegate,UIT
         self.setUpNavigationController()
         
         dataCtrl?.setupMemberList()
+        
+        if((dataCtrl?.selectedCoversation?.membersList.count)! > 2)
+        {
+            let memberCount:Int = (dataCtrl?.selectedCoversation?.membersList.count)!
+            
+            let member1:ConversationMember =  (dataCtrl?.selectedCoversation?.membersList.first)!
+            user1Label.text = member1.userName
+            
+            let member2:ConversationMember =  (dataCtrl?.selectedCoversation?.membersList.last)!
+            user2Label.text = "\(member2.userName) and \(memberCount - 2)"
+        }
+        else
+        {
+            let member1:ConversationMember =  (dataCtrl?.selectedCoversation?.membersList.first)!
+            user1Label.text = member1.userName
+            
+            let member2:ConversationMember =  (dataCtrl?.selectedCoversation?.membersList.last)!
+            user2Label.text = member2.userName
+        }
+        
+        let dateFormatter : DateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
+        
+        let latestReplyDate:Date = dateFormatter.date(from:(dataCtrl?.selectedCoversation?.latestReplierDate)!)!
+        
+        let dateFormatterToShow : DateFormatter = DateFormatter()
+        dateFormatterToShow.dateFormat = "h:mm a yy MMM dd"
+        let dateTimeString:String = dateFormatterToShow.string(from: latestReplyDate) + " " + dateFormatterToShow.weekdaySymbols[Calendar.current.component(.weekday, from: latestReplyDate)]
+        
+        dateAndTimeLabel.text = dateTimeString
+
     }
     
     //MARK: Setup
