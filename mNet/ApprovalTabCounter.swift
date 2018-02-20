@@ -9,10 +9,13 @@
 import UIKit
 
 class ApprovalTabCounter: NSObject, Mappable {
-
+    
     var approvalCount:Int = 0
     var verifiedCount:Int = 0
-    var completedCount:Int = 0
+    var completedApprovalCount:Int = 0
+    var completedVerificationCount:Int = 0
+    var cancellednCount:Int = 0
+    var rejectedCount:Int = 0
     
     required init?(map: Map) {
         
@@ -20,9 +23,12 @@ class ApprovalTabCounter: NSObject, Mappable {
     
     func mapping(map: Map) {
         
-        approvalCount   <- map["approval_counter"]
-        verifiedCount   <- map["verifier_counter"]
-        completedCount  <- map["completed_counter"]
+        approvalCount   <- map["approval_count"]
+        verifiedCount   <- map["verification_count"]
+        completedApprovalCount  <- map["completed_approval_count"]
+        completedVerificationCount  <- map["completed_verification_count"]
+        cancellednCount  <- map["cancelled_post_count"]
+        rejectedCount  <- map["rejected_post_count"]
     }
 
 }

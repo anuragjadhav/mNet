@@ -21,12 +21,37 @@ class PendingApprovalsTableViewCell: UITableViewCell {
     @IBOutlet weak var approveButton: UIButton!
     @IBOutlet weak var rejectButton: UIButton!
     @IBOutlet weak var attachmentButton: UIButton!
+    @IBOutlet weak var approveButtonHeight: NSLayoutConstraint!
+    @IBOutlet weak var buttonTopSpacing: NSLayoutConstraint!
     
-    func setUpCell(approval:Approval, indexPath:IndexPath) {
+    
+    func setUpCell(approval:Approval, indexPath:IndexPath, buttonStatus:ApproveButtonStatus) {
         
         approveButton.tag = indexPath.row
         rejectButton.tag = indexPath.row
         attachmentButton.tag = indexPath.row
+        
+        switch buttonStatus {
+        case .approve:
+            approveButton.isHidden = false
+            rejectButton.isHidden = false
+            approveButton.setTitle("APPROVE", for: .normal)
+            approveButtonHeight.constant = 30
+            buttonTopSpacing.constant = 15
+        
+        case .verify:
+            approveButton.isHidden = false
+            rejectButton.isHidden = false
+            approveButton.setTitle("VERIFY", for: .normal)
+            approveButtonHeight.constant = 30
+            buttonTopSpacing.constant = 15
+        
+        case .hide:
+            approveButton.isHidden = true
+            rejectButton.isHidden = true
+            approveButtonHeight.constant = 0
+            buttonTopSpacing.constant = 0
+        }
         
         var title:String = approval.postTitle
         if let documentType:String = approval.documentType?.value {
@@ -79,7 +104,6 @@ class PendingApprovalsTableViewCell: UITableViewCell {
         }
         
         attachmentButton.isHidden = approval.otherDocument.count <= 0        
-        
     }
     
 }

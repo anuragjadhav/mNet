@@ -31,7 +31,7 @@ class RejectApplicationViewController: BaseViewController {
         self.navigationController?.navigationBar.isHidden = false
     }
   
-    // MARK: - Button Actions
+    //MARK: - Button Actions
     @IBAction func rejectButtonAction(_ sender: Any) {
         
         self.showTransperantLoadingOnViewController()

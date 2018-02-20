@@ -157,7 +157,7 @@ class ApprovalsViewController: BaseViewController,UICollectionViewDelegate, UICo
         
         let cell:PendingApprovalsTableViewCell = tableView.dequeueReusableCell(withIdentifier: CellIdentifiers.pendingApprovalsTableViewCell) as! PendingApprovalsTableViewCell
         if let approval:Approval = dataController.selectedSection?.list[safe:indexPath.row] {
-            cell.setUpCell(approval: approval, indexPath: indexPath)
+            cell.setUpCell(approval:approval, indexPath:indexPath, buttonStatus:dataController.selectedSection!.buttonStatus)
         }
         return cell
     }
