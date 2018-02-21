@@ -11,19 +11,11 @@ import UIKit
 class PeopleTableViewCell: UITableViewCell {
 
     @IBOutlet weak var personNameLabel: CustomBrownTextColorLabel!
-    @IBOutlet weak var personRoleLabel: CustomBrownTextColorLabel!
+    @IBOutlet weak var branchNameLabel: CustomBrownTextColorLabel!
 
     func loadCellWithPeople(_ people:People) {
         
         personNameLabel.text = people.userName
-        
-        if(people.designation != nil)
-        {
-            personRoleLabel.text = people.designation
-        }
-        else
-        {
-            personRoleLabel.text = "-"
-        }
+        branchNameLabel.text = people.branchName
     }
 }

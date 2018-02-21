@@ -20,7 +20,8 @@ class NewConversationViewController: BaseViewController,UICollectionViewDelegate
     @IBOutlet weak var selectedForVerificationUsersCollectionView: UICollectionView!
     @IBOutlet weak var selectedForApprovalUsersCollectionView: UICollectionView!
     @IBOutlet weak var selectedBccUsersCollectionView: UICollectionView!
-
+    @IBOutlet weak var scrollView: UIScrollView!
+    
     var dataCtrl:ConversationsDataController?
     let imagePicker = UIImagePickerController()
     var documentController:UIDocumentMenuViewController?
@@ -40,6 +41,21 @@ class NewConversationViewController: BaseViewController,UICollectionViewDelegate
         selectedBccUsersCollectionView.reloadData()
         selectedForVerificationUsersCollectionView.reloadData()
         selectedForApprovalUsersCollectionView.reloadData()
+    }
+    
+    //Mark: Keyboard handling
+    
+    override func keyBoardWillShow(notification: NSNotification) {
+        
+        super.keyBoardWillShow(notification: notification)
+        scrollView.scrollRectToVisible(messageTextView.frame, animated: true)
+     
+    }
+    
+    override func keyBoardWillHide(notification: NSNotification) {
+        
+        super.keyBoardWillHide(notification: notification)
+        
     }
     
     //MARK: Setup

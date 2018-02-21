@@ -151,6 +151,7 @@ class ConversationDetailViewController: BaseViewController,UITableViewDelegate,U
            let cell:SentMessageTableViewCell = tableView.dequeueReusableCell(withIdentifier:"SentMessageTableViewCell") as! SentMessageTableViewCell
             
              cell.loadCellWithConversationReply(reply: conversationReply, link: link)
+             cell.isHidden = false
             
             return cell
         }
