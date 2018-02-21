@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ConversationDetailViewController: BaseViewController,UITableViewDelegate,UITableViewDataSource {
+class ConversationDetailViewController: BaseViewController,UITableViewDelegate,UITableViewDataSource,UITextViewDelegate {
 
     @IBOutlet weak var conversationTableView: UITableView!
     @IBOutlet weak var sendButton: CustomBlueTextColorButton!
@@ -23,8 +23,13 @@ class ConversationDetailViewController: BaseViewController,UITableViewDelegate,U
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.addkeyBoardListners()
+        
         conversationTableView.estimatedRowHeight = 66
         conversationTableView.rowHeight = UITableViewAutomaticDimension
+        
+        sendButton.isEnabled = false
+        sendButton.titleLabel?.textColor = UIColor.gray
 
     }
 
@@ -70,8 +75,12 @@ class ConversationDetailViewController: BaseViewController,UITableViewDelegate,U
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        let indexPath = IndexPath(row: (dataCtrl?.selectedCoversation?.reply.count)! - 1, section: 0)
-        self.conversationTableView.scrollToRow(at: indexPath, at: .bottom, animated: true)
+        
+        if((dataCtrl?.selectedCoversation?.reply.count)! > 0)
+        {
+            let indexPath = IndexPath(row: (dataCtrl?.selectedCoversation?.reply.count)! - 1, section: 0)
+            self.conversationTableView.scrollToRow(at: indexPath, at: .bottom, animated: true)
+        }
     }
     
     func setupNavigationBar(){
@@ -87,8 +96,14 @@ class ConversationDetailViewController: BaseViewController,UITableViewDelegate,U
         
          if let keyboardSize = (notification.userInfo?[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue
          {
-            messageViewBottomConstraint.constant = keyboardSize.height - (self.tabBarController?.tabBar.frame.size.height)!
+            messageViewBottomConstraint.constant = keyboardSize.height
             self.view.layoutIfNeeded()
+            
+            if((dataCtrl?.selectedCoversation?.reply.count)! > 0)
+            {
+                let indexPath = IndexPath(row: (dataCtrl?.selectedCoversation?.reply.count)! - 1, section: 0)
+                self.conversationTableView.scrollToRow(at: indexPath, at: .bottom, animated: true)
+            }
          }
     }
     
@@ -156,6 +171,28 @@ class ConversationDetailViewController: BaseViewController,UITableViewDelegate,U
     }
 
     
+    //Mark: Textview Delegates
+    
+    func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
+        
+        guard let text = textView.text else { return true }
+        let newLength = text.count + text.count - range.length
+        
+        if(newLength > 0 && Reachability.isConnectedToNetwork())
+        {
+            sendButton.isEnabled = true
+            sendButton.titleLabel?.textColor = ColorConstants.kBlueColor
+        }
+        else
+        {
+            sendButton.isEnabled = false
+            sendButton.titleLabel?.textColor = UIColor.gray
+        }
+        
+        return true
+    }
+
+    
     // MARK: - Button Actions
 
     @IBAction func infoButtonAction(_ sender: Any) {
@@ -172,6 +209,31 @@ class ConversationDetailViewController: BaseViewController,UITableViewDelegate,U
   
     @IBAction func sendButtonAction(_ sender: Any) {
         
+        self.showTransperantLoadingOnViewController()
+        
+        dataCtrl?.setNewReplyWithoutDocumentConversation(replyMessage: messageTextView.text, onSuccess: { [unowned self] in
+            
+            DispatchQueue.main.async {
+                
+                self.removeTransperantLoadingFromViewController()
+                self.conversationTableView.reloadData()
+                
+                let indexPath = IndexPath(row: (self.dataCtrl?.selectedCoversation?.reply.count)! - 1, section: 0)
+                self.conversationTableView.scrollToRow(at: indexPath, at: .bottom, animated: true)
+            }
+            
+        }, onFailure: { [unowned self] (errorMessage) in
+            
+            DispatchQueue.main.async {
+                
+                self.removeTransperantLoadingFromViewController()
+                
+                let alert = UIAlertController(title:AlertMessages.failure, message:errorMessage, preferredStyle: .alert)
+                alert.addAction(UIAlertAction(title:AlertMessages.ok, style:.default, handler: { _ in
+                }))
+                self.present(alert, animated: true, completion: nil)
+            }
+        })
     }
 
     @IBAction func uploadButtonAction(_ sender: UIButton) {
@@ -180,12 +242,10 @@ class ConversationDetailViewController: BaseViewController,UITableViewDelegate,U
         
         alertController.view.tintColor = ColorConstants.kBlueColor
         
-        let photos:UIAlertAction = UIAlertAction(title: "Photos and Video Library", style: .default) { (photosAction) in
-                self.openDocuments()
+        let photos:UIAlertAction = UIAlertAction(title: "Photos Library", style: .default) { (photosAction) in
         }
         
         let docs:UIAlertAction = UIAlertAction(title: "Document", style: .default) { (docssAction) in
-            self.openDocuments()
         }
         
         let cancelAction:UIAlertAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)

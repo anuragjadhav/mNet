@@ -33,7 +33,7 @@ class ConversationMember: NSObject, Mappable {
         userId              <- map["user_id"]
         askForAgree         <- map["ask_for_agree"]
         askForApprove       <- map["ask_for_approve"]
-        approveStatus       <- map["agree_status"]
+        approveStatus       <- map["approve_status"]
         agreeStatus       <- map["agree_status"]
     }
 }

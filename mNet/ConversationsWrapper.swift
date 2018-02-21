@@ -114,6 +114,10 @@ class ConversationsWrapper: NSObject {
     
     func createNewConversation(postParams:[String:Any],fileName:String,fileData:Data,type:String,name:String, onSuccess:@escaping () -> Void , onFailure : @escaping (String) -> Void){
         
+        let headers: HTTPHeaders = [
+            "Content-Type": "multipart/form-data"
+        ]
+        
         upload(multipartFormData: { (multipartFormData) in
             
             for (key, value) in postParams {
@@ -122,7 +126,7 @@ class ConversationsWrapper: NSObject {
             
             multipartFormData.append(fileData, withName:name, fileName:fileName, mimeType: type)
             
-        }, usingThreshold: UInt64.init(), to: URLS.createNewConversation, method: .post, headers: nil) { (result) in
+        }, usingThreshold: UInt64.init(), to: URLS.createNewConversation, method: .post, headers: headers) { (result) in
             switch result{
             case .success(let upload, _, _):
                 
@@ -149,6 +153,55 @@ class ConversationsWrapper: NSObject {
             case .failure(_):
               
                  onFailure("Unable to upload file")
+            }
+        }
+    }
+    
+    func setNewReplyConversation(postParams:[String:Any],fileName:String?,fileData:Data?,type:String?,name:String?, onSuccess:@escaping (String,String) -> Void , onFailure : @escaping (String) -> Void){
+        
+        let headers: HTTPHeaders = [
+            "Content-Type": "multipart/form-data"
+        ]
+        
+        upload(multipartFormData: { (multipartFormData) in
+            
+            for (key, value) in postParams {
+                multipartFormData.append("\(value)".data(using: String.Encoding.utf8)!, withName: key as String)
+            }
+            
+            if(fileName != nil && fileData != nil && type != nil && name != nil)
+            {
+                multipartFormData.append(fileData!, withName:name!, fileName:fileName!, mimeType: type!)
+            }
+        
+        }, usingThreshold: UInt64.init(), to: URLS.setNewReplyConversation, method: .post, headers: headers) { (result) in
+            switch result{
+            case .success(let upload, _, _):
+                
+                upload.responseJSON { response in
+                    
+                    if var responseDict:[String:Any] = response.result.value as? [String:Any] {
+                        
+                        let error:String = responseDict[DictionaryKeys.APIResponse.error] as! String
+                        
+                        if(error == DictionaryKeys.APIResponse.noError)
+                        {
+                        
+                            onSuccess(responseDict["reply_id"] as! String,responseDict["reply_link"] as! String)
+                        }
+                        else
+                        {
+                            onFailure("Unable to send reply")
+                        }
+                    }
+                    else{
+                        
+                        onFailure("Unable to send reply")
+                    }
+                }
+            case .failure(_):
+                
+                onFailure("Unable to send reply")
             }
         }
     }

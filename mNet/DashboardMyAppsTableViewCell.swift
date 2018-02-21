@@ -21,15 +21,11 @@ class DashboardMyAppsTableViewCell: UITableViewCell {
         descriptionLabel.text = app.appDescription
         
         let imageUrlString = app.appLogoLink.components(separatedBy: .whitespaces).joined()
-        UIImage.imageDownloader.download(URLRequest.getRequest(URLS.profileImageBaseURLString + imageUrlString)!) { response in
+        UIImage.imageDownloader.download(URLRequest.getRequest(URLS.imageBaseURLString + imageUrlString)!) { response in
             
             if let image = response.result.value {
                 
                 self.appImageView.image = image
-            }
-            else
-            {
-                self.appImageView.image = nil
             }
         }
     }

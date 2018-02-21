@@ -10,20 +10,21 @@ import UIKit
 
 struct URLS {
     
-    static let baseURL:URL = URL(string:"http://brandintell-hero.com:81/d_mnetv2/d_MNetV2Service/MnetV2WebService/")!
+    static let baseURL:URL = URL(string:"http://52.187.131.90:81/demo/d_MNetV2Service/MnetV2WebService/")!
     static let getSettings:URL = URL(string: "getsetting", relativeTo: baseURL)!
     static let setSettings:URL = URL(string: "setsetting", relativeTo: baseURL)!
     static let getConversationsList:URL = URL(string: "GetPost", relativeTo: baseURL)!
     static let deleteUserFromConversation:URL = URL(string:"deletepostuser", relativeTo: baseURL)!
     static let getSelectUserList:URL = URL(string:"findUsersfuncTo", relativeTo: baseURL)!
     static let createNewConversation:URL = URL(string:"SetPost", relativeTo: baseURL)!
+    static let setNewReplyConversation:URL = URL(string:"SetReply", relativeTo: baseURL)!
     static let markConversationAsRead:URL = URL(string: "markPostAsRead", relativeTo: baseURL)!
     static let markNotificationAsRead:URL = URL(string: "", relativeTo: baseURL)!
     static let getNotificationsList:URL = URL(string: "NotificationList", relativeTo: baseURL)!
     static let getProfile:URL = URL(string: "GetUserDetails", relativeTo: baseURL)!
     static let updateProfile:URL = URL(string: "updateProfile", relativeTo: baseURL)!
     static let getPeopleList:URL = URL(string: "getUserList", relativeTo: baseURL)!
-    static let profileImageBaseURLString:String = "http://52.187.131.90:81/demo/d_mnetv2/public/images/"
+    static let imageBaseURLString:String = "http://52.187.131.90:81/demo/d_mnetv2/public/images/"
     
     static let liveBaseURL:URL = URL(string:"http://www.m-net.in/p_MNetV2Service/MnetV2WebService/")!
     static let loginAuthenticate:URL = URL(string: "public_authenticate", relativeTo: liveBaseURL)!
@@ -32,7 +33,7 @@ struct URLS {
     
     static let getDashboardStatistics:URL = URL(string: "GetDashBoardStatistics", relativeTo: baseURL)!
     static let getUserAppsList:URL = URL(string: "getUserAppList", relativeTo: baseURL)!
-    static let getApprovalList:URL = URL(string: "http://52.187.131.90:81/d_MNetV2Service/MnetV2WebService/GetApprovedData")!
+    static let getApprovalList:URL = URL(string: "GetApprovedData", relativeTo: baseURL)!
     static let approvePost:URL = URL(string: "setVerifyRepliesToPost", relativeTo: baseURL)!
     static let rejectPost:URL = URL(string: "rejectRepliesToPost", relativeTo: baseURL)!
 }

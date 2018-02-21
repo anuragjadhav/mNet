@@ -450,4 +450,42 @@ class ConversationsDataController: NSObject {
             onFailure(errorMessage)
         }
     }
+    
+    func setNewReplyWithoutDocumentConversation(replyMessage:String,onSuccess:@escaping () -> Void , onFailure : @escaping (String) -> Void) {
+        
+        let user:User = User.loggedInUser()!
+        var postParams:[String:Any] = [String:Any]()
+        postParams["reply_sender_id"] = user.userId
+        postParams["reply_sender_password"] = user.password
+        postParams["reply_sender_email"] = user.email
+        postParams["reply_type"] = "0"
+        postParams["reply_message"] = replyMessage
+        postParams["post_id"] = selectedCoversation?.postId
+        
+        WrapperManager.shared.conversationWrapper.setNewReplyConversation(postParams: postParams, fileName: nil, fileData: nil, type: nil, name: nil, onSuccess: { [unowned self] (replyId,replyLink) in
+            
+            let conversationReply:ConversationReply = ConversationReply(JSON: [String : Any]())!
+            
+            let user:User = User.loggedInUser()!
+            conversationReply.userId = user.userId
+            conversationReply.replyMessage = replyMessage
+            conversationReply.replyId = replyId
+            conversationReply.replyLink = replyLink
+            conversationReply.fullName = user.name
+            
+            let dateFormatter : DateFormatter = DateFormatter()
+            dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
+            let createdOnDateString = dateFormatter.string(from: Date())
+            conversationReply.createdOn = createdOnDateString
+            
+            self.selectedCoversation?.reply.append(conversationReply)
+            
+            onSuccess()
+            
+        }) { (errorMessage) in
+            
+            onFailure(errorMessage)
+        }
+
+    }
 }

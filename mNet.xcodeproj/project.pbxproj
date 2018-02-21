@@ -1358,7 +1358,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = mNet/mNet.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer: enterprise@mediawareonline.com (QJ2624LY4P)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = 3J7U28GXGW;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -1370,8 +1370,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.mediaware.mNet;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "1a8aacf4-cc8b-460d-9bc3-81b9eb37a900";
-				PROVISIONING_PROFILE_SPECIFIER = mNetAppStore;
+				PROVISIONING_PROFILE = "40a5028c-977e-4eee-8e71-54e2b7454ec0";
+				PROVISIONING_PROFILE_SPECIFIER = mNetDevelopment;
 				SWIFT_SWIFT3_OBJC_INFERENCE = On;
 				SWIFT_VERSION = 4.0;
 			};

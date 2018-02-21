@@ -25,11 +25,16 @@ class ConversationListTableViewCell: UITableViewCell {
         nameLabel.text = conversation.latestReplierName
         
         //removed extra spaces in string
-        let imageUrlString = conversation.latesReplierImage?.components(separatedBy: .whitespaces).joined()
+        var imageUrlString = conversation.latesReplierImage?.components(separatedBy: .whitespaces).joined()
+        
+        if(imageUrlString == nil)
+        {
+            imageUrlString = ""
+        }
         
         //if profile image not found then make image nil so initials label will be visible
         //else if found then show image
-        UIImage.imageDownloader.download(URLRequest.getRequest(URLS.profileImageBaseURLString + imageUrlString!)!) { [unowned self] response in
+        UIImage.imageDownloader.download(URLRequest.getRequest(URLS.imageBaseURLString + imageUrlString!)!) { [unowned self] response in
             
             if let image = response.result.value {
                 
