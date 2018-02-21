@@ -45,7 +45,7 @@ class Approval: NSObject, Mappable {
     var history:[ApprovalHistory] = [ApprovalHistory]()
     var approvalLevelLimit:String = ""
     var readState:String = ""
-    var otherDocument:[String] = [String]()
+    var otherDocument:[ApprovalDocument] = [ApprovalDocument]()
     var historyCount:Int = 0
     var dynamicData:[DynamicData] = [DynamicData]()
     

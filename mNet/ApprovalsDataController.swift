@@ -57,10 +57,12 @@ class ApprovalsDataController: NSObject {
             }
             
             let tabCounter:ApprovalTabCounter = approvalData.tabCounter
-            self.approvalsData[0].tabCount = tabCounter.completedCount
-            self.approvalsData[1].tabCount = tabCounter.completedCount
-            self.approvalsData[2].tabCount = tabCounter.completedCount
-            self.approvalsData[3].tabCount = tabCounter.completedCount
+            self.approvalsData[0].tabCount = tabCounter.approvalCount
+            self.approvalsData[1].tabCount = tabCounter.verifiedCount
+            self.approvalsData[2].tabCount = tabCounter.completedApprovalCount
+            self.approvalsData[3].tabCount = tabCounter.completedVerificationCount
+            self.approvalsData[4].tabCount = tabCounter.cancellednCount
+            self.approvalsData[5].tabCount = tabCounter.rejectedCount
             
             self.startIndex += self.limit
             

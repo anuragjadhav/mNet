@@ -23,7 +23,7 @@ struct URLS {
     static let getProfile:URL = URL(string: "GetUserDetails", relativeTo: baseURL)!
     static let updateProfile:URL = URL(string: "updateProfile", relativeTo: baseURL)!
     static let getPeopleList:URL = URL(string: "getUserList", relativeTo: baseURL)!
-    static let profileImageBaseURLString:String = "http://52.187.131.90:81/d_mnetv2/public/images/"
+    static let profileImageBaseURLString:String = "http://52.187.131.90:81/demo/d_mnetv2/public/images/"
     
     static let liveBaseURL:URL = URL(string:"http://www.m-net.in/p_MNetV2Service/MnetV2WebService/")!
     static let loginAuthenticate:URL = URL(string: "public_authenticate", relativeTo: liveBaseURL)!
@@ -32,7 +32,7 @@ struct URLS {
     
     static let getDashboardStatistics:URL = URL(string: "GetDashBoardStatistics", relativeTo: baseURL)!
     static let getUserAppsList:URL = URL(string: "getUserAppList", relativeTo: baseURL)!
-    static let getApprovalList:URL = URL(string: "GetApprovedData", relativeTo: baseURL)!
+    static let getApprovalList:URL = URL(string: "http://52.187.131.90:81/d_MNetV2Service/MnetV2WebService/GetApprovedData")!
     static let approvePost:URL = URL(string: "setVerifyRepliesToPost", relativeTo: baseURL)!
     static let rejectPost:URL = URL(string: "rejectRepliesToPost", relativeTo: baseURL)!
 }

@@ -242,13 +242,13 @@
                                                 <rect key="frame" x="27" y="633.5" width="321" height="95"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Role" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gho-w7-wIi" customClass="CustomBrownTextColorLabel" customModule="mNet" customModuleProvider="target">
-                                                        <rect key="frame" x="110" y="0.0" width="101" height="17"/>
+                                                        <rect key="frame" x="110.5" y="0.0" width="101" height="17"/>
                                                         <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="14"/>
                                                         <color key="textColor" red="0.3803921569" green="0.28235294119999998" blue="0.22352941179999999" alpha="1" colorSpace="calibratedRGB"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="J14-vS-iz4" customClass="CustomBrownTextColorLabel" customModule="mNet" customModuleProvider="target">
-                                                        <rect key="frame" x="219" y="0.0" width="102" height="17"/>
+                                                        <rect key="frame" x="219.5" y="0.0" width="101.5" height="17"/>
                                                         <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="14"/>
                                                         <color key="textColor" red="0.3803921569" green="0.28235294119999998" blue="0.22352941179999999" alpha="1" colorSpace="calibratedRGB"/>
                                                         <nil key="highlightedColor"/>
@@ -311,7 +311,7 @@
                                                         </connections>
                                                     </tableView>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fnI-0k-N1G" customClass="CustomBrownTextColorLabel" customModule="mNet" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="0.0" width="101.5" height="17"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="102" height="17"/>
                                                         <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="14"/>
                                                         <color key="textColor" red="0.3803921569" green="0.28235294119999998" blue="0.22352941179999999" alpha="1" colorSpace="calibratedRGB"/>
                                                         <nil key="highlightedColor"/>
@@ -587,23 +587,29 @@
                                                     <color key="textColor" red="0.3803921569" green="0.28235294119999998" blue="0.22352941179999999" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bcR-g3-w7v">
+                                                <button hidden="YES" opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bcR-g3-w7v">
                                                     <rect key="frame" x="297" y="17" width="19" height="17"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="17" id="3kL-3V-6z5"/>
                                                         <constraint firstAttribute="width" constant="19" id="hxw-KQ-LfG"/>
                                                     </constraints>
-                                                    <state key="normal" image="downloadAttachment"/>
                                                 </button>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="downloadAttachment" translatesAutoresizingMaskIntoConstraints="NO" id="FrV-7b-BRA">
+                                                    <rect key="frame" x="297" y="17" width="19" height="17"/>
+                                                </imageView>
                                             </subviews>
                                             <constraints>
+                                                <constraint firstItem="FrV-7b-BRA" firstAttribute="trailing" secondItem="bcR-g3-w7v" secondAttribute="trailing" id="1dM-bs-KGJ"/>
                                                 <constraint firstAttribute="bottom" secondItem="If3-YP-UyR" secondAttribute="bottom" constant="16" id="4xH-2R-4uC"/>
                                                 <constraint firstItem="bcR-g3-w7v" firstAttribute="leading" secondItem="fx4-lS-BSt" secondAttribute="trailing" constant="25" id="CBk-Of-fwc"/>
+                                                <constraint firstItem="FrV-7b-BRA" firstAttribute="top" secondItem="bcR-g3-w7v" secondAttribute="top" id="Hcn-1I-9Ip"/>
+                                                <constraint firstItem="FrV-7b-BRA" firstAttribute="bottom" secondItem="bcR-g3-w7v" secondAttribute="bottom" id="NJm-Rv-CVD"/>
                                                 <constraint firstItem="If3-YP-UyR" firstAttribute="leading" secondItem="XCY-q1-mRQ" secondAttribute="leading" constant="5" id="WD6-Gu-52s"/>
                                                 <constraint firstAttribute="trailing" secondItem="bcR-g3-w7v" secondAttribute="trailing" constant="5" id="Ynx-T0-ZsZ"/>
                                                 <constraint firstItem="If3-YP-UyR" firstAttribute="top" secondItem="XCY-q1-mRQ" secondAttribute="top" constant="16" id="edz-la-1ZS"/>
                                                 <constraint firstItem="bcR-g3-w7v" firstAttribute="centerY" secondItem="XCY-q1-mRQ" secondAttribute="centerY" id="gBz-eX-8T5"/>
                                                 <constraint firstItem="fx4-lS-BSt" firstAttribute="leading" secondItem="If3-YP-UyR" secondAttribute="trailing" constant="16" id="gps-io-roX"/>
+                                                <constraint firstItem="FrV-7b-BRA" firstAttribute="leading" secondItem="bcR-g3-w7v" secondAttribute="leading" id="lim-4y-orw"/>
                                                 <constraint firstItem="fx4-lS-BSt" firstAttribute="centerY" secondItem="XCY-q1-mRQ" secondAttribute="centerY" id="m3Q-WT-Uc6"/>
                                             </constraints>
                                         </tableViewCellContentView>
@@ -1039,7 +1045,6 @@
                                                     <rect key="frame" x="180" y="167.5" width="50" height="20"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="50" id="pmx-UD-Wgi"/>
-                                                        <constraint firstAttribute="height" constant="20" id="wQ6-hW-eCw"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" name="SanFranciscoDisplay-Semibold" family="San Francisco Display" pointSize="14"/>
                                                     <state key="normal" title="REJECT">
@@ -1168,6 +1173,7 @@
                                                 <constraint firstItem="oSb-eG-QZF" firstAttribute="top" secondItem="QIg-LT-Uug" secondAttribute="bottom" constant="16" id="c2Y-Gt-i9I"/>
                                                 <constraint firstItem="od9-L6-epC" firstAttribute="top" secondItem="Ure-wK-W5m" secondAttribute="bottom" constant="15" id="gE1-4B-wht"/>
                                                 <constraint firstItem="rDw-rq-qpc" firstAttribute="width" secondItem="rDw-rq-qpc" secondAttribute="height" multiplier="1:1" id="iWr-M2-gu4"/>
+                                                <constraint firstItem="Xa2-cC-bcM" firstAttribute="height" secondItem="od9-L6-epC" secondAttribute="height" constant="-10" id="pYb-5k-gCa"/>
                                                 <constraint firstItem="Xa2-cC-bcM" firstAttribute="centerY" secondItem="od9-L6-epC" secondAttribute="centerY" id="rVR-oE-wy3"/>
                                                 <constraint firstItem="QIg-LT-Uug" firstAttribute="leading" secondItem="rDw-rq-qpc" secondAttribute="trailing" constant="17" id="stJ-bH-D5w"/>
                                                 <constraint firstAttribute="trailing" secondItem="Ure-wK-W5m" secondAttribute="trailing" id="udP-gq-Crf"/>
@@ -1177,9 +1183,11 @@
                                         <connections>
                                             <outlet property="amountLabel" destination="oSb-eG-QZF" id="Pmq-qC-4HM"/>
                                             <outlet property="approveButton" destination="od9-L6-epC" id="oSC-gZ-sSn"/>
+                                            <outlet property="approveButtonHeight" destination="3qT-wZ-MZ9" id="bAg-mo-bOz"/>
                                             <outlet property="attachmentButton" destination="uIt-pd-rx2" id="aEO-F5-apd"/>
                                             <outlet property="brandTitleLabel" destination="3NM-ag-ctN" id="pUO-Qs-Xj6"/>
                                             <outlet property="brandValueLabel" destination="4VP-Pb-DlT" id="FSH-wi-A0N"/>
+                                            <outlet property="buttonTopSpacing" destination="gE1-4B-wht" id="qBn-Ra-h5r"/>
                                             <outlet property="mediumTitleLabel" destination="SBx-u3-8rZ" id="yBT-MO-0zX"/>
                                             <outlet property="mediumValueLabel" destination="zsf-Lb-KnI" id="skg-LV-ohS"/>
                                             <outlet property="rejectButton" destination="Xa2-cC-bcM" id="lr1-3X-Dtv"/>

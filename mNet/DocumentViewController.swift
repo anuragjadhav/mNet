@@ -111,7 +111,7 @@ class DocumentViewController: UIViewController {
         
         let attachmentsVC:AttachmentsViewController = (UIStoryboard.init(name:"ApproveReject", bundle: Bundle.main)).instantiateViewController(withIdentifier: "AttachmentsViewController") as! AttachmentsViewController
         attachmentsVC.documentVC = self
-        attachmentsVC.documents = dataController.selectedApproval?.otherDocument ?? [String]()
+        attachmentsVC.documents = dataController.selectedApproval?.otherDocument ?? [ApprovalDocument]()
         
         self.addChildViewController(attachmentsVC)
         

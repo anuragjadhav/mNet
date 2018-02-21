@@ -13,7 +13,7 @@ class AttachmentsViewController: UIViewController ,UITableViewDataSource,UITable
     @IBOutlet weak var attachmentsTableView: UITableView!
     
     var documentVC:DocumentViewController?
-    var documents:[String] = [String]()
+    var documents:[ApprovalDocument] = [ApprovalDocument]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,7 +33,7 @@ class AttachmentsViewController: UIViewController ,UITableViewDataSource,UITable
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell:AttachmentsTableViewCell = tableView.dequeueReusableCell(withIdentifier:"AttachmentsTableViewCell") as! AttachmentsTableViewCell
-        cell.setUpCell(fileNameString: documents[indexPath.row])
+        cell.setUpCell(fileNameString: documents[indexPath.row].link)
         return cell
     }
     
@@ -41,7 +41,7 @@ class AttachmentsViewController: UIViewController ,UITableViewDataSource,UITable
         
         tableView.deselectRow(at: indexPath, animated: true)
         
-        let urlString:String = documents[indexPath.row]
+        let urlString:String = documents[indexPath.row].link
         
         let webViewController:WebViewController = UIStoryboard.login.instantiateViewController(withIdentifier: StoryboardIDs.webViewController) as! WebViewController
         webViewController.setData(url: URL(string: urlString), header: urlString.components(separatedBy: "/").last)

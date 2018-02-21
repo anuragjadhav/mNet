@@ -32,6 +32,7 @@
 		058A0ED41FF7C50D00147238 /* DashboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 058A0ED31FF7C50D00147238 /* DashboardViewController.swift */; };
 		058A0EDA1FF7CA2D00147238 /* ConversationsListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 058A0ED91FF7CA2D00147238 /* ConversationsListViewController.swift */; };
 		058A0EDC1FF7CA4800147238 /* ConversationListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 058A0EDB1FF7CA4800147238 /* ConversationListTableViewCell.swift */; };
+		058D5C5F203CB53900A6BA4D /* ApprovalDocument.swift in Sources */ = {isa = PBXBuildFile; fileRef = 058D5C5E203CB53900A6BA4D /* ApprovalDocument.swift */; };
 		05A569962017B74B00C6F713 /* ResponseSerialization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05A569852017B74800C6F713 /* ResponseSerialization.swift */; };
 		05A569972017B74B00C6F713 /* Timeline.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05A569862017B74900C6F713 /* Timeline.swift */; };
 		05A569982017B74B00C6F713 /* AFError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05A569872017B74900C6F713 /* AFError.swift */; };
@@ -212,6 +213,7 @@
 		058A0ED31FF7C50D00147238 /* DashboardViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DashboardViewController.swift; sourceTree = "<group>"; };
 		058A0ED91FF7CA2D00147238 /* ConversationsListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConversationsListViewController.swift; sourceTree = "<group>"; };
 		058A0EDB1FF7CA4800147238 /* ConversationListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConversationListTableViewCell.swift; sourceTree = "<group>"; };
+		058D5C5E203CB53900A6BA4D /* ApprovalDocument.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApprovalDocument.swift; sourceTree = "<group>"; };
 		05A569852017B74800C6F713 /* ResponseSerialization.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResponseSerialization.swift; sourceTree = "<group>"; };
 		05A569862017B74900C6F713 /* Timeline.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Timeline.swift; sourceTree = "<group>"; };
 		05A569872017B74900C6F713 /* AFError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AFError.swift; sourceTree = "<group>"; };
@@ -927,6 +929,7 @@
 				050F1BE7203732F400B32841 /* ApprovalTabCounter.swift */,
 				050F1BE52037327500B32841 /* ApprovalSection.swift */,
 				050F1BEB20377F0700B32841 /* DynamicData.swift */,
+				058D5C5E203CB53900A6BA4D /* ApprovalDocument.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -1094,6 +1097,7 @@
 				5EF31C86201B5E93007727D8 /* WrapperManager.swift in Sources */,
 				5E1A8D14201E24AD00BFAF10 /* AboutMeDataController.swift in Sources */,
 				5E2D3749202087D50013A138 /* NotificationObject.swift in Sources */,
+				058D5C5F203CB53900A6BA4D /* ApprovalDocument.swift in Sources */,
 				05A569A22017B74B00C6F713 /* DispatchQueue+Alamofire.swift in Sources */,
 				5E1C499A1FEA7F30007CE624 /* CustomBrownTextColorTextfield.swift in Sources */,
 				5E3A046E2007A64D004EE2D7 /* ConversationDetailViewController.swift in Sources */,
