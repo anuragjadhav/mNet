@@ -160,6 +160,11 @@ class SelectUserViewController: BaseViewController,UITableViewDelegate,UITableVi
         }
     }
     
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        
+        view.endEditing(true)
+    }
+    
     
     //MARK: Get User List
     
@@ -182,6 +187,7 @@ class SelectUserViewController: BaseViewController,UITableViewDelegate,UITableVi
                     }
 
                     self.selectUserTableView.reloadData()
+                    self.selectUserCollectionView.reloadData()
                 }
                 
                 }, onFailure: { [unowned self] (errorMessage) in

@@ -40,6 +40,12 @@ class ApprovalsViewController: BaseViewController,UICollectionViewDelegate, UICo
         self.getData()
     }
     
+    override func viewDidDisappear(_ animated: Bool) {
+        
+        super.viewDidDisappear(animated)
+        view.endEditing(true)
+    }
+    
     func setUpViewController() {
         
         pendingApprovalsTableView.tableFooterView = UIView()
@@ -226,6 +232,7 @@ class ApprovalsViewController: BaseViewController,UICollectionViewDelegate, UICo
         resetData()
         getData()
     }
+
     
     
     //MARK: Button Actions

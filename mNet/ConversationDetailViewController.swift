@@ -7,8 +7,11 @@
 //
 
 import UIKit
+import MobileCoreServices
+import AssetsLibrary
+import Photos
 
-class ConversationDetailViewController: BaseViewController,UITableViewDelegate,UITableViewDataSource,UITextViewDelegate {
+class ConversationDetailViewController: BaseViewController,UITableViewDelegate,UITableViewDataSource,UITextViewDelegate,UIDocumentMenuDelegate,UIDocumentPickerDelegate,UINavigationControllerDelegate,UIImagePickerControllerDelegate,ImageDocDisplayDelegate {
 
     @IBOutlet weak var conversationTableView: UITableView!
     @IBOutlet weak var sendButton: CustomBlueTextColorButton!
@@ -18,7 +21,10 @@ class ConversationDetailViewController: BaseViewController,UITableViewDelegate,U
     @IBOutlet weak var dateTimeLabel: UILabel!
     @IBOutlet weak var user1Label: CustomBrownTextColorLabel!
     @IBOutlet weak var user2Label: UILabel!
+    
     var dataCtrl:ConversationsDataController?
+    let imagePicker = UIImagePickerController()
+    var documentController:UIDocumentMenuViewController?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -133,9 +139,11 @@ class ConversationDetailViewController: BaseViewController,UITableViewDelegate,U
         
         let conversationReply:ConversationReply = (dataCtrl?.selectedCoversation?.reply[indexPath.row])!
         
+        let user:User = User.loggedInUser()!
+
         var link:String?
         
-        if(indexPath.row == (dataCtrl?.selectedCoversation?.reply.count)!-1)
+        if(indexPath.row == 0)
         {
             link = dataCtrl?.selectedCoversation?.postLink
         }
@@ -143,8 +151,6 @@ class ConversationDetailViewController: BaseViewController,UITableViewDelegate,U
         {
             link = conversationReply.replyLink
         }
-        
-        let user:User = User.loggedInUser()!
         
         if(user.userId == conversationReply.userId)
         {
@@ -192,6 +198,105 @@ class ConversationDetailViewController: BaseViewController,UITableViewDelegate,U
         
         return true
     }
+    
+    //MARK: Image Picker Delegates
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any])
+    {
+        let chosenImage = info[UIImagePickerControllerOriginalImage] as! UIImage
+        
+        let currentTimeStamp:String = String(UInt64((Date.init().timeIntervalSince1970 + 62_135_596_800) * 10_000_000)) + "_doc.jpg"
+        
+        dataCtrl?.selectedFilenameForNewReply = currentTimeStamp
+        dataCtrl?.selectedFileDataForNewReply =
+        UIImageJPEGRepresentation(chosenImage,0.9)
+                
+        picker.dismiss(animated: true, completion: nil)
+        
+        let imageDocDisplayVC = (UIStoryboard.init(name:"Conversation", bundle: Bundle.main)).instantiateViewController(withIdentifier: "ImageDocDisplayViewController") as! ImageDocDisplayViewController
+        imageDocDisplayVC.dataCtrl = dataCtrl
+        imageDocDisplayVC.isDocument = false
+        imageDocDisplayVC.image = chosenImage
+        imageDocDisplayVC.delegate = self
+        imageDocDisplayVC.modalPresentationStyle = .overFullScreen
+        self.present(imageDocDisplayVC, animated: true, completion: nil)
+    }
+    
+    
+    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+        picker.dismiss(animated: true, completion: nil)
+    }
+    
+    //MARK: Document Picker Delegates
+    
+    public func documentPicker(_ controller: UIDocumentPickerViewController, didPickDocumentAt url: URL) {
+        
+        dataCtrl?.selectedFilenameForNewReply = (url.absoluteString as NSString).lastPathComponent
+        
+        do
+        {
+            try self.dataCtrl?.selectedFileDataForNewReply = Data(contentsOf: url)
+        }
+        catch
+        {
+            self.dataCtrl?.selectedFileDataForNewReply = nil
+        }
+        
+        let imageDocDisplayVC = (UIStoryboard.init(name:"Conversation", bundle: Bundle.main)).instantiateViewController(withIdentifier: "ImageDocDisplayViewController") as! ImageDocDisplayViewController
+        imageDocDisplayVC.dataCtrl = dataCtrl
+        imageDocDisplayVC.isDocument = true
+        imageDocDisplayVC.docUrl = url
+        imageDocDisplayVC.delegate = self
+        imageDocDisplayVC.modalPresentationStyle = .overFullScreen
+        self.present(imageDocDisplayVC, animated: true, completion: nil)
+        
+    }
+    
+    public func documentMenu(_ documentMenu:     UIDocumentMenuViewController, didPickDocumentPicker documentPicker: UIDocumentPickerViewController) {
+        
+        documentPicker.delegate = self
+        present(documentPicker, animated: true, completion: nil)
+    }
+    
+    
+    func documentPickerWasCancelled(_ controller: UIDocumentPickerViewController) {
+        
+        controller.dismiss(animated: true, completion: nil)
+    }
+    
+    
+    //MARK: Open Camera and Gallery
+    
+    func openPhotoLibrary()
+    {
+        imagePicker.delegate = self
+        imagePicker.allowsEditing = false
+        imagePicker.sourceType = .photoLibrary
+        imagePicker.mediaTypes = UIImagePickerController.availableMediaTypes(for: .photoLibrary)!
+        present(imagePicker, animated: true, completion: nil)
+    }
+    
+    func openCamera()
+    {
+        imagePicker.delegate = self
+        imagePicker.allowsEditing = false
+        imagePicker.sourceType = UIImagePickerControllerSourceType.camera
+        imagePicker.cameraCaptureMode = .photo
+        imagePicker.modalPresentationStyle = .fullScreen
+        
+        present(imagePicker, animated: true, completion: nil)
+    }
+    
+    //MARK: Open Document Menu
+    
+    func openDocuments()
+    {
+        documentController = UIDocumentMenuViewController(documentTypes: [String(kUTTypePDF)], in: .import)
+        documentController?.delegate = self
+        documentController?.modalPresentationStyle = .formSheet
+        present(documentController!, animated: true, completion: nil)
+    }
+
 
     
     // MARK: - Button Actions
@@ -216,6 +321,7 @@ class ConversationDetailViewController: BaseViewController,UITableViewDelegate,U
             
             DispatchQueue.main.async {
                 
+                self.messageTextView.text = ""
                 self.removeTransperantLoadingFromViewController()
                 self.conversationTableView.reloadData()
                 
@@ -239,34 +345,67 @@ class ConversationDetailViewController: BaseViewController,UITableViewDelegate,U
 
     @IBAction func uploadButtonAction(_ sender: UIButton) {
         
-        let alertController:UIAlertController = UIAlertController(title: "Select Option:", message: nil, preferredStyle: .actionSheet)
+        let alert = UIAlertController(title:"Select Media", message: "Please Select an Option", preferredStyle: .actionSheet)
         
-        alertController.view.tintColor = ColorConstants.kBlueColor
+        alert.addAction(UIAlertAction(title: "Take An Image", style: .default , handler:{ (UIAlertAction)in
+            self.dataCtrl?.isDocumentSelectedForNewReply = false
+            self.openCamera()
+        }))
         
-        let photos:UIAlertAction = UIAlertAction(title: "Photos Library", style: .default) { (photosAction) in
+        alert.addAction(UIAlertAction(title: "Open Photo Gallery", style: .default , handler:{ (UIAlertAction)in
+            self.dataCtrl?.isDocumentSelectedForNewReply = false
+            self.openPhotoLibrary()
+        }))
+        
+        alert.addAction(UIAlertAction(title: "Document", style: .default , handler:{ (UIAlertAction)in
+            self.dataCtrl?.isDocumentSelectedForNewReply = true
+            self.openDocuments()
+        }))
+        
+        alert.addAction(UIAlertAction(title: "Cancel", style: .cancel , handler:{ (UIAlertAction)in
+        }))
+        
+        present(alert, animated: true, completion: nil)
+    }
+    
+    //MARK: Image Doc Display Delegate
+    
+    func didEnterReplyMessageOnDocument()
+    {
+        if Reachability.isConnectedToNetwork(){
+            
+            self.showTransperantLoadingOnViewController()
+            
+            dataCtrl?.setNewReplyWithDocumentConversation(onSuccess: { [unowned self] in
+                
+                DispatchQueue.main.async {
+                    
+                    self.removeTransperantLoadingFromViewController()
+                    self.conversationTableView.reloadData()
+                    
+                    let indexPath = IndexPath(row: (self.dataCtrl?.selectedCoversation?.reply.count)! - 1, section: 0)
+                    self.conversationTableView.scrollToRow(at: indexPath, at: .bottom, animated: true)
+                }
+                
+                }, onFailure: { [unowned self] (errorMessage) in
+                    
+                    DispatchQueue.main.async {
+                        
+                        self.removeTransperantLoadingFromViewController()
+                        
+                        let alert = UIAlertController(title:AlertMessages.failure, message:errorMessage, preferredStyle: .alert)
+                        alert.addAction(UIAlertAction(title:AlertMessages.ok, style:.default, handler: { _ in
+                        }))
+                        self.present(alert, animated: true, completion: nil)
+                    }
+            })
+            
+        }else{
+            
+            let alert = UIAlertController(title:AlertMessages.failure, message:AlertMessages.networkUnavailable, preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title:AlertMessages.ok, style:.default, handler: { _ in
+            }))
+            self.present(alert, animated: true, completion: nil)
         }
-        
-        let docs:UIAlertAction = UIAlertAction(title: "Document", style: .default) { (docssAction) in
-        }
-        
-        let cancelAction:UIAlertAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
-        
-        alertController.addAction(photos)
-        alertController.addAction(docs)
-        alertController.addAction(cancelAction)
-        
-        present(alertController, animated: true, completion: nil)
     }
-    
-    func openPhotos() {
-        
-        
-    }
-    
-    func openDocuments() {
-        
-        
-    }
-    
-
 }

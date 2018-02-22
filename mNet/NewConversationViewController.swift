@@ -30,6 +30,7 @@ class NewConversationViewController: BaseViewController,UICollectionViewDelegate
         super.viewDidLoad()
         self.addkeyBoardListners()
         dataCtrl?.refreshPreviouslySelectedData()
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -41,6 +42,12 @@ class NewConversationViewController: BaseViewController,UICollectionViewDelegate
         selectedBccUsersCollectionView.reloadData()
         selectedForVerificationUsersCollectionView.reloadData()
         selectedForApprovalUsersCollectionView.reloadData()
+        
+        selectedToUsersCollectionView.flashScrollIndicators()
+        selectedBccUsersCollectionView.flashScrollIndicators()
+        selectedForVerificationUsersCollectionView.flashScrollIndicators()
+        selectedForApprovalUsersCollectionView.flashScrollIndicators()
+        
     }
     
     //Mark: Keyboard handling
@@ -128,7 +135,7 @@ class NewConversationViewController: BaseViewController,UICollectionViewDelegate
         let currentTimeStamp:String = String(UInt64((Date.init().timeIntervalSince1970 + 62_135_596_800) * 10_000_000)) + "_doc.jpg"
         
         dataCtrl?.selectedFilenameInNewConversation = currentTimeStamp
-        dataCtrl?.selectedFileDataInNewConversation = UIImageJPEGRepresentation(chosenImage, 1.0)
+        dataCtrl?.selectedFileDataInNewConversation = UIImageJPEGRepresentation(chosenImage, 0.9)
         
         attachmentNameLabel.text = dataCtrl?.selectedFilenameInNewConversation
         
@@ -150,7 +157,7 @@ class NewConversationViewController: BaseViewController,UICollectionViewDelegate
         
         do
         {
-            try self.dataCtrl?.selectedFileDataInNewConversation = Data.init(contentsOf: url)
+            try self.dataCtrl?.selectedFileDataInNewConversation = Data(contentsOf: url)
         }
         catch
         {

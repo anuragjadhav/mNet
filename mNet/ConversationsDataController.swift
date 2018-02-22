@@ -40,6 +40,11 @@ class ConversationsDataController: NSObject {
     var selectedUserType:String?
     var isNewConversationAdded:Bool? = false
 
+    var selectedFilenameForNewReply:String?
+    var selectedFileDataForNewReply:Data?
+    var messageForNewReply:String?
+    var isDocumentSelectedForNewReply:Bool? = false
+
     func getConversations(searchText:String,onSuccess:@escaping (Int) -> Void , onFailure : @escaping (String) -> Void) {
         
         self.currentConversationSearchText = searchText
@@ -370,18 +375,15 @@ class ConversationsDataController: NSObject {
         postParams["post_message"] = newConversationMessage
         
         var mimeType:String?
-        var documentName:String?
         
         //select file parameters
         if(isDocumentSelected == true)
         {
             mimeType = "application/pdf"
-            documentName = "document"
         }
         else
         {
             mimeType = "image/jpeg"
-            documentName = "image"
         }
 
         //add bcc to verification and approval emails
@@ -436,12 +438,12 @@ class ConversationsDataController: NSObject {
             }
         }
         
-        postParams["to_id"] = toEmailArray?.joined()
-        postParams["bcc_id"] = bccEmailArray?.joined()
-        postParams["agree_id"] = verificationEmailArray?.joined()
-        postParams["approve"] = approvalEmailArray?.joined()
+        postParams["to_id"] = toEmailArray?.joined(separator: ",")
+        postParams["bcc_id"] = bccEmailArray?.joined(separator: ",")
+        postParams["agree_id"] = verificationEmailArray?.joined(separator: ",")
+        postParams["approve"] = approvalEmailArray?.joined(separator: ",")
         
-        WrapperManager.shared.conversationWrapper.createNewConversation(postParams: postParams, fileName:selectedFilenameInNewConversation! , fileData: selectedFileDataInNewConversation!, type: mimeType!, name: documentName!, onSuccess: {
+        WrapperManager.shared.conversationWrapper.createNewConversation(postParams: postParams, fileName:selectedFilenameInNewConversation! , fileData: selectedFileDataInNewConversation!, type: mimeType!, name:"file_name", onSuccess: {
             
             onSuccess()
             
@@ -487,5 +489,55 @@ class ConversationsDataController: NSObject {
             onFailure(errorMessage)
         }
 
+    }
+    
+    func setNewReplyWithDocumentConversation(onSuccess:@escaping () -> Void , onFailure : @escaping (String) -> Void) {
+        
+        let user:User = User.loggedInUser()!
+        var postParams:[String:Any] = [String:Any]()
+        postParams["reply_sender_id"] = user.userId
+        postParams["reply_sender_password"] = user.password
+        postParams["reply_sender_email"] = user.email
+        postParams["reply_type"] = "0"
+        postParams["reply_message"] = messageForNewReply
+        postParams["post_id"] = selectedCoversation?.postId
+        
+        var mimeType:String?
+        
+        //select file parameters
+        if(isDocumentSelectedForNewReply == true)
+        {
+            mimeType = "application/pdf"
+        }
+        else
+        {
+            mimeType = "image/jpeg"
+        }
+        
+        WrapperManager.shared.conversationWrapper.setNewReplyConversation(postParams: postParams, fileName: selectedFilenameForNewReply, fileData: selectedFileDataForNewReply, type: mimeType, name:"document", onSuccess: { [unowned self] (replyId,replyLink) in
+            
+            let conversationReply:ConversationReply = ConversationReply(JSON: [String : Any]())!
+            
+            let user:User = User.loggedInUser()!
+            conversationReply.userId = user.userId
+            conversationReply.replyMessage = self.messageForNewReply ?? ""
+            conversationReply.replyId = replyId
+            conversationReply.replyLink = replyLink
+            conversationReply.fullName = user.name
+            
+            let dateFormatter : DateFormatter = DateFormatter()
+            dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
+            let createdOnDateString = dateFormatter.string(from: Date())
+            conversationReply.createdOn = createdOnDateString
+            
+            self.selectedCoversation?.reply.append(conversationReply)
+            
+            onSuccess()
+            
+        }) { (errorMessage) in
+            
+            onFailure(errorMessage)
+        }
+        
     }
 }

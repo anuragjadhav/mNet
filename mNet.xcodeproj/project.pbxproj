@@ -127,6 +127,7 @@
 		5E1C49A21FEA84F2007CE624 /* CustomerBrownTextColorButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E1C49A11FEA84F2007CE624 /* CustomerBrownTextColorButton.swift */; };
 		5E1E4215200F537800FB46C1 /* PVRadioButtonGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E1E4214200F537800FB46C1 /* PVRadioButtonGroup.swift */; };
 		5E1E4217200F537F00FB46C1 /* PVRadioButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E1E4216200F537F00FB46C1 /* PVRadioButton.swift */; };
+		5E202ABE203EDD8A000EE101 /* ImageDocDisplayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E202ABD203EDD8A000EE101 /* ImageDocDisplayViewController.swift */; };
 		5E20CD931FE952BE004ACE0D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E20CD921FE952BE004ACE0D /* AppDelegate.swift */; };
 		5E20CD9A1FE952BE004ACE0D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5E20CD991FE952BE004ACE0D /* Assets.xcassets */; };
 		5E20CD9D1FE952BE004ACE0D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5E20CD9B1FE952BE004ACE0D /* LaunchScreen.storyboard */; };
@@ -309,6 +310,7 @@
 		5E1C49A11FEA84F2007CE624 /* CustomerBrownTextColorButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomerBrownTextColorButton.swift; sourceTree = "<group>"; };
 		5E1E4214200F537800FB46C1 /* PVRadioButtonGroup.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PVRadioButtonGroup.swift; sourceTree = "<group>"; };
 		5E1E4216200F537F00FB46C1 /* PVRadioButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PVRadioButton.swift; sourceTree = "<group>"; };
+		5E202ABD203EDD8A000EE101 /* ImageDocDisplayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageDocDisplayViewController.swift; sourceTree = "<group>"; };
 		5E20CD8F1FE952BE004ACE0D /* mNet.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = mNet.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5E20CD921FE952BE004ACE0D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5E20CD991FE952BE004ACE0D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -498,6 +500,7 @@
 				05A7A9001FF8159F00472A60 /* ConversationInfoViewController.swift */,
 				5E3A046D2007A64D004EE2D7 /* ConversationDetailViewController.swift */,
 				0531A57A2007E1F900F2232C /* FilterViewController.swift */,
+				5E202ABD203EDD8A000EE101 /* ImageDocDisplayViewController.swift */,
 			);
 			name = "View Controllers";
 			sourceTree = "<group>";
@@ -1122,6 +1125,7 @@
 				05A569A12017B74B00C6F713 /* MultipartFormData.swift in Sources */,
 				05A569D32017B7B300C6F713 /* Mappable.swift in Sources */,
 				05A569962017B74B00C6F713 /* ResponseSerialization.swift in Sources */,
+				5E202ABE203EDD8A000EE101 /* ImageDocDisplayViewController.swift in Sources */,
 				05B49A0820337D7D00EDAC5F /* DashboardDataController.swift in Sources */,
 				058A0EDA1FF7CA2D00147238 /* ConversationsListViewController.swift in Sources */,
 				5E1E4217200F537F00FB46C1 /* PVRadioButton.swift in Sources */,

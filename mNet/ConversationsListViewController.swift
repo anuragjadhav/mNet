@@ -60,6 +60,11 @@ class ConversationsListViewController: BaseViewController, UITableViewDelegate, 
         }
     }
     
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        view.endEditing(true)
+    }
+    
     //MARK: Setup
     func setUpNavigationController() {
         
@@ -151,6 +156,11 @@ class ConversationsListViewController: BaseViewController, UITableViewDelegate, 
         {
             getConversations(isReload: false, searchText: searchText)
         }
+    }
+    
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+
+        view.endEditing(true)
     }
     
     //MARK: Button Actions
