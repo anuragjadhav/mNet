@@ -143,7 +143,7 @@ class ConversationDetailViewController: BaseViewController,UITableViewDelegate,U
 
         var link:String?
         
-        if(indexPath.row == 0)
+        if(indexPath.row == 0 && conversationReply.replyLink == "")
         {
             link = dataCtrl?.selectedCoversation?.postLink
         }
