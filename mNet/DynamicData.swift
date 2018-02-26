@@ -11,7 +11,7 @@ import UIKit
 class DynamicData: NSObject, Mappable {
 
     var title:String = ""
-    var value:String = ""
+    var value:String = "-"
     
     required init?(map: Map) {
         

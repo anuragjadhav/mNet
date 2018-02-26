@@ -31,12 +31,12 @@ class SettingsWrapper: NSObject {
                 }
                 else
                 {
-                    onFailure("Unable to fetch settings data")
+                    onFailure(WrapperManager.shared.getErrorMessage(message: "Unable to fetch setings data"))
                 }
             }
             else{
                 
-                onFailure("Unable to fetch setings data")
+                onFailure(WrapperManager.shared.getErrorMessage(message: "Unable to fetch setings data"))
             }
         }
     }
@@ -56,12 +56,12 @@ class SettingsWrapper: NSObject {
                 }
                 else
                 {
-                    onFailure("Unable to update setting")
+                    onFailure(WrapperManager.shared.getErrorMessage(message: "Unable to update setting"))
                 }
             }
             else{
                 
-                onFailure("Unable to update setting")
+                onFailure(WrapperManager.shared.getErrorMessage(message: "Unable to update setting"))
             }
         }
     }

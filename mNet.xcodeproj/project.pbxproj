@@ -14,6 +14,7 @@
 		050F1BE8203732F400B32841 /* ApprovalTabCounter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 050F1BE7203732F400B32841 /* ApprovalTabCounter.swift */; };
 		050F1BEA2037615100B32841 /* ApprovalsDataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 050F1BE92037615100B32841 /* ApprovalsDataController.swift */; };
 		050F1BEC20377F0700B32841 /* DynamicData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 050F1BEB20377F0700B32841 /* DynamicData.swift */; };
+		051744702043283200C2382D /* ApprovalUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0517446F2043283200C2382D /* ApprovalUser.swift */; };
 		0531A5792007CCC600F2232C /* CustomRedBackgroundColorButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0531A5782007CCC600F2232C /* CustomRedBackgroundColorButton.swift */; };
 		0531A57B2007E1F900F2232C /* FilterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0531A57A2007E1F900F2232C /* FilterViewController.swift */; };
 		0531A57D2007EA4200F2232C /* FilterSectionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0531A57C2007EA4200F2232C /* FilterSectionTableViewCell.swift */; };
@@ -196,6 +197,7 @@
 		050F1BE7203732F400B32841 /* ApprovalTabCounter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApprovalTabCounter.swift; sourceTree = "<group>"; };
 		050F1BE92037615100B32841 /* ApprovalsDataController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApprovalsDataController.swift; sourceTree = "<group>"; };
 		050F1BEB20377F0700B32841 /* DynamicData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DynamicData.swift; sourceTree = "<group>"; };
+		0517446F2043283200C2382D /* ApprovalUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApprovalUser.swift; sourceTree = "<group>"; };
 		0531A5782007CCC600F2232C /* CustomRedBackgroundColorButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomRedBackgroundColorButton.swift; sourceTree = "<group>"; };
 		0531A57A2007E1F900F2232C /* FilterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FilterViewController.swift; sourceTree = "<group>"; };
 		0531A57C2007EA4200F2232C /* FilterSectionTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FilterSectionTableViewCell.swift; sourceTree = "<group>"; };
@@ -933,6 +935,7 @@
 				050F1BE52037327500B32841 /* ApprovalSection.swift */,
 				050F1BEB20377F0700B32841 /* DynamicData.swift */,
 				058D5C5E203CB53900A6BA4D /* ApprovalDocument.swift */,
+				0517446F2043283200C2382D /* ApprovalUser.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -1094,6 +1097,7 @@
 				05501F94201D316600831A08 /* ConversationsDataController.swift in Sources */,
 				058A0EDC1FF7CA4800147238 /* ConversationListTableViewCell.swift in Sources */,
 				05A569C52017B7B300C6F713 /* IntegerOperators.swift in Sources */,
+				051744702043283200C2382D /* ApprovalUser.swift in Sources */,
 				05A569A32017B74B00C6F713 /* TaskDelegate.swift in Sources */,
 				05501F90201D262C00831A08 /* ConversationReply.swift in Sources */,
 				05A7A8FF1FF80B7700472A60 /* SelectUserViewController.swift in Sources */,

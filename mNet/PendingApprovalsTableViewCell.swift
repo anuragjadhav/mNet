@@ -25,7 +25,7 @@ class PendingApprovalsTableViewCell: UITableViewCell {
     @IBOutlet weak var buttonTopSpacing: NSLayoutConstraint!
     
     
-    func setUpCell(approval:Approval, indexPath:IndexPath, buttonStatus:ApproveButtonStatus) {
+    func setUpCell(approval:Approval, indexPath:IndexPath, buttonStatus:ApprovalStatus) {
         
         approveButton.tag = indexPath.row
         rejectButton.tag = indexPath.row
@@ -35,18 +35,18 @@ class PendingApprovalsTableViewCell: UITableViewCell {
         case .approve:
             approveButton.isHidden = false
             rejectButton.isHidden = false
-            approveButton.setTitle("APPROVE", for: .normal)
+            approveButton.setTitle(ConstantStrings.approve, for: .normal)
             approveButtonHeight.constant = 30
             buttonTopSpacing.constant = 15
         
         case .verify:
             approveButton.isHidden = false
-            rejectButton.isHidden = false
-            approveButton.setTitle("VERIFY", for: .normal)
+            rejectButton.isHidden = true
+            approveButton.setTitle(ConstantStrings.verify, for: .normal)
             approveButtonHeight.constant = 30
             buttonTopSpacing.constant = 15
         
-        case .hide:
+        case .none:
             approveButton.isHidden = true
             rejectButton.isHidden = true
             approveButtonHeight.constant = 0
@@ -103,7 +103,7 @@ class PendingApprovalsTableViewCell: UITableViewCell {
             vendorValueLabel.text = "-"
         }
         
-        attachmentButton.isHidden = approval.otherDocument.count <= 0        
+        attachmentButton.isHidden = approval.otherDocument.count <= 0
     }
     
 }

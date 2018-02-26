@@ -18,7 +18,11 @@ class DocumentViewController: UIViewController {
     
     @IBOutlet weak var approveButton: CustomBlueTextColorButton!
     
+    @IBOutlet weak var approveButtonTop: NSLayoutConstraint!
+    
+    @IBOutlet weak var approveButtonHeight: NSLayoutConstraint!
     var dataController:ApprovalsDataController = ApprovalsDataController()
+    var preSelectedSegment:Int = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -57,8 +61,28 @@ class DocumentViewController: UIViewController {
         segmentedControl.removeAllSegments()
         segmentedControl.insertSegment(withTitle: approval?.documentDetailsTab1Name ?? "Details", at: 0, animated: false)
         segmentedControl.insertSegment(withTitle: "Attachments", at: 1, animated: false)
-        segmentedControl.selectedSegmentIndex = 0
-        showDetailsScreen()
+        segmentedControl.selectedSegmentIndex = preSelectedSegment
+        segmentedControlAction(segmentedControl)
+        
+        switch dataController.selectedSection!.approvalStatus {
+        
+        case .approve: approveButton.setTitle(ConstantStrings.approve, for: .normal)
+            approveButton.isHidden = false
+            rejectButton.isHidden = false
+            approveButtonTop.constant = 29.0
+            approveButtonHeight.constant = 29.0
+            
+        case .verify: approveButton.setTitle(ConstantStrings.verify, for: .normal)
+            approveButton.isHidden = false
+            rejectButton.isHidden = true
+            approveButtonTop.constant = 29.0
+            approveButtonHeight.constant = 29.0
+            
+        default: approveButton.isHidden = true
+            rejectButton.isHidden = true
+            approveButtonTop.constant = 0
+            approveButtonHeight.constant = 0
+        }
     }
     
     // MARK: - Button Action
@@ -66,7 +90,7 @@ class DocumentViewController: UIViewController {
     @IBAction func approveButtonAction(_ sender: Any) {
         
         let approvalVC:ApprovalVerificationViewController = (UIStoryboard.init(name:"ApproveReject", bundle: Bundle.main)).instantiateViewController(withIdentifier: "ApprovalVerificationViewController") as! ApprovalVerificationViewController
-        
+        approvalVC.dataController = dataController
         self.navigationController?.pushViewController(approvalVC, animated: true)
     }
     

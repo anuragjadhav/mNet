@@ -28,12 +28,12 @@ class ProfileWrapper: NSObject {
                 }
                 else
                 {
-                    onFailure("Unable to fetch profile data")
+                    onFailure(WrapperManager.shared.getErrorMessage(message: "Unable to fetch profile data"))
                 }
             }
             else{
                 
-                onFailure("Unable to fetch profile data")
+                onFailure(WrapperManager.shared.getErrorMessage(message: "Unable to fetch profile data"))
             }
         }
     }

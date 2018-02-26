@@ -10,7 +10,7 @@ import UIKit
 
 class ApprovalsDataController: NSObject {
 
-    var approvalsData:[ApprovalSection] = ApprovalSection.allSection
+    var approvalsData:[ApprovalSection] = ApprovalSection.allSections
     
     var selectedSectionIndex:Int = 0
     var selectedSection:ApprovalSection? {
@@ -30,14 +30,15 @@ class ApprovalsDataController: NSObject {
     
     func getApprovalsData(onSuccess:@escaping () -> Void , onFailure : @escaping (String) -> Void)  {
         
+        let loggedInUser:User = User.loggedInUser()!
         var postData:[String:Any] = [String:Any]()
         postData["application_id"] = "1"
         postData["approval_list"] = selectedSection?.postKey
         postData["search_value"] = searchValue
         postData["limit"] = "\(limit)"
-        postData["userId"] = "66"
-        postData["UserEmail"] = "neha.kandpal@heromotocorp.com"
-        postData["UserPass"] = "Neha@1234"
+        postData["userId"] = loggedInUser.userId
+        postData["UserEmail"] = loggedInUser.email
+        postData["UserPass"] = loggedInUser.password
         postData["start"] = "\(startIndex)"
         
         if filterString != nil {

@@ -26,12 +26,12 @@ class NotificationWrapper: NSObject {
                 }
                 else
                 {
-                    onFailure("Unable to fetch notifications")
+                    onFailure(WrapperManager.shared.getErrorMessage(message: "Unable to fetch notifications"))
                 }
             }
             else{
                 
-                onFailure("Unable to fetch notifications")
+                onFailure(WrapperManager.shared.getErrorMessage(message: "Unable to fetch notifications"))
             }
         }
     }

@@ -48,6 +48,10 @@ class Approval: NSObject, Mappable {
     var otherDocument:[ApprovalDocument] = [ApprovalDocument]()
     var historyCount:Int = 0
     var dynamicData:[DynamicData] = [DynamicData]()
+    var approvalUserList:[ApprovalUser] = [ApprovalUser]()
+    var verificationUserList:[ApprovalUser] = [ApprovalUser]()
+    
+    var selectedUsers:[ApprovalUser] = [ApprovalUser]()
     
     var documentType:DynamicData? {
         return dynamicData[safe:0]
@@ -116,5 +120,7 @@ class Approval: NSObject, Mappable {
         otherDocument               <- map["other_document"]
         historyCount                <- map["historycount"]
         dynamicData                 <- map["dynamic"]
+        approvalUserList            <- map["post_next_user_approval"]
+        verificationUserList        <- map["post_next_user_verifier"]
     }
 }
