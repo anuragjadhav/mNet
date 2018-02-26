@@ -19,7 +19,7 @@ class ConversationReply: NSObject, Mappable {
     var replyType:String = ""
     var createdOn:String = ""
     var replyUserType:String = ""
-    var replyLink:String = ""
+    var replyLink:String? = ""
     var nextUserEmail:String = ""
 
     required init?(map: Map) {

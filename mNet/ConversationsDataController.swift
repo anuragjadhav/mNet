@@ -538,6 +538,23 @@ class ConversationsDataController: NSObject {
             
             onFailure(errorMessage)
         }
+    }
+    
+    
+    func deleteConversationReply(reply:ConversationReply,Atindex:Int,onSuccess:@escaping () -> Void , onFailure : @escaping (String) -> Void) {
         
+        var postParams:[String:Any] = [String:Any]()
+        postParams["reply_id"] = reply.replyId
+
+        WrapperManager.shared.conversationWrapper.deleteConversationReply(postParams: postParams, onSuccess: { [unowned self]  in
+            
+            self.selectedCoversation?.reply.remove(at: Atindex)
+            
+            onSuccess()
+            
+        }) { (errorMessage) in
+            
+            onFailure(errorMessage)
+        }
     }
 }
