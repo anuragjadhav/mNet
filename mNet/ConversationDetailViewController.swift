@@ -36,6 +36,10 @@ class ConversationDetailViewController: BaseViewController,UITableViewDelegate,U
         
         sendButton.isEnabled = false
         sendButton.titleLabel?.textColor = UIColor.gray
+        
+        // add long press gesture recognizer on table view
+        let longPressRecognizer = UILongPressGestureRecognizer(target: self, action:#selector(longPress(gesture:)))
+        self.conversationTableView.addGestureRecognizer(longPressRecognizer)
 
     }
 
@@ -296,7 +300,75 @@ class ConversationDetailViewController: BaseViewController,UITableViewDelegate,U
         documentController?.modalPresentationStyle = .formSheet
         present(documentController!, animated: true, completion: nil)
     }
-
+    
+    
+    // MARK - Delete Reply only if reply added by logged in user
+    
+   @objc func longPress(gesture:UILongPressGestureRecognizer)
+    {
+        if (gesture.state == UIGestureRecognizerState.began) {
+            
+            let touchPoint = gesture.location(in:self.conversationTableView)
+            
+            guard let indexPath = conversationTableView.indexPathForRow(at: touchPoint) else
+            {
+                return
+            }
+            
+            let conversationReply:ConversationReply = (dataCtrl?.selectedCoversation?.reply[indexPath.row])!
+            
+            let user:User = User.loggedInUser()!
+            if(user.userId == conversationReply.userId)
+            {
+                let alert = UIAlertController(title:"Select Action", message: "Are you sure you want to delete this reply?", preferredStyle: .actionSheet)
+                
+                alert.addAction(UIAlertAction(title: "Yes", style: .default , handler:{ (UIAlertAction)in
+                    
+                    self.deleteReply(reply: conversationReply, At: (indexPath.row))
+                }))
+                
+                alert.addAction(UIAlertAction(title: "No", style: .default , handler:{ (UIAlertAction)in
+                }))
+                
+                present(alert, animated: true, completion: nil)
+            }
+        }
+    }
+    
+    func deleteReply(reply:ConversationReply,At index:Int)
+    {
+        if Reachability.isConnectedToNetwork(){
+            
+            self.showTransperantLoadingOnViewController()
+            
+            dataCtrl?.deleteConversationReply(reply:reply,Atindex:index,onSuccess: { [unowned self] in
+                
+                DispatchQueue.main.async {
+                    
+                    self.removeTransperantLoadingFromViewController()
+                    self.conversationTableView.reloadData()
+                }
+                }, onFailure: { [unowned self] (errorMessage) in
+                    
+                    DispatchQueue.main.async {
+                        
+                        self.removeTransperantLoadingFromViewController()
+                        
+                        let alert = UIAlertController(title:AlertMessages.failure, message:errorMessage, preferredStyle: .alert)
+                        alert.addAction(UIAlertAction(title:AlertMessages.ok, style:.default, handler: { _ in
+                        }))
+                        self.present(alert, animated: true, completion: nil)
+                    }
+            })
+            
+        }else{
+            
+            let alert = UIAlertController(title:AlertMessages.failure, message:AlertMessages.networkUnavailable, preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title:AlertMessages.ok, style:.default, handler: { _ in
+            }))
+            self.present(alert, animated: true, completion: nil)
+        }
+    }
 
     
     // MARK: - Button Actions

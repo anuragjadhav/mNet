@@ -205,4 +205,29 @@ class ConversationsWrapper: NSObject {
             }
         }
     }
+    
+    
+    func deleteConversationReply(postParams:[String:Any], onSuccess:@escaping () -> Void , onFailure : @escaping (String) -> Void){
+        
+        request(URLS.deleteConversationReply, method: .post, parameters: postParams, encoding: JSONEncoding() as ParameterEncoding, headers: nil).responseJSON { response in
+            
+            if let responseDict:[String:Any] = response.result.value as? [String:Any] {
+                
+                let error:String = responseDict[DictionaryKeys.APIResponse.error] as! String
+                
+                if(error == DictionaryKeys.APIResponse.noError)
+                {
+                    onSuccess()
+                }
+                else
+                {
+                    onFailure("Unable to delete reply")
+                }
+            }
+            else{
+                
+                onFailure("Unable to delete reply")
+            }
+        }
+    }
 }

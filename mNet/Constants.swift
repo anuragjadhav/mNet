@@ -14,6 +14,7 @@ struct URLS {
     static let getSettings:URL = URL(string: "getsetting", relativeTo: baseURL)!
     static let setSettings:URL = URL(string: "setsetting", relativeTo: baseURL)!
     static let getConversationsList:URL = URL(string: "GetPost", relativeTo: baseURL)!
+    static let deleteConversationReply:URL = URL(string: "cancelReply", relativeTo: baseURL)!
     static let deleteUserFromConversation:URL = URL(string:"deletepostuser", relativeTo: baseURL)!
     static let getSelectUserList:URL = URL(string:"findUsersfuncTo", relativeTo: baseURL)!
     static let createNewConversation:URL = URL(string:"SetPost", relativeTo: baseURL)!
