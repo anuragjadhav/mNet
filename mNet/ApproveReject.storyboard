@@ -539,6 +539,8 @@
                     </navigationItem>
                     <connections>
                         <outlet property="approveButton" destination="jut-Up-KnY" id="sao-xL-HcO"/>
+                        <outlet property="approveButtonHeight" destination="iR5-NB-eUY" id="J0H-3f-MDp"/>
+                        <outlet property="approveButtonTop" destination="wgN-Mo-kIM" id="BNb-Rs-kSg"/>
                         <outlet property="containerView" destination="c7i-Ld-DJD" id="dd4-pf-Aya"/>
                         <outlet property="rejectButton" destination="OTE-SE-A7h" id="mxi-g3-pBm"/>
                         <outlet property="segmentedControl" destination="JRi-Co-Ic2" id="Ly3-oL-LSK"/>
@@ -743,7 +745,7 @@
                                                     <color key="textColor" red="0.3803921569" green="0.28235294119999998" blue="0.22352941179999999" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8lJ-jY-ZaJ">
+                                                <button hidden="YES" opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8lJ-jY-ZaJ">
                                                     <rect key="frame" x="296" y="19.5" width="20" height="20"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="20" id="247-g5-fVA"/>
@@ -754,21 +756,29 @@
                                                         <action selector="checkBoxButtonAction:" destination="fW2-d9-Ri5" eventType="touchUpInside" id="eIB-dz-YGe"/>
                                                     </connections>
                                                 </button>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="HN4-R9-SGW">
+                                                    <rect key="frame" x="296" y="19.5" width="20" height="20"/>
+                                                </imageView>
                                             </subviews>
                                             <constraints>
+                                                <constraint firstItem="HN4-R9-SGW" firstAttribute="trailing" secondItem="8lJ-jY-ZaJ" secondAttribute="trailing" id="6xT-Pb-uZl"/>
                                                 <constraint firstItem="8lJ-jY-ZaJ" firstAttribute="leading" secondItem="eMi-VR-5Uk" secondAttribute="trailing" constant="20" id="6xU-TW-0aF"/>
                                                 <constraint firstAttribute="trailing" secondItem="8lJ-jY-ZaJ" secondAttribute="trailing" constant="5" id="GNu-tG-ADB"/>
                                                 <constraint firstItem="eMi-VR-5Uk" firstAttribute="top" secondItem="GVy-ac-Ocb" secondAttribute="top" constant="5" id="JzO-F2-JJh"/>
                                                 <constraint firstItem="8lJ-jY-ZaJ" firstAttribute="leading" secondItem="iVa-82-vKg" secondAttribute="trailing" constant="20" id="Nfk-sw-L4b"/>
+                                                <constraint firstItem="HN4-R9-SGW" firstAttribute="leading" secondItem="8lJ-jY-ZaJ" secondAttribute="leading" id="UXA-pd-cw2"/>
+                                                <constraint firstItem="HN4-R9-SGW" firstAttribute="bottom" secondItem="8lJ-jY-ZaJ" secondAttribute="bottom" id="WkY-xw-r0O"/>
                                                 <constraint firstItem="iVa-82-vKg" firstAttribute="top" secondItem="eMi-VR-5Uk" secondAttribute="bottom" constant="10" id="aEZ-7b-Rd8"/>
                                                 <constraint firstItem="8lJ-jY-ZaJ" firstAttribute="centerY" secondItem="GVy-ac-Ocb" secondAttribute="centerY" id="fIF-6e-CDm"/>
                                                 <constraint firstItem="eMi-VR-5Uk" firstAttribute="leading" secondItem="GVy-ac-Ocb" secondAttribute="leading" constant="10" id="g5b-WS-rUx"/>
+                                                <constraint firstItem="HN4-R9-SGW" firstAttribute="top" secondItem="8lJ-jY-ZaJ" secondAttribute="top" id="sB3-DS-Grt"/>
                                                 <constraint firstItem="iVa-82-vKg" firstAttribute="leading" secondItem="eMi-VR-5Uk" secondAttribute="leading" id="zw5-6w-AEo"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" red="0.96862745100000003" green="0.97254901959999995" blue="0.97647058819999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <connections>
                                             <outlet property="checkBoxButton" destination="8lJ-jY-ZaJ" id="NVt-cv-7Ch"/>
+                                            <outlet property="checkBoxImageView" destination="HN4-R9-SGW" id="AB6-rv-Qi8"/>
                                             <outlet property="personNameLabel" destination="eMi-VR-5Uk" id="TJm-o7-da0"/>
                                             <outlet property="personRoleLabel" destination="iVa-82-vKg" id="uHB-yW-VxT"/>
                                         </connections>
@@ -850,9 +860,12 @@
                     </navigationItem>
                     <connections>
                         <outlet property="approvalRadioButton" destination="6sf-P1-tn5" id="R8T-Nu-JT2"/>
+                        <outlet property="approveRadioButtonTop" destination="pad-z5-fbU" id="1IY-1S-DZN"/>
                         <outlet property="messageTextView" destination="39v-bx-S97" id="o0Z-ou-lA6"/>
                         <outlet property="searchBar" destination="B8m-wq-RSr" id="7Cq-8c-Sr3"/>
+                        <outlet property="sendButton" destination="Gry-3z-gcO" id="iEi-hE-Xd1"/>
                         <outlet property="sendPeopleListTableView" destination="9A2-oL-lUe" id="0Yx-nc-fEu"/>
+                        <outlet property="textViewHeight" destination="pom-1i-eec" id="bKA-CD-oJf"/>
                         <outlet property="verificationRadioButton" destination="1rl-84-S43" id="y76-n9-qKt"/>
                     </connections>
                 </viewController>
@@ -923,11 +936,8 @@
                                 <rect key="frame" x="0.0" y="64" width="375" height="102"/>
                                 <subviews>
                                     <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Sgd-cY-w1v">
-                                        <rect key="frame" x="27" y="10" width="348" height="75"/>
+                                        <rect key="frame" x="20" y="16" width="355" height="75"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="75" id="ub2-1D-kol"/>
-                                        </constraints>
                                         <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="saU-hh-X1U">
                                             <size key="itemSize" width="100" height="85"/>
                                             <size key="headerReferenceSize" width="0.0" height="0.0"/>
@@ -987,16 +997,17 @@
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
+                                    <constraint firstItem="XyG-0J-0bC" firstAttribute="top" secondItem="Sgd-cY-w1v" secondAttribute="bottom" constant="10" id="Are-wl-6X6"/>
                                     <constraint firstAttribute="bottom" secondItem="XyG-0J-0bC" secondAttribute="bottom" id="Ipr-io-3S2"/>
-                                    <constraint firstItem="Sgd-cY-w1v" firstAttribute="top" secondItem="ZGD-TU-vEI" secondAttribute="top" constant="10" id="PSt-5o-Ytb"/>
+                                    <constraint firstItem="Sgd-cY-w1v" firstAttribute="top" secondItem="ZGD-TU-vEI" secondAttribute="top" constant="16" id="PSt-5o-Ytb"/>
                                     <constraint firstAttribute="trailing" secondItem="Sgd-cY-w1v" secondAttribute="trailing" id="Sxk-hy-IBX"/>
                                     <constraint firstItem="XyG-0J-0bC" firstAttribute="leading" secondItem="ZGD-TU-vEI" secondAttribute="leading" id="n4o-Lp-eZN"/>
-                                    <constraint firstItem="Sgd-cY-w1v" firstAttribute="leading" secondItem="ZGD-TU-vEI" secondAttribute="leading" constant="27" id="pHD-xg-uA8"/>
+                                    <constraint firstItem="Sgd-cY-w1v" firstAttribute="leading" secondItem="ZGD-TU-vEI" secondAttribute="leading" constant="20" id="pHD-xg-uA8"/>
                                     <constraint firstAttribute="height" constant="102" id="sP4-0r-VET"/>
                                     <constraint firstAttribute="trailing" secondItem="XyG-0J-0bC" secondAttribute="trailing" id="uF9-Fv-xbs"/>
                                 </constraints>
                             </view>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="215" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="FlS-pH-e24">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="215" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="FlS-pH-e24">
                                 <rect key="frame" x="0.0" y="221.5" width="375" height="445.5"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <searchBar key="tableHeaderView" contentMode="redraw" searchBarStyle="minimal" id="DHT-Qm-mhZ">
@@ -1008,7 +1019,7 @@
                                     </connections>
                                 </searchBar>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="pendingApprovalsTableViewCell" id="SP2-8A-oCE" customClass="PendingApprovalsTableViewCell" customModule="mNet" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="gray" indentationWidth="10" reuseIdentifier="pendingApprovalsTableViewCell" id="SP2-8A-oCE" customClass="PendingApprovalsTableViewCell" customModule="mNet" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="72" width="375" height="215"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" tableViewCell="SP2-8A-oCE" id="2Qt-wT-KXh">
@@ -1224,6 +1235,15 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </label>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No Approvals" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vcg-pY-u6n" customClass="CustomBrownTextColorLabel" customModule="mNet" customModuleProvider="target">
+                                <rect key="frame" x="137.5" y="434" width="100" height="20.5"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="100" id="0fs-7Q-PRB"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="SanFranciscoDisplay-Medium" family="San Francisco Display" pointSize="17"/>
+                                <color key="textColor" red="0.3803921569" green="0.28235294119999998" blue="0.22352941179999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="0.98039215690000003" green="0.98431372549999996" blue="0.98823529409999999" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
@@ -1232,10 +1252,12 @@
                             <constraint firstItem="FlS-pH-e24" firstAttribute="leading" secondItem="nDM-H3-xll" secondAttribute="leading" id="8VD-U5-Nk1"/>
                             <constraint firstItem="t3M-kU-cBe" firstAttribute="leading" secondItem="nDM-H3-xll" secondAttribute="leading" constant="27" id="FpL-6d-Y1g"/>
                             <constraint firstItem="ZGD-TU-vEI" firstAttribute="leading" secondItem="nDM-H3-xll" secondAttribute="leading" id="KZO-Gd-h7f"/>
+                            <constraint firstItem="Vcg-pY-u6n" firstAttribute="centerX" secondItem="FlS-pH-e24" secondAttribute="centerX" id="Pfu-hB-ldL"/>
                             <constraint firstItem="FlS-pH-e24" firstAttribute="top" secondItem="t3M-kU-cBe" secondAttribute="bottom" constant="9" id="U83-Xw-KpX"/>
                             <constraint firstItem="nDM-H3-xll" firstAttribute="bottom" secondItem="FlS-pH-e24" secondAttribute="bottom" id="Ueg-76-mgj"/>
                             <constraint firstItem="qIi-UL-WLO" firstAttribute="leading" secondItem="t3M-kU-cBe" secondAttribute="trailing" constant="16" id="ZVc-v2-Duy"/>
                             <constraint firstItem="FlS-pH-e24" firstAttribute="trailing" secondItem="nDM-H3-xll" secondAttribute="trailing" id="dKM-CU-IU7"/>
+                            <constraint firstItem="Vcg-pY-u6n" firstAttribute="centerY" secondItem="FlS-pH-e24" secondAttribute="centerY" id="fNp-qE-zn2"/>
                             <constraint firstItem="t3M-kU-cBe" firstAttribute="top" secondItem="ZGD-TU-vEI" secondAttribute="bottom" constant="27" id="hKb-dh-yqM"/>
                             <constraint firstItem="nDM-H3-xll" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="qIi-UL-WLO" secondAttribute="trailing" constant="16" id="hX8-ov-Stf"/>
                             <constraint firstItem="ZGD-TU-vEI" firstAttribute="top" secondItem="nDM-H3-xll" secondAttribute="top" id="ySs-w1-nay"/>
@@ -1261,6 +1283,7 @@
                         <outlet property="filterBarButton" destination="t76-rW-xUd" id="9lf-DY-NEP"/>
                         <outlet property="filterLabel" destination="qIi-UL-WLO" id="KUk-qD-bna"/>
                         <outlet property="filterLabelWidth" destination="Gnt-wc-WHy" id="lln-kD-eck"/>
+                        <outlet property="noApprovalsLabel" destination="Vcg-pY-u6n" id="RRb-DE-qjl"/>
                         <outlet property="pendingApprovalsLabel" destination="t3M-kU-cBe" id="LPk-g3-2Tm"/>
                         <outlet property="pendingApprovalsTableView" destination="FlS-pH-e24" id="xIo-9f-4Ig"/>
                         <outlet property="searchBar" destination="DHT-Qm-mhZ" id="wDZ-Yf-6Jg"/>

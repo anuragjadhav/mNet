@@ -21,12 +21,12 @@ class LoginWrapper: NSObject {
                 if(error == DictionaryKeys.APIResponse.noErrorInt)
                 {
                     guard let userDictionary:[String:Any] = responseDict[DictionaryKeys.APIResponse.responseData] as? [String:Any] else {
-                        onFailure("Login Failed. Please try again.")
+                        onFailure(WrapperManager.shared.getErrorMessage(message: WrapperManager.shared.getErrorMessage(message: "Login Failed. Please try again.")))
                         return
                     }
                     
                     guard let mappedUser:User = User(JSON: userDictionary) else {
-                        onFailure("Login Failed. Please try again.")
+                        onFailure(WrapperManager.shared.getErrorMessage(message: "Login Failed. Please try again."))
                         return
                     }
                     onSuccess(mappedUser)
@@ -39,12 +39,12 @@ class LoginWrapper: NSObject {
                     
                 else
                 {
-                    onFailure("Login Failed. Please try again.")
+                    onFailure(WrapperManager.shared.getErrorMessage(message: "Login Failed. Please try again."))
                 }
             }
             else{
                 
-                onFailure("Login Failed. Please try again.")
+                onFailure(WrapperManager.shared.getErrorMessage(message: "Login Failed. Please try again."))
             }
         }
     }

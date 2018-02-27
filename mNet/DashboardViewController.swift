@@ -111,18 +111,26 @@ class DashboardViewController: BaseViewController, UITableViewDataSource, UITabl
         let app:UserApp = dataController.appsList[indexPath.row]
         
         if app.appId == "3" {
-            let approvalsVC = (UIStoryboard.init(name:"ApproveReject", bundle: Bundle.main)).instantiateViewController(withIdentifier: "ApprovalsViewController")
-            self.navigationController?.pushViewController(approvalsVC, animated: true)
+            goToApprovalsScreen(preSelectedIndex:0)
         }
         
-        else {
-            let webViewController:WebViewController = UIStoryboard.login.instantiateViewController(withIdentifier: StoryboardIDs.webViewController) as! WebViewController
-            webViewController.setData(url: app.appURL, header: app.appName)
-            navigationController?.pushViewController(webViewController, animated: true)
-        }
+//        else {
+//            let webViewController:WebViewController = UIStoryboard.login.instantiateViewController(withIdentifier: StoryboardIDs.webViewController) as! WebViewController
+//            webViewController.setData(url: app.appURL, header: app.appName)
+//            navigationController?.pushViewController(webViewController, animated: true)
+//        }
     }
     
-    //Mark: Button Actions
+    func goToApprovalsScreen(preSelectedIndex:Int) {
+        
+        let approvalsVC:ApprovalsViewController = (UIStoryboard.init(name:"ApproveReject", bundle: Bundle.main)).instantiateViewController(withIdentifier: "ApprovalsViewController") as! ApprovalsViewController
+        let dataController:ApprovalsDataController = ApprovalsDataController()
+        dataController.selectedSectionIndex = preSelectedIndex
+        approvalsVC.dataController = dataController
+        self.navigationController?.pushViewController(approvalsVC, animated: true)
+    }
+    
+    //MARK: Button Actions
     @IBAction func starButtonAction(_ sender: UIButton) {
         
         let buttonPoint:CGPoint = sender.convert(CGPoint.zero, to: self.myAppsTableView)
@@ -139,7 +147,6 @@ class DashboardViewController: BaseViewController, UITableViewDataSource, UITabl
         {
             cell.starButton.setImage(UIImage.init(named: "star_filled"), for: UIControlState.normal)
             cell.isSelected = true
-            
         }
     }
     
@@ -147,6 +154,39 @@ class DashboardViewController: BaseViewController, UITableViewDataSource, UITabl
         
         getData()
     }
+    
+    
+    @IBAction func pendingApprovalsButtonAction(_ sender: UIButton) {
+        
+        goToApprovalsScreen(preSelectedIndex:0)
+//        if dataController.appsList.contains(where: { (app) -> Bool in
+//            return app.appId == "3"
+//        }) {
+//
+//
+//        }
+    }
+    
+    
+    
+    @IBAction func pendingVerificationsButtonAction(_ sender: UIButton) {
+        
+        goToApprovalsScreen(preSelectedIndex:1)
+        
+//        if dataController.appsList.contains(where: { (app) -> Bool in
+//            return app.appId == "3"
+//        }) {
+//
+//            goToApprovalsScreen(preSelectedIndex:1)
+//        }
+    }
+    
+    
+    @IBAction func unreadMessagesButtonAction(_ sender: UIButton) {
+        
+        self.tabBarController?.selectedIndex = 1
+    }
+    
     
     @IBAction func logOutAction(_ sender: UIButton) {
         

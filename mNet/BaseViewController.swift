@@ -267,6 +267,13 @@ class BaseViewController: UIViewController,RetryViewProtocol {
         present(alertController, animated: true, completion: nil)
     }
     
+    func showQuickSuccessAlert(message:String, completion:((UIAlertAction) -> Void)?) {
+        
+        let alertController:UIAlertController = UIAlertController(title: AlertMessages.success, message: message, preferredStyle: .alert)
+        alertController.addAction(UIAlertAction(title: AlertMessages.ok, style: .cancel, handler: completion))
+        present(alertController, animated: true, completion: nil)
+    }
+    
     func showQuickFailureAlert(message:String) {
         
         let alertController:UIAlertController = UIAlertController(title: AlertMessages.failure, message: message, preferredStyle: .alert)

@@ -26,12 +26,12 @@ class ConversationsWrapper: NSObject {
                 }
                 else
                 {
-                    onFailure("Unable to fetch conversations")
+                    onFailure(WrapperManager.shared.getErrorMessage(message: "Unable to fetch conversations"))
                 }
             }
             else{
                 
-                onFailure("Unable to fetch conversations")
+                onFailure(WrapperManager.shared.getErrorMessage(message: "Unable to fetch conversations"))
             }
         }
     }

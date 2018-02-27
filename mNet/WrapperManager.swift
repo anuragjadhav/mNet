@@ -22,7 +22,16 @@ class WrapperManager: NSObject {
     let approvalWrapper:ApprovalWrapper = ApprovalWrapper()
     
     private override init() {
-        
         super.init()
+    }
+    
+    func getErrorMessage(message:String?) -> String {
+        
+        if Reachability.isConnectedToNetwork() {
+            return message ?? "Something went wrong. Please try again."
+        }
+        else {
+            return AlertMessages.connectToInternet
+        }
     }
 }

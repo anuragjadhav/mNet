@@ -8,10 +8,10 @@
 
 import UIKit
 
-public enum ApproveButtonStatus {
+public enum ApprovalStatus {
     case approve
     case verify
-    case hide
+    case none
 }
 
 class ApprovalSection: NSObject {
@@ -21,45 +21,45 @@ class ApprovalSection: NSObject {
     var list:[Approval] = [Approval]()
     var tabCount:Int = 0
     var postKey:String = ""
-    var buttonStatus:ApproveButtonStatus = .approve
+    var approvalStatus:ApprovalStatus = .approve
     
-    static var allSection:[ApprovalSection] {
+    static var allSections:[ApprovalSection] {
     
         let pendingApprovals:ApprovalSection = ApprovalSection()
         pendingApprovals.index = 0
         pendingApprovals.name = "Pending Approvals"
         pendingApprovals.postKey = "approval_list"
-        pendingApprovals.buttonStatus = .approve
+        pendingApprovals.approvalStatus = .approve
         
         let pendingVerifications:ApprovalSection = ApprovalSection()
         pendingVerifications.index = 1
         pendingVerifications.name = "Pending Verifications"
         pendingVerifications.postKey = "verified_list"
-        pendingVerifications.buttonStatus = .verify
+        pendingVerifications.approvalStatus = .verify
         
         let completedApprovals:ApprovalSection = ApprovalSection()
         completedApprovals.index = 2
         completedApprovals.name = "Completed Approvals"
         completedApprovals.postKey = "completed_approval"
-        completedApprovals.buttonStatus = .hide
+        completedApprovals.approvalStatus = .none
         
         let completedVerifications:ApprovalSection = ApprovalSection()
         completedVerifications.index = 3
         completedVerifications.name = "Completed Verifications"
         completedVerifications.postKey = "completed_verification"
-        completedVerifications.buttonStatus = .hide
+        completedVerifications.approvalStatus = .none
         
         let cancelled:ApprovalSection = ApprovalSection()
         cancelled.index = 4
         cancelled.name = "Cancelled"
         cancelled.postKey = "cancelled_post"
-        cancelled.buttonStatus = .hide
+        cancelled.approvalStatus = .none
         
         let rejected:ApprovalSection = ApprovalSection()
         rejected.index = 5
         rejected.name = "Rejected"
         rejected.postKey = "rejected_post"
-        rejected.buttonStatus = .hide
+        rejected.approvalStatus = .none
         
         return [pendingApprovals, pendingVerifications, completedApprovals, completedVerifications, cancelled, rejected]
     }

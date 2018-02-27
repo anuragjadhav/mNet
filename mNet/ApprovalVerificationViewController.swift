@@ -8,32 +8,88 @@
 
 import UIKit
 
+
 class ApprovalVerificationViewController: BaseViewController,UISearchBarDelegate,UITableViewDelegate,UITableViewDataSource,RadioButtonGroupDelegate {
     
+    //MARK: Outlets and Properties
+    
+    //Outlets
     @IBOutlet weak var approvalRadioButton: PVRadioButton!
     @IBOutlet weak var verificationRadioButton: PVRadioButton!
     @IBOutlet weak var messageTextView: CustomBrownColorTextView!
     @IBOutlet weak var searchBar: UISearchBar!
-    
     @IBOutlet weak var sendPeopleListTableView: UITableView!
+    @IBOutlet weak var approveRadioButtonTop: NSLayoutConstraint!
+    @IBOutlet weak var textViewHeight: NSLayoutConstraint!
+    @IBOutlet weak var sendButton: CustomBlueBackgroundButton!
     
+    //Properties
     var radioButtonGroup:PVRadioButtonGroup?
+    var dataController:ApprovalsDataController = ApprovalsDataController()
+    var searchTextEntered:String? = nil
+    var userList:[ApprovalUser] = [ApprovalUser]()
+    var approvalsVC:ApprovalsViewController?
+    
+    //MARK: View Controller Delegates
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        radioButtonGroup = PVRadioButtonGroup()
-        approvalRadioButton.tag = 1
-        verificationRadioButton.tag = 2
-        radioButtonGroup!.appendToRadioGroup(radioButtons: [approvalRadioButton,verificationRadioButton])
-        radioButtonGroup!.delegate = self as RadioButtonGroupDelegate
+        setUpViewController()
     }
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated);
         
         self.setupNavigationBar()
+    }
+    
+    //MARK: Setup
+    
+    func setUpViewController() {
+        
+        switch dataController.selectedSection!.approvalStatus {
+        
+        case .approve: hideRadioButtons()
+        
+        case .verify: showRadioButtons()
+        
+        default: hideRadioButtons()
+        
+        }
+        
+        self.view.layoutIfNeeded()
+    }
+    
+    func showRadioButtons() {
+        
+        radioButtonGroup = PVRadioButtonGroup()
+        approvalRadioButton.tag = 1
+        verificationRadioButton.tag = 2
+        radioButtonGroup!.appendToRadioGroup(radioButtons: [approvalRadioButton,verificationRadioButton])
+        radioButtonGroup!.delegate = self as RadioButtonGroupDelegate
+        approveRadioButtonTop.constant = 28
+        textViewHeight.constant = 64
+        sendButton.setTitle("\(ConstantStrings.sendFor) \(ConstantStrings.verification)", for: .normal)
+        sendPeopleListTableView.isHidden = false
+        searchBar.isHidden = false
+        approvalRadioButton.isHidden = false
+        verificationRadioButton.isHidden = false
+        approvalRadioButton.isRadioSelected = true
+        reloadData()
+    }
+    
+    func hideRadioButtons() {
+        
+        radioButtonGroup = PVRadioButtonGroup()
+        approveRadioButtonTop.constant = -20
+        textViewHeight.constant = 128
+        sendButton.setTitle("\(ConstantStrings.sendFor) \(ConstantStrings.approval)", for: .normal)
+        sendPeopleListTableView.isHidden = true
+        searchBar.isHidden = true
+        approvalRadioButton.isHidden = true
+        verificationRadioButton.isHidden = true
     }
     
     func setupNavigationBar(){
@@ -43,66 +99,64 @@ class ApprovalVerificationViewController: BaseViewController,UISearchBarDelegate
     
     //Mark: tableview delegates and data source
     
-    func numberOfSections(in tableView: UITableView) -> Int {
-        
-        return 1
-    }
-    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        
-        return 3
+     
+        return userList.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell:SendPeopleListTableViewCell = tableView.dequeueReusableCell(withIdentifier:"SendPeopleListTableViewCell") as! SendPeopleListTableViewCell
         
+        guard let user:ApprovalUser = userList[safe:indexPath.row] else {
+            return cell
+        }
+        cell.setUpCell(user: user, isUserSelected: dataController.selectedApproval!.selectedUsers.contains(user))
         return cell
-        
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-
-    }
-    
-    func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
         
+        let selectedUser:ApprovalUser = userList[indexPath.row]
+        if let indexOfSelectedUser:Int = dataController.selectedApproval!.selectedUsers.index(of: selectedUser) {
+            dataController.selectedApproval!.selectedUsers.remove(at: indexOfSelectedUser)
+        }
+        else {
+            dataController.selectedApproval!.selectedUsers.append(selectedUser)
+        }
+        
+        sendPeopleListTableView.reloadData()
     }
     
     @IBAction func checkBoxButtonAction(_ sender: UIButton) {
         
-        let buttonPoint:CGPoint = sender.convert(CGPoint.zero, to: self.sendPeopleListTableView)
-        let indexPath:IndexPath = self.sendPeopleListTableView.indexPathForRow(at: buttonPoint)!
-        
-        let cell:SendPeopleListTableViewCell =  self.sendPeopleListTableView.cellForRow(at: indexPath) as! SendPeopleListTableViewCell
-        
-         if(cell.isSelected == true)
-         {
-               cell.isSelected = false
-               cell.checkBoxButton.setImage(UIImage.init(named: "uncheckedBox"), for: UIControlState.normal)
-         }
-        else
-         {
-            cell.checkBoxButton.setImage(UIImage.init(named: "checkedBox"), for: UIControlState.normal)
-            cell.isSelected = true
-
-         }
     }
     
     //Mark: search bar delegates
     
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         
+        if searchText.isEmpty {
+            searchTextEntered = nil
+        }
+        else {
+            searchTextEntered = searchText
+        }
+        reloadData()
     }
     
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
-        
+        searchTextEntered = searchBar.text
         self.view.endEditing(true)
+        reloadData()
     }
     
     func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
         
+        searchTextEntered = nil
+        searchBar.text = ""
         self.view.endEditing(true)
+        reloadData()
     }
 
     
@@ -116,14 +170,63 @@ class ApprovalVerificationViewController: BaseViewController,UISearchBarDelegate
 
     @IBAction func sendButtonAction(_ sender: Any) {
         
+        if messageTextView.text.isEmpty || messageTextView.text == "" {
+            self.showQuickErrorAlert(message: AlertMessages.enterReplyMessage)
+            return
+        }
         
+        self.showTransperantLoadingOnViewController()
+        
+        var approveType:String = "I"
+        if approvalRadioButton.isRadioSelected {
+            approveType = "A"
+        }
+        
+        dataController.approvePost(replyMessage: messageTextView.text, approveType: approveType, nextApproval: "", onSuccess: { (message) in
+            
+            DispatchQueue.main.async {
+                self.removeTransperantLoadingFromViewController()
+                self.showQuickSuccessAlert(message: message, completion: { (_) in
+                    self.approvalsVC?.resetData()
+                    self.approvalsVC?.getData()
+                    self.navigationController?.popViewController(animated: true)
+                })
+            }
+            
+        }) { (errorMessage) in
+            
+            DispatchQueue.main.async {
+                self.removeTransperantLoadingFromViewController()
+                self.showQuickErrorAlert(message: errorMessage)
+            }
+        }
     }
 
     // MARK: - Radio Button Delegate
     
     func radioButtonClicked(button: PVRadioButton) {
         
+        sendPeopleListTableView.reloadData()
+        dataController.selectedApproval!.selectedUsers.removeAll()
+        reloadData()
     }
 
+    func reloadData() {
+        
+        if approvalRadioButton.isRadioSelected {
+            userList =  dataController.selectedApproval!.approvalUserList
+        }
+        else {
+            userList = dataController.selectedApproval!.verificationUserList
+        }
+        
+        if searchTextEntered != nil {
+            userList = userList.filter({ (user) -> Bool in
+                return user.name.contains(searchTextEntered!)
+            })
+        }
+        
+        sendPeopleListTableView.reloadData()
+    }
 
 }

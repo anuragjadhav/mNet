@@ -12,7 +12,7 @@ class User: NSObject, Mappable {
     
     var email:String = ""
     var password:String = ""
-    var userId:String = ""
+    var userId:String = "66"
     var name:String = ""
     var status:String = ""
     
@@ -67,7 +67,7 @@ class User: NSObject, Mappable {
         
         email <- map["LoginEmail"]
         password <- map["password"]
-        userId <- map["user_id"]
+        //userId <- map["user_id"]
         name <- map["LoginName"]
         status <- map["Status"]
         companyEmail <- map["user_comp_email"]
@@ -118,9 +118,9 @@ class User: NSObject, Mappable {
     func toJSONPost() -> [String:Any] {
         
         var dictionary:[String:Any] = [String:Any]()
-        dictionary["UserEmail"] = "neha.kandpal@heromotocorp.com" //email
-        dictionary["UserPass"] = "Neha@1234" //password
-        dictionary["UserId"] = "66" //userId
+        dictionary["UserEmail"] = email
+        dictionary["UserPass"] = password
+        dictionary["UserId"] = userId
         return dictionary
     }
     
@@ -136,14 +136,14 @@ class User: NSObject, Mappable {
         
         var dictionary:[String:Any] = [String:Any]()
         dictionary["password"] = password
-        dictionary["userid"] = 69
+        dictionary["userid"] = userId
         return dictionary
     }
     
     func toJSONPostOnlyId() -> [String:Any] {
         
         var dictionary:[String:Any] = [String:Any]()
-        dictionary["user_id"] = 69
+        dictionary["user_id"] = 66
         return dictionary
     }
     

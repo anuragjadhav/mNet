@@ -13,16 +13,19 @@ class SendPeopleListTableViewCell: UITableViewCell {
     @IBOutlet weak var personNameLabel: CustomBrownTextColorLabel!
     @IBOutlet weak var personRoleLabel: CustomBrownTextColorLabel!
     @IBOutlet weak var checkBoxButton: UIButton!
+
+    @IBOutlet weak var checkBoxImageView: UIImageView!
     
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
+    func setUpCell(user:ApprovalUser, isUserSelected:Bool) {
+        
+        personNameLabel.text = user.name
+        personRoleLabel.text = user.designation
+        
+        if isUserSelected {
+            checkBoxImageView.image = UIImage(named: ImageNames.checkBox)
+        }
+        else {
+            checkBoxImageView.image = UIImage(named: ImageNames.unCheckBox)
+        }
     }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
-    }
-
 }

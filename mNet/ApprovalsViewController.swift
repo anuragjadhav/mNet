@@ -26,36 +26,41 @@ class ApprovalsViewController: BaseViewController,UICollectionViewDelegate, UICo
     var dataController:ApprovalsDataController = ApprovalsDataController()
     var isLoading:Bool = false
     
+    @IBOutlet weak var noApprovalsLabel: CustomBrownTextColorLabel!
+    
+    
     //MARK: View Controller Delegates
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        self.getData()
     }
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated);
         
         self.setupNavigationBar()
-        self.getData()
     }
     
     override func viewDidDisappear(_ animated: Bool) {
         
         super.viewDidDisappear(animated)
         view.endEditing(true)
+        self.navigationController?.navigationBar.showBottomHairline()
     }
     
     func setUpViewController() {
         
-        pendingApprovalsTableView.tableFooterView = UIView()
         pendingApprovalsTableView.estimatedRowHeight = 215
         pendingApprovalsTableView.rowHeight = UITableViewAutomaticDimension
+        pendingApprovalsTableView.tableFooterView = UIView()
     }
     
     func setupNavigationBar(){
         
         self.navigationController?.navigationBar.isHidden = false
+        self.navigationController?.navigationBar.hideBottomHairline()
     }
 
     func getData() {
@@ -80,6 +85,7 @@ class ApprovalsViewController: BaseViewController,UICollectionViewDelegate, UICo
                 self.pendingApprovalsTableView.reloadData()
                 self.pendingApprovalsLabel.text = self.dataController.selectedSection?.name
                 self.isLoading = false
+                self.checkNoData()
                 
                 switch self.dataController.filterString ?? "" {
                     
@@ -112,8 +118,15 @@ class ApprovalsViewController: BaseViewController,UICollectionViewDelegate, UICo
                 self.removeTransperantLoadingFromViewController()
                 self.showRetryView(message: errorMessage)
                 self.isLoading = false
+                self.checkNoData()
             }
         }
+    }
+    
+    func checkNoData() {
+        
+        noApprovalsLabel.text = "No \(dataController.selectedSection?.name ?? "Approvals")"
+        noApprovalsLabel.isHidden = (((dataController.selectedSection?.list.count) ?? 0) > 0)
     }
     
     func resetData() {
@@ -163,17 +176,16 @@ class ApprovalsViewController: BaseViewController,UICollectionViewDelegate, UICo
         
         let cell:PendingApprovalsTableViewCell = tableView.dequeueReusableCell(withIdentifier: CellIdentifiers.pendingApprovalsTableViewCell) as! PendingApprovalsTableViewCell
         if let approval:Approval = dataController.selectedSection?.list[safe:indexPath.row] {
-            cell.setUpCell(approval:approval, indexPath:indexPath, buttonStatus:dataController.selectedSection!.buttonStatus)
+            cell.setUpCell(approval:approval, indexPath:indexPath, buttonStatus:dataController.selectedSection!.approvalStatus)
         }
         return cell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
+        tableView.deselectRow(at: indexPath, animated: true)
         dataController.selectedApprovalIndex = indexPath.row
-        let documentVc:DocumentViewController = (UIStoryboard.init(name:"ApproveReject", bundle: Bundle.main)).instantiateViewController(withIdentifier: "DocumentViewController") as! DocumentViewController
-        documentVc.dataController = dataController
-        self.navigationController?.pushViewController(documentVc, animated: true)
+        goToDetailsPage(preSelectedIndex: 0)
     }
     
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
@@ -234,7 +246,6 @@ class ApprovalsViewController: BaseViewController,UICollectionViewDelegate, UICo
     }
 
     
-    
     //MARK: Button Actions
     @IBAction func backButtonAction(_ sender: UIButton) {
         
@@ -245,7 +256,8 @@ class ApprovalsViewController: BaseViewController,UICollectionViewDelegate, UICo
         
         dataController.selectedApprovalIndex = sender.tag
         let approvalVC:ApprovalVerificationViewController = (UIStoryboard.init(name:"ApproveReject", bundle: Bundle.main)).instantiateViewController(withIdentifier: "ApprovalVerificationViewController") as! ApprovalVerificationViewController
-        
+        approvalVC.dataController = dataController
+        approvalVC.approvalsVC = self
         self.navigationController?.pushViewController(approvalVC, animated: true)
     }
 
@@ -254,17 +266,23 @@ class ApprovalsViewController: BaseViewController,UICollectionViewDelegate, UICo
         dataController.selectedApprovalIndex = sender.tag
         let rejectApprovalVc:RejectApplicationViewController = (UIStoryboard.init(name:"ApproveReject", bundle: Bundle.main)).instantiateViewController(withIdentifier: "RejectApplicationViewController") as! RejectApplicationViewController
         rejectApprovalVc.dataController = dataController
+        rejectApprovalVc.approvalsVC = self
         self.navigationController?.pushViewController(rejectApprovalVc, animated: true)
     }
     
     @IBAction func attachmentButtonAction(_ sender: UIButton) {
         
         dataController.selectedApprovalIndex = sender.tag
-        let documentVc:DocumentViewController = (UIStoryboard.init(name:"ApproveReject", bundle: Bundle.main)).instantiateViewController(withIdentifier: "DocumentViewController") as! DocumentViewController
-        documentVc.dataController = dataController
-        self.navigationController?.pushViewController(documentVc, animated: true)
+        goToDetailsPage(preSelectedIndex: 1)
     }
     
+    func goToDetailsPage(preSelectedIndex:Int) {
+        
+        let documentVc:DocumentViewController = (UIStoryboard.init(name:"ApproveReject", bundle: Bundle.main)).instantiateViewController(withIdentifier: "DocumentViewController") as! DocumentViewController
+        documentVc.dataController = dataController
+        documentVc.preSelectedSegment = preSelectedIndex
+        self.navigationController?.pushViewController(documentVc, animated: true)
+    }
     
     @IBAction func filterButtonAction(_ sender: UIBarButtonItem) {
         

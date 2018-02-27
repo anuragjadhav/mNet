@@ -85,6 +85,7 @@ struct AlertMessages {
     static let ok:String = "OK"
     static let sorry:String = "Sorry"
     static let connectToInternet:String = "Please connect to the Internet to continue"
+    static let enterReplyMessage:String = "Please enter Reply Message"
 
 }
 
@@ -190,9 +191,20 @@ struct StoryboardIDs {
     static let webViewController:String = "mNetWebViewController"
 }
 
+struct ImageNames {
+    
+    static let checkBox:String = "checkedBox"
+    static let unCheckBox:String = "uncheckedBox"
+}
+
 struct ConstantStrings {
     
     static let appName:String = "mNet"
+    static let approve:String = "APPROVE"
+    static let verify:String = "VERIFY"
+    static let sendFor:String = "SEND FOR"
+    static let approval:String = "APPROVAL"
+    static let verification:String = "VERIFICATION"
 }
 
 extension UIStoryboard {

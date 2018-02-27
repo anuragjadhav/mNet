@@ -15,19 +15,19 @@ class DashboardWrapper: NSObject {
         request(URLS.getDashboardStatistics, method: .post, parameters:postParams , encoding: JSONEncoding() as ParameterEncoding, headers: nil).responseObject { (response:DataResponse<CommonResponse>) in
             
             guard let commonResponse:CommonResponse = response.result.value else {
-                onFailure("Something went wrong. Please try again.")
+                onFailure(WrapperManager.shared.getErrorMessage(message: nil))
                 return
             }
             
             if commonResponse.noError {
                 
                 guard let statsDictionary:[String:Any] = commonResponse.responseData as? [String:Any] else {
-                    onFailure("Something went wrong. Please try again.")
+                    onFailure(WrapperManager.shared.getErrorMessage(message: nil))
                     return
                 }
                 
                 guard let stats:DashboardStats = DashboardStats(JSON: statsDictionary) else {
-                    onFailure("Something went wrong. Please try again.")
+                    onFailure(WrapperManager.shared.getErrorMessage(message: nil))
                     return
                 }
                 
@@ -35,7 +35,7 @@ class DashboardWrapper: NSObject {
             }
             
             else {
-                onFailure("Something went wrong. Please try again.")
+                onFailure(WrapperManager.shared.getErrorMessage(message: nil))
                 return
             }
         }
@@ -46,19 +46,19 @@ class DashboardWrapper: NSObject {
         request(URLS.getUserAppsList, method: .post, parameters: postParams, encoding: JSONEncoding() as ParameterEncoding, headers: nil).responseObject { (response:DataResponse<CommonResponse>) in
             
             guard let commonResponse:CommonResponse = response.result.value else {
-                onFailure("Something went wrong. Please try again.")
+                onFailure(WrapperManager.shared.getErrorMessage(message: nil))
                 return
             }
             
             if commonResponse.noError {
                 
                 guard let responseDict:[String:Any] = commonResponse.responseData as? [String:Any] else {
-                    onFailure("Something went wrong. Please try again.")
+                    onFailure(WrapperManager.shared.getErrorMessage(message: nil))
                     return
                 }
                 
                 guard let appsDictionaryArray:[[String:Any]] = responseDict["records"] as? [[String:Any]] else {
-                    onFailure("Something went wrong. Please try again.")
+                    onFailure(WrapperManager.shared.getErrorMessage(message: nil))
                     return
                 }
                 
@@ -67,7 +67,7 @@ class DashboardWrapper: NSObject {
             }
                 
             else {
-                onFailure("Something went wrong. Please try again.")
+                onFailure(WrapperManager.shared.getErrorMessage(message: nil))
                 return
             }
         }

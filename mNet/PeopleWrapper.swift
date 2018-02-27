@@ -26,12 +26,12 @@ class PeopleWrapper: NSObject {
                 }
                 else
                 {
-                    onFailure("Unable to fetch people list")
+                    onFailure(WrapperManager.shared.getErrorMessage(message: "Unable to fetch people list"))
                 }
             }
             else{
                 
-                onFailure("Unable to fetch people list")
+                onFailure(WrapperManager.shared.getErrorMessage(message: "Unable to fetch people list"))
             }
         }
     }
