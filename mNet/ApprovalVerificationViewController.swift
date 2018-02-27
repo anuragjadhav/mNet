@@ -28,6 +28,7 @@ class ApprovalVerificationViewController: BaseViewController,UISearchBarDelegate
     var dataController:ApprovalsDataController = ApprovalsDataController()
     var searchTextEntered:String? = nil
     var userList:[ApprovalUser] = [ApprovalUser]()
+    
     var approvalsVC:ApprovalsViewController?
     
     //MARK: View Controller Delegates
@@ -175,21 +176,26 @@ class ApprovalVerificationViewController: BaseViewController,UISearchBarDelegate
             return
         }
         
-        self.showTransperantLoadingOnViewController()
-        
-        var approveType:String = "I"
-        if approvalRadioButton.isRadioSelected {
-            approveType = "A"
+        if dataController.selectedApproval!.selectedUsers.count <= 0 {
+            self.showQuickErrorAlert(message: AlertMessages.selectAtleastOneUSer)
+            return
         }
         
-        dataController.approvePost(replyMessage: messageTextView.text, approveType: approveType, nextApproval: "", onSuccess: { (message) in
+        self.showTransperantLoadingOnViewController()
+        
+        var approveType:String = "A"
+        if verificationRadioButton.isRadioSelected {
+            approveType = "I"
+        }
+        
+        dataController.approvePostBasedOnType(replyMessage: messageTextView.text, approveType: approveType, onSuccess: { (message) in
             
             DispatchQueue.main.async {
                 self.removeTransperantLoadingFromViewController()
                 self.showQuickSuccessAlert(message: message, completion: { (_) in
                     self.approvalsVC?.resetData()
                     self.approvalsVC?.getData()
-                    self.navigationController?.popViewController(animated: true)
+                    self.navigationController?.popToViewController(self.approvalsVC!, animated: true)
                 })
             }
             

@@ -35,7 +35,8 @@ struct URLS {
     static let getDashboardStatistics:URL = URL(string: "GetDashBoardStatistics", relativeTo: baseURL)!
     static let getUserAppsList:URL = URL(string: "getUserAppList", relativeTo: baseURL)!
     static let getApprovalList:URL = URL(string: "GetApprovedData", relativeTo: baseURL)!
-    static let approvePost:URL = URL(string: "setVerifyRepliesToPost", relativeTo: baseURL)!
+    static let verifyPost:URL = URL(string: "setVerifyRepliesToPost", relativeTo: baseURL)!
+    static let approvePost:URL = URL(string: "setAuthorizeRepliesToPost", relativeTo: baseURL)!
     static let rejectPost:URL = URL(string: "rejectRepliesToPost", relativeTo: baseURL)!
 }
 
@@ -85,8 +86,8 @@ struct AlertMessages {
     static let ok:String = "OK"
     static let sorry:String = "Sorry"
     static let connectToInternet:String = "Please connect to the Internet to continue"
-    static let enterReplyMessage:String = "Please enter Reply Message"
-
+    static let enterReplyMessage:String = "Please enter a reply message"
+    static let selectAtleastOneUSer:String = "Please select at least one user"
 }
 
 struct ColorConstants {

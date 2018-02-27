@@ -281,6 +281,7 @@ class ApprovalsViewController: BaseViewController,UICollectionViewDelegate, UICo
         let documentVc:DocumentViewController = (UIStoryboard.init(name:"ApproveReject", bundle: Bundle.main)).instantiateViewController(withIdentifier: "DocumentViewController") as! DocumentViewController
         documentVc.dataController = dataController
         documentVc.preSelectedSegment = preSelectedIndex
+        documentVc.approvalsVC = self
         self.navigationController?.pushViewController(documentVc, animated: true)
     }
     

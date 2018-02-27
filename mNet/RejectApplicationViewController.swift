@@ -40,15 +40,21 @@ class RejectApplicationViewController: BaseViewController {
             return
         }
         
+        var type:String = "A"
+        switch dataController.selectedSection!.approvalStatus {
+        case .verify: type = "I"
+        default: type = "A"
+        }
+        
         self.showTransperantLoadingOnViewController()
-        dataController.rejectPost(replyMessage: messageTextView.text, onSuccess: { (message) in
+        dataController.rejectPost(replyMessage: messageTextView.text, type:type , onSuccess: { (message) in
             
             DispatchQueue.main.async {
                 self.removeTransperantLoadingFromViewController()
                 self.showQuickSuccessAlert(message: message, completion: { (_) in
                     self.approvalsVC?.resetData()
                     self.approvalsVC?.getData()
-                    self.navigationController?.popViewController(animated: true)
+                    self.navigationController?.popToViewController(self.approvalsVC!, animated: true)
                 })
             }
 
