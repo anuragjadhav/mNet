@@ -84,7 +84,22 @@ class ApprovalsDataController: NSObject {
         }
     }
     
-    func approvePost(replyMessage:String, approveType:String, nextApproval:String, onSuccess:@escaping (String) -> Void , onFailure : @escaping (String) -> Void) {
+    func approvePostBasedOnType(replyMessage:String, approveType:String, onSuccess:@escaping (String) -> Void , onFailure : @escaping (String) -> Void) {
+        
+        switch selectedSection!.approvalStatus {
+        
+        case .approve:
+            approvePost(replyMessage: replyMessage, onSuccess: onSuccess, onFailure: onFailure)
+        
+        case .verify:
+            let nextUsers:String = selectedApproval!.selectedUsers.map{$0.userId}.joined(separator: ",")
+            verifyPost(replyMessage: replyMessage, approveType: approveType, nextApproval:nextUsers , onSuccess: onSuccess, onFailure: onFailure)
+        
+        default: break
+        }
+    }
+    
+    func verifyPost(replyMessage:String, approveType:String, nextApproval:String, onSuccess:@escaping (String) -> Void , onFailure : @escaping (String) -> Void) {
     
         var postData:[String:Any] = [String:Any]()
         postData["reply_message"] = replyMessage
@@ -93,16 +108,26 @@ class ApprovalsDataController: NSObject {
         postData["post_approve_type"] = approveType
         postData["next_approval_user"] = nextApproval
     
-        WrapperManager.shared.approvalWrapper.approvePost(postParams: postData, onSuccess: onSuccess, onFailure: onFailure)
+        WrapperManager.shared.approvalWrapper.verifyPost(postParams: postData, onSuccess: onSuccess, onFailure: onFailure)
     }
     
-    func rejectPost(replyMessage:String, onSuccess:@escaping (String) -> Void , onFailure : @escaping (String) -> Void) {
+    func approvePost(replyMessage:String, onSuccess:@escaping (String) -> Void , onFailure : @escaping (String) -> Void) {
         
         var postData:[String:Any] = [String:Any]()
         postData["reply_message"] = replyMessage
         postData["logged_in_user_id"] = User.loggedInUser()?.userId ?? ""
         postData["post_id"] = selectedApproval?.postId ?? ""
-        postData["key_reject_type_id"] = "A"
+        
+        WrapperManager.shared.approvalWrapper.approvePost(postParams: postData, onSuccess: onSuccess, onFailure: onFailure)
+    }
+    
+    func rejectPost(replyMessage:String, type:String, onSuccess:@escaping (String) -> Void , onFailure : @escaping (String) -> Void) {
+        
+        var postData:[String:Any] = [String:Any]()
+        postData["reply_message"] = replyMessage
+        postData["logged_in_user_id"] = User.loggedInUser()?.userId ?? ""
+        postData["post_id"] = selectedApproval?.postId ?? ""
+        postData["key_reject_type_id"] = type
         
         WrapperManager.shared.approvalWrapper.rejectPost(postParams: postData, onSuccess: onSuccess, onFailure: onFailure)
     }

@@ -11,16 +11,14 @@ import UIKit
 class DocumentViewController: UIViewController {
 
     @IBOutlet weak var containerView: UIView!
-    
     @IBOutlet weak var segmentedControl: UISegmentedControl!
-    
     @IBOutlet weak var rejectButton: UIButton!
-    
     @IBOutlet weak var approveButton: CustomBlueTextColorButton!
-    
     @IBOutlet weak var approveButtonTop: NSLayoutConstraint!
-    
     @IBOutlet weak var approveButtonHeight: NSLayoutConstraint!
+    
+    var approvalsVC:ApprovalsViewController?
+    
     var dataController:ApprovalsDataController = ApprovalsDataController()
     var preSelectedSegment:Int = 0
     
@@ -74,7 +72,7 @@ class DocumentViewController: UIViewController {
             
         case .verify: approveButton.setTitle(ConstantStrings.verify, for: .normal)
             approveButton.isHidden = false
-            rejectButton.isHidden = true
+            rejectButton.isHidden = false
             approveButtonTop.constant = 29.0
             approveButtonHeight.constant = 29.0
             
@@ -91,6 +89,7 @@ class DocumentViewController: UIViewController {
         
         let approvalVC:ApprovalVerificationViewController = (UIStoryboard.init(name:"ApproveReject", bundle: Bundle.main)).instantiateViewController(withIdentifier: "ApprovalVerificationViewController") as! ApprovalVerificationViewController
         approvalVC.dataController = dataController
+        approvalVC.approvalsVC = approvalsVC
         self.navigationController?.pushViewController(approvalVC, animated: true)
     }
     
@@ -98,6 +97,7 @@ class DocumentViewController: UIViewController {
         
         let rejectApprovalVc:RejectApplicationViewController = (UIStoryboard.init(name:"ApproveReject", bundle: Bundle.main)).instantiateViewController(withIdentifier: "RejectApplicationViewController") as! RejectApplicationViewController
         rejectApprovalVc.dataController = dataController
+        rejectApprovalVc.approvalsVC = approvalsVC
         self.navigationController?.pushViewController(rejectApprovalVc, animated: true)
     }
     

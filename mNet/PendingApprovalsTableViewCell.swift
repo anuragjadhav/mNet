@@ -41,7 +41,7 @@ class PendingApprovalsTableViewCell: UITableViewCell {
         
         case .verify:
             approveButton.isHidden = false
-            rejectButton.isHidden = true
+            rejectButton.isHidden = false
             approveButton.setTitle(ConstantStrings.verify, for: .normal)
             approveButtonHeight.constant = 30
             buttonTopSpacing.constant = 15

@@ -65,6 +65,33 @@ class ApprovalWrapper: NSObject {
         }
     }
     
+    func verifyPost(postParams:[String:Any], onSuccess:@escaping (String) -> Void , onFailure : @escaping (String) -> Void) {
+        
+        request(URLS.verifyPost, method: .post, parameters: postParams, encoding: JSONEncoding() as ParameterEncoding, headers: nil).responseObject { (response:DataResponse<CommonResponse>) in
+            
+            guard let commonResponse:CommonResponse = response.result.value else {
+                onFailure(WrapperManager.shared.getErrorMessage(message: nil))
+                return
+            }
+            
+            if commonResponse.noError {
+                
+                if let message:String = commonResponse.responseData as? String {
+                    onSuccess(message)
+                }
+                    
+                else {
+                    onSuccess("Post Verified")
+                }
+            }
+                
+            else {
+                onFailure(WrapperManager.shared.getErrorMessage(message: nil))
+                return
+            }
+        }
+    }
+    
     func rejectPost(postParams:[String:Any], onSuccess:@escaping (String) -> Void , onFailure : @escaping (String) -> Void) {
         
         request(URLS.rejectPost, method: .post, parameters: postParams, encoding: JSONEncoding() as ParameterEncoding, headers: nil).responseObject { (response:DataResponse<CommonResponse>) in
