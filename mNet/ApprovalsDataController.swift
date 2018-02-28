@@ -26,6 +26,9 @@ class ApprovalsDataController: NSObject {
     var startIndex:Int = 0
     var searchValue:String = ""
     var filterString:String?
+    var startDate:String = ""
+    var endDate:String = ""
+    
     var reachedEnd:Bool = false
     
     func getApprovalsData(onSuccess:@escaping () -> Void , onFailure : @escaping (String) -> Void)  {
@@ -43,6 +46,11 @@ class ApprovalsDataController: NSObject {
         
         if filterString != nil {
             postData["date_filter_key"] = filterString
+            
+            if filterString == "5" {
+                postData["from_date"] = startDate
+                postData["to_date"] = endDate
+            }
         }
         
         WrapperManager.shared.approvalWrapper.getApprovalList(postParams: postData, onSuccess: { [unowned self] (approvalData) in

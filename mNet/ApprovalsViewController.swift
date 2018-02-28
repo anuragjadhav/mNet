@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ApprovalsViewController: BaseViewController,UICollectionViewDelegate, UICollectionViewDataSource, UITableViewDelegate, UITableViewDataSource, UISearchBarDelegate {
+class ApprovalsViewController: BaseViewController,UICollectionViewDelegate, UICollectionViewDataSource, UITableViewDelegate, UITableViewDataSource, UISearchBarDelegate, DateSelectorDeleagte {
 
     //MARK:Outlets and Properties
     
@@ -98,8 +98,11 @@ class ApprovalsViewController: BaseViewController,UICollectionViewDelegate, UICo
                 case "3":   self.filterLabel.isHidden = false
                             self.filterLabel.text = "Past Fifteen Days"
                     
-                case "4":  self.filterLabel.isHidden = false
+                case "4":   self.filterLabel.isHidden = false
                             self.filterLabel.text = "Past Month"
+                    
+                case "5":   self.filterLabel.isHidden = false
+                            self.filterLabel.text = "\(self.dataController.startDate.shortDate()) to \(self.dataController.endDate.shortDate())"
                     
                 default:    self.filterLabel.isHidden = true
                             self.filterLabel.text = ""
@@ -234,7 +237,6 @@ class ApprovalsViewController: BaseViewController,UICollectionViewDelegate, UICo
             dataController.reachedEnd = false
             dataController.searchValue = ""
             dataController.startIndex = 0
-            dataController.reachedEnd = false
             getData()
         }
     }
@@ -287,60 +289,24 @@ class ApprovalsViewController: BaseViewController,UICollectionViewDelegate, UICo
     
     @IBAction func filterButtonAction(_ sender: UIBarButtonItem) {
         
-        showFilterActionSheet()
+        showDateFilterPopUp()
     }
     
-    func showFilterActionSheet() {
+    func showDateFilterPopUp() {
         
-        let actionSheet:UIAlertController = UIAlertController(title: "Date Filter", message: "Select an option", preferredStyle: .actionSheet)
-        actionSheet.view.tintColor = ColorConstants.kBlueColor
-        
-        let allAction:UIAlertAction = UIAlertAction(title: "All", style: .default) { (alertAction) in
-            self.dataController.filterString = nil
-            self.dataController.startIndex = 0
-            self.dataController.reachedEnd = false
-            self.getData()
-        }
-        
-        let todayAction:UIAlertAction = UIAlertAction(title: "Today", style: .default) { (alertAction) in
-            self.dataController.filterString = "1"
-            self.dataController.startIndex = 0
-            self.dataController.reachedEnd = false
-            self.getData()
-        }
-        
-        let pastWeekAction:UIAlertAction = UIAlertAction(title: "Past Week", style: .default) { (alertAction) in
-            self.dataController.filterString = "2"
-            self.dataController.startIndex = 0
-            self.dataController.reachedEnd = false
-            self.getData()
-        }
-        
-        let pastFifteenDaysAction:UIAlertAction = UIAlertAction(title: "Past Fifteen Days", style: .default) { (alertAction) in
-            self.dataController.filterString = "3"
-            self.dataController.startIndex = 0
-            self.dataController.reachedEnd = false
-            self.getData()
-        }
-        
-        let pastMonthAction:UIAlertAction = UIAlertAction(title: "Past Month", style: .default) { (alertAction) in
-            self.dataController.filterString = "4"
-            self.dataController.startIndex = 0
-            self.dataController.reachedEnd = false
-            self.getData()
-        }
-        
-        let cancelAction:UIAlertAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
-        
-        actionSheet.addAction(allAction)
-        actionSheet.addAction(todayAction)
-        actionSheet.addAction(pastWeekAction)
-        actionSheet.addAction(pastFifteenDaysAction)
-        actionSheet.addAction(pastMonthAction)
-        actionSheet.addAction(cancelAction)
-        
-        self.present(actionSheet, animated: true, completion: nil)
+        let dateFilter:DateSelectorViewController = self.storyboard?.instantiateViewController(withIdentifier: StoryboardIDs.dateFilterViewController) as! DateSelectorViewController
+        dateFilter.delegate = self
+        self.present(dateFilter, animated: false, completion: nil)
     }
     
+    func didSelectDate(filterString: String?, fromDate: String?, toDate: String?) {
+        
+        dataController.filterString = filterString
+        dataController.reachedEnd = false
+        dataController.startIndex = 0
+        dataController.startDate = fromDate ?? ""
+        dataController.endDate = toDate ?? ""
+        getData()
+    }
     
 }

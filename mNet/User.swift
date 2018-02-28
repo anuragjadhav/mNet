@@ -12,7 +12,7 @@ class User: NSObject, Mappable {
     
     var email:String = ""
     var password:String = ""
-    var userId:String = "66"
+    var userId:String = ""
     var name:String = ""
     var status:String = ""
     
@@ -67,7 +67,7 @@ class User: NSObject, Mappable {
         
         email <- map["LoginEmail"]
         password <- map["password"]
-        //userId <- map["user_id"]
+        userId <- map["user_id"]
         name <- map["LoginName"]
         status <- map["Status"]
         companyEmail <- map["user_comp_email"]
@@ -143,7 +143,7 @@ class User: NSObject, Mappable {
     func toJSONPostOnlyId() -> [String:Any] {
         
         var dictionary:[String:Any] = [String:Any]()
-        dictionary["user_id"] = 66
+        dictionary["user_id"] = Int(userId)
         return dictionary
     }
     

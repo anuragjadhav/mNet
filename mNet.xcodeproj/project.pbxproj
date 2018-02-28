@@ -25,6 +25,7 @@
 		05501F90201D262C00831A08 /* ConversationReply.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05501F8F201D262C00831A08 /* ConversationReply.swift */; };
 		05501F92201D2ABC00831A08 /* ConversationMember.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05501F91201D2ABC00831A08 /* ConversationMember.swift */; };
 		05501F94201D316600831A08 /* ConversationsDataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05501F93201D316600831A08 /* ConversationsDataController.swift */; };
+		05641C2120473DAC003CD9C2 /* DateSelectorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05641C2020473DAC003CD9C2 /* DateSelectorViewController.swift */; };
 		0575623A200A34110010CBB1 /* BaseNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05756239200A34110010CBB1 /* BaseNavigationController.swift */; };
 		0575623C200AB33A0010CBB1 /* PendingApprovalsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0575623B200AB33A0010CBB1 /* PendingApprovalsTableViewCell.swift */; };
 		058A0E4C1FF7C44D00147238 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 058A0E4B1FF7C44D00147238 /* Login.storyboard */; };
@@ -208,6 +209,7 @@
 		05501F8F201D262C00831A08 /* ConversationReply.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConversationReply.swift; sourceTree = "<group>"; };
 		05501F91201D2ABC00831A08 /* ConversationMember.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConversationMember.swift; sourceTree = "<group>"; };
 		05501F93201D316600831A08 /* ConversationsDataController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConversationsDataController.swift; sourceTree = "<group>"; };
+		05641C2020473DAC003CD9C2 /* DateSelectorViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateSelectorViewController.swift; sourceTree = "<group>"; };
 		05756239200A34110010CBB1 /* BaseNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseNavigationController.swift; sourceTree = "<group>"; };
 		0575623B200AB33A0010CBB1 /* PendingApprovalsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PendingApprovalsTableViewCell.swift; sourceTree = "<group>"; };
 		058A0E4B1FF7C44D00147238 /* Login.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
@@ -608,6 +610,7 @@
 				5E18AE431FF81B59007AA461 /* DocumentViewController.swift */,
 				5E183EA01FF3CA4800368DE1 /* DocumentDetailsViewController.swift */,
 				5E18AE411FF81B45007AA461 /* AttachmentsViewController.swift */,
+				05641C2020473DAC003CD9C2 /* DateSelectorViewController.swift */,
 			);
 			name = "View Controllers";
 			sourceTree = "<group>";
@@ -1068,6 +1071,7 @@
 				5E18AE401FF818FC007AA461 /* SendPeopleListTableViewCell.swift in Sources */,
 				05A569CB2017B7B300C6F713 /* DateFormatterTransform.swift in Sources */,
 				5E1C49961FEA4EB8007CE624 /* EmailPreferencesViewController.swift in Sources */,
+				05641C2120473DAC003CD9C2 /* DateSelectorViewController.swift in Sources */,
 				5E37E4D62012050200088001 /* NotificationTableViewCell.swift in Sources */,
 				05A5699D2017B74B00C6F713 /* ParameterEncoding.swift in Sources */,
 				05A7A8FD1FF802BC00472A60 /* ApprovalsViewController.swift in Sources */,

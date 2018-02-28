@@ -190,6 +190,7 @@ struct StoryboardIDs {
     
     static let peopleViewController:String = "PeopleViewController"
     static let webViewController:String = "mNetWebViewController"
+    static let dateFilterViewController:String = "DateFilterViewController"
 }
 
 struct ImageNames {
