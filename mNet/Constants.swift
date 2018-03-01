@@ -10,7 +10,20 @@ import UIKit
 
 struct URLS {
     
-    static let baseURL:URL = URL(string:"http://52.187.131.90:81/demo/d_MNetV2Service/MnetV2WebService/")!
+    static var baseURL:URL {
+        if let savedBaseURL:URL = User.loggedInUser()?.privateApiLink {
+            return savedBaseURL
+        }
+        return URL(string:"http://demo.m-net.in/p_MNetV2Service/MnetV2WebService/")!
+    }
+    
+    static var imageBaseURLString:String {
+        if let savedBaseURL:String = User.loggedInUser()?.imageURLString {
+            return savedBaseURL
+        }
+        return "http://demo.m-net.in/demo/public/images/"
+    }
+    
     static let getSettings:URL = URL(string: "getsetting", relativeTo: baseURL)!
     static let setSettings:URL = URL(string: "setsetting", relativeTo: baseURL)!
     static let getConversationsList:URL = URL(string: "GetPost", relativeTo: baseURL)!
@@ -25,12 +38,12 @@ struct URLS {
     static let getProfile:URL = URL(string: "GetUserDetails", relativeTo: baseURL)!
     static let updateProfile:URL = URL(string: "updateProfile", relativeTo: baseURL)!
     static let getPeopleList:URL = URL(string: "getUserList", relativeTo: baseURL)!
-    static let imageBaseURLString:String = "http://52.187.131.90:81/demo/d_mnetv2/public/images/"
     
-    static let liveBaseURL:URL = URL(string:"http://www.m-net.in/p_MNetV2Service/MnetV2WebService/")!
+    static let liveBaseURL:URL = URL(string:"http://demo.m-net.in/p_MNetV2Service/MnetV2WebService/")!
     static let loginAuthenticate:URL = URL(string: "public_authenticate", relativeTo: liveBaseURL)!
     static let registerDevice:URL = URL(string: "registerToken", relativeTo: liveBaseURL)!
     static let deRegisterDevice:URL = URL(string: "deregisterToken", relativeTo: liveBaseURL)!
+    static let getUserDetails:URL = URL(string: "GetUserDetails", relativeTo: baseURL)!
     
     static let getDashboardStatistics:URL = URL(string: "GetDashBoardStatistics", relativeTo: baseURL)!
     static let getUserAppsList:URL = URL(string: "getUserAppList", relativeTo: baseURL)!
@@ -66,6 +79,11 @@ struct DictionaryKeys {
         static let requestFromApp:String = "App"
     }
     
+    struct User {
+        
+        static let userId:String = "user_id"
+    }
+    
     struct DeviceRegistration {
         
         static let deviceToken:String = "token_id"
@@ -87,7 +105,7 @@ struct AlertMessages {
     static let sorry:String = "Sorry"
     static let connectToInternet:String = "Please connect to the Internet to continue"
     static let enterReplyMessage:String = "Please enter a reply message"
-    static let selectAtleastOneUSer:String = "Please select at least one user"
+    static let selectAtleastOneUSer:String = "Please select a user"
 }
 
 struct ColorConstants {
@@ -184,6 +202,8 @@ struct UserDefaultsKeys {
     static let loggedInUser:String = "loggedInUser"
     static let loginStatus:String = "isUserLoggedIn"
     static let deviceToken:String = "deviceTokenForRemoteNotifications"
+    static let baseURL:String = "savedBaseURL"
+    static let imagesBaseURL:String = "imagesBaseURL"
 }
 
 struct StoryboardIDs {

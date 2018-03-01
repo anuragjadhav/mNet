@@ -40,7 +40,6 @@ class DashboardViewController: BaseViewController, UITableViewDataSource, UITabl
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        
         self.setUpNavigationController()
     }
 
@@ -49,8 +48,8 @@ class DashboardViewController: BaseViewController, UITableViewDataSource, UITabl
         
         getData()
         myAppsTableView.tableFooterView = UIView()
-        logoutButton.imageView?.image = logoutButton.imageView?.image?.withRenderingMode(.alwaysTemplate)
         logoutButton.imageView?.tintColor = ColorConstants.kWhiteColor
+        logoutButton.imageView?.image = logoutButton.imageView?.image?.withRenderingMode(.alwaysTemplate)
     }
     
     func setUpNavigationController()  {
@@ -83,6 +82,27 @@ class DashboardViewController: BaseViewController, UITableViewDataSource, UITabl
         }
     }
     
+    func getDashboardStats() {
+        
+        self.showTransperantLoadingOnViewController()
+        
+        dataController.getDashboardStats(onSuccess: {
+            
+            DispatchQueue.main.async {
+                self.removeTransperantLoadingFromViewController()
+                self.setData()
+            }
+            
+        }) { (errorMessage) in
+            
+            DispatchQueue.main.async {
+                self.removeTransperantLoadingFromViewController()
+                self.showRetryView(message: errorMessage)
+            }
+        }
+        
+    }
+    
     func setData() {
         
         pendingApprovalsCountLabel.text = String(describing: dataController.stats?.pendingApprovalRequests ?? 0)
@@ -110,7 +130,7 @@ class DashboardViewController: BaseViewController, UITableViewDataSource, UITabl
         
         let app:UserApp = dataController.appsList[indexPath.row]
         
-        if app.appId == "3" {
+        if app.appId == "3" || app.appName == "Approvals" {
             goToApprovalsScreen(preSelectedIndex:0)
         }
         
@@ -127,6 +147,7 @@ class DashboardViewController: BaseViewController, UITableViewDataSource, UITabl
         let dataController:ApprovalsDataController = ApprovalsDataController()
         dataController.selectedSectionIndex = preSelectedIndex
         approvalsVC.dataController = dataController
+        approvalsVC.dashBoardVC = self
         self.navigationController?.pushViewController(approvalsVC, animated: true)
     }
     

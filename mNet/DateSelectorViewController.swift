@@ -67,8 +67,8 @@ class DateSelectorViewController: UIViewController {
         tapGesture.addTarget(self, action: #selector(dismissVC))
         fromDatePicker.setDate(preSelectedDate, animated: true)
         toDatePicker.setDate(preSelectedDate, animated: true)
-        fromDateLabel.text = preSelectedDate.stringWithFullDate()
-        fromDateLabel.text = preSelectedDate.stringWithFullDate()
+        fromDateLabel.text = preSelectedDate.stringWithShortDate()
+        toDateLabel.text = preSelectedDate.stringWithShortDate()
         view.addGestureRecognizer(tapGesture)
     }
     

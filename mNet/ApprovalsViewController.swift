@@ -28,6 +28,7 @@ class ApprovalsViewController: BaseViewController,UICollectionViewDelegate, UICo
     
     @IBOutlet weak var noApprovalsLabel: CustomBrownTextColorLabel!
     
+    var dashBoardVC:DashboardViewController?
     
     //MARK: View Controller Delegates
     override func viewDidLoad() {
@@ -66,6 +67,7 @@ class ApprovalsViewController: BaseViewController,UICollectionViewDelegate, UICo
     func getData() {
         
         searchBar.resignFirstResponder()
+        self.retryView?.removeFromSuperview()
         
         if isLoading || dataController.reachedEnd {
             return
@@ -102,7 +104,7 @@ class ApprovalsViewController: BaseViewController,UICollectionViewDelegate, UICo
                             self.filterLabel.text = "Past Month"
                     
                 case "5":   self.filterLabel.isHidden = false
-                            self.filterLabel.text = "\(self.dataController.startDate.shortDate()) to \(self.dataController.endDate.shortDate())"
+                self.filterLabel.text = "\(self.dataController.startDate.shortDateFromDDMMYY()) to \(self.dataController.endDate.shortDateFromDDMMYY())"
                     
                 default:    self.filterLabel.isHidden = true
                             self.filterLabel.text = ""
@@ -251,6 +253,7 @@ class ApprovalsViewController: BaseViewController,UICollectionViewDelegate, UICo
     //MARK: Button Actions
     @IBAction func backButtonAction(_ sender: UIButton) {
         
+        dashBoardVC?.getDashboardStats()
         self.navigationController?.popViewController(animated: true)
     }
     

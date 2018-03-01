@@ -46,19 +46,23 @@ extension String {
         return self.replacingOccurrences(of: "<[^>]+>", with: "", options: .regularExpression, range: nil)        
     }
     
-    func shortDate() -> String {
+    func shortDateFromDDMMYY() -> String {
         
         let dateFormatter:DateFormatter = DateFormatter()
         dateFormatter.dateFormat = "dd-MM-yyyy"
         guard let date:Date = dateFormatter.date(from: self) else {
             return self
         }
-        dateFormatter.dateFormat = "dd MMM yyyy"
+        dateFormatter.dateFormat = "dd MMM yy"
         return dateFormatter.string(from: date)
     }
 }
 
 extension Date {
+    
+    func stringWithShortDate() -> String {
+        return stringWithFormat(format: "dd MMM yyyy")
+    }
     
     func stringWithFullDate() -> String {
         return stringWithFormat(format: "dd MMMM yyyy")

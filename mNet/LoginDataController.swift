@@ -47,11 +47,23 @@ class LoginDataController: NSObject {
             }
             else {
                 userObject.saveToUserDefaults()
-                onSuccess()
-                self.registerDeviceToken(userObject)
+                self.getUserDetails(onSuccess: onSuccess, onFailure: onFailure)
             }
+        }, onFailure: onFailure)
+    }
+
+    func getUserDetails(onSuccess:@escaping () -> Void , onFailure : @escaping (String) -> Void) {
+        
+        let postDictionary:[String:Any] = User.loggedInUser()!.toJSONPostWithoutId()
+        
+        WrapperManager.shared.loginWrapper.getUserDetails(postParams: postDictionary, onSuccess: { (newUserId) in
             
+            let updatedUser:User = User.loggedInUser()!
+            updatedUser.userId = newUserId
+            updatedUser.saveToUserDefaults()
             onSuccess()
+            self.registerDeviceToken(updatedUser)
+            
         }, onFailure: onFailure)
     }
     

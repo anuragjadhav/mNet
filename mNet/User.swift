@@ -46,8 +46,8 @@ class User: NSObject, Mappable {
     var companyName:String = ""
     var companyId:Int = 0
     var companyStatus:Int = 0
-    var privateLink:String = ""
-    var privateApiLink:String = ""
+    var privateLink:URL?
+    var privateApiLink:URL?
     var imageURLString:String = ""
     var version:String = ""
     var numberOfUsers:String = ""
@@ -100,8 +100,8 @@ class User: NSObject, Mappable {
         companyName <- map["comp_name"]
         companyId <- map["comp_id"]
         companyStatus <- map["comp_status"]
-        privateLink <- map["private_link"]
-        privateApiLink <- map["private_api_link"]
+        privateLink <- (map["private_link"],URLTransform())
+        privateApiLink <- (map["private_api_link"],URLTransform())
         imageURLString <- map["image_link"]
         version <- map["version"]
         numberOfUsers <- map["No_of_users"]
@@ -121,6 +121,14 @@ class User: NSObject, Mappable {
         dictionary["UserEmail"] = email
         dictionary["UserPass"] = password
         dictionary["UserId"] = userId
+        return dictionary
+    }
+    
+    func toJSONPostWithoutId() -> [String:Any] {
+        
+        var dictionary:[String:Any] = [String:Any]()
+        dictionary["UserEmail"] = email
+        dictionary["UserPass"] = password
         return dictionary
     }
     
