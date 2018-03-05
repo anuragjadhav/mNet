@@ -12,7 +12,7 @@ class User: NSObject, Mappable {
     
     var email:String = ""
     var password:String = ""
-    var userId:String = "66"
+    var userId:String = ""
     var name:String = ""
     var status:String = ""
     
@@ -46,8 +46,8 @@ class User: NSObject, Mappable {
     var companyName:String = ""
     var companyId:Int = 0
     var companyStatus:Int = 0
-    var privateLink:String = ""
-    var privateApiLink:String = ""
+    var privateLink:URL?
+    var privateApiLink:URL?
     var imageURLString:String = ""
     var version:String = ""
     var numberOfUsers:String = ""
@@ -67,7 +67,7 @@ class User: NSObject, Mappable {
         
         email <- map["LoginEmail"]
         password <- map["password"]
-        //userId <- map["user_id"]
+        userId <- map["user_id"]
         name <- map["LoginName"]
         status <- map["Status"]
         companyEmail <- map["user_comp_email"]
@@ -100,8 +100,8 @@ class User: NSObject, Mappable {
         companyName <- map["comp_name"]
         companyId <- map["comp_id"]
         companyStatus <- map["comp_status"]
-        privateLink <- map["private_link"]
-        privateApiLink <- map["private_api_link"]
+        privateLink <- (map["private_link"],URLTransform())
+        privateApiLink <- (map["private_api_link"],URLTransform())
         imageURLString <- map["image_link"]
         version <- map["version"]
         numberOfUsers <- map["No_of_users"]
@@ -124,6 +124,14 @@ class User: NSObject, Mappable {
         return dictionary
     }
     
+    func toJSONPostWithoutId() -> [String:Any] {
+        
+        var dictionary:[String:Any] = [String:Any]()
+        dictionary["UserEmail"] = email
+        dictionary["UserPass"] = password
+        return dictionary
+    }
+    
     func toJSONPostWithoutEmail() -> [String:Any] {
         
         var dictionary:[String:Any] = [String:Any]()
@@ -143,7 +151,7 @@ class User: NSObject, Mappable {
     func toJSONPostOnlyId() -> [String:Any] {
         
         var dictionary:[String:Any] = [String:Any]()
-        dictionary["user_id"] = 66
+        dictionary["user_id"] = Int(userId)
         return dictionary
     }
     

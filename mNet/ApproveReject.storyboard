@@ -242,13 +242,13 @@
                                                 <rect key="frame" x="27" y="633.5" width="321" height="95"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Role" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gho-w7-wIi" customClass="CustomBrownTextColorLabel" customModule="mNet" customModuleProvider="target">
-                                                        <rect key="frame" x="110.5" y="0.0" width="101" height="17"/>
+                                                        <rect key="frame" x="110" y="0.0" width="101" height="17"/>
                                                         <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="14"/>
                                                         <color key="textColor" red="0.3803921569" green="0.28235294119999998" blue="0.22352941179999999" alpha="1" colorSpace="calibratedRGB"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="J14-vS-iz4" customClass="CustomBrownTextColorLabel" customModule="mNet" customModuleProvider="target">
-                                                        <rect key="frame" x="219.5" y="0.0" width="101.5" height="17"/>
+                                                        <rect key="frame" x="219" y="0.0" width="102" height="17"/>
                                                         <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="14"/>
                                                         <color key="textColor" red="0.3803921569" green="0.28235294119999998" blue="0.22352941179999999" alpha="1" colorSpace="calibratedRGB"/>
                                                         <nil key="highlightedColor"/>
@@ -311,7 +311,7 @@
                                                         </connections>
                                                     </tableView>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fnI-0k-N1G" customClass="CustomBrownTextColorLabel" customModule="mNet" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="0.0" width="102" height="17"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="101.5" height="17"/>
                                                         <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="14"/>
                                                         <color key="textColor" red="0.3803921569" green="0.28235294119999998" blue="0.22352941179999999" alpha="1" colorSpace="calibratedRGB"/>
                                                         <nil key="highlightedColor"/>
@@ -1213,13 +1213,13 @@
                                     <outlet property="delegate" destination="xyC-99-u6T" id="i0h-B7-WX1"/>
                                 </connections>
                             </tableView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="PENDING APPROVALS" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="t3M-kU-cBe" customClass="CustomBlueTextColorLabel" customModule="mNet" customModuleProvider="target">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="PENDING APPROVALS" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="t3M-kU-cBe" customClass="CustomBlueTextColorLabel" customModule="mNet" customModuleProvider="target">
                                 <rect key="frame" x="27" y="193" width="174.5" height="19.5"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="16"/>
                                 <color key="textColor" red="0.01176470588" green="0.51764705879999995" blue="0.80784313730000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qIi-UL-WLO">
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="6" translatesAutoresizingMaskIntoConstraints="NO" id="qIi-UL-WLO">
                                 <rect key="frame" x="217.5" y="194" width="120" height="18"/>
                                 <color key="backgroundColor" red="0.3803921569" green="0.28235294119999998" blue="0.22352941179999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
@@ -1311,6 +1311,254 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="O4d-Tx-VbR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-746.39999999999998" y="1842.7286356821592"/>
+        </scene>
+        <!--Date Selector View Controller-->
+        <scene sceneID="kKN-vF-y73">
+            <objects>
+                <viewController storyboardIdentifier="DateFilterViewController" modalPresentationStyle="overCurrentContext" id="V0V-ZX-3xL" customClass="DateSelectorViewController" customModule="mNet" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="ApY-uz-IwS"/>
+                        <viewControllerLayoutGuide type="bottom" id="qMc-iz-day"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="6A7-oE-IZw">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eiu-1v-qcs" userLabel="Select Time Super View">
+                                <rect key="frame" x="37.5" y="181" width="300" height="305"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bmI-QW-k1g">
+                                        <rect key="frame" x="0.0" y="0.0" width="300" height="53"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Filter" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FPM-K0-wOK" customClass="CustomBlueTextColorLabel" customModule="mNet" customModuleProvider="target">
+                                                <rect key="frame" x="16" y="17" width="46" height="20"/>
+                                                <fontDescription key="fontDescription" name="SanFranciscoDisplay-Semibold" family="San Francisco Display" pointSize="20"/>
+                                                <color key="textColor" red="0.3803921569" green="0.28235294119999998" blue="0.22352941179999999" alpha="1" colorSpace="calibratedRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstItem="FPM-K0-wOK" firstAttribute="leading" secondItem="bmI-QW-k1g" secondAttribute="leading" constant="16" id="Oh9-Qv-cIS"/>
+                                            <constraint firstItem="FPM-K0-wOK" firstAttribute="top" secondItem="bmI-QW-k1g" secondAttribute="top" constant="17" id="Yvv-TK-UOb"/>
+                                            <constraint firstAttribute="height" constant="53" id="bwa-Si-sbt"/>
+                                            <constraint firstAttribute="bottom" secondItem="FPM-K0-wOK" secondAttribute="bottom" constant="16" id="cts-lD-LaH"/>
+                                        </constraints>
+                                    </view>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xc5-hV-eSq" customClass="CustomBrownTextColorButton" customModule="mNet" customModuleProvider="target">
+                                        <rect key="frame" x="16" y="57" width="268" height="32"/>
+                                        <fontDescription key="fontDescription" name="SanFranciscoDisplay-Regular" family="San Francisco Display" pointSize="16"/>
+                                        <state key="normal" title="All">
+                                            <color key="titleColor" red="0.3803921569" green="0.28235294119999998" blue="0.22352941179999999" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="allButtonActionWithSender:" destination="V0V-ZX-3xL" eventType="touchUpInside" id="SuE-9Z-pTZ"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fue-oj-Kli" customClass="CustomBrownTextColorButton" customModule="mNet" customModuleProvider="target">
+                                        <rect key="frame" x="16" y="97" width="268" height="32"/>
+                                        <fontDescription key="fontDescription" name="SanFranciscoDisplay-Regular" family="San Francisco Display" pointSize="16"/>
+                                        <state key="normal" title="Today">
+                                            <color key="titleColor" red="0.3803921569" green="0.28235294119999998" blue="0.22352941179999999" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="todayButtonActionWithSender:" destination="V0V-ZX-3xL" eventType="touchUpInside" id="gRe-cj-5qo"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="H2b-Q6-jaR" customClass="CustomBrownTextColorButton" customModule="mNet" customModuleProvider="target">
+                                        <rect key="frame" x="16" y="137" width="268" height="32"/>
+                                        <fontDescription key="fontDescription" name="SanFranciscoDisplay-Regular" family="San Francisco Display" pointSize="16"/>
+                                        <state key="normal" title="Past Week">
+                                            <color key="titleColor" red="0.3803921569" green="0.28235294119999998" blue="0.22352941179999999" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="pastWeekButtonActionWithSender:" destination="V0V-ZX-3xL" eventType="touchUpInside" id="b9N-fc-V5Y"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JEx-Ma-1iw" customClass="CustomBrownTextColorButton" customModule="mNet" customModuleProvider="target">
+                                        <rect key="frame" x="16" y="177" width="268" height="32"/>
+                                        <fontDescription key="fontDescription" name="SanFranciscoDisplay-Regular" family="San Francisco Display" pointSize="16"/>
+                                        <state key="normal" title="Past 15 Days">
+                                            <color key="titleColor" red="0.3803921569" green="0.28235294119999998" blue="0.22352941179999999" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="past15DaysButtonActionWithSender:" destination="V0V-ZX-3xL" eventType="touchUpInside" id="IhB-T4-fvE"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BSV-5c-G9f" customClass="CustomBrownTextColorButton" customModule="mNet" customModuleProvider="target">
+                                        <rect key="frame" x="16" y="217" width="268" height="32"/>
+                                        <fontDescription key="fontDescription" name="SanFranciscoDisplay-Regular" family="San Francisco Display" pointSize="16"/>
+                                        <state key="normal" title="Past Month">
+                                            <color key="titleColor" red="0.3803921569" green="0.28235294119999998" blue="0.22352941179999999" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="pastMonthButtonActionWithSender:" destination="V0V-ZX-3xL" eventType="touchUpInside" id="BfY-cw-SKE"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GRI-cA-FU8" customClass="CustomBrownTextColorButton" customModule="mNet" customModuleProvider="target">
+                                        <rect key="frame" x="16" y="257" width="89" height="32"/>
+                                        <fontDescription key="fontDescription" name="SanFranciscoDisplay-Regular" family="San Francisco Display" pointSize="16"/>
+                                        <state key="normal" title="Custom Date">
+                                            <color key="titleColor" red="0.3803921569" green="0.28235294119999998" blue="0.22352941179999999" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="customDateButtonActionWithSender:" destination="V0V-ZX-3xL" eventType="touchUpInside" id="2pZ-Hv-5B6"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstItem="bmI-QW-k1g" firstAttribute="top" secondItem="eiu-1v-qcs" secondAttribute="top" id="2TM-L1-Xs8"/>
+                                    <constraint firstAttribute="trailing" secondItem="xc5-hV-eSq" secondAttribute="trailing" constant="16" id="35b-TR-VyJ"/>
+                                    <constraint firstItem="xc5-hV-eSq" firstAttribute="leading" secondItem="eiu-1v-qcs" secondAttribute="leading" constant="16" id="Cv8-Kz-Jjn"/>
+                                    <constraint firstItem="H2b-Q6-jaR" firstAttribute="top" secondItem="Fue-oj-Kli" secondAttribute="bottom" constant="8" id="GuY-qm-PGn"/>
+                                    <constraint firstItem="GRI-cA-FU8" firstAttribute="top" secondItem="BSV-5c-G9f" secondAttribute="bottom" constant="8" id="HPv-u8-Dob"/>
+                                    <constraint firstItem="BSV-5c-G9f" firstAttribute="top" secondItem="JEx-Ma-1iw" secondAttribute="bottom" constant="8" id="OjH-6t-tLH"/>
+                                    <constraint firstItem="Fue-oj-Kli" firstAttribute="top" secondItem="xc5-hV-eSq" secondAttribute="bottom" constant="8" id="XC0-0T-Pi4"/>
+                                    <constraint firstItem="GRI-cA-FU8" firstAttribute="leading" secondItem="BSV-5c-G9f" secondAttribute="leading" id="eVj-oL-mY3"/>
+                                    <constraint firstItem="xc5-hV-eSq" firstAttribute="top" secondItem="bmI-QW-k1g" secondAttribute="bottom" constant="4" id="frH-75-TB8"/>
+                                    <constraint firstItem="BSV-5c-G9f" firstAttribute="leading" secondItem="JEx-Ma-1iw" secondAttribute="leading" id="gFC-07-nfQ"/>
+                                    <constraint firstItem="H2b-Q6-jaR" firstAttribute="leading" secondItem="Fue-oj-Kli" secondAttribute="leading" id="gGX-nc-1Zv"/>
+                                    <constraint firstAttribute="bottom" secondItem="GRI-cA-FU8" secondAttribute="bottom" constant="16" id="kd9-ZW-lje"/>
+                                    <constraint firstItem="bmI-QW-k1g" firstAttribute="leading" secondItem="eiu-1v-qcs" secondAttribute="leading" id="lYY-ni-MUB"/>
+                                    <constraint firstItem="JEx-Ma-1iw" firstAttribute="trailing" secondItem="H2b-Q6-jaR" secondAttribute="trailing" id="mAA-5h-2vt"/>
+                                    <constraint firstItem="Fue-oj-Kli" firstAttribute="trailing" secondItem="xc5-hV-eSq" secondAttribute="trailing" id="mNb-MH-OZz"/>
+                                    <constraint firstItem="JEx-Ma-1iw" firstAttribute="leading" secondItem="H2b-Q6-jaR" secondAttribute="leading" id="myS-0D-vHm"/>
+                                    <constraint firstAttribute="width" constant="300" id="oQ0-2H-feo"/>
+                                    <constraint firstItem="H2b-Q6-jaR" firstAttribute="trailing" secondItem="Fue-oj-Kli" secondAttribute="trailing" id="vB6-mB-IB4"/>
+                                    <constraint firstItem="BSV-5c-G9f" firstAttribute="trailing" secondItem="JEx-Ma-1iw" secondAttribute="trailing" id="vsb-AD-2x9"/>
+                                    <constraint firstItem="JEx-Ma-1iw" firstAttribute="top" secondItem="H2b-Q6-jaR" secondAttribute="bottom" constant="8" id="wKP-Ml-v1S"/>
+                                    <constraint firstAttribute="trailing" secondItem="bmI-QW-k1g" secondAttribute="trailing" id="wSd-m4-zpQ"/>
+                                    <constraint firstItem="Fue-oj-Kli" firstAttribute="leading" secondItem="xc5-hV-eSq" secondAttribute="leading" id="yOW-Jy-EvL"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NcE-iH-oul">
+                                <rect key="frame" x="37.5" y="168" width="300" height="332"/>
+                                <subviews>
+                                    <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="Xbu-Dk-X89">
+                                        <rect key="frame" x="16" y="16" width="268" height="29"/>
+                                        <segments>
+                                            <segment title="FROM"/>
+                                            <segment title="TO"/>
+                                        </segments>
+                                        <color key="tintColor" red="0.3803921569" green="0.28235294119999998" blue="0.22352941179999999" alpha="1" colorSpace="calibratedRGB"/>
+                                        <connections>
+                                            <action selector="segmentedControlDidChangeWithSender:" destination="V0V-ZX-3xL" eventType="valueChanged" id="fU5-lQ-08U"/>
+                                        </connections>
+                                    </segmentedControl>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="z8E-WF-mCz">
+                                        <rect key="frame" x="16" y="60" width="125" height="0.0"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="125" id="LIf-gy-ehV"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="SanFranciscoDisplay-Medium" family="San Francisco Display" pointSize="16"/>
+                                        <color key="textColor" red="0.3803921569" green="0.28235294119999998" blue="0.22352941179999999" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Ta-nM-AZW">
+                                        <rect key="frame" x="159" y="59.5" width="125" height="0.0"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="125" id="7z9-ET-XMx"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="SanFranciscoDisplay-Medium" family="San Francisco Display" pointSize="16"/>
+                                        <color key="textColor" red="0.3803921569" green="0.28235294119999998" blue="0.22352941179999999" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="uUp-DA-mRE" userLabel="From Date Picker">
+                                        <rect key="frame" x="16" y="68" width="268" height="216"/>
+                                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <date key="date" timeIntervalSinceReferenceDate="499075856.86304402">
+                                            <!--2016-10-25 08:10:56 +0000-->
+                                        </date>
+                                        <locale key="locale" localeIdentifier="en_IN"/>
+                                        <connections>
+                                            <action selector="fromDateValueChangedWithSender:" destination="V0V-ZX-3xL" eventType="valueChanged" id="d3m-AB-qQB"/>
+                                        </connections>
+                                    </datePicker>
+                                    <datePicker hidden="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="9BH-bM-IUs" userLabel="To Date Picker">
+                                        <rect key="frame" x="16" y="68" width="268" height="216"/>
+                                        <color key="tintColor" red="0.2901960784" green="0.56470588239999997" blue="0.8862745098" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <date key="date" timeIntervalSinceReferenceDate="499076319.96109903">
+                                            <!--2016-10-25 08:18:39 +0000-->
+                                        </date>
+                                        <locale key="locale" localeIdentifier="en_IN"/>
+                                        <connections>
+                                            <action selector="toDateValueChangeWithSender:" destination="V0V-ZX-3xL" eventType="valueChanged" id="Wxk-zc-RZH"/>
+                                        </connections>
+                                    </datePicker>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TGd-6L-gqD" customClass="CustomBlueBackgroundButton" customModule="mNet" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="292" width="300" height="40"/>
+                                        <color key="backgroundColor" red="0.3803921569" green="0.28235294119999998" blue="0.22352941179999999" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="40" id="4zo-Q8-1TZ"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="SanFranciscoDisplay-Semibold" family="San Francisco Display" pointSize="16"/>
+                                        <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <state key="normal" title="Done">
+                                            <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="doneButtonActionWithSender:" destination="V0V-ZX-3xL" eventType="touchUpInside" id="smD-tH-07T"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="TGd-6L-gqD" secondAttribute="bottom" id="6h6-Dx-iM9"/>
+                                    <constraint firstItem="z8E-WF-mCz" firstAttribute="top" secondItem="Xbu-Dk-X89" secondAttribute="bottom" constant="16" id="86r-h3-5aJ"/>
+                                    <constraint firstItem="z8E-WF-mCz" firstAttribute="leading" secondItem="NcE-iH-oul" secondAttribute="leading" constant="16" id="Haj-Rc-5wr"/>
+                                    <constraint firstItem="3Ta-nM-AZW" firstAttribute="leading" secondItem="z8E-WF-mCz" secondAttribute="trailing" constant="18" id="Iqm-NE-DTL"/>
+                                    <constraint firstItem="Xbu-Dk-X89" firstAttribute="leading" secondItem="NcE-iH-oul" secondAttribute="leading" constant="16" id="JEB-F6-a63"/>
+                                    <constraint firstItem="uUp-DA-mRE" firstAttribute="top" secondItem="z8E-WF-mCz" secondAttribute="bottom" constant="8" id="LZM-FD-mXM"/>
+                                    <constraint firstItem="3Ta-nM-AZW" firstAttribute="centerY" secondItem="z8E-WF-mCz" secondAttribute="centerY" id="MHZ-g4-PQk"/>
+                                    <constraint firstItem="TGd-6L-gqD" firstAttribute="top" secondItem="uUp-DA-mRE" secondAttribute="bottom" constant="8" id="OOT-o0-4DW"/>
+                                    <constraint firstItem="TGd-6L-gqD" firstAttribute="leading" secondItem="NcE-iH-oul" secondAttribute="leading" id="RHd-OC-bew"/>
+                                    <constraint firstItem="uUp-DA-mRE" firstAttribute="trailing" secondItem="3Ta-nM-AZW" secondAttribute="trailing" id="Z9K-aW-BYu"/>
+                                    <constraint firstAttribute="trailing" secondItem="Xbu-Dk-X89" secondAttribute="trailing" constant="16" id="ZgC-nt-gbl"/>
+                                    <constraint firstItem="Xbu-Dk-X89" firstAttribute="top" secondItem="NcE-iH-oul" secondAttribute="top" constant="16" id="bA6-c2-EOR"/>
+                                    <constraint firstAttribute="trailing" secondItem="TGd-6L-gqD" secondAttribute="trailing" id="cTJ-3C-xB2"/>
+                                    <constraint firstAttribute="trailing" secondItem="3Ta-nM-AZW" secondAttribute="trailing" constant="16" id="lYJ-gi-JSc"/>
+                                    <constraint firstItem="9BH-bM-IUs" firstAttribute="trailing" secondItem="uUp-DA-mRE" secondAttribute="trailing" id="lxE-eT-J7Q"/>
+                                    <constraint firstItem="9BH-bM-IUs" firstAttribute="leading" secondItem="uUp-DA-mRE" secondAttribute="leading" id="nlC-2u-ZD4"/>
+                                    <constraint firstItem="uUp-DA-mRE" firstAttribute="leading" secondItem="z8E-WF-mCz" secondAttribute="leading" id="pyY-r5-njk"/>
+                                    <constraint firstItem="9BH-bM-IUs" firstAttribute="bottom" secondItem="uUp-DA-mRE" secondAttribute="bottom" id="sgj-kd-3ZT"/>
+                                    <constraint firstItem="9BH-bM-IUs" firstAttribute="top" secondItem="uUp-DA-mRE" secondAttribute="top" id="ue6-9l-UgV"/>
+                                    <constraint firstItem="Xbu-Dk-X89" firstAttribute="centerX" secondItem="NcE-iH-oul" secondAttribute="centerX" id="wDa-Mf-EaB"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.40000000000000002" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="eiu-1v-qcs" firstAttribute="centerX" secondItem="6A7-oE-IZw" secondAttribute="centerX" id="MEk-bg-WtQ"/>
+                            <constraint firstItem="eiu-1v-qcs" firstAttribute="centerY" secondItem="6A7-oE-IZw" secondAttribute="centerY" id="TvD-am-ZPY"/>
+                            <constraint firstItem="NcE-iH-oul" firstAttribute="centerY" secondItem="6A7-oE-IZw" secondAttribute="centerY" id="Wnb-GR-1hk"/>
+                            <constraint firstItem="NcE-iH-oul" firstAttribute="centerX" secondItem="6A7-oE-IZw" secondAttribute="centerX" id="dhk-Jd-sxh"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="qPC-GW-WET"/>
+                    </view>
+                    <connections>
+                        <outlet property="allButton" destination="xc5-hV-eSq" id="jfw-hh-zFd"/>
+                        <outlet property="customDateButton" destination="GRI-cA-FU8" id="1sb-in-ssX"/>
+                        <outlet property="customDateSegmentedControl" destination="Xbu-Dk-X89" id="x5a-Hb-AGe"/>
+                        <outlet property="customDateSelectorView" destination="NcE-iH-oul" id="hBv-d5-Qtf"/>
+                        <outlet property="doneButton" destination="TGd-6L-gqD" id="UcM-op-PU4"/>
+                        <outlet property="fromDateLabel" destination="z8E-WF-mCz" id="h8f-PD-cyb"/>
+                        <outlet property="fromDatePicker" destination="uUp-DA-mRE" id="Q9l-cQ-GES"/>
+                        <outlet property="past15DaysButton" destination="JEx-Ma-1iw" id="XED-rK-g4u"/>
+                        <outlet property="pastMonthButton" destination="BSV-5c-G9f" id="u3z-PS-7Rv"/>
+                        <outlet property="pastWeekButton" destination="H2b-Q6-jaR" id="XqU-8m-lEb"/>
+                        <outlet property="selectTimeLabel" destination="FPM-K0-wOK" id="N2z-JO-NrB"/>
+                        <outlet property="selectTimeSuperView" destination="eiu-1v-qcs" id="22A-Hk-sGX"/>
+                        <outlet property="selectTimeView" destination="bmI-QW-k1g" id="r3B-aa-TpL"/>
+                        <outlet property="toDateLabel" destination="3Ta-nM-AZW" id="NyX-qS-GvL"/>
+                        <outlet property="toDatePicker" destination="9BH-bM-IUs" id="Tu2-GX-d8K"/>
+                        <outlet property="todayButton" destination="Fue-oj-Kli" id="kaH-ag-Stu"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="jlK-MM-nRM" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="193" y="2618"/>
         </scene>
     </scenes>
     <resources>

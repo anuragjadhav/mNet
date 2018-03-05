@@ -119,13 +119,8 @@ class ApprovalVerificationViewController: BaseViewController,UISearchBarDelegate
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
         let selectedUser:ApprovalUser = userList[indexPath.row]
-        if let indexOfSelectedUser:Int = dataController.selectedApproval!.selectedUsers.index(of: selectedUser) {
-            dataController.selectedApproval!.selectedUsers.remove(at: indexOfSelectedUser)
-        }
-        else {
-            dataController.selectedApproval!.selectedUsers.append(selectedUser)
-        }
-        
+        dataController.selectedApproval!.selectedUsers.removeAll()
+        dataController.selectedApproval!.selectedUsers.append(selectedUser)
         sendPeopleListTableView.reloadData()
     }
     
@@ -176,7 +171,7 @@ class ApprovalVerificationViewController: BaseViewController,UISearchBarDelegate
             return
         }
         
-        if dataController.selectedApproval!.selectedUsers.count <= 0 {
+        if dataController.selectedApproval!.selectedUsers.count <= 0 && dataController.selectedSection!.approvalStatus == .verify {
             self.showQuickErrorAlert(message: AlertMessages.selectAtleastOneUSer)
             return
         }

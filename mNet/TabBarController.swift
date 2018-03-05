@@ -29,6 +29,8 @@ class TabBarController: UITabBarController {
     //MARK: Configure the tab bar
     func configureTabBar() {
         
+        self.tabBar.tintColor = ColorConstants.kBlueColor
+        
         //Configure the View controllers
         let dashboardViewController:UIViewController = UIStoryboard.dashboard.instantiateInitialViewController()!
         dashboardViewController.tabBarItem = UITabBarItem(title:TabNames.dashboard , image: #imageLiteral(resourceName: "dashboard"), tag: 1)
@@ -41,7 +43,8 @@ class TabBarController: UITabBarController {
         
         let notificationsViewController:UIViewController = UIStoryboard.notifications.instantiateInitialViewController()!
         notificationsViewController.tabBarItem = UITabBarItem(title:TabNames.notifications , image: #imageLiteral(resourceName: "notification"), tag: 4)
-    self.setViewControllers([dashboardViewController,conversationsViewController,notificationsViewController,settingsViewController], animated: true)
+        
+        self.setViewControllers([dashboardViewController,conversationsViewController,notificationsViewController,settingsViewController], animated: true)
     }
 
 }

@@ -49,6 +49,37 @@ class LoginWrapper: NSObject {
         }
     }
     
+    func getUserDetails(postParams:[String:Any], onSuccess:@escaping (String) -> Void , onFailure : @escaping (String) -> Void) {
+        
+        request(URLS.getUserDetails, method: .post, parameters: postParams, encoding: JSONEncoding() as ParameterEncoding, headers: nil).responseObject { (response:DataResponse<CommonResponse>) in
+            
+            guard let commonResponse:CommonResponse = response.result.value else {
+                onFailure(WrapperManager.shared.getErrorMessage(message: "Login Failed. Please try again."))
+                return
+            }
+            
+            if commonResponse.noError {
+                
+                guard let responseDict:[String:Any] = commonResponse.responseData as? [String:Any] else {
+                    onFailure(WrapperManager.shared.getErrorMessage(message: "Login Failed. Please try again."))
+                    return
+                }
+                
+                guard let userId:String = responseDict[DictionaryKeys.User.userId] as? String else {
+                    onFailure(WrapperManager.shared.getErrorMessage(message: "Login Failed. Please try again."))
+                    return
+                }
+                
+                onSuccess(userId)
+            }
+            
+            else {
+                onFailure(WrapperManager.shared.getErrorMessage(message: "Login Failed. Please try again."))
+                return
+            }
+        }
+    }
+    
     func registerDeviceToken(isLogout:Bool, postParams:[String : Any], onSuccess:@escaping () -> Void , onFailure : @escaping () -> Void) {
         
         var urlToHit:URL = URLS.registerDevice
