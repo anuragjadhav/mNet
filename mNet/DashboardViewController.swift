@@ -134,11 +134,11 @@ class DashboardViewController: BaseViewController, UITableViewDataSource, UITabl
             goToApprovalsScreen(preSelectedIndex:0)
         }
         
-//        else {
-//            let webViewController:WebViewController = UIStoryboard.login.instantiateViewController(withIdentifier: StoryboardIDs.webViewController) as! WebViewController
-//            webViewController.setData(url: app.appURL, header: app.appName)
-//            navigationController?.pushViewController(webViewController, animated: true)
-//        }
+        else {
+            let webViewController:WebViewController = UIStoryboard.login.instantiateViewController(withIdentifier: StoryboardIDs.webViewController) as! WebViewController
+            webViewController.setData(url: app.appURL, header: app.appName)
+            navigationController?.pushViewController(webViewController, animated: true)
+        }
     }
     
     func goToApprovalsScreen(preSelectedIndex:Int) {

@@ -15,7 +15,7 @@ class ConversationsDataController: NSObject {
     var conversationPageStart:Int = 0
     var previousConversationSearchText:String = ""
     var currentConversationSearchText:String = ""
-    let conversationPageLength:Int = 10
+    let conversationPageLength:Int = 100
     
     var newConversationReply:Conversation?
     
@@ -29,7 +29,7 @@ class ConversationsDataController: NSObject {
     var selectUserList:[People]? = []
     var originalSelectUserList:[People]? = []
     var selectUserPageStart:Int = 0
-    var selectUserPageLength:Int = 10
+    var selectUserPageLength:Int = 100
     var previousSelectUserSearchText:String = ""
     var currentSelectUserSearchText:String = ""
     var selectedFilenameInNewConversation:String?

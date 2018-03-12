@@ -11,7 +11,7 @@ import UIKit
 class NotificationDataController: NSObject {
     
     var notifications:[NotificationObject] = []
-    let limit:Int = 10
+    let limit:Int = 100
     var start:Int = 0
 
     func getNotifcations(isReload:Bool,onSuccess:@escaping (Int) -> Void , onFailure : @escaping (String) -> Void) {
