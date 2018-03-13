@@ -50,6 +50,8 @@ class ApprovalVerificationViewController: BaseViewController,UISearchBarDelegate
     
     func setUpViewController() {
         
+         self.addkeyBoardListners()
+        
         switch dataController.selectedSection!.approvalStatus {
         
         case .approve: hideRadioButtons()

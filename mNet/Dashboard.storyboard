@@ -20,6 +20,9 @@
         <array key="SanFranciscoDisplay-Light.otf">
             <string>SanFranciscoDisplay-Light</string>
         </array>
+        <array key="SanFranciscoDisplay-Medium.otf">
+            <string>SanFranciscoDisplay-Medium</string>
+        </array>
     </customFonts>
     <scenes>
         <!--Dashboard View Controller-->
@@ -205,6 +208,15 @@
                                     <outlet property="delegate" destination="lrb-xA-0fc" id="aLJ-Fn-gZN"/>
                                 </connections>
                             </tableView>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No Apps Available" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ymi-um-cXP" customClass="CustomBrownTextColorLabel" customModule="mNet" customModuleProvider="target">
+                                <rect key="frame" x="121.5" y="465" width="132.5" height="20.5"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="100" id="789-8d-aUa"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="SanFranciscoDisplay-Medium" family="San Francisco Display" pointSize="17"/>
+                                <color key="textColor" red="0.3803921569" green="0.28235294119999998" blue="0.22352941179999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="0.98039215690000003" green="0.98431372549999996" blue="0.98823529409999999" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
@@ -214,6 +226,7 @@
                             <constraint firstItem="q5q-Xy-Pbt" firstAttribute="trailing" secondItem="gg2-fU-KFW" secondAttribute="trailing" id="5d8-xe-gb3"/>
                             <constraint firstItem="F8l-RN-ukK" firstAttribute="centerY" secondItem="x55-qU-at0" secondAttribute="centerY" id="6c3-vi-SdN"/>
                             <constraint firstItem="wv2-VT-8yh" firstAttribute="bottom" secondItem="mUh-uh-gsA" secondAttribute="bottom" id="6zf-VV-eGp"/>
+                            <constraint firstItem="ymi-um-cXP" firstAttribute="centerX" secondItem="Xc9-uK-V8a" secondAttribute="centerX" id="8PN-aQ-6jn"/>
                             <constraint firstItem="gfB-ab-tfT" firstAttribute="top" secondItem="Dka-Gt-J5X" secondAttribute="bottom" constant="44" id="Bm9-EB-CMG"/>
                             <constraint firstItem="LO5-Ab-vbT" firstAttribute="top" secondItem="Xc9-uK-V8a" secondAttribute="top" id="F2p-2K-0bY"/>
                             <constraint firstItem="2MU-AG-Ute" firstAttribute="top" secondItem="Xc9-uK-V8a" secondAttribute="top" constant="16" id="F72-NH-Jdw"/>
@@ -247,6 +260,7 @@
                             <constraint firstItem="dY6-rQ-dpZ" firstAttribute="top" secondItem="x55-qU-at0" secondAttribute="top" id="tiz-Dq-dLy"/>
                             <constraint firstItem="q5q-Xy-Pbt" firstAttribute="top" secondItem="gfB-ab-tfT" secondAttribute="top" id="tqD-2L-TLi"/>
                             <constraint firstItem="gg2-fU-KFW" firstAttribute="width" secondItem="fMS-BN-x7b" secondAttribute="width" id="vLy-MW-tPS"/>
+                            <constraint firstItem="ymi-um-cXP" firstAttribute="centerY" secondItem="mUh-uh-gsA" secondAttribute="centerY" constant="-24" id="wF9-GU-MEz"/>
                             <constraint firstItem="XYB-iN-OEW" firstAttribute="top" secondItem="x55-qU-at0" secondAttribute="bottom" constant="9" id="y71-n7-tKL"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="wv2-VT-8yh"/>
@@ -257,6 +271,7 @@
                         <outlet property="logoutButton" destination="2MU-AG-Ute" id="z0u-7m-7tU"/>
                         <outlet property="myAppsLabel" destination="aY6-xW-7a7" id="FwO-u8-g33"/>
                         <outlet property="myAppsTableView" destination="mUh-uh-gsA" id="tdg-tK-xcJ"/>
+                        <outlet property="noAppsLabel" destination="ymi-um-cXP" id="uT6-6c-tVZ"/>
                         <outlet property="pendingApprovalsCountLabel" destination="gfB-ab-tfT" id="Rh2-Qa-zAw"/>
                         <outlet property="pendingApprovalsLabel" destination="gg2-fU-KFW" id="vNC-42-5sB"/>
                         <outlet property="pendingVerificationsCountLabel" destination="x55-qU-at0" id="XQ5-8j-rgK"/>
