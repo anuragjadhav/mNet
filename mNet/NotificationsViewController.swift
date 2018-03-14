@@ -43,6 +43,9 @@ class NotificationsViewController: BaseViewController, UITableViewDelegate, UITa
         super.viewWillAppear(animated)
         
         self.setUpNavigationController()
+        
+        let currentTabbarItem = self.tabBarController?.tabBar.items![2]
+        currentTabbarItem?.badgeValue = nil
     }
     
     //MARK: Setup
@@ -79,7 +82,7 @@ class NotificationsViewController: BaseViewController, UITableViewDelegate, UITa
                 self.showLoadingOnViewController()
             }
             
-            dataCtrl.getNotifcations(isReload:isReload , onSuccess: { [unowned self] (unreadNotificationCount) in
+            dataCtrl.getNotifcations(isReload:isReload , onSuccess: { [unowned self] in
                 
                 DispatchQueue.main.async {
                     
@@ -88,7 +91,7 @@ class NotificationsViewController: BaseViewController, UITableViewDelegate, UITa
                         self.removeLoadingFromViewController()
                     }
                     
-                   self.unreadNotificationLabel.text = String(unreadNotificationCount) + " unread notifications"
+                    self.unreadNotificationLabel.text = self.dataCtrl.unreadNotificationCount! + " unread notifications"
 
                     self.notificationsTableView.reloadData()
                  }
@@ -118,7 +121,11 @@ class NotificationsViewController: BaseViewController, UITableViewDelegate, UITa
             switch state {
             case let .loading(completionHandler):
                completionHandler()
-                self.getNotifications(isReload: false,isRefresh: true)
+               
+               if(dataCtrl.previousCallSuccessOrFailed){
+                
+                    self.getNotifications(isReload: false,isRefresh: true)
+               }
                 
             default: break
             }
@@ -130,7 +137,11 @@ class NotificationsViewController: BaseViewController, UITableViewDelegate, UITa
         case let .pulling(offset, threshould):
             if offset.y < threshould {
                 
-                self.getNotifications(isReload: true,isRefresh: true)
+                if(dataCtrl.previousCallSuccessOrFailed){
+                    
+                    self.getNotifications(isReload: true,isRefresh: true)
+
+                }
             }
             
         case .none:

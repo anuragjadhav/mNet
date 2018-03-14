@@ -19,7 +19,7 @@ class MembersTableViewCell: UITableViewCell {
     func loadCellWithMember(member:ConversationMember , isPostCreator:Bool)
     {
         memberNameLabel.text = member.userName
-        memberNameLabel.text = member.memberType
+        memberTypeLabel.text = member.memberType
         
         if(isPostCreator)
         {

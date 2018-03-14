@@ -38,7 +38,7 @@ struct URLS {
     static let getProfile:URL = URL(string: "GetUserDetails", relativeTo: baseURL)!
     static let updateProfile:URL = URL(string: "updateProfile", relativeTo: baseURL)!
     static let getPeopleList:URL = URL(string: "getUserList", relativeTo: baseURL)!
-    
+    static let getPeopleProfile:URL = URL(string: "getpeopledetails", relativeTo: baseURL)!
     static let liveBaseURL:URL = URL(string:"http://demo.m-net.in/p_MNetV2Service/MnetV2WebService/")!
     static let loginAuthenticate:URL = URL(string: "public_authenticate", relativeTo: liveBaseURL)!
     static let registerDevice:URL = URL(string: "registerToken", relativeTo: liveBaseURL)!

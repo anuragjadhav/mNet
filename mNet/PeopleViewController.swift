@@ -24,13 +24,15 @@ class PeopleViewController: BaseViewController,UITableViewDataSource,UITableView
         peopleTableView.addPullLoadableView(loadMoreView, type: .loadMore)
         
         peopleTableView.tableFooterView = UIView()
+        
+        getPeopleList(isReload: true)
+
     }
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated);
         
         self.setupNavigationBar()
-        getPeopleList(isReload: true)
     }
     
     func setupNavigationBar(){
@@ -59,6 +61,15 @@ class PeopleViewController: BaseViewController,UITableViewDataSource,UITableView
         cell.loadCellWithPeople(people)
 
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        let people:People = dataCtrl.peopleArray[indexPath.row]
+        let profileVC = (UIStoryboard.init(name:"Profile", bundle: Bundle.main)).instantiateViewController(withIdentifier: "ProfileViewController") as! ProfileViewController
+        profileVC.didComeFromPeopleVC = true
+        profileVC.dataCtrl.selectedPeople = people
+        self.navigationController?.pushViewController(profileVC, animated: true)
     }
 
     // MARK: - Search bar delegates
@@ -123,7 +134,7 @@ class PeopleViewController: BaseViewController,UITableViewDataSource,UITableView
             case let .loading(completionHandler):
                 completionHandler()
                 
-                if(searchBar.text == nil || searchBar.text == ""){
+                if((searchBar.text == nil || searchBar.text == "") && dataCtrl.previousCallSuccessOrFailed){
                     
                     self.getPeopleList(isReload: false)
                 }

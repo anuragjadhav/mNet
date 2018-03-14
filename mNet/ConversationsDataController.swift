@@ -11,12 +11,13 @@ import UIKit
 class ConversationsDataController: NSObject {
     
     var conversations:[Conversation] = []
+    var unreadConversationCount:String = "0"
     var selectedCoversation:Conversation?
     var conversationPageStart:Int = 0
-    var previousConversationSearchText:String = ""
-    var currentConversationSearchText:String = ""
-    let conversationPageLength:Int = 100
+    let conversationPageLength:Int = 10
     
+    var previousConversationCallSuccessOrFailed:Bool = false
+    var previousSelectUserCallSuccessOrFailed:Bool = false
     var newConversationReply:Conversation?
     
     var memberList:[ConversationMember]? = []
@@ -29,9 +30,7 @@ class ConversationsDataController: NSObject {
     var selectUserList:[People]? = []
     var originalSelectUserList:[People]? = []
     var selectUserPageStart:Int = 0
-    var selectUserPageLength:Int = 100
-    var previousSelectUserSearchText:String = ""
-    var currentSelectUserSearchText:String = ""
+    var selectUserPageLength:Int = 20
     var selectedFilenameInNewConversation:String?
     var selectedFileDataInNewConversation:Data?
     var newConversationSubject:String?
@@ -45,18 +44,22 @@ class ConversationsDataController: NSObject {
     var messageForNewReply:String?
     var isDocumentSelectedForNewReply:Bool? = false
 
-    func getConversations(searchText:String,onSuccess:@escaping (Int) -> Void , onFailure : @escaping (String) -> Void) {
+    func getConversations(searchText:String,isLoadMore:Bool,onSuccess:@escaping () -> Void , onFailure : @escaping (String) -> Void) {
         
-        self.currentConversationSearchText = searchText
-
-        //increment page start count only if prevoius search text and latest search text is same
-        if(self.previousConversationSearchText == self.currentConversationSearchText && self.currentConversationSearchText != "")
+        self.previousConversationCallSuccessOrFailed = false
+        
+        if(isLoadMore == true)
         {
             self.conversationPageStart += self.conversations.count
+            
+            print("increment page")
         }
         else
         {
             self.conversationPageStart = 0
+            
+            print("fresh load")
+
         }
         
         let user:User = User.loggedInUser()!
@@ -68,11 +71,11 @@ class ConversationsDataController: NSObject {
         postParams["post_type_id"] = "0"
         postParams["post_start"] = "\(self.conversationPageStart)"
         postParams["post_limit"] = "\(self.conversationPageLength)"
-        postParams["search_value"] = self.currentConversationSearchText
+        postParams["search_value"] = searchText
         
-        WrapperManager.shared.conversationWrapper.getConversationsList(postParams: postParams, onSuccess: { [unowned self] (newConversationList) in
+        WrapperManager.shared.conversationWrapper.getConversationsList(postParams: postParams, onSuccess: { [unowned self] (newConversationList,unreadConversationCount) in
 
-            if(self.currentConversationSearchText == self.previousConversationSearchText && self.currentConversationSearchText != "")
+            if(isLoadMore)
             {
                 //add received new array objects
                 for conversation in newConversationList
@@ -85,12 +88,14 @@ class ConversationsDataController: NSObject {
                 self.conversations = newConversationList
             }
             
-            self.previousConversationSearchText = self.currentConversationSearchText
+            self.unreadConversationCount = unreadConversationCount
+            self.previousConversationCallSuccessOrFailed = true
             
-            onSuccess(self.getUnreadConversationCount())
+            onSuccess()
             
-        }) { (errorMessage) in
+        }) {[unowned self] (errorMessage) in
             
+            self.previousConversationCallSuccessOrFailed = true
             onFailure(errorMessage)
         }
     }
@@ -98,19 +103,16 @@ class ConversationsDataController: NSObject {
     
     func markCOnversationAsRead() {
         
-        if(self.selectedCoversation?.readState == "0")
-        {
-            let user:User = User.loggedInUser()!
-            var postParams:[String:Any] = [String:Any]()
-            postParams["user_id"] = user.userId
-            postParams["notification_id"] = selectedCoversation?.postId
+        let user:User = User.loggedInUser()!
+        var postParams:[String:Any] = [String:Any]()
+        postParams["user_id"] = user.userId
+        postParams["post_id"] = selectedCoversation?.postId
+        
+        WrapperManager.shared.conversationWrapper.markConversationAsRead(postParams: postParams, onSuccess: { [unowned self] in
             
-            WrapperManager.shared.conversationWrapper.markConversationAsRead(postParams: postParams, onSuccess: { [unowned self] in
-                
-                self.selectedCoversation?.readState = "1"
-            }) {
-                
-            }
+            self.selectedCoversation?.readState = "1"
+        }) {
+            
         }
     }
     
@@ -123,7 +125,7 @@ class ConversationsDataController: NSObject {
     {
         if(searchTerm != nil && searchTerm != "")
         {
-            let filteredMemberArray:[ConversationMember] = (selectedCoversation?.membersList.filter { $0.userName.contains(searchTerm!) })!
+            let filteredMemberArray:[ConversationMember] = (selectedCoversation?.membersList.filter {$0.userName.localizedCaseInsensitiveContains(searchTerm!) })!
             memberList = filteredMemberArray
         }
         else
@@ -159,20 +161,12 @@ class ConversationsDataController: NSObject {
         selectedCoversation?.membersList = newFilteredMemberArray2
     }
 
-    
-    func getUnreadConversationCount() -> Int
-    {
-        let filteredArray:[Conversation] =  self.conversations.filter{$0.readState == "0" }
-        return filteredArray.count
-    }
-    
 
-    func getSelectUserList(searchText:String,onSuccess:@escaping () -> Void , onFailure : @escaping (String) -> Void) {
+    func getSelectUserList(searchText:String,isLoadMore:Bool,onSuccess:@escaping () -> Void , onFailure : @escaping (String) -> Void) {
         
-        self.currentSelectUserSearchText = searchText
+        previousSelectUserCallSuccessOrFailed = false
         
-        //increment page start count only if prevoius search text and latest search text is same
-        if(self.previousSelectUserSearchText == self.currentSelectUserSearchText && self.currentSelectUserSearchText != "")
+        if(isLoadMore == true)
         {
             self.selectUserPageStart += (self.selectUserList?.count)!
         }
@@ -188,11 +182,11 @@ class ConversationsDataController: NSObject {
         postParams["data_type_id"] = "B2B User"
         postParams["start"] = "\(self.selectUserPageStart)"
         postParams["limit"] = "\(self.selectUserPageLength)"
-        postParams["query"] = self.currentSelectUserSearchText
+        postParams["query"] = searchText
         
         WrapperManager.shared.conversationWrapper.getSelectUserList(postParams: postParams, onSuccess: { [unowned self] (newSelectUserList) in
             
-            if(self.currentSelectUserSearchText == self.previousSelectUserSearchText && self.currentSelectUserSearchText != "")
+            if(isLoadMore)
             {
                 //add received new array objects
                 for user in newSelectUserList
@@ -209,12 +203,14 @@ class ConversationsDataController: NSObject {
             
             self.filterSelectUsersListBasedOnSelectedUserType()
             
-            self.previousSelectUserSearchText = self.currentSelectUserSearchText
-            
+            self.previousSelectUserCallSuccessOrFailed = true
+
             onSuccess()
             
-        }) { (errorMessage) in
+        }) {[unowned self] (errorMessage) in
             
+            self.previousSelectUserCallSuccessOrFailed = true
+
             onFailure(errorMessage)
         }
     }

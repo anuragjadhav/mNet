@@ -11,10 +11,14 @@ import UIKit
 class NotificationDataController: NSObject {
     
     var notifications:[NotificationObject] = []
-    let limit:Int = 100
+    var unreadNotificationCount:String? = "0"
+    var previousCallSuccessOrFailed:Bool = false
+    let limit:Int = 10
     var start:Int = 0
 
-    func getNotifcations(isReload:Bool,onSuccess:@escaping (Int) -> Void , onFailure : @escaping (String) -> Void) {
+    func getNotifcations(isReload:Bool,onSuccess:@escaping () -> Void , onFailure : @escaping (String) -> Void) {
+        
+        previousCallSuccessOrFailed = false
         
         if(isReload){
             
@@ -27,7 +31,7 @@ class NotificationDataController: NSObject {
         postParams["limit"] = "\(limit)"
         postParams["start"] = "\(start)"
 
-        WrapperManager.shared.notifiactionWrapper.getNotificationList(postParams: postParams, onSuccess: { [unowned self] (notificationArray) in
+        WrapperManager.shared.notifiactionWrapper.getNotificationList(postParams: postParams, onSuccess: { [unowned self] (notificationArray,unreadNotificationCount) in
             
             if(isReload)
             {
@@ -44,18 +48,13 @@ class NotificationDataController: NSObject {
             //change start
             self.start += self.notifications.count
             
-            onSuccess(self.getUnreadNotificationCount())
+            self.unreadNotificationCount = unreadNotificationCount
+            self.previousCallSuccessOrFailed = true
+            onSuccess()
             
-        }) { (errorMessage) in
-            
+        }) {[unowned self] (errorMessage) in
+            self.previousCallSuccessOrFailed = true
             onFailure(errorMessage)
         }
-    }
-    
-    
-    func getUnreadNotificationCount() -> Int
-    {
-        let filteredArray:[NotificationObject] =  self.notifications.filter{$0.status == "0" }
-        return filteredArray.count
     }
 }

@@ -41,7 +41,7 @@ class ConversationsListViewController: BaseViewController, UITableViewDelegate, 
         conversationListTableView.tableFooterView = UIView()
         searchBar.text = ""
         
-        getConversations(isReload: true, searchText: searchBar.text!)
+        getConversations(isReload: true,isLoadMore: false, searchText: searchBar.text!)
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -51,13 +51,16 @@ class ConversationsListViewController: BaseViewController, UITableViewDelegate, 
         
         conversationListTableView.reloadData()
         
-        self.unreadConversationsLabel.text = String(dataCtrl.getUnreadConversationCount()) + " unread conversations"
+        self.unreadConversationsLabel.text = dataCtrl.unreadConversationCount + " unread conversations"
         
         if(dataCtrl.isNewConversationAdded == true)
         {
             dataCtrl.isNewConversationAdded = false
-            getConversations(isReload: false, searchText: searchBar.text!)
+            getConversations(isReload: false,isLoadMore: false, searchText: searchBar.text!)
         }
+        
+        let currentTabbarItem = self.tabBarController?.tabBar.items![1]
+        currentTabbarItem?.badgeValue = nil
     }
     
     override func viewDidDisappear(_ animated: Bool) {
@@ -94,7 +97,17 @@ class ConversationsListViewController: BaseViewController, UITableViewDelegate, 
         let conversation:Conversation = dataCtrl.conversations[indexPath.row]
         dataCtrl.selectedCoversation = conversation
         
-        dataCtrl.markCOnversationAsRead()
+        if(conversation.readState == "0")
+        {
+            dataCtrl.markCOnversationAsRead()
+            
+            //reduce read count
+            var count:Int = Int(dataCtrl.unreadConversationCount)!
+            count -= 1
+            dataCtrl.unreadConversationCount = String(count)
+            self.unreadConversationsLabel.text = self.dataCtrl.unreadConversationCount + " unread conversations"
+            
+        }
         
         let conversationDetailVC = (UIStoryboard.init(name:"Conversation", bundle: Bundle.main)).instantiateViewController(withIdentifier: "ConversationDetailViewController") as! ConversationDetailViewController
         conversationDetailVC.dataCtrl = self.dataCtrl
@@ -104,7 +117,7 @@ class ConversationsListViewController: BaseViewController, UITableViewDelegate, 
     
     //MARK: Get Conversations
     
-    func getConversations(isReload:Bool,searchText:String)
+    func getConversations(isReload:Bool,isLoadMore:Bool,searchText:String)
     {
         if Reachability.isConnectedToNetwork(){
             
@@ -113,7 +126,7 @@ class ConversationsListViewController: BaseViewController, UITableViewDelegate, 
                 self.showLoadingOnViewController()
             }
             
-            dataCtrl.getConversations(searchText:searchText , onSuccess: { [unowned self] (unreadConversationCount) in
+            dataCtrl.getConversations(searchText:searchText,isLoadMore:isLoadMore , onSuccess: { [unowned self]  in
                 
                 DispatchQueue.main.async {
                     
@@ -122,7 +135,7 @@ class ConversationsListViewController: BaseViewController, UITableViewDelegate, 
                         self.removeLoadingFromViewController()
                     }
                     
-                    self.unreadConversationsLabel.text = String(unreadConversationCount) + " unread conversations"
+                    self.unreadConversationsLabel.text = self.dataCtrl.unreadConversationCount + " unread conversations"
                     
                     self.conversationListTableView.reloadData()
                 }
@@ -148,13 +161,9 @@ class ConversationsListViewController: BaseViewController, UITableViewDelegate, 
     //MARK: search bar delegate
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         
-        if(searchText == ""){
+        if(searchText == "" || searchText.count > 2){
             
-            getConversations(isReload: false, searchText: searchText)
-        }
-        else if (searchText.count > 2)
-        {
-            getConversations(isReload: false, searchText: searchText)
+            getConversations(isReload: false,isLoadMore: false, searchText: searchText)
         }
     }
     
@@ -189,7 +198,11 @@ class ConversationsListViewController: BaseViewController, UITableViewDelegate, 
             switch state {
             case let .loading(completionHandler):
                 completionHandler()
-                self.getConversations(isReload: false, searchText: searchBar.text!)
+                
+                if(dataCtrl.previousConversationCallSuccessOrFailed){
+                    print("load more called")
+                    self.getConversations(isReload: false,isLoadMore: true, searchText: searchBar.text!)
+                }
                 
             default: break
             }
@@ -201,7 +214,13 @@ class ConversationsListViewController: BaseViewController, UITableViewDelegate, 
       case let .pulling(offset, threshould):
         if offset.y < threshould {
             
-            self.getConversations(isReload: false, searchText: searchBar.text!)
+           
+            if(dataCtrl.previousConversationCallSuccessOrFailed){
+                print("threshould: \(threshould)")
+                print("offset: \(offset.y)")
+
+                self.getConversations(isReload: false,isLoadMore: false, searchText: searchBar.text!)
+            }
         }
         
      case .none:
@@ -217,6 +236,6 @@ class ConversationsListViewController: BaseViewController, UITableViewDelegate, 
     
     override func retryButtonClicked() {
         
-        getConversations(isReload: true, searchText: searchBar.text!)
+        getConversations(isReload: true,isLoadMore: false, searchText: searchBar.text!)
     }
 }

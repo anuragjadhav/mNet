@@ -114,6 +114,26 @@ class DashboardViewController: BaseViewController, UITableViewDataSource, UITabl
         pendingVerificationsCountLabel.text = String(describing: dataController.stats?.pendingAgreeRequests ?? 0)
         unreadMessagesCountLabel.text = dataController.stats?.unreadPosts ?? "-"
         self.myAppsTableView.reloadData()
+        
+        //set unread notification count and conversation count
+        
+        let conversationTabBar:UITabBarItem = (self.tabBarController?.tabBar.items![1])!
+        let notificationTabBar:UITabBarItem = (self.tabBarController?.tabBar.items![2])!
+        
+        if(dataController.stats?.unreadPosts != "0"){
+            
+            conversationTabBar.badgeValue = dataController.stats?.unreadPosts
+            if #available(iOS 10.0, *) {
+                conversationTabBar.badgeColor = ColorConstants.kBrownColor
+            }
+        }
+
+        if(dataController.stats?.notificationCount != "0"){
+            notificationTabBar.badgeValue = dataController.stats?.notificationCount
+            if #available(iOS 10.0, *) {
+                notificationTabBar.badgeColor = ColorConstants.kBrownColor
+            }
+        }
     }
     
     func checkNoApps() {

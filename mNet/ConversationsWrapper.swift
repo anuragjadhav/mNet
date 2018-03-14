@@ -10,7 +10,7 @@ import UIKit
 
 class ConversationsWrapper: NSObject {
     
-    func getConversationsList(postParams:[String:Any], onSuccess:@escaping ([Conversation]) -> Void , onFailure : @escaping (String) -> Void){
+    func getConversationsList(postParams:[String:Any], onSuccess:@escaping ([Conversation],String) -> Void , onFailure : @escaping (String) -> Void){
         
         request(URLS.getConversationsList, method: .post, parameters: postParams, encoding: JSONEncoding() as ParameterEncoding, headers: nil).responseJSON { response in
            
@@ -22,7 +22,9 @@ class ConversationsWrapper: NSObject {
                 {
                     let conversationDictArray:[[String:Any]] = responseDict[DictionaryKeys.APIResponse.responseData] as! [[String:Any]]
                     let conversationArray:[Conversation] = [Conversation].init(JSONArray: conversationDictArray)
-                    onSuccess(conversationArray)
+                    
+                     let unreadNotifiactionCount = responseDict["unread_post_count"] ?? "0"
+                    onSuccess(conversationArray,unreadNotifiactionCount as! String)
                 }
                 else
                 {

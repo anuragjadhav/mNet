@@ -11,7 +11,7 @@ import MobileCoreServices
 import AssetsLibrary
 import Photos
 
-class NewConversationViewController: BaseViewController,UICollectionViewDelegate,UICollectionViewDataSource,UIDocumentMenuDelegate,UIDocumentPickerDelegate,UINavigationControllerDelegate,UIImagePickerControllerDelegate {
+class NewConversationViewController: BaseViewController,UICollectionViewDelegate,UICollectionViewDataSource,UIDocumentMenuDelegate,UIDocumentPickerDelegate,UINavigationControllerDelegate,UIImagePickerControllerDelegate,UITextViewDelegate,UITextFieldDelegate {
     
     @IBOutlet weak var subjectTextField: CustomBrownTextColorTextfield!
     @IBOutlet weak var messageTextView: CustomBrownColorTextView!
@@ -125,6 +125,27 @@ class NewConversationViewController: BaseViewController,UICollectionViewDelegate
         
     }
     
+    //MARK: Text view delegates
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        
+        self.view.endEditing(true)
+        
+        return true
+    }
+    
+    
+    //MARK: Text View delegates
+    
+    func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
+        
+        if(text == "\n"){
+            
+            self.view.endEditing(true)
+        }
+        
+        return true
+    }
+
     
     //MARK: Image Picker Delegates
     

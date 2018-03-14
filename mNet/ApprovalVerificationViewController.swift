@@ -9,7 +9,7 @@
 import UIKit
 
 
-class ApprovalVerificationViewController: BaseViewController,UISearchBarDelegate,UITableViewDelegate,UITableViewDataSource,RadioButtonGroupDelegate {
+class ApprovalVerificationViewController: BaseViewController,UISearchBarDelegate,UITableViewDelegate,UITableViewDataSource,RadioButtonGroupDelegate,UITextViewDelegate {
     
     //MARK: Outlets and Properties
     
@@ -35,6 +35,8 @@ class ApprovalVerificationViewController: BaseViewController,UISearchBarDelegate
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.addkeyBoardListners()
 
         // Do any additional setup after loading the view.
         setUpViewController()
@@ -100,7 +102,7 @@ class ApprovalVerificationViewController: BaseViewController,UISearchBarDelegate
         self.navigationController?.navigationBar.isHidden = false
     }
     
-    //Mark: tableview delegates and data source
+    //MARK: tableview delegates and data source
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
      
@@ -126,11 +128,19 @@ class ApprovalVerificationViewController: BaseViewController,UISearchBarDelegate
         sendPeopleListTableView.reloadData()
     }
     
-    @IBAction func checkBoxButtonAction(_ sender: UIButton) {
+    //MARK: Text View Delegates
+    func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
         
+        if(text == "\n"){
+            
+            self.view.endEditing(true)
+        }
+        
+        return true
     }
     
-    //Mark: search bar delegates
+    
+    //MARK: search bar delegates
     
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         

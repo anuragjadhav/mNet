@@ -55,7 +55,17 @@ class ConversationListTableViewCell: UITableViewCell {
         
         //convert received string into date and then format it in required format
         let receivedDate = dateFormatter.date(from:conversation.latestReplierDate)
-        dateFormatter.dateFormat = "h:mm a"
+        
+        //check if 24 horus has passed to show time differently
+        if let diff = Calendar.current.dateComponents([.hour], from: receivedDate!, to: Date()).hour, diff > 24 {
+            
+            dateFormatter.dateFormat = "dd,MMM"
+        }
+        else
+        {
+            dateFormatter.dateFormat = "h:mm a"
+        }
+        
         
         let timeStringToSet = dateFormatter.string(from: receivedDate!)
         self.timeLabel.text = timeStringToSet
