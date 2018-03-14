@@ -15,41 +15,56 @@ class DashboardDataController: NSObject {
     var stats:DashboardStats?
     var appsList:[UserApp] = [UserApp]()
     
-    var statsResponse:Bool = false
-    var appsResponse:Bool = false
-    
+    var statsResponseSuccess:Bool = false
+    var statsResponseFailure:Bool = false
+    var appsResponseSuccess:Bool = false
+    var appsResponseFailure:Bool = false
     
     func getDashboardData(onSuccess:@escaping () -> Void , onFailure : @escaping (String) -> Void) {
     
-        statsResponse = false
-        appsResponse = false
+        statsResponseSuccess = false
+        statsResponseFailure = false
+        appsResponseSuccess = false
+        appsResponseFailure = false
         
         getDashboardStats(onSuccess: { [unowned self] in
             
-            self.statsResponse = true
-            if self.appsResponse {
+            self.statsResponseSuccess = true
+            self.statsResponseFailure = false
+            if self.appsResponseSuccess || self.appsResponseFailure {
                 onSuccess()
             }
             
         }) { (errorMessage) in
             
-            self.statsResponse = true
-            if self.appsResponse {
+            self.statsResponseSuccess = false
+            self.statsResponseFailure = true
+            
+            if self.appsResponseSuccess {
+                onSuccess()
+            }
+            else if self.appsResponseFailure {
                 onFailure(errorMessage)
-           }
+            }
+            
         }
         
         getDashboardApps(onSuccess: {
             
-            self.appsResponse = true
-            if self.statsResponse {
+            self.appsResponseSuccess = true
+            self.appsResponseFailure = false
+            if self.statsResponseSuccess || self.statsResponseFailure {
                 onSuccess()
             }
             
         }) { (errorMessage) in
             
-            self.appsResponse = true
-            if self.statsResponse {
+            self.appsResponseSuccess = false
+            self.appsResponseFailure = true
+            if self.statsResponseSuccess {
+               onSuccess()
+            }
+            else if self.statsResponseFailure {
                 onFailure(errorMessage)
             }
         }

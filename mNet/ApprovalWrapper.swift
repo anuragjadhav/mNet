@@ -59,7 +59,7 @@ class ApprovalWrapper: NSObject {
             }
                 
             else {
-                onFailure(WrapperManager.shared.getErrorMessage(message: nil))
+                onFailure(WrapperManager.shared.getErrorMessage(message: commonResponse.errorString))
                 return
             }
         }

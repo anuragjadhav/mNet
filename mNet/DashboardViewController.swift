@@ -28,6 +28,9 @@ class DashboardViewController: BaseViewController, UITableViewDataSource, UITabl
     
     @IBOutlet weak var logoutButton: UIButton!
     
+    @IBOutlet weak var noAppsLabel: CustomBrownTextColorLabel!
+    
+    
     var dataController:DashboardDataController = DashboardDataController()
     
     //MARK: View Controller Delegates
@@ -98,6 +101,7 @@ class DashboardViewController: BaseViewController, UITableViewDataSource, UITabl
             DispatchQueue.main.async {
                 self.removeTransperantLoadingFromViewController()
                 self.showRetryView(message: errorMessage)
+                self.checkNoApps()
             }
         }
         
@@ -105,10 +109,16 @@ class DashboardViewController: BaseViewController, UITableViewDataSource, UITabl
     
     func setData() {
         
+        checkNoApps()
         pendingApprovalsCountLabel.text = String(describing: dataController.stats?.pendingApprovalRequests ?? 0)
         pendingVerificationsCountLabel.text = String(describing: dataController.stats?.pendingAgreeRequests ?? 0)
         unreadMessagesCountLabel.text = dataController.stats?.unreadPosts ?? "-"
         self.myAppsTableView.reloadData()
+    }
+    
+    func checkNoApps() {
+        
+        noAppsLabel.isHidden = dataController.appsList.count > 0
     }
     
     //MARK: Table View Methods
