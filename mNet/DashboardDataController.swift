@@ -88,7 +88,7 @@ class DashboardDataController: NSObject {
     
     func getDashboardApps(onSuccess:@escaping () -> Void , onFailure : @escaping (String) -> Void) {
         
-        let postParams:[String:Any] = User.loggedInUser()!.toJSONPostOnlyId()
+        let postParams:[String:Any] = User.loggedInUser()!.toJSONPostOnlyCode()
         
         WrapperManager.shared.dashboardWrapper.getDashboardApps(postParams: postParams, onSuccess: { [unowned self] (userApps) in
             

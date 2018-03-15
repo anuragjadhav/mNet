@@ -20,7 +20,7 @@ class ConversationDetailViewController: BaseViewController,UITableViewDelegate,U
     @IBOutlet weak var uploadButton: UIButton!
     @IBOutlet weak var dateTimeLabel: UILabel!
     @IBOutlet weak var user1Label: CustomBrownTextColorLabel!
-    @IBOutlet weak var user2Label: UILabel!
+    @IBOutlet weak var user2Label: CustomBrownTextColorLabel!
     
     var dataCtrl:ConversationsDataController?
     let imagePicker = UIImagePickerController()
@@ -28,8 +28,6 @@ class ConversationDetailViewController: BaseViewController,UITableViewDelegate,U
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        self.addkeyBoardListners()
         
         conversationTableView.estimatedRowHeight = 66
         conversationTableView.rowHeight = UITableViewAutomaticDimension
@@ -40,6 +38,13 @@ class ConversationDetailViewController: BaseViewController,UITableViewDelegate,U
         // add long press gesture recognizer on table view
         let longPressRecognizer = UILongPressGestureRecognizer(target: self, action:#selector(longPress(gesture:)))
         self.conversationTableView.addGestureRecognizer(longPressRecognizer)
+        
+        // add tap gesture on from to label
+        let tapGestureRecognizer1 = UITapGestureRecognizer(target: self, action:#selector(fromTolabelClicked(gesture:)))
+        self.user1Label.addGestureRecognizer(tapGestureRecognizer1)
+        
+        let tapGestureRecognizer2 = UITapGestureRecognizer(target: self, action:#selector(fromTolabelClicked(gesture:)))
+        self.user2Label.addGestureRecognizer(tapGestureRecognizer2)
 
     }
 
@@ -219,6 +224,7 @@ class ConversationDetailViewController: BaseViewController,UITableViewDelegate,U
         
         let imageDocDisplayVC = (UIStoryboard.init(name:"Conversation", bundle: Bundle.main)).instantiateViewController(withIdentifier: "ImageDocDisplayViewController") as! ImageDocDisplayViewController
         imageDocDisplayVC.dataCtrl = dataCtrl
+        imageDocDisplayVC.prefilledText = self.messageTextView.text
         imageDocDisplayVC.isDocument = false
         imageDocDisplayVC.image = chosenImage
         imageDocDisplayVC.delegate = self
@@ -248,6 +254,7 @@ class ConversationDetailViewController: BaseViewController,UITableViewDelegate,U
         
         let imageDocDisplayVC = (UIStoryboard.init(name:"Conversation", bundle: Bundle.main)).instantiateViewController(withIdentifier: "ImageDocDisplayViewController") as! ImageDocDisplayViewController
         imageDocDisplayVC.dataCtrl = dataCtrl
+        imageDocDisplayVC.prefilledText = self.messageTextView.text
         imageDocDisplayVC.isDocument = true
         imageDocDisplayVC.docUrl = url
         imageDocDisplayVC.delegate = self
@@ -301,8 +308,17 @@ class ConversationDetailViewController: BaseViewController,UITableViewDelegate,U
         present(documentController!, animated: true, completion: nil)
     }
     
+     //MARK: UserName Label Clicked
     
-    // MARK - Delete Reply only if reply added by logged in user
+    @objc func fromTolabelClicked(gesture:UITapGestureRecognizer)
+    {
+        let conversationInfoVC = (UIStoryboard.init(name:"Conversation", bundle: Bundle.main)).instantiateViewController(withIdentifier: "ConversationInfoViewController") as! ConversationInfoViewController
+        conversationInfoVC.dataCtrl = dataCtrl
+        self.navigationController?.pushViewController(conversationInfoVC, animated: true)
+    }
+    
+    
+    //MARK: Delete Reply only if reply added by logged in user
     
    @objc func longPress(gesture:UILongPressGestureRecognizer)
     {
@@ -394,6 +410,7 @@ class ConversationDetailViewController: BaseViewController,UITableViewDelegate,U
             DispatchQueue.main.async {
                 
                 self.messageTextView.text = ""
+                self.messageTextView.resignFirstResponder()
                 self.removeTransperantLoadingFromViewController()
                 self.conversationTableView.reloadData()
                 
@@ -421,16 +438,19 @@ class ConversationDetailViewController: BaseViewController,UITableViewDelegate,U
         
         alert.addAction(UIAlertAction(title: "Take An Image", style: .default , handler:{ (UIAlertAction)in
             self.dataCtrl?.isDocumentSelectedForNewReply = false
+            self.messageTextView.resignFirstResponder()
             self.openCamera()
         }))
         
         alert.addAction(UIAlertAction(title: "Open Photo Gallery", style: .default , handler:{ (UIAlertAction)in
             self.dataCtrl?.isDocumentSelectedForNewReply = false
+            self.messageTextView.resignFirstResponder()
             self.openPhotoLibrary()
         }))
         
         alert.addAction(UIAlertAction(title: "Document", style: .default , handler:{ (UIAlertAction)in
             self.dataCtrl?.isDocumentSelectedForNewReply = true
+            self.messageTextView.resignFirstResponder()
             self.openDocuments()
         }))
         
@@ -453,6 +473,8 @@ class ConversationDetailViewController: BaseViewController,UITableViewDelegate,U
                 DispatchQueue.main.async {
                     
                     self.removeTransperantLoadingFromViewController()
+                    self.messageTextView.text = ""
+                    self.messageTextView.resignFirstResponder()
                     self.conversationTableView.reloadData()
                     
                     let indexPath = IndexPath(row: (self.dataCtrl?.selectedCoversation?.reply.count)! - 1, section: 0)

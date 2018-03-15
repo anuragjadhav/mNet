@@ -57,7 +57,7 @@
                                 </constraints>
                                 <color key="textColor" red="0.3803921569" green="0.28235294119999998" blue="0.22352941179999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" name="SanFranciscoDisplay-Light" family="San Francisco Display" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences" returnKeyType="done"/>
                                 <connections>
                                     <outlet property="delegate" destination="R51-kN-ugD" id="cEM-06-i9F"/>
                                 </connections>
@@ -711,7 +711,7 @@
                                 </constraints>
                                 <color key="textColor" red="0.3803921569" green="0.28235294119999998" blue="0.22352941179999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" name="SanFranciscoDisplay-Light" family="San Francisco Display" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences" returnKeyType="done"/>
                                 <connections>
                                     <outlet property="delegate" destination="fW2-d9-Ri5" id="MPX-X2-SEc"/>
                                 </connections>
@@ -854,9 +854,6 @@
                                 <action selector="backButtonAction:" destination="fW2-d9-Ri5" id="ZlE-Z5-u2c"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" image="tickmark" id="9go-MB-0mO">
-                            <color key="tintColor" red="0.45882352939999999" green="0.45882352939999999" blue="0.45882352939999999" alpha="1" colorSpace="calibratedRGB"/>
-                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="approvalRadioButton" destination="6sf-P1-tn5" id="R8T-Nu-JT2"/>
@@ -986,7 +983,7 @@
                                     </collectionView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XyG-0J-0bC">
                                         <rect key="frame" x="0.0" y="101" width="375" height="1"/>
-                                        <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="calibratedWhite"/>
+                                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="1" id="qba-b7-7nY"/>
                                         </constraints>
@@ -1569,7 +1566,6 @@
         <image name="backButtonImage" width="24" height="24"/>
         <image name="downloadAttachment" width="32" height="32"/>
         <image name="filterIcon" width="21" height="21"/>
-        <image name="tickmark" width="17" height="17"/>
         <image name="uncheckedBox" width="32" height="32"/>
         <image name="upArrow" width="170" height="170"/>
     </resources>

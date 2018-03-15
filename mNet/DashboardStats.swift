@@ -10,7 +10,7 @@ import UIKit
 
 class DashboardStats: NSObject, Mappable {
     
-    var unreadPosts:String = "-"
+    var unreadPosts:String = "0"
     var totalPosts:String = ""
     var pendingApprovalRequests:Int = 0
     var totalApprovalRequests:Int = 0
@@ -26,7 +26,7 @@ class DashboardStats: NSObject, Mappable {
     var publicWebserviceURL:URL?
     var privateWebserviceURL:URL?
     var imageURL:URL?
-    var notificationCount:String = ""
+    var notificationCount:String = "0"
     
     required init?(map: Map) {
         

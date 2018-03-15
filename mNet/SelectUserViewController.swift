@@ -45,7 +45,7 @@ class SelectUserViewController: BaseViewController,UITableViewDelegate,UITableVi
         
         if(dataCtrl?.selectUserList?.count == 0)
         {
-            getSelectUserList(isReload: true, searchText: searchBar.text!)
+            getSelectUserList(isReload: true,isLoadMore: false, searchText: searchBar.text!)
         }
         else
         {
@@ -152,11 +152,11 @@ class SelectUserViewController: BaseViewController,UITableViewDelegate,UITableVi
         
         if(searchText == ""){
             
-            getSelectUserList(isReload: false, searchText: searchText)
+            getSelectUserList(isReload: false,isLoadMore: false, searchText: searchText)
         }
         else if (searchText.count > 2)
         {
-            getSelectUserList(isReload: false, searchText: searchText)
+            getSelectUserList(isReload: false,isLoadMore: false, searchText: searchText)
         }
     }
     
@@ -168,7 +168,7 @@ class SelectUserViewController: BaseViewController,UITableViewDelegate,UITableVi
     
     //MARK: Get User List
     
-    func getSelectUserList(isReload:Bool,searchText:String)
+    func getSelectUserList(isReload:Bool,isLoadMore:Bool,searchText:String)
     {
         if Reachability.isConnectedToNetwork(){
             
@@ -177,7 +177,7 @@ class SelectUserViewController: BaseViewController,UITableViewDelegate,UITableVi
                 self.showLoadingOnViewController()
             }
             
-            dataCtrl?.getSelectUserList(searchText:searchText , onSuccess: { [unowned self]  in
+            dataCtrl?.getSelectUserList(searchText:searchText,isLoadMore:isLoadMore, onSuccess: { [unowned self]  in
                 
                 DispatchQueue.main.async {
                     
@@ -215,7 +215,7 @@ class SelectUserViewController: BaseViewController,UITableViewDelegate,UITableVi
             switch state {
             case let .loading(completionHandler):
                 completionHandler()
-                self.getSelectUserList(isReload: false, searchText: searchBar.text!)
+                self.getSelectUserList(isReload: false,isLoadMore:true,  searchText: searchBar.text!)
                 
             default: break
             }
@@ -227,7 +227,7 @@ class SelectUserViewController: BaseViewController,UITableViewDelegate,UITableVi
     
     override func retryButtonClicked() {
         
-        getSelectUserList(isReload: true, searchText: searchBar.text!)
+        getSelectUserList(isReload: true,isLoadMore: false, searchText: searchBar.text!)
     }
 
     //MARK: Button Actions

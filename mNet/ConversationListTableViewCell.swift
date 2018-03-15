@@ -10,7 +10,7 @@ import UIKit
 
 class ConversationListTableViewCell: UITableViewCell {
 
-    @IBOutlet weak var nameInitialsLabel: CustomBlueTextColorLabel!
+    @IBOutlet weak var nameInitialsLabel: UILabel!
     @IBOutlet weak var nameLabel: CustomBrownTextColorLabel!
     @IBOutlet weak var roleLabel: UILabel!
     @IBOutlet weak var timeLabel: UILabel!
@@ -32,6 +32,8 @@ class ConversationListTableViewCell: UITableViewCell {
             imageUrlString = ""
         }
         
+        self.profileImageView.isHidden = true
+
         //if profile image not found then make image nil so initials label will be visible
         //else if found then show image
         UIImage.imageDownloader.download(URLRequest.getRequest(URLS.imageBaseURLString + imageUrlString!)!) { [unowned self] response in
@@ -39,10 +41,14 @@ class ConversationListTableViewCell: UITableViewCell {
             if let image = response.result.value {
                 
                 self.profileImageView.image = image
+                self.nameInitialsLabel.isHidden = true
+                self.profileImageView.isHidden = false
             }
             else
             {
                 self.profileImageView.image = nil
+                self.nameInitialsLabel.isHidden = false
+                self.profileImageView.isHidden = true
             }
         }
         
@@ -55,14 +61,24 @@ class ConversationListTableViewCell: UITableViewCell {
         
         //convert received string into date and then format it in required format
         let receivedDate = dateFormatter.date(from:conversation.latestReplierDate)
-        dateFormatter.dateFormat = "h:mm a"
+        
+        //check if 24 horus has passed to show time differently
+        if let diff = Calendar.current.dateComponents([.hour], from: receivedDate!, to: Date()).hour, diff > 24 {
+            
+            dateFormatter.dateFormat = "dd,MMM"
+        }
+        else
+        {
+            dateFormatter.dateFormat = "h:mm a"
+        }
+        
         
         let timeStringToSet = dateFormatter.string(from: receivedDate!)
         self.timeLabel.text = timeStringToSet
         
         
-        //TODO: set designation label
-        self.roleLabel.text = ""
+       
+        self.roleLabel.text = conversation.latestReplierDesignation
         
         //set read unread background color
         if(conversation.readState == "1"){

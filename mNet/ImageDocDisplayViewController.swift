@@ -21,6 +21,7 @@ class ImageDocDisplayViewController: BaseViewController {
     @IBOutlet weak var sendButton: CustomBlueTextColorButton!
     @IBOutlet weak var inputViewBottomConstraint: NSLayoutConstraint!
     
+    var prefilledText:String?
     var dataCtrl:ConversationsDataController?
     var isDocument:Bool? = false
     var docUrl:URL?
@@ -29,7 +30,6 @@ class ImageDocDisplayViewController: BaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.addkeyBoardListners()
         
         if(isDocument == true)
         {
@@ -40,6 +40,11 @@ class ImageDocDisplayViewController: BaseViewController {
         {
             webView.isHidden = true
             displayImageView.image = image
+        }
+        
+        if(prefilledText != nil)
+        {
+            messageTextView.text = prefilledText
         }
     }
     

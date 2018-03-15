@@ -10,7 +10,7 @@ import UIKit
 
 class NotificationWrapper: NSObject {
     
-    func getNotificationList(postParams:[String:Any], onSuccess:@escaping ([NotificationObject]) -> Void , onFailure : @escaping (String) -> Void){
+    func getNotificationList(postParams:[String:Any], onSuccess:@escaping ([NotificationObject],String) -> Void , onFailure : @escaping (String) -> Void){
         
         request(URLS.getNotificationsList, method: .post, parameters: postParams, encoding: JSONEncoding() as ParameterEncoding, headers: nil).responseJSON { response in
             
@@ -22,7 +22,9 @@ class NotificationWrapper: NSObject {
                 {
                     let notificationDictArray:[[String:Any]] = responseDict[DictionaryKeys.APIResponse.responseData] as! [[String:Any]]
                     let notificationsArray:[NotificationObject] = [NotificationObject].init(JSONArray: notificationDictArray)
-                    onSuccess(notificationsArray)
+                    
+                    let unreadNotifiactionCount = responseDict["unread_notification_count"] ?? "0"
+                   onSuccess(notificationsArray,unreadNotifiactionCount as! String)
                 }
                 else
                 {

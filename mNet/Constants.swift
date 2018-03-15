@@ -26,8 +26,12 @@ struct URLS {
         return "http://demo.m-net.in/demo/public/images/"
     }
     
+    static let publicBaseURL:URL = URL(string:"http://demo.m-net.in/p_MNetV2Service/MnetV2WebService/")!
+    
     static let getSettings:URL = URL(string: "getsetting", relativeTo: baseURL)!
     static let setSettings:URL = URL(string: "setsetting", relativeTo: baseURL)!
+    static let setEmailPreferenceSettings:URL = URL(string: "setEmailPreferences", relativeTo: baseURL)!
+    static let resetNewPassword:URL = URL(string: "changePassword", relativeTo: publicBaseURL)!
     static let getConversationsList:URL = URL(string: "GetPost", relativeTo: baseURL)!
     static let deleteConversationReply:URL = URL(string: "cancelReply", relativeTo: baseURL)!
     static let deleteUserFromConversation:URL = URL(string:"deletepostuser", relativeTo: baseURL)!

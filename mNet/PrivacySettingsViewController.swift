@@ -21,7 +21,6 @@ class PrivacySettingsViewController: BaseViewController,UITableViewDelegate,UITa
         optionsTableView.estimatedRowHeight = 73
         optionsTableView.rowHeight = UITableViewAutomaticDimension
         
-        // Do any additional setup after loading the view.
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -70,18 +69,27 @@ class PrivacySettingsViewController: BaseViewController,UITableViewDelegate,UITa
     
     @IBAction func switchButtonAction(_ sender: UISwitch) {
         
-        let switchPoint:CGPoint = sender.convert(CGPoint.zero, to: self.optionsTableView)
-        let indexPath:IndexPath = self.optionsTableView.indexPathForRow(at: switchPoint)!
-        
-        selectedIndexPath = indexPath
-        
-        let selectedOption = self.dataCtrl?.privacySettingOptionsArray[indexPath.row]
-        selectedOption?.isSettingOn = sender.isOn ? "1" :"0"
-        
-        self.dataCtrl?.selectedPrivacySettingOption = selectedOption
-        
-        self.setSelectedPrivacySetting()
-        
+        if Reachability.isConnectedToNetwork(){
+            
+            let switchPoint:CGPoint = sender.convert(CGPoint.zero, to: self.optionsTableView)
+            let indexPath:IndexPath = self.optionsTableView.indexPathForRow(at: switchPoint)!
+            
+            selectedIndexPath = indexPath
+            
+            let selectedOption = self.dataCtrl?.privacySettingOptionsArray[indexPath.row]
+            selectedOption?.isSettingOn = sender.isOn ? "1" :"0"
+            
+            self.dataCtrl?.selectedPrivacySettingOption = selectedOption
+            
+            self.setSelectedPrivacySetting()
+            
+        }else{
+            
+            let alert = UIAlertController(title:AlertMessages.failure, message:AlertMessages.networkUnavailable, preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title:AlertMessages.ok, style:.default, handler: { _ in
+            }))
+            self.present(alert, animated: true, completion: nil)
+        }
     }
     
     
@@ -99,50 +107,42 @@ class PrivacySettingsViewController: BaseViewController,UITableViewDelegate,UITa
     
     func setSelectedPrivacySetting()
     {
-        if Reachability.isConnectedToNetwork(){
+        
+        self.showTransperantLoadingOnViewController()
+        
+        self.dataCtrl?.setPrivacySettingOfUser(onSuccess: { [unowned self] (displayMessage) in
             
-            self.showTransperantLoadingOnViewController()
+            DispatchQueue.main.async {
+                
+                self.removeTransperantLoadingFromViewController()
+                
+                let alert = UIAlertController(title:AlertMessages.success, message:displayMessage, preferredStyle: .alert)
+                alert.addAction(UIAlertAction(title:AlertMessages.ok, style:.default, handler: { _ in
+                }))
+                self.present(alert, animated: true, completion: nil)
+            }
             
-            self.dataCtrl?.setPrivacySettingOfUser(onSuccess: { [unowned self] (displayMessage) in
+            }, onFailure: { [unowned self] (errorMessage) in
                 
                 DispatchQueue.main.async {
                     
                     self.removeTransperantLoadingFromViewController()
                     
-                    let alert = UIAlertController(title:AlertMessages.success, message:displayMessage, preferredStyle: .alert)
+                    //revert the selected changes
+                    
+                    self.dataCtrl?.selectedPrivacySettingOption?.isSettingOn = self.dataCtrl?.selectedPrivacySettingOption?.isSettingOn == "1" ? "0" : "1"
+                    
+                    let cell:PrivacySettingOptionTableViewCell =  self.optionsTableView.cellForRow(at: self.selectedIndexPath!) as! PrivacySettingOptionTableViewCell
+                    
+                    cell.loadCellWithOption( (self.dataCtrl?.selectedPrivacySettingOption!)!)
+                    
+                    let alert = UIAlertController(title:AlertMessages.failure, message:errorMessage, preferredStyle: .alert)
                     alert.addAction(UIAlertAction(title:AlertMessages.ok, style:.default, handler: { _ in
                     }))
                     self.present(alert, animated: true, completion: nil)
                 }
-                
-                }, onFailure: { [unowned self] (errorMessage) in
-                    
-                    DispatchQueue.main.async {
-                        
-                        self.removeTransperantLoadingFromViewController()
-                        
-                        //revert the selected changes
-                        
-                        self.dataCtrl?.selectedPrivacySettingOption?.isSettingOn = self.dataCtrl?.selectedPrivacySettingOption?.isSettingOn == "1" ? "0" : "1"
-                        
-                        let cell:PrivacySettingOptionTableViewCell =  self.optionsTableView.cellForRow(at: self.selectedIndexPath!) as! PrivacySettingOptionTableViewCell
-                        
-                        cell.loadCellWithOption( (self.dataCtrl?.selectedPrivacySettingOption!)!)
-                        
-                        let alert = UIAlertController(title:AlertMessages.failure, message:errorMessage, preferredStyle: .alert)
-                        alert.addAction(UIAlertAction(title:AlertMessages.ok, style:.default, handler: { _ in
-                        }))
-                        self.present(alert, animated: true, completion: nil)
-                    }
-            })
-            
-        }else{
-            
-            let alert = UIAlertController(title:AlertMessages.failure, message:AlertMessages.networkUnavailable, preferredStyle: .alert)
-            alert.addAction(UIAlertAction(title:AlertMessages.ok, style:.default, handler: { _ in
-            }))
-            self.present(alert, animated: true, completion: nil)
-        }
+        })
+
     }
     
 

@@ -54,7 +54,6 @@ class ApprovalsViewController: BaseViewController,UICollectionViewDelegate, UICo
     
     func setUpViewController() {
         
-        self.addkeyBoardListners()
         pendingApprovalsTableView.estimatedRowHeight = 215
         pendingApprovalsTableView.rowHeight = UITableViewAutomaticDimension
         pendingApprovalsTableView.tableFooterView = UIView()

@@ -25,6 +25,9 @@ class Settings:NSObject, Mappable {
     var showSchedule : String?
     var postEmailNotification : String?
     var replyEmailNotification : String?
+    var postNotification : String?
+    var reminderDays : String? = "1"
+    
     
     required init?(map: Map){
         
@@ -46,6 +49,9 @@ class Settings:NSObject, Mappable {
         showSchedule               <- map["show_schedule"]
         postEmailNotification     <- map["post_email_notification"]
         replyEmailNotification    <- map["reply_email_notification"]
+        postNotification    <- map["post_notification"]
+        reminderDays    <- map["reminder_days"]
+
     }
 
 }

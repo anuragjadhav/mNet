@@ -47,6 +47,7 @@ class ConversationInfoViewController: BaseViewController,UITableViewDelegate,UIT
         else
         {
             let member1:ConversationMember =  (dataCtrl?.selectedCoversation?.membersList.first)!
+                        
             user1Label.text = member1.userName
             
             let member2:ConversationMember =  (dataCtrl?.selectedCoversation?.membersList.last)!

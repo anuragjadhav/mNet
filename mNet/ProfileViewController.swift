@@ -33,7 +33,14 @@ class ProfileViewController: BaseViewController {
         
         self.setupNavigationBar()
         
-        self.setupProfileData()
+        if(didComeFromPeopleVC)
+        {
+            self.getPeopleProfile()
+        }
+        else
+        {
+            self.setupProfileData()
+        }
     }
 
     func setupNavigationBar(){
@@ -117,12 +124,42 @@ class ProfileViewController: BaseViewController {
         }
     }
 
+    //Mark: get people profile
+    func getPeopleProfile(){
+        
+        self.showLoadingOnViewController()
+        
+        self.dataCtrl.getPeopleProfile(onSuccess: { [unowned self] in
+            
+            DispatchQueue.main.async {
+                
+                self.removeLoadingFromViewController()
+                self.setupProfileData()
+                
+            }
+            
+            }, onFailure: { [unowned self] (errorMessage) in
+                
+                DispatchQueue.main.async {
+                    self.removeLoadingFromViewController()
+                    self.showRetryView(message:errorMessage)
+                }
+        })
+    }
+
     
     //Mark: Button Actions
     
     @IBAction func backButtonAction(_ sender: Any) {
         
         self.navigationController?.popViewController(animated: true)
+    }
+    
+    //Mark: Retry view delegate
+    
+    override func retryButtonClicked() {
+        
+        self.getPeopleProfile()
     }
     
 }

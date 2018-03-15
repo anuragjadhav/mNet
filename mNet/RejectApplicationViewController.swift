@@ -8,7 +8,7 @@
 
 import UIKit
 
-class RejectApplicationViewController: BaseViewController {
+class RejectApplicationViewController: BaseViewController,UITextViewDelegate {
 
     @IBOutlet weak var messageTextView: CustomBrownColorTextView!
     
@@ -19,7 +19,6 @@ class RejectApplicationViewController: BaseViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        self.addkeyBoardListners()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -31,6 +30,17 @@ class RejectApplicationViewController: BaseViewController {
     func setupNavigationBar(){
         
         self.navigationController?.navigationBar.isHidden = false
+    }
+    
+    //MARK: Text View Delegates
+    func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
+        
+        if(text == "\n"){
+            
+            self.view.endEditing(true)
+        }
+        
+        return true
     }
   
     //MARK: - Button Actions

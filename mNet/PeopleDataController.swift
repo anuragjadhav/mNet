@@ -12,10 +12,13 @@ class PeopleDataController: NSObject {
     
     private var originalPeopleListArray:[People] = []
     var peopleArray:[People] = []
-    let limit:Int = 15
+    let limit:Int = 100
     var start:Int = 0
-    
+    var previousCallSuccessOrFailed:Bool = false
+
     func getPeopleList(onSuccess:@escaping () -> Void , onFailure : @escaping (String) -> Void) {
+        
+        previousCallSuccessOrFailed = false
         
         let user:User = User.loggedInUser()!
         
@@ -35,11 +38,11 @@ class PeopleDataController: NSObject {
             
             //change start
             self.start += self.originalPeopleListArray.count
-            
+            self.previousCallSuccessOrFailed = true
             onSuccess()
             
-        }) { (errorMessage) in
-            
+        }) { [unowned self] (errorMessage) in
+            self.previousCallSuccessOrFailed = true
             onFailure(errorMessage)
         }
     }
@@ -48,7 +51,7 @@ class PeopleDataController: NSObject {
     {
         if(searchTerm != nil && searchTerm != "")
         {
-            let filteredPeopleArray:[People] = originalPeopleListArray.filter { $0.userName!.contains(searchTerm!) }
+            let filteredPeopleArray:[People] = originalPeopleListArray.filter { $0.userName!.localizedCaseInsensitiveContains(searchTerm!) }
             self.peopleArray = filteredPeopleArray
         }
         else

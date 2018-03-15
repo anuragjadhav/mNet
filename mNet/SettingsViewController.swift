@@ -80,7 +80,10 @@ class SettingsViewController: BaseViewController,UITableViewDelegate,UITableView
             
         case SettingOptions.password:
          
-            //TODO
+            let resetPasswordVC = (UIStoryboard.init(name:"Settings", bundle: Bundle.main)).instantiateViewController(withIdentifier: "ResetPasswordViewController") as! ResetPasswordViewController
+            resetPasswordVC.dataCtrl = self.dataCtrl
+            self.navigationController?.pushViewController(resetPasswordVC, animated: true)
+    
             break
             
         case SettingOptions.privacySettings:
@@ -98,7 +101,8 @@ class SettingsViewController: BaseViewController,UITableViewDelegate,UITableView
             
         case SettingOptions.emailPreferences:
             
-            let emailPreferenceVC = (UIStoryboard.init(name:"Settings", bundle: Bundle.main)).instantiateViewController(withIdentifier: "EmailPreferencesViewController")
+            let emailPreferenceVC = (UIStoryboard.init(name:"Settings", bundle: Bundle.main)).instantiateViewController(withIdentifier: "EmailPreferencesViewController") as! EmailPreferencesViewController
+            emailPreferenceVC.dataCtrl = self.dataCtrl
             self.navigationController?.pushViewController(emailPreferenceVC, animated: true)
             break
             

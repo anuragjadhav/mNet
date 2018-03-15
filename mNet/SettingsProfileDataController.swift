@@ -16,7 +16,7 @@ class SettingsProfileDataController: NSObject {
     var selectedPrivacySettingOption:SettingOption?
     var settings:Settings?
     var profile:Profile?
-
+    
     override init()
     {
         super.init()
@@ -28,7 +28,6 @@ class SettingsProfileDataController: NSObject {
         settingOptionsArray.append(SettingOptions.aboutMe)
         settingOptionsArray.append(SettingOptions.password)
         settingOptionsArray.append(SettingOptions.privacySettings)
-        settingOptionsArray.append(SettingOptions.appSettings)
         settingOptionsArray.append(SettingOptions.emailPreferences)
         settingOptionsArray.append(SettingOptions.groups)
         settingOptionsArray.append(SettingOptions.people)
@@ -151,8 +150,35 @@ class SettingsProfileDataController: NSObject {
         postParams["parameter"] = parameter
         postParams["value"] = selectedPrivacySettingOption?.isSettingOn
         
-        WrapperManager.shared.settingsWrapper.setSettingOfUser(postParams: postParams, onSuccess: { (displayMessage) in
+        WrapperManager.shared.settingsWrapper.setPrivacySettingOfUser(postParams: postParams, onSuccess: { (displayMessage) in
             
+            onSuccess(displayMessage)
+            
+        }) { (errorMessage) in
+            
+            onFailure(errorMessage)
+        }
+    }
+    
+    func setEmailPreferenceSetting(conversationvalue:String,commentsvalue:String,approvalvalue:String,remindDaysvalue:String,onSuccess:@escaping (String) -> Void , onFailure : @escaping (String) -> Void){
+        
+        let user:User = User.loggedInUser()!
+        
+        //set parameters to post
+        var postParams:[String:Any] = [String:Any]()
+        postParams["user_code"] = user.code
+        postParams["reminder_days"] = remindDaysvalue
+        postParams["email_pref_conversation"] = conversationvalue
+        postParams["email_pref_comments"] = commentsvalue
+        postParams["email_pref_approval"] = approvalvalue
+        
+        WrapperManager.shared.settingsWrapper.setEmailPreferenceSettingOfUser(postParams: postParams, onSuccess: { [unowned self] (displayMessage) in
+            
+            self.settings?.postNotification = conversationvalue
+            self.settings?.reminderDays = remindDaysvalue
+            self.settings?.replyEmailNotification = approvalvalue
+            self.settings?.postEmailNotification = commentsvalue
+
             onSuccess(displayMessage)
             
         }) { (errorMessage) in
@@ -169,6 +195,27 @@ class SettingsProfileDataController: NSObject {
         WrapperManager.shared.profileWrapper.getProfileOfUser(postObject: user, onSuccess: { [unowned self] (profile) in
             
             self.profile = profile
+            
+            onSuccess()
+            
+        }) { (errorMessage) in
+            
+            onFailure(errorMessage)
+        }
+    }
+    
+    func resetNewPassword(newPassword:String,onSuccess:@escaping () -> Void , onFailure : @escaping (String) -> Void){
+        
+        let user:User = User.loggedInUser()!
+        
+        //set parameters to post
+        var postParams:[String:Any] = [String:Any]()
+        postParams["userEmail"] = user.email
+        postParams["userPassword"] = newPassword
+        postParams["requestFrom"] = "MobileApp"
+        postParams["platform"] = "iOS"
+        
+        WrapperManager.shared.settingsWrapper.resetNewPassword(postParams: postParams, onSuccess: {
             
             onSuccess()
             

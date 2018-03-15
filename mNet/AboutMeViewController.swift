@@ -44,7 +44,6 @@ class AboutMeViewController: BaseViewController,UITextFieldDelegate,CustomPicker
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.addkeyBoardListners()
     }
 
     override func viewWillAppear(_ animated: Bool) {

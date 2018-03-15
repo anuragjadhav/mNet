@@ -149,6 +149,7 @@
 		5E21B322200F40660045CDA3 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E21B321200F40660045CDA3 /* CoreGraphics.framework */; };
 		5E21B324200F40820045CDA3 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E21B323200F40820045CDA3 /* Foundation.framework */; };
 		5E21B326200F40930045CDA3 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E21B325200F40930045CDA3 /* UIKit.framework */; };
+		5E2880C0205A94CD00E59DF2 /* ResetPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E2880BF205A94CD00E59DF2 /* ResetPasswordViewController.swift */; };
 		5E2D373C2020667F0013A138 /* ImageFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E2D37342020667C0013A138 /* ImageFilter.swift */; };
 		5E2D373D2020667F0013A138 /* ImageDownloader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E2D37352020667C0013A138 /* ImageDownloader.swift */; };
 		5E2D373E2020667F0013A138 /* UIButton+AlamofireImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E2D37362020667D0013A138 /* UIButton+AlamofireImage.swift */; };
@@ -336,6 +337,7 @@
 		5E21B321200F40660045CDA3 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		5E21B323200F40820045CDA3 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		5E21B325200F40930045CDA3 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		5E2880BF205A94CD00E59DF2 /* ResetPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetPasswordViewController.swift; sourceTree = "<group>"; };
 		5E2D37342020667C0013A138 /* ImageFilter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageFilter.swift; sourceTree = "<group>"; };
 		5E2D37352020667C0013A138 /* ImageDownloader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageDownloader.swift; sourceTree = "<group>"; };
 		5E2D37362020667D0013A138 /* UIButton+AlamofireImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIButton+AlamofireImage.swift"; sourceTree = "<group>"; };
@@ -804,6 +806,7 @@
 				5E1C49971FEA73F8007CE624 /* AboutMeViewController.swift */,
 				5EC300591FEBEBFA00229516 /* AppSettingsViewController.swift */,
 				5E4A8D3C1FF4FB6600086667 /* PeopleViewController.swift */,
+				5E2880BF205A94CD00E59DF2 /* ResetPasswordViewController.swift */,
 			);
 			name = "View Controllers";
 			sourceTree = "<group>";
@@ -1100,6 +1103,7 @@
 				0531A5792007CCC600F2232C /* CustomRedBackgroundColorButton.swift in Sources */,
 				05501F94201D316600831A08 /* ConversationsDataController.swift in Sources */,
 				058A0EDC1FF7CA4800147238 /* ConversationListTableViewCell.swift in Sources */,
+				5E2880C0205A94CD00E59DF2 /* ResetPasswordViewController.swift in Sources */,
 				05A569C52017B7B300C6F713 /* IntegerOperators.swift in Sources */,
 				051744702043283200C2382D /* ApprovalUser.swift in Sources */,
 				05A569A32017B74B00C6F713 /* TaskDelegate.swift in Sources */,
