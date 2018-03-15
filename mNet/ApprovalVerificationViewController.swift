@@ -36,8 +36,6 @@ class ApprovalVerificationViewController: BaseViewController,UISearchBarDelegate
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.addkeyBoardListners()
-
         // Do any additional setup after loading the view.
         setUpViewController()
     }
@@ -51,9 +49,7 @@ class ApprovalVerificationViewController: BaseViewController,UISearchBarDelegate
     //MARK: Setup
     
     func setUpViewController() {
-        
-         self.addkeyBoardListners()
-        
+                
         switch dataController.selectedSection!.approvalStatus {
         
         case .approve: hideRadioButtons()

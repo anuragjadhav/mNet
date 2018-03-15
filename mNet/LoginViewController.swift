@@ -26,8 +26,16 @@ class LoginViewController: BaseViewController, UITextFieldDelegate {
     //MARK: View Controller Delegates
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.addkeyBoardListners()
     }
+    
+    
+    //MARK: Text Field Delegates
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        self.view.endEditing(true)
+        return true
+    }
+
     
 
     //MARK:Button Actions

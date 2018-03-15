@@ -28,7 +28,6 @@ class NewConversationViewController: BaseViewController,UICollectionViewDelegate
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.addkeyBoardListners()
         dataCtrl?.refreshPreviouslySelectedData()
         
     }

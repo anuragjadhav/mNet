@@ -49,7 +49,7 @@ class LoginWrapper: NSObject {
         }
     }
     
-    func getUserDetails(postParams:[String:Any], onSuccess:@escaping (String) -> Void , onFailure : @escaping (String) -> Void) {
+    func getUserDetails(postParams:[String:Any], onSuccess:@escaping (String,String) -> Void , onFailure : @escaping (String) -> Void) {
         
         request(URLS.getUserDetails, method: .post, parameters: postParams, encoding: JSONEncoding() as ParameterEncoding, headers: nil).responseObject { (response:DataResponse<CommonResponse>) in
             
@@ -70,7 +70,12 @@ class LoginWrapper: NSObject {
                     return
                 }
                 
-                onSuccess(userId)
+                guard let userCode:String = responseDict[DictionaryKeys.User.userCode] as? String else {
+                    onFailure(WrapperManager.shared.getErrorMessage(message: "Login Failed. Please try again."))
+                    return
+                }
+                
+                onSuccess(userId,userCode)
             }
             
             else {

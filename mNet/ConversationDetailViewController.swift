@@ -29,8 +29,6 @@ class ConversationDetailViewController: BaseViewController,UITableViewDelegate,U
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.addkeyBoardListners()
-        
         conversationTableView.estimatedRowHeight = 66
         conversationTableView.rowHeight = UITableViewAutomaticDimension
         

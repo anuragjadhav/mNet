@@ -42,7 +42,7 @@ class SettingsWrapper: NSObject {
     }
     
 
-    func setSettingOfUser(postParams:[String:Any], onSuccess:@escaping (String) -> Void , onFailure : @escaping (String) -> Void){
+    func setPrivacySettingOfUser(postParams:[String:Any], onSuccess:@escaping (String) -> Void , onFailure : @escaping (String) -> Void){
                 
         request(URLS.setSettings, method: .post, parameters: postParams, encoding: JSONEncoding() as ParameterEncoding, headers: nil).responseJSON { response in
             
@@ -62,6 +62,55 @@ class SettingsWrapper: NSObject {
             else{
                 
                 onFailure(WrapperManager.shared.getErrorMessage(message: "Unable to update setting"))
+            }
+        }
+    }
+    
+    
+    func setEmailPreferenceSettingOfUser(postParams:[String:Any], onSuccess:@escaping (String) -> Void , onFailure : @escaping (String) -> Void){
+        
+        request(URLS.setEmailPreferenceSettings, method: .post, parameters: postParams, encoding: JSONEncoding() as ParameterEncoding, headers: nil).responseJSON { response in
+            
+            if let responseDict:[String:Any] = response.result.value as? [String:Any] {
+                
+                let error:String = responseDict[DictionaryKeys.APIResponse.error] as! String
+                
+                if(error == DictionaryKeys.APIResponse.noError)
+                {
+                    onSuccess("Setting saved")
+                }
+                else
+                {
+                    onFailure(WrapperManager.shared.getErrorMessage(message: "Unable to update setting"))
+                }
+            }
+            else{
+                
+                onFailure(WrapperManager.shared.getErrorMessage(message: "Unable to update setting"))
+            }
+        }
+    }
+    
+    func resetNewPassword(postParams:[String:Any], onSuccess:@escaping () -> Void , onFailure : @escaping (String) -> Void){
+        
+        request(URLS.resetNewPassword, method: .post, parameters: postParams, encoding: JSONEncoding() as ParameterEncoding, headers: nil).responseJSON { response in
+            
+            if let responseDict:[String:Any] = response.result.value as? [String:Any] {
+                
+                let error:Int = responseDict[DictionaryKeys.APIResponse.error] as! Int
+                
+                if(error == DictionaryKeys.APIResponse.noErrorInt)
+                {
+                    onSuccess()
+                }
+                else
+                {
+                    onFailure(WrapperManager.shared.getErrorMessage(message: "Unable to reset password"))
+                }
+            }
+            else{
+                
+                onFailure(WrapperManager.shared.getErrorMessage(message: "Unable to reset password"))
             }
         }
     }

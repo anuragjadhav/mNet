@@ -179,8 +179,8 @@ class ConversationsListViewController: BaseViewController, UITableViewDelegate, 
     
     @IBAction func filterButtonAction(_ sender: UIButton) {
         
-        let filterVC = (UIStoryboard.init(name:"Conversation", bundle: Bundle.main)).instantiateViewController(withIdentifier: "FilterViewController")
-        self.navigationController?.pushViewController(filterVC, animated: true)
+//        let filterVC = (UIStoryboard.init(name:"Conversation", bundle: Bundle.main)).instantiateViewController(withIdentifier: "FilterViewController")
+//        self.navigationController?.pushViewController(filterVC, animated: true)
     }
     
     
@@ -200,7 +200,6 @@ class ConversationsListViewController: BaseViewController, UITableViewDelegate, 
                 completionHandler()
                 
                 if(dataCtrl.previousConversationCallSuccessOrFailed){
-                    print("load more called")
                     self.getConversations(isReload: false,isLoadMore: true, searchText: searchBar.text!)
                 }
                 

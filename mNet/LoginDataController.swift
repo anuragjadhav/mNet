@@ -56,10 +56,11 @@ class LoginDataController: NSObject {
         
         let postDictionary:[String:Any] = User.loggedInUser()!.toJSONPostWithoutId()
         
-        WrapperManager.shared.loginWrapper.getUserDetails(postParams: postDictionary, onSuccess: { (newUserId) in
+        WrapperManager.shared.loginWrapper.getUserDetails(postParams: postDictionary, onSuccess: { (newUserId,usercode) in
             
             let updatedUser:User = User.loggedInUser()!
             updatedUser.userId = newUserId
+            updatedUser.code = usercode
             updatedUser.saveToUserDefaults()
             onSuccess()
             self.registerDeviceToken(updatedUser)

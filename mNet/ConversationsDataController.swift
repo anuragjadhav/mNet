@@ -51,15 +51,10 @@ class ConversationsDataController: NSObject {
         if(isLoadMore == true)
         {
             self.conversationPageStart += self.conversations.count
-            
-            print("increment page")
         }
         else
         {
             self.conversationPageStart = 0
-            
-            print("fresh load")
-
         }
         
         let user:User = User.loggedInUser()!

@@ -20,17 +20,29 @@ class BaseViewController: UIViewController,RetryViewProtocol {
     override func viewDidLoad() {
         
         super.viewDidLoad()
-    }
-    
-    func addkeyBoardListners()
-    {
-        //add keyboard notificaton listner
-        NotificationCenter.default.addObserver(self, selector: #selector(keyBoardWillShow(notification:)), name: .UIKeyboardWillShow, object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(keyBoardWillHide(notification:)), name: .UIKeyboardWillHide, object: nil)
         
         tapGestureToMoveKbDown =  UITapGestureRecognizer.init(target: self, action: #selector(moveKeyboardDown(gesture:)))
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        
+        super.viewWillAppear(animated)
+        
+        //add keyboard notificaton listner
+        NotificationCenter.default.addObserver(self, selector: #selector(keyBoardWillShow(notification:)), name: .UIKeyboardWillShow, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyBoardWillHide(notification:)), name: .UIKeyboardWillHide, object: nil)
+        
+    }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        
+        NotificationCenter.default.removeObserver(self, name: .UIKeyboardWillShow, object: nil)
+        NotificationCenter.default.removeObserver(self, name: .UIKeyboardWillHide, object: nil)
+
+    }
+    
+
     
     //MARK: Navigation Bar Setup
     func showLargeTitle() {

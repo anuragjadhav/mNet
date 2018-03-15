@@ -19,7 +19,6 @@ class RejectApplicationViewController: BaseViewController,UITextViewDelegate {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        self.addkeyBoardListners()
     }
     
     override func viewWillAppear(_ animated: Bool) {

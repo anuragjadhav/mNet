@@ -33,6 +33,7 @@ class Conversation: NSObject, Mappable {
     var approvalType:String = ""
     var membersList:[ConversationMember] = []
     var reply:[ConversationReply] = []
+    var latestReplierDesignation:String = ""
     
     required init?(map: Map) {
         
@@ -63,5 +64,6 @@ class Conversation: NSObject, Mappable {
         postType <- map["post_type"]
         postTypeId <- map["post_type_id"]
         approvalType <- map["approval_type"]
+        latestReplierDesignation <- map["latest_replyer_desingnation"]
     }
 }

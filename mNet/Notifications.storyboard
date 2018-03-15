@@ -35,7 +35,7 @@
                             </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="rSM-nA-dej">
                                 <rect key="frame" x="0.0" y="137" width="375" height="530"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="NotificationTableViewCell" rowHeight="107" id="vah-Ja-kNf" customClass="NotificationTableViewCell" customModule="mNet" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="107"/>
@@ -50,20 +50,17 @@
                                                     <color key="textColor" red="0.3803921569" green="0.28235294119999998" blue="0.22352941179999999" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="RD" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A5v-Do-mH5">
+                                                <label userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="RD" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A5v-Do-mH5">
                                                     <rect key="frame" x="26" y="16" width="40" height="40"/>
                                                     <color key="backgroundColor" red="0.01176470588" green="0.51764705879999995" blue="0.80784313730000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="40" id="2hM-wF-8iV"/>
                                                         <constraint firstAttribute="width" constant="40" id="5Ks-6l-age"/>
                                                     </constraints>
-                                                    <fontDescription key="fontDescription" name="SanFranciscoDisplay-Bold" family="San Francisco Display" pointSize="14"/>
+                                                    <fontDescription key="fontDescription" name="SanFranciscoDisplay-Bold" family="San Francisco Display" pointSize="15"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
                                                     <userDefinedRuntimeAttributes>
-                                                        <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
-                                                            <color key="value" red="0.2901960784" green="0.56470588239999997" blue="0.8862745098" alpha="1" colorSpace="calibratedRGB"/>
-                                                        </userDefinedRuntimeAttribute>
                                                         <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
                                                             <real key="value" value="20"/>
                                                         </userDefinedRuntimeAttribute>
@@ -78,23 +75,36 @@
                                                     <color key="textColor" red="0.54901960780000003" green="0.54901960780000003" blue="0.54901960780000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="defaultProfileImage" translatesAutoresizingMaskIntoConstraints="NO" id="bke-Ml-sG4">
+                                                    <rect key="frame" x="26" y="16" width="40" height="40"/>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                            <real key="value" value="20"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                    </userDefinedRuntimeAttributes>
+                                                </imageView>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="Zsr-bZ-3pI" firstAttribute="leading" secondItem="e7K-kv-ANA" secondAttribute="leading" id="0rS-Be-AZo"/>
+                                                <constraint firstItem="bke-Ml-sG4" firstAttribute="height" secondItem="A5v-Do-mH5" secondAttribute="height" id="29O-Lh-1kF"/>
                                                 <constraint firstAttribute="trailing" secondItem="Zsr-bZ-3pI" secondAttribute="trailing" constant="24" id="457-Uc-3Zy"/>
                                                 <constraint firstItem="e7K-kv-ANA" firstAttribute="leading" secondItem="A5v-Do-mH5" secondAttribute="trailing" constant="21.300000000000001" id="5Zh-yg-4cE"/>
                                                 <constraint firstItem="A5v-Do-mH5" firstAttribute="leading" secondItem="hgC-hX-3xR" secondAttribute="leading" constant="26" id="7Bp-Rh-iaX"/>
                                                 <constraint firstItem="e7K-kv-ANA" firstAttribute="top" secondItem="hgC-hX-3xR" secondAttribute="top" constant="12" id="eab-jG-mtl"/>
                                                 <constraint firstItem="A5v-Do-mH5" firstAttribute="top" secondItem="hgC-hX-3xR" secondAttribute="top" constant="16" id="fTQ-IL-4e7"/>
+                                                <constraint firstItem="bke-Ml-sG4" firstAttribute="leading" secondItem="A5v-Do-mH5" secondAttribute="leading" id="fTs-M2-334"/>
                                                 <constraint firstItem="Zsr-bZ-3pI" firstAttribute="top" secondItem="e7K-kv-ANA" secondAttribute="bottom" constant="8" id="jN5-Bj-Liy"/>
                                                 <constraint firstAttribute="bottom" secondItem="Zsr-bZ-3pI" secondAttribute="bottom" constant="14" id="n5z-NH-obg"/>
                                                 <constraint firstAttribute="trailing" secondItem="e7K-kv-ANA" secondAttribute="trailing" constant="23" id="pDT-DO-sKn"/>
+                                                <constraint firstItem="bke-Ml-sG4" firstAttribute="top" secondItem="A5v-Do-mH5" secondAttribute="top" id="pag-Ln-Z9Z"/>
+                                                <constraint firstItem="bke-Ml-sG4" firstAttribute="width" secondItem="A5v-Do-mH5" secondAttribute="width" id="s0c-PZ-86h"/>
                                             </constraints>
                                         </tableViewCellContentView>
-                                        <color key="backgroundColor" red="0.96862745100000003" green="0.97254901959999995" blue="0.97647058819999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <connections>
                                             <outlet property="dateTimeLabel" destination="Zsr-bZ-3pI" id="llo-ld-OqM"/>
                                             <outlet property="messageLabel" destination="e7K-kv-ANA" id="dWO-aj-hYa"/>
+                                            <outlet property="nameInitialsLabel" destination="A5v-Do-mH5" id="v9G-ud-Gci"/>
+                                            <outlet property="profileImageView" destination="bke-Ml-sG4" id="xPD-5R-kJX"/>
                                             <outlet property="readLabel" destination="A5v-Do-mH5" id="f2J-DB-Kfj"/>
                                         </connections>
                                     </tableViewCell>
@@ -161,6 +171,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="defaultProfileImage" width="64" height="64"/>
         <image name="notification_large" width="24" height="24"/>
     </resources>
 </document>

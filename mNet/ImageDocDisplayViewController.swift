@@ -30,7 +30,6 @@ class ImageDocDisplayViewController: BaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.addkeyBoardListners()
         
         if(isDocument == true)
         {
