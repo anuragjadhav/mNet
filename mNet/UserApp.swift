@@ -30,6 +30,7 @@ class UserApp: NSObject, Mappable {
     var companyName:String = ""
     var organisationName:String = ""
     var recieverName:String = ""
+    var appCode:String = ""
     
     required init?(map: Map) {
         
@@ -57,6 +58,7 @@ class UserApp: NSObject, Mappable {
         companyName <- map["comp_name"]
         organisationName <- map["org_name"]
         recieverName <- map["recieverName"]
+        appCode <- map["code"]
     }
     
 }

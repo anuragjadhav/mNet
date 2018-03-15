@@ -105,6 +105,7 @@ class LoginDataController: NSObject {
         WrapperManager.shared.loginWrapper.authenticateUser(postParams: loginParams, onSuccess: { [unowned self] (userObject) in
             
             if userObject.userId.isEmpty {
+                onFailure("Something went wrong. Please try again.")
                 return
             }
             else {
@@ -141,7 +142,9 @@ class LoginDataController: NSObject {
         postParams[DictionaryKeys.DeviceRegistration.deviceToken] = deviceToken
         
         WrapperManager.shared.loginWrapper.registerDeviceToken(isLogout: false, postParams:postParams, onSuccess: {
+            print("Device Registration Success")
         }) {
+            print("Device Registration Failed")
         }
     }
 }

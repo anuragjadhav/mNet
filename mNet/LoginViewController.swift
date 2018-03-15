@@ -50,7 +50,6 @@ class LoginViewController: BaseViewController, UITextFieldDelegate {
     
     func setUpViewController() {
         
-        self.addkeyBoardListners()
         showProceedButton(animated: false)
         hidePasswordView(animated: false)
     }
@@ -63,6 +62,7 @@ class LoginViewController: BaseViewController, UITextFieldDelegate {
             self.googleButtonHeight.constant = 0
             self.changeIdButtonHeight.constant = 0
             self.emailTextField.isEnabled = true
+            self.emailTextField.backgroundColor = UIColor.white
             
             if animated {
                 UIView.animate(withDuration: AnimationDurations.fast, animations: {
@@ -99,6 +99,7 @@ class LoginViewController: BaseViewController, UITextFieldDelegate {
             self.changeIdButton.isHidden = false
             self.signInButton.isHidden = false
             self.emailTextField.isEnabled = false
+            self.emailTextField.backgroundColor = UIColor.lightGray
             
             UIView.animate(withDuration: AnimationDurations.fast, animations: {
                 self.view.layoutIfNeeded()
@@ -135,6 +136,7 @@ class LoginViewController: BaseViewController, UITextFieldDelegate {
             })
         }
     }
+
     
     func showPasswordView(animated:Bool) {
         
@@ -264,7 +266,6 @@ class LoginViewController: BaseViewController, UITextFieldDelegate {
         }
     }
     
-    
     @IBAction func changeIdButtonAction(_ sender: CustomBlueBackgroundButton) {
         
         self.showProceedButton(animated: true)
@@ -276,4 +277,8 @@ class LoginViewController: BaseViewController, UITextFieldDelegate {
         
     }
     
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        self.view.endEditing(true)
+        return true
+    }
 }

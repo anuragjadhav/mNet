@@ -44,15 +44,17 @@ struct URLS {
     static let getProfile:URL = URL(string: "GetUserDetails", relativeTo: baseURL)!
     static let updateProfile:URL = URL(string: "updateProfile", relativeTo: baseURL)!
     static let getPeopleList:URL = URL(string: "getUserList", relativeTo: baseURL)!
-    
-    static let identifyUser:URL = URL(string: "indentifyUser", relativeTo: liveBaseURL)!
-    static let loginAuthenticate:URL = URL(string: "public_authenticate", relativeTo: liveBaseURL)!
-    static let registerDevice:URL = URL(string: "registerToken", relativeTo: liveBaseURL)!
-    static let deRegisterDevice:URL = URL(string: "deregisterToken", relativeTo: liveBaseURL)!
+    static let getPeopleProfile:URL = URL(string: "getpeopledetails", relativeTo: baseURL)!
+
+    static let identifyUser:URL = URL(string: "indentifyUser", relativeTo: publicBaseURL)!
+    static let loginAuthenticate:URL = URL(string: "public_authenticate", relativeTo: publicBaseURL)!
+    static let registerDevice:URL = URL(string: "registerToken", relativeTo: publicBaseURL)!
+    static let deRegisterDevice:URL = URL(string: "deregisterToken", relativeTo: publicBaseURL)!
     static let getUserDetails:URL = URL(string: "GetUserDetails", relativeTo: baseURL)!
     
     static let getDashboardStatistics:URL = URL(string: "GetDashBoardStatistics", relativeTo: baseURL)!
     static let getUserAppsList:URL = URL(string: "getUserAppList", relativeTo: baseURL)!
+    static let setAppPriority:URL = URL(string: "setAppPriority", relativeTo: baseURL)!
     static let getApprovalList:URL = URL(string: "GetApprovedData", relativeTo: baseURL)!
     static let verifyPost:URL = URL(string: "setVerifyRepliesToPost", relativeTo: baseURL)!
     static let approvePost:URL = URL(string: "setAuthorizeRepliesToPost", relativeTo: baseURL)!
@@ -243,6 +245,8 @@ struct ImageNames {
     
     static let checkBox:String = "checkedBox"
     static let unCheckBox:String = "uncheckedBox"
+    static let starFilled:String = "star_filled"
+    static let starEmpty:String = "star_empty"
 }
 
 struct ConstantStrings {

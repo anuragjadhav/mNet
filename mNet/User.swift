@@ -59,7 +59,6 @@ class User: NSObject, Mappable {
     var licenseStatus:String = ""
     var isLicenseAvailable:String = ""
     var isUserPrivate:String = ""
-    var code:String = ""
 
     required init?(map: Map) {
         
@@ -115,7 +114,6 @@ class User: NSObject, Mappable {
         licenseStatus <- map["license_status"]
         isLicenseAvailable <- map["is_license_available"]
         isUserPrivate <- map["is_user_private"]
-        code <- map["code"]
     }
     
     //MARK: To Dictionary
@@ -162,7 +160,7 @@ class User: NSObject, Mappable {
     func toJSONPostOnlyCode() -> [String:Any] {
         
         var dictionary:[String:Any] = [String:Any]()
-        dictionary["user_code"] = code
+        dictionary["user_code"] = userCode
         return dictionary
     }
     
