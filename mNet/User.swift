@@ -15,6 +15,7 @@ class User: NSObject, Mappable {
     var userId:String = ""
     var name:String = ""
     var status:String = ""
+    var userCode:String = ""
     
     var companyEmail:String = ""
     var postCount:Int = 0
@@ -69,6 +70,7 @@ class User: NSObject, Mappable {
         password <- map["password"]
         userId <- map["user_id"]
         name <- map["LoginName"]
+        userCode <- map["code"]
         status <- map["Status"]
         companyEmail <- map["user_comp_email"]
         postCount <- map["post_count"]

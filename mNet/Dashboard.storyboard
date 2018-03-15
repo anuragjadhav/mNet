@@ -162,7 +162,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IMO-k9-hdK">
-                                                    <rect key="frame" x="285" y="26" width="42" height="35"/>
+                                                    <rect key="frame" x="285" y="26.5" width="42" height="35"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="42" id="Rn4-SI-uml"/>
                                                         <constraint firstAttribute="height" constant="35" id="WXv-pQ-8lQ"/>
@@ -209,7 +209,7 @@
                                 </connections>
                             </tableView>
                             <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No Apps Available" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ymi-um-cXP" customClass="CustomBrownTextColorLabel" customModule="mNet" customModuleProvider="target">
-                                <rect key="frame" x="121.5" y="465" width="132.5" height="20.5"/>
+                                <rect key="frame" x="121.5" y="465.5" width="132.5" height="20"/>
                                 <constraints>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="100" id="789-8d-aUa"/>
                                 </constraints>

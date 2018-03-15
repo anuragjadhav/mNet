@@ -10,11 +10,13 @@ import UIKit
 
 struct URLS {
     
+    static let liveBaseURL:URL = URL(string:"http://demo.m-net.in/p_MNetV2Service/MnetV2WebService/")!
+    
     static var baseURL:URL {
         if let savedBaseURL:URL = User.loggedInUser()?.privateApiLink {
             return savedBaseURL
         }
-        return URL(string:"http://demo.m-net.in/p_MNetV2Service/MnetV2WebService/")!
+        return liveBaseURL
     }
     
     static var imageBaseURLString:String {
@@ -39,7 +41,7 @@ struct URLS {
     static let updateProfile:URL = URL(string: "updateProfile", relativeTo: baseURL)!
     static let getPeopleList:URL = URL(string: "getUserList", relativeTo: baseURL)!
     
-    static let liveBaseURL:URL = URL(string:"http://demo.m-net.in/p_MNetV2Service/MnetV2WebService/")!
+    static let identifyUser:URL = URL(string: "indentifyUser", relativeTo: liveBaseURL)!
     static let loginAuthenticate:URL = URL(string: "public_authenticate", relativeTo: liveBaseURL)!
     static let registerDevice:URL = URL(string: "registerToken", relativeTo: liveBaseURL)!
     static let deRegisterDevice:URL = URL(string: "deregisterToken", relativeTo: liveBaseURL)!
@@ -54,10 +56,18 @@ struct URLS {
 }
 
 
-struct LoginType {
+struct LoginTypeCode {
     
     static let normal:String = "0"
-    static let googleSSO:String = "GmailSSO"
+    static let googleSSO:String = "gmail"
+    static let oktaSSO:String = "okta"
+}
+
+struct AnimationDurations {
+    
+    static let fast:Double = 0.4
+    static let normal:Double = 0.8
+    static let slow:Double = 1.2
 }
 
 struct DictionaryKeys {
@@ -79,9 +89,21 @@ struct DictionaryKeys {
         static let requestFromApp:String = "App"
     }
     
+    struct IdentifyUser {
+        
+        static let userEmail:String = "userEmail"
+        static let requestFrom:String = "requestFrom"
+        static let platform:String = "platform"
+        static let requesrFromMobileApp:String = "MobileApp"
+        static let platformIOS:String = "iOS"
+        static let isSSO:String = "is_sso"
+        static let ssoType:String = "sso_type"
+    }
+    
     struct User {
         
         static let userId:String = "user_id"
+        static let userCode:String = "code"
     }
     
     struct DeviceRegistration {
