@@ -71,7 +71,7 @@ class AboutMeViewController: BaseViewController,UITextFieldDelegate,CustomPicker
         self.navigationController?.navigationBar.isHidden = false
     }
     
-    //Mark: Setup user details
+    //MARK: Setup user details
     
     func setupUserDetails()
     {
@@ -163,7 +163,7 @@ class AboutMeViewController: BaseViewController,UITextFieldDelegate,CustomPicker
     }
     
     
-    //Mark: Textfield Delegates
+    //MARK: Textfield Delegates
 
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
         
@@ -187,6 +187,11 @@ class AboutMeViewController: BaseViewController,UITextFieldDelegate,CustomPicker
     func textFieldDidBeginEditing(_ textField: UITextField) {
         
         textField.layer.borderColor = UIColor.lightGray.cgColor;
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        self.view.endEditing(true)
+        return true
     }
     
     

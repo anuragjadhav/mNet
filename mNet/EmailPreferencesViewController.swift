@@ -31,7 +31,7 @@ class EmailPreferencesViewController: BaseViewController,UIPickerViewDelegate,UI
         self.setupNavigationBar()
         
         //setup previous user settings
-        remindMebutton.setTitle((dataCtrl?.settings?.reminderDays)! + "days", for: .normal)
+        remindMebutton.setTitle((dataCtrl?.settings?.reminderDays)! + " " + "days", for: .normal)
         
         if(dataCtrl?.settings?.postNotification == "1")
         {
