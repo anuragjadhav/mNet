@@ -17,7 +17,7 @@ class People: NSObject,Mappable {
     var department : String?
     var imageUrl :String?
     var userId :String?
-    var blockStatus :String?
+    var blockStatus :String? = "Unblock"
     var iblocked :String?
     var meblocked :String?
     var email:String?

@@ -23,8 +23,11 @@ class ConversationsWrapper: NSObject {
                     let conversationDictArray:[[String:Any]] = responseDict[DictionaryKeys.APIResponse.responseData] as! [[String:Any]]
                     let conversationArray:[Conversation] = [Conversation].init(JSONArray: conversationDictArray)
                     
-                     let unreadNotifiactionCount = responseDict["unread_post_count"] ?? "0"
-                    onSuccess(conversationArray,unreadNotifiactionCount as! String)
+                    let unreadNotifiactionCount = responseDict["unread_post_count"] ?? "0"
+                    
+                    let filteredConversationArray = conversationArray.filter{$0.ignore == "0"}
+                    
+                    onSuccess(filteredConversationArray,unreadNotifiactionCount as! String)
                 }
                 else
                 {
@@ -229,6 +232,56 @@ class ConversationsWrapper: NSObject {
             else{
                 
                 onFailure("Unable to delete reply")
+            }
+        }
+    }
+    
+    
+    func hideConversation(postParams:[String:Any], onSuccess:@escaping () -> Void , onFailure : @escaping (String) -> Void){
+        
+        request(URLS.hideConversation, method: .post, parameters: postParams, encoding: JSONEncoding() as ParameterEncoding, headers: nil).responseJSON { response in
+            
+            if let responseDict:[String:Any] = response.result.value as? [String:Any] {
+                
+                let error:String = responseDict[DictionaryKeys.APIResponse.error] as! String
+                
+                if(error == DictionaryKeys.APIResponse.noError)
+                {
+                    onSuccess()
+                }
+                else
+                {
+                    onFailure("Unable to hide conversation")
+                }
+            }
+            else{
+                
+                onFailure("Unable to hide conversation")
+            }
+        }
+    }
+    
+    
+    func ignoreConversation(postParams:[String:Any], onSuccess:@escaping () -> Void , onFailure : @escaping (String) -> Void){
+        
+        request(URLS.ignoreConversation, method: .post, parameters: postParams, encoding: JSONEncoding() as ParameterEncoding, headers: nil).responseJSON { response in
+            
+            if let responseDict:[String:Any] = response.result.value as? [String:Any] {
+                
+                let error:String = responseDict[DictionaryKeys.APIResponse.error] as! String
+                
+                if(error == DictionaryKeys.APIResponse.noError)
+                {
+                    onSuccess()
+                }
+                else
+                {
+                    onFailure("Unable to ignore conversation")
+                }
+            }
+            else{
+                
+                onFailure("Unable to ignore conversation")
             }
         }
     }

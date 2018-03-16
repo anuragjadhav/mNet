@@ -52,7 +52,7 @@ class Profile: NSObject,Mappable {
         companyId <- map["comp_id"]
         organizationId <- map["org_id"]
         organizationName <- map["org_name"]
-        imageUrl <- map["image_link"]
+        imageUrl <- map["profile_img_link"]
         applicationCount <- map["application_count"]
         profileVisitsCount <- map["profile_visits_count"]
         groupCount <- map["group_count"]

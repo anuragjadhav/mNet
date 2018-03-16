@@ -31,5 +31,33 @@ class ProfileDataController: NSObject {
             })
         }
     }
-
+    
+    func blockUnblockUser(onSuccess:@escaping () -> Void , onFailure : @escaping (String) -> Void){
+        
+        if(selectedPeople != nil){
+            
+            let user:User = User.loggedInUser()!
+            var postParams:[String:Any] = [String:Any]()
+            postParams["blockUser"] = selectedPeople?.userId
+            postParams["userId"] = user.userId
+            
+            WrapperManager.shared.peopleWrapper.blockUser(postParams: postParams, onSuccess: {
+                
+                [unowned self] in
+                
+                if self.selectedPeople?.blockStatus == "Unblock" {
+                    self.selectedPeople?.blockStatus = "Block"
+                }
+                else {
+                    self.selectedPeople?.blockStatus = "Unblock"
+                }
+                
+                onSuccess()
+                
+            }, onFailure: { (errorMessage) in
+                
+                onFailure(errorMessage)
+            })
+        }
+    }
 }

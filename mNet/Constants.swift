@@ -35,6 +35,8 @@ struct URLS {
     static let getConversationsList:URL = URL(string: "GetPost", relativeTo: baseURL)!
     static let deleteConversationReply:URL = URL(string: "cancelReply", relativeTo: baseURL)!
     static let deleteUserFromConversation:URL = URL(string:"deletepostuser", relativeTo: baseURL)!
+    static let hideConversation:URL = URL(string:"HidePost", relativeTo: baseURL)!
+    static let ignoreConversation:URL = URL(string:"ignorePost", relativeTo: baseURL)!
     static let getSelectUserList:URL = URL(string:"findUsersfuncTo", relativeTo: baseURL)!
     static let createNewConversation:URL = URL(string:"SetPost", relativeTo: baseURL)!
     static let setNewReplyConversation:URL = URL(string:"SetReply", relativeTo: baseURL)!
@@ -45,7 +47,7 @@ struct URLS {
     static let updateProfile:URL = URL(string: "updateProfile", relativeTo: baseURL)!
     static let getPeopleList:URL = URL(string: "getUserList", relativeTo: baseURL)!
     static let getPeopleProfile:URL = URL(string: "getpeopledetails", relativeTo: baseURL)!
-
+    static let blockUnblock:URL = URL(string: "userBlock", relativeTo: baseURL)!
     static let identifyUser:URL = URL(string: "indentifyUser", relativeTo: publicBaseURL)!
     static let loginAuthenticate:URL = URL(string: "public_authenticate", relativeTo: publicBaseURL)!
     static let registerDevice:URL = URL(string: "registerToken", relativeTo: publicBaseURL)!

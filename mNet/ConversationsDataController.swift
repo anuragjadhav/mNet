@@ -13,6 +13,7 @@ class ConversationsDataController: NSObject {
     var conversations:[Conversation] = []
     var unreadConversationCount:String = "0"
     var selectedCoversation:Conversation?
+    var selectedConversationIndex:Int?
     var conversationPageStart:Int = 0
     let conversationPageLength:Int = 10
     
@@ -548,4 +549,43 @@ class ConversationsDataController: NSObject {
             onFailure(errorMessage)
         }
     }
+    
+    func hideConversation(onSuccess:@escaping () -> Void , onFailure : @escaping (String) -> Void) {
+        
+        let user:User = User.loggedInUser()!
+        var postParams:[String:Any] = [String:Any]()
+        postParams["user_id"] = user.userId
+        postParams["post_id"] = selectedCoversation?.postId
+        
+        WrapperManager.shared.conversationWrapper.hideConversation(postParams: postParams, onSuccess: { [unowned self]  in
+            
+             self.conversations.remove(at: self.selectedConversationIndex!)
+            onSuccess()
+
+            
+        }) { (errorMessage) in
+            
+            onFailure(errorMessage)
+        }
+    }
+    
+    func ignoreConversation(onSuccess:@escaping () -> Void , onFailure : @escaping (String) -> Void)  {
+        
+        let user:User = User.loggedInUser()!
+        var postParams:[String:Any] = [String:Any]()
+        postParams["user_id"] = user.userId
+        postParams["post_id"] = selectedCoversation?.postId
+        
+        WrapperManager.shared.conversationWrapper.ignoreConversation(postParams: postParams, onSuccess: { [unowned self]  in
+            
+            self.conversations.remove(at: self.selectedConversationIndex!)
+            onSuccess()
+            
+        }) { (errorMessage) in
+            
+            onFailure(errorMessage)
+        }
+    }
+    
+    
 }

@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ConversationsListViewController: BaseViewController, UITableViewDelegate, UITableViewDataSource,KRPullLoadViewDelegate,UISearchBarDelegate {
+class ConversationsListViewController: BaseViewController, UITableViewDelegate, UITableViewDataSource,KRPullLoadViewDelegate,UISearchBarDelegate,HideIgnorePostDelegate {
 
     //MARK: Outlets and Properties
     
@@ -96,6 +96,7 @@ class ConversationsListViewController: BaseViewController, UITableViewDelegate, 
         
         let conversation:Conversation = dataCtrl.conversations[indexPath.row]
         dataCtrl.selectedCoversation = conversation
+        dataCtrl.selectedConversationIndex = indexPath.row
         
         if(conversation.readState == "0")
         {
@@ -111,6 +112,7 @@ class ConversationsListViewController: BaseViewController, UITableViewDelegate, 
         
         let conversationDetailVC = (UIStoryboard.init(name:"Conversation", bundle: Bundle.main)).instantiateViewController(withIdentifier: "ConversationDetailViewController") as! ConversationDetailViewController
         conversationDetailVC.dataCtrl = self.dataCtrl
+        conversationDetailVC.hideIgnorePostdelegate = self
         self.navigationController?.pushViewController(conversationDetailVC, animated: true)
     }
     
@@ -236,5 +238,12 @@ class ConversationsListViewController: BaseViewController, UITableViewDelegate, 
     override func retryButtonClicked() {
         
         getConversations(isReload: true,isLoadMore: false, searchText: searchBar.text!)
+    }
+    
+    //MARK: Hide Ignore Post Success Delegate
+    
+    func hideIgnorePostSuccess() {
+        
+        self.conversationListTableView.reloadData()
     }
 }

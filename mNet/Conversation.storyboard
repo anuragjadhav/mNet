@@ -7,6 +7,7 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Navigation items with more than one left or right bar item" minToolsVersion="7.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -75,7 +76,7 @@
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="BCC" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="96G-eG-aAD" customClass="CustomBrownTextColorLabel" customModule="mNet" customModuleProvider="target">
-                                        <rect key="frame" x="199" y="28" width="30" height="17"/>
+                                        <rect key="frame" x="199" y="28" width="26.5" height="17"/>
                                         <fontDescription key="fontDescription" name="SanFranciscoDisplay-Bold" family="San Francisco Display" pointSize="14"/>
                                         <color key="textColor" red="0.3803921569" green="0.28235294119999998" blue="0.22352941179999999" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
@@ -106,7 +107,7 @@
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="for Approval" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9z5-ee-rx8" customClass="CustomBrownTextColorLabel" customModule="mNet" customModuleProvider="target">
-                                        <rect key="frame" x="27" y="124" width="76.5" height="17"/>
+                                        <rect key="frame" x="27" y="124" width="78" height="17"/>
                                         <fontDescription key="fontDescription" name="SanFranciscoDisplay-Bold" family="San Francisco Display" pointSize="14"/>
                                         <color key="textColor" red="0.3803921569" green="0.28235294119999998" blue="0.22352941179999999" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
@@ -137,7 +138,7 @@
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="for Verification" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5DB-5S-DR6" customClass="CustomBrownTextColorLabel" customModule="mNet" customModuleProvider="target">
-                                        <rect key="frame" x="199" y="124" width="89.5" height="17"/>
+                                        <rect key="frame" x="199" y="124" width="95.5" height="17"/>
                                         <fontDescription key="fontDescription" name="SanFranciscoDisplay-Bold" family="San Francisco Display" pointSize="14"/>
                                         <color key="textColor" red="0.3803921569" green="0.28235294119999998" blue="0.22352941179999999" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
@@ -168,7 +169,7 @@
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Subject" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pzh-q0-PDP" customClass="CustomBrownTextColorLabel" customModule="mNet" customModuleProvider="target">
-                                        <rect key="frame" x="27" y="234" width="48" height="17"/>
+                                        <rect key="frame" x="27" y="234" width="49.5" height="17"/>
                                         <fontDescription key="fontDescription" name="SanFranciscoDisplay-Bold" family="San Francisco Display" pointSize="14"/>
                                         <color key="textColor" red="0.3803921569" green="0.28235294119999998" blue="0.22352941179999999" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
@@ -202,7 +203,7 @@
                                         </connections>
                                     </textField>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Attachments" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MTJ-Hs-J2b" customClass="CustomBrownTextColorLabel" customModule="mNet" customModuleProvider="target">
-                                        <rect key="frame" x="27" y="320" width="79.5" height="17"/>
+                                        <rect key="frame" x="27" y="320" width="83" height="17"/>
                                         <fontDescription key="fontDescription" name="SanFranciscoDisplay-Bold" family="San Francisco Display" pointSize="14"/>
                                         <color key="textColor" red="0.3803921569" green="0.28235294119999998" blue="0.22352941179999999" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
@@ -555,7 +556,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="ohC-iJ-IUy" customClass="CustomBrownColorTextView" customModule="mNet" customModuleProvider="target">
-                                        <rect key="frame" x="27" y="433" width="313" height="111"/>
+                                        <rect key="frame" x="27" y="433" width="309.5" height="111"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="111" id="hVp-VB-GSt"/>
@@ -885,11 +886,11 @@
                                     </connections>
                                 </searchBar>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="conversationListTableViewCell" rowHeight="84" id="Iyz-14-hMF" customClass="ConversationListTableViewCell" customModule="mNet" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="72" width="375" height="84"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="conversationListTableViewCell" rowHeight="81" id="Iyz-14-hMF" customClass="ConversationListTableViewCell" customModule="mNet" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="72" width="375" height="81"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" tableViewCell="Iyz-14-hMF" id="1mh-cr-fBh">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="83.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="80.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="RD" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Htp-iD-esS">
@@ -953,7 +954,6 @@
                                                 <constraint firstItem="IxZ-5M-Zlg" firstAttribute="leading" secondItem="fli-4i-yTG" secondAttribute="trailing" constant="10" id="O6s-Xa-7r4"/>
                                                 <constraint firstItem="Htp-iD-esS" firstAttribute="top" secondItem="1mh-cr-fBh" secondAttribute="top" constant="16" id="PPE-eS-lad"/>
                                                 <constraint firstItem="ODh-q4-c6M" firstAttribute="leading" secondItem="Htp-iD-esS" secondAttribute="trailing" constant="15.300000000000001" id="SII-6b-7RI"/>
-                                                <constraint firstAttribute="bottom" secondItem="gRV-hL-hXt" secondAttribute="bottom" constant="14" id="ZCG-X2-Gv0"/>
                                                 <constraint firstItem="fli-4i-yTG" firstAttribute="leading" secondItem="ODh-q4-c6M" secondAttribute="trailing" constant="7" id="bUE-bG-t8f"/>
                                                 <constraint firstItem="gRV-hL-hXt" firstAttribute="leading" secondItem="ODh-q4-c6M" secondAttribute="leading" id="eoB-pV-LaQ"/>
                                                 <constraint firstItem="fli-4i-yTG" firstAttribute="centerY" secondItem="ODh-q4-c6M" secondAttribute="centerY" id="f22-Nt-NPl"/>
@@ -962,6 +962,7 @@
                                                 <constraint firstItem="c6g-ya-io0" firstAttribute="width" secondItem="Htp-iD-esS" secondAttribute="width" id="llx-uu-4vx"/>
                                                 <constraint firstItem="gRV-hL-hXt" firstAttribute="top" secondItem="ODh-q4-c6M" secondAttribute="bottom" constant="4" id="r8B-4C-ofV"/>
                                                 <constraint firstItem="c6g-ya-io0" firstAttribute="centerX" secondItem="Htp-iD-esS" secondAttribute="centerX" id="sDo-T4-a8e"/>
+                                                <constraint firstAttribute="bottom" secondItem="c6g-ya-io0" secondAttribute="bottom" constant="24.5" id="sZd-qP-lFL"/>
                                                 <constraint firstAttribute="trailing" secondItem="IxZ-5M-Zlg" secondAttribute="trailing" constant="20" id="tjW-j4-4cL"/>
                                                 <constraint firstItem="IxZ-5M-Zlg" firstAttribute="top" secondItem="1mh-cr-fBh" secondAttribute="top" constant="18" id="yc7-SV-Qni"/>
                                                 <constraint firstItem="c6g-ya-io0" firstAttribute="centerY" secondItem="Htp-iD-esS" secondAttribute="centerY" id="ynv-zR-llI"/>
@@ -1685,12 +1686,21 @@
                                 <action selector="backButtonAction:" destination="ZDB-Oo-0rh" id="p66-xW-sFa"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" image="infoIcon" id="KXi-OV-Uh8">
-                            <color key="tintColor" red="0.45882352939999999" green="0.45882352939999999" blue="0.45882352939999999" alpha="1" colorSpace="calibratedRGB"/>
-                            <connections>
-                                <action selector="infoButtonAction:" destination="ZDB-Oo-0rh" id="9y7-Fl-3uA"/>
-                            </connections>
-                        </barButtonItem>
+                        <rightBarButtonItems>
+                            <barButtonItem image="infoIcon" id="KXi-OV-Uh8">
+                                <color key="tintColor" red="0.45882352939999999" green="0.45882352939999999" blue="0.45882352939999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <connections>
+                                    <action selector="infoButtonAction:" destination="ZDB-Oo-0rh" id="9y7-Fl-3uA"/>
+                                </connections>
+                            </barButtonItem>
+                            <barButtonItem image="hideIcon" id="ubz-xq-h59">
+                                <inset key="imageInsets" minX="8" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                <color key="tintColor" red="0.45882352939999999" green="0.45882352939999999" blue="0.45882352939999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <connections>
+                                    <action selector="hidePostButtonAction:" destination="ZDB-Oo-0rh" id="leE-6i-pdT"/>
+                                </connections>
+                            </barButtonItem>
+                        </rightBarButtonItems>
                     </navigationItem>
                     <connections>
                         <outlet property="conversationTableView" destination="8bi-AF-q3O" id="mKW-cG-sG0"/>
@@ -2083,6 +2093,7 @@
         <image name="deleteBin" width="24" height="24"/>
         <image name="filterIcon" width="21" height="21"/>
         <image name="grayAttachmentIcon" width="32" height="32"/>
+        <image name="hideIcon" width="29" height="29"/>
         <image name="infoIcon" width="24" height="24"/>
         <image name="plusIcon" width="80" height="92"/>
         <image name="rightArrow" width="12" height="12"/>

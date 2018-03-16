@@ -19,6 +19,7 @@ class ProfileViewController: BaseViewController {
     @IBOutlet weak var birthdayLabel: CustomBrownTextColorLabel!
     @IBOutlet weak var genderLabel: CustomBrownTextColorLabel!
     @IBOutlet weak var nameLabel: CustomBrownTextColorLabel!
+    @IBOutlet weak var blockUnblockButton: UIButton!
     
     let dataCtrl:ProfileDataController = ProfileDataController()
     var didComeFromPeopleVC:Bool = false
@@ -89,6 +90,29 @@ class ProfileViewController: BaseViewController {
         else{
             genderLabel.text = "-"
         }
+        
+        setuserBlockStatus()
+    }
+    
+    func setuserBlockStatus()
+    {
+        if(didComeFromPeopleVC)
+        {
+            blockUnblockButton.isHidden = false
+            
+            if dataCtrl.selectedPeople?.blockStatus == "Unblock" {
+                
+                blockUnblockButton.setTitle("Block", for: .normal)
+            }
+            else {
+                
+                blockUnblockButton.setTitle("Unblock", for: .normal)
+            }
+        }
+        else
+        {
+            blockUnblockButton.isHidden = true
+        }
     }
 
     //Mark: get people profile
@@ -121,6 +145,36 @@ class ProfileViewController: BaseViewController {
         
         self.navigationController?.popViewController(animated: true)
     }
+    
+    @IBAction func blockUnblockButtonAction(_ sender: Any) {
+        
+        self.showTransperantLoadingOnViewController()
+        
+        dataCtrl.blockUnblockUser(onSuccess: { [unowned self] in
+            
+            DispatchQueue.main.async {
+                
+                self.removeTransperantLoadingFromViewController()
+                self.setuserBlockStatus()
+                
+            }
+            
+        }) { [unowned self] (errorMessage) in
+            
+            DispatchQueue.main.async {
+                
+                self.removeTransperantLoadingFromViewController()
+                
+                let alert = UIAlertController(title:AlertMessages.failure, message:errorMessage, preferredStyle: .alert)
+                alert.addAction(UIAlertAction(title:AlertMessages.ok, style:.default, handler: { _ in
+                }))
+                self.present(alert, animated: true, completion: nil)
+                
+            }
+        }
+        
+    }
+    
     
     //Mark: Retry view delegate
     

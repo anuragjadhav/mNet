@@ -11,6 +11,12 @@ import MobileCoreServices
 import AssetsLibrary
 import Photos
 
+protocol HideIgnorePostDelegate : class {
+    
+    func hideIgnorePostSuccess()
+}
+
+
 class ConversationDetailViewController: BaseViewController,UITableViewDelegate,UITableViewDataSource,UITextViewDelegate,UIDocumentMenuDelegate,UIDocumentPickerDelegate,UINavigationControllerDelegate,UIImagePickerControllerDelegate,ImageDocDisplayDelegate {
 
     @IBOutlet weak var conversationTableView: UITableView!
@@ -22,6 +28,7 @@ class ConversationDetailViewController: BaseViewController,UITableViewDelegate,U
     @IBOutlet weak var user1Label: CustomBrownTextColorLabel!
     @IBOutlet weak var user2Label: CustomBrownTextColorLabel!
     
+    weak var hideIgnorePostdelegate:HideIgnorePostDelegate?
     var dataCtrl:ConversationsDataController?
     let imagePicker = UIImagePickerController()
     var documentController:UIDocumentMenuViewController?
@@ -385,10 +392,106 @@ class ConversationDetailViewController: BaseViewController,UITableViewDelegate,U
             self.present(alert, animated: true, completion: nil)
         }
     }
+    
+    
+    //MARK: Hide Ignore Post
+    
+    func hidePost()
+    {
+        if Reachability.isConnectedToNetwork(){
+            
+            self.showTransperantLoadingOnWindow()
+            
+            dataCtrl?.hideConversation(onSuccess: { [unowned self] in
+                
+                DispatchQueue.main.async {
+                    
+                    self.removeTransperantLoadingFromWindow()
+                    self.hideIgnorePostdelegate?.hideIgnorePostSuccess()
+                    self.navigationController?.popViewController(animated: true)
+                }
+                }, onFailure: { [unowned self] (errorMessage) in
+                    
+                    DispatchQueue.main.async {
+                        
+                        self.removeTransperantLoadingFromWindow()
+
+                        let alert = UIAlertController(title:AlertMessages.failure, message:errorMessage, preferredStyle: .alert)
+                        alert.addAction(UIAlertAction(title:AlertMessages.ok, style:.default, handler: { _ in
+                        }))
+                        self.present(alert, animated: true, completion: nil)
+                    }
+            })
+            
+        }else{
+            
+            let alert = UIAlertController(title:AlertMessages.failure, message:AlertMessages.networkUnavailable, preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title:AlertMessages.ok, style:.default, handler: { _ in
+            }))
+            self.present(alert, animated: true, completion: nil)
+        }
+    }
+    
+    func ignorePost()
+    {
+        if Reachability.isConnectedToNetwork(){
+            
+            self.showTransperantLoadingOnWindow()
+            
+            dataCtrl?.ignoreConversation(onSuccess: { [unowned self] in
+                
+                DispatchQueue.main.async {
+                    
+                    self.removeTransperantLoadingFromWindow()
+                    self.hideIgnorePostdelegate?.hideIgnorePostSuccess()
+                    self.navigationController?.popViewController(animated: true)
+
+                }
+                }, onFailure: { [unowned self] (errorMessage) in
+                    
+                    DispatchQueue.main.async {
+                        
+                        self.removeTransperantLoadingFromWindow()
+                        
+                        let alert = UIAlertController(title:AlertMessages.failure, message:errorMessage, preferredStyle: .alert)
+                        alert.addAction(UIAlertAction(title:AlertMessages.ok, style:.default, handler: { _ in
+                        }))
+                        self.present(alert, animated: true, completion: nil)
+                    }
+            })
+            
+        }else{
+            
+            let alert = UIAlertController(title:AlertMessages.failure, message:AlertMessages.networkUnavailable, preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title:AlertMessages.ok, style:.default, handler: { _ in
+            }))
+            self.present(alert, animated: true, completion: nil)
+        }
+    }
 
     
     // MARK: - Button Actions
 
+    @IBAction func hidePostButtonAction(_ sender: Any) {
+        
+        let alert = UIAlertController(title:"Select Action", message: "Please Select an Option", preferredStyle: .actionSheet)
+        
+        alert.addAction(UIAlertAction(title: "Hide Post", style: .default , handler:{ (UIAlertAction)in
+            self.hidePost()
+        }))
+        
+        alert.addAction(UIAlertAction(title: "Ignore Post", style: .default , handler:{ (UIAlertAction)in
+           self.ignorePost()
+        }))
+        
+        alert.addAction(UIAlertAction(title: "Cancel", style: .cancel , handler:{ (UIAlertAction)in
+        }))
+        
+        present(alert, animated: true, completion: nil)
+        
+    }
+    
+    
     @IBAction func infoButtonAction(_ sender: Any) {
         
         let conversationInfoVC = (UIStoryboard.init(name:"Conversation", bundle: Bundle.main)).instantiateViewController(withIdentifier: "ConversationInfoViewController") as! ConversationInfoViewController
