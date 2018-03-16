@@ -29,7 +29,7 @@ class Profile: NSObject,Mappable {
     var applicationCount : String?
     var profileVisitsCount : String?
     var groupCount : String?
-
+    var email: String?
     
     required init?(map: Map) {
         
@@ -56,6 +56,7 @@ class Profile: NSObject,Mappable {
         applicationCount <- map["application_count"]
         profileVisitsCount <- map["profile_visits_count"]
         groupCount <- map["group_count"]
+        email <- map["user_comp_email"]
     }
     
     override func copy() -> Any {

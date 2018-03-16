@@ -59,54 +59,21 @@ class ProfileViewController: BaseViewController {
             nameLabel.text = "-"
         }
         
-        if(User.loggedInUser()?.email != nil){
-            emailLabel.text = User.loggedInUser()?.email
+        if(didComeFromPeopleVC)
+        {
+            emailLabel.text = dataCtrl.profile?.email ?? "-"
         }
-        else{
-             emailLabel.text = "-"
-        }
-        
-        if(dataCtrl.profile?.about != nil){
-            aboutLabel.text = dataCtrl.profile?.about
-        }
-        else{
-            aboutLabel.text = "-"
+        else
+        {
+            emailLabel.text = User.loggedInUser()?.email ?? "-"
         }
         
-        if(dataCtrl.profile?.address != nil){
-            addressLabel.text = dataCtrl.profile?.address
-        }
-        else{
-            addressLabel.text = "-"
-        }
-        
-        if(dataCtrl.profile?.phoneNo != nil){
-            landlineNumberLabel.text = dataCtrl.profile?.phoneNo
-        }
-        else{
-            landlineNumberLabel.text = "-"
-        }
-        
-        if(dataCtrl.profile?.mobileNo != nil){
-            mobileNumberLabel.text = dataCtrl.profile?.mobileNo
-        }
-        else{
-            mobileNumberLabel.text = "-"
-        }
-        
-        if(dataCtrl.profile?.designation != nil){
-            designationLabel.text = dataCtrl.profile?.designation
-        }
-        else{
-            designationLabel.text = "-"
-        }
-        
-        if(dataCtrl.profile?.dob != nil){
-            birthdayLabel.text = dataCtrl.profile?.dob
-        }
-        else{
-            birthdayLabel.text = "----/--/--"
-        }
+        aboutLabel.text = dataCtrl.profile?.about ?? "-"
+        addressLabel.text = dataCtrl.profile?.address ?? "-"
+        landlineNumberLabel.text = dataCtrl.profile?.phoneNo ?? "-"
+        mobileNumberLabel.text = dataCtrl.profile?.mobileNo ?? "-"
+        designationLabel.text = dataCtrl.profile?.designation ?? "-"
+        birthdayLabel.text = dataCtrl.profile?.dob ?? "----/--/--"
         
         if(dataCtrl.profile?.gender != nil){
             
