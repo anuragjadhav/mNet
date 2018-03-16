@@ -20,5 +20,6 @@ class CustomBlueBackgroundButton: UIButton {
         self.layer.shadowOpacity = 0.24
         self.layer.shadowRadius = 4.0
         self.layer.masksToBounds = false
+        self.clipsToBounds = true
     }
 }

@@ -100,5 +100,24 @@ class DashboardDataController: NSObject {
             onFailure(errorMessage)
         }
     }
+    
+    func setAppPriority(app:UserApp, onSuccess:@escaping () -> Void , onFailure : @escaping (String) -> Void) {
+        
+        var priority:String = "0"
+        if app.fabStatus == "0" {
+            priority = "1"
+        }
+        
+        var params:[String:Any] = [String:Any]()
+        params["app_code"] = app.appCode
+        params["priority"] = priority
+        
+        WrapperManager.shared.dashboardWrapper.setAppPriority(postParams: params, onSuccess: {
+            
+            app.fabStatus = priority
+            onSuccess()
+            
+        }, onFailure: onFailure)
+    }
 
 }

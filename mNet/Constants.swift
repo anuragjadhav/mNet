@@ -10,11 +10,13 @@ import UIKit
 
 struct URLS {
     
+    static let liveBaseURL:URL = URL(string:"http://demo.m-net.in/p_MNetV2Service/MnetV2WebService/")!
+    
     static var baseURL:URL {
         if let savedBaseURL:URL = User.loggedInUser()?.privateApiLink {
             return savedBaseURL
         }
-        return URL(string:"http://demo.m-net.in/p_MNetV2Service/MnetV2WebService/")!
+        return liveBaseURL
     }
     
     static var imageBaseURLString:String {
@@ -44,6 +46,7 @@ struct URLS {
     static let getPeopleList:URL = URL(string: "getUserList", relativeTo: baseURL)!
     static let getPeopleProfile:URL = URL(string: "getpeopledetails", relativeTo: baseURL)!
 
+    static let identifyUser:URL = URL(string: "indentifyUser", relativeTo: publicBaseURL)!
     static let loginAuthenticate:URL = URL(string: "public_authenticate", relativeTo: publicBaseURL)!
     static let registerDevice:URL = URL(string: "registerToken", relativeTo: publicBaseURL)!
     static let deRegisterDevice:URL = URL(string: "deregisterToken", relativeTo: publicBaseURL)!
@@ -51,6 +54,7 @@ struct URLS {
     
     static let getDashboardStatistics:URL = URL(string: "GetDashBoardStatistics", relativeTo: baseURL)!
     static let getUserAppsList:URL = URL(string: "getUserAppList", relativeTo: baseURL)!
+    static let setAppPriority:URL = URL(string: "setAppPriority", relativeTo: baseURL)!
     static let getApprovalList:URL = URL(string: "GetApprovedData", relativeTo: baseURL)!
     static let verifyPost:URL = URL(string: "setVerifyRepliesToPost", relativeTo: baseURL)!
     static let approvePost:URL = URL(string: "setAuthorizeRepliesToPost", relativeTo: baseURL)!
@@ -58,10 +62,18 @@ struct URLS {
 }
 
 
-struct LoginType {
+struct LoginTypeCode {
     
     static let normal:String = "0"
-    static let googleSSO:String = "GmailSSO"
+    static let googleSSO:String = "gmail"
+    static let oktaSSO:String = "okta"
+}
+
+struct AnimationDurations {
+    
+    static let fast:Double = 0.4
+    static let normal:Double = 0.8
+    static let slow:Double = 1.2
 }
 
 struct DictionaryKeys {
@@ -81,6 +93,17 @@ struct DictionaryKeys {
         static let requestFrom:String = "request_from"
         static let loginType:String = "is_authenticate_from"
         static let requestFromApp:String = "App"
+    }
+    
+    struct IdentifyUser {
+        
+        static let userEmail:String = "userEmail"
+        static let requestFrom:String = "requestFrom"
+        static let platform:String = "platform"
+        static let requesrFromMobileApp:String = "MobileApp"
+        static let platformIOS:String = "iOS"
+        static let isSSO:String = "is_sso"
+        static let ssoType:String = "sso_type"
     }
     
     struct User {
@@ -222,6 +245,8 @@ struct ImageNames {
     
     static let checkBox:String = "checkedBox"
     static let unCheckBox:String = "uncheckedBox"
+    static let starFilled:String = "star_filled"
+    static let starEmpty:String = "star_empty"
 }
 
 struct ConstantStrings {

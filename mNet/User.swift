@@ -15,6 +15,7 @@ class User: NSObject, Mappable {
     var userId:String = ""
     var name:String = ""
     var status:String = ""
+    var userCode:String = ""
     
     var companyEmail:String = ""
     var postCount:Int = 0
@@ -58,7 +59,6 @@ class User: NSObject, Mappable {
     var licenseStatus:String = ""
     var isLicenseAvailable:String = ""
     var isUserPrivate:String = ""
-    var code:String = ""
 
     required init?(map: Map) {
         
@@ -70,6 +70,7 @@ class User: NSObject, Mappable {
         password <- map["password"]
         userId <- map["user_id"]
         name <- map["LoginName"]
+        userCode <- map["code"]
         status <- map["Status"]
         companyEmail <- map["user_comp_email"]
         postCount <- map["post_count"]
@@ -113,7 +114,6 @@ class User: NSObject, Mappable {
         licenseStatus <- map["license_status"]
         isLicenseAvailable <- map["is_license_available"]
         isUserPrivate <- map["is_user_private"]
-        code <- map["code"]
     }
     
     //MARK: To Dictionary
@@ -160,7 +160,7 @@ class User: NSObject, Mappable {
     func toJSONPostOnlyCode() -> [String:Any] {
         
         var dictionary:[String:Any] = [String:Any]()
-        dictionary["user_code"] = code
+        dictionary["user_code"] = userCode
         return dictionary
     }
     

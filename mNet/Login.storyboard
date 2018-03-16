@@ -19,9 +19,6 @@
         <array key="SanFranciscoDisplay-Light.otf">
             <string>SanFranciscoDisplay-Light</string>
         </array>
-        <array key="SanFranciscoDisplay-Regular.otf">
-            <string>SanFranciscoDisplay-Regular</string>
-        </array>
     </customFonts>
     <scenes>
         <!--Login View Controller-->
@@ -49,12 +46,12 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Email" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kCb-WY-YI5" customClass="CustomBrownTextColorLabel" customModule="mNet" customModuleProvider="target">
-                                        <rect key="frame" x="30" y="235.5" width="34.5" height="17"/>
+                                        <rect key="frame" x="30" y="235.5" width="35.5" height="17"/>
                                         <fontDescription key="fontDescription" name="SanFranciscoDisplay-Bold" family="San Francisco Display" pointSize="14"/>
                                         <color key="textColor" red="0.3803921569" green="0.28235294119999998" blue="0.22352941179999999" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="priyankaz@mediawareonline.com" borderStyle="line" placeholder="Enter your Email ID" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="RSB-H9-XkY" customClass="CustomBrownTextColorTextfield" customModule="mNet" customModuleProvider="target">
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="vandana.chamaria@heromotocorp.com" borderStyle="line" placeholder="Enter your Email ID" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="RSB-H9-XkY" customClass="CustomBrownTextColorTextfield" customModule="mNet" customModuleProvider="target">
                                         <rect key="frame" x="30" y="264" width="316" height="36"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
@@ -82,49 +79,31 @@
                                             <outlet property="delegate" destination="OM2-0e-Tyo" id="y4A-pL-ZUi"/>
                                         </connections>
                                     </textField>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Password" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ATu-5p-PAU" customClass="CustomBrownTextColorLabel" customModule="mNet" customModuleProvider="target">
-                                        <rect key="frame" x="30" y="314" width="62" height="17"/>
+                                    <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Y0I-hd-kCF" customClass="CustomRedBackgroundColorButton" customModule="mNet" customModuleProvider="target">
+                                        <rect key="frame" x="27" y="409" width="320" height="36"/>
+                                        <color key="backgroundColor" red="0.8666666666666667" green="0.29411764705882354" blue="0.22352941176470587" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="36" id="FYp-BW-0xt"/>
+                                        </constraints>
                                         <fontDescription key="fontDescription" name="SanFranciscoDisplay-Bold" family="San Francisco Display" pointSize="14"/>
-                                        <color key="textColor" red="0.3803921569" green="0.28235294119999998" blue="0.22352941179999999" alpha="1" colorSpace="calibratedRGB"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="Enter your Password" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dDm-Ww-etm" customClass="CustomBrownTextColorTextfield" customModule="mNet" customModuleProvider="target">
-                                        <rect key="frame" x="30" y="342" width="316" height="36"/>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        <color key="textColor" red="0.3803921569" green="0.28235294119999998" blue="0.22352941179999999" alpha="1" colorSpace="calibratedRGB"/>
-                                        <fontDescription key="fontDescription" name="SanFranciscoDisplay-Light" family="San Francisco Display" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits" keyboardAppearance="alert" returnKeyType="done" secureTextEntry="YES"/>
+                                        <state key="normal" title="LOGIN WITH GOOGLE">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                <real key="value" value="0.0"/>
-                                            </userDefinedRuntimeAttribute>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
-                                                <real key="value" value="1"/>
-                                            </userDefinedRuntimeAttribute>
-                                            <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
-                                                <color key="value" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                                            </userDefinedRuntimeAttribute>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="inset">
-                                                <real key="value" value="10"/>
+                                                <real key="value" value="2"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                         <connections>
-                                            <outlet property="delegate" destination="OM2-0e-Tyo" id="Ctk-5b-JUt"/>
+                                            <action selector="loginWithGoogleButtonAction:" destination="OM2-0e-Tyo" eventType="touchUpInside" id="l1b-Ik-C1O"/>
                                         </connections>
-                                    </textField>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="K5R-aY-fbv">
-                                        <rect key="frame" x="71" y="405" width="233" height="60"/>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="233" id="3aV-RC-gNK"/>
-                                            <constraint firstAttribute="height" constant="60" id="O6b-f0-ygL"/>
-                                        </constraints>
-                                    </view>
+                                    </button>
                                     <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kKd-RF-tff" customClass="CustomBlueBackgroundButton" customModule="mNet" customModuleProvider="target">
-                                        <rect key="frame" x="27" y="490" width="320" height="36"/>
+                                        <rect key="frame" x="27" y="409" width="320" height="36"/>
                                         <color key="backgroundColor" red="0.011764705882352941" green="0.51764705882352935" blue="0.80784313725490198" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="320" id="kdp-qU-CZg"/>
+                                            <constraint firstAttribute="height" constant="36" id="pJX-es-mxn"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" name="SanFranciscoDisplay-Bold" family="San Francisco Display" pointSize="14"/>
                                         <state key="normal" title="SIGN IN">
@@ -140,18 +119,17 @@
                                             <action selector="signInButtonClicked:" destination="OM2-0e-Tyo" eventType="touchUpInside" id="hcj-UE-qlI"/>
                                         </connections>
                                     </button>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Alternatively, you may," textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oeW-Wm-4b3">
-                                        <rect key="frame" x="30" y="557" width="119.5" height="14"/>
-                                        <fontDescription key="fontDescription" name="SanFranciscoDisplay-Regular" family="San Francisco Display" pointSize="12"/>
-                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="0.38" colorSpace="calibratedRGB"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Y0I-hd-kCF" customClass="CustomRedBackgroundColorButton" customModule="mNet" customModuleProvider="target">
-                                        <rect key="frame" x="27" y="584" width="320" height="36"/>
-                                        <color key="backgroundColor" red="0.8666666666666667" green="0.29411764705882354" blue="0.22352941176470587" alpha="1" colorSpace="calibratedRGB"/>
+                                    <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pfp-hv-dLo" userLabel="Proceed Button" customClass="CustomBlueBackgroundButton" customModule="mNet" customModuleProvider="target">
+                                        <rect key="frame" x="27" y="409" width="320" height="36"/>
+                                        <color key="backgroundColor" red="0.01176470588" green="0.51764705879999995" blue="0.80784313730000001" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="320" id="Kbs-Js-vJI"/>
+                                            <constraint firstAttribute="height" constant="36" id="iLl-OP-I2P"/>
+                                        </constraints>
                                         <fontDescription key="fontDescription" name="SanFranciscoDisplay-Bold" family="San Francisco Display" pointSize="14"/>
-                                        <state key="normal" title="LOGIN WITH GOOGLE">
+                                        <state key="normal" title="PROCEED">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <color key="titleShadowColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </state>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
@@ -159,11 +137,11 @@
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                         <connections>
-                                            <action selector="loginWithGoogleButtonAction:" destination="OM2-0e-Tyo" eventType="touchUpInside" id="l1b-Ik-C1O"/>
+                                            <action selector="proceedButtonAction:" destination="OM2-0e-Tyo" eventType="touchUpInside" id="8oK-IX-2pY"/>
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="MARKETING PROCUREMENT SYSTEM" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="X3n-GV-1uv">
-                                        <rect key="frame" x="30" y="655" width="300" height="19.5"/>
+                                        <rect key="frame" x="27" y="480" width="300" height="19.5"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="300" id="tje-BP-8K9"/>
                                         </constraints>
@@ -172,7 +150,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HNB-Qu-MZa">
-                                        <rect key="frame" x="30" y="693.5" width="300" height="163.5"/>
+                                        <rect key="frame" x="27" y="518.5" width="300" height="167.5"/>
                                         <string key="text">We link to all your existing apps to bring together your marketing data.
 
 Brandintell helps classify all your brand data for the myriad types of activities by medium, market, performance.
@@ -182,41 +160,106 @@ Analyse your own data with customized reports. Correlate parameters to reach con
                                         <color key="textColor" red="0.38039215686274508" green="0.28235294117647058" blue="0.22352941176470587" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OnW-hF-Wwm" userLabel="Password View">
+                                        <rect key="frame" x="30" y="300" width="316" height="82"/>
+                                        <subviews>
+                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Vandana@123" borderStyle="line" placeholder="Enter your Password" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dDm-Ww-etm" customClass="CustomBrownTextColorTextfield" customModule="mNet" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="46" width="316" height="36"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" priority="999" constant="36" id="Zti-xR-WbC"/>
+                                                </constraints>
+                                                <color key="textColor" red="0.3803921569" green="0.28235294119999998" blue="0.22352941179999999" alpha="1" colorSpace="calibratedRGB"/>
+                                                <fontDescription key="fontDescription" name="SanFranciscoDisplay-Light" family="San Francisco Display" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits" keyboardAppearance="alert" returnKeyType="done" secureTextEntry="YES"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                        <real key="value" value="0.0"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                        <real key="value" value="1"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                        <color key="value" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="inset">
+                                                        <real key="value" value="10"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <outlet property="delegate" destination="OM2-0e-Tyo" id="Ctk-5b-JUt"/>
+                                                </connections>
+                                            </textField>
+                                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Password" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ATu-5p-PAU" customClass="CustomBrownTextColorLabel" customModule="mNet" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="18" width="62.5" height="17"/>
+                                                <fontDescription key="fontDescription" name="SanFranciscoDisplay-Bold" family="San Francisco Display" pointSize="14"/>
+                                                <color key="textColor" red="0.3803921569" green="0.28235294119999998" blue="0.22352941179999999" alpha="1" colorSpace="calibratedRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstItem="dDm-Ww-etm" firstAttribute="top" secondItem="ATu-5p-PAU" secondAttribute="bottom" priority="999" constant="11" id="45F-nQ-5Uu"/>
+                                            <constraint firstAttribute="height" constant="82" id="7Nh-Kj-ew0"/>
+                                            <constraint firstItem="ATu-5p-PAU" firstAttribute="top" secondItem="OnW-hF-Wwm" secondAttribute="top" priority="999" constant="18" id="HAI-WH-FKJ"/>
+                                            <constraint firstAttribute="trailing" secondItem="dDm-Ww-etm" secondAttribute="trailing" id="Rhd-Vd-ZZo"/>
+                                            <constraint firstItem="ATu-5p-PAU" firstAttribute="leading" secondItem="OnW-hF-Wwm" secondAttribute="leading" id="bTH-6f-uVq"/>
+                                            <constraint firstAttribute="bottom" secondItem="dDm-Ww-etm" secondAttribute="bottom" priority="999" id="mAl-Pb-Jd7"/>
+                                            <constraint firstItem="dDm-Ww-etm" firstAttribute="leading" secondItem="ATu-5p-PAU" secondAttribute="leading" id="x4c-GM-Znc"/>
+                                        </constraints>
+                                    </view>
+                                    <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="t89-nP-7va" userLabel="Change Email Button" customClass="CustomBlueBackgroundButton" customModule="mNet" customModuleProvider="target">
+                                        <rect key="frame" x="81.5" y="234" width="100" height="20"/>
+                                        <color key="backgroundColor" red="0.01176470588" green="0.51764705879999995" blue="0.80784313730000001" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="100" id="Stj-iJ-9rS"/>
+                                            <constraint firstAttribute="height" constant="20" id="hh6-hB-A2N"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="SanFranciscoDisplay-Bold" family="San Francisco Display" pointSize="11"/>
+                                        <state key="normal" title="CHANGE EMAIL">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <color key="titleShadowColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="2"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="changeIdButtonAction:" destination="OM2-0e-Tyo" eventType="touchUpInside" id="Esa-fC-Szk"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstItem="oeW-Wm-4b3" firstAttribute="top" secondItem="kKd-RF-tff" secondAttribute="bottom" constant="31" id="1c1-jU-aBq"/>
-                                    <constraint firstItem="ATu-5p-PAU" firstAttribute="leading" secondItem="RSB-H9-XkY" secondAttribute="leading" id="2Gr-QL-wfu"/>
-                                    <constraint firstItem="kKd-RF-tff" firstAttribute="top" secondItem="K5R-aY-fbv" secondAttribute="bottom" constant="25" id="2jr-8H-ftD"/>
+                                    <constraint firstItem="kKd-RF-tff" firstAttribute="top" secondItem="OnW-hF-Wwm" secondAttribute="bottom" constant="27" id="4DD-YI-6EV"/>
                                     <constraint firstItem="2Ix-Rj-yrm" firstAttribute="leading" secondItem="ZpG-Y4-Epn" secondAttribute="leading" constant="30" id="4Nh-Mb-Rc4"/>
-                                    <constraint firstItem="X3n-GV-1uv" firstAttribute="top" secondItem="Y0I-hd-kCF" secondAttribute="bottom" constant="35" id="5Gh-YC-Pwi"/>
-                                    <constraint firstItem="kKd-RF-tff" firstAttribute="height" secondItem="dDm-Ww-etm" secondAttribute="height" id="7Rg-Vw-Bra"/>
+                                    <constraint firstItem="X3n-GV-1uv" firstAttribute="leading" secondItem="pfp-hv-dLo" secondAttribute="leading" id="9Z8-58-p6x"/>
                                     <constraint firstItem="RgB-Ys-snv" firstAttribute="leading" secondItem="2Ix-Rj-yrm" secondAttribute="leading" id="9w3-Ib-8DE"/>
-                                    <constraint firstItem="K5R-aY-fbv" firstAttribute="centerX" secondItem="ZpG-Y4-Epn" secondAttribute="centerX" id="A0p-3C-9x9"/>
-                                    <constraint firstItem="Y0I-hd-kCF" firstAttribute="centerX" secondItem="kKd-RF-tff" secondAttribute="centerX" id="Bem-JI-8Pt"/>
                                     <constraint firstItem="HNB-Qu-MZa" firstAttribute="leading" secondItem="X3n-GV-1uv" secondAttribute="leading" id="Bpk-FC-oba"/>
-                                    <constraint firstItem="Y0I-hd-kCF" firstAttribute="top" secondItem="oeW-Wm-4b3" secondAttribute="bottom" constant="13" id="G4g-eb-hEw"/>
-                                    <constraint firstItem="dDm-Ww-etm" firstAttribute="height" secondItem="RSB-H9-XkY" secondAttribute="height" id="GUJ-gc-i16"/>
+                                    <constraint firstItem="OnW-hF-Wwm" firstAttribute="trailing" secondItem="RSB-H9-XkY" secondAttribute="trailing" id="DbY-XH-1tM"/>
+                                    <constraint firstItem="t89-nP-7va" firstAttribute="centerY" secondItem="kCb-WY-YI5" secondAttribute="centerY" id="DeQ-qp-0FZ"/>
+                                    <constraint firstItem="pfp-hv-dLo" firstAttribute="leading" secondItem="kKd-RF-tff" secondAttribute="leading" id="Gu6-MK-yq3"/>
                                     <constraint firstItem="RSB-H9-XkY" firstAttribute="leading" secondItem="kCb-WY-YI5" secondAttribute="leading" id="Hzw-fI-BWE"/>
+                                    <constraint firstItem="pfp-hv-dLo" firstAttribute="trailing" secondItem="kKd-RF-tff" secondAttribute="trailing" id="Kky-7Q-NaV"/>
                                     <constraint firstItem="kCb-WY-YI5" firstAttribute="leading" secondItem="RgB-Ys-snv" secondAttribute="leading" id="MkI-SE-QrI"/>
+                                    <constraint firstItem="Y0I-hd-kCF" firstAttribute="top" secondItem="kKd-RF-tff" secondAttribute="top" id="NUg-tB-5Gi"/>
                                     <constraint firstAttribute="trailing" secondItem="RSB-H9-XkY" secondAttribute="trailing" constant="27" id="Oai-RX-rF7"/>
-                                    <constraint firstItem="oeW-Wm-4b3" firstAttribute="leading" secondItem="dDm-Ww-etm" secondAttribute="leading" id="OwV-Sq-T87"/>
+                                    <constraint firstItem="X3n-GV-1uv" firstAttribute="top" secondItem="pfp-hv-dLo" secondAttribute="top" constant="71" id="P9y-tu-nNJ"/>
+                                    <constraint firstItem="pfp-hv-dLo" firstAttribute="top" secondItem="kKd-RF-tff" secondAttribute="top" id="PyF-Dv-GQH"/>
                                     <constraint firstItem="kKd-RF-tff" firstAttribute="centerX" secondItem="ZpG-Y4-Epn" secondAttribute="centerX" id="T6u-c8-S2c"/>
-                                    <constraint firstItem="X3n-GV-1uv" firstAttribute="leading" secondItem="oeW-Wm-4b3" secondAttribute="leading" id="WHY-l4-aa9"/>
-                                    <constraint firstItem="Y0I-hd-kCF" firstAttribute="height" secondItem="kKd-RF-tff" secondAttribute="height" id="Ybu-BA-IIY"/>
                                     <constraint firstItem="kCb-WY-YI5" firstAttribute="top" secondItem="RgB-Ys-snv" secondAttribute="bottom" constant="30" id="a4p-Xo-Ugb"/>
-                                    <constraint firstItem="dDm-Ww-etm" firstAttribute="width" secondItem="RSB-H9-XkY" secondAttribute="width" id="aCZ-vi-ghj"/>
                                     <constraint firstItem="RgB-Ys-snv" firstAttribute="top" secondItem="2Ix-Rj-yrm" secondAttribute="bottom" constant="63" id="avz-Je-8ZC"/>
                                     <constraint firstAttribute="bottom" secondItem="HNB-Qu-MZa" secondAttribute="bottom" constant="32" id="bsw-Dd-bO7"/>
                                     <constraint firstItem="HNB-Qu-MZa" firstAttribute="top" secondItem="X3n-GV-1uv" secondAttribute="bottom" constant="19" id="cc4-0F-HVA"/>
-                                    <constraint firstItem="dDm-Ww-etm" firstAttribute="leading" secondItem="ATu-5p-PAU" secondAttribute="leading" id="d6Q-pr-5BJ"/>
+                                    <constraint firstItem="t89-nP-7va" firstAttribute="leading" secondItem="kCb-WY-YI5" secondAttribute="trailing" constant="16" id="eRr-C3-wpy"/>
                                     <constraint firstItem="RSB-H9-XkY" firstAttribute="top" secondItem="kCb-WY-YI5" secondAttribute="bottom" constant="11" id="h14-Yb-Jss"/>
-                                    <constraint firstItem="ATu-5p-PAU" firstAttribute="top" secondItem="RSB-H9-XkY" secondAttribute="bottom" constant="14" id="jNu-Cz-M5V"/>
                                     <constraint firstItem="Y0I-hd-kCF" firstAttribute="width" secondItem="kKd-RF-tff" secondAttribute="width" id="jrM-9z-jDS"/>
-                                    <constraint firstItem="dDm-Ww-etm" firstAttribute="top" secondItem="ATu-5p-PAU" secondAttribute="bottom" constant="11" id="ntS-ix-eTm"/>
                                     <constraint firstItem="2Ix-Rj-yrm" firstAttribute="top" secondItem="ZpG-Y4-Epn" secondAttribute="top" constant="63" id="qRa-T7-f8J"/>
-                                    <constraint firstItem="K5R-aY-fbv" firstAttribute="top" secondItem="dDm-Ww-etm" secondAttribute="bottom" constant="27" id="sH6-xR-ofk"/>
+                                    <constraint firstItem="OnW-hF-Wwm" firstAttribute="leading" secondItem="RSB-H9-XkY" secondAttribute="leading" id="r4k-1B-2ef"/>
+                                    <constraint firstItem="Y0I-hd-kCF" firstAttribute="leading" secondItem="kKd-RF-tff" secondAttribute="leading" id="wqQ-kT-Czr"/>
                                     <constraint firstItem="HNB-Qu-MZa" firstAttribute="trailing" secondItem="X3n-GV-1uv" secondAttribute="trailing" id="wsC-ye-sH3"/>
+                                    <constraint firstItem="OnW-hF-Wwm" firstAttribute="top" secondItem="RSB-H9-XkY" secondAttribute="bottom" id="yLz-VW-NA6"/>
                                 </constraints>
                             </scrollView>
                         </subviews>
@@ -230,14 +273,21 @@ Analyse your own data with customized reports. Correlate parameters to reach con
                         <viewLayoutGuide key="safeArea" id="6wI-St-DGY"/>
                     </view>
                     <connections>
-                        <outlet property="captchaView" destination="K5R-aY-fbv" id="pI2-Pi-kP2"/>
+                        <outlet property="changeIdButton" destination="t89-nP-7va" id="KfT-cR-Svh"/>
+                        <outlet property="changeIdButtonHeight" destination="hh6-hB-A2N" id="b0P-1p-DwF"/>
                         <outlet property="emailLabel" destination="kCb-WY-YI5" id="EOJ-D0-rU3"/>
                         <outlet property="emailTextField" destination="RSB-H9-XkY" id="SrH-fF-P8K"/>
+                        <outlet property="googleButtonHeight" destination="FYp-BW-0xt" id="jfA-Og-I6F"/>
                         <outlet property="loginWithGoogleButton" destination="Y0I-hd-kCF" id="P6f-qI-1ag"/>
                         <outlet property="logoImageView" destination="2Ix-Rj-yrm" id="cBT-v8-1bd"/>
                         <outlet property="passwordLabel" destination="ATu-5p-PAU" id="523-G6-aHL"/>
                         <outlet property="passwordTextField" destination="dDm-Ww-etm" id="nRQ-K3-Tuu"/>
+                        <outlet property="passwordView" destination="OnW-hF-Wwm" id="Ibr-xm-4e1"/>
+                        <outlet property="passwordViewHeight" destination="7Nh-Kj-ew0" id="FVx-j2-W4u"/>
+                        <outlet property="proceedButton" destination="pfp-hv-dLo" id="KqV-1i-DrY"/>
+                        <outlet property="proceedButtonHeight" destination="iLl-OP-I2P" id="3WU-tP-USw"/>
                         <outlet property="signInButton" destination="kKd-RF-tff" id="V5s-w2-ech"/>
+                        <outlet property="signInButtonHeight" destination="pJX-es-mxn" id="3Wi-oa-fFp"/>
                         <outlet property="signInToYourAccountLabel" destination="RgB-Ys-snv" id="g0N-mO-WZF"/>
                     </connections>
                 </viewController>

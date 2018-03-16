@@ -10,6 +10,40 @@ import UIKit
 
 class LoginWrapper: NSObject {
     
+    
+    func identifyUser(postParams:[String : Any], onSuccess:@escaping ([String:String]) -> Void , onFailure : @escaping (String) -> Void) {
+        
+        request(URLS.identifyUser, method: .post, parameters: postParams, encoding: JSONEncoding() as ParameterEncoding , headers: nil).responseJSON { response in
+            
+            if let responseDict:[String:Any] = response.result.value as? [String:Any] {
+                
+                let error:Int = responseDict[DictionaryKeys.APIResponse.error] as! Int
+                
+                if(error == DictionaryKeys.APIResponse.noErrorInt)
+                {
+                    guard let userDictionary:[String:String] = (responseDict[DictionaryKeys.APIResponse.responseData] as? [[String:String]])?.first else {
+                        onFailure(WrapperManager.shared.getErrorMessage(message: WrapperManager.shared.getErrorMessage(message: "Login Failed. Please try again.")))
+                        return
+                    }
+                    
+                    onSuccess(userDictionary)
+                }
+                    
+                else if let errorMessage:String = responseDict[DictionaryKeys.APIResponse.responseData] as? String {
+                    onFailure(errorMessage)
+                }
+                else
+                {
+                    onFailure(WrapperManager.shared.getErrorMessage(message: "Login Failed. Please try again."))
+                }
+            }
+            else{
+                
+                onFailure(WrapperManager.shared.getErrorMessage(message: "Login Failed. Please try again."))
+            }
+        }
+    }
+    
     func authenticateUser(postParams:[String : Any], onSuccess:@escaping (User) -> Void , onFailure : @escaping (String) -> Void) {
         
         request(URLS.loginAuthenticate, method: .post, parameters: postParams, encoding: JSONEncoding() as ParameterEncoding , headers: nil).responseJSON { response in

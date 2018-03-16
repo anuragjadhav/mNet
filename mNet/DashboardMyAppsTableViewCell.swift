@@ -28,6 +28,13 @@ class DashboardMyAppsTableViewCell: UITableViewCell {
                 self.appImageView.image = image
             }
         }
+        
+        if app.fabStatus == "0" {
+            starButton.setImage(UIImage(named: ImageNames.starEmpty), for: .normal)
+        }
+        else {
+            starButton.setImage(UIImage(named: ImageNames.starFilled), for: .normal)
+        }
     }
     
 }

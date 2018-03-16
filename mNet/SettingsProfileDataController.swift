@@ -166,7 +166,7 @@ class SettingsProfileDataController: NSObject {
         
         //set parameters to post
         var postParams:[String:Any] = [String:Any]()
-        postParams["user_code"] = user.code
+        postParams["user_code"] = user.userCode
         postParams["reminder_days"] = remindDaysvalue
         postParams["email_pref_conversation"] = conversationvalue
         postParams["email_pref_comments"] = commentsvalue

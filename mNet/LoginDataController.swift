@@ -8,11 +8,30 @@
 
 import UIKit
 
+enum LoginType {
+    case normal
+    case gmailSSO
+    case oktaSSo
+}
+
 class LoginDataController: NSObject {
 
     var userName:String = ""
     var password:String = ""
-    var loginType:String = LoginType.normal
+    var loginType:String = LoginTypeCode.normal
+    
+    func validateEmail() -> (isValid:Bool, errorMessage:String) {
+        
+        if userName.isEmpty {
+            return (false,"Please enter Email-ID")
+        }
+        
+        if !userName.isValidEmail() {
+            return (false,"Please enter a valid Email-ID")
+        }
+        
+        return (true,"")
+    }
     
     func validateEmailAndPassword() -> (valid:Bool, errorMessage:String) {
         
@@ -29,6 +48,50 @@ class LoginDataController: NSObject {
         }
         
         return (true,"")
+    }
+    
+    func identifyUser(onSuccess:@escaping (LoginType) -> Void , onFailure : @escaping (String) -> Void) {
+        
+        var params:[String:String] = [String:String]()
+        params[DictionaryKeys.IdentifyUser.userEmail] = userName
+        params[DictionaryKeys.IdentifyUser.requestFrom] = DictionaryKeys.IdentifyUser.requesrFromMobileApp
+        params[DictionaryKeys.IdentifyUser.platform] = DictionaryKeys.IdentifyUser.platformIOS
+        
+        WrapperManager.shared.loginWrapper.identifyUser(postParams: params, onSuccess: { (userDictionary) in
+            
+            var loginTypeStatus:LoginType = .normal
+            
+            guard let isSSOLogin:String = userDictionary[DictionaryKeys.IdentifyUser.isSSO] else {
+                onFailure("Login Failed. Please try again.")
+                return
+            }
+            
+            if isSSOLogin == LoginTypeCode.normal {
+                loginTypeStatus = .normal
+            }
+            else {
+                
+                guard let ssoType:String = userDictionary[DictionaryKeys.IdentifyUser.ssoType] else {
+                    onFailure("Login Failed. Please try again.")
+                    return
+                }
+                
+                if ssoType == LoginTypeCode.googleSSO {
+                    loginTypeStatus = .gmailSSO
+                }
+                else if ssoType == LoginTypeCode.oktaSSO {
+                    loginTypeStatus = .oktaSSo
+                }
+                else {
+                    onFailure("Login Failed. Please try again.")
+                    return
+                }
+            }
+            
+            onSuccess(loginTypeStatus)
+            
+        }, onFailure: onFailure)
+        
     }
     
     func postLogin(onSuccess:@escaping () -> Void , onFailure : @escaping (String) -> Void) {
@@ -56,11 +119,11 @@ class LoginDataController: NSObject {
         
         let postDictionary:[String:Any] = User.loggedInUser()!.toJSONPostWithoutId()
         
-        WrapperManager.shared.loginWrapper.getUserDetails(postParams: postDictionary, onSuccess: { (newUserId,usercode) in
+        WrapperManager.shared.loginWrapper.getUserDetails(postParams: postDictionary, onSuccess: { (newUserId,newUserCode) in
             
             let updatedUser:User = User.loggedInUser()!
             updatedUser.userId = newUserId
-            updatedUser.code = usercode
+            updatedUser.userCode = newUserCode
             updatedUser.saveToUserDefaults()
             onSuccess()
             self.registerDeviceToken(updatedUser)

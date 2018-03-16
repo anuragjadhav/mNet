@@ -66,6 +66,24 @@ class DashboardWrapper: NSObject {
                 return
             }
         }
+    }
+    
+    func setAppPriority(postParams:[String:Any], onSuccess:@escaping () -> Void , onFailure : @escaping (String) -> Void) {
         
+        request(URLS.setAppPriority, method: .post, parameters: postParams, encoding: JSONEncoding() as ParameterEncoding, headers: nil).responseObject { (response:DataResponse<CommonResponse>) in
+            
+            guard let commonResponse:CommonResponse = response.result.value else {
+                onFailure(WrapperManager.shared.getErrorMessage(message: nil))
+                return
+            }
+            
+            if commonResponse.noError {
+                onSuccess()
+            }
+            else {
+                onFailure(WrapperManager.shared.getErrorMessage(message: nil))
+                return
+            }
+        }
     }
 }
