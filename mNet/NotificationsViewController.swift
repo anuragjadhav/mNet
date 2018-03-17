@@ -71,6 +71,24 @@ class NotificationsViewController: BaseViewController, UITableViewDelegate, UITa
         return cell
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        let notification:NotificationObject = dataCtrl.notifications[indexPath.row]
+        dataCtrl.selectedNotification = notification
+        
+        if(notification.status == "0")
+        {
+            dataCtrl.markNotificationAsRead()
+            
+            //reduce read count
+            var count:Int = Int(dataCtrl.unreadNotificationCount!)!
+            count -= 1
+            count = count < 0 ? 0 : count
+            dataCtrl.unreadNotificationCount = String(count)
+            self.unreadNotificationLabel.text = self.dataCtrl.unreadNotificationCount! + " unread notifications"
+        }
+    }
+    
     //MARK: Get Notifications
     
     func getNotifications(isReload:Bool,isRefresh:Bool)

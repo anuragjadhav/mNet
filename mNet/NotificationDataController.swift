@@ -11,6 +11,7 @@ import UIKit
 class NotificationDataController: NSObject {
     
     var notifications:[NotificationObject] = []
+    var selectedNotification:NotificationObject?
     var unreadNotificationCount:String? = "0"
     var previousCallSuccessOrFailed:Bool = false
     let limit:Int = 10
@@ -55,6 +56,24 @@ class NotificationDataController: NSObject {
         }) {[unowned self] (errorMessage) in
             self.previousCallSuccessOrFailed = true
             onFailure(errorMessage)
+        }
+    }
+    
+    
+    func markNotificationAsRead() {
+        
+        let user:User = User.loggedInUser()!
+        var postParams:[String:Any] = [String:Any]()
+        postParams["UserId"] = user.userId
+        postParams["UserPass"] = user.password
+        postParams["UserEmail"] = user.email
+        postParams["notification_id"] = selectedNotification?.notificationId
+        
+        WrapperManager.shared.notifiactionWrapper.markNotificationAsRead(postParams: postParams, onSuccess: { [unowned self] in
+            
+            self.selectedNotification?.status = "1"
+        }) {
+            
         }
     }
 }

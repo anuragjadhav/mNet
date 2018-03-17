@@ -41,7 +41,7 @@ struct URLS {
     static let createNewConversation:URL = URL(string:"SetPost", relativeTo: baseURL)!
     static let setNewReplyConversation:URL = URL(string:"SetReply", relativeTo: baseURL)!
     static let markConversationAsRead:URL = URL(string: "markPostAsRead", relativeTo: baseURL)!
-    static let markNotificationAsRead:URL = URL(string: "", relativeTo: baseURL)!
+    static let markNotificationAsRead:URL = URL(string: "readnotification", relativeTo: baseURL)!
     static let getNotificationsList:URL = URL(string: "NotificationList", relativeTo: baseURL)!
     static let getProfile:URL = URL(string: "GetUserDetails", relativeTo: baseURL)!
     static let updateProfile:URL = URL(string: "updateProfile", relativeTo: baseURL)!
