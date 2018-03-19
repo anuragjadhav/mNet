@@ -180,6 +180,7 @@
 		5EC3005E1FEC03FE00229516 /* SettingOptionsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EC3005D1FEC03FE00229516 /* SettingOptionsTableViewCell.swift */; };
 		5EC300621FEC0A5A00229516 /* SettingOption.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EC300611FEC0A5A00229516 /* SettingOption.swift */; };
 		5EC300651FEC106600229516 /* PrivacySettingOptionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EC300641FEC106600229516 /* PrivacySettingOptionTableViewCell.swift */; };
+		5EEEB6B3205FA7F100AFF81F /* DateSelector.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5EEEB6B2205FA7F100AFF81F /* DateSelector.storyboard */; };
 		5EEFC9BF2021E5C300648F17 /* PeopleWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EEFC9BE2021E5C200648F17 /* PeopleWrapper.swift */; };
 		5EEFC9C12021E84900648F17 /* PeopleDataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EEFC9C02021E84900648F17 /* PeopleDataController.swift */; };
 		5EF31C83201B57E9007727D8 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EF31C82201B57E9007727D8 /* Settings.swift */; };
@@ -368,6 +369,7 @@
 		5EC3005D1FEC03FE00229516 /* SettingOptionsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingOptionsTableViewCell.swift; sourceTree = "<group>"; };
 		5EC300611FEC0A5A00229516 /* SettingOption.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingOption.swift; sourceTree = "<group>"; };
 		5EC300641FEC106600229516 /* PrivacySettingOptionTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PrivacySettingOptionTableViewCell.swift; sourceTree = "<group>"; };
+		5EEEB6B2205FA7F100AFF81F /* DateSelector.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = DateSelector.storyboard; sourceTree = "<group>"; };
 		5EEFC9BE2021E5C200648F17 /* PeopleWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeopleWrapper.swift; sourceTree = "<group>"; };
 		5EEFC9C02021E84900648F17 /* PeopleDataController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeopleDataController.swift; sourceTree = "<group>"; };
 		5EF31C82201B57E9007727D8 /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
@@ -612,7 +614,6 @@
 				5E18AE431FF81B59007AA461 /* DocumentViewController.swift */,
 				5E183EA01FF3CA4800368DE1 /* DocumentDetailsViewController.swift */,
 				5E18AE411FF81B45007AA461 /* AttachmentsViewController.swift */,
-				05641C2020473DAC003CD9C2 /* DateSelectorViewController.swift */,
 			);
 			name = "View Controllers";
 			sourceTree = "<group>";
@@ -732,6 +733,7 @@
 				5E1C499B1FEA8072007CE624 /* Extensions */,
 				5E1C498B1FEA442C007CE624 /* Custom View Classes */,
 				058A0E8B1FF7C4AA00147238 /* Login Module */,
+				5EEEB6B4205FA87100AFF81F /* Date Selector */,
 				058A0ECD1FF7C4E800147238 /* Dashboard */,
 				058A0ED51FF7C9E400147238 /* Conversations Module */,
 				5E183E971FF37A5700368DE1 /* Approve Reject Application Module */,
@@ -783,6 +785,7 @@
 				5E18AE491FF82F94007AA461 /* Conversation.storyboard */,
 				5E18AE4B1FF82FA3007AA461 /* Dashboard.storyboard */,
 				5E37E4CD2012004100088001 /* Notifications.storyboard */,
+				5EEEB6B2205FA7F100AFF81F /* DateSelector.storyboard */,
 			);
 			name = Storyboards;
 			sourceTree = "<group>";
@@ -946,6 +949,14 @@
 			name = Models;
 			sourceTree = "<group>";
 		};
+		5EEEB6B4205FA87100AFF81F /* Date Selector */ = {
+			isa = PBXGroup;
+			children = (
+				05641C2020473DAC003CD9C2 /* DateSelectorViewController.swift */,
+			);
+			name = "Date Selector";
+			sourceTree = "<group>";
+		};
 		5EF31C84201B5D62007727D8 /* Wrappers */ = {
 			isa = PBXGroup;
 			children = (
@@ -1038,6 +1049,7 @@
 				058A0E4C1FF7C44D00147238 /* Login.storyboard in Resources */,
 				5E37E4CE2012004100088001 /* Notifications.storyboard in Resources */,
 				5E20CDB41FE962F2004ACE0D /* SanFranciscoDisplay-Semibold.otf in Resources */,
+				5EEEB6B3205FA7F100AFF81F /* DateSelector.storyboard in Resources */,
 				5E20CD9D1FE952BE004ACE0D /* LaunchScreen.storyboard in Resources */,
 				5E20CD9A1FE952BE004ACE0D /* Assets.xcassets in Resources */,
 				5E183E961FF3791D00368DE1 /* ApproveReject.storyboard in Resources */,

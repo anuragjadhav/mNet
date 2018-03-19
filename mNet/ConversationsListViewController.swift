@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ConversationsListViewController: BaseViewController, UITableViewDelegate, UITableViewDataSource,KRPullLoadViewDelegate,UISearchBarDelegate,HideIgnorePostDelegate {
+class ConversationsListViewController: BaseViewController, UITableViewDelegate, UITableViewDataSource,KRPullLoadViewDelegate,UISearchBarDelegate,HideIgnorePostDelegate,DateSelectorDeleagte {
 
     //MARK: Outlets and Properties
     
@@ -17,7 +17,9 @@ class ConversationsListViewController: BaseViewController, UITableViewDelegate, 
     @IBOutlet weak var lineLabel: UILabel!
     @IBOutlet weak var newConversationButton: UIButton!
     @IBOutlet weak var searchBar: UISearchBar!
-
+    @IBOutlet weak var filterLabel: UILabel!
+    @IBOutlet weak var noConversationsLabel: CustomBrownTextColorLabel!
+    
     let dataCtrl:ConversationsDataController = ConversationsDataController()
     
     //MARK: View Controller Delegates
@@ -138,8 +140,9 @@ class ConversationsListViewController: BaseViewController, UITableViewDelegate, 
                     }
                     
                     self.unreadConversationsLabel.text = self.dataCtrl.unreadConversationCount + " unread conversations"
-                    
+                    self.checkNoData()
                     self.conversationListTableView.reloadData()
+                    self.setFilterLabel()
                 }
                 
                 }, onFailure: { [unowned self] (errorMessage) in
@@ -158,6 +161,37 @@ class ConversationsListViewController: BaseViewController, UITableViewDelegate, 
             
             self.showRetryView(message: AlertMessages.networkUnavailable)
         }
+    }
+    
+    func setFilterLabel()
+    {
+        switch self.dataCtrl.filterString ?? "" {
+            
+        case "1":   self.filterLabel.isHidden = false
+        self.filterLabel.text = " Today "
+            
+        case "2":   self.filterLabel.isHidden = false
+        self.filterLabel.text = " Past Week "
+            
+        case "3":   self.filterLabel.isHidden = false
+        self.filterLabel.text = " Past Fifteen Days "
+            
+        case "4":   self.filterLabel.isHidden = false
+        self.filterLabel.text = " Past Month "
+            
+        case "5":   self.filterLabel.isHidden = false
+        self.filterLabel.text = " \(self.dataCtrl.startDate.shortDateFromDDMMYY()) to \(self.dataCtrl.endDate.shortDateFromDDMMYY()) "
+            
+        default:    self.filterLabel.isHidden = true
+        self.filterLabel.text = ""
+            
+        }
+        
+    }
+    
+    func checkNoData() {
+        
+        noConversationsLabel.isHidden = ((dataCtrl.conversations.count) > 0)
     }
     
     //MARK: search bar delegate
@@ -181,8 +215,9 @@ class ConversationsListViewController: BaseViewController, UITableViewDelegate, 
     
     @IBAction func filterButtonAction(_ sender: UIButton) {
         
-//        let filterVC = (UIStoryboard.init(name:"Conversation", bundle: Bundle.main)).instantiateViewController(withIdentifier: "FilterViewController")
-//        self.navigationController?.pushViewController(filterVC, animated: true)
+        let dateFilter:DateSelectorViewController = UIStoryboard.dateSelector.instantiateViewController(withIdentifier: StoryboardIDs.dateFilterViewController) as! DateSelectorViewController
+        dateFilter.delegate = self
+        self.present(dateFilter, animated: false, completion: nil)
     }
     
     
@@ -245,5 +280,15 @@ class ConversationsListViewController: BaseViewController, UITableViewDelegate, 
     func hideIgnorePostSuccess() {
         
         self.conversationListTableView.reloadData()
+    }
+    
+    //MARK: Date Selector Success Delegate
+    
+    func didSelectDate(filterString: String?, fromDate: String?, toDate: String?) {
+        
+        dataCtrl.filterString = filterString
+        dataCtrl.startDate = fromDate ?? ""
+        dataCtrl.endDate = toDate ?? ""
+        getConversations(isReload: true,isLoadMore: false, searchText: searchBar.text!)
     }
 }

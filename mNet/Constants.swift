@@ -270,6 +270,7 @@ extension UIStoryboard {
     static let profile:UIStoryboard = UIStoryboard(name: "Profile", bundle: nil)
     static let tabBar:UIStoryboard = UIStoryboard(name: "TabBar", bundle: nil)
     static let login:UIStoryboard = UIStoryboard(name: "Login", bundle: nil)
+    static let dateSelector:UIStoryboard = UIStoryboard(name: "DateSelector", bundle: nil)
 }
 
 extension UIFont {

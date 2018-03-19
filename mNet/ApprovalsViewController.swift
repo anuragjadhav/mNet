@@ -20,7 +20,7 @@ class ApprovalsViewController: BaseViewController,UICollectionViewDelegate, UICo
     @IBOutlet weak var pendingApprovalsTableView: UITableView!
     @IBOutlet weak var filterBarButton: UIBarButtonItem!
 
-    @IBOutlet weak var filterLabel: CustomBrownTextColorLabel!
+    @IBOutlet weak var filterLabel: UILabel!
     
     @IBOutlet weak var filterLabelWidth: NSLayoutConstraint!
     var dataController:ApprovalsDataController = ApprovalsDataController()
@@ -298,7 +298,7 @@ class ApprovalsViewController: BaseViewController,UICollectionViewDelegate, UICo
     
     func showDateFilterPopUp() {
         
-        let dateFilter:DateSelectorViewController = self.storyboard?.instantiateViewController(withIdentifier: StoryboardIDs.dateFilterViewController) as! DateSelectorViewController
+        let dateFilter:DateSelectorViewController = UIStoryboard.dateSelector.instantiateViewController(withIdentifier: StoryboardIDs.dateFilterViewController) as! DateSelectorViewController
         dateFilter.delegate = self
         self.present(dateFilter, animated: false, completion: nil)
     }

@@ -1,0 +1,273 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="SanFranciscoDisplay-Medium.otf">
+            <string>SanFranciscoDisplay-Medium</string>
+        </array>
+        <array key="SanFranciscoDisplay-Regular.otf">
+            <string>SanFranciscoDisplay-Regular</string>
+        </array>
+        <array key="SanFranciscoDisplay-Semibold.otf">
+            <string>SanFranciscoDisplay-Semibold</string>
+        </array>
+    </customFonts>
+    <scenes>
+        <!--Date Selector View Controller-->
+        <scene sceneID="gwP-Fy-Bqf">
+            <objects>
+                <viewController storyboardIdentifier="DateFilterViewController" modalPresentationStyle="overCurrentContext" id="50n-Tg-Jib" customClass="DateSelectorViewController" customModule="mNet" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="rd1-4s-NEu"/>
+                        <viewControllerLayoutGuide type="bottom" id="iDS-qE-Cqd"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="eA7-RS-SYb">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ToU-Jv-mbN" userLabel="Select Time Super View">
+                                <rect key="frame" x="37.5" y="181" width="300" height="305"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gWP-zS-TGC">
+                                        <rect key="frame" x="0.0" y="0.0" width="300" height="53"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Filter" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aaG-DW-d5X" customClass="CustomBlueTextColorLabel" customModule="mNet" customModuleProvider="target">
+                                                <rect key="frame" x="16" y="17" width="46" height="20"/>
+                                                <fontDescription key="fontDescription" name="SanFranciscoDisplay-Semibold" family="San Francisco Display" pointSize="20"/>
+                                                <color key="textColor" red="0.3803921569" green="0.28235294119999998" blue="0.22352941179999999" alpha="1" colorSpace="calibratedRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="53" id="Eak-9q-Q2j"/>
+                                            <constraint firstAttribute="bottom" secondItem="aaG-DW-d5X" secondAttribute="bottom" constant="16" id="Ql2-B2-vD9"/>
+                                            <constraint firstItem="aaG-DW-d5X" firstAttribute="leading" secondItem="gWP-zS-TGC" secondAttribute="leading" constant="16" id="cnL-pf-7c4"/>
+                                            <constraint firstItem="aaG-DW-d5X" firstAttribute="top" secondItem="gWP-zS-TGC" secondAttribute="top" constant="17" id="eX5-ck-yp7"/>
+                                        </constraints>
+                                    </view>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g5B-NX-5CI" customClass="CustomBrownTextColorButton" customModule="mNet" customModuleProvider="target">
+                                        <rect key="frame" x="16" y="57" width="268" height="32"/>
+                                        <fontDescription key="fontDescription" name="SanFranciscoDisplay-Regular" family="San Francisco Display" pointSize="16"/>
+                                        <state key="normal" title="All">
+                                            <color key="titleColor" red="0.3803921569" green="0.28235294119999998" blue="0.22352941179999999" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="allButtonActionWithSender:" destination="50n-Tg-Jib" eventType="touchUpInside" id="E7h-P0-BFY"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MLd-dc-QG3" customClass="CustomBrownTextColorButton" customModule="mNet" customModuleProvider="target">
+                                        <rect key="frame" x="16" y="97" width="268" height="32"/>
+                                        <fontDescription key="fontDescription" name="SanFranciscoDisplay-Regular" family="San Francisco Display" pointSize="16"/>
+                                        <state key="normal" title="Today">
+                                            <color key="titleColor" red="0.3803921569" green="0.28235294119999998" blue="0.22352941179999999" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="todayButtonActionWithSender:" destination="50n-Tg-Jib" eventType="touchUpInside" id="Qwc-I3-2C5"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Eyw-N0-Kp8" customClass="CustomBrownTextColorButton" customModule="mNet" customModuleProvider="target">
+                                        <rect key="frame" x="16" y="137" width="268" height="32"/>
+                                        <fontDescription key="fontDescription" name="SanFranciscoDisplay-Regular" family="San Francisco Display" pointSize="16"/>
+                                        <state key="normal" title="Past Week">
+                                            <color key="titleColor" red="0.3803921569" green="0.28235294119999998" blue="0.22352941179999999" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="pastWeekButtonActionWithSender:" destination="50n-Tg-Jib" eventType="touchUpInside" id="o12-fi-1O1"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3tn-nr-Vna" customClass="CustomBrownTextColorButton" customModule="mNet" customModuleProvider="target">
+                                        <rect key="frame" x="16" y="177" width="268" height="32"/>
+                                        <fontDescription key="fontDescription" name="SanFranciscoDisplay-Regular" family="San Francisco Display" pointSize="16"/>
+                                        <state key="normal" title="Past 15 Days">
+                                            <color key="titleColor" red="0.3803921569" green="0.28235294119999998" blue="0.22352941179999999" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="past15DaysButtonActionWithSender:" destination="50n-Tg-Jib" eventType="touchUpInside" id="DJf-Vd-JEz"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8qe-X4-FoO" customClass="CustomBrownTextColorButton" customModule="mNet" customModuleProvider="target">
+                                        <rect key="frame" x="16" y="217" width="268" height="32"/>
+                                        <fontDescription key="fontDescription" name="SanFranciscoDisplay-Regular" family="San Francisco Display" pointSize="16"/>
+                                        <state key="normal" title="Past Month">
+                                            <color key="titleColor" red="0.3803921569" green="0.28235294119999998" blue="0.22352941179999999" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="pastMonthButtonActionWithSender:" destination="50n-Tg-Jib" eventType="touchUpInside" id="lLZ-df-lXx"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bub-zL-fKs" customClass="CustomBrownTextColorButton" customModule="mNet" customModuleProvider="target">
+                                        <rect key="frame" x="16" y="257" width="89" height="32"/>
+                                        <fontDescription key="fontDescription" name="SanFranciscoDisplay-Regular" family="San Francisco Display" pointSize="16"/>
+                                        <state key="normal" title="Custom Date">
+                                            <color key="titleColor" red="0.3803921569" green="0.28235294119999998" blue="0.22352941179999999" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="customDateButtonActionWithSender:" destination="50n-Tg-Jib" eventType="touchUpInside" id="e9t-BX-Yri"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstItem="Eyw-N0-Kp8" firstAttribute="leading" secondItem="MLd-dc-QG3" secondAttribute="leading" id="07E-km-csU"/>
+                                    <constraint firstItem="MLd-dc-QG3" firstAttribute="leading" secondItem="g5B-NX-5CI" secondAttribute="leading" id="4lZ-eb-0kO"/>
+                                    <constraint firstItem="MLd-dc-QG3" firstAttribute="trailing" secondItem="g5B-NX-5CI" secondAttribute="trailing" id="6Ft-sZ-3to"/>
+                                    <constraint firstItem="bub-zL-fKs" firstAttribute="leading" secondItem="8qe-X4-FoO" secondAttribute="leading" id="84B-en-3Ok"/>
+                                    <constraint firstAttribute="trailing" secondItem="g5B-NX-5CI" secondAttribute="trailing" constant="16" id="AYF-nG-sP5"/>
+                                    <constraint firstAttribute="bottom" secondItem="bub-zL-fKs" secondAttribute="bottom" constant="16" id="DzA-I9-f7p"/>
+                                    <constraint firstItem="3tn-nr-Vna" firstAttribute="top" secondItem="Eyw-N0-Kp8" secondAttribute="bottom" constant="8" id="LNz-j2-nWd"/>
+                                    <constraint firstItem="bub-zL-fKs" firstAttribute="top" secondItem="8qe-X4-FoO" secondAttribute="bottom" constant="8" id="RVd-sM-2Bo"/>
+                                    <constraint firstAttribute="trailing" secondItem="gWP-zS-TGC" secondAttribute="trailing" id="RdP-tP-xMp"/>
+                                    <constraint firstItem="Eyw-N0-Kp8" firstAttribute="top" secondItem="MLd-dc-QG3" secondAttribute="bottom" constant="8" id="TWh-eC-s2F"/>
+                                    <constraint firstItem="g5B-NX-5CI" firstAttribute="top" secondItem="gWP-zS-TGC" secondAttribute="bottom" constant="4" id="UNd-qY-Z6Z"/>
+                                    <constraint firstItem="MLd-dc-QG3" firstAttribute="top" secondItem="g5B-NX-5CI" secondAttribute="bottom" constant="8" id="VIa-UB-C6e"/>
+                                    <constraint firstItem="8qe-X4-FoO" firstAttribute="top" secondItem="3tn-nr-Vna" secondAttribute="bottom" constant="8" id="VuP-v4-bxc"/>
+                                    <constraint firstItem="Eyw-N0-Kp8" firstAttribute="trailing" secondItem="MLd-dc-QG3" secondAttribute="trailing" id="ZPD-nL-cs7"/>
+                                    <constraint firstItem="8qe-X4-FoO" firstAttribute="trailing" secondItem="3tn-nr-Vna" secondAttribute="trailing" id="aWu-w1-2fF"/>
+                                    <constraint firstItem="8qe-X4-FoO" firstAttribute="leading" secondItem="3tn-nr-Vna" secondAttribute="leading" id="brn-xG-ig9"/>
+                                    <constraint firstAttribute="width" constant="300" id="euF-zU-Nfn"/>
+                                    <constraint firstItem="gWP-zS-TGC" firstAttribute="leading" secondItem="ToU-Jv-mbN" secondAttribute="leading" id="goB-4s-H4L"/>
+                                    <constraint firstItem="g5B-NX-5CI" firstAttribute="leading" secondItem="ToU-Jv-mbN" secondAttribute="leading" constant="16" id="h65-mA-pGW"/>
+                                    <constraint firstItem="gWP-zS-TGC" firstAttribute="top" secondItem="ToU-Jv-mbN" secondAttribute="top" id="ojc-YX-tWo"/>
+                                    <constraint firstItem="3tn-nr-Vna" firstAttribute="leading" secondItem="Eyw-N0-Kp8" secondAttribute="leading" id="ysI-wD-izq"/>
+                                    <constraint firstItem="3tn-nr-Vna" firstAttribute="trailing" secondItem="Eyw-N0-Kp8" secondAttribute="trailing" id="zVL-k6-trt"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="D5B-5h-4T5">
+                                <rect key="frame" x="37.5" y="168" width="300" height="332"/>
+                                <subviews>
+                                    <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="16R-mb-LHg">
+                                        <rect key="frame" x="16" y="16" width="268" height="29"/>
+                                        <segments>
+                                            <segment title="FROM"/>
+                                            <segment title="TO"/>
+                                        </segments>
+                                        <color key="tintColor" red="0.3803921569" green="0.28235294119999998" blue="0.22352941179999999" alpha="1" colorSpace="calibratedRGB"/>
+                                        <connections>
+                                            <action selector="segmentedControlDidChangeWithSender:" destination="50n-Tg-Jib" eventType="valueChanged" id="Kt8-WZ-qb5"/>
+                                        </connections>
+                                    </segmentedControl>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A9y-2P-n2J">
+                                        <rect key="frame" x="16" y="60" width="125" height="0.0"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="125" id="a06-25-kyo"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="SanFranciscoDisplay-Medium" family="San Francisco Display" pointSize="16"/>
+                                        <color key="textColor" red="0.3803921569" green="0.28235294119999998" blue="0.22352941179999999" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gKa-65-giG">
+                                        <rect key="frame" x="159" y="59.5" width="125" height="0.0"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="125" id="Q2i-pc-y43"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="SanFranciscoDisplay-Medium" family="San Francisco Display" pointSize="16"/>
+                                        <color key="textColor" red="0.3803921569" green="0.28235294119999998" blue="0.22352941179999999" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="7EA-VZ-c00" userLabel="From Date Picker">
+                                        <rect key="frame" x="16" y="68" width="268" height="216"/>
+                                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <date key="date" timeIntervalSinceReferenceDate="499075856.86304402">
+                                            <!--2016-10-25 08:10:56 +0000-->
+                                        </date>
+                                        <locale key="locale" localeIdentifier="en_IN"/>
+                                        <connections>
+                                            <action selector="fromDateValueChangedWithSender:" destination="50n-Tg-Jib" eventType="valueChanged" id="E8Z-Ra-wue"/>
+                                        </connections>
+                                    </datePicker>
+                                    <datePicker hidden="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="rgU-La-UIz" userLabel="To Date Picker">
+                                        <rect key="frame" x="16" y="68" width="268" height="216"/>
+                                        <color key="tintColor" red="0.2901960784" green="0.56470588239999997" blue="0.8862745098" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <date key="date" timeIntervalSinceReferenceDate="499076319.96109903">
+                                            <!--2016-10-25 08:18:39 +0000-->
+                                        </date>
+                                        <locale key="locale" localeIdentifier="en_IN"/>
+                                        <connections>
+                                            <action selector="toDateValueChangeWithSender:" destination="50n-Tg-Jib" eventType="valueChanged" id="wUE-pK-m4Z"/>
+                                        </connections>
+                                    </datePicker>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xZF-3P-0MV" customClass="CustomBlueBackgroundButton" customModule="mNet" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="292" width="300" height="40"/>
+                                        <color key="backgroundColor" red="0.3803921569" green="0.28235294119999998" blue="0.22352941179999999" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="40" id="g1j-Md-EnH"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="SanFranciscoDisplay-Semibold" family="San Francisco Display" pointSize="16"/>
+                                        <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <state key="normal" title="Done">
+                                            <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="doneButtonActionWithSender:" destination="50n-Tg-Jib" eventType="touchUpInside" id="2xc-Z7-mcy"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstItem="16R-mb-LHg" firstAttribute="leading" secondItem="D5B-5h-4T5" secondAttribute="leading" constant="16" id="0Fz-4w-OT7"/>
+                                    <constraint firstItem="xZF-3P-0MV" firstAttribute="leading" secondItem="D5B-5h-4T5" secondAttribute="leading" id="ARw-wn-RlY"/>
+                                    <constraint firstItem="gKa-65-giG" firstAttribute="leading" secondItem="A9y-2P-n2J" secondAttribute="trailing" constant="18" id="Cdd-a7-qfM"/>
+                                    <constraint firstItem="16R-mb-LHg" firstAttribute="centerX" secondItem="D5B-5h-4T5" secondAttribute="centerX" id="DpR-qq-44T"/>
+                                    <constraint firstAttribute="trailing" secondItem="16R-mb-LHg" secondAttribute="trailing" constant="16" id="EgR-2c-6tx"/>
+                                    <constraint firstItem="7EA-VZ-c00" firstAttribute="leading" secondItem="A9y-2P-n2J" secondAttribute="leading" id="EzD-lW-rTi"/>
+                                    <constraint firstItem="gKa-65-giG" firstAttribute="centerY" secondItem="A9y-2P-n2J" secondAttribute="centerY" id="JXc-Kl-aHX"/>
+                                    <constraint firstAttribute="trailing" secondItem="gKa-65-giG" secondAttribute="trailing" constant="16" id="K23-lB-YFm"/>
+                                    <constraint firstAttribute="trailing" secondItem="xZF-3P-0MV" secondAttribute="trailing" id="Pri-b8-B0Y"/>
+                                    <constraint firstItem="rgU-La-UIz" firstAttribute="trailing" secondItem="7EA-VZ-c00" secondAttribute="trailing" id="Vwc-QW-v2N"/>
+                                    <constraint firstItem="rgU-La-UIz" firstAttribute="top" secondItem="7EA-VZ-c00" secondAttribute="top" id="Wzd-oO-hIe"/>
+                                    <constraint firstItem="A9y-2P-n2J" firstAttribute="top" secondItem="16R-mb-LHg" secondAttribute="bottom" constant="16" id="aHK-Ka-PUu"/>
+                                    <constraint firstItem="7EA-VZ-c00" firstAttribute="top" secondItem="A9y-2P-n2J" secondAttribute="bottom" constant="8" id="cMS-gv-rff"/>
+                                    <constraint firstItem="7EA-VZ-c00" firstAttribute="trailing" secondItem="gKa-65-giG" secondAttribute="trailing" id="cn5-Sg-080"/>
+                                    <constraint firstAttribute="bottom" secondItem="xZF-3P-0MV" secondAttribute="bottom" id="gbt-qE-K68"/>
+                                    <constraint firstItem="16R-mb-LHg" firstAttribute="top" secondItem="D5B-5h-4T5" secondAttribute="top" constant="16" id="mO7-Ac-Vvs"/>
+                                    <constraint firstItem="xZF-3P-0MV" firstAttribute="top" secondItem="7EA-VZ-c00" secondAttribute="bottom" constant="8" id="nyX-hq-IHq"/>
+                                    <constraint firstItem="rgU-La-UIz" firstAttribute="bottom" secondItem="7EA-VZ-c00" secondAttribute="bottom" id="qw6-94-sES"/>
+                                    <constraint firstItem="rgU-La-UIz" firstAttribute="leading" secondItem="7EA-VZ-c00" secondAttribute="leading" id="yPs-rC-hj9"/>
+                                    <constraint firstItem="A9y-2P-n2J" firstAttribute="leading" secondItem="D5B-5h-4T5" secondAttribute="leading" constant="16" id="zoW-Qr-MCh"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.40000000000000002" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="D5B-5h-4T5" firstAttribute="centerY" secondItem="eA7-RS-SYb" secondAttribute="centerY" id="DEa-sR-ssj"/>
+                            <constraint firstItem="ToU-Jv-mbN" firstAttribute="centerY" secondItem="eA7-RS-SYb" secondAttribute="centerY" id="OLY-ix-xlT"/>
+                            <constraint firstItem="ToU-Jv-mbN" firstAttribute="centerX" secondItem="eA7-RS-SYb" secondAttribute="centerX" id="vQa-oe-49S"/>
+                            <constraint firstItem="D5B-5h-4T5" firstAttribute="centerX" secondItem="eA7-RS-SYb" secondAttribute="centerX" id="xD7-Dk-lzx"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="J4U-LG-Ydr"/>
+                    </view>
+                    <connections>
+                        <outlet property="allButton" destination="g5B-NX-5CI" id="ZzF-Qf-zYR"/>
+                        <outlet property="customDateButton" destination="bub-zL-fKs" id="5YI-bc-OdY"/>
+                        <outlet property="customDateSegmentedControl" destination="16R-mb-LHg" id="4Ry-bn-5pq"/>
+                        <outlet property="customDateSelectorView" destination="D5B-5h-4T5" id="7va-gY-IKj"/>
+                        <outlet property="doneButton" destination="xZF-3P-0MV" id="PR4-hK-Zow"/>
+                        <outlet property="fromDateLabel" destination="A9y-2P-n2J" id="fed-nw-fIz"/>
+                        <outlet property="fromDatePicker" destination="7EA-VZ-c00" id="5vY-su-JHc"/>
+                        <outlet property="past15DaysButton" destination="3tn-nr-Vna" id="hls-n0-Ahf"/>
+                        <outlet property="pastMonthButton" destination="8qe-X4-FoO" id="sHr-1K-miV"/>
+                        <outlet property="pastWeekButton" destination="Eyw-N0-Kp8" id="FsM-Kz-Jo9"/>
+                        <outlet property="selectTimeLabel" destination="aaG-DW-d5X" id="gs1-Kv-VVq"/>
+                        <outlet property="selectTimeSuperView" destination="ToU-Jv-mbN" id="iOi-o3-JGK"/>
+                        <outlet property="selectTimeView" destination="gWP-zS-TGC" id="RFX-CO-R8T"/>
+                        <outlet property="toDateLabel" destination="gKa-65-giG" id="0g0-IC-cLE"/>
+                        <outlet property="toDatePicker" destination="rgU-La-UIz" id="tyc-cJ-tcm"/>
+                        <outlet property="todayButton" destination="MLd-dc-QG3" id="cnP-xk-eQ1"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="o7d-ZN-CMS" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="193" y="2618"/>
+        </scene>
+    </scenes>
+</document>

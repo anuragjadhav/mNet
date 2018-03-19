@@ -16,7 +16,9 @@ class ConversationsDataController: NSObject {
     var selectedConversationIndex:Int?
     var conversationPageStart:Int = 0
     let conversationPageLength:Int = 10
-    
+    var filterString:String?
+    var startDate:String = ""
+    var endDate:String = ""
     var previousConversationCallSuccessOrFailed:Bool = false
     var previousSelectUserCallSuccessOrFailed:Bool = false
     var newConversationReply:Conversation?
@@ -68,6 +70,15 @@ class ConversationsDataController: NSObject {
         postParams["post_start"] = "\(self.conversationPageStart)"
         postParams["post_limit"] = "\(self.conversationPageLength)"
         postParams["search_value"] = searchText
+        
+        if filterString != nil {
+            postParams["date_filter_key"] = filterString
+            
+            if filterString == "5" {
+                postParams["from_date"] = startDate
+                postParams["to_date"] = endDate
+            }
+        }
         
         WrapperManager.shared.conversationWrapper.getConversationsList(postParams: postParams, onSuccess: { [unowned self] (newConversationList,unreadConversationCount) in
 
