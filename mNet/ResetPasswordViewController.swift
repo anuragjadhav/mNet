@@ -58,7 +58,8 @@ class ResetPasswordViewController: BaseViewController,UITextFieldDelegate {
                         let alert = UIAlertController(title:AlertMessages.success, message:"Password reset successfully", preferredStyle: .alert)
                         alert.addAction(UIAlertAction(title:AlertMessages.ok, style:.default, handler: { _ in
                             
-                             AppDelegate.sharedInstance.window?.rootViewController = UIStoryboard.login.instantiateInitialViewController()
+                             User.logoutUser()
+                             AppDelegate.sharedInstance.makeLoginPageHome(true)
                             
                         }))
                         self.present(alert, animated: true, completion: nil)

@@ -164,6 +164,7 @@ struct SettingOptions {
     static let emailPreferences = "Email Preferences"
     static let groups = "Groups"
     static let people = "People"
+    static let logout = "Logout"
 }
 
 

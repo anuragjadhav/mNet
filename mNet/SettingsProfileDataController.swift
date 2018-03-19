@@ -31,6 +31,7 @@ class SettingsProfileDataController: NSObject {
         settingOptionsArray.append(SettingOptions.emailPreferences)
         settingOptionsArray.append(SettingOptions.groups)
         settingOptionsArray.append(SettingOptions.people)
+        settingOptionsArray.append(SettingOptions.logout)
     }
     
      func setupPrivacySettingOptionsArray() {

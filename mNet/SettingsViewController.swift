@@ -117,6 +117,24 @@ class SettingsViewController: BaseViewController,UITableViewDelegate,UITableView
             let peopleViewController:PeopleViewController = UIStoryboard.settings.instantiateViewController(withIdentifier: StoryboardIDs.peopleViewController) as! PeopleViewController
             self.navigationController?.pushViewController(peopleViewController, animated: true)
             break;
+            
+        case SettingOptions.logout:
+            
+            let alert = UIAlertController(title:"Logout", message:"Are you sure you want to logout?", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title:"No", style:.default, handler: { _ in
+            }))
+            alert.addAction(UIAlertAction(title:"Yes", style:.default, handler: { _ in
+                
+                User.logoutUser()
+                AppDelegate.sharedInstance.makeLoginPageHome(true)
+            }))
+            
+            DispatchQueue.main.async {
+                
+                self.present(alert, animated: false, completion: nil)
+            }
+            
+            break;
         
         default: break
             
