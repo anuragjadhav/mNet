@@ -46,7 +46,10 @@ class ConversationsDataController: NSObject {
     var selectedFileDataForNewReply:Data?
     var messageForNewReply:String?
     var isDocumentSelectedForNewReply:Bool? = false
-
+    var didComeToAddExtraUsers:Bool = false
+    var newUsersAddedToConversation:Bool = false
+    
+    
     func getConversations(searchText:String,isLoadMore:Bool,onSuccess:@escaping () -> Void , onFailure : @escaping (String) -> Void) {
         
         self.previousConversationCallSuccessOrFailed = false
@@ -206,6 +209,13 @@ class ConversationsDataController: NSObject {
                 self.selectUserList = newSelectUserList
             }
             
+            //remove existing users from array
+            if(self.didComeToAddExtraUsers)
+            {
+                self.selectUserList = self.removeExistingAddedUsersFromList(array1: self.selectUserList!, array2: (self.selectedCoversation?.membersList)!)
+            }
+            
+            
             self.originalSelectUserList = self.selectUserList
             
             self.filterSelectUsersListBasedOnSelectedUserType()
@@ -220,6 +230,31 @@ class ConversationsDataController: NSObject {
 
             onFailure(errorMessage)
         }
+    }
+    
+    func removeExistingAddedUsersFromList(array1:[People],array2:[ConversationMember]) -> [People]
+    {
+        var newFilteredArray:[People]? = []
+        
+        for user:People in array1
+        {
+            var doesContain:Bool? = false
+            
+            for member:ConversationMember in array2
+            {
+                if(user.userId == member.userId)
+                {
+                    doesContain = true
+                }
+            }
+            
+            if(doesContain == false)
+            {
+                newFilteredArray?.append(user)
+            }
+        }
+        
+        return newFilteredArray!
     }
     
     
@@ -598,5 +633,80 @@ class ConversationsDataController: NSObject {
         }
     }
     
+    
+    func addUsersToSelectedConversation(onSuccess:@escaping () -> Void , onFailure : @escaping (String) -> Void) {
+        
+        let user:User = User.loggedInUser()!
+        var postParams:[String:Any] = [String:Any]()
+        postParams["sender_id"] = user.userId
+        postParams["sender_password"] = user.password
+        postParams["sender_email"] = user.email
+
+        //add bcc to verification and approval emails
+        var toEmailArray:[String]? = []
+        var bccEmailArray:[String]? = []
+        var verificationEmailArray:[String]? = []
+        var approvalEmailArray:[String]? = []
+        
+        //add all emails except bcc in to email
+        for user:People in toUserList!
+        {
+            if(user.email != nil){
+                toEmailArray?.append(user.email!)
+            }
+        }
+        
+        for user:People in forVerificationUserList!
+        {
+            if(user.email != nil){
+                toEmailArray?.append(user.email!)
+            }
+        }
+        
+        for user:People in forApprovalUserList!
+        {
+            if(user.email != nil){
+                toEmailArray?.append(user.email!)
+            }
+        }
+        
+        //add bcc emails
+        for user:People in bccUserList!
+        {
+            if(user.email != nil){
+                bccEmailArray?.append(user.email!)
+            }
+        }
+        
+        //add verification emails
+        for user:People in forVerificationUserList!
+        {
+            if(user.email != nil){
+                verificationEmailArray?.append(user.email!)
+            }
+        }
+        
+        //add approval emails
+        for user:People in forApprovalUserList!
+        {
+            if(user.email != nil){
+                approvalEmailArray?.append(user.email!)
+            }
+        }
+        
+        postParams["addusers"] = toEmailArray?.joined(separator: ",")
+        postParams["addusersasbcc"] = bccEmailArray?.joined(separator: ",")
+        postParams["addusersasagree"] = verificationEmailArray?.joined(separator: ",")
+        postParams["addusersasapprove"] = approvalEmailArray?.joined(separator: ",")
+        
+        WrapperManager.shared.conversationWrapper.addUsersToConversation(postParams: postParams, onSuccess: {
+            
+            onSuccess()
+            
+        }) { (errorMessage) in
+            
+            onFailure(errorMessage)
+        }
+    }
     
 }

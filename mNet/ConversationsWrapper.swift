@@ -285,4 +285,28 @@ class ConversationsWrapper: NSObject {
             }
         }
     }
+    
+    func addUsersToConversation(postParams:[String:Any], onSuccess:@escaping () -> Void , onFailure : @escaping (String) -> Void){
+        
+        request(URLS.addUsersToExistingConversation, method: .post, parameters: postParams, encoding: JSONEncoding() as ParameterEncoding, headers: nil).responseJSON { response in
+            
+            if let responseDict:[String:Any] = response.result.value as? [String:Any] {
+                
+                let error:String = responseDict[DictionaryKeys.APIResponse.error] as! String
+                
+                if(error == DictionaryKeys.APIResponse.noError)
+                {
+                    onSuccess()
+                }
+                else
+                {
+                    onFailure("Unable to add users in this conversation")
+                }
+            }
+            else{
+                
+                onFailure("Unable to add users in this conversation")
+            }
+        }
+    }
 }

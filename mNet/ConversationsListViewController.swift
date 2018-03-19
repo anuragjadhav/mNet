@@ -55,10 +55,11 @@ class ConversationsListViewController: BaseViewController, UITableViewDelegate, 
         
         self.unreadConversationsLabel.text = dataCtrl.unreadConversationCount + " unread conversations"
         
-        if(dataCtrl.isNewConversationAdded == true)
+        if(dataCtrl.isNewConversationAdded == true || dataCtrl.newUsersAddedToConversation == true)
         {
             dataCtrl.isNewConversationAdded = false
-            getConversations(isReload: false,isLoadMore: false, searchText: searchBar.text!)
+            dataCtrl.newUsersAddedToConversation = false
+            getConversations(isReload: true,isLoadMore: false, searchText: searchBar.text!)
         }
         
         let currentTabbarItem = self.tabBarController?.tabBar.items![1]
@@ -210,9 +211,7 @@ class ConversationsListViewController: BaseViewController, UITableViewDelegate, 
     
     //MARK: Button Actions
     
-    @IBAction func conversationsBarButtonAction(_ sender: UIButton) {
-    }
-    
+
     @IBAction func filterButtonAction(_ sender: UIButton) {
         
         let dateFilter:DateSelectorViewController = UIStoryboard.dateSelector.instantiateViewController(withIdentifier: StoryboardIDs.dateFilterViewController) as! DateSelectorViewController

@@ -13,6 +13,8 @@ import Photos
 
 class NewConversationViewController: BaseViewController,UICollectionViewDelegate,UICollectionViewDataSource,UIDocumentMenuDelegate,UIDocumentPickerDelegate,UINavigationControllerDelegate,UIImagePickerControllerDelegate,UITextViewDelegate,UITextFieldDelegate {
     
+    @IBOutlet weak var startConversationButton: CustomBlueBackgroundButton!
+    
     @IBOutlet weak var subjectTextField: CustomBrownTextColorTextfield!
     @IBOutlet weak var messageTextView: CustomBrownColorTextView!
     @IBOutlet weak var attachmentNameLabel: CustomBlueTextColorLabel!
@@ -22,9 +24,12 @@ class NewConversationViewController: BaseViewController,UICollectionViewDelegate
     @IBOutlet weak var selectedBccUsersCollectionView: UICollectionView!
     @IBOutlet weak var scrollView: UIScrollView!
     
+    @IBOutlet weak var attachmentButton: UIButton!
+    
     var dataCtrl:ConversationsDataController?
     let imagePicker = UIImagePickerController()
     var documentController:UIDocumentMenuViewController?
+    var didComeToAddExtraUsers:Bool = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -47,6 +52,27 @@ class NewConversationViewController: BaseViewController,UICollectionViewDelegate
         selectedForVerificationUsersCollectionView.flashScrollIndicators()
         selectedForApprovalUsersCollectionView.flashScrollIndicators()
         
+        //if came to add users to existing conversation then disable other actions
+        if(didComeToAddExtraUsers)
+        {
+            dataCtrl?.didComeToAddExtraUsers = didComeToAddExtraUsers
+
+            attachmentButton.isEnabled = false
+            messageTextView.isEditable = false
+            startConversationButton.setTitle("ADD USERS", for: .normal)
+            subjectTextField.isEnabled = false
+            
+            //set titles
+            attachmentNameLabel.text = dataCtrl?.selectedCoversation?.postLink.components(separatedBy:"/").last
+            messageTextView.text = dataCtrl?.selectedCoversation?.postMessage
+            subjectTextField.text = dataCtrl?.selectedCoversation?.postTitle
+        }
+        
+        //pop back if new users added to conversation
+        if(dataCtrl?.newUsersAddedToConversation)!
+        {
+            self.navigationController?.popViewController(animated: true)
+        }
     }
     
     //Mark: Keyboard handling
@@ -65,6 +91,7 @@ class NewConversationViewController: BaseViewController,UICollectionViewDelegate
     }
     
     //MARK: Setup
+    
     func setUpNavigationController() {
         
         self.navigationController?.navigationBar.isHidden = false
@@ -125,6 +152,7 @@ class NewConversationViewController: BaseViewController,UICollectionViewDelegate
     }
     
     //MARK: Text view delegates
+    
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         
         self.view.endEditing(true)
@@ -183,10 +211,7 @@ class NewConversationViewController: BaseViewController,UICollectionViewDelegate
         {
             self.dataCtrl?.selectedFileDataInNewConversation = nil
         }
-        
-        //optional, case PDF -> render
-        //displayPDFweb.loadRequest(NSURLRequest(url: cico) as URLRequest)
-  
+
     }
     
     public func documentMenu(_ documentMenu:     UIDocumentMenuViewController, didPickDocumentPicker documentPicker: UIDocumentPickerViewController) {
@@ -302,6 +327,18 @@ class NewConversationViewController: BaseViewController,UICollectionViewDelegate
     
     @IBAction func startConversationButtonAction(_ sender: UIButton) {
         
+        if(didComeToAddExtraUsers)
+        {
+            addUsersToExistingConversation()
+        }
+        else
+        {
+            startNewConversation()
+        }
+    }
+
+    func startNewConversation()
+    {
         if((dataCtrl?.toUserList?.count)! > 0 && subjectTextField.text != nil && (subjectTextField.text?.count)! > 0 && messageTextView.text != nil && messageTextView.text.count > 0 && dataCtrl?.selectedFilenameInNewConversation != nil && dataCtrl?.selectedFileDataInNewConversation != nil)
         {
             dataCtrl?.newConversationSubject = subjectTextField.text
@@ -313,19 +350,21 @@ class NewConversationViewController: BaseViewController,UICollectionViewDelegate
                 
                 DispatchQueue.main.async {
                     
+                    self.removeTransperantLoadingFromViewController()
                     self.dataCtrl?.isNewConversationAdded = true
                     self.navigationController?.popViewController(animated: true)
                 }
                 
-            }, onFailure: { [unowned self] (errorMessage) in
-                
-                DispatchQueue.main.async {
+                }, onFailure: { [unowned self] (errorMessage) in
                     
-                    let alert = UIAlertController(title:AlertMessages.sorry, message:errorMessage, preferredStyle: .alert)
-                    alert.addAction(UIAlertAction(title:AlertMessages.ok, style:.default, handler: { _ in
-                    }))
-                    self.present(alert, animated: true, completion: nil)
-                }
+                    DispatchQueue.main.async {
+                        
+                        self.removeTransperantLoadingFromViewController()
+                        let alert = UIAlertController(title:AlertMessages.sorry, message:errorMessage, preferredStyle: .alert)
+                        alert.addAction(UIAlertAction(title:AlertMessages.ok, style:.default, handler: { _ in
+                        }))
+                        self.present(alert, animated: true, completion: nil)
+                    }
             })
         }
         else
@@ -336,4 +375,46 @@ class NewConversationViewController: BaseViewController,UICollectionViewDelegate
             self.present(alert, animated: true, completion: nil)
         }
     }
+
+
+    func addUsersToExistingConversation()
+    {
+        if((dataCtrl?.toUserList?.count)! > 0 || (dataCtrl?.bccUserList?.count)! > 0 || (dataCtrl?.forApprovalUserList?.count)! > 0 || (dataCtrl?.forVerificationUserList?.count)! > 0)
+        {
+            self.showTransperantLoadingOnViewController()
+            
+            dataCtrl?.addUsersToSelectedConversation(onSuccess: { [unowned self] in
+                
+                DispatchQueue.main.async {
+                    
+                    let alert = UIAlertController(title:AlertMessages.success, message:"Users added to vonversation successfully", preferredStyle: .alert)
+                    alert.addAction(UIAlertAction(title:AlertMessages.ok, style:.default, handler: { _ in
+                        
+                        self.dataCtrl?.newUsersAddedToConversation = true
+                        self.navigationController?.popViewController(animated: true)
+                    }))
+                    self.present(alert, animated: true, completion: nil)
+                }
+                
+                }, onFailure: { [unowned self] (errorMessage) in
+                    
+                    DispatchQueue.main.async {
+                        
+                        self.removeTransperantLoadingFromViewController()
+                        let alert = UIAlertController(title:AlertMessages.sorry, message:errorMessage, preferredStyle: .alert)
+                        alert.addAction(UIAlertAction(title:AlertMessages.ok, style:.default, handler: { _ in
+                        }))
+                        self.present(alert, animated: true, completion: nil)
+                    }
+            })
+        }
+        else
+        {
+            let alert = UIAlertController(title:AlertMessages.sorry, message:"Please add at least one new user to conversation", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title:AlertMessages.ok, style:.default, handler: { _ in
+            }))
+            self.present(alert, animated: true, completion: nil)
+        }
+    }
+
 }

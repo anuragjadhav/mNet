@@ -16,7 +16,6 @@
 		050F1BEC20377F0700B32841 /* DynamicData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 050F1BEB20377F0700B32841 /* DynamicData.swift */; };
 		051744702043283200C2382D /* ApprovalUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0517446F2043283200C2382D /* ApprovalUser.swift */; };
 		0531A5792007CCC600F2232C /* CustomRedBackgroundColorButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0531A5782007CCC600F2232C /* CustomRedBackgroundColorButton.swift */; };
-		0531A57B2007E1F900F2232C /* FilterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0531A57A2007E1F900F2232C /* FilterViewController.swift */; };
 		0531A57D2007EA4200F2232C /* FilterSectionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0531A57C2007EA4200F2232C /* FilterSectionTableViewCell.swift */; };
 		0531A57F2007EA5100F2232C /* FilterOptionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0531A57E2007EA5100F2232C /* FilterOptionTableViewCell.swift */; };
 		05501F86201D10AA00831A08 /* ConversationsWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05501F85201D10AA00831A08 /* ConversationsWrapper.swift */; };
@@ -202,7 +201,6 @@
 		050F1BEB20377F0700B32841 /* DynamicData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DynamicData.swift; sourceTree = "<group>"; };
 		0517446F2043283200C2382D /* ApprovalUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApprovalUser.swift; sourceTree = "<group>"; };
 		0531A5782007CCC600F2232C /* CustomRedBackgroundColorButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomRedBackgroundColorButton.swift; sourceTree = "<group>"; };
-		0531A57A2007E1F900F2232C /* FilterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FilterViewController.swift; sourceTree = "<group>"; };
 		0531A57C2007EA4200F2232C /* FilterSectionTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FilterSectionTableViewCell.swift; sourceTree = "<group>"; };
 		0531A57E2007EA5100F2232C /* FilterOptionTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FilterOptionTableViewCell.swift; sourceTree = "<group>"; };
 		05501F85201D10AA00831A08 /* ConversationsWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConversationsWrapper.swift; sourceTree = "<group>"; };
@@ -507,7 +505,6 @@
 				05A7A8FE1FF80B7700472A60 /* SelectUserViewController.swift */,
 				05A7A9001FF8159F00472A60 /* ConversationInfoViewController.swift */,
 				5E3A046D2007A64D004EE2D7 /* ConversationDetailViewController.swift */,
-				0531A57A2007E1F900F2232C /* FilterViewController.swift */,
 				5E202ABD203EDD8A000EE101 /* ImageDocDisplayViewController.swift */,
 			);
 			name = "View Controllers";
@@ -1092,7 +1089,6 @@
 				05A7A8FD1FF802BC00472A60 /* ApprovalsViewController.swift in Sources */,
 				5E2D373E2020667F0013A138 /* UIButton+AlamofireImage.swift in Sources */,
 				5E1C49941FEA494B007CE624 /* PrivacySettingsViewController.swift in Sources */,
-				0531A57B2007E1F900F2232C /* FilterViewController.swift in Sources */,
 				5E1C49A01FEA847B007CE624 /* BaseViewController.swift in Sources */,
 				5E1A8D12201E221600BFAF10 /* ProfileDataController.swift in Sources */,
 				8BE5DA8C202D929E00E412A7 /* CommonResponse.swift in Sources */,

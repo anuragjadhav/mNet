@@ -37,6 +37,7 @@ struct URLS {
     static let deleteUserFromConversation:URL = URL(string:"deletepostuser", relativeTo: baseURL)!
     static let hideConversation:URL = URL(string:"HidePost", relativeTo: baseURL)!
     static let ignoreConversation:URL = URL(string:"ignorePost", relativeTo: baseURL)!
+    static let addUsersToExistingConversation:URL = URL(string:"setpostuser", relativeTo: baseURL)!
     static let getSelectUserList:URL = URL(string:"findUsersfuncTo", relativeTo: baseURL)!
     static let createNewConversation:URL = URL(string:"SetPost", relativeTo: baseURL)!
     static let setNewReplyConversation:URL = URL(string:"SetReply", relativeTo: baseURL)!

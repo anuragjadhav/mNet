@@ -684,6 +684,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="attachmentButton" destination="lq1-R3-Qu3" id="6Vw-Mg-mOL"/>
                         <outlet property="attachmentNameLabel" destination="j6g-yu-sK1" id="uUt-fJ-U2M"/>
                         <outlet property="messageTextView" destination="ohC-iJ-IUy" id="7fm-7U-p91"/>
                         <outlet property="scrollView" destination="eh5-5X-eEW" id="OSF-0g-CdA"/>
@@ -691,6 +692,7 @@
                         <outlet property="selectedForApprovalUsersCollectionView" destination="KSF-Ex-cJc" id="AWK-hj-uXo"/>
                         <outlet property="selectedForVerificationUsersCollectionView" destination="n4q-IS-Qbq" id="x2O-SQ-8yg"/>
                         <outlet property="selectedToUsersCollectionView" destination="stt-T0-3rV" id="Jqp-Kc-IBV"/>
+                        <outlet property="startConversationButton" destination="qed-Rq-zKh" id="udF-Ca-HEt"/>
                         <outlet property="subjectTextField" destination="laD-YG-ZrP" id="9CL-Yg-Svp"/>
                     </connections>
                 </viewController>
@@ -1015,9 +1017,6 @@
                                     <constraint firstAttribute="height" constant="37" id="dj1-3H-kWW"/>
                                 </constraints>
                                 <state key="normal" image="conversationIcon"/>
-                                <connections>
-                                    <action selector="conversationsBarButtonAction:" destination="QBC-0E-HPL" eventType="touchUpInside" id="mym-nr-CKG"/>
-                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Conversations" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h2B-aE-AMn" customClass="CustomBrownTextColorLabel" customModule="mNet" customModuleProvider="target">
                                 <rect key="frame" x="24" y="79" width="131.5" height="24"/>
@@ -1737,6 +1736,13 @@
                                     <action selector="hidePostButtonAction:" destination="ZDB-Oo-0rh" id="leE-6i-pdT"/>
                                 </connections>
                             </barButtonItem>
+                            <barButtonItem image="plusIcon2" id="XET-Y6-Cp9">
+                                <inset key="imageInsets" minX="13" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                <color key="tintColor" red="0.45882352939999999" green="0.45882352939999999" blue="0.45882352939999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <connections>
+                                    <action selector="addUsersToExistingConversation:" destination="ZDB-Oo-0rh" id="cCO-GP-Vdk"/>
+                                </connections>
+                            </barButtonItem>
                         </rightBarButtonItems>
                     </navigationItem>
                     <connections>
@@ -1952,9 +1958,10 @@
         <image name="deleteBin" width="24" height="24"/>
         <image name="filterIcon" width="21" height="21"/>
         <image name="grayAttachmentIcon" width="32" height="32"/>
-        <image name="hideIcon" width="29" height="29"/>
+        <image name="hideIcon" width="24" height="24"/>
         <image name="infoIcon" width="24" height="24"/>
         <image name="plusIcon" width="80" height="92"/>
+        <image name="plusIcon2" width="24" height="24"/>
         <image name="rightArrow" width="12" height="12"/>
         <image name="uncheckedBox" width="32" height="32"/>
         <image name="whiteAttachmentIcon" width="32" height="32"/>

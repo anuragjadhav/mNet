@@ -32,6 +32,7 @@ class ConversationDetailViewController: BaseViewController,UITableViewDelegate,U
     var dataCtrl:ConversationsDataController?
     let imagePicker = UIImagePickerController()
     var documentController:UIDocumentMenuViewController?
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -88,6 +89,7 @@ class ConversationDetailViewController: BaseViewController,UITableViewDelegate,U
         
         let dateFormatterToShow : DateFormatter = DateFormatter()
         dateFormatterToShow.dateFormat = "h:mm a yy MMM dd"
+        
         let dateTimeString:String = dateFormatterToShow.string(from: latestReplyDate) + " " + dateFormatterToShow.weekdaySymbols[Calendar.current.component(.weekday, from: latestReplyDate)]
         
         dateTimeLabel.text = dateTimeString
@@ -503,7 +505,27 @@ class ConversationDetailViewController: BaseViewController,UITableViewDelegate,U
         
         self.navigationController?.popViewController(animated: true)
     }
-  
+    
+    
+    @IBAction func addUsersToExistingConversation(_ sender: Any) {
+        
+        if(dataCtrl?.selectedCoversation?.postCreator == User.loggedInUser()?.userId)
+        {
+            let newConversationVC = (UIStoryboard.init(name:"Conversation", bundle: Bundle.main)).instantiateViewController(withIdentifier: "NewConversationViewController") as! NewConversationViewController
+            newConversationVC.dataCtrl = dataCtrl
+            newConversationVC.didComeToAddExtraUsers = true
+            self.navigationController?.pushViewController(newConversationVC, animated: true)
+        }
+        else
+        {
+            let alert = UIAlertController(title:AlertMessages.sorry, message:"You must be owner of the post to add new users to this conversation", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title:AlertMessages.ok, style:.default, handler: { _ in
+            }))
+            self.present(alert, animated: true, completion: nil)
+        }
+    }
+    
+    
     @IBAction func sendButtonAction(_ sender: Any) {
         
         self.showTransperantLoadingOnViewController()
