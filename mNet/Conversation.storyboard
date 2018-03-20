@@ -741,17 +741,9 @@
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="NPR-li-FvK">
                                 <rect key="frame" x="17" y="172" width="358" height="495"/>
                                 <color key="backgroundColor" red="0.96862745100000003" green="0.97254901959999995" blue="0.97647058819999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <searchBar key="tableHeaderView" contentMode="redraw" searchBarStyle="minimal" id="PMA-t4-ljf">
-                                    <rect key="frame" x="0.0" y="0.0" width="358" height="44"/>
-                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                                    <textInputTraits key="textInputTraits"/>
-                                    <connections>
-                                        <outlet property="delegate" destination="fMR-Vp-zRQ" id="flU-bM-nM9"/>
-                                    </connections>
-                                </searchBar>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="MembersTableViewCell" rowHeight="68" id="gro-m2-N6C" customClass="MembersTableViewCell" customModule="mNet" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="72" width="358" height="68"/>
+                                        <rect key="frame" x="0.0" y="28" width="358" height="68"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" tableViewCell="gro-m2-N6C" id="B62-qP-U61">
                                             <rect key="frame" x="0.0" y="0.0" width="358" height="68"/>
@@ -847,7 +839,6 @@
                         <outlet property="dateAndTimeLabel" destination="why-ww-zH4" id="NgY-QQ-vD7"/>
                         <outlet property="membersLabel" destination="dgm-FJ-0oP" id="FKi-tV-tjT"/>
                         <outlet property="membersTableView" destination="NPR-li-FvK" id="F3j-yt-6qn"/>
-                        <outlet property="searchBar" destination="PMA-t4-ljf" id="ydu-Cr-zQC"/>
                         <outlet property="searchDisplayController" destination="Wbs-ZM-LZl" id="6U0-f8-HyB"/>
                         <outlet property="user1Label" destination="VUt-vU-JgL" id="GqU-ZV-y8B"/>
                         <outlet property="user2Label" destination="o2l-cX-izp" id="2lF-0M-BeJ"/>

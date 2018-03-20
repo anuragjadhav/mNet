@@ -131,18 +131,6 @@ class ConversationsDataController: NSObject {
         memberList = selectedCoversation?.membersList
     }
     
-    func filterMemberListWithSearchTerm(searchTerm:String?)
-    {
-        if(searchTerm != nil && searchTerm != "")
-        {
-            let filteredMemberArray:[ConversationMember] = (selectedCoversation?.membersList.filter {$0.userName.localizedCaseInsensitiveContains(searchTerm!) })!
-            memberList = filteredMemberArray
-        }
-        else
-        {
-            memberList = selectedCoversation?.membersList
-        }
-    }
     
     func deleteUserFromConversation(onSuccess:@escaping () -> Void , onFailure : @escaping (String) -> Void) {
         
@@ -641,6 +629,7 @@ class ConversationsDataController: NSObject {
         postParams["sender_id"] = user.userId
         postParams["sender_password"] = user.password
         postParams["sender_email"] = user.email
+        postParams["post_id"] = selectedCoversation?.postId
 
         //add bcc to verification and approval emails
         var toEmailArray:[String]? = []

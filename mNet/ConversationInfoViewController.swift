@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ConversationInfoViewController: BaseViewController,UITableViewDelegate,UITableViewDataSource,UISearchBarDelegate {
+class ConversationInfoViewController: BaseViewController,UITableViewDelegate,UITableViewDataSource {
 
     //MARK: Outlets and Properties
     @IBOutlet weak var user1Label: CustomBrownTextColorLabel!
@@ -16,7 +16,6 @@ class ConversationInfoViewController: BaseViewController,UITableViewDelegate,UIT
     @IBOutlet weak var dateAndTimeLabel: UILabel!
     @IBOutlet weak var membersLabel: CustomBlueTextColorLabel!
     @IBOutlet weak var membersTableView: UITableView!
-    @IBOutlet weak var searchBar: UISearchBar!
     
     var dataCtrl:ConversationsDataController?
     
@@ -102,17 +101,7 @@ class ConversationInfoViewController: BaseViewController,UITableViewDelegate,UIT
         return cell
     }
     
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
-    }
-    
-    //MARK: Search bar delegates
 
-    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-        
-        dataCtrl?.filterMemberListWithSearchTerm(searchTerm: searchText)
-        membersTableView.reloadData()
-    }
     
     //MARK: Button Actions
  
