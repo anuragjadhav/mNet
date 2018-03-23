@@ -42,6 +42,8 @@ class LoginViewController: BaseViewController, UITextFieldDelegate {
     let buttonFullHeight:CGFloat = 36
     let changeIdButtonFullHeight:CGFloat = 20
     
+    var showPasswordToggle:Bool = false
+    
     //MARK: View Controller Delegates
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -52,6 +54,11 @@ class LoginViewController: BaseViewController, UITextFieldDelegate {
         
         showProceedButton(animated: false)
         hidePasswordView(animated: false)
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        self.view.endEditing(true)
+        return true
     }
     
     func showProceedButton(animated:Bool) {
@@ -276,9 +283,20 @@ class LoginViewController: BaseViewController, UITextFieldDelegate {
         
         
     }
-    
-    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        self.view.endEditing(true)
-        return true
+    @IBAction func showHidePasswordButtonAction(_ sender: Any) {
+        
+        if(showPasswordToggle)
+        {
+            showPasswordToggle = false
+            passwordTextField.isSecureTextEntry = false
+        }
+        else
+        {
+            showPasswordToggle = true
+            passwordTextField.isSecureTextEntry = true
+        }
+        
     }
+    
+   
 }

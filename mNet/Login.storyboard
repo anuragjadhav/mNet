@@ -196,15 +196,28 @@ Analyse your own data with customized reports. Correlate parameters to reach con
                                                 <color key="textColor" red="0.3803921569" green="0.28235294119999998" blue="0.22352941179999999" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4gM-An-GqP">
+                                                <rect key="frame" x="284" y="53" width="23" height="22"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="22" id="AC2-ci-MOg"/>
+                                                    <constraint firstAttribute="width" constant="23" id="dcZ-S8-xTq"/>
+                                                </constraints>
+                                                <state key="normal" image="eye"/>
+                                                <connections>
+                                                    <action selector="showHidePasswordButtonAction:" destination="OM2-0e-Tyo" eventType="touchUpInside" id="1TQ-S9-vtI"/>
+                                                </connections>
+                                            </button>
                                         </subviews>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
+                                            <constraint firstAttribute="trailing" secondItem="4gM-An-GqP" secondAttribute="trailing" constant="9" id="0Eb-EU-tJg"/>
                                             <constraint firstItem="dDm-Ww-etm" firstAttribute="top" secondItem="ATu-5p-PAU" secondAttribute="bottom" priority="999" constant="11" id="45F-nQ-5Uu"/>
                                             <constraint firstAttribute="height" constant="82" id="7Nh-Kj-ew0"/>
                                             <constraint firstItem="ATu-5p-PAU" firstAttribute="top" secondItem="OnW-hF-Wwm" secondAttribute="top" priority="999" constant="18" id="HAI-WH-FKJ"/>
                                             <constraint firstAttribute="trailing" secondItem="dDm-Ww-etm" secondAttribute="trailing" id="Rhd-Vd-ZZo"/>
                                             <constraint firstItem="ATu-5p-PAU" firstAttribute="leading" secondItem="OnW-hF-Wwm" secondAttribute="leading" id="bTH-6f-uVq"/>
                                             <constraint firstAttribute="bottom" secondItem="dDm-Ww-etm" secondAttribute="bottom" priority="999" id="mAl-Pb-Jd7"/>
+                                            <constraint firstItem="4gM-An-GqP" firstAttribute="centerY" secondItem="dDm-Ww-etm" secondAttribute="centerY" id="mgG-q3-UT1"/>
                                             <constraint firstItem="dDm-Ww-etm" firstAttribute="leading" secondItem="ATu-5p-PAU" secondAttribute="leading" id="x4c-GM-Znc"/>
                                         </constraints>
                                     </view>
@@ -297,6 +310,7 @@ Analyse your own data with customized reports. Correlate parameters to reach con
         </scene>
     </scenes>
     <resources>
+        <image name="eye" width="32" height="32"/>
         <image name="heroLogo" width="87" height="100"/>
     </resources>
 </document>
