@@ -66,19 +66,12 @@ class BaseViewController: UIViewController,RetryViewProtocol {
     //show gray loader on white background on VC
     func showLoadingOnViewController() {
         
-        var tabBarHeight:CGFloat = 0
-        
         if(self.loadingViewOnVC == nil) {
             
-            if(self.tabBarController != nil){
-                
-                tabBarHeight = (self.tabBarController?.tabBar.frame.size.height)!
-            }
-            
-            self.loadingViewOnVC = UIView.init(frame: CGRect(x:self.view.frame.origin.x,y:self.view.frame.origin.y,width :self.view.frame.size.width,height :self.view.frame.size.height - tabBarHeight))
+            self.loadingViewOnVC = UIView.init(frame: CGRect(x:self.view.frame.origin.x,y:self.view.frame.origin.y,width :self.view.frame.size.width,height :self.view.frame.size.height))
             self.loadingViewOnVC?.backgroundColor = UIColor.white
             self.loadingViewOnVC?.alpha = 1
-            self.loadingViewOnVC?.center = CGPoint(x : self.view.frame.size.width/2, y :(self.view.frame.size.height - tabBarHeight)/2)
+            self.loadingViewOnVC?.center = CGPoint(x : self.view.frame.size.width/2, y :(self.view.frame.size.height)/2)
             
             let indicator : UIActivityIndicatorView = UIActivityIndicatorView.init(activityIndicatorStyle:UIActivityIndicatorViewStyle.gray)
             indicator.center = (self.loadingViewOnVC?.center)!
@@ -123,19 +116,12 @@ class BaseViewController: UIViewController,RetryViewProtocol {
 
     func showTransperantLoadingOnViewController() {
         
-        var tabBarHeight:CGFloat = 0
-        
         if(self.transperantLoadingOnVC == nil){
             
-            if(self.tabBarController != nil){
-                
-                tabBarHeight = (self.tabBarController?.tabBar.frame.size.height)!
-            }
-            
-            self.transperantLoadingOnVC = UIView.init(frame: CGRect(x:self.view.frame.origin.x,y:self.view.frame.origin.y,width :self.view.frame.size.width,height :self.view.frame.size.height - tabBarHeight))
+            self.transperantLoadingOnVC = UIView.init(frame: CGRect(x:self.view.frame.origin.x,y:self.view.frame.origin.y,width :self.view.frame.size.width,height :self.view.frame.size.height))
             self.transperantLoadingOnVC?.backgroundColor = UIColor.lightGray
             self.transperantLoadingOnVC?.alpha = 0.3
-            self.transperantLoadingOnVC?.center = CGPoint(x : self.view.frame.size.width/2, y :(self.view.frame.size.height - tabBarHeight)/2)
+            self.transperantLoadingOnVC?.center = CGPoint(x : self.view.frame.size.width/2, y :(self.view.frame.size.height)/2)
             
             let indicator : UIActivityIndicatorView = UIActivityIndicatorView.init(activityIndicatorStyle:UIActivityIndicatorViewStyle.gray)
             indicator.center = (self.transperantLoadingOnVC?.center)!

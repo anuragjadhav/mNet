@@ -44,7 +44,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" tag="12345" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eh5-5X-eEW">
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" tag="12345" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eh5-5X-eEW">
                                 <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="To" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yRh-Mc-RzU" customClass="CustomBrownTextColorLabel" customModule="mNet" customModuleProvider="target">
@@ -672,6 +672,7 @@
                             <constraint firstItem="qed-Rq-zKh" firstAttribute="leading" secondItem="CfA-n9-NIj" secondAttribute="leading" id="Uan-FZ-T9Z"/>
                             <constraint firstItem="qed-Rq-zKh" firstAttribute="trailing" secondItem="CfA-n9-NIj" secondAttribute="trailing" id="eRM-Kp-WIW"/>
                             <constraint firstItem="eh5-5X-eEW" firstAttribute="top" secondItem="CfA-n9-NIj" secondAttribute="top" id="xzs-Zs-cIP"/>
+                            <constraint firstItem="eh5-5X-eEW" firstAttribute="width" secondItem="icG-2H-tu1" secondAttribute="width" id="ybP-NP-FdU"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="CfA-n9-NIj"/>
                     </view>
@@ -738,25 +739,26 @@
                                 <color key="textColor" red="0.01176470588" green="0.51764705879999995" blue="0.80784313730000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="NPR-li-FvK">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="NPR-li-FvK">
                                 <rect key="frame" x="17" y="172" width="358" height="495"/>
                                 <color key="backgroundColor" red="0.96862745100000003" green="0.97254901959999995" blue="0.97647058819999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="MembersTableViewCell" rowHeight="68" id="gro-m2-N6C" customClass="MembersTableViewCell" customModule="mNet" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="358" height="68"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="MembersTableViewCell" rowHeight="56" id="gro-m2-N6C" customClass="MembersTableViewCell" customModule="mNet" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="358" height="56"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" tableViewCell="gro-m2-N6C" id="B62-qP-U61">
-                                            <rect key="frame" x="0.0" y="0.0" width="358" height="68"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="358" height="56"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Saurabh Suman" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Tu-XR-wE8" customClass="CustomBrownTextColorLabel" customModule="mNet" customModuleProvider="target">
-                                                    <rect key="frame" x="10" y="0.0" width="101" height="17"/>
+                                                    <rect key="frame" x="10" y="6" width="101" height="17"/>
+                                                    <viewLayoutGuide key="safeArea" id="hhK-RH-oz6"/>
                                                     <fontDescription key="fontDescription" name="SanFranciscoDisplay-Bold" family="San Francisco Display" pointSize="14"/>
                                                     <color key="textColor" red="0.3803921569" green="0.28235294119999998" blue="0.22352941179999999" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Approver" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Msh-un-Xr9" customClass="CustomBrownTextColorLabel" customModule="mNet" customModuleProvider="target">
-                                                    <rect key="frame" x="20" y="22" width="54" height="17"/>
+                                                    <rect key="frame" x="20" y="28" width="54" height="17"/>
                                                     <fontDescription key="fontDescription" name="SanFranciscoDisplay-Light" family="San Francisco Display" pointSize="14"/>
                                                     <color key="textColor" red="0.3803921569" green="0.28235294119999998" blue="0.22352941179999999" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
@@ -777,10 +779,11 @@
                                             <constraints>
                                                 <constraint firstItem="Msh-un-Xr9" firstAttribute="leading" secondItem="5Tu-XR-wE8" secondAttribute="leading" constant="10" id="Rkm-Bs-oBf"/>
                                                 <constraint firstItem="Msh-un-Xr9" firstAttribute="top" secondItem="5Tu-XR-wE8" secondAttribute="bottom" constant="5" id="dqH-y4-Mu6"/>
+                                                <constraint firstAttribute="bottom" secondItem="Msh-un-Xr9" secondAttribute="bottom" constant="11" id="eBN-hh-y7c"/>
                                                 <constraint firstItem="5Tu-XR-wE8" firstAttribute="leading" secondItem="B62-qP-U61" secondAttribute="leading" constant="10" id="n5I-rq-E2b"/>
                                                 <constraint firstAttribute="trailing" secondItem="Tha-DT-pen" secondAttribute="trailing" constant="18" id="pL6-h5-hlS"/>
                                                 <constraint firstItem="Tha-DT-pen" firstAttribute="top" secondItem="B62-qP-U61" secondAttribute="top" constant="9" id="rhO-ap-Cdo"/>
-                                                <constraint firstItem="5Tu-XR-wE8" firstAttribute="top" secondItem="B62-qP-U61" secondAttribute="top" id="zLA-vY-IaP"/>
+                                                <constraint firstItem="5Tu-XR-wE8" firstAttribute="top" secondItem="B62-qP-U61" secondAttribute="top" constant="6" id="zLA-vY-IaP"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" red="0.96862745100000003" green="0.97254901959999995" blue="0.97647058819999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -865,8 +868,8 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0 unread conversations" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gKb-7E-VrU" customClass="CustomBrownTextColorLabel" customModule="mNet" customModuleProvider="target">
-                                <rect key="frame" x="24" y="117" width="140" height="17"/>
-                                <fontDescription key="fontDescription" name="SanFranciscoDisplay-Light" family="San Francisco Display" pointSize="14"/>
+                                <rect key="frame" x="24" y="117" width="144.5" height="17"/>
+                                <fontDescription key="fontDescription" name="SanFranciscoDisplay-Medium" family="San Francisco Display" pointSize="14"/>
                                 <color key="textColor" red="0.3803921569" green="0.28235294119999998" blue="0.22352941179999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -911,10 +914,10 @@
                                                     <color key="textColor" red="0.3803921569" green="0.28235294119999998" blue="0.22352941179999999" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Manager, Product" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fli-4i-yTG">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Manager, Product" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fli-4i-yTG">
                                                     <rect key="frame" x="218.5" y="17" width="70" height="14"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="width" constant="70" id="0pP-Aq-URe"/>
+                                                        <constraint firstAttribute="width" relation="lessThanOrEqual" constant="70" id="0pP-Aq-URe"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" name="SanFranciscoDisplay-Regular" family="San Francisco Display" pointSize="12"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="0.3748394692" colorSpace="calibratedRGB"/>
@@ -1386,15 +1389,15 @@
                                         </constraints>
                                     </imageView>
                                     <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Manish D." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d5j-wV-ww7" customClass="CustomBrownTextColorLabel" customModule="mNet" customModuleProvider="target">
-                                        <rect key="frame" x="112" y="13" width="83" height="14"/>
+                                        <rect key="frame" x="112" y="13" width="123" height="14"/>
                                         <fontDescription key="fontDescription" name="SanFranciscoDisplay-Medium" family="San Francisco Display" pointSize="12"/>
                                         <color key="textColor" red="0.28235294117647058" green="0.28235294119999998" blue="0.28235294117647058" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="9.45 PM 16 Jan 2018 Monday" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fOW-sk-FW1">
-                                        <rect key="frame" x="205" y="13" width="150" height="14"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="12-02-2008 12:14:13" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fOW-sk-FW1">
+                                        <rect key="frame" x="245" y="13" width="110" height="14"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="150" id="sMc-gM-QP6"/>
+                                            <constraint firstAttribute="width" constant="110" id="sMc-gM-QP6"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" name="SanFranciscoDisplay-Medium" family="San Francisco Display" pointSize="12"/>
                                         <color key="textColor" red="0.45882352939999999" green="0.45882352939999999" blue="0.45882352939999999" alpha="1" colorSpace="calibratedRGB"/>
@@ -1472,6 +1475,9 @@
                                                             <fontDescription key="fontDescription" name="SanFranciscoDisplay-Regular" family="San Francisco Display" pointSize="14"/>
                                                             <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                                             <dataDetectorType key="dataDetectorTypes" link="YES"/>
+                                                            <connections>
+                                                                <outlet property="delegate" destination="ZDB-Oo-0rh" id="NI1-An-2WS"/>
+                                                            </connections>
                                                         </textView>
                                                     </subviews>
                                                     <color key="backgroundColor" red="0.35435706377029419" green="0.63892048597335815" blue="0.90918320417404175" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -1545,6 +1551,9 @@
                                                             <fontDescription key="fontDescription" name="SanFranciscoDisplay-Regular" family="San Francisco Display" pointSize="14"/>
                                                             <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                                             <dataDetectorType key="dataDetectorTypes" link="YES"/>
+                                                            <connections>
+                                                                <outlet property="delegate" destination="ZDB-Oo-0rh" id="xMO-Di-KsW"/>
+                                                            </connections>
                                                         </textView>
                                                     </subviews>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -1563,10 +1572,10 @@
                                                     <color key="textColor" red="0.3803921569" green="0.28235294119999998" blue="0.22352941179999999" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="12.24 AM" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GM8-VR-xv4">
-                                                    <rect key="frame" x="166" y="8" width="60" height="17"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="12.24 AM 17 Mar 18" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GM8-VR-xv4">
+                                                    <rect key="frame" x="166" y="8" width="120" height="17"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="width" constant="60" id="ACb-sO-hXp"/>
+                                                        <constraint firstAttribute="width" constant="120" id="ACb-sO-hXp"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" name="SanFranciscoDisplay-Light" family="San Francisco Display" pointSize="14"/>
                                                     <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>

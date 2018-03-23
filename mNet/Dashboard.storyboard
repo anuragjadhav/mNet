@@ -121,7 +121,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="mUh-uh-gsA">
-                                <rect key="frame" x="27" y="331" width="327" height="336"/>
+                                <rect key="frame" x="27" y="331" width="327" height="316"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="sectionIndexBackgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
@@ -209,7 +209,7 @@
                                 </connections>
                             </tableView>
                             <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No Apps Available" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ymi-um-cXP" customClass="CustomBrownTextColorLabel" customModule="mNet" customModuleProvider="target">
-                                <rect key="frame" x="121.5" y="465.5" width="132.5" height="20"/>
+                                <rect key="frame" x="121.5" y="455.5" width="132.5" height="20"/>
                                 <constraints>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="100" id="789-8d-aUa"/>
                                 </constraints>
@@ -225,7 +225,7 @@
                             <constraint firstItem="LO5-Ab-vbT" firstAttribute="trailing" secondItem="wv2-VT-8yh" secondAttribute="trailing" id="3vr-8b-qIF"/>
                             <constraint firstItem="q5q-Xy-Pbt" firstAttribute="trailing" secondItem="gg2-fU-KFW" secondAttribute="trailing" id="5d8-xe-gb3"/>
                             <constraint firstItem="F8l-RN-ukK" firstAttribute="centerY" secondItem="x55-qU-at0" secondAttribute="centerY" id="6c3-vi-SdN"/>
-                            <constraint firstItem="wv2-VT-8yh" firstAttribute="bottom" secondItem="mUh-uh-gsA" secondAttribute="bottom" id="6zf-VV-eGp"/>
+                            <constraint firstItem="wv2-VT-8yh" firstAttribute="bottom" secondItem="mUh-uh-gsA" secondAttribute="bottom" constant="20" id="6zf-VV-eGp"/>
                             <constraint firstItem="ymi-um-cXP" firstAttribute="centerX" secondItem="Xc9-uK-V8a" secondAttribute="centerX" id="8PN-aQ-6jn"/>
                             <constraint firstItem="gfB-ab-tfT" firstAttribute="top" secondItem="Dka-Gt-J5X" secondAttribute="bottom" constant="44" id="Bm9-EB-CMG"/>
                             <constraint firstItem="LO5-Ab-vbT" firstAttribute="top" secondItem="Xc9-uK-V8a" secondAttribute="top" id="F2p-2K-0bY"/>

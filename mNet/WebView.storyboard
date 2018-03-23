@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Web View Controller-->
+        <scene sceneID="Mfa-6E-AOS">
+            <objects>
+                <viewController storyboardIdentifier="mNetWebViewController" id="aml-rX-w31" customClass="WebViewController" customModule="mNet" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="dYH-yg-JKb">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uaM-av-5k5">
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </webView>
+                            <progressView contentMode="scaleToFill" verticalHuggingPriority="750" progressViewStyle="bar" translatesAutoresizingMaskIntoConstraints="NO" id="18m-qj-CP7">
+                                <rect key="frame" x="0.0" y="64" width="375" height="2.5"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="2" id="J94-ch-tmJ"/>
+                                </constraints>
+                            </progressView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="18m-qj-CP7" secondAttribute="trailing" id="0AB-qh-7OZ"/>
+                            <constraint firstItem="Kjo-xj-DmM" firstAttribute="trailing" secondItem="uaM-av-5k5" secondAttribute="trailing" id="7xy-aL-K5J"/>
+                            <constraint firstItem="Kjo-xj-DmM" firstAttribute="bottom" secondItem="uaM-av-5k5" secondAttribute="bottom" id="H36-Zc-dSX"/>
+                            <constraint firstItem="18m-qj-CP7" firstAttribute="leading" secondItem="dYH-yg-JKb" secondAttribute="leading" id="aAQ-RR-eOc"/>
+                            <constraint firstItem="uaM-av-5k5" firstAttribute="top" secondItem="Kjo-xj-DmM" secondAttribute="top" id="gfn-4I-nDz"/>
+                            <constraint firstItem="uaM-av-5k5" firstAttribute="leading" secondItem="Kjo-xj-DmM" secondAttribute="leading" id="giS-lI-qgW"/>
+                            <constraint firstItem="18m-qj-CP7" firstAttribute="top" secondItem="Kjo-xj-DmM" secondAttribute="top" id="shB-g0-XZ1"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="Kjo-xj-DmM"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="Pfq-sB-w5u">
+                        <barButtonItem key="leftBarButtonItem" image="backButtonImage" id="1jg-4V-Rfn">
+                            <color key="tintColor" red="0.3803921569" green="0.28235294119999998" blue="0.22352941179999999" alpha="1" colorSpace="calibratedRGB"/>
+                            <connections>
+                                <action selector="backButtonAction:" destination="aml-rX-w31" id="dVr-UW-DO4"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="backBarButton" destination="1jg-4V-Rfn" id="5hx-FB-srA"/>
+                        <outlet property="progressBar" destination="18m-qj-CP7" id="KSq-gt-t8T"/>
+                        <outlet property="progressBarHeight" destination="J94-ch-tmJ" id="X4L-I4-NyC"/>
+                        <outlet property="webView" destination="uaM-av-5k5" id="aYe-SW-udY"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4qw-aB-yu7" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1009" y="-1076"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="bpf-tE-e66">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="bwP-66-6VG" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="0ST-e4-wsj">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="aml-rX-w31" kind="relationship" relationship="rootViewController" id="Bt9-dg-aiT"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Hjj-Sy-WPX" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="298" y="-1090"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="backButtonImage" width="24" height="24"/>
+    </resources>
+</document>

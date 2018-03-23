@@ -107,10 +107,11 @@ class DashboardDataController: NSObject {
         if app.fabStatus == "0" {
             priority = "1"
         }
-        
+        let user:User = User.loggedInUser()!
         var params:[String:Any] = [String:Any]()
         params["app_code"] = app.appCode
         params["priority"] = priority
+        params["user_code"] = user.userCode
         
         WrapperManager.shared.dashboardWrapper.setAppPriority(postParams: params, onSuccess: {
             

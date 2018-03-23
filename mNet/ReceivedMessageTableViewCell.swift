@@ -26,7 +26,7 @@ class ReceivedMessageTableViewCell: UITableViewCell {
         
         //convert received string into date and then format it in required format
         let receivedDate = dateFormatter.date(from:reply.createdOn)
-        dateFormatter.dateFormat = "h:mm a"
+        dateFormatter.dateFormat = "h:mm a dd MMM yy"
         
         let timeStringToSet = dateFormatter.string(from: receivedDate!)
         self.timeLabel.text = timeStringToSet

@@ -10,6 +10,7 @@ import UIKit
 import MobileCoreServices
 import AssetsLibrary
 import Photos
+import SafariServices
 
 protocol HideIgnorePostDelegate : class {
     
@@ -82,17 +83,17 @@ class ConversationDetailViewController: BaseViewController,UITableViewDelegate,U
             user2Label.text = member2.userName
         }
         
-        let dateFormatter : DateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
-        
-        let latestReplyDate:Date = dateFormatter.date(from:(dataCtrl?.selectedCoversation?.latestReplierDate)!)!
-        
-        let dateFormatterToShow : DateFormatter = DateFormatter()
-        dateFormatterToShow.dateFormat = "h:mm a yy MMM dd"
-        
-        let dateTimeString:String = dateFormatterToShow.string(from: latestReplyDate) + " " + dateFormatterToShow.weekdaySymbols[Calendar.current.component(.weekday, from: latestReplyDate)]
-        
-        dateTimeLabel.text = dateTimeString
+//        let dateFormatter : DateFormatter = DateFormatter()
+//        dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
+//
+//        let latestReplyDate:Date = dateFormatter.date(from:(dataCtrl?.selectedCoversation?.latestReplierDate)!)!
+//
+//        let dateFormatterToShow : DateFormatter = DateFormatter()
+//        dateFormatterToShow.dateFormat = "h:mm a yy MMM dd"
+//
+//        let dateTimeString:String = dateFormatterToShow.string(from: latestReplyDate) + " " + dateFormatterToShow.weekdaySymbols[safe:Calendar.current.component(.weekday, from: latestReplyDate) - 1]!
+//
+        dateTimeLabel.text = dataCtrl?.selectedCoversation?.createdOn
         
         conversationTableView.reloadData()
     }
@@ -118,7 +119,7 @@ class ConversationDetailViewController: BaseViewController,UITableViewDelegate,U
         
         super.keyBoardWillShow(notification: notification)
         
-         if let keyboardSize = (notification.userInfo?[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue
+         if let keyboardSize = (notification.userInfo?[UIKeyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue
          {
             messageViewBottomConstraint.constant = keyboardSize.height
             self.view.layoutIfNeeded()
@@ -163,7 +164,14 @@ class ConversationDetailViewController: BaseViewController,UITableViewDelegate,U
         
         if(indexPath.row == 0 && conversationReply.replyLink == "")
         {
-            link = dataCtrl?.selectedCoversation?.postLink
+            if dataCtrl?.selectedCoversation?.postLink.range(of:"&nbsp") != nil {
+                
+                link = ""
+            }
+            else
+            {
+                link = dataCtrl?.selectedCoversation?.postLink
+            }
         }
         else
         {
@@ -215,6 +223,15 @@ class ConversationDetailViewController: BaseViewController,UITableViewDelegate,U
         }
         
         return true
+    }
+    
+    func textView(_ textView: UITextView, shouldInteractWith URL: URL, in characterRange: NSRange) -> Bool {
+        
+        let webViewController:WebViewController = UIStoryboard.webView.instantiateViewController(withIdentifier: StoryboardIDs.webViewController) as! WebViewController
+        webViewController.setData(url: URL, header: URL.pathComponents.last)
+        navigationController?.pushViewController(webViewController, animated: true)
+        
+        return false
     }
     
     //MARK: Image Picker Delegates

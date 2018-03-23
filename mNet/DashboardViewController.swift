@@ -44,12 +44,13 @@ class DashboardViewController: BaseViewController, UITableViewDataSource, UITabl
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.setUpNavigationController()
+        
+        getData()
     }
 
     //MARK:Setup
     func setUpViewController() {
         
-        getData()
         myAppsTableView.tableFooterView = UIView()
         logoutButton.imageView?.tintColor = ColorConstants.kWhiteColor
         logoutButton.imageView?.image = logoutButton.imageView?.image?.withRenderingMode(.alwaysTemplate)
@@ -165,7 +166,7 @@ class DashboardViewController: BaseViewController, UITableViewDataSource, UITabl
         }
         
         else {
-            let webViewController:WebViewController = UIStoryboard.login.instantiateViewController(withIdentifier: StoryboardIDs.webViewController) as! WebViewController
+            let webViewController:WebViewController = UIStoryboard.webView.instantiateViewController(withIdentifier: StoryboardIDs.webViewController) as! WebViewController
             webViewController.setData(url: app.appURL, header: app.appName)
             navigationController?.pushViewController(webViewController, animated: true)
         }

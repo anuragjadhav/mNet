@@ -37,6 +37,11 @@ class AboutMeViewController: BaseViewController,UITextFieldDelegate,CustomPicker
     
     @IBOutlet weak var emailIDTextField: CustomBrownTextColorTextfield!
     
+     @IBOutlet weak var organizationTextField: CustomBrownTextColorTextfield!
+     @IBOutlet weak var companyNameTextField: CustomBrownTextColorTextfield!
+     @IBOutlet weak var branchTextField: CustomBrownTextColorTextfield!
+     @IBOutlet weak var departmentTextField: CustomBrownTextColorTextfield!
+    
     var customerPickerView : CustomPickerView?
     var genderArray:[String] = ["male","female"]
     
@@ -89,41 +94,16 @@ class AboutMeViewController: BaseViewController,UITextFieldDelegate,CustomPicker
             emailIDTextField.text = ""
         }
         
-        if(dataCtrl.profile?.about != nil){
-            abouttextField.text = dataCtrl.profile?.about
-        }
-        else{
-            abouttextField.text = ""
-        }
-        
-        if(dataCtrl.profile?.address != nil){
-            addressTextField.text = dataCtrl.profile?.address
-        }
-        else{
-            addressTextField.text = ""
-        }
-        
-        if(dataCtrl.profile?.phoneNo != nil){
-            landlineNumberTextField.text = dataCtrl.profile?.phoneNo
-        }
-        else{
-            landlineNumberTextField.text = ""
-        }
-        
-        if(dataCtrl.profile?.mobileNo != nil){
-            mobileNumberTextField.text = dataCtrl.profile?.mobileNo
-        }
-        else{
-            mobileNumberTextField.text = ""
-        }
-        
-        if(dataCtrl.profile?.designation != nil){
-            designationTextfield.text = dataCtrl.profile?.designation
-        }
-        else{
-            designationTextfield.text = ""
-        }
-        
+        abouttextField.text = dataCtrl.profile?.about ?? ""
+        addressTextField.text = dataCtrl.profile?.address ?? ""
+        landlineNumberTextField.text = dataCtrl.profile?.phoneNo ?? ""
+        mobileNumberTextField.text = dataCtrl.profile?.mobileNo ?? ""
+        designationTextfield.text = dataCtrl.profile?.designation ?? ""
+        organizationTextField.text = dataCtrl.profile?.organizationName ?? ""
+        companyNameTextField.text = dataCtrl.profile?.companyName ?? ""
+        branchTextField.text = dataCtrl.profile?.branchName ?? ""
+        departmentTextField.text = dataCtrl.profile?.department ?? ""
+            
         if(dataCtrl.profile?.dob != nil && dataCtrl.profile?.dob != ""){
             
             birthdayButton.setTitle(dataCtrl.profile?.dob, for: .normal)

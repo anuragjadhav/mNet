@@ -43,7 +43,7 @@ class AttachmentsViewController: UIViewController ,UITableViewDataSource,UITable
         
         let urlString:String = documents[indexPath.row].link
         
-        let webViewController:WebViewController = UIStoryboard.login.instantiateViewController(withIdentifier: StoryboardIDs.webViewController) as! WebViewController
+        let webViewController:WebViewController = UIStoryboard.webView.instantiateViewController(withIdentifier: StoryboardIDs.webViewController) as! WebViewController
         webViewController.setData(url: URL(string: urlString), header: urlString.components(separatedBy: "/").last)
         documentVC?.navigationController?.pushViewController(webViewController, animated: true)
     }

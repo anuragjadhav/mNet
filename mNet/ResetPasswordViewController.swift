@@ -12,7 +12,7 @@ class ResetPasswordViewController: BaseViewController,UITextFieldDelegate {
 
     @IBOutlet weak var newPasswordTextfield: CustomBrownTextColorTextfield!
     @IBOutlet weak var confirmPasswordTextField: CustomBrownTextColorTextfield!
-    
+    @IBOutlet weak var oldPasswordTextField: CustomBrownTextColorTextfield!
     var dataCtrl:SettingsProfileDataController?
     
     override func viewDidLoad() {
@@ -44,12 +44,12 @@ class ResetPasswordViewController: BaseViewController,UITextFieldDelegate {
         
         self.view.endEditing(true)
         
-        if(newPasswordTextfield.text != nil && confirmPasswordTextField.text != nil && newPasswordTextfield.text != "" && confirmPasswordTextField.text != "" && newPasswordTextfield.text == confirmPasswordTextField.text)
+        if(oldPasswordTextField.text != nil && oldPasswordTextField.text != "" && newPasswordTextfield.text != nil && confirmPasswordTextField.text != nil && newPasswordTextfield.text != "" && confirmPasswordTextField.text != "" && newPasswordTextfield.text == confirmPasswordTextField.text)
         {
             if Reachability.isConnectedToNetwork(){
                 
                 self.showTransperantLoadingOnViewController()
-                dataCtrl?.resetNewPassword(newPassword: newPasswordTextfield.text!,onSuccess: { [unowned self]  in
+                dataCtrl?.resetNewPassword(oldPassword:oldPasswordTextField.text!,newPassword: newPasswordTextfield.text!,onSuccess: { [unowned self]  in
                     
                     DispatchQueue.main.async {
                         

@@ -146,6 +146,7 @@ struct ColorConstants {
     static let kRedColor: UIColor = UIColor(red: 221.0/255.0, green: 75.0/255.0, blue: 57.0/255.0, alpha: 1.0)
     static let kBackgroundColor: UIColor = UIColor(red: 247.0/255.0, green: 248.0/255.0, blue: 249.0/255.0, alpha: 1.0)
     static let kWhiteColor:UIColor = UIColor.white
+    static let kGreenColor: UIColor = UIColor(red: 0.0/255.0, green: 128.0/255.0, blue: 0.0/255.0, alpha: 1.0)
 }
 
 struct NewConversationUserType {
@@ -273,6 +274,7 @@ extension UIStoryboard {
     static let tabBar:UIStoryboard = UIStoryboard(name: "TabBar", bundle: nil)
     static let login:UIStoryboard = UIStoryboard(name: "Login", bundle: nil)
     static let dateSelector:UIStoryboard = UIStoryboard(name: "DateSelector", bundle: nil)
+    static let webView:UIStoryboard = UIStoryboard(name: "WebView", bundle: nil)
 }
 
 extension UIFont {

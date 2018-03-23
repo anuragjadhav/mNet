@@ -205,14 +205,15 @@ class SettingsProfileDataController: NSObject {
         }
     }
     
-    func resetNewPassword(newPassword:String,onSuccess:@escaping () -> Void , onFailure : @escaping (String) -> Void){
+    func resetNewPassword(oldPassword:String,newPassword:String,onSuccess:@escaping () -> Void , onFailure : @escaping (String) -> Void){
         
         let user:User = User.loggedInUser()!
         
         //set parameters to post
         var postParams:[String:Any] = [String:Any]()
         postParams["userEmail"] = user.email
-        postParams["userPassword"] = newPassword
+        postParams["newPassword"] = newPassword
+        postParams["oldPassword"] = oldPassword
         postParams["requestFrom"] = "MobileApp"
         postParams["platform"] = "iOS"
         

@@ -14,6 +14,9 @@ class EmailPreferencesViewController: BaseViewController,UIPickerViewDelegate,UI
     @IBOutlet weak var approvalReminderSettingSwitch: UISwitch!
     @IBOutlet weak var commentsSettingSwitch: UISwitch!
     @IBOutlet weak var remindMebutton: CustomBrownTextColorButton!
+    @IBOutlet weak var remindMeLabelHeightConstraint: NSLayoutConstraint!
+    @IBOutlet weak var remindMeButtonHeightConstraint: NSLayoutConstraint!
+    @IBOutlet weak var remindMeArrowButtonHeightConstraint: NSLayoutConstraint!
     
     var dataCtrl:SettingsProfileDataController?
     var customerPickerView : CustomPickerView?
@@ -59,7 +62,8 @@ class EmailPreferencesViewController: BaseViewController,UIPickerViewDelegate,UI
         {
             commentsSettingSwitch.isOn = false
         }
-
+        
+        hideShowReminderSection()
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -77,6 +81,26 @@ class EmailPreferencesViewController: BaseViewController,UIPickerViewDelegate,UI
     func setupNavigationBar(){
         
         self.navigationController?.navigationBar.isHidden = false
+    }
+    
+    func hideShowReminderSection()
+    {
+        if(dataCtrl?.settings?.replyEmailNotification == "1")
+        {
+            remindMeLabelHeightConstraint.constant = 17
+            remindMeButtonHeightConstraint.constant = 36
+            remindMeArrowButtonHeightConstraint.constant = 15
+            remindMebutton.isHidden = false
+        }
+        else
+        {
+            remindMeLabelHeightConstraint.constant = 0
+            remindMeButtonHeightConstraint.constant = 0
+            remindMebutton.isHidden = true
+            remindMeArrowButtonHeightConstraint.constant = 0
+        }
+        
+        self.view.layoutIfNeeded()
     }
     
     //Mark: Picker View Delegates and Data Source
@@ -99,7 +123,7 @@ class EmailPreferencesViewController: BaseViewController,UIPickerViewDelegate,UI
 
     func selectedPickerViewIndex(index: Int) {
         
-        let selectedTitle:String = self.daysArray[index]
+       let selectedTitle:String = self.daysArray[index]
         
        let filterTitle1 = selectedTitle.replacingOccurrences(of: "days", with: "")
        let filterTitle2 = filterTitle1.replacingOccurrences(of: "day", with: "")
@@ -117,10 +141,6 @@ class EmailPreferencesViewController: BaseViewController,UIPickerViewDelegate,UI
                     
                     self.remindMebutton.setTitle(selectedTitle, for: .normal)
                     
-                    let alert = UIAlertController(title:AlertMessages.success, message:displayMessage, preferredStyle: .alert)
-                    alert.addAction(UIAlertAction(title:AlertMessages.ok, style:.default, handler: { _ in
-                    }))
-                    self.present(alert, animated: true, completion: nil)
                 }
                 
                 }, onFailure: { [unowned self] (errorMessage) in
@@ -160,10 +180,6 @@ class EmailPreferencesViewController: BaseViewController,UIPickerViewDelegate,UI
                     
                     self.removeTransperantLoadingFromViewController()
                     
-                    let alert = UIAlertController(title:AlertMessages.success, message:displayMessage, preferredStyle: .alert)
-                    alert.addAction(UIAlertAction(title:AlertMessages.ok, style:.default, handler: { _ in
-                    }))
-                    self.present(alert, animated: true, completion: nil)
                 }
                 
                 }, onFailure: { [unowned self] (errorMessage) in
@@ -207,10 +223,7 @@ class EmailPreferencesViewController: BaseViewController,UIPickerViewDelegate,UI
                     
                     self.removeTransperantLoadingFromViewController()
                     
-                    let alert = UIAlertController(title:AlertMessages.success, message:displayMessage, preferredStyle: .alert)
-                    alert.addAction(UIAlertAction(title:AlertMessages.ok, style:.default, handler: { _ in
-                    }))
-                    self.present(alert, animated: true, completion: nil)
+                    self.hideShowReminderSection()
                 }
                 
                 }, onFailure: { [unowned self] (errorMessage) in
@@ -254,10 +267,6 @@ class EmailPreferencesViewController: BaseViewController,UIPickerViewDelegate,UI
                     
                     self.removeTransperantLoadingFromViewController()
                     
-                    let alert = UIAlertController(title:AlertMessages.success, message:displayMessage, preferredStyle: .alert)
-                    alert.addAction(UIAlertAction(title:AlertMessages.ok, style:.default, handler: { _ in
-                    }))
-                    self.present(alert, animated: true, completion: nil)
                 }
                 
                 }, onFailure: { [unowned self] (errorMessage) in

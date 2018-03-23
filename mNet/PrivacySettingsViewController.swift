@@ -77,7 +77,7 @@ class PrivacySettingsViewController: BaseViewController,UITableViewDelegate,UITa
             selectedIndexPath = indexPath
             
             let selectedOption = self.dataCtrl?.privacySettingOptionsArray[indexPath.row]
-            selectedOption?.isSettingOn = sender.isOn ? "1" :"0"
+            selectedOption?.isSettingOn = selectedOption?.isSettingOn == "0" ? "1" :"0"
             
             self.dataCtrl?.selectedPrivacySettingOption = selectedOption
             
@@ -116,10 +116,10 @@ class PrivacySettingsViewController: BaseViewController,UITableViewDelegate,UITa
                 
                 self.removeTransperantLoadingFromViewController()
                 
-                let alert = UIAlertController(title:AlertMessages.success, message:displayMessage, preferredStyle: .alert)
-                alert.addAction(UIAlertAction(title:AlertMessages.ok, style:.default, handler: { _ in
-                }))
-                self.present(alert, animated: true, completion: nil)
+                let cell:PrivacySettingOptionTableViewCell =  self.optionsTableView.cellForRow(at: self.selectedIndexPath!) as! PrivacySettingOptionTableViewCell
+                
+                cell.loadCellWithOption( (self.dataCtrl?.selectedPrivacySettingOption!)!)
+                
             }
             
             }, onFailure: { [unowned self] (errorMessage) in

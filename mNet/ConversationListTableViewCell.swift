@@ -65,7 +65,7 @@ class ConversationListTableViewCell: UITableViewCell {
         //check if 24 horus has passed to show time differently
         if let diff = Calendar.current.dateComponents([.hour], from: receivedDate!, to: Date()).hour, diff > 24 {
             
-            dateFormatter.dateFormat = "dd,MMM"
+            dateFormatter.dateFormat = "dd MMM"
         }
         else
         {
