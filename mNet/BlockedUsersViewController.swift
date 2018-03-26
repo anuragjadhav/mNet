@@ -1,22 +1,22 @@
 //
-//  PeopleViewController.swift
+//  BlockedUsersViewController.swift
 //  mNet
 //
-//  Created by Anurag Jadhav on 12/28/17.
-//  Copyright © 2017 mNet. All rights reserved.
+//  Created by Anurag Jadhav on 3/26/18.
+//  Copyright © 2018 mNet. All rights reserved.
 //
 
 import UIKit
 
-class PeopleViewController: BaseViewController,UITableViewDataSource,UITableViewDelegate,UISearchBarDelegate,KRPullLoadViewDelegate {
+class BlockedUsersViewController: BaseViewController,UITableViewDataSource,UITableViewDelegate,UISearchBarDelegate,KRPullLoadViewDelegate {
     
     @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var peopleTableView: UITableView!
     
-    @IBOutlet weak var noPeopleLabel: CustomBrownTextColorLabel!
+     @IBOutlet weak var noBlockedUsersLabel: CustomBrownTextColorLabel!
     
     let dataCtrl:PeopleDataController = PeopleDataController()
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -27,14 +27,15 @@ class PeopleViewController: BaseViewController,UITableViewDataSource,UITableView
         
         peopleTableView.tableFooterView = UIView()
         
-        getPeopleList(isReload: true)
-
+        dataCtrl.showOnlyBlockedUsers = true
     }
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated);
         
         self.setupNavigationBar()
+        
+        getPeopleList(isReload: true)
     }
     
     func setupNavigationBar(){
@@ -42,6 +43,7 @@ class PeopleViewController: BaseViewController,UITableViewDataSource,UITableView
         self.navigationController?.navigationBar.isHidden = false
     }
     
+
     //Mark: tableview delegates and data source
     
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -61,7 +63,7 @@ class PeopleViewController: BaseViewController,UITableViewDataSource,UITableView
         let people:People = dataCtrl.peopleArray[indexPath.row]
         
         cell.loadCellWithPeople(people)
-
+        
         return cell
     }
     
@@ -73,7 +75,7 @@ class PeopleViewController: BaseViewController,UITableViewDataSource,UITableView
         profileVC.dataCtrl.selectedPeople = people
         self.navigationController?.pushViewController(profileVC, animated: true)
     }
-
+    
     // MARK: - Search bar delegates
     
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
@@ -89,7 +91,7 @@ class PeopleViewController: BaseViewController,UITableViewDataSource,UITableView
         if Reachability.isConnectedToNetwork(){
             
             if(isReload){
-            
+                
                 self.showLoadingOnViewController()
             }
             
@@ -121,15 +123,13 @@ class PeopleViewController: BaseViewController,UITableViewDataSource,UITableView
         }
     }
     
-    
     func checkNoData() {
         
-        noPeopleLabel.isHidden = dataCtrl.peopleArray.count > 0
+        noBlockedUsersLabel.isHidden = dataCtrl.peopleArray.count > 0
     }
     
-    
     // MARK: - Button Actions
-
+    
     @IBAction func backButtonAction(_ sender: Any) {
         
         self.navigationController?.popViewController(animated: true)
@@ -159,5 +159,6 @@ class PeopleViewController: BaseViewController,UITableViewDataSource,UITableView
         
         getPeopleList(isReload: true)
     }
+
 
 }

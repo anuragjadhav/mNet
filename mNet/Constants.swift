@@ -164,8 +164,8 @@ struct SettingOptions {
     static let privacySettings = "Privacy Settings"
     static let appSettings = "App Settings"
     static let emailPreferences = "Email Preferences"
-    static let groups = "Groups"
     static let people = "People"
+    static let blockedUsers = "Blocked Users"
     static let logout = "Logout"
 }
 
@@ -214,12 +214,19 @@ struct CellIdentifiers {
     
     static let dashboardMyAppsTableView:String = "DashboardMyAppsTableViewCell"
     static let conversationListTableView:String = "conversationListTableViewCell"
-    static let approvalsSectionsCollectionView:String = "approvalSectionsCollectionViewCell"
+    static let approvalsSectionsCollectionViewCell:String = "approvalSectionsCollectionViewCell"
     static let pendingApprovalsTableViewCell:String = "pendingApprovalsTableViewCell"
     static let filterTableViewCell:String = "filterTableViewCell"
     static let optionTableViewCell:String = "optionTableViewCell"
-    static let pendingApprovalsCollectionView:String = "pendingApprovalsCollectionViewCell"
-    static let userListTableView:String = "userListTableViewCell"
+    static let pendingApprovalsCollectionViewCell:String = "pendingApprovalsCollectionViewCell"
+    static let userListTableViewCell:String = "userListTableViewCell"
+    static let settingOptionsTableViewCell:String = "SettingOptionsTableViewCell"
+    static let peopleTableViewCell:String = "PeopleTableViewCell"
+    static let privacySettingsOptionTableViewCell:String = "PrivacySettingOptionTableViewCell"
+    static let notificationTableViewCell:String = "NotificationTableViewCell"
+    static let selectedUsersCollectionViewCell:String = "SelectedUsersCollectionViewCell"
+    static let selectUsersTableViewCell:String = "SelectUserTableViewCell"
+    static let membersTableViewCell:String = "MembersTableViewCell"
 }
 
 struct TabNames {
@@ -244,6 +251,19 @@ struct StoryboardIDs {
     static let peopleViewController:String = "PeopleViewController"
     static let webViewController:String = "mNetWebViewController"
     static let dateFilterViewController:String = "DateFilterViewController"
+    static let blockedUsersViewController:String = "BlockedUsersViewController"
+    static let aboutMeViewController:String = "AboutMeViewController"
+    static let resetPasswordViewController:String = "ResetPasswordViewController"
+    static let privacySetingsViewController:String = "PrivacySettingsViewController"
+    static let appSettingsViewController:String = "AppSettingsViewController"
+    static let emailPreferencesViewController:String = "EmailPreferencesViewController"
+    static let profileViewController:String = "ProfileViewController"
+    static let selectUsersViewController:String = "SelectUserViewController"
+    static let conversationDetailViewController:String = "ConversationDetailViewController"
+    static let conversationInfoViewController:String = "ConversationInfoViewController"
+    static let newConversationViewController:String = "NewConversationViewController"
+    static let imageDocViewController:String = "ImageDocDisplayViewController"
+
 }
 
 struct ImageNames {

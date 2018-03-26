@@ -49,7 +49,7 @@ class PrivacySettingsViewController: BaseViewController,UITableViewDelegate,UITa
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let cell:PrivacySettingOptionTableViewCell = tableView.dequeueReusableCell(withIdentifier:"PrivacySettingOptionTableViewCell") as! PrivacySettingOptionTableViewCell
+        let cell:PrivacySettingOptionTableViewCell = tableView.dequeueReusableCell(withIdentifier:CellIdentifiers.privacySettingsOptionTableViewCell) as! PrivacySettingOptionTableViewCell
         
         let option = self.dataCtrl?.privacySettingOptionsArray[indexPath.row]
         

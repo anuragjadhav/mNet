@@ -22,6 +22,9 @@
         <array key="SanFranciscoDisplay-Light.otf">
             <string>SanFranciscoDisplay-Light</string>
         </array>
+        <array key="SanFranciscoDisplay-Medium.otf">
+            <string>SanFranciscoDisplay-Medium</string>
+        </array>
     </customFonts>
     <scenes>
         <!--Settings View Controller-->
@@ -1607,13 +1610,24 @@
                                     <outlet property="delegate" destination="Odi-K0-KHh" id="NUd-mO-EpX"/>
                                 </connections>
                             </tableView>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No People Found" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HWi-ax-fff" customClass="CustomBrownTextColorLabel" customModule="mNet" customModuleProvider="target">
+                                <rect key="frame" x="124.5" y="323.5" width="126" height="20.5"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="100" id="uNZ-5k-CiT"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="SanFranciscoDisplay-Medium" family="San Francisco Display" pointSize="17"/>
+                                <color key="textColor" red="0.3803921569" green="0.28235294119999998" blue="0.22352941179999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="SJB-Kn-Ho0" firstAttribute="top" secondItem="Hkx-la-TQC" secondAttribute="top" id="6vQ-NX-pko"/>
                             <constraint firstItem="SJB-Kn-Ho0" firstAttribute="leading" secondItem="Hkx-la-TQC" secondAttribute="leading" id="Ox8-hO-DWe"/>
                             <constraint firstItem="Hkx-la-TQC" firstAttribute="trailing" secondItem="SJB-Kn-Ho0" secondAttribute="trailing" id="SIH-FM-Dnu"/>
+                            <constraint firstItem="HWi-ax-fff" firstAttribute="centerY" secondItem="g2G-H3-hmU" secondAttribute="centerY" id="e8R-oe-rYH"/>
                             <constraint firstItem="Hkx-la-TQC" firstAttribute="bottom" secondItem="SJB-Kn-Ho0" secondAttribute="bottom" id="qff-QM-n3f"/>
+                            <constraint firstItem="HWi-ax-fff" firstAttribute="centerX" secondItem="g2G-H3-hmU" secondAttribute="centerX" id="sRD-zd-uCd"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Hkx-la-TQC"/>
                     </view>
@@ -1626,13 +1640,14 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="noPeopleLabel" destination="HWi-ax-fff" id="57N-74-HRD"/>
                         <outlet property="peopleTableView" destination="SJB-Kn-Ho0" id="oHp-cc-lYl"/>
                         <outlet property="searchBar" destination="Zk1-dP-qYl" id="vMU-Ih-7F3"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Jx-Ix-nD1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5484" y="1574.6626686656673"/>
+            <point key="canvasLocation" x="6162.3999999999996" y="1574.6626686656673"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="tf1-Zw-gB0">
@@ -1651,6 +1666,126 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="38j-Mt-21n" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="407" y="1636"/>
+        </scene>
+        <!--Blocked Users-->
+        <scene sceneID="Qpx-yq-Piq">
+            <objects>
+                <viewController storyboardIdentifier="BlockedUsersViewController" id="3Hb-W2-YXC" customClass="BlockedUsersViewController" customModule="mNet" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="3Q2-s7-pRP">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="68" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="bP0-Zh-TRT">
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <color key="backgroundColor" red="0.96862745100000003" green="0.97254901959999995" blue="0.97647058819999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                <searchBar key="tableHeaderView" contentMode="redraw" searchBarStyle="minimal" id="zX6-MC-dOl">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="44" id="e2N-m9-3I2"/>
+                                    </constraints>
+                                    <textInputTraits key="textInputTraits"/>
+                                    <connections>
+                                        <outlet property="delegate" destination="3Hb-W2-YXC" id="iXj-V9-URB"/>
+                                    </connections>
+                                </searchBar>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="PeopleTableViewCell" rowHeight="68" id="8YS-yL-7Ho" customClass="PeopleTableViewCell" customModule="mNet" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="72" width="375" height="68"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="8YS-yL-7Ho" id="7Ld-df-1AO">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="67.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Saurabh Suman" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4WZ-mN-Lhd" customClass="CustomBrownTextColorLabel" customModule="mNet" customModuleProvider="target">
+                                                    <rect key="frame" x="27" y="10" width="101" height="17"/>
+                                                    <fontDescription key="fontDescription" name="SanFranciscoDisplay-Bold" family="San Francisco Display" pointSize="14"/>
+                                                    <color key="textColor" red="0.3803921569" green="0.28235294119999998" blue="0.22352941179999999" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Manager" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="95W-4N-Evk" customClass="CustomBrownTextColorLabel" customModule="mNet" customModuleProvider="target">
+                                                    <rect key="frame" x="27" y="37" width="52.5" height="17"/>
+                                                    <fontDescription key="fontDescription" name="SanFranciscoDisplay-Light" family="San Francisco Display" pointSize="14"/>
+                                                    <color key="textColor" red="0.3803921569" green="0.28235294119999998" blue="0.22352941179999999" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="4WZ-mN-Lhd" firstAttribute="leading" secondItem="7Ld-df-1AO" secondAttribute="leading" constant="27" id="9cC-JR-OQo"/>
+                                                <constraint firstItem="95W-4N-Evk" firstAttribute="leading" secondItem="4WZ-mN-Lhd" secondAttribute="leading" id="H8Q-Nc-Fvz"/>
+                                                <constraint firstItem="95W-4N-Evk" firstAttribute="top" secondItem="4WZ-mN-Lhd" secondAttribute="bottom" constant="10" id="a9l-xb-D8b"/>
+                                                <constraint firstItem="4WZ-mN-Lhd" firstAttribute="top" secondItem="7Ld-df-1AO" secondAttribute="top" constant="10" id="j9p-d1-ZjZ"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" red="0.96862745100000003" green="0.97254901959999995" blue="0.97647058819999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <connections>
+                                            <outlet property="branchNameLabel" destination="95W-4N-Evk" id="BfC-WD-E2z"/>
+                                            <outlet property="personNameLabel" destination="4WZ-mN-Lhd" id="HDp-iV-7FQ"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="3Hb-W2-YXC" id="XmN-c2-CnA"/>
+                                    <outlet property="delegate" destination="3Hb-W2-YXC" id="P3T-Yg-t18"/>
+                                </connections>
+                            </tableView>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No Blocked Users Found" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6lO-Mn-SiS" customClass="CustomBrownTextColorLabel" customModule="mNet" customModuleProvider="target">
+                                <rect key="frame" x="97" y="323.5" width="181" height="20.5"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="100" id="zQJ-pP-jog"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="SanFranciscoDisplay-Medium" family="San Francisco Display" pointSize="17"/>
+                                <color key="textColor" red="0.3803921569" green="0.28235294119999998" blue="0.22352941179999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="6lO-Mn-SiS" firstAttribute="centerY" secondItem="3Q2-s7-pRP" secondAttribute="centerY" id="BCh-Xn-ah2"/>
+                            <constraint firstItem="bP0-Zh-TRT" firstAttribute="leading" secondItem="Rfn-Z7-neQ" secondAttribute="leading" id="G6b-bL-Ftv"/>
+                            <constraint firstItem="6lO-Mn-SiS" firstAttribute="centerX" secondItem="3Q2-s7-pRP" secondAttribute="centerX" id="Uff-48-3VY"/>
+                            <constraint firstItem="Rfn-Z7-neQ" firstAttribute="trailing" secondItem="bP0-Zh-TRT" secondAttribute="trailing" id="V24-8U-g00"/>
+                            <constraint firstItem="bP0-Zh-TRT" firstAttribute="top" secondItem="Rfn-Z7-neQ" secondAttribute="top" id="Wmd-6Q-THf"/>
+                            <constraint firstItem="Rfn-Z7-neQ" firstAttribute="bottom" secondItem="bP0-Zh-TRT" secondAttribute="bottom" id="qhn-FX-RhI"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="Rfn-Z7-neQ"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Blocked Users" id="j8j-wD-HhG">
+                        <barButtonItem key="leftBarButtonItem" image="backButtonImage" id="ZSD-wt-9Tk">
+                            <color key="tintColor" red="0.45882352939999999" green="0.45882352939999999" blue="0.45882352939999999" alpha="1" colorSpace="calibratedRGB"/>
+                            <connections>
+                                <action selector="backButtonAction:" destination="3Hb-W2-YXC" id="pDP-OD-40j"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="noBlockedUsersLabel" destination="6lO-Mn-SiS" id="aOy-8Z-GP5"/>
+                        <outlet property="peopleTableView" destination="bP0-Zh-TRT" id="AUU-Bu-3Ah"/>
+                        <outlet property="searchBar" destination="zX6-MC-dOl" id="kc1-R9-IFf"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vpD-bI-nId" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="6162.3999999999996" y="1574.6626686656673"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="KAd-9h-HbZ">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="37t-st-6lH" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Nfa-43-N3s">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="3Hb-W2-YXC" kind="relationship" relationship="rootViewController" id="SVE-OJ-bzh"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="75L-YB-oNm" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="5382" y="1575"/>
         </scene>
     </scenes>
     <resources>

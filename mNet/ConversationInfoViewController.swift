@@ -82,7 +82,7 @@ class ConversationInfoViewController: BaseViewController,UITableViewDelegate,UIT
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let cell:MembersTableViewCell = tableView.dequeueReusableCell(withIdentifier:"MembersTableViewCell") as! MembersTableViewCell
+        let cell:MembersTableViewCell = tableView.dequeueReusableCell(withIdentifier:CellIdentifiers.membersTableViewCell) as! MembersTableViewCell
         
         let member:ConversationMember = (dataCtrl?.memberList![indexPath.row])!
         

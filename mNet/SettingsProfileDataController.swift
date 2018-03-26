@@ -29,8 +29,8 @@ class SettingsProfileDataController: NSObject {
         settingOptionsArray.append(SettingOptions.password)
         settingOptionsArray.append(SettingOptions.privacySettings)
         settingOptionsArray.append(SettingOptions.emailPreferences)
-        settingOptionsArray.append(SettingOptions.groups)
         settingOptionsArray.append(SettingOptions.people)
+        settingOptionsArray.append(SettingOptions.blockedUsers)
         settingOptionsArray.append(SettingOptions.logout)
     }
     

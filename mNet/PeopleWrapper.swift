@@ -21,7 +21,7 @@ class PeopleWrapper: NSObject {
                 if(error == DictionaryKeys.APIResponse.noError)
                 {
                     let peopleDictArray:[[String:Any]] = responseDict[DictionaryKeys.APIResponse.responseData] as! [[String:Any]]
-                    let peopleArray:[People] = [People].init(JSONArray: peopleDictArray)
+                    var peopleArray:[People] = [People].init(JSONArray: peopleDictArray)
                     onSuccess(peopleArray)
                 }
                 else

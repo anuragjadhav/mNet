@@ -15,6 +15,7 @@ class PeopleDataController: NSObject {
     let limit:Int = 100
     var start:Int = 0
     var previousCallSuccessOrFailed:Bool = false
+    var showOnlyBlockedUsers:Bool = false
 
     func getPeopleList(onSuccess:@escaping () -> Void , onFailure : @escaping (String) -> Void) {
         
@@ -29,7 +30,18 @@ class PeopleDataController: NSObject {
 
         WrapperManager.shared.peopleWrapper.getPeopleList(postParams: postParams, onSuccess: { [unowned self] (peopleArray) in
             
-            for people in peopleArray
+            var filteredBlockedPeopleArray:[People] = []
+            
+            if(self.showOnlyBlockedUsers)
+            {
+                filteredBlockedPeopleArray = peopleArray.filter { $0.blockStatus!.localizedCaseInsensitiveContains("Block") }
+            }
+            else
+            {
+                filteredBlockedPeopleArray = peopleArray
+            }
+            
+            for people in filteredBlockedPeopleArray
             {
                 self.originalPeopleListArray.append(people)
             }

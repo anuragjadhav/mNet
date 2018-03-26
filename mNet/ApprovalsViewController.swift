@@ -158,7 +158,7 @@ class ApprovalsViewController: BaseViewController,UICollectionViewDelegate, UICo
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
-        let cell:ApprovalSectionCollectionViewCell = collectionView.dequeueReusableCell(withReuseIdentifier: CellIdentifiers.approvalsSectionsCollectionView, for: indexPath) as! ApprovalSectionCollectionViewCell
+        let cell:ApprovalSectionCollectionViewCell = collectionView.dequeueReusableCell(withReuseIdentifier: CellIdentifiers.approvalsSectionsCollectionViewCell, for: indexPath) as! ApprovalSectionCollectionViewCell
         if let section:ApprovalSection = dataController.approvalsData[safe:indexPath.row] {
             cell.setUpCell(section: section, isTabSelected: dataController.selectedSectionIndex == indexPath.row)
         }

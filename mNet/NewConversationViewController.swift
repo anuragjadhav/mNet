@@ -123,7 +123,7 @@ class NewConversationViewController: BaseViewController,UICollectionViewDelegate
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
-        let cell: SelectedUsersCollectionViewCell = collectionView.dequeueReusableCell(withReuseIdentifier:"SelectedUsersCollectionViewCell", for: indexPath) as! SelectedUsersCollectionViewCell
+        let cell: SelectedUsersCollectionViewCell = collectionView.dequeueReusableCell(withReuseIdentifier:CellIdentifiers.selectedUsersCollectionViewCell, for: indexPath) as! SelectedUsersCollectionViewCell
         
         if(collectionView === selectedToUsersCollectionView)
         {
@@ -264,7 +264,7 @@ class NewConversationViewController: BaseViewController,UICollectionViewDelegate
     
     @IBAction func toButtonAction(_ sender: UIButton) {
         
-        let selectUserVC = (UIStoryboard.init(name:"Conversation", bundle: Bundle.main)).instantiateViewController(withIdentifier: "SelectUserViewController") as! SelectUserViewController
+        let selectUserVC = UIStoryboard.conversations.instantiateViewController(withIdentifier: StoryboardIDs.selectUsersViewController) as! SelectUserViewController
         selectUserVC.dataCtrl = dataCtrl
         selectUserVC.userType = NewConversationUserType.to
         self.navigationController?.pushViewController(selectUserVC, animated: true)
@@ -272,7 +272,7 @@ class NewConversationViewController: BaseViewController,UICollectionViewDelegate
     
     @IBAction func bccButtonAction(_ sender: UIButton) {
         
-        let selectUserVC = (UIStoryboard.init(name:"Conversation", bundle: Bundle.main)).instantiateViewController(withIdentifier: "SelectUserViewController") as! SelectUserViewController
+        let selectUserVC = UIStoryboard.conversations.instantiateViewController(withIdentifier: StoryboardIDs.selectUsersViewController) as! SelectUserViewController
         selectUserVC.dataCtrl = dataCtrl
         selectUserVC.userType = NewConversationUserType.bcc
         self.navigationController?.pushViewController(selectUserVC, animated: true)
@@ -280,7 +280,7 @@ class NewConversationViewController: BaseViewController,UICollectionViewDelegate
     
     @IBAction func approvalButtonAction(_ sender: UIButton) {
         
-        let selectUserVC = (UIStoryboard.init(name:"Conversation", bundle: Bundle.main)).instantiateViewController(withIdentifier: "SelectUserViewController") as! SelectUserViewController
+        let selectUserVC = UIStoryboard.conversations.instantiateViewController(withIdentifier: StoryboardIDs.selectUsersViewController) as! SelectUserViewController
         selectUserVC.dataCtrl = dataCtrl
         selectUserVC.userType = NewConversationUserType.forApproval
         self.navigationController?.pushViewController(selectUserVC, animated: true)
@@ -288,7 +288,7 @@ class NewConversationViewController: BaseViewController,UICollectionViewDelegate
     
     @IBAction func verificationButtonAction(_ sender: UIButton) {
         
-        let selectUserVC = (UIStoryboard.init(name:"Conversation", bundle: Bundle.main)).instantiateViewController(withIdentifier: "SelectUserViewController") as! SelectUserViewController
+        let selectUserVC = UIStoryboard.conversations.instantiateViewController(withIdentifier: StoryboardIDs.selectUsersViewController) as! SelectUserViewController
         selectUserVC.dataCtrl = dataCtrl
         selectUserVC.userType = NewConversationUserType.forVerification
         self.navigationController?.pushViewController(selectUserVC, animated: true)

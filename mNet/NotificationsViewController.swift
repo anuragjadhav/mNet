@@ -14,6 +14,8 @@ class NotificationsViewController: BaseViewController, UITableViewDelegate, UITa
     @IBOutlet weak var unreadNotificationLabel: CustomBrownTextColorLabel!
     @IBOutlet weak var lineLabel: UILabel!
     
+    @IBOutlet weak var noNotificationsLabel: CustomBrownTextColorLabel!
+    
     let dataCtrl:NotificationDataController = NotificationDataController()
     
     override func viewDidLoad() {
@@ -62,7 +64,7 @@ class NotificationsViewController: BaseViewController, UITableViewDelegate, UITa
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let cell:NotificationTableViewCell = tableView.dequeueReusableCell(withIdentifier: "NotificationTableViewCell") as! NotificationTableViewCell
+        let cell:NotificationTableViewCell = tableView.dequeueReusableCell(withIdentifier: CellIdentifiers.notificationTableViewCell) as! NotificationTableViewCell
         
         let notification:NotificationObject = dataCtrl.notifications[indexPath.row]
         
@@ -110,7 +112,7 @@ class NotificationsViewController: BaseViewController, UITableViewDelegate, UITa
                     }
                     
                     self.unreadNotificationLabel.text = self.dataCtrl.unreadNotificationCount! + " unread notifications"
-
+                    self.checkNoData()
                     self.notificationsTableView.reloadData()
                  }
                 
@@ -130,6 +132,11 @@ class NotificationsViewController: BaseViewController, UITableViewDelegate, UITa
             
             self.showRetryView(message: AlertMessages.networkUnavailable)
         }
+    }
+    
+    func checkNoData() {
+        
+        noNotificationsLabel.isHidden = dataCtrl.notifications.count > 0
     }
     
     //MARK: Pull Up refresh control delegate

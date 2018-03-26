@@ -55,7 +55,7 @@ class SettingsViewController: BaseViewController,UITableViewDelegate,UITableView
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let cell:SettingOptionsTableViewCell = tableView.dequeueReusableCell(withIdentifier:"SettingOptionsTableViewCell") as! SettingOptionsTableViewCell
+        let cell:SettingOptionsTableViewCell = tableView.dequeueReusableCell(withIdentifier:CellIdentifiers.settingOptionsTableViewCell) as! SettingOptionsTableViewCell
         
         let optionName = self.dataCtrl.settingOptionsArray[indexPath.row]
         
@@ -73,14 +73,14 @@ class SettingsViewController: BaseViewController,UITableViewDelegate,UITableView
             
         case SettingOptions.aboutMe:
             
-            let aboutMeVC = (UIStoryboard.init(name:"Settings", bundle: Bundle.main)).instantiateViewController(withIdentifier: "AboutMeViewController") as! AboutMeViewController
+            let aboutMeVC = UIStoryboard.settings.instantiateViewController(withIdentifier: StoryboardIDs.aboutMeViewController) as! AboutMeViewController
             aboutMeVC.dataCtrl.profile = self.dataCtrl.profile
             self.navigationController?.pushViewController(aboutMeVC, animated: true)
             break
             
         case SettingOptions.password:
          
-            let resetPasswordVC = (UIStoryboard.init(name:"Settings", bundle: Bundle.main)).instantiateViewController(withIdentifier: "ResetPasswordViewController") as! ResetPasswordViewController
+            let resetPasswordVC = UIStoryboard.settings.instantiateViewController(withIdentifier: StoryboardIDs.resetPasswordViewController) as! ResetPasswordViewController
             resetPasswordVC.dataCtrl = self.dataCtrl
             self.navigationController?.pushViewController(resetPasswordVC, animated: true)
     
@@ -88,28 +88,28 @@ class SettingsViewController: BaseViewController,UITableViewDelegate,UITableView
             
         case SettingOptions.privacySettings:
             
-            let privacySettingsVC = (UIStoryboard.init(name:"Settings", bundle: Bundle.main)).instantiateViewController(withIdentifier: "PrivacySettingsViewController") as! PrivacySettingsViewController
+            let privacySettingsVC = UIStoryboard.settings.instantiateViewController(withIdentifier: StoryboardIDs.privacySetingsViewController) as! PrivacySettingsViewController
             privacySettingsVC.dataCtrl = self.dataCtrl
             self.navigationController?.pushViewController(privacySettingsVC, animated: true)
             break
             
         case SettingOptions.appSettings:
             
-            let appSettingsVC = (UIStoryboard.init(name:"Settings", bundle: Bundle.main)).instantiateViewController(withIdentifier: "AppSettingsViewController")
+            let appSettingsVC = UIStoryboard.settings.instantiateViewController(withIdentifier: StoryboardIDs.appSettingsViewController)
             self.navigationController?.pushViewController(appSettingsVC, animated: true)
             break
             
         case SettingOptions.emailPreferences:
             
-            let emailPreferenceVC = (UIStoryboard.init(name:"Settings", bundle: Bundle.main)).instantiateViewController(withIdentifier: "EmailPreferencesViewController") as! EmailPreferencesViewController
+            let emailPreferenceVC = UIStoryboard.settings.instantiateViewController(withIdentifier: StoryboardIDs.emailPreferencesViewController) as! EmailPreferencesViewController
             emailPreferenceVC.dataCtrl = self.dataCtrl
             self.navigationController?.pushViewController(emailPreferenceVC, animated: true)
             break
             
-        case SettingOptions.groups:
+        case SettingOptions.blockedUsers:
            
-            let peopleViewController:PeopleViewController = UIStoryboard.settings.instantiateViewController(withIdentifier: StoryboardIDs.peopleViewController) as! PeopleViewController
-            self.navigationController?.pushViewController(peopleViewController, animated: true)
+            let blockedUsersViewController:BlockedUsersViewController = UIStoryboard.settings.instantiateViewController(withIdentifier: StoryboardIDs.blockedUsersViewController) as! BlockedUsersViewController
+            self.navigationController?.pushViewController(blockedUsersViewController, animated: true)
             break;
         
         case SettingOptions.people:
@@ -145,7 +145,7 @@ class SettingsViewController: BaseViewController,UITableViewDelegate,UITableView
 
     @IBAction func gotoButtonAction(_ sender: Any) {
         
-        let profileVC = (UIStoryboard.init(name:"Profile", bundle: Bundle.main)).instantiateViewController(withIdentifier: "ProfileViewController") as! ProfileViewController
+        let profileVC = UIStoryboard.profile.instantiateViewController(withIdentifier: StoryboardIDs.profileViewController) as! ProfileViewController
         profileVC.dataCtrl.profile = self.dataCtrl.profile?.copy() as? Profile
         self.navigationController?.pushViewController(profileVC, animated: true)
     }

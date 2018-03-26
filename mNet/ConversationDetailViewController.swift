@@ -248,7 +248,7 @@ class ConversationDetailViewController: BaseViewController,UITableViewDelegate,U
                 
         picker.dismiss(animated: true, completion: nil)
         
-        let imageDocDisplayVC = (UIStoryboard.init(name:"Conversation", bundle: Bundle.main)).instantiateViewController(withIdentifier: "ImageDocDisplayViewController") as! ImageDocDisplayViewController
+        let imageDocDisplayVC = UIStoryboard.conversations.instantiateViewController(withIdentifier: StoryboardIDs.imageDocViewController) as! ImageDocDisplayViewController
         imageDocDisplayVC.dataCtrl = dataCtrl
         imageDocDisplayVC.prefilledText = self.messageTextView.text
         imageDocDisplayVC.isDocument = false
@@ -278,7 +278,7 @@ class ConversationDetailViewController: BaseViewController,UITableViewDelegate,U
             self.dataCtrl?.selectedFileDataForNewReply = nil
         }
         
-        let imageDocDisplayVC = (UIStoryboard.init(name:"Conversation", bundle: Bundle.main)).instantiateViewController(withIdentifier: "ImageDocDisplayViewController") as! ImageDocDisplayViewController
+        let imageDocDisplayVC = UIStoryboard.conversations.instantiateViewController(withIdentifier: StoryboardIDs.imageDocViewController) as! ImageDocDisplayViewController
         imageDocDisplayVC.dataCtrl = dataCtrl
         imageDocDisplayVC.prefilledText = self.messageTextView.text
         imageDocDisplayVC.isDocument = true
@@ -338,7 +338,7 @@ class ConversationDetailViewController: BaseViewController,UITableViewDelegate,U
     
     @objc func fromTolabelClicked(gesture:UITapGestureRecognizer)
     {
-        let conversationInfoVC = (UIStoryboard.init(name:"Conversation", bundle: Bundle.main)).instantiateViewController(withIdentifier: "ConversationInfoViewController") as! ConversationInfoViewController
+        let conversationInfoVC = UIStoryboard.conversations.instantiateViewController(withIdentifier: StoryboardIDs.conversationInfoViewController) as! ConversationInfoViewController
         conversationInfoVC.dataCtrl = dataCtrl
         self.navigationController?.pushViewController(conversationInfoVC, animated: true)
     }
@@ -513,7 +513,7 @@ class ConversationDetailViewController: BaseViewController,UITableViewDelegate,U
     
     @IBAction func infoButtonAction(_ sender: Any) {
         
-        let conversationInfoVC = (UIStoryboard.init(name:"Conversation", bundle: Bundle.main)).instantiateViewController(withIdentifier: "ConversationInfoViewController") as! ConversationInfoViewController
+        let conversationInfoVC = UIStoryboard.conversations.instantiateViewController(withIdentifier: StoryboardIDs.conversationInfoViewController) as! ConversationInfoViewController
         conversationInfoVC.dataCtrl = dataCtrl
         self.navigationController?.pushViewController(conversationInfoVC, animated: true)
     }
@@ -528,7 +528,7 @@ class ConversationDetailViewController: BaseViewController,UITableViewDelegate,U
         
         if(dataCtrl?.selectedCoversation?.postCreator == User.loggedInUser()?.userId)
         {
-            let newConversationVC = (UIStoryboard.init(name:"Conversation", bundle: Bundle.main)).instantiateViewController(withIdentifier: "NewConversationViewController") as! NewConversationViewController
+            let newConversationVC = UIStoryboard.conversations.instantiateViewController(withIdentifier: StoryboardIDs.newConversationViewController) as! NewConversationViewController
             newConversationVC.dataCtrl = dataCtrl
             newConversationVC.didComeToAddExtraUsers = true
             self.navigationController?.pushViewController(newConversationVC, animated: true)

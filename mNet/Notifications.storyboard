@@ -114,6 +114,15 @@
                                     <outlet property="delegate" destination="qRk-iR-RcP" id="wUw-nM-Dh0"/>
                                 </connections>
                             </tableView>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No Notifications Found" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9C6-EM-tPl" customClass="CustomBrownTextColorLabel" customModule="mNet" customModuleProvider="target">
+                                <rect key="frame" x="102" y="323.5" width="171.5" height="20.5"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="100" id="w7L-ha-a0h"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="SanFranciscoDisplay-Medium" family="San Francisco Display" pointSize="17"/>
+                                <color key="textColor" red="0.3803921569" green="0.28235294119999998" blue="0.22352941179999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vwS-Jt-OSm">
                                 <rect key="frame" x="16" y="25" width="24" height="24"/>
                                 <state key="normal" image="notification_large"/>
@@ -152,7 +161,9 @@
                             <constraint firstItem="vwS-Jt-OSm" firstAttribute="leading" secondItem="qVl-Pt-RRc" secondAttribute="leading" constant="16" id="Ybd-cY-9q3"/>
                             <constraint firstItem="y36-WG-8d8" firstAttribute="top" secondItem="nO5-QB-XL0" secondAttribute="bottom" constant="14" id="ZTS-Wj-l1h"/>
                             <constraint firstItem="blZ-Wy-6Cb" firstAttribute="top" secondItem="y36-WG-8d8" secondAttribute="bottom" constant="14" id="bb1-L5-JO4"/>
+                            <constraint firstItem="9C6-EM-tPl" firstAttribute="centerX" secondItem="dF8-dL-FN1" secondAttribute="centerX" id="clY-5h-AB1"/>
                             <constraint firstItem="nO5-QB-XL0" firstAttribute="leading" secondItem="vwS-Jt-OSm" secondAttribute="leading" constant="6" id="hsK-Sx-48M"/>
+                            <constraint firstItem="9C6-EM-tPl" firstAttribute="centerY" secondItem="dF8-dL-FN1" secondAttribute="centerY" id="ldE-Wt-dji"/>
                             <constraint firstItem="qVl-Pt-RRc" firstAttribute="trailing" secondItem="rSM-nA-dej" secondAttribute="trailing" id="pbo-4l-8M7"/>
                             <constraint firstItem="y36-WG-8d8" firstAttribute="leading" secondItem="nO5-QB-XL0" secondAttribute="leading" id="pyJ-Q4-PQ5"/>
                             <constraint firstItem="blZ-Wy-6Cb" firstAttribute="leading" secondItem="qVl-Pt-RRc" secondAttribute="leading" id="tOL-uM-TGq"/>
@@ -161,6 +172,7 @@
                     </view>
                     <connections>
                         <outlet property="lineLabel" destination="blZ-Wy-6Cb" id="SlR-o4-85O"/>
+                        <outlet property="noNotificationsLabel" destination="9C6-EM-tPl" id="OV8-oC-cTa"/>
                         <outlet property="notificationsTableView" destination="rSM-nA-dej" id="6xf-fJ-5D3"/>
                         <outlet property="unreadNotificationLabel" destination="y36-WG-8d8" id="byT-Jq-wWc"/>
                     </connections>

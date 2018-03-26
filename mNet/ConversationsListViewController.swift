@@ -20,6 +20,7 @@ class ConversationsListViewController: BaseViewController, UITableViewDelegate, 
     @IBOutlet weak var filterLabel: UILabel!
     @IBOutlet weak var noConversationsLabel: CustomBrownTextColorLabel!
     
+    
     let dataCtrl:ConversationsDataController = ConversationsDataController()
     
     //MARK: View Controller Delegates
@@ -113,7 +114,7 @@ class ConversationsListViewController: BaseViewController, UITableViewDelegate, 
             
         }
         
-        let conversationDetailVC = (UIStoryboard.init(name:"Conversation", bundle: Bundle.main)).instantiateViewController(withIdentifier: "ConversationDetailViewController") as! ConversationDetailViewController
+        let conversationDetailVC = UIStoryboard.conversations.instantiateViewController(withIdentifier: StoryboardIDs.conversationDetailViewController) as! ConversationDetailViewController
         conversationDetailVC.dataCtrl = self.dataCtrl
         conversationDetailVC.hideIgnorePostdelegate = self
         self.navigationController?.pushViewController(conversationDetailVC, animated: true)

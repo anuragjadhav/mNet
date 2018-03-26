@@ -834,9 +834,6 @@
                                 <action selector="backButtonAction:" destination="fMR-Vp-zRQ" id="1mI-ul-xHW"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" image="infoIcon" id="RfH-j4-Bq2">
-                            <color key="tintColor" red="0.3803921569" green="0.28235294119999998" blue="0.22352941179999999" alpha="1" colorSpace="calibratedRGB"/>
-                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="dateAndTimeLabel" destination="why-ww-zH4" id="NgY-QQ-vD7"/>

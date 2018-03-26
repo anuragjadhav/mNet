@@ -70,7 +70,7 @@ class SelectUserViewController: BaseViewController,UITableViewDelegate,UITableVi
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let cell:SelectUserTableViewCell = tableView.dequeueReusableCell(withIdentifier:"SelectUserTableViewCell") as! SelectUserTableViewCell
+        let cell:SelectUserTableViewCell = tableView.dequeueReusableCell(withIdentifier:CellIdentifiers.selectUsersTableViewCell) as! SelectUserTableViewCell
         
         let user:People = (dataCtrl?.selectUserList![indexPath.row])!
         
@@ -119,7 +119,7 @@ class SelectUserViewController: BaseViewController,UITableViewDelegate,UITableVi
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
-        let cell: SelectedUsersCollectionViewCell = collectionView.dequeueReusableCell(withReuseIdentifier:"SelectedUsersCollectionViewCell", for: indexPath) as! SelectedUsersCollectionViewCell
+        let cell: SelectedUsersCollectionViewCell = collectionView.dequeueReusableCell(withReuseIdentifier:CellIdentifiers.selectedUsersCollectionViewCell, for: indexPath) as! SelectedUsersCollectionViewCell
         
         if(userType == NewConversationUserType.bcc)
         {

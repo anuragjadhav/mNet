@@ -187,6 +187,7 @@
 		5EF31C86201B5E93007727D8 /* WrapperManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EF31C85201B5E93007727D8 /* WrapperManager.swift */; };
 		5EF31C88201B5F18007727D8 /* SettingsWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EF31C87201B5F18007727D8 /* SettingsWrapper.swift */; };
 		5EF31C8A201B6231007727D8 /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EF31C89201B6231007727D8 /* Profile.swift */; };
+		5EF354E7206908A3001A93E6 /* BlockedUsersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EF354E6206908A3001A93E6 /* BlockedUsersViewController.swift */; };
 		8BE5DA88202D8DED00E412A7 /* DashboardStats.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BE5DA87202D8DED00E412A7 /* DashboardStats.swift */; };
 		8BE5DA8A202D91CE00E412A7 /* UserApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BE5DA89202D91CE00E412A7 /* UserApp.swift */; };
 		8BE5DA8C202D929E00E412A7 /* CommonResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BE5DA8B202D929E00E412A7 /* CommonResponse.swift */; };
@@ -376,6 +377,7 @@
 		5EF31C85201B5E93007727D8 /* WrapperManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WrapperManager.swift; sourceTree = "<group>"; };
 		5EF31C87201B5F18007727D8 /* SettingsWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsWrapper.swift; sourceTree = "<group>"; };
 		5EF31C89201B6231007727D8 /* Profile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Profile.swift; sourceTree = "<group>"; };
+		5EF354E6206908A3001A93E6 /* BlockedUsersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlockedUsersViewController.swift; sourceTree = "<group>"; };
 		8BE5DA87202D8DED00E412A7 /* DashboardStats.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardStats.swift; sourceTree = "<group>"; };
 		8BE5DA89202D91CE00E412A7 /* UserApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserApp.swift; sourceTree = "<group>"; };
 		8BE5DA8B202D929E00E412A7 /* CommonResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonResponse.swift; sourceTree = "<group>"; };
@@ -810,6 +812,7 @@
 				5EC300591FEBEBFA00229516 /* AppSettingsViewController.swift */,
 				5E4A8D3C1FF4FB6600086667 /* PeopleViewController.swift */,
 				5E2880BF205A94CD00E59DF2 /* ResetPasswordViewController.swift */,
+				5EF354E6206908A3001A93E6 /* BlockedUsersViewController.swift */,
 			);
 			name = "View Controllers";
 			sourceTree = "<group>";
@@ -1168,6 +1171,7 @@
 				058A0ED21FF7C50400147238 /* DashboardMyAppsTableViewCell.swift in Sources */,
 				5E2D375320209DB60013A138 /* NotificationWrapper.swift in Sources */,
 				05A7A9011FF815A000472A60 /* ConversationInfoViewController.swift in Sources */,
+				5EF354E7206908A3001A93E6 /* BlockedUsersViewController.swift in Sources */,
 				8BE5DA8A202D91CE00E412A7 /* UserApp.swift in Sources */,
 				5EC3005A1FEBEBFA00229516 /* AppSettingsViewController.swift in Sources */,
 				05501F86201D10AA00831A08 /* ConversationsWrapper.swift in Sources */,
