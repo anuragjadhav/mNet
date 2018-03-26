@@ -242,13 +242,13 @@
                                                 <rect key="frame" x="27" y="633.5" width="321" height="95"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Role" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gho-w7-wIi" customClass="CustomBrownTextColorLabel" customModule="mNet" customModuleProvider="target">
-                                                        <rect key="frame" x="110.5" y="0.0" width="101" height="17"/>
+                                                        <rect key="frame" x="110" y="0.0" width="101" height="17"/>
                                                         <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="14"/>
                                                         <color key="textColor" red="0.3803921569" green="0.28235294119999998" blue="0.22352941179999999" alpha="1" colorSpace="calibratedRGB"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="J14-vS-iz4" customClass="CustomBrownTextColorLabel" customModule="mNet" customModuleProvider="target">
-                                                        <rect key="frame" x="219.5" y="0.0" width="101.5" height="17"/>
+                                                        <rect key="frame" x="219" y="0.0" width="102" height="17"/>
                                                         <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="14"/>
                                                         <color key="textColor" red="0.3803921569" green="0.28235294119999998" blue="0.22352941179999999" alpha="1" colorSpace="calibratedRGB"/>
                                                         <nil key="highlightedColor"/>
@@ -311,7 +311,7 @@
                                                         </connections>
                                                     </tableView>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fnI-0k-N1G" customClass="CustomBrownTextColorLabel" customModule="mNet" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="0.0" width="102" height="17"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="101.5" height="17"/>
                                                         <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="14"/>
                                                         <color key="textColor" red="0.3803921569" green="0.28235294119999998" blue="0.22352941179999999" alpha="1" colorSpace="calibratedRGB"/>
                                                         <nil key="highlightedColor"/>
@@ -1042,7 +1042,7 @@
                                                     <color key="textColor" red="0.3803921569" green="0.28235294119999998" blue="0.22352941179999999" alpha="0.59999999999999998" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="upArrow" translatesAutoresizingMaskIntoConstraints="NO" id="xQ5-2a-2s0">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="upArrowGray" translatesAutoresizingMaskIntoConstraints="NO" id="xQ5-2a-2s0">
                                                     <rect key="frame" x="27" y="25" width="16" height="16"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" secondItem="xQ5-2a-2s0" secondAttribute="height" multiplier="1:1" id="E8Z-zs-1aw"/>
@@ -1203,6 +1203,7 @@
                                             <outlet property="mediumValueLabel" destination="zsf-Lb-KnI" id="skg-LV-ohS"/>
                                             <outlet property="rejectButton" destination="Xa2-cC-bcM" id="lr1-3X-Dtv"/>
                                             <outlet property="titleLabel" destination="QIg-LT-Uug" id="eXt-o4-dRY"/>
+                                            <outlet property="upArrowImageView" destination="xQ5-2a-2s0" id="p6o-Xw-w7U"/>
                                             <outlet property="vendorTitleLabel" destination="JBl-WP-JWM" id="UbN-wK-Rgj"/>
                                             <outlet property="vendorValueLabel" destination="c3z-m2-ReO" id="LHj-zz-3zD"/>
                                         </connections>
@@ -1319,6 +1320,6 @@
         <image name="downloadAttachment" width="32" height="32"/>
         <image name="filterIcon" width="21" height="21"/>
         <image name="uncheckedBox" width="32" height="32"/>
-        <image name="upArrow" width="170" height="170"/>
+        <image name="upArrowGray" width="32" height="32"/>
     </resources>
 </document>

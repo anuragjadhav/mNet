@@ -120,7 +120,7 @@ class DocumentDetailsViewController: BaseViewController,UITableViewDelegate,UITa
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let cell:PeopleListTableViewCell = tableView.dequeueReusableCell(withIdentifier:"PeopleListTableViewCell") as! PeopleListTableViewCell
+        let cell:PeopleListTableViewCell = tableView.dequeueReusableCell(withIdentifier:CellIdentifiers.peopleListTableViewCell) as! PeopleListTableViewCell
         cell.setUpCell(history: dataController.selectedApproval?.history[safe:indexPath.row])
         return cell
         

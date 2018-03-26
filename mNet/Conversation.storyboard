@@ -890,7 +890,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="RD" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Htp-iD-esS">
-                                                    <rect key="frame" x="27" y="16" width="40" height="40"/>
+                                                    <rect key="frame" x="12" y="16" width="40" height="40"/>
                                                     <color key="backgroundColor" red="0.01176470588" green="0.51764705879999995" blue="0.80784313730000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="40" id="BkT-BZ-hEm"/>
@@ -906,7 +906,7 @@
                                                     </userDefinedRuntimeAttributes>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Robin Das" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ODh-q4-c6M" customClass="CustomBrownTextColorLabel" customModule="mNet" customModuleProvider="target">
-                                                    <rect key="frame" x="82.5" y="15" width="129" height="17"/>
+                                                    <rect key="frame" x="67.5" y="15" width="144" height="17"/>
                                                     <fontDescription key="fontDescription" name="SanFranciscoDisplay-Bold" family="San Francisco Display" pointSize="14"/>
                                                     <color key="textColor" red="0.3803921569" green="0.28235294119999998" blue="0.22352941179999999" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
@@ -916,7 +916,7 @@
                                                     <constraints>
                                                         <constraint firstAttribute="width" relation="lessThanOrEqual" constant="70" id="0pP-Aq-URe"/>
                                                     </constraints>
-                                                    <fontDescription key="fontDescription" name="SanFranciscoDisplay-Regular" family="San Francisco Display" pointSize="12"/>
+                                                    <fontDescription key="fontDescription" name="SanFranciscoDisplay-Regular" family="San Francisco Display" pointSize="11"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="0.3748394692" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
@@ -930,13 +930,13 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="249" text="You recieved an approval request from Ankit Pandey" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gRV-hL-hXt" customClass="CustomBrownTextColorLabel" customModule="mNet" customModuleProvider="target">
-                                                    <rect key="frame" x="83" y="36" width="247" height="33.5"/>
+                                                    <rect key="frame" x="68" y="36" width="262" height="33.5"/>
                                                     <fontDescription key="fontDescription" name="SanFranciscoDisplay-Bold" family="San Francisco Display" pointSize="14"/>
                                                     <color key="textColor" red="0.3803921569" green="0.28235294119999998" blue="0.22352941179999999" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="defaultProfileImage" translatesAutoresizingMaskIntoConstraints="NO" id="c6g-ya-io0">
-                                                    <rect key="frame" x="27" y="16" width="40" height="40"/>
+                                                    <rect key="frame" x="12" y="16" width="40" height="40"/>
                                                     <userDefinedRuntimeAttributes>
                                                         <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
                                                             <real key="value" value="20"/>
@@ -954,7 +954,7 @@
                                                 <constraint firstItem="gRV-hL-hXt" firstAttribute="leading" secondItem="ODh-q4-c6M" secondAttribute="leading" id="eoB-pV-LaQ"/>
                                                 <constraint firstItem="fli-4i-yTG" firstAttribute="centerY" secondItem="ODh-q4-c6M" secondAttribute="centerY" id="f22-Nt-NPl"/>
                                                 <constraint firstAttribute="trailing" secondItem="gRV-hL-hXt" secondAttribute="trailing" constant="45" id="hcP-W8-3sp"/>
-                                                <constraint firstItem="Htp-iD-esS" firstAttribute="leading" secondItem="1mh-cr-fBh" secondAttribute="leading" constant="27" id="klL-dk-fqa"/>
+                                                <constraint firstItem="Htp-iD-esS" firstAttribute="leading" secondItem="1mh-cr-fBh" secondAttribute="leading" constant="12" id="klL-dk-fqa"/>
                                                 <constraint firstItem="c6g-ya-io0" firstAttribute="width" secondItem="Htp-iD-esS" secondAttribute="width" id="llx-uu-4vx"/>
                                                 <constraint firstItem="gRV-hL-hXt" firstAttribute="top" secondItem="ODh-q4-c6M" secondAttribute="bottom" constant="4" id="r8B-4C-ofV"/>
                                                 <constraint firstItem="c6g-ya-io0" firstAttribute="centerX" secondItem="Htp-iD-esS" secondAttribute="centerX" id="sDo-T4-a8e"/>

@@ -23,7 +23,7 @@ class PendingApprovalsTableViewCell: UITableViewCell {
     @IBOutlet weak var attachmentButton: UIButton!
     @IBOutlet weak var approveButtonHeight: NSLayoutConstraint!
     @IBOutlet weak var buttonTopSpacing: NSLayoutConstraint!
-    
+    @IBOutlet weak var upArrowImageView: UIImageView!
     
     func setUpCell(approval:Approval, indexPath:IndexPath, buttonStatus:ApprovalStatus) {
         
@@ -52,6 +52,22 @@ class PendingApprovalsTableViewCell: UITableViewCell {
             approveButtonHeight.constant = 0
             buttonTopSpacing.constant = 0
         }
+        
+        
+        //set up arrow image
+        if(approval.postPriority == "0")
+        {
+            upArrowImageView.image = UIImage.init(named: "upArrowGray")
+        }
+        else if(approval.postPriority == "1")
+        {
+            upArrowImageView.image = UIImage.init(named: "upArrowBlue")
+        }
+        else
+        {
+            upArrowImageView.image = UIImage.init(named: "upArrowRed")
+        }
+        
         
         var title:String = approval.postTitle
         if let documentType:String = approval.documentType?.value {

@@ -38,6 +38,7 @@ class Approval: NSObject, Mappable {
     var postApproveType:String = ""
     var approvalUserType:String = ""
     var postOwner:String = ""
+    var postPriority:String = ""
     var isDocCancel:String = ""
     var senderName:String = ""
     var senderProfileImage:String = ""
@@ -122,5 +123,6 @@ class Approval: NSObject, Mappable {
         dynamicData                 <- map["dynamic"]
         approvalUserList            <- map["post_next_user_approval"]
         verificationUserList        <- map["post_next_user_verifier"]
+        postPriority        <- map["post_priority"]
     }
 }

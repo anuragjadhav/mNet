@@ -227,6 +227,8 @@ struct CellIdentifiers {
     static let selectedUsersCollectionViewCell:String = "SelectedUsersCollectionViewCell"
     static let selectUsersTableViewCell:String = "SelectUserTableViewCell"
     static let membersTableViewCell:String = "MembersTableViewCell"
+    static let peopleListTableViewCell:String = "PeopleListTableViewCell"
+
 }
 
 struct TabNames {
