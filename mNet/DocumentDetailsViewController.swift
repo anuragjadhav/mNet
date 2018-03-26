@@ -36,6 +36,9 @@ class DocumentDetailsViewController: BaseViewController,UITableViewDelegate,UITa
     @IBOutlet weak var remarksLabel: CustomBrownTextColorLabel!
     @IBOutlet weak var peopleListTableView: FullLengthTableView!
     
+    @IBOutlet weak var peopleContainerScrollView: UIScrollView!
+    
+    
     var dataController:ApprovalsDataController = ApprovalsDataController()
     
     override func viewDidLoad() {
@@ -47,6 +50,13 @@ class DocumentDetailsViewController: BaseViewController,UITableViewDelegate,UITa
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated);
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(true)
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+            self.peopleContainerScrollView.flashScrollIndicators()
+        }
     }
     
     func setData()  {

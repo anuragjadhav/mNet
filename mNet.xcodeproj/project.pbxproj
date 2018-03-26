@@ -191,6 +191,7 @@
 		8BE5DA88202D8DED00E412A7 /* DashboardStats.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BE5DA87202D8DED00E412A7 /* DashboardStats.swift */; };
 		8BE5DA8A202D91CE00E412A7 /* UserApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BE5DA89202D91CE00E412A7 /* UserApp.swift */; };
 		8BE5DA8C202D929E00E412A7 /* CommonResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BE5DA8B202D929E00E412A7 /* CommonResponse.swift */; };
+		E4E297D7206977F5008D38FD /* InfoPopoverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4E297D6206977F5008D38FD /* InfoPopoverViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -381,6 +382,7 @@
 		8BE5DA87202D8DED00E412A7 /* DashboardStats.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardStats.swift; sourceTree = "<group>"; };
 		8BE5DA89202D91CE00E412A7 /* UserApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserApp.swift; sourceTree = "<group>"; };
 		8BE5DA8B202D929E00E412A7 /* CommonResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonResponse.swift; sourceTree = "<group>"; };
+		E4E297D6206977F5008D38FD /* InfoPopoverViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoPopoverViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -510,6 +512,7 @@
 				05A7A9001FF8159F00472A60 /* ConversationInfoViewController.swift */,
 				5E3A046D2007A64D004EE2D7 /* ConversationDetailViewController.swift */,
 				5E202ABD203EDD8A000EE101 /* ImageDocDisplayViewController.swift */,
+				E4E297D6206977F5008D38FD /* InfoPopoverViewController.swift */,
 			);
 			name = "View Controllers";
 			sourceTree = "<group>";
@@ -1194,6 +1197,7 @@
 				05A569C22017B7B300C6F713 /* Map.swift in Sources */,
 				050F1BE2203726EE00B32841 /* ApprovalHistory.swift in Sources */,
 				050F1BEC20377F0700B32841 /* DynamicData.swift in Sources */,
+				E4E297D7206977F5008D38FD /* InfoPopoverViewController.swift in Sources */,
 				05A569972017B74B00C6F713 /* Timeline.swift in Sources */,
 				05A569BF2017B7B300C6F713 /* NSDecimalNumberTransform.swift in Sources */,
 				050F1BE02035FD7600B32841 /* Approval.swift in Sources */,

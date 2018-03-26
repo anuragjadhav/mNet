@@ -1775,6 +1775,66 @@
             </objects>
             <point key="canvasLocation" x="-127" y="2675"/>
         </scene>
+        <!--Info Popover View Controller-->
+        <scene sceneID="4r0-Yd-IXa">
+            <objects>
+                <viewController storyboardIdentifier="InfoPopoverViewControllerID" modalPresentationStyle="overFullScreen" id="WQZ-9n-DPZ" customClass="InfoPopoverViewController" customModule="mNet" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="rUS-y1-Fl5">
+                        <rect key="frame" x="0.0" y="0.0" width="160" height="200"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="PbN-j6-06Q">
+                                <rect key="frame" x="0.0" y="0.0" width="160" height="200"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="popoverTableViewCell" rowHeight="31" id="odx-zb-WOR">
+                                        <rect key="frame" x="0.0" y="28" width="160" height="31"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="odx-zb-WOR" id="dh3-pd-png">
+                                            <rect key="frame" x="0.0" y="0.0" width="160" height="30.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" tag="46" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Manish D." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8R7-Ig-a80" customClass="CustomBrownTextColorLabel" customModule="mNet" customModuleProvider="target">
+                                                    <rect key="frame" x="16" y="8" width="128" height="14.5"/>
+                                                    <fontDescription key="fontDescription" name="SanFranciscoDisplay-Medium" family="San Francisco Display" pointSize="12"/>
+                                                    <color key="textColor" red="0.28235294119999998" green="0.28235294119999998" blue="0.28235294119999998" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="bottom" secondItem="8R7-Ig-a80" secondAttribute="bottom" constant="8" id="49q-xO-GLG"/>
+                                                <constraint firstAttribute="trailing" secondItem="8R7-Ig-a80" secondAttribute="trailing" constant="16" id="7iE-cZ-hIY"/>
+                                                <constraint firstItem="8R7-Ig-a80" firstAttribute="top" secondItem="dh3-pd-png" secondAttribute="top" constant="8" id="KWk-SA-Be8"/>
+                                                <constraint firstItem="8R7-Ig-a80" firstAttribute="leading" secondItem="dh3-pd-png" secondAttribute="leading" constant="16" id="en0-CM-zS6"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="WQZ-9n-DPZ" id="3a5-CR-9K8"/>
+                                    <outlet property="delegate" destination="WQZ-9n-DPZ" id="VdM-GN-hYs"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="PbN-j6-06Q" firstAttribute="top" secondItem="KbV-bs-2sM" secondAttribute="top" id="AlM-ej-o78"/>
+                            <constraint firstItem="KbV-bs-2sM" firstAttribute="trailing" secondItem="PbN-j6-06Q" secondAttribute="trailing" id="KFN-lG-Kwm"/>
+                            <constraint firstItem="PbN-j6-06Q" firstAttribute="leading" secondItem="KbV-bs-2sM" secondAttribute="leading" id="MHo-Ii-DCq"/>
+                            <constraint firstItem="KbV-bs-2sM" firstAttribute="bottom" secondItem="PbN-j6-06Q" secondAttribute="bottom" id="dvY-eY-qc3"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="KbV-bs-2sM"/>
+                    </view>
+                    <value key="contentSizeForViewInPopover" type="size" width="160" height="200"/>
+                    <size key="freeformSize" width="160" height="200"/>
+                    <connections>
+                        <outlet property="popoverTableView" destination="PbN-j6-06Q" id="cIk-MW-I7S"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="7lr-Ae-2nv" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1716.8" y="1858.920539730135"/>
+        </scene>
         <!--Navigation Controller-->
         <scene sceneID="ggG-jZ-AYr">
             <objects>
@@ -1791,7 +1851,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="C6j-nl-Fry" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2079.1999999999998" y="1920.9895052473764"/>
+            <point key="canvasLocation" x="2423" y="1926"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="He1-ff-SZz">

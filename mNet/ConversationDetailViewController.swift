@@ -18,7 +18,7 @@ protocol HideIgnorePostDelegate : class {
 }
 
 
-class ConversationDetailViewController: BaseViewController,UITableViewDelegate,UITableViewDataSource,UITextViewDelegate,UIDocumentMenuDelegate,UIDocumentPickerDelegate,UINavigationControllerDelegate,UIImagePickerControllerDelegate,ImageDocDisplayDelegate {
+class ConversationDetailViewController: BaseViewController,UITableViewDelegate,UITableViewDataSource,UITextViewDelegate,UIDocumentMenuDelegate,UIDocumentPickerDelegate,UINavigationControllerDelegate,UIImagePickerControllerDelegate,ImageDocDisplayDelegate, UIPopoverPresentationControllerDelegate {
 
     @IBOutlet weak var conversationTableView: UITableView!
     @IBOutlet weak var sendButton: CustomBlueTextColorButton!
@@ -72,7 +72,7 @@ class ConversationDetailViewController: BaseViewController,UITableViewDelegate,U
             user1Label.text = member1.userName
             
             let member2:ConversationMember =  (dataCtrl?.selectedCoversation?.membersList.last)!
-            user2Label.text = "\(member2.userName) and \(memberCount - 2)"
+            user2Label.text = "\(member2.userName) + \(memberCount - 2)"
         }
         else
         {
@@ -338,11 +338,30 @@ class ConversationDetailViewController: BaseViewController,UITableViewDelegate,U
     
     @objc func fromTolabelClicked(gesture:UITapGestureRecognizer)
     {
-        let conversationInfoVC = UIStoryboard.conversations.instantiateViewController(withIdentifier: StoryboardIDs.conversationInfoViewController) as! ConversationInfoViewController
-        conversationInfoVC.dataCtrl = dataCtrl
-        self.navigationController?.pushViewController(conversationInfoVC, animated: true)
+        showInfoPopover()
     }
     
+    func showInfoPopover() {
+        
+        let popController:InfoPopoverViewController = self.storyboard!.instantiateViewController(withIdentifier: StoryboardIDs.infoPopoverViewController) as! InfoPopoverViewController
+        
+        // set the presentation style
+        popController.modalPresentationStyle = UIModalPresentationStyle.popover
+        
+        // set up the popover presentation controller
+        popController.popoverPresentationController?.permittedArrowDirections = UIPopoverArrowDirection.up
+        popController.popoverPresentationController?.delegate = self
+        popController.popoverPresentationController?.sourceView = self.user2Label // button
+        
+        popController.dataArray = dataCtrl?.memberList?.map{$0.userName} ?? [String]()
+        
+        // present the popover
+        self.present(popController, animated: true, completion: nil)
+    }
+    
+    func adaptivePresentationStyle(for controller: UIPresentationController) -> UIModalPresentationStyle {
+        return .none
+    }
     
     //MARK: Delete Reply only if reply added by logged in user
     
