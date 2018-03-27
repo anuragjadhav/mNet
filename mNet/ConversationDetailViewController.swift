@@ -50,10 +50,7 @@ class ConversationDetailViewController: BaseViewController,UITableViewDelegate,U
         
         // add tap gesture on from to label
         let tapGestureRecognizer1 = UITapGestureRecognizer(target: self, action:#selector(fromTolabelClicked(gesture:)))
-        self.user1Label.addGestureRecognizer(tapGestureRecognizer1)
-        
-        let tapGestureRecognizer2 = UITapGestureRecognizer(target: self, action:#selector(fromTolabelClicked(gesture:)))
-        self.user2Label.addGestureRecognizer(tapGestureRecognizer2)
+        self.user2Label.addGestureRecognizer(tapGestureRecognizer1)
 
     }
 
@@ -343,7 +340,7 @@ class ConversationDetailViewController: BaseViewController,UITableViewDelegate,U
     
     func showInfoPopover() {
         
-        let popController:InfoPopoverViewController = self.storyboard!.instantiateViewController(withIdentifier: StoryboardIDs.infoPopoverViewController) as! InfoPopoverViewController
+        let popController:InfoPopoverViewController = UIStoryboard.conversations.instantiateViewController(withIdentifier: StoryboardIDs.infoPopoverViewController) as! InfoPopoverViewController
         
         // set the presentation style
         popController.modalPresentationStyle = UIModalPresentationStyle.popover
@@ -353,7 +350,7 @@ class ConversationDetailViewController: BaseViewController,UITableViewDelegate,U
         popController.popoverPresentationController?.delegate = self
         popController.popoverPresentationController?.sourceView = self.user2Label // button
         
-        popController.dataArray = dataCtrl?.memberList?.map{$0.userName} ?? [String]()
+        popController.dataArray = dataCtrl?.selectedCoversation?.membersList.map{$0.userName} ?? [String]()
         
         // present the popover
         self.present(popController, animated: true, completion: nil)
