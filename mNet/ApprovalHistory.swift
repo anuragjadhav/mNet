@@ -10,6 +10,8 @@ import UIKit
 
 class ApprovalHistory: NSObject, Mappable {
     
+    static let userRoleCreator:String = "CREATOR"
+    
     var userId:String = ""
     var userName:String = "-"
     var profileImageLink:String = ""
@@ -17,6 +19,21 @@ class ApprovalHistory: NSObject, Mappable {
     var createdOn:String = "-"
     var approvalUserType:String = ""
     var approvalUserRole:String = "-"
+    
+    var statusImage:UIImage {
+        
+        if approvalUserRole.uppercased() == ApprovalHistory.userRoleCreator {
+            return #imageLiteral(resourceName: "dash")
+        }
+        else {
+            switch approveType {
+            case "0": return #imageLiteral(resourceName: "questionMark")
+            case "1": return #imageLiteral(resourceName: "greenTick")
+            case "2": return #imageLiteral(resourceName: "redCross")
+            default: return #imageLiteral(resourceName: "dash")
+            }
+        }
+    }
     
     required init?(map: Map) {
         

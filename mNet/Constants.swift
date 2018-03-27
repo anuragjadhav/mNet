@@ -228,6 +228,7 @@ struct CellIdentifiers {
     static let selectUsersTableViewCell:String = "SelectUserTableViewCell"
     static let membersTableViewCell:String = "MembersTableViewCell"
     static let peopleListTableViewCell:String = "PeopleListTableViewCell"
+    static let popoverTableView:String = "popoverTableViewCell"
 
 }
 
@@ -265,7 +266,7 @@ struct StoryboardIDs {
     static let conversationInfoViewController:String = "ConversationInfoViewController"
     static let newConversationViewController:String = "NewConversationViewController"
     static let imageDocViewController:String = "ImageDocDisplayViewController"
-
+    static let infoPopoverViewController:String = "InfoPopoverViewControllerID"
 }
 
 struct ImageNames {
