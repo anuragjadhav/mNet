@@ -49,6 +49,7 @@ class ConversationsDataController: NSObject {
     var didComeToAddExtraUsers:Bool = false
     var newUsersAddedToConversation:Bool = false
     
+    var selectedNotification:NotificationObject?
     
     func getConversations(searchText:String,isLoadMore:Bool,onSuccess:@escaping () -> Void , onFailure : @escaping (String) -> Void) {
         
@@ -693,6 +694,29 @@ class ConversationsDataController: NSObject {
             onSuccess()
             
         }) { (errorMessage) in
+            
+            onFailure(errorMessage)
+        }
+    }
+    
+    
+    func getConversation(onSuccess:@escaping () -> Void , onFailure : @escaping (String) -> Void) {
+        
+        let user:User = User.loggedInUser()!
+        var postParams:[String:Any] = [String:Any]()
+        postParams["userId"] = user.userId
+        postParams["post_sender_password"] = user.password
+        postParams["post_sender_email"] = user.email
+        postParams["post_type"] = "0"
+        postParams["post_type_id"] = "0"
+        postParams["post_id"] = selectedNotification?.postId
+
+        WrapperManager.shared.conversationWrapper.getConversation(postParams: postParams, onSuccess: { [unowned self] (conversation) in
+            
+            self.selectedCoversation = conversation
+            onSuccess()
+            
+        }) {(errorMessage) in
             
             onFailure(errorMessage)
         }

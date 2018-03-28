@@ -40,7 +40,7 @@ class ConversationInfoViewController: BaseViewController,UITableViewDelegate,UIT
             user1Label.text = member1.userName
             
             let member2:ConversationMember =  (dataCtrl?.selectedCoversation?.membersList.last)!
-            user2Label.text = "\(member2.userName) and \(memberCount - 2)"
+            user2Label.text = "\(member2.userName) + \(memberCount - 2)"
         }
         else
         {
@@ -52,16 +52,7 @@ class ConversationInfoViewController: BaseViewController,UITableViewDelegate,UIT
             user2Label.text = member2.userName
         }
         
-        let dateFormatter : DateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
-        
-        let latestReplyDate:Date = dateFormatter.date(from:(dataCtrl?.selectedCoversation?.latestReplierDate)!)!
-        
-        let dateFormatterToShow : DateFormatter = DateFormatter()
-        dateFormatterToShow.dateFormat = "h:mm a yy MMM dd"
-        let dateTimeString:String = dateFormatterToShow.string(from: latestReplyDate) + " " + dateFormatterToShow.weekdaySymbols[Calendar.current.component(.weekday, from: latestReplyDate)]
-        
-        dateAndTimeLabel.text = dateTimeString
+        dateAndTimeLabel.text = dataCtrl?.selectedCoversation?.createdOn
 
     }
     

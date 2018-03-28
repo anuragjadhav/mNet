@@ -34,6 +34,7 @@ class LoginViewController: BaseViewController, UITextFieldDelegate {
     
     @IBOutlet weak var changeIdButtonHeight: NSLayoutConstraint!
     
+    @IBOutlet weak var showHidePasswordButton: UIButton!
     
     
     var dataController:LoginDataController = LoginDataController()
@@ -289,11 +290,13 @@ class LoginViewController: BaseViewController, UITextFieldDelegate {
         {
             showPasswordToggle = false
             passwordTextField.isSecureTextEntry = false
+            showHidePasswordButton.setImage(UIImage(named:"hidePassword"), for: .normal)
         }
         else
         {
             showPasswordToggle = true
             passwordTextField.isSecureTextEntry = true
+            showHidePasswordButton.setImage(UIImage(named:"showPassword"), for: .normal)
         }
         
     }

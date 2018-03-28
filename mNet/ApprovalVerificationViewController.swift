@@ -72,7 +72,7 @@ class ApprovalVerificationViewController: BaseViewController,UISearchBarDelegate
         radioButtonGroup!.delegate = self as RadioButtonGroupDelegate
         approveRadioButtonTop.constant = 28
         textViewHeight.constant = 64
-        sendButton.setTitle("\(ConstantStrings.sendFor) \(ConstantStrings.verification)", for: .normal)
+        sendButton.setTitle(ConstantStrings.verify, for: .normal)
         sendPeopleListTableView.isHidden = false
         searchBar.isHidden = false
         approvalRadioButton.isHidden = false
@@ -86,7 +86,7 @@ class ApprovalVerificationViewController: BaseViewController,UISearchBarDelegate
         radioButtonGroup = PVRadioButtonGroup()
         approveRadioButtonTop.constant = -20
         textViewHeight.constant = 128
-        sendButton.setTitle("\(ConstantStrings.sendFor) \(ConstantStrings.approval)", for: .normal)
+        sendButton.setTitle(ConstantStrings.approve, for: .normal)
         sendPeopleListTableView.isHidden = true
         searchBar.isHidden = true
         approvalRadioButton.isHidden = true
@@ -107,7 +107,7 @@ class ApprovalVerificationViewController: BaseViewController,UISearchBarDelegate
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let cell:SendPeopleListTableViewCell = tableView.dequeueReusableCell(withIdentifier:"SendPeopleListTableViewCell") as! SendPeopleListTableViewCell
+        let cell:SendPeopleListTableViewCell = tableView.dequeueReusableCell(withIdentifier:CellIdentifiers.sendPeopleListTableViewCell) as! SendPeopleListTableViewCell
         
         guard let user:ApprovalUser = userList[safe:indexPath.row] else {
             return cell

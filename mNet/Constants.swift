@@ -228,7 +228,8 @@ struct CellIdentifiers {
     static let selectUsersTableViewCell:String = "SelectUserTableViewCell"
     static let membersTableViewCell:String = "MembersTableViewCell"
     static let peopleListTableViewCell:String = "PeopleListTableViewCell"
-    static let popoverTableView:String = "popoverTableViewCell"
+    static let popoverTableViewCell:String = "popoverTableViewCell"
+    static let sendPeopleListTableViewCell:String = "SendPeopleListTableViewCell"
 
 }
 
@@ -344,8 +345,13 @@ extension URLRequest
     {
         if let urlstring = urlString
         {
-            let urlRequest:URLRequest =  URLRequest.init(url: URL.init(string:urlstring)!)
+            guard let url:URL = URL(string: urlstring)
+            else{
+                return nil
+            }
             
+            let urlRequest:URLRequest =  URLRequest(url: url)
+
             return urlRequest
         }
         else

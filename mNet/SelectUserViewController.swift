@@ -19,6 +19,8 @@ class SelectUserViewController: BaseViewController,UITableViewDelegate,UITableVi
     @IBOutlet weak var selectUsersButton: UIButton!
     @IBOutlet weak var searchBar: UISearchBar!
     
+    @IBOutlet weak var noUsersLabel: CustomBrownTextColorLabel!
+    
     var dataCtrl:ConversationsDataController?
     var userType:String?
     
@@ -188,6 +190,7 @@ class SelectUserViewController: BaseViewController,UITableViewDelegate,UITableVi
 
                     self.selectUserTableView.reloadData()
                     self.selectUserCollectionView.reloadData()
+                    self.checkNoData()
                 }
                 
                 }, onFailure: { [unowned self] (errorMessage) in
@@ -206,6 +209,11 @@ class SelectUserViewController: BaseViewController,UITableViewDelegate,UITableVi
             
             self.showRetryView(message: AlertMessages.networkUnavailable)
         }
+    }
+    
+    func checkNoData() {
+        
+        noUsersLabel.isHidden = ((dataCtrl?.selectUserList?.count ?? 0)! > 0)
     }
     
     //MARK: Pull Up refresh control delegate

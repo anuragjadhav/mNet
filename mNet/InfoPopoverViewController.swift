@@ -32,9 +32,10 @@ class InfoPopoverViewController: BaseViewController, UITableViewDelegate, UITabl
     func setUp() {
         
         popoverTableView.tableFooterView = UIView()
-        popoverTableView.estimatedRowHeight = 31
-        popoverTableView.rowHeight = UITableViewAutomaticDimension
         popoverTableView.reloadData()
+        
+        let height = dataArray.count * Int(popoverTableView.rowHeight)
+        self.preferredContentSize = CGSize(width: 200, height: height)
     }
     
     
@@ -45,7 +46,7 @@ class InfoPopoverViewController: BaseViewController, UITableViewDelegate, UITabl
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let cell = tableView.dequeueReusableCell(withIdentifier: CellIdentifiers.popoverTableView)
+        let cell = tableView.dequeueReusableCell(withIdentifier: CellIdentifiers.popoverTableViewCell)
         guard let textLabel:UILabel = cell?.viewWithTag(46) as? UILabel else {
             return cell!
         }

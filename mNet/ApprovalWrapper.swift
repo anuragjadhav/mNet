@@ -54,7 +54,7 @@ class ApprovalWrapper: NSObject {
                 }
                 
                 else {
-                    onSuccess("Post Approved")
+                    onSuccess("Document Approved")
                 }
             }
                 
@@ -81,7 +81,7 @@ class ApprovalWrapper: NSObject {
                 }
                     
                 else {
-                    onSuccess("Post Verified")
+                    onSuccess("Document Verified")
                 }
             }
                 
@@ -108,7 +108,7 @@ class ApprovalWrapper: NSObject {
                 }
                     
                 else {
-                    onSuccess("Post Rejected")
+                    onSuccess("Document Rejected")
                 }
             }
                 

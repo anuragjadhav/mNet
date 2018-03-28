@@ -79,7 +79,7 @@
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="BCC" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="96G-eG-aAD" customClass="CustomBrownTextColorLabel" customModule="mNet" customModuleProvider="target">
-                                        <rect key="frame" x="199" y="28" width="26.5" height="17"/>
+                                        <rect key="frame" x="199" y="28" width="30" height="17"/>
                                         <fontDescription key="fontDescription" name="SanFranciscoDisplay-Bold" family="San Francisco Display" pointSize="14"/>
                                         <color key="textColor" red="0.3803921569" green="0.28235294119999998" blue="0.22352941179999999" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
@@ -110,7 +110,7 @@
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="for Approval" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9z5-ee-rx8" customClass="CustomBrownTextColorLabel" customModule="mNet" customModuleProvider="target">
-                                        <rect key="frame" x="27" y="124" width="78" height="17"/>
+                                        <rect key="frame" x="27" y="124" width="76.5" height="17"/>
                                         <fontDescription key="fontDescription" name="SanFranciscoDisplay-Bold" family="San Francisco Display" pointSize="14"/>
                                         <color key="textColor" red="0.3803921569" green="0.28235294119999998" blue="0.22352941179999999" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
@@ -141,7 +141,7 @@
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="for Verification" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5DB-5S-DR6" customClass="CustomBrownTextColorLabel" customModule="mNet" customModuleProvider="target">
-                                        <rect key="frame" x="199" y="124" width="95.5" height="17"/>
+                                        <rect key="frame" x="199" y="124" width="89.5" height="17"/>
                                         <fontDescription key="fontDescription" name="SanFranciscoDisplay-Bold" family="San Francisco Display" pointSize="14"/>
                                         <color key="textColor" red="0.3803921569" green="0.28235294119999998" blue="0.22352941179999999" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
@@ -172,7 +172,7 @@
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Subject" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pzh-q0-PDP" customClass="CustomBrownTextColorLabel" customModule="mNet" customModuleProvider="target">
-                                        <rect key="frame" x="27" y="234" width="49.5" height="17"/>
+                                        <rect key="frame" x="27" y="234" width="48" height="17"/>
                                         <fontDescription key="fontDescription" name="SanFranciscoDisplay-Bold" family="San Francisco Display" pointSize="14"/>
                                         <color key="textColor" red="0.3803921569" green="0.28235294119999998" blue="0.22352941179999999" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
@@ -206,7 +206,7 @@
                                         </connections>
                                     </textField>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Attachments" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MTJ-Hs-J2b" customClass="CustomBrownTextColorLabel" customModule="mNet" customModuleProvider="target">
-                                        <rect key="frame" x="27" y="320" width="83" height="17"/>
+                                        <rect key="frame" x="27" y="320" width="79.5" height="17"/>
                                         <fontDescription key="fontDescription" name="SanFranciscoDisplay-Bold" family="San Francisco Display" pointSize="14"/>
                                         <color key="textColor" red="0.3803921569" green="0.28235294119999998" blue="0.22352941179999999" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
@@ -559,7 +559,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="ohC-iJ-IUy" customClass="CustomBrownColorTextView" customModule="mNet" customModuleProvider="target">
-                                        <rect key="frame" x="27" y="433" width="309.5" height="111"/>
+                                        <rect key="frame" x="27" y="433" width="313" height="111"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="111" id="hVp-VB-GSt"/>
@@ -719,15 +719,15 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Robin D." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="o2l-cX-izp" customClass="CustomBrownTextColorLabel" customModule="mNet" customModuleProvider="target">
-                                <rect key="frame" x="112" y="88" width="83" height="14"/>
+                                <rect key="frame" x="112" y="88" width="123" height="14"/>
                                 <fontDescription key="fontDescription" name="SanFranciscoDisplay-Medium" family="San Francisco Display" pointSize="12"/>
                                 <color key="textColor" red="0.3803921569" green="0.28235294119999998" blue="0.22352941179999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="9:45 PM . 16 Jan ’17 .  Mon" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="why-ww-zH4">
-                                <rect key="frame" x="205" y="88.5" width="150" height="14"/>
+                                <rect key="frame" x="245" y="88.5" width="110" height="14"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="150" id="jbD-Ct-Dy5"/>
+                                    <constraint firstAttribute="width" constant="110" id="jbD-Ct-Dy5"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="SanFranciscoDisplay-Medium" family="San Francisco Display" pointSize="12"/>
                                 <color key="textColor" red="0.28235294119999998" green="0.28235294119999998" blue="0.28235294119999998" alpha="0.47999999999999998" colorSpace="calibratedRGB"/>
@@ -854,7 +854,7 @@
                     </connections>
                 </searchDisplayController>
             </objects>
-            <point key="canvasLocation" x="2964" y="1920.9895052473764"/>
+            <point key="canvasLocation" x="3126" y="1919"/>
         </scene>
         <!--Conversations-->
         <scene sceneID="YyL-2G-AEJ">
@@ -1142,10 +1142,10 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gk4-xd-R3A">
-                                                    <rect key="frame" x="291" y="6" width="24" height="24"/>
+                                                    <rect key="frame" x="290" y="6" width="25" height="25"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="width" secondItem="Gk4-xd-R3A" secondAttribute="height" multiplier="1:1" id="1Wv-W5-Smu"/>
-                                                        <constraint firstAttribute="width" constant="24" id="VkG-at-Oy1"/>
+                                                        <constraint firstAttribute="width" constant="25" id="IXk-eU-cqB"/>
+                                                        <constraint firstAttribute="height" constant="25" id="P4X-nB-TEZ"/>
                                                     </constraints>
                                                     <state key="normal" image="uncheckedBox"/>
                                                     <userDefinedRuntimeAttributes>
@@ -1187,6 +1187,15 @@
                                     <outlet property="delegate" destination="j5b-dt-cpm" id="hG8-Ns-Np7"/>
                                 </connections>
                             </tableView>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No Users Found" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JzX-VU-FTr" customClass="CustomBrownTextColorLabel" customModule="mNet" customModuleProvider="target">
+                                <rect key="frame" x="142.5" y="383.5" width="117.5" height="20"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="100" id="aMJ-im-JmD"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="SanFranciscoDisplay-Medium" family="San Francisco Display" pointSize="17"/>
+                                <color key="textColor" red="0.3803921569" green="0.28235294119999998" blue="0.22352941179999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fEL-Fz-mfI" customClass="CustomBlueBackgroundButton" customModule="mNet" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="622" width="375" height="45"/>
                                 <color key="backgroundColor" red="0.2901960784" green="0.56470588239999997" blue="0.8862745098" alpha="1" colorSpace="calibratedRGB"/>
@@ -1294,9 +1303,11 @@
                             <constraint firstItem="CLu-4U-jYC" firstAttribute="top" secondItem="5oa-wd-FM6" secondAttribute="bottom" constant="8" id="bzW-Xi-koy"/>
                             <constraint firstItem="qEU-Cw-bxv" firstAttribute="trailing" secondItem="zaO-ra-XkI" secondAttribute="trailing" constant="10" id="cFn-em-C8a"/>
                             <constraint firstItem="CLu-4U-jYC" firstAttribute="leading" secondItem="feF-uM-MhZ" secondAttribute="leading" id="cKl-kH-fuZ"/>
+                            <constraint firstItem="JzX-VU-FTr" firstAttribute="centerX" secondItem="CLu-4U-jYC" secondAttribute="centerX" id="cSb-uL-b0D"/>
                             <constraint firstItem="zaO-ra-XkI" firstAttribute="top" secondItem="feF-uM-MhZ" secondAttribute="bottom" constant="16" id="gce-ca-nhk"/>
                             <constraint firstItem="5oa-wd-FM6" firstAttribute="top" secondItem="zaO-ra-XkI" secondAttribute="bottom" constant="10" id="lOO-hc-Qeo"/>
                             <constraint firstItem="5oa-wd-FM6" firstAttribute="leading" secondItem="qEU-Cw-bxv" secondAttribute="leading" constant="19" id="pR5-Ej-6IE"/>
+                            <constraint firstItem="JzX-VU-FTr" firstAttribute="centerY" secondItem="CLu-4U-jYC" secondAttribute="centerY" constant="-50" id="qV4-Wz-PLG"/>
                             <constraint firstItem="zaO-ra-XkI" firstAttribute="leading" secondItem="feF-uM-MhZ" secondAttribute="leading" id="r2m-je-SdA"/>
                             <constraint firstItem="qEU-Cw-bxv" firstAttribute="trailing" secondItem="5oa-wd-FM6" secondAttribute="trailing" constant="8" id="vpF-xl-GaN"/>
                         </constraints>
@@ -1313,6 +1324,7 @@
                     <connections>
                         <outlet property="backBarButton" destination="mLA-BP-K4c" id="dDO-6M-pYh"/>
                         <outlet property="headerLabel" destination="feF-uM-MhZ" id="OWc-Nh-gLd"/>
+                        <outlet property="noUsersLabel" destination="JzX-VU-FTr" id="ESD-Wx-kce"/>
                         <outlet property="searchBar" destination="5oa-wd-FM6" id="aZy-og-0Jv"/>
                         <outlet property="searchDisplayController" destination="agD-cN-OO8" id="Xjn-tg-cwE"/>
                         <outlet property="selectUserCollectionView" destination="zaO-ra-XkI" id="aXT-tT-F6L"/>
@@ -1733,7 +1745,7 @@
                                     <action selector="hidePostButtonAction:" destination="ZDB-Oo-0rh" id="leE-6i-pdT"/>
                                 </connections>
                             </barButtonItem>
-                            <barButtonItem image="plusIcon2" id="XET-Y6-Cp9">
+                            <barButtonItem image="forward" id="XET-Y6-Cp9">
                                 <inset key="imageInsets" minX="13" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 <color key="tintColor" red="0.45882352939999999" green="0.45882352939999999" blue="0.45882352939999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <connections>
@@ -1783,7 +1795,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="160" height="200"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="PbN-j6-06Q">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="31" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="PbN-j6-06Q">
                                 <rect key="frame" x="0.0" y="0.0" width="160" height="200"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
@@ -2015,11 +2027,11 @@
         <image name="defaultProfileImage" width="64" height="64"/>
         <image name="deleteBin" width="24" height="24"/>
         <image name="filterIcon" width="21" height="21"/>
+        <image name="forward" width="24" height="24"/>
         <image name="grayAttachmentIcon" width="32" height="32"/>
         <image name="hideIcon" width="24" height="24"/>
         <image name="infoIcon" width="24" height="24"/>
         <image name="plusIcon" width="80" height="92"/>
-        <image name="plusIcon2" width="24" height="24"/>
         <image name="rightArrow" width="12" height="12"/>
         <image name="uncheckedBox" width="32" height="32"/>
         <image name="whiteAttachmentIcon" width="32" height="32"/>

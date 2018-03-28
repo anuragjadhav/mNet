@@ -133,7 +133,6 @@ class ApprovalsViewController: BaseViewController,UICollectionViewDelegate, UICo
         
         noApprovalsLabel.text = "No \(dataController.selectedSection?.name ?? "Approvals")"
         noApprovalsLabel.isHidden = (((dataController.selectedSection?.list.count) ?? 0) > 0)
-        searchBar.isHidden = (((dataController.selectedSection?.list.count) ?? 0) == 0)
     }
     
     func resetData() {

@@ -56,9 +56,13 @@ class MembersTableViewCell: UITableViewCell {
                 memberTypeLabel.textColor = ColorConstants.kGreenColor
             }
         }
+        else if(member.memberType == "Owner")
+        {
+          memberTypeLabel.text = "Creator"
+        }
         else
         {
-          memberTypeLabel.text = ""
+            memberTypeLabel.text = ""
         }
         
         

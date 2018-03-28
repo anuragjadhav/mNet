@@ -33,7 +33,7 @@ class ConversationDetailViewController: BaseViewController,UITableViewDelegate,U
     var dataCtrl:ConversationsDataController?
     let imagePicker = UIImagePickerController()
     var documentController:UIDocumentMenuViewController?
-
+    var didComeFromNotification:Bool = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -57,8 +57,34 @@ class ConversationDetailViewController: BaseViewController,UITableViewDelegate,U
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated);
         
-        self.setupNavigationBar()
+        setupNavigationBar()
         
+        if(didComeFromNotification == true)
+        {
+            getConversation()
+        }
+        else
+        {
+            setupData()
+        }
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        if(didComeFromNotification == false)
+        {
+            scrollTableViewToBottom()
+        }
+    }
+    
+    func setupNavigationBar(){
+        
+        self.navigationController?.navigationBar.isHidden = false
+    }
+    
+    func setupData()
+    {
         self.navigationItem.title = dataCtrl?.selectedCoversation?.postTitle
         
         if((dataCtrl?.selectedCoversation?.membersList.count)! > 2)
@@ -73,41 +99,35 @@ class ConversationDetailViewController: BaseViewController,UITableViewDelegate,U
         }
         else
         {
-            let member1:ConversationMember =  (dataCtrl?.selectedCoversation?.membersList.first)!
-            user1Label.text = member1.userName
+            let member1:ConversationMember? =  (dataCtrl?.selectedCoversation?.membersList.first) ?? nil
+            user1Label.text = member1?.userName
             
-            let member2:ConversationMember =  (dataCtrl?.selectedCoversation?.membersList.last)!
-            user2Label.text = member2.userName
+            let member2:ConversationMember? =  (dataCtrl?.selectedCoversation?.membersList.last) ?? nil
+            user2Label.text = member2?.userName
         }
         
-//        let dateFormatter : DateFormatter = DateFormatter()
-//        dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
-//
-//        let latestReplyDate:Date = dateFormatter.date(from:(dataCtrl?.selectedCoversation?.latestReplierDate)!)!
-//
-//        let dateFormatterToShow : DateFormatter = DateFormatter()
-//        dateFormatterToShow.dateFormat = "h:mm a yy MMM dd"
-//
-//        let dateTimeString:String = dateFormatterToShow.string(from: latestReplyDate) + " " + dateFormatterToShow.weekdaySymbols[safe:Calendar.current.component(.weekday, from: latestReplyDate) - 1]!
-//
+        //        let dateFormatter : DateFormatter = DateFormatter()
+        //        dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
+        //
+        //        let latestReplyDate:Date = dateFormatter.date(from:(dataCtrl?.selectedCoversation?.latestReplierDate)!)!
+        //
+        //        let dateFormatterToShow : DateFormatter = DateFormatter()
+        //        dateFormatterToShow.dateFormat = "h:mm a yy MMM dd"
+        //
+        //        let dateTimeString:String = dateFormatterToShow.string(from: latestReplyDate) + " " + dateFormatterToShow.weekdaySymbols[safe:Calendar.current.component(.weekday, from: latestReplyDate) - 1]!
+        //
         dateTimeLabel.text = dataCtrl?.selectedCoversation?.createdOn
         
         conversationTableView.reloadData()
     }
     
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-        
+    func scrollTableViewToBottom()
+    {
         if((dataCtrl?.selectedCoversation?.reply.count)! > 0)
         {
             let indexPath = IndexPath(row: (dataCtrl?.selectedCoversation?.reply.count)! - 1, section: 0)
             self.conversationTableView.scrollToRow(at: indexPath, at: .bottom, animated: true)
         }
-    }
-    
-    func setupNavigationBar(){
-        
-        self.navigationController?.navigationBar.isHidden = false
     }
     
     //Mark: Keyboard handling
@@ -148,7 +168,7 @@ class ConversationDetailViewController: BaseViewController,UITableViewDelegate,U
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
-        return (dataCtrl?.selectedCoversation?.reply.count)!
+        return (dataCtrl?.selectedCoversation?.reply.count) ?? 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -660,4 +680,44 @@ class ConversationDetailViewController: BaseViewController,UITableViewDelegate,U
             self.present(alert, animated: true, completion: nil)
         }
     }
+    
+    //MARK: Get Post Data
+    
+    func getConversation()
+    {
+        if Reachability.isConnectedToNetwork(){
+            
+            self.showLoadingOnWindow()
+
+            dataCtrl?.getConversation(onSuccess: { [unowned self]  in
+                
+                DispatchQueue.main.async {
+                    
+                    self.setupData()
+                    self.scrollTableViewToBottom()
+                    self.removeLoadingFromWindow()
+                }
+                
+                }, onFailure: { [unowned self] (errorMessage) in
+                    
+                    DispatchQueue.main.async {
+                        
+                        self.removeLoadingFromWindow()
+                        self.showRetryView(message:errorMessage)
+                    }
+            })
+            
+        }else{
+            
+            self.showRetryView(message: AlertMessages.networkUnavailable)
+        }
+    }
+    
+    //MARK: retry view delegate
+    
+    override func retryButtonClicked() {
+        
+        getConversation()
+    }
+
 }

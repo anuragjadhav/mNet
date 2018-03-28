@@ -6,6 +6,13 @@
 //  Copyright © 2018 mNet. All rights reserved.
 //
 
+
+
+enum ResultError: Error {
+    case InvalidFormat
+}
+
+
 import UIKit
 
 class ConversationsWrapper: NSObject {
@@ -40,6 +47,34 @@ class ConversationsWrapper: NSObject {
             }
         }
     }
+    
+    func getConversation(postParams:[String:Any], onSuccess:@escaping (Conversation) -> Void , onFailure : @escaping (String) -> Void){
+        
+        request(URLS.getConversationsList, method: .post, parameters: postParams, encoding: JSONEncoding() as ParameterEncoding, headers: nil).responseJSON { response in
+            
+            if let responseDict:[String:Any] = response.result.value as? [String:Any] {
+                
+                let error:String = responseDict[DictionaryKeys.APIResponse.error] as! String
+                
+                if(error == DictionaryKeys.APIResponse.noError)
+                {
+                    let conversationDict:[String:Any] = responseDict[DictionaryKeys.APIResponse.responseData] as! [String:Any]
+                    let conversation:Conversation = Conversation(JSON:conversationDict)!
+
+                    onSuccess(conversation)
+                }
+                else
+                {
+                    onFailure(WrapperManager.shared.getErrorMessage(message: "Unable to fetch conversation"))
+                }
+            }
+            else{
+                
+                onFailure(WrapperManager.shared.getErrorMessage(message: "Unable to fetch conversation"))
+            }
+        }
+    }
+    
     
     
     func markConversationAsRead(postParams:[String:Any], onSuccess:@escaping () -> Void , onFailure : @escaping () -> Void){
@@ -292,7 +327,23 @@ class ConversationsWrapper: NSObject {
             
             if let responseDict:[String:Any] = response.result.value as? [String:Any] {
                 
-                let error:String = responseDict[DictionaryKeys.APIResponse.error] as! String
+                var error:String?
+                
+                do
+                {
+                   error = responseDict[DictionaryKeys.APIResponse.error] as? String
+                    
+                  guard error != nil
+                  else
+                  {
+                    throw ResultError.InvalidFormat
+                  }
+                    
+                }
+                catch{
+                    
+                    onFailure("Unable to add users in this conversation")
+                }
                 
                 if(error == DictionaryKeys.APIResponse.noError)
                 {

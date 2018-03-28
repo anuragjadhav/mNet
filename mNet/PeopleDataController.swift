@@ -34,7 +34,7 @@ class PeopleDataController: NSObject {
             
             if(self.showOnlyBlockedUsers)
             {
-                filteredBlockedPeopleArray = peopleArray.filter { $0.blockStatus!.localizedCaseInsensitiveContains("Block") }
+                filteredBlockedPeopleArray = peopleArray.filter { $0.blockStatus == "Block" }
             }
             else
             {

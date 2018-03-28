@@ -765,19 +765,19 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Saurabh Suman" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eMi-VR-5Uk" customClass="CustomBrownTextColorLabel" customModule="mNet" customModuleProvider="target">
-                                                    <rect key="frame" x="10" y="5" width="266" height="17"/>
+                                                    <rect key="frame" x="10" y="10" width="266" height="17"/>
                                                     <fontDescription key="fontDescription" name="SanFranciscoDisplay-Bold" family="San Francisco Display" pointSize="14"/>
                                                     <color key="textColor" red="0.3803921569" green="0.28235294119999998" blue="0.22352941179999999" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Manager" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iVa-82-vKg" customClass="CustomBrownTextColorLabel" customModule="mNet" customModuleProvider="target">
-                                                    <rect key="frame" x="10" y="32" width="266" height="17"/>
+                                                    <rect key="frame" x="10" y="37" width="266" height="17"/>
                                                     <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="14"/>
                                                     <color key="textColor" red="0.3803921569" green="0.28235294119999998" blue="0.22352941179999999" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <button hidden="YES" opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8lJ-jY-ZaJ">
-                                                    <rect key="frame" x="296" y="19.5" width="20" height="20"/>
+                                                    <rect key="frame" x="296" y="8.5" width="20" height="20"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="20" id="247-g5-fVA"/>
                                                         <constraint firstAttribute="height" constant="20" id="haH-wz-MeK"/>
@@ -788,21 +788,24 @@
                                                     </connections>
                                                 </button>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="HN4-R9-SGW">
-                                                    <rect key="frame" x="296" y="19.5" width="20" height="20"/>
+                                                    <rect key="frame" x="296" y="8.5" width="20" height="20"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="20" id="BWs-Sb-9q6"/>
+                                                        <constraint firstAttribute="height" constant="20" id="Oo0-vs-eWz"/>
+                                                    </constraints>
                                                 </imageView>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="HN4-R9-SGW" firstAttribute="trailing" secondItem="8lJ-jY-ZaJ" secondAttribute="trailing" id="6xT-Pb-uZl"/>
                                                 <constraint firstItem="8lJ-jY-ZaJ" firstAttribute="leading" secondItem="eMi-VR-5Uk" secondAttribute="trailing" constant="20" id="6xU-TW-0aF"/>
+                                                <constraint firstItem="HN4-R9-SGW" firstAttribute="centerY" secondItem="eMi-VR-5Uk" secondAttribute="centerY" id="8Hh-AG-VaS"/>
+                                                <constraint firstItem="8lJ-jY-ZaJ" firstAttribute="centerY" secondItem="eMi-VR-5Uk" secondAttribute="centerY" id="Aoa-Uj-xZ3"/>
                                                 <constraint firstAttribute="trailing" secondItem="8lJ-jY-ZaJ" secondAttribute="trailing" constant="5" id="GNu-tG-ADB"/>
-                                                <constraint firstItem="eMi-VR-5Uk" firstAttribute="top" secondItem="GVy-ac-Ocb" secondAttribute="top" constant="5" id="JzO-F2-JJh"/>
+                                                <constraint firstItem="eMi-VR-5Uk" firstAttribute="top" secondItem="GVy-ac-Ocb" secondAttribute="top" constant="10" id="JzO-F2-JJh"/>
                                                 <constraint firstItem="8lJ-jY-ZaJ" firstAttribute="leading" secondItem="iVa-82-vKg" secondAttribute="trailing" constant="20" id="Nfk-sw-L4b"/>
                                                 <constraint firstItem="HN4-R9-SGW" firstAttribute="leading" secondItem="8lJ-jY-ZaJ" secondAttribute="leading" id="UXA-pd-cw2"/>
-                                                <constraint firstItem="HN4-R9-SGW" firstAttribute="bottom" secondItem="8lJ-jY-ZaJ" secondAttribute="bottom" id="WkY-xw-r0O"/>
                                                 <constraint firstItem="iVa-82-vKg" firstAttribute="top" secondItem="eMi-VR-5Uk" secondAttribute="bottom" constant="10" id="aEZ-7b-Rd8"/>
-                                                <constraint firstItem="8lJ-jY-ZaJ" firstAttribute="centerY" secondItem="GVy-ac-Ocb" secondAttribute="centerY" id="fIF-6e-CDm"/>
                                                 <constraint firstItem="eMi-VR-5Uk" firstAttribute="leading" secondItem="GVy-ac-Ocb" secondAttribute="leading" constant="10" id="g5b-WS-rUx"/>
-                                                <constraint firstItem="HN4-R9-SGW" firstAttribute="top" secondItem="8lJ-jY-ZaJ" secondAttribute="top" id="sB3-DS-Grt"/>
                                                 <constraint firstItem="iVa-82-vKg" firstAttribute="leading" secondItem="eMi-VR-5Uk" secondAttribute="leading" id="zw5-6w-AEo"/>
                                             </constraints>
                                         </tableViewCellContentView>

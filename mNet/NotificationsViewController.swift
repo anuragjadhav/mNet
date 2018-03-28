@@ -48,6 +48,8 @@ class NotificationsViewController: BaseViewController, UITableViewDelegate, UITa
         
         let currentTabbarItem = self.tabBarController?.tabBar.items![2]
         currentTabbarItem?.badgeValue = nil
+        
+        notificationsTableView.reloadData()
     }
     
     //MARK: Setup
@@ -88,6 +90,15 @@ class NotificationsViewController: BaseViewController, UITableViewDelegate, UITa
             count = count < 0 ? 0 : count
             dataCtrl.unreadNotificationCount = String(count)
             self.unreadNotificationLabel.text = self.dataCtrl.unreadNotificationCount! + " unread notifications"
+        }
+        
+        if(notification.notificationType == "reply" || notification.notificationType == "post")
+        {
+            let conversationDetailVC = UIStoryboard.conversations.instantiateViewController(withIdentifier: StoryboardIDs.conversationDetailViewController) as! ConversationDetailViewController
+            conversationDetailVC.dataCtrl = ConversationsDataController()
+            conversationDetailVC.didComeFromNotification = true
+            conversationDetailVC.dataCtrl?.selectedNotification = notification
+            self.navigationController?.pushViewController(conversationDetailVC, animated: true)
         }
     }
     

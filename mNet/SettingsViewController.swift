@@ -197,11 +197,14 @@ class SettingsViewController: BaseViewController,UITableViewDelegate,UITableView
            
                 if(self.dataCtrl.profile?.imageUrl != nil && self.dataCtrl.profile?.imageUrl != "")
                 {
-                    UIImage.imageDownloader.download((URLRequest.getRequest(URLS.imageBaseURLString + (self.dataCtrl.profile?.imageUrl)!))!) { response in
-                        
-                        if let image = response.result.value {
+                   if let urlRequest:URLRequest = URLRequest.getRequest(URLS.imageBaseURLString + (self.dataCtrl.profile?.imageUrl)!)
+                    {
+                        UIImage.imageDownloader.download(urlRequest) { response in
                             
-                            self.profileImageView.image = image
+                            if let image = response.result.value {
+                                
+                                self.profileImageView.image = image
+                            }
                         }
                     }
                 }

@@ -88,10 +88,21 @@ class ResetPasswordViewController: BaseViewController,UITextFieldDelegate {
         }
         else
         {
-            let alert = UIAlertController(title:AlertMessages.sorry, message:"Please enter valid and same password in both the fields", preferredStyle: .alert)
+            
+          if(oldPasswordTextField.text == nil || oldPasswordTextField.text == "" || newPasswordTextfield.text == nil || newPasswordTextfield.text == "")
+          {
+                let alert = UIAlertController(title:AlertMessages.sorry, message:"Please enter old and new password", preferredStyle: .alert)
+                alert.addAction(UIAlertAction(title:AlertMessages.ok, style:.default, handler: { _ in
+                }))
+                self.present(alert, animated: true, completion: nil)
+          }
+          else
+          {
+            let alert = UIAlertController(title:AlertMessages.sorry, message:"New passowrd and confirm password doesnot match", preferredStyle: .alert)
             alert.addAction(UIAlertAction(title:AlertMessages.ok, style:.default, handler: { _ in
             }))
             self.present(alert, animated: true, completion: nil)
+          }
         }
     }
     
