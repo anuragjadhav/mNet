@@ -51,7 +51,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 
             }, completion: nil)
         }
-            
         else {
             
             window?.rootViewController = UIStoryboard.login.instantiateInitialViewController()
@@ -80,30 +79,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func logout() {
         
-        //TODO: Perform these 2 actions on success of server call
         makeLoginPageHome(true)
-        deRegisterDeviceToken()
         User.logoutUser()
     }
     
-    func deRegisterDeviceToken() {
-        
-        guard var postParams:[String:Any] = User.loggedInUser()?.toJSONPostWithoutEmail() else {
-            return
-        }
-        
-        guard let deviceToken:String = UserDefaults.standard.string(forKey: UserDefaultsKeys.deviceToken) else {
-            return
-        }
-        
-        postParams[DictionaryKeys.DeviceRegistration.deviceToken] = deviceToken
-        
-        WrapperManager.shared.loginWrapper.registerDeviceToken(isLogout: true, postParams:postParams, onSuccess: {
-            print("Device UnRegistration Success")
-        }) {
-            print("Device UnRegistration Failed")
-        }
-    }
 
     //MARK: Push Notifications
     func registerForPushNotifications(_ app:UIApplication) {
@@ -125,6 +104,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         let deviceTokenString:String = deviceToken.reduce("", {$0 + String(format: "%02X", $1)})
         UserDefaults.standard.set(deviceTokenString, forKey: UserDefaultsKeys.deviceToken)
+        UserDefaults.standard.synchronize()
     }
     
     func application(_ application: UIApplication, didFailToRegisterForRemoteNotificationsWithError error: Error) {

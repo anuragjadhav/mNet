@@ -16,7 +16,7 @@ class User: NSObject, Mappable {
     var name:String = ""
     var status:String = ""
     var userCode:String = ""
-    
+    var publicUserId:String = ""
     var companyEmail:String = ""
     var postCount:Int = 0
     var applicationCount:Int = 0
@@ -114,6 +114,8 @@ class User: NSObject, Mappable {
         licenseStatus <- map["license_status"]
         isLicenseAvailable <- map["is_license_available"]
         isUserPrivate <- map["is_user_private"]
+        publicUserId <- map["publicUserId"]
+
     }
     
     //MARK: To Dictionary
@@ -139,6 +141,15 @@ class User: NSObject, Mappable {
         var dictionary:[String:Any] = [String:Any]()
         dictionary["UserPass"] = password
         dictionary["UserId"] = userId
+        return dictionary
+    }
+    
+    func toJSONPostWithPublicUserIdForTokenRegistration() -> [String:Any] {
+        
+        var dictionary:[String:Any] = [String:Any]()
+        dictionary["UserPass"] = password
+        dictionary["UserId"] = publicUserId
+        dictionary["device"] = "ios"
         return dictionary
     }
     
@@ -170,6 +181,7 @@ class User: NSObject, Mappable {
         let userDctionary:[String:Any] = self.toJSON()
         UserDefaults.standard.set(userDctionary, forKey: UserDefaultsKeys.loggedInUser)
         UserDefaults.standard.set(true, forKey: UserDefaultsKeys.loginStatus)
+        UserDefaults.standard.synchronize()
     }
     
     static func loggedInUser() -> User? {
@@ -190,5 +202,7 @@ class User: NSObject, Mappable {
         
         UserDefaults.standard.set(nil, forKey: UserDefaultsKeys.loggedInUser)
         UserDefaults.standard.set(false, forKey: UserDefaultsKeys.loginStatus)
+        UserDefaults.standard.synchronize()
+
     }
 }

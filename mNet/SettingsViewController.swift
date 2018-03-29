@@ -125,8 +125,7 @@ class SettingsViewController: BaseViewController,UITableViewDelegate,UITableView
             }))
             alert.addAction(UIAlertAction(title:"Yes", style:.default, handler: { _ in
                 
-                User.logoutUser()
-                AppDelegate.sharedInstance.makeLoginPageHome(true)
+                self.logout()
             }))
             
             DispatchQueue.main.async {
@@ -141,7 +140,7 @@ class SettingsViewController: BaseViewController,UITableViewDelegate,UITableView
         }
     }
     
-    //Mark: Button Actions
+    //MARK: Button Actions
 
     @IBAction func gotoButtonAction(_ sender: Any) {
         
@@ -150,7 +149,7 @@ class SettingsViewController: BaseViewController,UITableViewDelegate,UITableView
         self.navigationController?.pushViewController(profileVC, animated: true)
     }
         
-    //Mark: Get Settings And Profile
+    //MARK: Get Settings And Profile
     
     func getUserSettings(){
         
@@ -219,11 +218,38 @@ class SettingsViewController: BaseViewController,UITableViewDelegate,UITableView
         })
     }
 
-    //Mark: Retry view delegate
+    //MARK: Retry view delegate
     
     override func retryButtonClicked() {
         
         self.getUserSettings()
     }
     
+    //MARK: Logout
+    
+    func logout(){
+        
+        self.showTransperantLoadingOnViewController()
+        
+        self.dataCtrl.deRegisterDeviceToken(onSuccess: { [unowned self] in
+            
+            DispatchQueue.main.async {
+                
+                self.removeTransperantLoadingFromViewController()
+                AppDelegate.sharedInstance.logout()
+            }
+            
+            }, onFailure: { [unowned self]  in
+                
+                DispatchQueue.main.async {
+                    
+                self.removeTransperantLoadingFromViewController()
+                    
+                let alert = UIAlertController(title:AlertMessages.sorry, message:"Unable to logout", preferredStyle: .alert)
+                    alert.addAction(UIAlertAction(title:AlertMessages.ok, style:.default, handler: { _ in
+                    }))
+                self.present(alert, animated: false, completion: nil)
+              }
+        })
+    }
 }

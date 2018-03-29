@@ -122,6 +122,7 @@ class LoginDataController: NSObject {
         WrapperManager.shared.loginWrapper.getUserDetails(postParams: postDictionary, onSuccess: { (newUserId,newUserCode) in
             
             let updatedUser:User = User.loggedInUser()!
+            updatedUser.publicUserId = updatedUser.userId
             updatedUser.userId = newUserId
             updatedUser.userCode = newUserCode
             updatedUser.saveToUserDefaults()
@@ -133,7 +134,7 @@ class LoginDataController: NSObject {
     
     func registerDeviceToken(_ user:User) {
         
-        var postParams:[String:Any] = user.toJSONPostWithoutEmail()
+        var postParams:[String:Any] = user.toJSONPostWithPublicUserIdForTokenRegistration()
         
         guard let deviceToken:String = UserDefaults.standard.string(forKey: UserDefaultsKeys.deviceToken) else {
             return

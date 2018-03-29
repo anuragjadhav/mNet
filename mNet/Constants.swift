@@ -362,3 +362,7 @@ extension URLRequest
     }
 }
 
+enum ResultError: Error {
+    case InvalidFormat
+}
+

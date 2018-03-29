@@ -7,12 +7,6 @@
 //
 
 
-
-enum ResultError: Error {
-    case InvalidFormat
-}
-
-
 import UIKit
 
 class ConversationsWrapper: NSObject {
