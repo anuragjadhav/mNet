@@ -27,6 +27,8 @@ class ConversationsListViewController: BaseViewController, UITableViewDelegate, 
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        NotificationCenter.default.addObserver(self, selector: #selector(didReceiveAnyPushNotification), name:.UIApplicationWillEnterForeground, object: nil)
+        
         lineLabel.layer.shadowColor = UIColor.lightGray.cgColor
         lineLabel.layer.shadowOffset = CGSize(width: 0, height: 0.6)
         lineLabel.layer.shadowOpacity = 1
@@ -118,6 +120,21 @@ class ConversationsListViewController: BaseViewController, UITableViewDelegate, 
         conversationDetailVC.dataCtrl = self.dataCtrl
         conversationDetailVC.hideIgnorePostdelegate = self
         self.navigationController?.pushViewController(conversationDetailVC, animated: true)
+    }
+    
+    //MARK: Push Notification
+    
+    @objc func didReceiveAnyPushNotification()
+    {
+        let didReceivePusnNotif:Bool = UserDefaults.standard.bool(forKey: UserDefaultsKeys.didReceiveNotification)
+        
+        if didReceivePusnNotif == true {
+            
+            self.tabBarController?.selectedIndex = 2
+        }
+        
+        UserDefaults.standard.set(false, forKey: UserDefaultsKeys.didReceiveNotification)
+        UserDefaults.standard.synchronize()
     }
     
     

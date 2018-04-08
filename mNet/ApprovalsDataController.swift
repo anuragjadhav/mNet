@@ -11,6 +11,7 @@ import UIKit
 class ApprovalsDataController: NSObject {
 
     var approvalsData:[ApprovalSection] = ApprovalSection.allSections
+    var selectedNotification:NotificationObject?
     
     var selectedSectionIndex:Int = 0
     var selectedSection:ApprovalSection? {

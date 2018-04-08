@@ -22,6 +22,8 @@ class SettingsViewController: BaseViewController,UITableViewDelegate,UITableView
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(didReceiveAnyPushNotification), name:.UIApplicationWillEnterForeground, object: nil)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -138,6 +140,21 @@ class SettingsViewController: BaseViewController,UITableViewDelegate,UITableView
         default: break
             
         }
+    }
+    
+    //MARK: Push Notification
+    
+    @objc func didReceiveAnyPushNotification()
+    {
+        let didReceivePusnNotif:Bool = UserDefaults.standard.bool(forKey: UserDefaultsKeys.didReceiveNotification)
+        
+        if didReceivePusnNotif == true {
+            
+            self.tabBarController?.selectedIndex = 2
+        }
+        
+        UserDefaults.standard.set(false, forKey: UserDefaultsKeys.didReceiveNotification)
+        UserDefaults.standard.synchronize()
     }
     
     //MARK: Button Actions

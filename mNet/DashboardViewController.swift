@@ -36,6 +36,8 @@ class DashboardViewController: BaseViewController, UITableViewDataSource, UITabl
     //MARK: View Controller Delegates
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(didReceiveAnyPushNotification), name:.UIApplicationWillEnterForeground, object: nil)
 
         // Do any additional setup after loading the view.
         setUpViewController()
@@ -90,7 +92,7 @@ class DashboardViewController: BaseViewController, UITableViewDataSource, UITabl
         
         self.showTransperantLoadingOnViewController()
         
-        dataController.getDashboardStats(onSuccess: {
+        dataController.getDashboardStats( onSuccess: { [unowned self] in
             
             DispatchQueue.main.async {
                 self.removeTransperantLoadingFromViewController()
@@ -140,6 +142,19 @@ class DashboardViewController: BaseViewController, UITableViewDataSource, UITabl
     func checkNoApps() {
         
         noAppsLabel.isHidden = dataController.appsList.count > 0
+    }
+    
+    @objc func didReceiveAnyPushNotification()
+    {
+        let didReceivePusnNotif:Bool = UserDefaults.standard.bool(forKey: UserDefaultsKeys.didReceiveNotification)
+        
+        if didReceivePusnNotif == true {
+            
+            self.tabBarController?.selectedIndex = 2
+        }
+        
+        UserDefaults.standard.set(false, forKey: UserDefaultsKeys.didReceiveNotification)
+        UserDefaults.standard.synchronize()
     }
     
     //MARK: Table View Methods

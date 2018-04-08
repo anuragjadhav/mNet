@@ -10,7 +10,7 @@ import UIKit
 import UserNotifications
 
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate {
+class AppDelegate: UIResponder, UIApplicationDelegate,UNUserNotificationCenterDelegate {
 
     
     var window: UIWindow?
@@ -18,8 +18,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     //MARK: Application Start Tasks
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
 
+        //set push notification delegate
+        if #available(iOS 10.0, *) {
+            UNUserNotificationCenter.current().delegate = self
+        } else {
+            // Fallback on earlier versions
+        }
+        
         performAppStartTasks(application)
         return true
     }
@@ -85,16 +91,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
 
     //MARK: Push Notifications
+    
     func registerForPushNotifications(_ app:UIApplication) {
         
         //For iOS 10 and above
         if #available(iOS 10, *) {
             UNUserNotificationCenter.current().requestAuthorization(options:[.badge, .alert, .sound]){ (granted, error) in }
-        }
-        
-        // iOS 9 support
-        else {
-            app.registerUserNotificationSettings(UIUserNotificationSettings(types: [.badge, .sound, .alert], categories: nil))
         }
         
         app.registerForRemoteNotifications()
@@ -110,6 +112,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFailToRegisterForRemoteNotificationsWithError error: Error) {
         
         print("Failed To Register for remote notification - ",error.localizedDescription)
+    }
+    
+    @available(iOS 10.0, *)
+    func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse, withCompletionHandler completionHandler: @escaping () -> Void) {
+        
+        UserDefaults.standard.set(true, forKey: UserDefaultsKeys.didReceiveNotification)
+        UserDefaults.standard.synchronize()
+        
+        completionHandler()
     }
     
     //MARK: Application Life Cycle

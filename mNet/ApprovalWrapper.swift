@@ -118,4 +118,32 @@ class ApprovalWrapper: NSObject {
             }
         }
     }
+    
+    func getApproval(postParams:[String:Any], onSuccess:@escaping (Approval) -> Void , onFailure : @escaping (String) -> Void) {
+        
+        request(URLS.getApprovalList, method: .post, parameters: postParams, encoding: JSONEncoding() as ParameterEncoding, headers: nil).responseObject { (response:DataResponse<CommonResponse>) in
+            
+            guard let commonResponse:CommonResponse = response.result.value else {
+                onFailure(WrapperManager.shared.getErrorMessage(message: nil))
+                return
+            }
+            
+            if commonResponse.noError {
+                
+                guard let responseDict:[String:Any] = commonResponse.responseData as? [String:Any] else {
+                    onFailure(WrapperManager.shared.getErrorMessage(message: nil))
+                    return
+                }
+                
+                let approval:Approval = Approval(JSON: responseDict)!
+                
+                onSuccess((approval))
+            }
+                
+            else {
+                onFailure(WrapperManager.shared.getErrorMessage(message: nil))
+                return
+            }
+        }
+    }
 }

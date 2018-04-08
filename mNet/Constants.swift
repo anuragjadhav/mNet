@@ -248,6 +248,7 @@ struct UserDefaultsKeys {
     static let deviceToken:String = "deviceTokenForRemoteNotifications"
     static let baseURL:String = "savedBaseURL"
     static let imagesBaseURL:String = "imagesBaseURL"
+    static let didReceiveNotification:String = "didReceiveNotification"
 }
 
 struct StoryboardIDs {
