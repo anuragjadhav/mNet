@@ -122,19 +122,16 @@ class SettingsViewController: BaseViewController,UITableViewDelegate,UITableView
             
         case SettingOptions.logout:
             
-            let alert = UIAlertController(title:"Logout", message:"Are you sure you want to logout?", preferredStyle: .alert)
-            alert.addAction(UIAlertAction(title:"No", style:.default, handler: { _ in
+            let alert = UIAlertController(title:"Are you sure you want to logout?", message:nil, preferredStyle: .actionSheet)
+            alert.addAction(UIAlertAction(title:"Cancel", style:.cancel, handler: { _ in
             }))
-            alert.addAction(UIAlertAction(title:"Yes", style:.default, handler: { _ in
-                
+            alert.addAction(UIAlertAction(title:"Log Out", style:.destructive, handler: { _ in
                 self.logout()
             }))
             
             DispatchQueue.main.async {
-                
                 self.present(alert, animated: false, completion: nil)
             }
-            
             break;
         
         default: break
@@ -249,23 +246,18 @@ class SettingsViewController: BaseViewController,UITableViewDelegate,UITableView
         self.showTransperantLoadingOnViewController()
         
         self.dataCtrl.deRegisterDeviceToken(onSuccess: { [unowned self] in
-            
             DispatchQueue.main.async {
-                
                 self.removeTransperantLoadingFromViewController()
                 AppDelegate.sharedInstance.logout()
             }
-            
             }, onFailure: { [unowned self]  in
                 
                 DispatchQueue.main.async {
-                    
-                self.removeTransperantLoadingFromViewController()
-                    
-                let alert = UIAlertController(title:AlertMessages.sorry, message:"Unable to logout", preferredStyle: .alert)
-                    alert.addAction(UIAlertAction(title:AlertMessages.ok, style:.default, handler: { _ in
-                    }))
-                self.present(alert, animated: false, completion: nil)
+                    self.removeTransperantLoadingFromViewController()
+                    let alert = UIAlertController(title:AlertMessages.sorry, message:"Unable to logout", preferredStyle: .alert)
+                        alert.addAction(UIAlertAction(title:AlertMessages.ok, style:.default, handler: { _ in
+                        }))
+                    self.present(alert, animated: false, completion: nil)
               }
         })
     }

@@ -127,7 +127,6 @@ class ApprovalWrapper: NSObject {
                 onFailure(WrapperManager.shared.getErrorMessage(message: nil))
                 return
             }
-            
             if commonResponse.noError {
                 
                 guard let responseDict:[String:Any] = commonResponse.responseData as? [String:Any] else {
@@ -135,9 +134,11 @@ class ApprovalWrapper: NSObject {
                     return
                 }
                 
-                let approval:Approval = Approval(JSON: responseDict)!
-                
-                onSuccess((approval))
+                guard let approval:Approval = Approval(JSON: responseDict) else {
+                    onFailure(WrapperManager.shared.getErrorMessage(message: nil))
+                    return
+                }
+                onSuccess(approval)
             }
                 
             else {

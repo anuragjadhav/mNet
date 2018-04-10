@@ -87,7 +87,7 @@ class DocumentViewController: UIViewController {
 
     @IBAction func approveButtonAction(_ sender: Any) {
         
-        let approvalVC:ApprovalVerificationViewController = (UIStoryboard.init(name:"ApproveReject", bundle: Bundle.main)).instantiateViewController(withIdentifier: "ApprovalVerificationViewController") as! ApprovalVerificationViewController
+        let approvalVC:ApprovalVerificationViewController = UIStoryboard.approvals.instantiateViewController(withIdentifier: StoryboardIDs.approvalVerificationViewController) as! ApprovalVerificationViewController
         approvalVC.dataController = dataController
         approvalVC.approvalsVC = approvalsVC
         self.navigationController?.pushViewController(approvalVC, animated: true)
@@ -95,7 +95,7 @@ class DocumentViewController: UIViewController {
     
     @IBAction func rejectButtonAction(_ sender: Any) {
         
-        let rejectApprovalVc:RejectApplicationViewController = (UIStoryboard.init(name:"ApproveReject", bundle: Bundle.main)).instantiateViewController(withIdentifier: "RejectApplicationViewController") as! RejectApplicationViewController
+        let rejectApprovalVc:RejectApplicationViewController = UIStoryboard.approvals.instantiateViewController(withIdentifier: StoryboardIDs.rejectViewController) as! RejectApplicationViewController
         rejectApprovalVc.dataController = dataController
         rejectApprovalVc.approvalsVC = approvalsVC
         self.navigationController?.pushViewController(rejectApprovalVc, animated: true)
@@ -121,7 +121,7 @@ class DocumentViewController: UIViewController {
     
     func showDetailsScreen() {
         
-        let documentDetailsVC:DocumentDetailsViewController = (UIStoryboard.init(name:"ApproveReject", bundle: Bundle.main)).instantiateViewController(withIdentifier: "DocumentDetailsViewController") as! DocumentDetailsViewController
+        let documentDetailsVC:DocumentDetailsViewController = UIStoryboard.approvals.instantiateViewController(withIdentifier: StoryboardIDs.documentDetailsViewController) as! DocumentDetailsViewController
         documentDetailsVC.dataController = self.dataController
         
         self.addChildViewController(documentDetailsVC)
@@ -133,7 +133,7 @@ class DocumentViewController: UIViewController {
     
     func showAttachmentsScreen() {
         
-        let attachmentsVC:AttachmentsViewController = (UIStoryboard.init(name:"ApproveReject", bundle: Bundle.main)).instantiateViewController(withIdentifier: "AttachmentsViewController") as! AttachmentsViewController
+        let attachmentsVC:AttachmentsViewController = UIStoryboard.approvals.instantiateViewController(withIdentifier: StoryboardIDs.attachmentsViewController) as! AttachmentsViewController
         attachmentsVC.documentVC = self
         attachmentsVC.documents = dataController.selectedApproval?.otherDocument ?? [ApprovalDocument]()
         

@@ -54,7 +54,6 @@ struct URLS {
     static let registerDevice:URL = URL(string: "registerToken", relativeTo: publicBaseURL)!
     static let deRegisterDevice:URL = URL(string: "deregisterToken", relativeTo: publicBaseURL)!
     static let getUserDetails:URL = URL(string: "GetUserDetails", relativeTo: baseURL)!
-    
     static let getDashboardStatistics:URL = URL(string: "GetDashBoardStatistics", relativeTo: baseURL)!
     static let getUserAppsList:URL = URL(string: "getUserAppList", relativeTo: baseURL)!
     static let setAppPriority:URL = URL(string: "setAppPriority", relativeTo: baseURL)!
@@ -269,6 +268,11 @@ struct StoryboardIDs {
     static let newConversationViewController:String = "NewConversationViewController"
     static let imageDocViewController:String = "ImageDocDisplayViewController"
     static let infoPopoverViewController:String = "InfoPopoverViewControllerID"
+    static let approvalVerificationViewController:String = "ApprovalVerificationViewController"
+    static let rejectViewController:String = "RejectApplicationViewController"
+    static let approvalDetailsViewController:String = "DocumentViewController"
+    static let documentDetailsViewController:String = "DocumentDetailsViewController"
+    static let attachmentsViewController:String = "AttachmentsViewController"
 }
 
 struct ImageNames {
@@ -300,6 +304,7 @@ extension UIStoryboard {
     static let login:UIStoryboard = UIStoryboard(name: "Login", bundle: nil)
     static let dateSelector:UIStoryboard = UIStoryboard(name: "DateSelector", bundle: nil)
     static let webView:UIStoryboard = UIStoryboard(name: "WebView", bundle: nil)
+    static let approvals:UIStoryboard = UIStoryboard(name: "ApproveReject", bundle: nil)
 }
 
 extension UIFont {

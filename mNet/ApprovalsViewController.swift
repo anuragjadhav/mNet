@@ -284,7 +284,7 @@ class ApprovalsViewController: BaseViewController,UICollectionViewDelegate, UICo
     
     func goToDetailsPage(preSelectedIndex:Int) {
         
-        let documentVc:DocumentViewController = (UIStoryboard.init(name:"ApproveReject", bundle: Bundle.main)).instantiateViewController(withIdentifier: "DocumentViewController") as! DocumentViewController
+        let documentVc:DocumentViewController = UIStoryboard.approvals.instantiateViewController(withIdentifier: StoryboardIDs.approvalDetailsViewController) as! DocumentViewController
         documentVc.dataController = dataController
         documentVc.preSelectedSegment = preSelectedIndex
         documentVc.approvalsVC = self

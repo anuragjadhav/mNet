@@ -15,11 +15,17 @@ class ApprovalsDataController: NSObject {
     
     var selectedSectionIndex:Int = 0
     var selectedSection:ApprovalSection? {
+        if isFromDeepLinking {
+            return deeplinkingApprovalSection
+        }
         return approvalsData[safe:selectedSectionIndex]
     }
     
     var selectedApprovalIndex:Int = 0
     var selectedApproval:Approval? {
+        if isFromDeepLinking {
+            return deeplinkingApproval
+        }
         return selectedSection?.list[safe:selectedApprovalIndex]
     }
     
@@ -31,6 +37,10 @@ class ApprovalsDataController: NSObject {
     var endDate:String = ""
     
     var reachedEnd:Bool = false
+    
+    var isFromDeepLinking:Bool = false
+    var deeplinkingApproval:Approval?
+    var deeplinkingApprovalSection:ApprovalSection?
     
     func getApprovalsData(onSuccess:@escaping () -> Void , onFailure : @escaping (String) -> Void)  {
         
@@ -47,7 +57,6 @@ class ApprovalsDataController: NSObject {
         
         if filterString != nil {
             postData["date_filter_key"] = filterString
-            
             if filterString == "5" {
                 postData["from_date"] = startDate
                 postData["to_date"] = endDate
@@ -139,6 +148,24 @@ class ApprovalsDataController: NSObject {
         postData["key_reject_type_id"] = type
         
         WrapperManager.shared.approvalWrapper.rejectPost(postParams: postData, onSuccess: onSuccess, onFailure: onFailure)
+    }
+    
+    func getDeeplinkApproval(postId:String, onSuccess:@escaping () -> Void , onFailure : @escaping (String) -> Void) {
+       
+        isFromDeepLinking = true
+        let loggedInUser:User = User.loggedInUser()!
+        var postData:[String:Any] = [String:Any]()
+        postData["approval_list"] = "post_details"
+        postData["application_id"] = "1"
+        postData["userId"] = loggedInUser.userId
+        postData["start"] = "0"
+        postData["limit"] = "1"
+        postData["post_id"] = postId
+        
+        WrapperManager.shared.approvalWrapper.getApproval(postParams: postData, onSuccess: { (deeplinkApprovalData) in
+            self.deeplinkingApproval = deeplinkApprovalData
+            onSuccess()
+        }, onFailure: onFailure)
     }
     
 }

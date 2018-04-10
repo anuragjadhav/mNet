@@ -30,7 +30,7 @@ class LoginViewController: BaseViewController, UITextFieldDelegate {
     
     @IBOutlet weak var googleButtonHeight: NSLayoutConstraint!
     
-    @IBOutlet weak var changeIdButton: CustomBlueBackgroundButton!
+    @IBOutlet weak var changeIdButton: CustomRedBackgroundColorButton!
     
     @IBOutlet weak var changeIdButtonHeight: NSLayoutConstraint!
     
@@ -41,7 +41,7 @@ class LoginViewController: BaseViewController, UITextFieldDelegate {
     
     let passwordViewFullHeight:CGFloat = 82
     let buttonFullHeight:CGFloat = 36
-    let changeIdButtonFullHeight:CGFloat = 20
+    let changeIdButtonFullHeight:CGFloat = 36
     
     var showPasswordToggle:Bool = false
     
@@ -274,7 +274,7 @@ class LoginViewController: BaseViewController, UITextFieldDelegate {
         }
     }
     
-    @IBAction func changeIdButtonAction(_ sender: CustomBlueBackgroundButton) {
+    @IBAction func changeIdButtonAction(_ sender: CustomRedBackgroundColorButton) {
         
         self.showProceedButton(animated: true)
     }
@@ -284,6 +284,7 @@ class LoginViewController: BaseViewController, UITextFieldDelegate {
         
         
     }
+    
     @IBAction func showHidePasswordButtonAction(_ sender: Any) {
         
         if(showPasswordToggle)

@@ -126,12 +126,9 @@ class ApprovalVerificationViewController: BaseViewController,UISearchBarDelegate
     
     //MARK: Text View Delegates
     func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
-        
         if(text == "\n"){
-            
             self.view.endEditing(true)
         }
-        
         return true
     }
     
@@ -165,12 +162,9 @@ class ApprovalVerificationViewController: BaseViewController,UISearchBarDelegate
 
     
     // MARK: - Button Actions
-    
     @IBAction func backButtonAction(_ sender: Any) {
-        
         self.navigationController?.popViewController(animated: true)
     }
-    
 
     @IBAction func sendButtonAction(_ sender: Any) {
         
