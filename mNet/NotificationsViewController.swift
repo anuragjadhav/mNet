@@ -100,7 +100,6 @@ class NotificationsViewController: BaseViewController, UITableViewDelegate, UITa
             conversationDetailVC.dataCtrl?.selectedNotification = notification
             self.navigationController?.pushViewController(conversationDetailVC, animated: true)
         }
-            //TODO: Add check for notification type
         else {
             goToApprovalDetailsScreen(notification:notification)
         }
@@ -108,27 +107,12 @@ class NotificationsViewController: BaseViewController, UITableViewDelegate, UITa
     
     func goToApprovalDetailsScreen(notification:NotificationObject) {
         
-        self.showTransperantLoadingOnViewController()
-        
-        //TODO: Set data from notifiction
-        let approvalSection = ApprovalSection()
-        //approvalSection.approvalStatus = .none
-        
         let approvalDataController:ApprovalsDataController = ApprovalsDataController()
-        approvalDataController.deeplinkingApprovalSection = approvalSection
-        approvalDataController.getDeeplinkApproval(postId: notification.postId ?? "0", onSuccess: {
-            DispatchQueue.main.async {
-                self.removeTransperantLoadingFromViewController()
-                let approvalDetailsViewController:DocumentViewController = UIStoryboard.approvals.instantiateViewController(withIdentifier: StoryboardIDs.approvalDetailsViewController) as! DocumentViewController
-                approvalDetailsViewController.dataController = approvalDataController
-                self.navigationController?.pushViewController(approvalDetailsViewController, animated: true)
-            }
-        }) { (errorMessage) in
-            DispatchQueue.main.async {
-                self.removeTransperantLoadingFromViewController()
-                self.showQuickErrorAlert(message: errorMessage)
-            }
-        }
+        approvalDataController.selectedNotification = notification
+        approvalDataController.isFromDeepLinking = true
+        let approvalDetailsViewController:DocumentViewController = UIStoryboard.approvals.instantiateViewController(withIdentifier: StoryboardIDs.approvalDetailsViewController) as! DocumentViewController
+        approvalDetailsViewController.dataController = approvalDataController
+        self.navigationController?.pushViewController(approvalDetailsViewController, animated: true)
     }
     
     //MARK: Get Notifications

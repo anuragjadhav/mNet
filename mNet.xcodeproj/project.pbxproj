@@ -25,6 +25,8 @@
 		05501F92201D2ABC00831A08 /* ConversationMember.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05501F91201D2ABC00831A08 /* ConversationMember.swift */; };
 		05501F94201D316600831A08 /* ConversationsDataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05501F93201D316600831A08 /* ConversationsDataController.swift */; };
 		05641C2120473DAC003CD9C2 /* DateSelectorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05641C2020473DAC003CD9C2 /* DateSelectorViewController.swift */; };
+		0568EC2F207EA1A800506CE5 /* SafariServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0568EC2E207EA1A800506CE5 /* SafariServices.framework */; };
+		0568EC31207EA1B200506CE5 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0568EC30207EA1B100506CE5 /* SystemConfiguration.framework */; };
 		0575623A200A34110010CBB1 /* BaseNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05756239200A34110010CBB1 /* BaseNavigationController.swift */; };
 		0575623C200AB33A0010CBB1 /* PendingApprovalsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0575623B200AB33A0010CBB1 /* PendingApprovalsTableViewCell.swift */; };
 		058A0E4C1FF7C44D00147238 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 058A0E4B1FF7C44D00147238 /* Login.storyboard */; };
@@ -194,6 +196,19 @@
 		E4E297D7206977F5008D38FD /* InfoPopoverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4E297D6206977F5008D38FD /* InfoPopoverViewController.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		0568EC36207EA2DB00506CE5 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		050F1BDF2035FD7600B32841 /* Approval.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Approval.swift; sourceTree = "<group>"; };
 		050F1BE1203726EE00B32841 /* ApprovalHistory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApprovalHistory.swift; sourceTree = "<group>"; };
@@ -213,6 +228,8 @@
 		05501F91201D2ABC00831A08 /* ConversationMember.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConversationMember.swift; sourceTree = "<group>"; };
 		05501F93201D316600831A08 /* ConversationsDataController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConversationsDataController.swift; sourceTree = "<group>"; };
 		05641C2020473DAC003CD9C2 /* DateSelectorViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateSelectorViewController.swift; sourceTree = "<group>"; };
+		0568EC2E207EA1A800506CE5 /* SafariServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SafariServices.framework; path = System/Library/Frameworks/SafariServices.framework; sourceTree = SDKROOT; };
+		0568EC30207EA1B100506CE5 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		05756239200A34110010CBB1 /* BaseNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseNavigationController.swift; sourceTree = "<group>"; };
 		0575623B200AB33A0010CBB1 /* PendingApprovalsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PendingApprovalsTableViewCell.swift; sourceTree = "<group>"; };
 		058A0E4B1FF7C44D00147238 /* Login.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
@@ -390,6 +407,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0568EC31207EA1B200506CE5 /* SystemConfiguration.framework in Frameworks */,
+				0568EC2F207EA1A800506CE5 /* SafariServices.framework in Frameworks */,
 				5E190A7F20332A2E00EEE97B /* Photos.framework in Frameworks */,
 				5E190A7D2033292200EEE97B /* AssetsLibrary.framework in Frameworks */,
 				5E190A7B2033291800EEE97B /* MobileCoreServices.framework in Frameworks */,
@@ -861,6 +880,8 @@
 		5E21B320200F40660045CDA3 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				0568EC30207EA1B100506CE5 /* SystemConfiguration.framework */,
+				0568EC2E207EA1A800506CE5 /* SafariServices.framework */,
 				5E190A7E20332A2E00EEE97B /* Photos.framework */,
 				5E190A7C2033292200EEE97B /* AssetsLibrary.framework */,
 				5E190A7A2033291800EEE97B /* MobileCoreServices.framework */,
@@ -990,6 +1011,7 @@
 				5E20CD8B1FE952BE004ACE0D /* Sources */,
 				5E20CD8C1FE952BE004ACE0D /* Frameworks */,
 				5E20CD8D1FE952BE004ACE0D /* Resources */,
+				0568EC36207EA2DB00506CE5 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -1375,10 +1397,15 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/mNet",
+					"$(PROJECT_DIR)/mNet/Google\\ Sign\\ In\\ Framework",
+					"$(PROJECT_DIR)/mNet/Google\\ Sign\\ In\\ Framework",
+					"$(PROJECT_DIR)/mNet/Google\\ Sign\\ In\\ Framework",
+					"$(PROJECT_DIR)/mNet/Google\\ Sign\\ In\\ Framework",
 				);
 				INFOPLIST_FILE = mNet/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_BUNDLE_IDENTIFIER = com.mediaware.mNet;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "40a5028c-977e-4eee-8e71-54e2b7454ec0";
@@ -1400,10 +1427,15 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/mNet",
+					"$(PROJECT_DIR)/mNet/Google\\ Sign\\ In\\ Framework",
+					"$(PROJECT_DIR)/mNet/Google\\ Sign\\ In\\ Framework",
+					"$(PROJECT_DIR)/mNet/Google\\ Sign\\ In\\ Framework",
+					"$(PROJECT_DIR)/mNet/Google\\ Sign\\ In\\ Framework",
 				);
 				INFOPLIST_FILE = mNet/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_BUNDLE_IDENTIFIER = com.mediaware.mNet;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "40a5028c-977e-4eee-8e71-54e2b7454ec0";

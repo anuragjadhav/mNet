@@ -151,8 +151,7 @@ class ApprovalsDataController: NSObject {
     }
     
     func getDeeplinkApproval(postId:String, onSuccess:@escaping () -> Void , onFailure : @escaping (String) -> Void) {
-       
-        isFromDeepLinking = true
+    
         let loggedInUser:User = User.loggedInUser()!
         var postData:[String:Any] = [String:Any]()
         postData["approval_list"] = "post_details"
@@ -163,7 +162,10 @@ class ApprovalsDataController: NSObject {
         postData["post_id"] = postId
         
         WrapperManager.shared.approvalWrapper.getApproval(postParams: postData, onSuccess: { (deeplinkApprovalData) in
+            let section:ApprovalSection = ApprovalSection()
+            section.approvalStatus = deeplinkApprovalData.approvalStatus
             self.deeplinkingApproval = deeplinkApprovalData
+            self.deeplinkingApprovalSection = section
             onSuccess()
         }, onFailure: onFailure)
     }

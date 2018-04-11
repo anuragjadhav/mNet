@@ -36,7 +36,7 @@ class Approval: NSObject, Mappable {
     var approveId:String = ""
     var userId:String = ""
     var postApproveType:String = ""
-    var approvalUserType:String = ""
+    var approvalUserType:String = "A"
     var postOwner:String = ""
     var postPriority:String = ""
     var isDocCancel:String = ""
@@ -51,6 +51,20 @@ class Approval: NSObject, Mappable {
     var dynamicData:[DynamicData] = [DynamicData]()
     var approvalUserList:[ApprovalUser] = [ApprovalUser]()
     var verificationUserList:[ApprovalUser] = [ApprovalUser]()
+    var approveVerifyStatus:String = "0"
+    var isActionTaken:Bool {
+        return approveVerifyStatus == "1"
+    }
+    var approvalStatus:ApprovalStatus {
+        if isActionTaken {
+            return .none
+        }
+        if approvalUserType == "I" {
+            return .verify
+        }
+        return .approve
+    }
+    
     
     var selectedUsers:[ApprovalUser] = [ApprovalUser]()
     
@@ -123,6 +137,7 @@ class Approval: NSObject, Mappable {
         dynamicData                 <- map["dynamic"]
         approvalUserList            <- map["post_next_user_approval"]
         verificationUserList        <- map["post_next_user_verifier"]
-        postPriority        <- map["post_priority"]
+        postPriority                <- map["post_priority"]
+        approveVerifyStatus         <- map["approve_verify_status"]
     }
 }

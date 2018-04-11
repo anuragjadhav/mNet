@@ -8,7 +8,7 @@
 
 import UIKit
 
-class DocumentViewController: UIViewController {
+class DocumentViewController: BaseViewController {
 
     @IBOutlet weak var containerView: UIView!
     @IBOutlet weak var segmentedControl: UISegmentedControl!
@@ -35,7 +35,12 @@ class DocumentViewController: UIViewController {
         self.containerView.addSubview(documentDetailsVC.view)
         documentDetailsVC.didMove(toParentViewController: self)
         
-        setData()
+        if dataController.isFromDeepLinking {
+            getData()
+        }
+        else {
+            setData()
+        }
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -48,6 +53,21 @@ class DocumentViewController: UIViewController {
         
         self.navigationController?.navigationBar.isHidden = false
         self.navigationItem.title = dataController.selectedApproval?.documentDetailsScreenName
+    }
+    
+    func getData() {
+        self.showLoadingOnViewController()
+        dataController.getDeeplinkApproval(postId: dataController.selectedNotification?.postId ?? "0", onSuccess: {
+            DispatchQueue.main.async {
+                self.setData()
+                self.removeLoadingFromViewController()
+            }
+        }) { (errorMessage) in
+            DispatchQueue.main.async {
+                self.removeLoadingFromViewController()
+                self.showRetryView(message: errorMessage)
+            }
+        }
     }
     
     func setData() {
@@ -143,4 +163,11 @@ class DocumentViewController: UIViewController {
         self.containerView.addSubview(attachmentsVC.view)
         attachmentsVC.didMove(toParentViewController: self)
     }
+    
+    //MARK: retry view delegate
+    
+    override func retryButtonClicked() {
+        getData()
+    }
+
 }
