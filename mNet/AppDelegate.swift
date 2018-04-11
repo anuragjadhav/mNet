@@ -8,24 +8,19 @@
 
 import UIKit
 import UserNotifications
-
+import GoogleSignIn
 
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate,UNUserNotificationCenterDelegate {
+class AppDelegate: UIResponder, UIApplicationDelegate,UNUserNotificationCenterDelegate, GIDSignInDelegate {
 
-    
     var window: UIWindow?
     static let sharedInstance:AppDelegate = UIApplication.shared.delegate as! AppDelegate
     
+    var onGoogleSignInSuccess:(((email:String, id:String, token:String))->Void)?
+    var onGoogleSignInFailure:((String) -> Void)?
+    
     //MARK: Application Start Tasks
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-
-        //set push notification delegate
-        if #available(iOS 10.0, *) {
-            UNUserNotificationCenter.current().delegate = self
-        } else {
-            // Fallback on earlier versions
-        }
         
         performAppStartTasks(application)
         return true
@@ -35,6 +30,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate,UNUserNotificationCenterDe
         
         checkLoginStatus()
         registerForPushNotifications(app)
+        setUpGoogleSignIn()
     }
     
     func checkLoginStatus() {
@@ -42,7 +38,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate,UNUserNotificationCenterDe
         if User.isLoggedIn() {
             makeDashboardPageHome(false)
         }
-            
         else {
             makeLoginPageHome(false)
         }
@@ -51,34 +46,24 @@ class AppDelegate: UIResponder, UIApplicationDelegate,UNUserNotificationCenterDe
     func makeLoginPageHome(_ animated:Bool) {
         
         if animated {
-            
             UIView.transition(with: window!, duration: 0.4, options: .transitionFlipFromBottom, animations: {
-                
                 self.window?.rootViewController = UIStoryboard.login.instantiateInitialViewController()
-                
             }, completion: nil)
         }
         else {
-            
             window?.rootViewController = UIStoryboard.login.instantiateInitialViewController()
         }
-        
         window?.makeKeyAndVisible()
     }
     
     func makeDashboardPageHome(_ animated:Bool) {
         
         if animated {
-            
             UIView.transition(with: window!, duration: 0.4, options: .transitionFlipFromTop, animations: {
-                
                 self.window?.rootViewController = UIStoryboard.tabBar.instantiateInitialViewController()
-                
             }, completion: nil)
         }
-            
         else {
-            
             window?.rootViewController = UIStoryboard.tabBar.instantiateInitialViewController()
         }
         window?.makeKeyAndVisible()
@@ -88,18 +73,46 @@ class AppDelegate: UIResponder, UIApplicationDelegate,UNUserNotificationCenterDe
         
         makeLoginPageHome(true)
         User.logoutUser()
+        GIDSignIn.sharedInstance().signOut()
     }
     
+    //MARK: Google Sign In
+    
+    func setUpGoogleSignIn() {
+        
+        //TODO: Set Client ID and also update URL Type Scheme in Project Settings
+        GIDSignIn.sharedInstance().clientID = ""
+        GIDSignIn.sharedInstance().delegate = self
+    }
+    
+    func application(_ app: UIApplication, open url: URL, options: [UIApplicationOpenURLOptionsKey : Any] = [:]) -> Bool {
+        return GIDSignIn.sharedInstance().handle(url, sourceApplication: options[UIApplicationOpenURLOptionsKey.sourceApplication] as? String, annotation: options[UIApplicationOpenURLOptionsKey.annotation])
+    }
+    
+    func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!, withError error: Error!) {
+        
+        if let error = error {
+            onGoogleSignInFailure?(error.localizedDescription)
+        } else {
+            let userId = user.userID ?? ""
+            let idToken = user.authentication.idToken ?? ""
+            let email = user.profile.email ?? ""
+            onGoogleSignInSuccess?((email,userId,idToken))
+        }
+    }
+    
+    func sign(_ signIn: GIDSignIn!, didDisconnectWith user: GIDGoogleUser!, withError error: Error!) {
+        onGoogleSignInFailure?(error.localizedDescription)
+    }
 
     //MARK: Push Notifications
-    
     func registerForPushNotifications(_ app:UIApplication) {
         
         //For iOS 10 and above
         if #available(iOS 10, *) {
+            UNUserNotificationCenter.current().delegate = self
             UNUserNotificationCenter.current().requestAuthorization(options:[.badge, .alert, .sound]){ (granted, error) in }
         }
-        
         app.registerForRemoteNotifications()
     }
     
@@ -111,16 +124,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate,UNUserNotificationCenterDe
     }
     
     func application(_ application: UIApplication, didFailToRegisterForRemoteNotificationsWithError error: Error) {
-        
         print("Failed To Register for remote notification - ",error.localizedDescription)
     }
     
     @available(iOS 10.0, *)
     func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse, withCompletionHandler completionHandler: @escaping () -> Void) {
-        
         UserDefaults.standard.set(true, forKey: UserDefaultsKeys.didReceiveNotification)
         UserDefaults.standard.synchronize()
-        
         completionHandler()
     }
     

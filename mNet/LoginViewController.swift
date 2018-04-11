@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import GoogleSignIn
 
 class LoginViewController: BaseViewController, UITextFieldDelegate {
 
@@ -282,7 +283,34 @@ class LoginViewController: BaseViewController, UITextFieldDelegate {
     
     @IBAction func loginWithGoogleButtonAction(_ sender: UIButton) {
         
+        if !Reachability.isConnectedToNetwork() {
+            showNoInternetAlert()
+            return
+        }
         
+        AppDelegate.sharedInstance.onGoogleSignInSuccess = { (googleSignInData) in
+            let (email, _/*id*/, token) = googleSignInData
+            self.dataController.userName = email
+            self.dataController.password = token
+            self.showTransperantLoadingOnViewController()
+            self.dataController.loginType = LoginTypeCode.googleSSO
+            self.dataController.postLogin(onSuccess: { [unowned self] in
+                DispatchQueue.main.async {
+                    self.removeTransperantLoadingFromViewController()
+                    AppDelegate.sharedInstance.makeDashboardPageHome(true)
+                }
+                }, onFailure: { [unowned self] (errorMessage) in
+                    DispatchQueue.main.async {
+                        self.removeTransperantLoadingFromViewController()
+                        self.showQuickFailureAlert(message: errorMessage)
+                    }
+            })
+        }
+        AppDelegate.sharedInstance.onGoogleSignInFailure = { (errorMessage) in
+            self.showQuickErrorAlert(message: errorMessage)
+            GIDSignIn.sharedInstance().signOut()
+        }
+        GIDSignIn.sharedInstance().signIn()
     }
     
     @IBAction func showHidePasswordButtonAction(_ sender: Any) {

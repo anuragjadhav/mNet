@@ -27,6 +27,9 @@
 		05641C2120473DAC003CD9C2 /* DateSelectorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05641C2020473DAC003CD9C2 /* DateSelectorViewController.swift */; };
 		0568EC2F207EA1A800506CE5 /* SafariServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0568EC2E207EA1A800506CE5 /* SafariServices.framework */; };
 		0568EC31207EA1B200506CE5 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0568EC30207EA1B100506CE5 /* SystemConfiguration.framework */; };
+		0568EC3B207EA47200506CE5 /* GoogleSignIn.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 0568EC38207EA47000506CE5 /* GoogleSignIn.bundle */; };
+		0568EC3C207EA47200506CE5 /* GoogleSignInDependencies.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0568EC39207EA47100506CE5 /* GoogleSignInDependencies.framework */; };
+		0568EC3D207EA47200506CE5 /* GoogleSignIn.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0568EC3A207EA47100506CE5 /* GoogleSignIn.framework */; };
 		0575623A200A34110010CBB1 /* BaseNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05756239200A34110010CBB1 /* BaseNavigationController.swift */; };
 		0575623C200AB33A0010CBB1 /* PendingApprovalsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0575623B200AB33A0010CBB1 /* PendingApprovalsTableViewCell.swift */; };
 		058A0E4C1FF7C44D00147238 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 058A0E4B1FF7C44D00147238 /* Login.storyboard */; };
@@ -230,6 +233,9 @@
 		05641C2020473DAC003CD9C2 /* DateSelectorViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateSelectorViewController.swift; sourceTree = "<group>"; };
 		0568EC2E207EA1A800506CE5 /* SafariServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SafariServices.framework; path = System/Library/Frameworks/SafariServices.framework; sourceTree = SDKROOT; };
 		0568EC30207EA1B100506CE5 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		0568EC38207EA47000506CE5 /* GoogleSignIn.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = GoogleSignIn.bundle; sourceTree = "<group>"; };
+		0568EC39207EA47100506CE5 /* GoogleSignInDependencies.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = GoogleSignInDependencies.framework; sourceTree = "<group>"; };
+		0568EC3A207EA47100506CE5 /* GoogleSignIn.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = GoogleSignIn.framework; sourceTree = "<group>"; };
 		05756239200A34110010CBB1 /* BaseNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseNavigationController.swift; sourceTree = "<group>"; };
 		0575623B200AB33A0010CBB1 /* PendingApprovalsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PendingApprovalsTableViewCell.swift; sourceTree = "<group>"; };
 		058A0E4B1FF7C44D00147238 /* Login.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
@@ -413,8 +419,10 @@
 				5E190A7D2033292200EEE97B /* AssetsLibrary.framework in Frameworks */,
 				5E190A7B2033291800EEE97B /* MobileCoreServices.framework in Frameworks */,
 				5E21B326200F40930045CDA3 /* UIKit.framework in Frameworks */,
+				0568EC3C207EA47200506CE5 /* GoogleSignInDependencies.framework in Frameworks */,
 				5E21B324200F40820045CDA3 /* Foundation.framework in Frameworks */,
 				5E21B322200F40660045CDA3 /* CoreGraphics.framework in Frameworks */,
+				0568EC3D207EA47200506CE5 /* GoogleSignIn.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -727,6 +735,9 @@
 		5E20CD861FE952BE004ACE0D = {
 			isa = PBXGroup;
 			children = (
+				0568EC38207EA47000506CE5 /* GoogleSignIn.bundle */,
+				0568EC3A207EA47100506CE5 /* GoogleSignIn.framework */,
+				0568EC39207EA47100506CE5 /* GoogleSignInDependencies.framework */,
 				5E20CD911FE952BE004ACE0D /* mNet */,
 				5E20CD901FE952BE004ACE0D /* Products */,
 				5E21B320200F40660045CDA3 /* Frameworks */,
@@ -1090,6 +1101,7 @@
 				5E18AE4A1FF82F94007AA461 /* Conversation.storyboard in Resources */,
 				5E1B6CFD1FED2C8500C307B3 /* CustomPickerView.xib in Resources */,
 				5E1A8D09201C6A6300BFAF10 /* RetryView.xib in Resources */,
+				0568EC3B207EA47200506CE5 /* GoogleSignIn.bundle in Resources */,
 				5E20CDB31FE962F0004ACE0D /* SanFranciscoDisplay-Regular.otf in Resources */,
 				5E20CDAF1FE962E4004ACE0D /* SanFranciscoDisplay-Bold.otf in Resources */,
 				5E20CDB61FE962F7004ACE0D /* SanFranciscoDisplay-Ultralight.otf in Resources */,
@@ -1401,6 +1413,7 @@
 					"$(PROJECT_DIR)/mNet/Google\\ Sign\\ In\\ Framework",
 					"$(PROJECT_DIR)/mNet/Google\\ Sign\\ In\\ Framework",
 					"$(PROJECT_DIR)/mNet/Google\\ Sign\\ In\\ Framework",
+					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = mNet/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
@@ -1431,6 +1444,7 @@
 					"$(PROJECT_DIR)/mNet/Google\\ Sign\\ In\\ Framework",
 					"$(PROJECT_DIR)/mNet/Google\\ Sign\\ In\\ Framework",
 					"$(PROJECT_DIR)/mNet/Google\\ Sign\\ In\\ Framework",
+					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = mNet/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
