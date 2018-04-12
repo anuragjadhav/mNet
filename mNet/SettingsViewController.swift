@@ -130,7 +130,7 @@ class SettingsViewController: BaseViewController,UITableViewDelegate,UITableView
             }))
             
             DispatchQueue.main.async {
-                self.present(alert, animated: false, completion: nil)
+                self.present(alert, animated: true, completion: nil)
             }
             break;
         

@@ -129,7 +129,12 @@ class ApprovalWrapper: NSObject {
             }
             if commonResponse.noError {
                 
-                guard let responseDict:[String:Any] = commonResponse.responseData as? [String:Any] else {
+                guard let responseArrayDict:[[String:Any]] = commonResponse.responseData as? [[String:Any]] else {
+                    onFailure(WrapperManager.shared.getErrorMessage(message: nil))
+                    return
+                }
+                
+                guard let responseDict:[String:Any] = responseArrayDict.first else {
                     onFailure(WrapperManager.shared.getErrorMessage(message: nil))
                     return
                 }
