@@ -8,6 +8,10 @@
 
 import UIKit
 
+struct APIKeys {
+    static let googleSignInClientId:String = "674788873796-pl2umc4aljof6snj1g3s9q2upircpvjk.apps.googleusercontent.com"
+}
+
 struct URLS {
     
     static let liveBaseURL:URL = URL(string:"http://demo.m-net.in/p_MNetV2Service/MnetV2WebService/")!

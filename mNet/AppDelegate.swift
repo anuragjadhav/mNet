@@ -80,8 +80,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate,UNUserNotificationCenterDe
     
     func setUpGoogleSignIn() {
         
-        //TODO: Set Client ID and also update URL Type Scheme in Project Settings
-        GIDSignIn.sharedInstance().clientID = ""
+        GIDSignIn.sharedInstance().clientID = APIKeys.googleSignInClientId
         GIDSignIn.sharedInstance().delegate = self
     }
     
