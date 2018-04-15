@@ -127,6 +127,7 @@ class ApprovalWrapper: NSObject {
                 onFailure(WrapperManager.shared.getErrorMessage(message: nil))
                 return
             }
+            
             if commonResponse.noError {
                 
                 guard let responseArrayDict:[[String:Any]] = commonResponse.responseData as? [[String:Any]] else {
