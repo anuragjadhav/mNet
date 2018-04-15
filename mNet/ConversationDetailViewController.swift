@@ -18,7 +18,7 @@ protocol HideIgnorePostDelegate : class {
 }
 
 
-class ConversationDetailViewController: BaseViewController,UITableViewDelegate,UITableViewDataSource,UITextViewDelegate,UIDocumentMenuDelegate,UIDocumentPickerDelegate,UINavigationControllerDelegate,UIImagePickerControllerDelegate,ImageDocDisplayDelegate, UIPopoverPresentationControllerDelegate {
+class ConversationDetailViewController: BaseViewController,UITableViewDelegate,UITableViewDataSource,UITextViewDelegate,UIDocumentMenuDelegate,UIDocumentPickerDelegate,UINavigationControllerDelegate,UIImagePickerControllerDelegate,ImageDocDisplayDelegate, UIPopoverPresentationControllerDelegate,PopOverDelegate {
 
     @IBOutlet weak var conversationTableView: UITableView!
     @IBOutlet weak var sendButton: CustomBlueTextColorButton!
@@ -52,13 +52,6 @@ class ConversationDetailViewController: BaseViewController,UITableViewDelegate,U
         let tapGestureRecognizer1 = UITapGestureRecognizer(target: self, action:#selector(fromTolabelClicked(gesture:)))
         self.user2Label.addGestureRecognizer(tapGestureRecognizer1)
 
-    }
-
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated);
-        
-        setupNavigationBar()
-        
         if(didComeFromNotification == true)
         {
             getConversation()
@@ -67,6 +60,13 @@ class ConversationDetailViewController: BaseViewController,UITableViewDelegate,U
         {
             setupData()
         }
+    }
+
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated);
+        
+        setupNavigationBar()
+    
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -81,6 +81,15 @@ class ConversationDetailViewController: BaseViewController,UITableViewDelegate,U
     func setupNavigationBar(){
         
         self.navigationController?.navigationBar.isHidden = false
+        
+        if(didComeFromNotification)
+        {
+            self.navigationItem.rightBarButtonItems = nil
+            let menuBarButton = UIBarButtonItem(image: UIImage(named: "menu"), style: .plain, target: self, action: #selector(menuButtonAction))
+            self.navigationItem.rightBarButtonItem = menuBarButton
+            self.navigationItem.rightBarButtonItem?.tintColor = UIColor.darkGray
+
+        }
     }
     
     func setupData()
@@ -370,7 +379,7 @@ class ConversationDetailViewController: BaseViewController,UITableViewDelegate,U
         popController.popoverPresentationController?.delegate = self
         popController.popoverPresentationController?.sourceView = self.user2Label // button
         
-        popController.dataArray = dataCtrl?.selectedCoversation?.membersList.map{$0.userName} ?? [String]()
+        popController.dataArray = (dataCtrl?.getPopoverObjectsFromStringArray(stringArray: dataCtrl?.selectedCoversation?.membersList.map{$0.userName} ?? [String]()))!
         
         // present the popover
         self.present(popController, animated: true, completion: nil)
@@ -526,6 +535,25 @@ class ConversationDetailViewController: BaseViewController,UITableViewDelegate,U
 
     
     // MARK: - Button Actions
+    
+    @objc func menuButtonAction()
+    {
+        let popController:InfoPopoverViewController = UIStoryboard.conversations.instantiateViewController(withIdentifier: StoryboardIDs.infoPopoverViewController) as! InfoPopoverViewController
+        
+        // set the presentation style
+        popController.modalPresentationStyle = UIModalPresentationStyle.popover
+        
+        // set up the popover presentation controller
+        popController.popoverPresentationController?.permittedArrowDirections = UIPopoverArrowDirection.up
+        popController.popoverPresentationController?.delegate = self
+       popController.popoverPresentationController?.barButtonItem = self.navigationItem.rightBarButtonItem
+        popController.delegate = self
+        
+        popController.dataArray = (dataCtrl?.getPopoverObjectsForMenu())!
+        
+        // present the popover
+        self.present(popController, animated: true, completion: nil)
+    }
 
     @IBAction func hidePostButtonAction(_ sender: Any) {
         
@@ -542,7 +570,7 @@ class ConversationDetailViewController: BaseViewController,UITableViewDelegate,U
         alert.addAction(UIAlertAction(title: "Cancel", style: .cancel , handler:{ (UIAlertAction)in
         }))
         
-        present(alert, animated: true, completion: nil)
+        self.present(alert, animated: true, completion: nil)
         
     }
     
@@ -696,6 +724,24 @@ class ConversationDetailViewController: BaseViewController,UITableViewDelegate,U
                     self.setupData()
                     self.scrollTableViewToBottom()
                     self.removeLoadingFromWindow()
+                    
+                    switch self.dataCtrl?.conversationStatus {
+                        
+                    case .approvalDetails? :
+                        
+                        let approvalDataController:ApprovalsDataController = ApprovalsDataController()
+                        approvalDataController.selectedNotification = self.dataCtrl?.selectedNotification
+                        approvalDataController.isFromDeepLinking = true
+                        let approvalDetailsViewController:DocumentViewController = UIStoryboard.approvals.instantiateViewController(withIdentifier: StoryboardIDs.approvalDetailsViewController) as! DocumentViewController
+                        approvalDetailsViewController.dataController = approvalDataController
+                        self.navigationController?.pushViewController(approvalDetailsViewController, animated: true)
+                        
+                        break
+                        
+                    default :
+                         break
+                        
+                    }
                 }
                 
                 }, onFailure: { [unowned self] (errorMessage) in
@@ -719,5 +765,57 @@ class ConversationDetailViewController: BaseViewController,UITableViewDelegate,U
         
         getConversation()
     }
+    
+    //MARK: PopOver Delegate
+    
+    func didSelectItem(popOverObject: PopoverObject, at index: Int) {
+        
+        switch popOverObject.title {
+            
+        case MenuOptions.reject:
+            
+            let rejectVC = UIStoryboard.conversations.instantiateViewController(withIdentifier: StoryboardIDs.conversationRejectViewController) as! ConversationRejectViewController
+            rejectVC.dataCtrl = dataCtrl
+            self.navigationController?.pushViewController(rejectVC, animated: true)
+            
+            break
+            
+        case MenuOptions.approve:
+            
+            let approveVC = UIStoryboard.conversations.instantiateViewController(withIdentifier: StoryboardIDs.conversationApproveViewController) as! ConversationApproveViewController
+            approveVC.dataCtrl = dataCtrl
+            self.navigationController?.pushViewController(approveVC, animated: true)
+            
+            break
+            
+        case MenuOptions.verify:
+            
+            let verifyVC = UIStoryboard.conversations.instantiateViewController(withIdentifier: StoryboardIDs.conversationVerifyViewController) as! ConversationVerifyViewController
+            verifyVC.dataCtrl = dataCtrl
+            self.navigationController?.pushViewController(verifyVC, animated: true)
+            
+            break
+            
+            
+        case MenuOptions.viewDetails:
+            
+            let conversationInfoVC = UIStoryboard.conversations.instantiateViewController(withIdentifier: StoryboardIDs.conversationInfoViewController) as! ConversationInfoViewController
+            conversationInfoVC.dataCtrl = dataCtrl
+            self.navigationController?.pushViewController(conversationInfoVC, animated: true)
+            
+            break
+            
+        case MenuOptions.hideIgnorPost:
+            
+            self.hidePostButtonAction(UIButton())
+            
+            break
+            
+        default:
+            break
+        }
+        
+    }
+
 
 }

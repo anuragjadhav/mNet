@@ -6,6 +6,12 @@
 //  Copyright © 2018 mNet. All rights reserved.
 //
 
+protocol PopOverDelegate:class {
+    
+    func didSelectItem(popOverObject:PopoverObject, at index:Int)
+}
+
+
 import UIKit
 
 class InfoPopoverViewController: BaseViewController, UITableViewDelegate, UITableViewDataSource {
@@ -13,7 +19,8 @@ class InfoPopoverViewController: BaseViewController, UITableViewDelegate, UITabl
     //MARK: Outlets and Properties
     
     @IBOutlet weak var popoverTableView: UITableView!
-    var dataArray:[String] = [String]()
+    var dataArray:[PopoverObject] = [PopoverObject]()
+    weak var delegate:PopOverDelegate?
     
     //MARK: View Controller Delegates
     override func viewDidLoad() {
@@ -34,7 +41,13 @@ class InfoPopoverViewController: BaseViewController, UITableViewDelegate, UITabl
         popoverTableView.tableFooterView = UIView()
         popoverTableView.reloadData()
         
-        let height = dataArray.count * Int(popoverTableView.rowHeight)
+        var height:Int = dataArray.count * Int(popoverTableView.rowHeight)
+        
+        if(height > 400)
+        {
+            height = 400
+        }
+        
         self.preferredContentSize = CGSize(width: 200, height: height)
     }
     
@@ -46,11 +59,19 @@ class InfoPopoverViewController: BaseViewController, UITableViewDelegate, UITabl
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let cell = tableView.dequeueReusableCell(withIdentifier: CellIdentifiers.popoverTableViewCell)
-        guard let textLabel:UILabel = cell?.viewWithTag(46) as? UILabel else {
-            return cell!
-        }
-        textLabel.text = dataArray[indexPath.row]
-        return cell!
+        let cell = tableView.dequeueReusableCell(withIdentifier: CellIdentifiers.popoverTableViewCell) as! PopoverTableViewCell
+        let popOverObject = self.dataArray[indexPath.row]
+        cell.loadCellWith(popOverObject: popOverObject)
+        
+        return cell
+
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        let popOverObject = self.dataArray[indexPath.row]
+        self.dismiss(animated: false, completion: nil)
+        delegate?.didSelectItem(popOverObject: popOverObject, at: indexPath.row)
+        
     }
 }

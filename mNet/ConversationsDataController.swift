@@ -6,6 +6,22 @@
 //  Copyright © 2018 mNet. All rights reserved.
 //
 
+public enum ConversationStatus {
+    case approve
+    case verify
+    case approvalDetails
+    case none
+}
+
+struct MenuOptions {
+    static let hideIgnorPost:String = "Hide/Ignore Post"
+    static let viewDetails:String = "View Details"
+    static let approve:String = "Approve"
+    static let reject:String = "Reject"
+    static let verify:String = "Verify"
+
+}
+
 import UIKit
 
 class ConversationsDataController: NSObject {
@@ -50,6 +66,8 @@ class ConversationsDataController: NSObject {
     var newUsersAddedToConversation:Bool = false
     
     var selectedNotification:NotificationObject?
+    
+    var conversationStatus:ConversationStatus?
     
     func getConversations(searchText:String,isLoadMore:Bool,onSuccess:@escaping () -> Void , onFailure : @escaping (String) -> Void) {
         
@@ -714,9 +732,201 @@ class ConversationsDataController: NSObject {
         WrapperManager.shared.conversationWrapper.getConversation(postParams: postParams, onSuccess: { [unowned self] (conversation) in
             
             self.selectedCoversation = conversation
+            self.checkWhetherSelectedConversationIsVerifyOrApprove()
+            
             onSuccess()
             
         }) {(errorMessage) in
+            
+            onFailure(errorMessage)
+        }
+    }
+    
+    func getPopoverObjectsFromStringArray(stringArray:[String]?) -> [PopoverObject]
+    {
+        var popOverObjectArray:[PopoverObject] = [PopoverObject]()
+        
+        for titleString in stringArray ?? []
+        {
+            let popOverObject:PopoverObject = PopoverObject()
+            popOverObject.title = titleString
+            popOverObjectArray.append(popOverObject)
+        }
+        
+        return popOverObjectArray
+    }
+    
+    func checkWhetherSelectedConversationIsVerifyOrApprove()
+    {
+        if(selectedCoversation?.approvalType == nil || selectedCoversation?.approvalType == "")
+        {
+            for member in (selectedCoversation?.membersList)!
+            {
+                if(member.userId == User.loggedInUser()?.userId)
+                {
+                    if (member.askForAgree == "Yes" && member.agreeStatus == "Pending")
+                    {
+                        conversationStatus = .verify
+                    }
+                    else if (member.askForApprove == "Yes" && member.agreeStatus == "Pending")
+                    {
+                        conversationStatus = .approve
+                    }
+                    else
+                    {
+                        conversationStatus = .none
+                    }
+                    
+                    break
+                }
+            }
+        }
+        else if (selectedCoversation?.approvalType != nil && (selectedCoversation?.approvalType == "I" || selectedCoversation?.approvalType == "A"))
+        {
+            conversationStatus = .approvalDetails
+        }
+    }
+    
+    func getPopoverObjectsForMenu() -> [PopoverObject]
+    {
+        var popOverObjectArray = [PopoverObject]()
+        
+        let infoPopOverObject:PopoverObject = PopoverObject()
+        infoPopOverObject.title = MenuOptions.viewDetails
+        infoPopOverObject.image = UIImage(named: "infoIcon")
+        popOverObjectArray.append(infoPopOverObject)
+        
+        let hideIgnorePopOverObject:PopoverObject = PopoverObject()
+        hideIgnorePopOverObject.title = MenuOptions.hideIgnorPost
+        hideIgnorePopOverObject.image = UIImage(named: "hideIcon")
+        popOverObjectArray.append(hideIgnorePopOverObject)
+
+        switch conversationStatus {
+            
+        case .approve? :
+            
+            let approvePopOverObject:PopoverObject = PopoverObject()
+            approvePopOverObject.title = MenuOptions.approve
+            approvePopOverObject.image = UIImage(named: "greenTick")
+            popOverObjectArray.append(approvePopOverObject)
+            
+            let rejectPopOverObject:PopoverObject = PopoverObject()
+            rejectPopOverObject.title = MenuOptions.reject
+            rejectPopOverObject.image = UIImage(named: "redCross")
+            popOverObjectArray.append(rejectPopOverObject)
+            
+            break
+            
+        case .verify? :
+            
+            let verifyPopOverObject:PopoverObject = PopoverObject()
+            verifyPopOverObject.title = MenuOptions.verify
+            verifyPopOverObject.image = UIImage(named: "greenTick")
+            popOverObjectArray.append(verifyPopOverObject)
+            
+            let rejectPopOverObject:PopoverObject = PopoverObject()
+            rejectPopOverObject.title = MenuOptions.reject
+            rejectPopOverObject.image = UIImage(named: "redCross")
+            popOverObjectArray.append(rejectPopOverObject)
+            
+            break
+            
+        default:
+            break
+        }
+
+        return popOverObjectArray
+
+    }
+    
+    
+    func rejectApprovalConversation(withMessage:String,onSuccess:@escaping () -> Void , onFailure : @escaping (String) -> Void) {
+        
+        let user:User = User.loggedInUser()!
+        var postParams:[String:Any] = [String:Any]()
+        postParams["reply_sender_id"] = user.userId
+        postParams["reply_sender_password"] = user.password
+        postParams["post_id"] = selectedCoversation?.postId
+        postParams["reply_message"] = withMessage
+        postParams["reply_type"] = "2"
+        postParams["activity_type"] = "reject"
+        
+       WrapperManager.shared.conversationWrapper.setApprovalRejectionReplyOnConversation(postParams: postParams, onSuccess: { [unowned self] in
+        
+        self.conversationStatus = .none
+        
+          onSuccess()
+            
+        }) { (errorMessage) in
+            
+            onFailure(errorMessage)
+        }
+    }
+    
+    func rejectVerificationConversation(withMessage:String,onSuccess:@escaping () -> Void , onFailure : @escaping (String) -> Void) {
+        
+        let user:User = User.loggedInUser()!
+        var postParams:[String:Any] = [String:Any]()
+        postParams["reply_sender_id"] = user.userId
+        postParams["reply_sender_password"] = user.password
+        postParams["post_id"] = selectedCoversation?.postId
+        postParams["reply_message"] = withMessage
+        postParams["reply_type"] = "1"
+        postParams["activity_type"] = "disagree"
+        
+        WrapperManager.shared.conversationWrapper.setApprovalRejectionReplyOnConversation(postParams: postParams, onSuccess: { [unowned self] in
+            
+            self.conversationStatus = .none
+            
+            onSuccess()
+            
+        }) { (errorMessage) in
+            
+            onFailure(errorMessage)
+        }
+    }
+    
+    func verifyConversation(withMessage:String,onSuccess:@escaping () -> Void , onFailure : @escaping (String) -> Void) {
+        
+        let user:User = User.loggedInUser()!
+        var postParams:[String:Any] = [String:Any]()
+        postParams["reply_sender_id"] = user.userId
+        postParams["reply_sender_password"] = user.password
+        postParams["post_id"] = selectedCoversation?.postId
+        postParams["reply_message"] = withMessage
+        postParams["reply_type"] = "1"
+        postParams["activity_type"] = "agree"
+        
+    WrapperManager.shared.conversationWrapper.setApprovalRejectionReplyOnConversation(postParams: postParams, onSuccess: {  [unowned self] in
+            
+            self.conversationStatus = .none
+            
+            onSuccess()
+            
+        }) { (errorMessage) in
+            
+            onFailure(errorMessage)
+        }
+    }
+    
+    func approveConversation(withMessage:String,onSuccess:@escaping () -> Void , onFailure : @escaping (String) -> Void) {
+        
+        let user:User = User.loggedInUser()!
+        var postParams:[String:Any] = [String:Any]()
+        postParams["reply_sender_id"] = user.userId
+        postParams["reply_sender_password"] = user.password
+        postParams["post_id"] = selectedCoversation?.postId
+        postParams["reply_message"] = withMessage
+        postParams["reply_type"] = "2"
+        postParams["activity_type"] = "approve"
+        
+        WrapperManager.shared.conversationWrapper.setApprovalRejectionReplyOnConversation(postParams: postParams, onSuccess: {  [unowned self] in
+            
+            self.conversationStatus = .none
+            
+            onSuccess()
+            
+        }) { (errorMessage) in
             
             onFailure(errorMessage)
         }

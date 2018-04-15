@@ -37,6 +37,7 @@ struct URLS {
     static let setEmailPreferenceSettings:URL = URL(string: "setEmailPreferences", relativeTo: baseURL)!
     static let resetNewPassword:URL = URL(string: "changePassword", relativeTo: publicBaseURL)!
     static let getConversationsList:URL = URL(string: "GetPost", relativeTo: baseURL)!
+    static let conversationApprovalRejection:URL = URL(string: "SetReply", relativeTo: baseURL)!
     static let deleteConversationReply:URL = URL(string: "cancelReply", relativeTo: baseURL)!
     static let deleteUserFromConversation:URL = URL(string:"deletepostuser", relativeTo: baseURL)!
     static let hideConversation:URL = URL(string:"HidePost", relativeTo: baseURL)!
@@ -231,7 +232,7 @@ struct CellIdentifiers {
     static let selectUsersTableViewCell:String = "SelectUserTableViewCell"
     static let membersTableViewCell:String = "MembersTableViewCell"
     static let peopleListTableViewCell:String = "PeopleListTableViewCell"
-    static let popoverTableViewCell:String = "popoverTableViewCell"
+    static let popoverTableViewCell:String = "PopoverTableViewCell"
     static let sendPeopleListTableViewCell:String = "SendPeopleListTableViewCell"
 
 }
@@ -277,6 +278,10 @@ struct StoryboardIDs {
     static let approvalDetailsViewController:String = "DocumentViewController"
     static let documentDetailsViewController:String = "DocumentDetailsViewController"
     static let attachmentsViewController:String = "AttachmentsViewController"
+    static let conversationRejectViewController:String = "ConversationRejectViewController"
+    static let conversationVerifyViewController:String = "ConversationVerifyViewController"
+    static let conversationApproveViewController:String = "ConversationApproveViewController"
+
 }
 
 struct ImageNames {

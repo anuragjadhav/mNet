@@ -193,6 +193,11 @@
 		5EF31C88201B5F18007727D8 /* SettingsWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EF31C87201B5F18007727D8 /* SettingsWrapper.swift */; };
 		5EF31C8A201B6231007727D8 /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EF31C89201B6231007727D8 /* Profile.swift */; };
 		5EF354E7206908A3001A93E6 /* BlockedUsersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EF354E6206908A3001A93E6 /* BlockedUsersViewController.swift */; };
+		75AA21E7208344C000A73D3D /* PopoverTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75AA21E6208344C000A73D3D /* PopoverTableViewCell.swift */; };
+		75AA21E92083459B00A73D3D /* PopoverObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75AA21E82083459B00A73D3D /* PopoverObject.swift */; };
+		75AA21EB20838F0B00A73D3D /* ConversationRejectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75AA21EA20838F0B00A73D3D /* ConversationRejectViewController.swift */; };
+		75AA21ED20838F1C00A73D3D /* ConversationApproveViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75AA21EC20838F1C00A73D3D /* ConversationApproveViewController.swift */; };
+		75AA21EF20838F2F00A73D3D /* ConversationVerifyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75AA21EE20838F2F00A73D3D /* ConversationVerifyViewController.swift */; };
 		8BE5DA88202D8DED00E412A7 /* DashboardStats.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BE5DA87202D8DED00E412A7 /* DashboardStats.swift */; };
 		8BE5DA8A202D91CE00E412A7 /* UserApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BE5DA89202D91CE00E412A7 /* UserApp.swift */; };
 		8BE5DA8C202D929E00E412A7 /* CommonResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BE5DA8B202D929E00E412A7 /* CommonResponse.swift */; };
@@ -402,6 +407,11 @@
 		5EF31C87201B5F18007727D8 /* SettingsWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsWrapper.swift; sourceTree = "<group>"; };
 		5EF31C89201B6231007727D8 /* Profile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Profile.swift; sourceTree = "<group>"; };
 		5EF354E6206908A3001A93E6 /* BlockedUsersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlockedUsersViewController.swift; sourceTree = "<group>"; };
+		75AA21E6208344C000A73D3D /* PopoverTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopoverTableViewCell.swift; sourceTree = "<group>"; };
+		75AA21E82083459B00A73D3D /* PopoverObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopoverObject.swift; sourceTree = "<group>"; };
+		75AA21EA20838F0B00A73D3D /* ConversationRejectViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConversationRejectViewController.swift; sourceTree = "<group>"; };
+		75AA21EC20838F1C00A73D3D /* ConversationApproveViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConversationApproveViewController.swift; sourceTree = "<group>"; };
+		75AA21EE20838F2F00A73D3D /* ConversationVerifyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConversationVerifyViewController.swift; sourceTree = "<group>"; };
 		8BE5DA87202D8DED00E412A7 /* DashboardStats.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardStats.swift; sourceTree = "<group>"; };
 		8BE5DA89202D91CE00E412A7 /* UserApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserApp.swift; sourceTree = "<group>"; };
 		8BE5DA8B202D929E00E412A7 /* CommonResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonResponse.swift; sourceTree = "<group>"; };
@@ -518,6 +528,7 @@
 				0531A57E2007EA5100F2232C /* FilterOptionTableViewCell.swift */,
 				5E622D4F2031A22F0013EA86 /* SelectUserTableViewCell.swift */,
 				5E190A772032CB9000EEE97B /* SelectedUsersCollectionViewCell.swift */,
+				75AA21E6208344C000A73D3D /* PopoverTableViewCell.swift */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -540,6 +551,9 @@
 				5E3A046D2007A64D004EE2D7 /* ConversationDetailViewController.swift */,
 				5E202ABD203EDD8A000EE101 /* ImageDocDisplayViewController.swift */,
 				E4E297D6206977F5008D38FD /* InfoPopoverViewController.swift */,
+				75AA21EA20838F0B00A73D3D /* ConversationRejectViewController.swift */,
+				75AA21EC20838F1C00A73D3D /* ConversationApproveViewController.swift */,
+				75AA21EE20838F2F00A73D3D /* ConversationVerifyViewController.swift */,
 			);
 			name = "View Controllers";
 			sourceTree = "<group>";
@@ -983,6 +997,7 @@
 				050F1BEB20377F0700B32841 /* DynamicData.swift */,
 				058D5C5E203CB53900A6BA4D /* ApprovalDocument.swift */,
 				0517446F2043283200C2382D /* ApprovalUser.swift */,
+				75AA21E82083459B00A73D3D /* PopoverObject.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -1125,6 +1140,7 @@
 				8BE5DA88202D8DED00E412A7 /* DashboardStats.swift in Sources */,
 				5E18AE391FF8092E007AA461 /* ApprovalVerificationViewController.swift in Sources */,
 				5E18AE401FF818FC007AA461 /* SendPeopleListTableViewCell.swift in Sources */,
+				75AA21E92083459B00A73D3D /* PopoverObject.swift in Sources */,
 				05A569CB2017B7B300C6F713 /* DateFormatterTransform.swift in Sources */,
 				5E1C49961FEA4EB8007CE624 /* EmailPreferencesViewController.swift in Sources */,
 				05641C2120473DAC003CD9C2 /* DateSelectorViewController.swift in Sources */,
@@ -1150,6 +1166,7 @@
 				05A569D62017B7C300C6F713 /* AlamofireObjectMapper.swift in Sources */,
 				5E184EC81FF8A8590000D7C7 /* TabBarController.swift in Sources */,
 				05A569BE2017B7B300C6F713 /* HexColorTransform.swift in Sources */,
+				75AA21E7208344C000A73D3D /* PopoverTableViewCell.swift in Sources */,
 				5E2D37422020667F0013A138 /* Image.swift in Sources */,
 				05A569982017B74B00C6F713 /* AFError.swift in Sources */,
 				0531A5792007CCC600F2232C /* CustomRedBackgroundColorButton.swift in Sources */,
@@ -1157,6 +1174,7 @@
 				058A0EDC1FF7CA4800147238 /* ConversationListTableViewCell.swift in Sources */,
 				5E2880C0205A94CD00E59DF2 /* ResetPasswordViewController.swift in Sources */,
 				05A569C52017B7B300C6F713 /* IntegerOperators.swift in Sources */,
+				75AA21EF20838F2F00A73D3D /* ConversationVerifyViewController.swift in Sources */,
 				051744702043283200C2382D /* ApprovalUser.swift in Sources */,
 				05A569A32017B74B00C6F713 /* TaskDelegate.swift in Sources */,
 				05501F90201D262C00831A08 /* ConversationReply.swift in Sources */,
@@ -1199,12 +1217,14 @@
 				05A569C82017B7B300C6F713 /* CustomDateFormatTransform.swift in Sources */,
 				5E2D37502020929A0013A138 /* KRPullLoadView.swift in Sources */,
 				05A569A62017B74B00C6F713 /* Response.swift in Sources */,
+				75AA21EB20838F0B00A73D3D /* ConversationRejectViewController.swift in Sources */,
 				5E20CDC21FE9724A004ACE0D /* SettingsViewController.swift in Sources */,
 				05501F92201D2ABC00831A08 /* ConversationMember.swift in Sources */,
 				05A569D02017B7B300C6F713 /* EnumTransform.swift in Sources */,
 				05A569A42017B74B00C6F713 /* Alamofire.swift in Sources */,
 				050F1BE62037327500B32841 /* ApprovalSection.swift in Sources */,
 				05A5699E2017B74B00C6F713 /* Request.swift in Sources */,
+				75AA21ED20838F1C00A73D3D /* ConversationApproveViewController.swift in Sources */,
 				058A0ED21FF7C50400147238 /* DashboardMyAppsTableViewCell.swift in Sources */,
 				5E2D375320209DB60013A138 /* NotificationWrapper.swift in Sources */,
 				05A7A9011FF815A000472A60 /* ConversationInfoViewController.swift in Sources */,

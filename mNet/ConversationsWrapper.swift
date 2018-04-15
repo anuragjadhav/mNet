@@ -354,4 +354,50 @@ class ConversationsWrapper: NSObject {
             }
         }
     }
+    
+    
+      func setApprovalRejectionReplyOnConversation(postParams:[String:Any], onSuccess:@escaping () -> Void , onFailure : @escaping (String) -> Void){
+        
+        let headers: HTTPHeaders = [
+            "Content-Type": "multipart/form-data"
+        ]
+        
+        upload(multipartFormData: { (multipartFormData) in
+            
+            for (key, value) in postParams {
+                multipartFormData.append("\(value)".data(using: String.Encoding.utf8)!, withName: key as String)
+            }
+            
+        }, usingThreshold: UInt64.init(), to: URLS.setNewReplyConversation, method: .post, headers: headers) { (result) in
+            switch result{
+            case .success(let upload, _, _):
+                
+                upload.responseJSON { response in
+                    
+                    if var responseDict:[String:Any] = response.result.value as? [String:Any] {
+                        
+                        let error:String = responseDict[DictionaryKeys.APIResponse.error] as! String
+                        
+                        if(error == DictionaryKeys.APIResponse.noError)
+                        {
+                            
+                            onSuccess()
+                        }
+                        else
+                        {
+                            onFailure("Unable to perform action")
+                        }
+                    }
+                    else{
+                        
+                        onFailure("Unable to perform action")
+                    }
+                }
+            case .failure(_):
+                
+                onFailure("Unable to perform action")
+            }
+        }
+    }
+    
 }
