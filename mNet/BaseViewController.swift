@@ -8,7 +8,7 @@
 
 import UIKit
 
-class BaseViewController: UIViewController,RetryViewProtocol {
+class BaseViewController: UIViewController,RetryViewProtocol, UIGestureRecognizerDelegate {
     
     var transperantLoadingOnVC :UIView?
     var loadingViewOnVC : UIView?
@@ -32,6 +32,9 @@ class BaseViewController: UIViewController,RetryViewProtocol {
         NotificationCenter.default.addObserver(self, selector: #selector(keyBoardWillShow(notification:)), name: .UIKeyboardWillShow, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(keyBoardWillHide(notification:)), name: .UIKeyboardWillHide, object: nil)
         
+        //for back swipe
+        self.navigationController?.interactivePopGestureRecognizer?.isEnabled = true
+        self.navigationController?.interactivePopGestureRecognizer?.delegate = self
     }
     
     override func viewDidDisappear(_ animated: Bool) {
@@ -291,6 +294,11 @@ class BaseViewController: UIViewController,RetryViewProtocol {
         let alertController:UIAlertController = UIAlertController(title: AlertMessages.networkUnavailable, message: AlertMessages.connectToInternet, preferredStyle: .alert)
         alertController.addAction(UIAlertAction(title: AlertMessages.ok, style: .cancel, handler: nil))
         present(alertController, animated: true, completion: nil)
+    }
+    
+    //MARK: Back Swipe
+    func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldBeRequiredToFailBy otherGestureRecognizer: UIGestureRecognizer) -> Bool {
+        return true
     }
 
 }
