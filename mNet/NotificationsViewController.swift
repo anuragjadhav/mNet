@@ -20,6 +20,8 @@ class NotificationsViewController: BaseViewController, UITableViewDelegate, UITa
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(didEnterForeground), name:.UIApplicationWillEnterForeground, object: nil)
 
         lineLabel.layer.shadowColor = UIColor.lightGray.cgColor
         lineLabel.layer.shadowOffset = CGSize(width: 0, height: 0.6)
@@ -50,6 +52,11 @@ class NotificationsViewController: BaseViewController, UITableViewDelegate, UITa
         currentTabbarItem?.badgeValue = nil
         
         notificationsTableView.reloadData()
+    }
+    
+    @objc func didEnterForeground()
+    {
+        getNotifications(isReload: true, isRefresh: false)
     }
     
     //MARK: Setup
