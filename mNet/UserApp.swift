@@ -31,6 +31,7 @@ class UserApp: NSObject, Mappable {
     var organisationName:String = ""
     var recieverName:String = ""
     var appCode:String = ""
+    var allowInMobile:String = ""
     
     required init?(map: Map) {
         
@@ -59,6 +60,7 @@ class UserApp: NSObject, Mappable {
         organisationName <- map["org_name"]
         recieverName <- map["recieverName"]
         appCode <- map["code"]
+        allowInMobile <- map["allow_in_mobile"]
     }
     
 }

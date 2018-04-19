@@ -57,7 +57,7 @@ class DashboardWrapper: NSObject {
                     return
                 }
                 
-                let apps:[UserApp] = Mapper<UserApp>().mapArray(JSONArray: appsDictionaryArray)
+                let apps:[UserApp] = Mapper<UserApp>().mapArray(JSONArray: appsDictionaryArray).filter{$0.allowInMobile == "1"}
                 onSuccess(apps)
             }
                 

@@ -46,6 +46,8 @@ class NotificationsViewController: BaseViewController, UITableViewDelegate, UITa
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
+        self.tabBarController?.tabBar.isHidden = false
+        
         self.setUpNavigationController()
         
         let currentTabbarItem = self.tabBarController?.tabBar.items![2]
@@ -83,6 +85,8 @@ class NotificationsViewController: BaseViewController, UITableViewDelegate, UITa
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        self.tabBarController?.tabBar.isHidden = true
         
         let notification:NotificationObject = dataCtrl.notifications[indexPath.row]
         dataCtrl.selectedNotification = notification
