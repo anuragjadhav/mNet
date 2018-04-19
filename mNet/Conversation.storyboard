@@ -52,14 +52,14 @@
                                         <color key="textColor" red="0.3803921569" green="0.28235294119999998" blue="0.22352941179999999" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="+" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6zC-MK-auJ">
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="+" textAlignment="center" lineBreakMode="tailTruncation" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6zC-MK-auJ">
                                         <rect key="frame" x="27" y="69" width="32" height="32"/>
                                         <color key="backgroundColor" red="0.01176470588" green="0.51764705879999995" blue="0.80784313730000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="6zC-MK-auJ" secondAttribute="height" multiplier="1:1" id="WrK-Gv-z7B"/>
                                             <constraint firstAttribute="height" constant="32" id="ane-Px-UIi"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                         <userDefinedRuntimeAttributes>
@@ -90,7 +90,7 @@
                                             <constraint firstAttribute="width" secondItem="1Df-sF-a5E" secondAttribute="height" multiplier="1:1" id="Q76-gU-Ohs"/>
                                             <constraint firstAttribute="height" constant="32" id="iOS-4U-b9h"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                         <userDefinedRuntimeAttributes>
@@ -121,7 +121,7 @@
                                             <constraint firstAttribute="height" constant="32" id="QcI-st-HRW"/>
                                             <constraint firstAttribute="width" secondItem="oaa-jz-B4P" secondAttribute="height" multiplier="1:1" id="pZv-k5-yW6"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                         <userDefinedRuntimeAttributes>
@@ -152,7 +152,7 @@
                                             <constraint firstAttribute="width" secondItem="eva-Dx-3o1" secondAttribute="height" multiplier="1:1" id="dAn-l4-nkQ"/>
                                             <constraint firstAttribute="height" constant="32" id="scI-qK-Rkr"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                         <userDefinedRuntimeAttributes>
@@ -253,7 +253,7 @@
                                                                 <constraint firstAttribute="height" constant="40" id="6zV-dy-IgZ"/>
                                                                 <constraint firstAttribute="width" constant="40" id="s6r-Dc-n6p"/>
                                                             </constraints>
-                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <nil key="highlightedColor"/>
                                                             <userDefinedRuntimeAttributes>
@@ -269,6 +269,7 @@
                                                                 <constraint firstAttribute="height" constant="17" id="9OG-Zu-cfw"/>
                                                                 <constraint firstAttribute="width" constant="17" id="EmW-Dl-0QI"/>
                                                             </constraints>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                                             <state key="normal" title="X">
                                                                 <color key="titleColor" red="0.3803921569" green="0.28235294119999998" blue="0.22352941179999999" alpha="1" colorSpace="calibratedRGB"/>
                                                             </state>
@@ -334,7 +335,7 @@
                                                                 <constraint firstAttribute="width" constant="40" id="MhV-1c-eQU"/>
                                                                 <constraint firstAttribute="height" constant="40" id="TV5-Xf-J8w"/>
                                                             </constraints>
-                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <nil key="highlightedColor"/>
                                                             <userDefinedRuntimeAttributes>
@@ -350,6 +351,7 @@
                                                                 <constraint firstAttribute="width" constant="17" id="1ZP-To-7RH"/>
                                                                 <constraint firstAttribute="height" constant="17" id="tLB-Ww-Q8f"/>
                                                             </constraints>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                                             <state key="normal" title="X">
                                                                 <color key="titleColor" red="0.3803921569" green="0.28235294119999998" blue="0.22352941179999999" alpha="1" colorSpace="calibratedRGB"/>
                                                             </state>
@@ -415,7 +417,7 @@
                                                                 <constraint firstAttribute="width" constant="40" id="Gyb-SY-yEG"/>
                                                                 <constraint firstAttribute="height" constant="40" id="NZT-1p-jGb"/>
                                                             </constraints>
-                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <nil key="highlightedColor"/>
                                                             <userDefinedRuntimeAttributes>
@@ -431,6 +433,7 @@
                                                                 <constraint firstAttribute="width" constant="17" id="oKs-Ff-zKi"/>
                                                                 <constraint firstAttribute="height" constant="17" id="pDu-rX-mQl"/>
                                                             </constraints>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                                             <state key="normal" title="X">
                                                                 <color key="titleColor" red="0.3803921569" green="0.28235294119999998" blue="0.22352941179999999" alpha="1" colorSpace="calibratedRGB"/>
                                                             </state>
@@ -496,7 +499,7 @@
                                                                 <constraint firstAttribute="height" constant="40" id="4f3-Vu-RvK"/>
                                                                 <constraint firstAttribute="width" constant="40" id="krs-59-1Ka"/>
                                                             </constraints>
-                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <nil key="highlightedColor"/>
                                                             <userDefinedRuntimeAttributes>
@@ -512,6 +515,7 @@
                                                                 <constraint firstAttribute="height" constant="17" id="FZb-RG-Pzx"/>
                                                                 <constraint firstAttribute="width" constant="17" id="MMf-zp-CA4"/>
                                                             </constraints>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                                             <state key="normal" title="X">
                                                                 <color key="titleColor" red="0.3803921569" green="0.28235294119999998" blue="0.22352941179999999" alpha="1" colorSpace="calibratedRGB"/>
                                                             </state>
@@ -1235,7 +1239,7 @@
                                                         <constraint firstAttribute="height" constant="40" id="4ZM-aD-M5h"/>
                                                         <constraint firstAttribute="width" constant="40" id="9N8-j8-B68"/>
                                                     </constraints>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
                                                     <userDefinedRuntimeAttributes>
@@ -1251,6 +1255,7 @@
                                                         <constraint firstAttribute="width" constant="17" id="09u-9l-ylv"/>
                                                         <constraint firstAttribute="height" constant="17" id="LlL-Lf-wff"/>
                                                     </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                                     <state key="normal" title="X">
                                                         <color key="titleColor" red="0.3803921569" green="0.28235294119999998" blue="0.22352941179999999" alpha="1" colorSpace="calibratedRGB"/>
                                                     </state>
