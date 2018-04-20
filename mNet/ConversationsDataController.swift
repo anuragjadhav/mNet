@@ -19,7 +19,8 @@ struct MenuOptions {
     static let approve:String = "Approve"
     static let reject:String = "Reject"
     static let verify:String = "Verify"
-
+    static let forwardToUsers:String = "Forward To Users"
+    static let goToapprovalDetails:String = "Approval Details"
 }
 
 import UIKit
@@ -800,6 +801,11 @@ class ConversationsDataController: NSObject {
         hideIgnorePopOverObject.title = MenuOptions.hideIgnorPost
         hideIgnorePopOverObject.image = UIImage(named: "hideIcon")
         popOverObjectArray.append(hideIgnorePopOverObject)
+        
+        let forwardToUsersPopOverObject:PopoverObject = PopoverObject()
+        forwardToUsersPopOverObject.title = MenuOptions.forwardToUsers
+        forwardToUsersPopOverObject.image = UIImage(named: "forward")
+        popOverObjectArray.append(forwardToUsersPopOverObject)
 
         switch conversationStatus {
             
@@ -828,6 +834,15 @@ class ConversationsDataController: NSObject {
             rejectPopOverObject.title = MenuOptions.reject
             rejectPopOverObject.image = UIImage(named: "redCross")
             popOverObjectArray.append(rejectPopOverObject)
+            
+            break
+            
+        case .approvalDetails? :
+            
+            let detailsPopOverObject:PopoverObject = PopoverObject()
+            detailsPopOverObject.title = MenuOptions.goToapprovalDetails
+            detailsPopOverObject.image = UIImage(named: "rightArrow")
+            popOverObjectArray.append(detailsPopOverObject)
             
             break
             
