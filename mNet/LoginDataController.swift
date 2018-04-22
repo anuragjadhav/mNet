@@ -19,6 +19,8 @@ class LoginDataController: NSObject {
     var userName:String = ""
     var password:String = ""
     var loginType:String = LoginTypeCode.normal
+    var rememberUser:Bool = false
+    
     
     func validateEmail() -> (isValid:Bool, errorMessage:String) {
         
@@ -87,7 +89,6 @@ class LoginDataController: NSObject {
                     return
                 }
             }
-            
             onSuccess(loginTypeStatus)
             
         }, onFailure: onFailure)
@@ -98,6 +99,9 @@ class LoginDataController: NSObject {
         
         var loginParams:[String:String] = [String:String]()
         loginParams[DictionaryKeys.LoginPost.username] = userName
+        if loginType != LoginTypeCode.normal {
+            password = ""
+        }
         loginParams[DictionaryKeys.LoginPost.password] = password
         loginParams[DictionaryKeys.LoginPost.loginType] = loginType
         loginParams[DictionaryKeys.LoginPost.requestFrom] = DictionaryKeys.LoginPost.requestFromApp
@@ -127,6 +131,14 @@ class LoginDataController: NSObject {
             updatedUser.userCode = newUserCode
             updatedUser.saveToUserDefaults()
             onSuccess()
+            if self.rememberUser {
+                UserDefaults.standard.set(self.userName, forKey: UserDefaultsKeys.rememberedLoginEmail)
+                UserDefaults.standard.set(self.password, forKey: UserDefaultsKeys.rememberedLoginPassword)
+            }
+            else {
+                UserDefaults.standard.set(nil, forKey: UserDefaultsKeys.rememberedLoginEmail)
+                UserDefaults.standard.set(nil, forKey: UserDefaultsKeys.rememberedLoginPassword)
+            }
             self.registerDeviceToken(updatedUser)
             
         }, onFailure: onFailure)

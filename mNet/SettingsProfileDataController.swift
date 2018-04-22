@@ -230,23 +230,21 @@ class SettingsProfileDataController: NSObject {
     func deRegisterDeviceToken(onSuccess:@escaping () -> Void , onFailure : @escaping () -> Void) {
         
         guard var postParams:[String:Any] = User.loggedInUser()?.toJSONPostWithPublicUserIdForTokenRegistration() else {
+            onFailure()
             return
         }
         
         guard let deviceToken:String = UserDefaults.standard.string(forKey: UserDefaultsKeys.deviceToken) else {
+            onSuccess()
             return
         }
         
         postParams[DictionaryKeys.DeviceRegistration.deviceToken] = deviceToken
         
         WrapperManager.shared.loginWrapper.registerDeviceToken(isLogout: true, postParams:postParams, onSuccess: {
-            print("Device UnRegistration Success")
-            
             onSuccess()
             
         }) {
-            print("Device UnRegistration Failed")
-            
             onFailure()
         }
     }

@@ -17,6 +17,7 @@ class DocumentViewController: BaseViewController {
     @IBOutlet weak var approveButtonTop: NSLayoutConstraint!
     @IBOutlet weak var approveButtonHeight: NSLayoutConstraint!
     
+    
     var approvalsVC:ApprovalsViewController?
     
     var dataController:ApprovalsDataController = ApprovalsDataController()
@@ -81,25 +82,48 @@ class DocumentViewController: BaseViewController {
         segmentedControl.insertSegment(withTitle: "Attachments", at: 1, animated: false)
         segmentedControl.selectedSegmentIndex = preSelectedSegment
         segmentedControlAction(segmentedControl)
+    }
+    
+    func setApproveRejectButtonVisibility() {
         
         switch dataController.selectedSection!.approvalStatus {
-        
-        case .approve: approveButton.setTitle(ConstantStrings.approve, for: .normal)
-            approveButton.isHidden = false
-            rejectButton.isHidden = false
-            approveButtonTop.constant = 29.0
-            approveButtonHeight.constant = 29.0
             
-        case .verify: approveButton.setTitle(ConstantStrings.verify, for: .normal)
-            approveButton.isHidden = false
-            rejectButton.isHidden = false
-            approveButtonTop.constant = 29.0
-            approveButtonHeight.constant = 29.0
+        case .approve:
+            approveButton.setTitle(ConstantStrings.approve, for: .normal)
+            if segmentedControl.selectedSegmentIndex == 0 {
+                approveButton.isHidden = false
+                rejectButton.isHidden = false
+                approveButtonTop.constant = 16.0
+                approveButtonHeight.constant = 29.0
+            }
+            else {
+                approveButton.isHidden = true
+                rejectButton.isHidden = true
+                approveButtonTop.constant = 0
+                approveButtonHeight.constant = 0
+            }
             
-        default: approveButton.isHidden = true
+        case .verify:
+            approveButton.setTitle(ConstantStrings.verify, for: .normal)
+            if segmentedControl.selectedSegmentIndex == 0 {
+                approveButton.isHidden = false
+                rejectButton.isHidden = false
+                approveButtonTop.constant = 16.0
+                approveButtonHeight.constant = 29.0
+            }
+            else {
+                approveButton.isHidden = true
+                rejectButton.isHidden = true
+                approveButtonTop.constant = 0
+                approveButtonHeight.constant = 0
+            }
+            
+        default:
+            approveButton.isHidden = true
             rejectButton.isHidden = true
             approveButtonTop.constant = 0
             approveButtonHeight.constant = 0
+       
         }
     }
     
@@ -129,14 +153,13 @@ class DocumentViewController: BaseViewController {
     @IBAction func segmentedControlAction(_ sender: UISegmentedControl) {
         
         if(sender.selectedSegmentIndex == 0){
-            
             showDetailsScreen()
         }
-            
         else if (sender.selectedSegmentIndex == 1)
         {
             showAttachmentsScreen()
         }
+        setApproveRejectButtonVisibility()
     }
     
     func showDetailsScreen() {

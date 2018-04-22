@@ -253,6 +253,8 @@ struct UserDefaultsKeys {
     static let baseURL:String = "savedBaseURL"
     static let imagesBaseURL:String = "imagesBaseURL"
     static let didReceiveNotification:String = "didReceiveNotification"
+    static let rememberedLoginEmail:String = "rememberedLoginEmail"
+    static let rememberedLoginPassword:String = "rememberedLoginPasword"
 }
 
 struct StoryboardIDs {
@@ -290,6 +292,9 @@ struct ImageNames {
     static let unCheckBox:String = "uncheckedBox"
     static let starFilled:String = "star_filled"
     static let starEmpty:String = "star_empty"
+    static let showPassword:String = "showPassword"
+    static let hidePassword:String = "hidePassword"
+    
 }
 
 struct ConstantStrings {

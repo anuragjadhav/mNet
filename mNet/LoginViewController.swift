@@ -37,6 +37,9 @@ class LoginViewController: BaseViewController, UITextFieldDelegate {
     
     @IBOutlet weak var showHidePasswordButton: UIButton!
     
+    @IBOutlet weak var rememberMeButton: UIButton!
+
+    @IBOutlet weak var rememberMeLabel: CustomBlueTextColorLabel!
     
     var dataController:LoginDataController = LoginDataController()
     
@@ -56,6 +59,23 @@ class LoginViewController: BaseViewController, UITextFieldDelegate {
         
         showProceedButton(animated: false)
         hidePasswordView(animated: false)
+        setUpAutoFill()
+    }
+    
+    func setUpAutoFill() {
+        
+        let savedEmail:String? = UserDefaults.standard.string(forKey: UserDefaultsKeys.rememberedLoginEmail)
+        let savedPassword:String? = UserDefaults.standard.string(forKey: UserDefaultsKeys.rememberedLoginPassword)
+        emailTextField.text = savedEmail
+        passwordTextField.text = savedPassword
+        if savedEmail != nil {
+            rememberMeButton.setImage(UIImage(named: ImageNames.checkBox), for: .normal)
+            dataController.rememberUser = true
+        }
+        else {
+            rememberMeButton.setImage(UIImage(named: ImageNames.unCheckBox), for: .normal)
+            dataController.rememberUser = false
+        }
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
@@ -210,24 +230,17 @@ class LoginViewController: BaseViewController, UITextFieldDelegate {
             return
         }
         
-        let validation = dataController.validateEmailAndPassword()
-        
+        let validation = dataController.validateEmailAndPassword()        
         if validation.valid {
-            
             self.showTransperantLoadingOnViewController()
             dataController.loginType = LoginTypeCode.normal
             dataController.postLogin(onSuccess: { [unowned self] in
-                
                     DispatchQueue.main.async {
-                        
                         self.removeTransperantLoadingFromViewController()
                         AppDelegate.sharedInstance.makeDashboardPageHome(true)
                     }
-                
                 }, onFailure: { [unowned self] (errorMessage) in
-                    
                     DispatchQueue.main.async {
-                        
                         self.removeTransperantLoadingFromViewController()
                         self.showQuickFailureAlert(message: errorMessage)
                     }
@@ -236,7 +249,6 @@ class LoginViewController: BaseViewController, UITextFieldDelegate {
         else {
             showQuickErrorAlert(message: validation.errorMessage)
         }
-        
     }
     
     
@@ -259,7 +271,16 @@ class LoginViewController: BaseViewController, UITextFieldDelegate {
                 
                 DispatchQueue.main.async {
                     self.removeTransperantLoadingFromViewController()
-                    self.showSignInButton()
+                    if signInType == .normal {
+                        self.showSignInButton()
+                    }
+                    else if signInType == .gmailSSO {
+                        self.showGoogleButton()
+                    }
+                    else {
+                        //check what to do. show password for now
+                        self.showSignInButton()
+                    }
                 }
                 
             }, onFailure: { (errorMessage) in
@@ -319,15 +340,30 @@ class LoginViewController: BaseViewController, UITextFieldDelegate {
         {
             showPasswordToggle = false
             passwordTextField.isSecureTextEntry = false
-            showHidePasswordButton.setImage(UIImage(named:"hidePassword"), for: .normal)
+            showHidePasswordButton.setImage(UIImage(named:ImageNames.showPassword), for: .normal)
         }
         else
         {
             showPasswordToggle = true
             passwordTextField.isSecureTextEntry = true
-            showHidePasswordButton.setImage(UIImage(named:"showPassword"), for: .normal)
+            showHidePasswordButton.setImage(UIImage(named:ImageNames.hidePassword), for: .normal)
         }
         
+    }
+    
+    
+    @IBAction func rememberMeButtonAction(_ sender: UIButton) {
+        dataController.rememberUser = !dataController.rememberUser
+        if dataController.rememberUser {
+            DispatchQueue.main.async {
+                sender.setImage(UIImage(named: ImageNames.checkBox), for: .normal)
+            }
+        }
+        else {
+            DispatchQueue.main.async {
+                sender.setImage(UIImage(named: ImageNames.unCheckBox), for: .normal)
+            }
+        }
     }
     
    

@@ -76,7 +76,7 @@
                                         </connections>
                                     </textField>
                                     <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kKd-RF-tff" customClass="CustomBlueBackgroundButton" customModule="mNet" customModuleProvider="target">
-                                        <rect key="frame" x="27" y="447.5" width="320" height="36"/>
+                                        <rect key="frame" x="27" y="483" width="320" height="36"/>
                                         <color key="backgroundColor" red="0.011764705882352941" green="0.51764705882352935" blue="0.80784313725490198" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="36" id="pJX-es-mxn"/>
@@ -96,7 +96,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Y0I-hd-kCF" customClass="CustomRedBackgroundColorButton" customModule="mNet" customModuleProvider="target">
-                                        <rect key="frame" x="27" y="447" width="320" height="36"/>
+                                        <rect key="frame" x="27" y="482.5" width="320" height="36"/>
                                         <color key="backgroundColor" red="0.8666666666666667" green="0.29411764705882354" blue="0.22352941176470587" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="36" id="FYp-BW-0xt"/>
@@ -115,7 +115,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pfp-hv-dLo" userLabel="Proceed Button" customClass="CustomBlueBackgroundButton" customModule="mNet" customModuleProvider="target">
-                                        <rect key="frame" x="27" y="447.5" width="320" height="36"/>
+                                        <rect key="frame" x="27" y="483" width="320" height="36"/>
                                         <color key="backgroundColor" red="0.01176470588" green="0.51764705879999995" blue="0.80784313730000001" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="320" id="Kbs-Js-vJI"/>
@@ -172,12 +172,12 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4gM-An-GqP">
-                                                <rect key="frame" x="289.5" y="53" width="23" height="22"/>
+                                                <rect key="frame" x="294.5" y="55" width="18" height="18"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="height" constant="22" id="AC2-ci-MOg"/>
-                                                    <constraint firstAttribute="width" constant="23" id="dcZ-S8-xTq"/>
+                                                    <constraint firstAttribute="height" constant="18" id="AC2-ci-MOg"/>
+                                                    <constraint firstAttribute="width" constant="18" id="dcZ-S8-xTq"/>
                                                 </constraints>
-                                                <state key="normal" image="showPassword"/>
+                                                <state key="normal" image="hidePassword"/>
                                                 <connections>
                                                     <action selector="showHidePasswordButtonAction:" destination="OM2-0e-Tyo" eventType="touchUpInside" id="1TQ-S9-vtI"/>
                                                 </connections>
@@ -197,7 +197,7 @@
                                         </constraints>
                                     </view>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vu1-Qt-yj7" customClass="CustomRedBackgroundColorButton" customModule="mNet" customModuleProvider="target">
-                                        <rect key="frame" x="27" y="499.5" width="320" height="36"/>
+                                        <rect key="frame" x="27" y="535" width="320" height="36"/>
                                         <color key="backgroundColor" red="0.81568627449999997" green="0.0078431372550000003" blue="0.1058823529" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="36" id="t8d-mu-Phe"/>
@@ -215,11 +215,27 @@
                                             <action selector="changeIdButtonAction:" destination="OM2-0e-Tyo" eventType="touchUpInside" id="YKs-Js-9tw"/>
                                         </connections>
                                     </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PvR-dH-47p">
+                                        <rect key="frame" x="27" y="438.5" width="20" height="20"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="20" id="6zd-1t-If0"/>
+                                            <constraint firstAttribute="width" secondItem="PvR-dH-47p" secondAttribute="height" multiplier="1:1" id="ces-a2-50v"/>
+                                        </constraints>
+                                        <state key="normal" image="uncheckedBox"/>
+                                        <connections>
+                                            <action selector="rememberMeButtonAction:" destination="OM2-0e-Tyo" eventType="touchUpInside" id="eXc-cz-iX0"/>
+                                        </connections>
+                                    </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Remember Me" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="khH-V2-waG" customClass="CustomBlueTextColorLabel" customModule="mNet" customModuleProvider="target">
+                                        <rect key="frame" x="59" y="439" width="106" height="18"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="15"/>
+                                        <color key="textColor" red="0.2901960784" green="0.56470588239999997" blue="0.8862745098" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="trailing" secondItem="pfp-hv-dLo" secondAttribute="trailing" constant="28" id="2Bk-td-43A"/>
-                                    <constraint firstItem="kKd-RF-tff" firstAttribute="top" secondItem="OnW-hF-Wwm" secondAttribute="bottom" constant="27" id="4DD-YI-6EV"/>
                                     <constraint firstItem="vu1-Qt-yj7" firstAttribute="top" secondItem="kKd-RF-tff" secondAttribute="bottom" constant="16" id="7Qm-mq-A1T"/>
                                     <constraint firstItem="2Ix-Rj-yrm" firstAttribute="leading" secondItem="ZpG-Y4-Epn" secondAttribute="leading" constant="32" id="8Up-rh-TTY"/>
                                     <constraint firstItem="OnW-hF-Wwm" firstAttribute="trailing" secondItem="RSB-H9-XkY" secondAttribute="trailing" id="DbY-XH-1tM"/>
@@ -228,6 +244,7 @@
                                     <constraint firstItem="RSB-H9-XkY" firstAttribute="leading" secondItem="kCb-WY-YI5" secondAttribute="leading" id="Hzw-fI-BWE"/>
                                     <constraint firstItem="pfp-hv-dLo" firstAttribute="leading" secondItem="ZpG-Y4-Epn" secondAttribute="leading" constant="27" id="JLj-hh-O6u"/>
                                     <constraint firstItem="pfp-hv-dLo" firstAttribute="trailing" secondItem="kKd-RF-tff" secondAttribute="trailing" id="Kky-7Q-NaV"/>
+                                    <constraint firstItem="khH-V2-waG" firstAttribute="leading" secondItem="PvR-dH-47p" secondAttribute="trailing" constant="12" id="Lcs-M4-qvz"/>
                                     <constraint firstItem="kCb-WY-YI5" firstAttribute="leading" secondItem="RgB-Ys-snv" secondAttribute="leading" id="MkI-SE-QrI"/>
                                     <constraint firstAttribute="trailing" secondItem="2Ix-Rj-yrm" secondAttribute="trailing" constant="32" id="NFz-z8-oAb"/>
                                     <constraint firstItem="Y0I-hd-kCF" firstAttribute="top" secondItem="kKd-RF-tff" secondAttribute="top" id="NUg-tB-5Gi"/>
@@ -236,7 +253,10 @@
                                     <constraint firstItem="kKd-RF-tff" firstAttribute="centerX" secondItem="ZpG-Y4-Epn" secondAttribute="centerX" id="T6u-c8-S2c"/>
                                     <constraint firstItem="RSB-H9-XkY" firstAttribute="leading" secondItem="ZpG-Y4-Epn" secondAttribute="leading" constant="27" id="TjI-GH-L3n"/>
                                     <constraint firstAttribute="bottom" secondItem="vu1-Qt-yj7" secondAttribute="bottom" constant="80" id="Ttx-yl-9Zp"/>
+                                    <constraint firstItem="PvR-dH-47p" firstAttribute="leading" secondItem="OnW-hF-Wwm" secondAttribute="leading" id="Wdh-lV-RkW"/>
+                                    <constraint firstItem="PvR-dH-47p" firstAttribute="top" secondItem="OnW-hF-Wwm" secondAttribute="bottom" constant="18" id="Zak-Li-S8K"/>
                                     <constraint firstItem="kCb-WY-YI5" firstAttribute="top" secondItem="RgB-Ys-snv" secondAttribute="bottom" constant="30" id="a4p-Xo-Ugb"/>
+                                    <constraint firstItem="khH-V2-waG" firstAttribute="centerY" secondItem="PvR-dH-47p" secondAttribute="centerY" id="aGg-ZV-zmO"/>
                                     <constraint firstItem="RgB-Ys-snv" firstAttribute="top" secondItem="2Ix-Rj-yrm" secondAttribute="bottom" constant="63" id="avz-Je-8ZC"/>
                                     <constraint firstItem="RSB-H9-XkY" firstAttribute="centerX" secondItem="ZpG-Y4-Epn" secondAttribute="centerX" id="ebU-7i-9DK"/>
                                     <constraint firstItem="RSB-H9-XkY" firstAttribute="top" secondItem="kCb-WY-YI5" secondAttribute="bottom" constant="11" id="h14-Yb-Jss"/>
@@ -246,6 +266,7 @@
                                     <constraint firstItem="OnW-hF-Wwm" firstAttribute="leading" secondItem="RSB-H9-XkY" secondAttribute="leading" id="r4k-1B-2ef"/>
                                     <constraint firstItem="Y0I-hd-kCF" firstAttribute="leading" secondItem="kKd-RF-tff" secondAttribute="leading" id="wqQ-kT-Czr"/>
                                     <constraint firstItem="OnW-hF-Wwm" firstAttribute="top" secondItem="RSB-H9-XkY" secondAttribute="bottom" id="yLz-VW-NA6"/>
+                                    <constraint firstItem="Y0I-hd-kCF" firstAttribute="top" secondItem="PvR-dH-47p" secondAttribute="bottom" constant="24" id="yMo-gg-92n"/>
                                 </constraints>
                             </scrollView>
                         </subviews>
@@ -272,6 +293,8 @@
                         <outlet property="passwordViewHeight" destination="7Nh-Kj-ew0" id="FVx-j2-W4u"/>
                         <outlet property="proceedButton" destination="pfp-hv-dLo" id="KqV-1i-DrY"/>
                         <outlet property="proceedButtonHeight" destination="iLl-OP-I2P" id="3WU-tP-USw"/>
+                        <outlet property="rememberMeButton" destination="PvR-dH-47p" id="RSL-Tw-YqX"/>
+                        <outlet property="rememberMeLabel" destination="khH-V2-waG" id="Mmu-LI-Wfw"/>
                         <outlet property="showHidePasswordButton" destination="4gM-An-GqP" id="TgX-sx-9Us"/>
                         <outlet property="signInButton" destination="kKd-RF-tff" id="V5s-w2-ech"/>
                         <outlet property="signInButtonHeight" destination="pJX-es-mxn" id="3Wi-oa-fFp"/>
@@ -285,6 +308,7 @@
     </scenes>
     <resources>
         <image name="brandIntelleLogo" width="600" height="157"/>
-        <image name="showPassword" width="32" height="32"/>
+        <image name="hidePassword" width="32" height="32"/>
+        <image name="uncheckedBox" width="32" height="32"/>
     </resources>
 </document>
