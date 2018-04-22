@@ -934,21 +934,6 @@
             </objects>
             <point key="canvasLocation" x="2116" y="1508.9955022488757"/>
         </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="8PK-jy-lGV">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="nJz-oL-Inz" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="i6O-nl-xNc">
-                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Cts-zX-hoW" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-1564" y="1849"/>
-        </scene>
         <!--Approvals-->
         <scene sceneID="fY0-Ni-c5h">
             <objects>

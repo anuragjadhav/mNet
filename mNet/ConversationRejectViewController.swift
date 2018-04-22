@@ -45,6 +45,11 @@ class ConversationRejectViewController: BaseViewController,UITextViewDelegate {
     
 
     // MARK: - Button Action
+    
+    @IBAction func backButtonAction(_ sender: Any) {
+        
+        self.navigationController?.popViewController(animated: true)
+    }
 
     @IBAction func rejectButtonAction(_ sender: Any) {
         

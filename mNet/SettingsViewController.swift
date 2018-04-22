@@ -28,6 +28,8 @@ class SettingsViewController: BaseViewController,UITableViewDelegate,UITableView
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated);
+        
+        self.tabBarController?.tabBar.isHidden = false
     
         self.setupNavigationBar()
         
@@ -68,6 +70,8 @@ class SettingsViewController: BaseViewController,UITableViewDelegate,UITableView
     }
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        self.tabBarController?.tabBar.isHidden = true
         
         let optionName = self.dataCtrl.settingOptionsArray[indexPath.row]
         
@@ -157,6 +161,8 @@ class SettingsViewController: BaseViewController,UITableViewDelegate,UITableView
     //MARK: Button Actions
 
     @IBAction func gotoButtonAction(_ sender: Any) {
+        
+        self.tabBarController?.tabBar.isHidden = true
         
         let profileVC = UIStoryboard.profile.instantiateViewController(withIdentifier: StoryboardIDs.profileViewController) as! ProfileViewController
         profileVC.dataCtrl.profile = self.dataCtrl.profile?.copy() as? Profile

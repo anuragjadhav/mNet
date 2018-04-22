@@ -45,6 +45,9 @@ class DashboardViewController: BaseViewController, UITableViewDataSource, UITabl
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        
+        self.tabBarController?.tabBar.isHidden = false
+
         self.setUpNavigationController()
         
         getData()
@@ -172,6 +175,7 @@ class DashboardViewController: BaseViewController, UITableViewDataSource, UITabl
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
+        
         tableView.deselectRow(at: indexPath, animated: true)
         
         let app:UserApp = dataController.appsList[indexPath.row]
@@ -181,6 +185,9 @@ class DashboardViewController: BaseViewController, UITableViewDataSource, UITabl
         }
         
         else {
+            
+            self.tabBarController?.tabBar.isHidden = true
+            
             let webViewController:WebViewController = UIStoryboard.webView.instantiateViewController(withIdentifier: StoryboardIDs.webViewController) as! WebViewController
             webViewController.setData(url: app.appURL, header: app.appName)
             navigationController?.pushViewController(webViewController, animated: true)
@@ -188,6 +195,8 @@ class DashboardViewController: BaseViewController, UITableViewDataSource, UITabl
     }
     
     func goToApprovalsScreen(preSelectedIndex:Int) {
+        
+        self.tabBarController?.tabBar.isHidden = true
         
         let approvalsVC:ApprovalsViewController = (UIStoryboard.init(name:"ApproveReject", bundle: Bundle.main)).instantiateViewController(withIdentifier: "ApprovalsViewController") as! ApprovalsViewController
         let dataController:ApprovalsDataController = ApprovalsDataController()

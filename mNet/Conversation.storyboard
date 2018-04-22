@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="QBC-0E-HPL">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="o3E-LQ-xem">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -9,11 +9,13 @@
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
-        <capability name="Navigation items with more than one left or right bar item" minToolsVersion="7.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
+        <array key="HelveticaNeue.ttc">
+            <string>HelveticaNeue-Bold</string>
+        </array>
         <array key="SanFranciscoDisplay-Bold.otf">
             <string>SanFranciscoDisplay-Bold</string>
         </array>
@@ -52,14 +54,14 @@
                                         <color key="textColor" red="0.3803921569" green="0.28235294119999998" blue="0.22352941179999999" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="+" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6zC-MK-auJ">
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="+" textAlignment="center" lineBreakMode="tailTruncation" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6zC-MK-auJ">
                                         <rect key="frame" x="27" y="69" width="32" height="32"/>
                                         <color key="backgroundColor" red="0.01176470588" green="0.51764705879999995" blue="0.80784313730000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="6zC-MK-auJ" secondAttribute="height" multiplier="1:1" id="WrK-Gv-z7B"/>
                                             <constraint firstAttribute="height" constant="32" id="ane-Px-UIi"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                         <userDefinedRuntimeAttributes>
@@ -90,7 +92,7 @@
                                             <constraint firstAttribute="width" secondItem="1Df-sF-a5E" secondAttribute="height" multiplier="1:1" id="Q76-gU-Ohs"/>
                                             <constraint firstAttribute="height" constant="32" id="iOS-4U-b9h"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                         <userDefinedRuntimeAttributes>
@@ -121,7 +123,7 @@
                                             <constraint firstAttribute="height" constant="32" id="QcI-st-HRW"/>
                                             <constraint firstAttribute="width" secondItem="oaa-jz-B4P" secondAttribute="height" multiplier="1:1" id="pZv-k5-yW6"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                         <userDefinedRuntimeAttributes>
@@ -152,7 +154,7 @@
                                             <constraint firstAttribute="width" secondItem="eva-Dx-3o1" secondAttribute="height" multiplier="1:1" id="dAn-l4-nkQ"/>
                                             <constraint firstAttribute="height" constant="32" id="scI-qK-Rkr"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                         <userDefinedRuntimeAttributes>
@@ -253,7 +255,7 @@
                                                                 <constraint firstAttribute="height" constant="40" id="6zV-dy-IgZ"/>
                                                                 <constraint firstAttribute="width" constant="40" id="s6r-Dc-n6p"/>
                                                             </constraints>
-                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <nil key="highlightedColor"/>
                                                             <userDefinedRuntimeAttributes>
@@ -269,6 +271,7 @@
                                                                 <constraint firstAttribute="height" constant="17" id="9OG-Zu-cfw"/>
                                                                 <constraint firstAttribute="width" constant="17" id="EmW-Dl-0QI"/>
                                                             </constraints>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                                             <state key="normal" title="X">
                                                                 <color key="titleColor" red="0.3803921569" green="0.28235294119999998" blue="0.22352941179999999" alpha="1" colorSpace="calibratedRGB"/>
                                                             </state>
@@ -334,7 +337,7 @@
                                                                 <constraint firstAttribute="width" constant="40" id="MhV-1c-eQU"/>
                                                                 <constraint firstAttribute="height" constant="40" id="TV5-Xf-J8w"/>
                                                             </constraints>
-                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <nil key="highlightedColor"/>
                                                             <userDefinedRuntimeAttributes>
@@ -350,6 +353,7 @@
                                                                 <constraint firstAttribute="width" constant="17" id="1ZP-To-7RH"/>
                                                                 <constraint firstAttribute="height" constant="17" id="tLB-Ww-Q8f"/>
                                                             </constraints>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                                             <state key="normal" title="X">
                                                                 <color key="titleColor" red="0.3803921569" green="0.28235294119999998" blue="0.22352941179999999" alpha="1" colorSpace="calibratedRGB"/>
                                                             </state>
@@ -415,7 +419,7 @@
                                                                 <constraint firstAttribute="width" constant="40" id="Gyb-SY-yEG"/>
                                                                 <constraint firstAttribute="height" constant="40" id="NZT-1p-jGb"/>
                                                             </constraints>
-                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <nil key="highlightedColor"/>
                                                             <userDefinedRuntimeAttributes>
@@ -431,6 +435,7 @@
                                                                 <constraint firstAttribute="width" constant="17" id="oKs-Ff-zKi"/>
                                                                 <constraint firstAttribute="height" constant="17" id="pDu-rX-mQl"/>
                                                             </constraints>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                                             <state key="normal" title="X">
                                                                 <color key="titleColor" red="0.3803921569" green="0.28235294119999998" blue="0.22352941179999999" alpha="1" colorSpace="calibratedRGB"/>
                                                             </state>
@@ -496,7 +501,7 @@
                                                                 <constraint firstAttribute="height" constant="40" id="4f3-Vu-RvK"/>
                                                                 <constraint firstAttribute="width" constant="40" id="krs-59-1Ka"/>
                                                             </constraints>
-                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <nil key="highlightedColor"/>
                                                             <userDefinedRuntimeAttributes>
@@ -512,6 +517,7 @@
                                                                 <constraint firstAttribute="height" constant="17" id="FZb-RG-Pzx"/>
                                                                 <constraint firstAttribute="width" constant="17" id="MMf-zp-CA4"/>
                                                             </constraints>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                                             <state key="normal" title="X">
                                                                 <color key="titleColor" red="0.3803921569" green="0.28235294119999998" blue="0.22352941179999999" alpha="1" colorSpace="calibratedRGB"/>
                                                             </state>
@@ -698,7 +704,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sv0-h3-cae" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1741.5999999999999" y="1021.4392803598201"/>
+            <point key="canvasLocation" x="2680.8000000000002" y="1021.4392803598201"/>
         </scene>
         <!--Conversation Info-->
         <scene sceneID="Dyz-rC-T2P">
@@ -1044,7 +1050,7 @@
                                 </userDefinedRuntimeAttributes>
                             </label>
                             <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No Conversations" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Oe7-I8-Mx7" customClass="CustomBrownTextColorLabel" customModule="mNet" customModuleProvider="target">
-                                <rect key="frame" x="121.5" y="324" width="132" height="20"/>
+                                <rect key="frame" x="121.5" y="323.5" width="132" height="20"/>
                                 <constraints>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="100" id="gEF-fi-vWV"/>
                                 </constraints>
@@ -1094,7 +1100,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nY2-wN-pf2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-7.2000000000000002" y="1063.7181409295354"/>
+            <point key="canvasLocation" x="932" y="1063.7181409295354"/>
         </scene>
         <!--Select User-->
         <scene sceneID="ont-ek-qKs">
@@ -1235,7 +1241,7 @@
                                                         <constraint firstAttribute="height" constant="40" id="4ZM-aD-M5h"/>
                                                         <constraint firstAttribute="width" constant="40" id="9N8-j8-B68"/>
                                                     </constraints>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
                                                     <userDefinedRuntimeAttributes>
@@ -1251,6 +1257,7 @@
                                                         <constraint firstAttribute="width" constant="17" id="09u-9l-ylv"/>
                                                         <constraint firstAttribute="height" constant="17" id="LlL-Lf-wff"/>
                                                     </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                                     <state key="normal" title="X">
                                                         <color key="titleColor" red="0.3803921569" green="0.28235294119999998" blue="0.22352941179999999" alpha="1" colorSpace="calibratedRGB"/>
                                                     </state>
@@ -1367,7 +1374,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qvi-XO-gHu" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="921" y="1034"/>
+            <point key="canvasLocation" x="1860" y="1033.1334332833585"/>
         </scene>
         <!--Conversation Detail Title-->
         <scene sceneID="OQ1-BE-R44">
@@ -1730,28 +1737,12 @@
                                 <action selector="backButtonAction:" destination="ZDB-Oo-0rh" id="p66-xW-sFa"/>
                             </connections>
                         </barButtonItem>
-                        <rightBarButtonItems>
-                            <barButtonItem image="infoIcon" id="KXi-OV-Uh8">
-                                <color key="tintColor" red="0.45882352939999999" green="0.45882352939999999" blue="0.45882352939999999" alpha="1" colorSpace="calibratedRGB"/>
-                                <connections>
-                                    <action selector="infoButtonAction:" destination="ZDB-Oo-0rh" id="9y7-Fl-3uA"/>
-                                </connections>
-                            </barButtonItem>
-                            <barButtonItem image="hideIcon" id="ubz-xq-h59">
-                                <inset key="imageInsets" minX="8" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                <color key="tintColor" red="0.45882352939999999" green="0.45882352939999999" blue="0.45882352939999999" alpha="1" colorSpace="calibratedRGB"/>
-                                <connections>
-                                    <action selector="hidePostButtonAction:" destination="ZDB-Oo-0rh" id="leE-6i-pdT"/>
-                                </connections>
-                            </barButtonItem>
-                            <barButtonItem image="forward" id="XET-Y6-Cp9">
-                                <inset key="imageInsets" minX="13" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                <color key="tintColor" red="0.45882352939999999" green="0.45882352939999999" blue="0.45882352939999999" alpha="1" colorSpace="calibratedRGB"/>
-                                <connections>
-                                    <action selector="addUsersToExistingConversation:" destination="ZDB-Oo-0rh" id="cCO-GP-Vdk"/>
-                                </connections>
-                            </barButtonItem>
-                        </rightBarButtonItems>
+                        <barButtonItem key="rightBarButtonItem" image="menu" id="KXi-OV-Uh8">
+                            <color key="tintColor" red="0.45882352939999999" green="0.45882352939999999" blue="0.45882352939999999" alpha="1" colorSpace="calibratedRGB"/>
+                            <connections>
+                                <action selector="menuButtonAction:" destination="ZDB-Oo-0rh" id="Z2e-ef-TDV"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="conversationTableView" destination="8bi-AF-q3O" id="mKW-cG-sG0"/>
@@ -1794,26 +1785,26 @@
                         <rect key="frame" x="0.0" y="0.0" width="160" height="200"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="39" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="PbN-j6-06Q">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="51" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="PbN-j6-06Q">
                                 <rect key="frame" x="0.0" y="0.0" width="160" height="200"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="PopoverTableViewCell" rowHeight="39" id="odx-zb-WOR" customClass="PopoverTableViewCell" customModule="mNet" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="160" height="39"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="PopoverTableViewCell" rowHeight="51" id="odx-zb-WOR" customClass="PopoverTableViewCell" customModule="mNet" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="160" height="51"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="odx-zb-WOR" id="dh3-pd-png">
-                                            <rect key="frame" x="0.0" y="0.0" width="160" height="38.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="160" height="50.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" tag="46" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Manish D." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8R7-Ig-a80" customClass="CustomBrownTextColorLabel" customModule="mNet" customModuleProvider="target">
-                                                    <rect key="frame" x="30" y="8" width="114" height="22.5"/>
+                                                    <rect key="frame" x="30" y="12" width="114" height="26.5"/>
                                                     <fontDescription key="fontDescription" name="SanFranciscoDisplay-Medium" family="San Francisco Display" pointSize="14"/>
                                                     <color key="textColor" red="0.28235294119999998" green="0.28235294119999998" blue="0.28235294119999998" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ake-QJ-fGE">
-                                                    <rect key="frame" x="8" y="10.5" width="18" height="18"/>
+                                                    <rect key="frame" x="8" y="16.5" width="18" height="18"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="18" id="Q7u-ff-Hfe"/>
                                                         <constraint firstAttribute="height" constant="18" id="dy5-lD-Y4W"/>
@@ -1821,11 +1812,11 @@
                                                 </imageView>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstAttribute="bottom" secondItem="8R7-Ig-a80" secondAttribute="bottom" constant="8" id="49q-xO-GLG"/>
+                                                <constraint firstAttribute="bottom" secondItem="8R7-Ig-a80" secondAttribute="bottom" constant="12" id="49q-xO-GLG"/>
                                                 <constraint firstAttribute="trailing" secondItem="8R7-Ig-a80" secondAttribute="trailing" constant="16" id="7iE-cZ-hIY"/>
                                                 <constraint firstItem="8R7-Ig-a80" firstAttribute="leading" secondItem="ake-QJ-fGE" secondAttribute="trailing" constant="4" id="9gU-ek-Iox"/>
                                                 <constraint firstItem="ake-QJ-fGE" firstAttribute="centerY" secondItem="dh3-pd-png" secondAttribute="centerY" id="Gj3-il-CxL"/>
-                                                <constraint firstItem="8R7-Ig-a80" firstAttribute="top" secondItem="dh3-pd-png" secondAttribute="top" constant="8" id="KWk-SA-Be8"/>
+                                                <constraint firstItem="8R7-Ig-a80" firstAttribute="top" secondItem="dh3-pd-png" secondAttribute="top" constant="12" id="KWk-SA-Be8"/>
                                                 <constraint firstItem="ake-QJ-fGE" firstAttribute="leading" secondItem="dh3-pd-png" secondAttribute="leading" constant="8" id="wNH-sx-fAL"/>
                                             </constraints>
                                         </tableViewCellContentView>
@@ -2297,6 +2288,24 @@
             </objects>
             <point key="canvasLocation" x="2135.1999999999998" y="148.87556221889056"/>
         </scene>
+        <!--Base Navigation Controller-->
+        <scene sceneID="jGY-Rn-ys0">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="o3E-LQ-xem" customClass="BaseNavigationController" customModule="mNet" customModuleProvider="target" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="CuW-ce-ukt">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="QBC-0E-HPL" kind="relationship" relationship="rootViewController" id="CNe-cv-Lxy"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="kIl-GU-Ti8" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-7.2000000000000002" y="1063.7181409295354"/>
+        </scene>
     </scenes>
     <resources>
         <image name="attachmentIcon" width="64" height="64"/>
@@ -2306,10 +2315,8 @@
         <image name="defaultProfileImage" width="64" height="64"/>
         <image name="deleteBin" width="24" height="24"/>
         <image name="filterIcon" width="21" height="21"/>
-        <image name="forward" width="24" height="24"/>
         <image name="grayAttachmentIcon" width="32" height="32"/>
-        <image name="hideIcon" width="24" height="24"/>
-        <image name="infoIcon" width="24" height="24"/>
+        <image name="menu" width="21" height="21"/>
         <image name="plusIcon" width="80" height="92"/>
         <image name="rightArrow" width="12" height="12"/>
         <image name="uncheckedBox" width="32" height="32"/>

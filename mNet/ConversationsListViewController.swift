@@ -67,6 +67,8 @@ class ConversationsListViewController: BaseViewController, UITableViewDelegate, 
         
         let currentTabbarItem = self.tabBarController?.tabBar.items![1]
         currentTabbarItem?.badgeValue = nil
+        
+        self.tabBarController?.tabBar.isHidden = false
     }
     
     override func viewDidDisappear(_ animated: Bool) {
@@ -99,6 +101,8 @@ class ConversationsListViewController: BaseViewController, UITableViewDelegate, 
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        self.tabBarController?.tabBar.isHidden = true
         
         let conversation:Conversation = dataCtrl.conversations[indexPath.row]
         dataCtrl.selectedCoversation = conversation
@@ -239,6 +243,8 @@ class ConversationsListViewController: BaseViewController, UITableViewDelegate, 
     
     
     @IBAction func newConversationButtonAction(_ sender: UIButton) {
+        
+        self.tabBarController?.tabBar.isHidden = true
         
         let newConversationVC = (UIStoryboard.init(name:"Conversation", bundle: Bundle.main)).instantiateViewController(withIdentifier: "NewConversationViewController") as! NewConversationViewController
         newConversationVC.dataCtrl = dataCtrl

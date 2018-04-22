@@ -59,6 +59,8 @@ class ConversationDetailViewController: BaseViewController,UITableViewDelegate,U
         else
         {
             setupData()
+            dataCtrl?.checkWhetherSelectedConversationIsVerifyOrApprove()
+
         }
     }
 
@@ -82,14 +84,6 @@ class ConversationDetailViewController: BaseViewController,UITableViewDelegate,U
         
         self.navigationController?.navigationBar.isHidden = false
         
-        if(didComeFromNotification)
-        {
-            self.navigationItem.rightBarButtonItems = nil
-            let menuBarButton = UIBarButtonItem(image: UIImage(named: "menu"), style: .plain, target: self, action: #selector(menuButtonAction))
-            self.navigationItem.rightBarButtonItem = menuBarButton
-            self.navigationItem.rightBarButtonItem?.tintColor = UIColor.darkGray
-
-        }
     }
     
     func setupData()
@@ -536,7 +530,7 @@ class ConversationDetailViewController: BaseViewController,UITableViewDelegate,U
     
     // MARK: - Button Actions
     
-    @objc func menuButtonAction()
+    @IBAction func menuButtonAction(_ sender:Any)
     {
         let popController:InfoPopoverViewController = UIStoryboard.conversations.instantiateViewController(withIdentifier: StoryboardIDs.infoPopoverViewController) as! InfoPopoverViewController
         
@@ -555,7 +549,7 @@ class ConversationDetailViewController: BaseViewController,UITableViewDelegate,U
         self.present(popController, animated: true, completion: nil)
     }
 
-    @IBAction func hidePostButtonAction(_ sender: Any) {
+    func hidePostButtonAction() {
         
         let alert = UIAlertController(title:"Select Action", message: "Please Select an Option", preferredStyle: .actionSheet)
         
@@ -575,7 +569,7 @@ class ConversationDetailViewController: BaseViewController,UITableViewDelegate,U
     }
     
     
-    @IBAction func infoButtonAction(_ sender: Any) {
+    func infoButtonAction() {
         
         let conversationInfoVC = UIStoryboard.conversations.instantiateViewController(withIdentifier: StoryboardIDs.conversationInfoViewController) as! ConversationInfoViewController
         conversationInfoVC.dataCtrl = dataCtrl
@@ -588,7 +582,7 @@ class ConversationDetailViewController: BaseViewController,UITableViewDelegate,U
     }
     
     
-    @IBAction func addUsersToExistingConversation(_ sender: Any) {
+    func addUsersToExistingConversation() {
         
         if(dataCtrl?.selectedCoversation?.postCreator == User.loggedInUser()?.userId)
         {
@@ -725,23 +719,6 @@ class ConversationDetailViewController: BaseViewController,UITableViewDelegate,U
                     self.scrollTableViewToBottom()
                     self.removeLoadingFromWindow()
                     
-                    switch self.dataCtrl?.conversationStatus {
-                        
-                    case .approvalDetails? :
-                        
-                        let approvalDataController:ApprovalsDataController = ApprovalsDataController()
-                        approvalDataController.selectedNotification = self.dataCtrl?.selectedNotification
-                        approvalDataController.isFromDeepLinking = true
-                        let approvalDetailsViewController:DocumentViewController = UIStoryboard.approvals.instantiateViewController(withIdentifier: StoryboardIDs.approvalDetailsViewController) as! DocumentViewController
-                        approvalDetailsViewController.dataController = approvalDataController
-                        self.navigationController?.pushViewController(approvalDetailsViewController, animated: true)
-                        
-                        break
-                        
-                    default :
-                         break
-                        
-                    }
                 }
                 
                 }, onFailure: { [unowned self] (errorMessage) in
@@ -770,12 +747,14 @@ class ConversationDetailViewController: BaseViewController,UITableViewDelegate,U
     
     func didSelectItem(popOverObject: PopoverObject, at index: Int) {
         
+        DispatchQueue.main.async {
+        
         switch popOverObject.title {
             
         case MenuOptions.reject:
             
             let rejectVC = UIStoryboard.conversations.instantiateViewController(withIdentifier: StoryboardIDs.conversationRejectViewController) as! ConversationRejectViewController
-            rejectVC.dataCtrl = dataCtrl
+            rejectVC.dataCtrl = self.dataCtrl
             self.navigationController?.pushViewController(rejectVC, animated: true)
             
             break
@@ -783,7 +762,7 @@ class ConversationDetailViewController: BaseViewController,UITableViewDelegate,U
         case MenuOptions.approve:
             
             let approveVC = UIStoryboard.conversations.instantiateViewController(withIdentifier: StoryboardIDs.conversationApproveViewController) as! ConversationApproveViewController
-            approveVC.dataCtrl = dataCtrl
+            approveVC.dataCtrl = self.dataCtrl
             self.navigationController?.pushViewController(approveVC, animated: true)
             
             break
@@ -791,7 +770,7 @@ class ConversationDetailViewController: BaseViewController,UITableViewDelegate,U
         case MenuOptions.verify:
             
             let verifyVC = UIStoryboard.conversations.instantiateViewController(withIdentifier: StoryboardIDs.conversationVerifyViewController) as! ConversationVerifyViewController
-            verifyVC.dataCtrl = dataCtrl
+            verifyVC.dataCtrl = self.dataCtrl
             self.navigationController?.pushViewController(verifyVC, animated: true)
             
             break
@@ -799,15 +778,39 @@ class ConversationDetailViewController: BaseViewController,UITableViewDelegate,U
             
         case MenuOptions.viewDetails:
             
-            let conversationInfoVC = UIStoryboard.conversations.instantiateViewController(withIdentifier: StoryboardIDs.conversationInfoViewController) as! ConversationInfoViewController
-            conversationInfoVC.dataCtrl = dataCtrl
-            self.navigationController?.pushViewController(conversationInfoVC, animated: true)
+            self.infoButtonAction()
+            
+            break
+            
+        case MenuOptions.forwardToUsers:
+            
+            self.addUsersToExistingConversation()
             
             break
             
         case MenuOptions.hideIgnorPost:
             
-            self.hidePostButtonAction(UIButton())
+            self.hidePostButtonAction()
+            
+            break
+            
+        case MenuOptions.goToapprovalDetails:
+            
+            let approvalDataController:ApprovalsDataController = ApprovalsDataController()
+            if(self.didComeFromNotification)
+            {
+                approvalDataController.selectedNotification = self.dataCtrl?.selectedNotification
+            }
+            else
+            {
+                let notificationObject = NotificationObject(JSON: [String:String]())
+                notificationObject?.postId = self.dataCtrl?.selectedCoversation?.postId
+                approvalDataController.selectedNotification = notificationObject
+            }
+            approvalDataController.isFromDeepLinking = true
+            let approvalDetailsViewController:DocumentViewController = UIStoryboard.approvals.instantiateViewController(withIdentifier: StoryboardIDs.approvalDetailsViewController) as! DocumentViewController
+            approvalDetailsViewController.dataController = approvalDataController
+            self.navigationController?.pushViewController(approvalDetailsViewController, animated: true)
             
             break
             
@@ -817,5 +820,6 @@ class ConversationDetailViewController: BaseViewController,UITableViewDelegate,U
         
     }
 
+    }
 
 }

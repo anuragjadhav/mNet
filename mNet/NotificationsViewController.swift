@@ -20,6 +20,8 @@ class NotificationsViewController: BaseViewController, UITableViewDelegate, UITa
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(didEnterForeground), name:.UIApplicationWillEnterForeground, object: nil)
 
         lineLabel.layer.shadowColor = UIColor.lightGray.cgColor
         lineLabel.layer.shadowOffset = CGSize(width: 0, height: 0.6)
@@ -44,12 +46,19 @@ class NotificationsViewController: BaseViewController, UITableViewDelegate, UITa
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
+        self.tabBarController?.tabBar.isHidden = false
+        
         self.setUpNavigationController()
         
         let currentTabbarItem = self.tabBarController?.tabBar.items![2]
         currentTabbarItem?.badgeValue = nil
         
         notificationsTableView.reloadData()
+    }
+    
+    @objc func didEnterForeground()
+    {
+        getNotifications(isReload: true, isRefresh: false)
     }
     
     //MARK: Setup
@@ -76,6 +85,8 @@ class NotificationsViewController: BaseViewController, UITableViewDelegate, UITa
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        self.tabBarController?.tabBar.isHidden = true
         
         let notification:NotificationObject = dataCtrl.notifications[indexPath.row]
         dataCtrl.selectedNotification = notification

@@ -35,6 +35,8 @@ class BaseViewController: UIViewController,RetryViewProtocol, UIGestureRecognize
         //for back swipe
         self.navigationController?.interactivePopGestureRecognizer?.isEnabled = true
         self.navigationController?.interactivePopGestureRecognizer?.delegate = self
+        
+        //for handling tabbar
     }
     
     override func viewDidDisappear(_ animated: Bool) {
