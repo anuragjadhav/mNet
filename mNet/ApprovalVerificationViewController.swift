@@ -168,11 +168,6 @@ class ApprovalVerificationViewController: BaseViewController,UISearchBarDelegate
 
     @IBAction func sendButtonAction(_ sender: Any) {
         
-        if messageTextView.text.isEmpty || messageTextView.text == "" {
-            self.showQuickErrorAlert(message: AlertMessages.enterReplyMessage)
-            return
-        }
-        
         if dataController.selectedApproval!.selectedUsers.count <= 0 && dataController.selectedSection!.approvalStatus == .verify {
             self.showQuickErrorAlert(message: AlertMessages.selectAtleastOneUSer)
             return
@@ -180,16 +175,30 @@ class ApprovalVerificationViewController: BaseViewController,UISearchBarDelegate
         
         self.showTransperantLoadingOnViewController()
         
+        var messageText:String? =  messageTextView.text
+        if messageText == nil || messageText!.isEmpty || messageText! == "" {
+            if verificationRadioButton.isRadioSelected {
+                messageText = ConstantStrings.verifiedMessge
+            }
+            else {
+                messageText = ConstantStrings.approvedMessage
+            }
+        }
+        
         var approveType:String = "A"
         if verificationRadioButton.isRadioSelected {
             approveType = "I"
         }
         
-        dataController.approvePostBasedOnType(replyMessage: messageTextView.text, approveType: approveType, onSuccess: { (message) in
+        dataController.approvePostBasedOnType(replyMessage: messageText!, approveType: approveType, onSuccess: { (message) in
             
             DispatchQueue.main.async {
                 self.removeTransperantLoadingFromViewController()
-                self.showQuickSuccessAlert(message: message, completion: { (_) in
+                var successMessage:String = AlertMessages.approvalSuccess
+                if self.verificationRadioButton.isRadioSelected {
+                    successMessage = AlertMessages.verificationSuccess
+                }
+                self.showQuickSuccessAlert(message: successMessage, completion: { (_) in
                     self.approvalsVC?.resetData()
                     self.approvalsVC?.getData()
                     self.navigationController?.popToViewController(self.approvalsVC!, animated: true)

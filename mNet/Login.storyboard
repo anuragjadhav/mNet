@@ -269,11 +269,24 @@
                                     <constraint firstItem="Y0I-hd-kCF" firstAttribute="top" secondItem="PvR-dH-47p" secondAttribute="bottom" constant="24" id="yMo-gg-92n"/>
                                 </constraints>
                             </scrollView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YXF-tP-g1l">
+                                <rect key="frame" x="335" y="627" width="24" height="24"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="YXF-tP-g1l" secondAttribute="height" multiplier="1:1" id="s8b-0u-no0"/>
+                                    <constraint firstAttribute="width" constant="24" id="zmL-QW-VVL"/>
+                                </constraints>
+                                <state key="normal" image="help"/>
+                                <connections>
+                                    <action selector="helpButtonAction:" destination="OM2-0e-Tyo" eventType="touchUpInside" id="fUB-KX-l94"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="6wI-St-DGY" firstAttribute="trailing" secondItem="ZpG-Y4-Epn" secondAttribute="trailing" id="8SK-t7-eNb"/>
                             <constraint firstItem="ZpG-Y4-Epn" firstAttribute="top" secondItem="6wI-St-DGY" secondAttribute="top" id="IDa-n8-Mqj"/>
+                            <constraint firstItem="6wI-St-DGY" firstAttribute="trailing" secondItem="YXF-tP-g1l" secondAttribute="trailing" constant="16" id="NKG-En-Vrr"/>
+                            <constraint firstItem="6wI-St-DGY" firstAttribute="bottom" secondItem="YXF-tP-g1l" secondAttribute="bottom" constant="16" id="UIu-LE-VKP"/>
                             <constraint firstItem="ZpG-Y4-Epn" firstAttribute="leading" secondItem="6wI-St-DGY" secondAttribute="leading" id="iur-9m-kMB"/>
                             <constraint firstItem="6wI-St-DGY" firstAttribute="bottom" secondItem="ZpG-Y4-Epn" secondAttribute="bottom" id="mvA-cC-be5"/>
                         </constraints>
@@ -285,6 +298,7 @@
                         <outlet property="emailLabel" destination="kCb-WY-YI5" id="EOJ-D0-rU3"/>
                         <outlet property="emailTextField" destination="RSB-H9-XkY" id="SrH-fF-P8K"/>
                         <outlet property="googleButtonHeight" destination="FYp-BW-0xt" id="jfA-Og-I6F"/>
+                        <outlet property="helpButton" destination="YXF-tP-g1l" id="tux-u3-Uuj"/>
                         <outlet property="loginWithGoogleButton" destination="Y0I-hd-kCF" id="P6f-qI-1ag"/>
                         <outlet property="logoImageView" destination="2Ix-Rj-yrm" id="cBT-v8-1bd"/>
                         <outlet property="passwordLabel" destination="ATu-5p-PAU" id="523-G6-aHL"/>
@@ -308,6 +322,7 @@
     </scenes>
     <resources>
         <image name="brandIntelleLogo" width="600" height="157"/>
+        <image name="help" width="256" height="256"/>
         <image name="hidePassword" width="32" height="32"/>
         <image name="uncheckedBox" width="32" height="32"/>
     </resources>
