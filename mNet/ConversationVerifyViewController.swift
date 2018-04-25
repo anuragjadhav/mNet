@@ -47,8 +47,8 @@ class ConversationVerifyViewController: BaseViewController,UITextViewDelegate {
     @IBAction func verifyButtonAction(_ sender: Any) {
         
         if messageTextView.text.isEmpty || messageTextView.text == "" {
-            self.showQuickErrorAlert(message: AlertMessages.enterReplyMessage)
-            return
+            
+            messageTextView.text = "Verified"
         }
         
         self.showTransperantLoadingOnViewController()
@@ -56,7 +56,7 @@ class ConversationVerifyViewController: BaseViewController,UITextViewDelegate {
             
             DispatchQueue.main.async {
                 self.removeTransperantLoadingFromViewController()
-                self.showQuickSuccessAlert(message:"Document Verified", completion: { (_) in
+                self.showQuickSuccessAlert(message:"Verified Successfully", completion: { (_) in
                     self.navigationController?.popViewController(animated: true)
                 })
             }

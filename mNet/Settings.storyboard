@@ -369,19 +369,19 @@
                                         </connections>
                                     </switch>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Approval Reminder" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="htn-bY-bqe" customClass="CustomBrownTextColorLabel" customModule="mNet" customModuleProvider="target">
-                                        <rect key="frame" x="26" y="102.5" width="121.5" height="17"/>
+                                        <rect key="frame" x="26" y="178" width="121.5" height="17"/>
                                         <fontDescription key="fontDescription" name="SanFranciscoDisplay-Bold" family="San Francisco Display" pointSize="14"/>
                                         <color key="textColor" red="0.3803921569" green="0.28235294119999998" blue="0.22352941179999999" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Receive mail notification fro pending PO." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iGV-Xe-1vq" customClass="CustomBrownTextColorLabel" customModule="mNet" customModuleProvider="target">
-                                        <rect key="frame" x="26" y="127" width="254" height="17"/>
+                                        <rect key="frame" x="26" y="202.5" width="254" height="17"/>
                                         <fontDescription key="fontDescription" name="SanFranciscoDisplay-Light" family="San Francisco Display" pointSize="14"/>
                                         <color key="textColor" red="0.3803921569" green="0.28235294119999998" blue="0.22352941179999999" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="DcO-Oo-Zhq">
-                                        <rect key="frame" x="300" y="118" width="51" height="31"/>
+                                        <rect key="frame" x="300" y="193.5" width="51" height="31"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="49" id="Vcy-AC-Pht"/>
                                             <constraint firstAttribute="height" constant="31" id="m0C-dg-ir2"/>
@@ -391,19 +391,19 @@
                                         </connections>
                                     </switch>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Comments" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CRj-xW-Mzi" customClass="CustomBrownTextColorLabel" customModule="mNet" customModuleProvider="target">
-                                        <rect key="frame" x="26" y="166" width="69.5" height="17"/>
+                                        <rect key="frame" x="26" y="100.5" width="69.5" height="17"/>
                                         <fontDescription key="fontDescription" name="SanFranciscoDisplay-Bold" family="San Francisco Display" pointSize="14"/>
                                         <color key="textColor" red="0.3803921569" green="0.28235294119999998" blue="0.22352941179999999" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Receive mail notification when someone comments on your conversation." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zyb-6a-dmn" customClass="CustomBrownTextColorLabel" customModule="mNet" customModuleProvider="target">
-                                        <rect key="frame" x="26" y="190" width="254" height="33.5"/>
+                                        <rect key="frame" x="26" y="124.5" width="254" height="33.5"/>
                                         <fontDescription key="fontDescription" name="SanFranciscoDisplay-Light" family="San Francisco Display" pointSize="14"/>
                                         <color key="textColor" red="0.3803921569" green="0.28235294119999998" blue="0.22352941179999999" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="XXn-4Q-o4L">
-                                        <rect key="frame" x="300" y="189.5" width="51" height="31"/>
+                                        <rect key="frame" x="300" y="124" width="51" height="31"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="49" id="Hno-dk-OQU"/>
                                             <constraint firstAttribute="height" constant="31" id="V7X-Vo-zVY"/>
@@ -413,7 +413,7 @@
                                         </connections>
                                     </switch>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Remind me every" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Sps-DM-Es0" customClass="CustomBrownTextColorLabel" customModule="mNet" customModuleProvider="target">
-                                        <rect key="frame" x="26" y="245.5" width="109.5" height="17"/>
+                                        <rect key="frame" x="26" y="239.5" width="109.5" height="17"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="17" id="LG9-pD-ozF"/>
                                         </constraints>
@@ -422,7 +422,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nFt-wq-wSg" customClass="CustomBrownTextColorButton" customModule="mNet" customModuleProvider="target">
-                                        <rect key="frame" x="26" y="274.5" width="323" height="36"/>
+                                        <rect key="frame" x="26" y="268.5" width="323" height="36"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="36" id="LSD-Y1-KZN"/>
@@ -448,7 +448,7 @@
                                         </connections>
                                     </button>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="downArrow" translatesAutoresizingMaskIntoConstraints="NO" id="Gai-tI-6BW">
-                                        <rect key="frame" x="324" y="284.5" width="13" height="15"/>
+                                        <rect key="frame" x="324" y="278.5" width="13" height="15"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="15" id="6cn-2z-EAF"/>
                                             <constraint firstAttribute="width" constant="13" id="zSM-17-zgc"/>
@@ -458,6 +458,7 @@
                                 <color key="backgroundColor" red="0.96862745100000003" green="0.97254901959999995" blue="0.97647058819999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstItem="62w-q9-uoD" firstAttribute="top" secondItem="VAD-iy-X8Y" secondAttribute="top" constant="23" id="1fP-EY-fFg"/>
+                                    <constraint firstItem="Sps-DM-Es0" firstAttribute="top" secondItem="iGV-Xe-1vq" secondAttribute="bottom" constant="20" id="24S-bM-Bij"/>
                                     <constraint firstItem="XXn-4Q-o4L" firstAttribute="trailing" secondItem="53j-AR-RLw" secondAttribute="trailing" id="2EZ-4V-6B7"/>
                                     <constraint firstItem="nFt-wq-wSg" firstAttribute="trailing" secondItem="53j-AR-RLw" secondAttribute="trailing" id="526-uN-KXE"/>
                                     <constraint firstItem="iGV-Xe-1vq" firstAttribute="leading" secondItem="62w-q9-uoD" secondAttribute="leading" id="5hU-dP-yvZ"/>
@@ -470,20 +471,19 @@
                                     <constraint firstItem="zyb-6a-dmn" firstAttribute="leading" secondItem="62w-q9-uoD" secondAttribute="leading" id="LMP-Jw-RR2"/>
                                     <constraint firstItem="53j-AR-RLw" firstAttribute="leading" secondItem="Kep-5m-GxN" secondAttribute="trailing" constant="20" id="N1g-Fk-zh6"/>
                                     <constraint firstItem="53j-AR-RLw" firstAttribute="centerY" secondItem="Kep-5m-GxN" secondAttribute="centerY" constant="-2" id="Q5Y-Th-fPd"/>
-                                    <constraint firstItem="htn-bY-bqe" firstAttribute="top" secondItem="Kep-5m-GxN" secondAttribute="bottom" constant="22" id="QZH-9W-8oV"/>
                                     <constraint firstItem="zyb-6a-dmn" firstAttribute="top" secondItem="CRj-xW-Mzi" secondAttribute="bottom" constant="7" id="R6d-cA-gZv"/>
                                     <constraint firstItem="62w-q9-uoD" firstAttribute="leading" secondItem="VAD-iy-X8Y" secondAttribute="leading" constant="26" id="THV-I1-J2M"/>
                                     <constraint firstItem="Kep-5m-GxN" firstAttribute="leading" secondItem="62w-q9-uoD" secondAttribute="leading" id="U2c-Cx-VNW"/>
                                     <constraint firstAttribute="trailing" secondItem="53j-AR-RLw" secondAttribute="trailing" constant="26" id="VtL-cA-x7Y"/>
+                                    <constraint firstItem="htn-bY-bqe" firstAttribute="top" secondItem="zyb-6a-dmn" secondAttribute="bottom" constant="20" id="bcr-f3-wJn"/>
                                     <constraint firstItem="XXn-4Q-o4L" firstAttribute="leading" secondItem="zyb-6a-dmn" secondAttribute="trailing" constant="20" id="cSJ-QB-mLj"/>
                                     <constraint firstItem="htn-bY-bqe" firstAttribute="leading" secondItem="62w-q9-uoD" secondAttribute="leading" id="cUK-Yl-4w9"/>
                                     <constraint firstItem="Gai-tI-6BW" firstAttribute="centerY" secondItem="nFt-wq-wSg" secondAttribute="centerY" id="cUh-Zg-zr1"/>
-                                    <constraint firstItem="Sps-DM-Es0" firstAttribute="top" secondItem="zyb-6a-dmn" secondAttribute="bottom" constant="22" id="ecy-jV-Zpl"/>
                                     <constraint firstItem="iGV-Xe-1vq" firstAttribute="top" secondItem="htn-bY-bqe" secondAttribute="bottom" constant="7" id="fGH-SP-tv2"/>
+                                    <constraint firstItem="CRj-xW-Mzi" firstAttribute="top" secondItem="Kep-5m-GxN" secondAttribute="bottom" constant="20" id="jDs-69-TYw"/>
                                     <constraint firstItem="CRj-xW-Mzi" firstAttribute="leading" secondItem="62w-q9-uoD" secondAttribute="leading" id="l2N-sR-8Wv"/>
                                     <constraint firstItem="nFt-wq-wSg" firstAttribute="leading" secondItem="62w-q9-uoD" secondAttribute="leading" id="o6C-kd-fUW"/>
                                     <constraint firstItem="Sps-DM-Es0" firstAttribute="leading" secondItem="62w-q9-uoD" secondAttribute="leading" id="p05-u0-s2Z"/>
-                                    <constraint firstItem="CRj-xW-Mzi" firstAttribute="top" secondItem="iGV-Xe-1vq" secondAttribute="bottom" constant="22" id="rm1-9O-c9h"/>
                                     <constraint firstItem="nFt-wq-wSg" firstAttribute="top" secondItem="Sps-DM-Es0" secondAttribute="bottom" constant="12" id="yXP-Nx-vQz"/>
                                 </constraints>
                             </view>
@@ -849,12 +849,12 @@
                                                 <color key="textColor" red="0.3803921569" green="0.28235294119999998" blue="0.22352941179999999" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <textField opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" tag="18" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="Enter your email id" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="6dh-U4-5M3" customClass="CustomBrownTextColorTextfield" customModule="mNet" customModuleProvider="target">
+                                            <textField opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" tag="18" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="-" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="6dh-U4-5M3" customClass="CustomBrownTextColorTextfield" customModule="mNet" customModuleProvider="target">
                                                 <rect key="frame" x="28" y="829" width="319" height="36"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <color key="textColor" red="0.3803921569" green="0.28235294119999998" blue="0.22352941179999999" alpha="1" colorSpace="calibratedRGB"/>
                                                 <fontDescription key="fontDescription" name="SanFranciscoDisplay-Light" family="San Francisco Display" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits" keyboardType="emailAddress"/>
+                                                <textInputTraits key="textInputTraits"/>
                                                 <userDefinedRuntimeAttributes>
                                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
                                                         <real key="value" value="0.0"/>
@@ -879,12 +879,12 @@
                                                 <color key="textColor" red="0.3803921569" green="0.28235294119999998" blue="0.22352941179999999" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <textField opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" tag="19" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="Enter your email id" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="7Dm-MM-eXM" customClass="CustomBrownTextColorTextfield" customModule="mNet" customModuleProvider="target">
+                                            <textField opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" tag="19" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="-" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="7Dm-MM-eXM" customClass="CustomBrownTextColorTextfield" customModule="mNet" customModuleProvider="target">
                                                 <rect key="frame" x="28" y="904" width="319" height="36"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <color key="textColor" red="0.3803921569" green="0.28235294119999998" blue="0.22352941179999999" alpha="1" colorSpace="calibratedRGB"/>
                                                 <fontDescription key="fontDescription" name="SanFranciscoDisplay-Light" family="San Francisco Display" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits" keyboardType="emailAddress"/>
+                                                <textInputTraits key="textInputTraits"/>
                                                 <userDefinedRuntimeAttributes>
                                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
                                                         <real key="value" value="0.0"/>
@@ -909,7 +909,7 @@
                                                 <color key="textColor" red="0.3803921569" green="0.28235294119999998" blue="0.22352941179999999" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <textField opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" tag="20" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="Enter your email id" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="uUP-XN-0UK" customClass="CustomBrownTextColorTextfield" customModule="mNet" customModuleProvider="target">
+                                            <textField opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" tag="20" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="-" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="uUP-XN-0UK" customClass="CustomBrownTextColorTextfield" customModule="mNet" customModuleProvider="target">
                                                 <rect key="frame" x="28" y="979" width="319" height="36"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <color key="textColor" red="0.3803921569" green="0.28235294119999998" blue="0.22352941179999999" alpha="1" colorSpace="calibratedRGB"/>
@@ -939,7 +939,7 @@
                                                 <color key="textColor" red="0.3803921569" green="0.28235294119999998" blue="0.22352941179999999" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <textField opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" tag="21" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="Enter your email id" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="5Hs-ZO-sLz" customClass="CustomBrownTextColorTextfield" customModule="mNet" customModuleProvider="target">
+                                            <textField opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" tag="21" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="-" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="5Hs-ZO-sLz" customClass="CustomBrownTextColorTextfield" customModule="mNet" customModuleProvider="target">
                                                 <rect key="frame" x="28" y="1054" width="319" height="36"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <color key="textColor" red="0.3803921569" green="0.28235294119999998" blue="0.22352941179999999" alpha="1" colorSpace="calibratedRGB"/>

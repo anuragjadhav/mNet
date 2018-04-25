@@ -48,8 +48,8 @@ class ConversationApproveViewController: BaseViewController,UITextViewDelegate {
     @IBAction func approveButtonAction(_ sender: Any) {
         
         if messageTextView.text.isEmpty || messageTextView.text == "" {
-            self.showQuickErrorAlert(message: AlertMessages.enterReplyMessage)
-            return
+        messageTextView.text = "Approved"
+
         }
         
         self.showTransperantLoadingOnViewController()
@@ -57,7 +57,7 @@ class ConversationApproveViewController: BaseViewController,UITextViewDelegate {
             
             DispatchQueue.main.async {
                 self.removeTransperantLoadingFromViewController()
-                self.showQuickSuccessAlert(message:"Document Approved", completion: { (_) in
+                self.showQuickSuccessAlert(message:"Approved Successfully", completion: { (_) in
                     self.navigationController?.popViewController(animated: true)
                 })
             }

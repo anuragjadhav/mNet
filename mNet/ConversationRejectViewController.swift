@@ -86,7 +86,7 @@ class ConversationRejectViewController: BaseViewController,UITextViewDelegate {
             
             DispatchQueue.main.async {
                 self.removeTransperantLoadingFromViewController()
-                self.showQuickSuccessAlert(message:"Document Rejected", completion: { (_) in
+                self.showQuickSuccessAlert(message:"Rejected Successfully", completion: { (_) in
                     self.navigationController?.popViewController(animated: true)
                 })
             }
@@ -112,7 +112,7 @@ class ConversationRejectViewController: BaseViewController,UITextViewDelegate {
             
             DispatchQueue.main.async {
                 self.removeTransperantLoadingFromViewController()
-                self.showQuickSuccessAlert(message:"Document Rejected", completion: { (_) in
+                self.showQuickSuccessAlert(message:"Rejected Successfully", completion: { (_) in
                     self.navigationController?.popViewController(animated: true)
                 })
             }
