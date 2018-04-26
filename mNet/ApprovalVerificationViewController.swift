@@ -145,7 +145,7 @@ class ApprovalVerificationViewController: BaseViewController,UISearchBarDelegate
         }
         reloadData()
     }
-    
+        
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         searchTextEntered = searchBar.text
         self.view.endEditing(true)

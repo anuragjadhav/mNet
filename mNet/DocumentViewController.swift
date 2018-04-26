@@ -17,9 +17,11 @@ class DocumentViewController: BaseViewController {
     @IBOutlet weak var approveButtonTop: NSLayoutConstraint!
     @IBOutlet weak var approveButtonHeight: NSLayoutConstraint!
     
-    
+    @IBOutlet weak var tagLabel: UILabel!
+    @IBOutlet weak var tagLabelHeight: NSLayoutConstraint!
+
+    let tagHeight:CGFloat = 30
     var approvalsVC:ApprovalsViewController?
-    
     var dataController:ApprovalsDataController = ApprovalsDataController()
     var preSelectedSegment:Int = 0
     
@@ -76,6 +78,19 @@ class DocumentViewController: BaseViewController {
         let approval:Approval? = dataController.selectedApproval
         
         self.navigationItem.title = approval?.documentDetailsScreenName
+        
+        if dataController.selectedSection!.isRejected {
+            tagLabel.text = ConstantStrings.rejectedTag.uppercased()
+            tagLabelHeight.constant = tagHeight
+        }
+        else if dataController.selectedSection!.isCancelled {
+            tagLabel.text = ConstantStrings.cancelledTag.uppercased()
+            tagLabelHeight.constant = tagHeight
+        }
+        else {
+            tagLabel.text = ""
+            tagLabelHeight.constant = 0
+        }
         
         segmentedControl.removeAllSegments()
         segmentedControl.insertSegment(withTitle: approval?.documentDetailsTab1Name ?? "Details", at: 0, animated: false)

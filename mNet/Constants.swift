@@ -314,6 +314,8 @@ struct ConstantStrings {
     static let verification:String = "VERIFICATION"
     static let approvedMessage:String = "Approved"
     static let verifiedMessge:String = "Verified"
+    static let cancelledTag:String = "Cancelled"
+    static let rejectedTag:String = "Rejected"
 }
 
 extension UIStoryboard {
