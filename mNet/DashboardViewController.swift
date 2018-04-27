@@ -26,8 +26,6 @@ class DashboardViewController: BaseViewController, UITableViewDataSource, UITabl
     @IBOutlet weak var myAppsLabel: UILabel!
     @IBOutlet weak var myAppsTableView: UITableView!
     
-    @IBOutlet weak var logoutButton: UIButton!
-    
     @IBOutlet weak var noAppsLabel: CustomBrownTextColorLabel!
     
     
@@ -57,8 +55,6 @@ class DashboardViewController: BaseViewController, UITableViewDataSource, UITabl
     func setUpViewController() {
         
         myAppsTableView.tableFooterView = UIView()
-        logoutButton.imageView?.tintColor = ColorConstants.kWhiteColor
-        logoutButton.imageView?.image = logoutButton.imageView?.image?.withRenderingMode(.alwaysTemplate)
     }
     
     func setUpNavigationController()  {
@@ -180,17 +176,26 @@ class DashboardViewController: BaseViewController, UITableViewDataSource, UITabl
         
         let app:UserApp = dataController.appsList[indexPath.row]
         
-        if app.appId == "3" || app.appName == "Approvals" {
-            goToApprovalsScreen(preSelectedIndex:0)
+        if(app.allowInMobile == "0")
+        {
+            let alertController:UIAlertController = UIAlertController(title: "Coming Soon", message: "This app is coming soon for mobile.", preferredStyle: .alert)
+            alertController.addAction(UIAlertAction(title: AlertMessages.ok, style: .cancel, handler: nil))
+            present(alertController, animated: true, completion: nil)
         }
-        
-        else {
-            
-            self.tabBarController?.tabBar.isHidden = true
-            
-            let webViewController:WebViewController = UIStoryboard.webView.instantiateViewController(withIdentifier: StoryboardIDs.webViewController) as! WebViewController
-            webViewController.setData(url: app.appURL, header: app.appName)
-            navigationController?.pushViewController(webViewController, animated: true)
+        else
+        {
+            if app.appId == "3" || app.appName == "Approvals" {
+                goToApprovalsScreen(preSelectedIndex:0)
+            }
+                
+            else {
+                
+                self.tabBarController?.tabBar.isHidden = true
+                
+                let webViewController:WebViewController = UIStoryboard.webView.instantiateViewController(withIdentifier: StoryboardIDs.webViewController) as! WebViewController
+                webViewController.setData(url: app.appURL, header: app.appName)
+                navigationController?.pushViewController(webViewController, animated: true)
+            }
         }
     }
     
