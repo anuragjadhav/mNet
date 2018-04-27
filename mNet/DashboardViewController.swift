@@ -176,26 +176,17 @@ class DashboardViewController: BaseViewController, UITableViewDataSource, UITabl
         
         let app:UserApp = dataController.appsList[indexPath.row]
         
-        if(app.allowInMobile == "0")
-        {
-            let alertController:UIAlertController = UIAlertController(title: "Coming Soon", message: "This app is coming soon for mobile.", preferredStyle: .alert)
-            alertController.addAction(UIAlertAction(title: AlertMessages.ok, style: .cancel, handler: nil))
-            present(alertController, animated: true, completion: nil)
+        if app.appId == "3" || app.appName == "Approvals" {
+            goToApprovalsScreen(preSelectedIndex:0)
         }
-        else
-        {
-            if app.appId == "3" || app.appName == "Approvals" {
-                goToApprovalsScreen(preSelectedIndex:0)
-            }
-                
-            else {
-                
-                self.tabBarController?.tabBar.isHidden = true
-                
-                let webViewController:WebViewController = UIStoryboard.webView.instantiateViewController(withIdentifier: StoryboardIDs.webViewController) as! WebViewController
-                webViewController.setData(url: app.appURL, header: app.appName)
-                navigationController?.pushViewController(webViewController, animated: true)
-            }
+        
+        else {
+            
+            self.tabBarController?.tabBar.isHidden = true
+            
+            let webViewController:WebViewController = UIStoryboard.webView.instantiateViewController(withIdentifier: StoryboardIDs.webViewController) as! WebViewController
+            webViewController.setData(url: app.appURL, header: app.appName)
+            navigationController?.pushViewController(webViewController, animated: true)
         }
     }
     
