@@ -23,6 +23,8 @@ class ApprovalSection: NSObject {
     var tabCount:Int = 0
     var postKey:String = ""
     var approvalStatus:ApprovalStatus = .approve
+    var isRejected:Bool = false
+    var isCancelled:Bool = false
     
     static var allSections:[ApprovalSection] {
     
@@ -55,12 +57,14 @@ class ApprovalSection: NSObject {
         cancelled.name = "Cancelled"
         cancelled.postKey = "cancelled_post"
         cancelled.approvalStatus = .none
+        cancelled.isCancelled = true
         
         let rejected:ApprovalSection = ApprovalSection()
         rejected.index = 5
         rejected.name = "Rejected"
         rejected.postKey = "rejected_post"
         rejected.approvalStatus = .none
+        rejected.isRejected = true
         
         return [pendingApprovals, pendingVerifications, completedApprovals, completedVerifications, cancelled, rejected]
     }

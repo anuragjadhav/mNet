@@ -8,8 +8,9 @@
 
 import UIKit
 import GoogleSignIn
+import MessageUI
 
-class LoginViewController: BaseViewController, UITextFieldDelegate {
+class LoginViewController: BaseViewController, UITextFieldDelegate, MFMailComposeViewControllerDelegate {
 
     //MARK: Outlets and Properties
     @IBOutlet weak var logoImageView: UIImageView!
@@ -40,6 +41,8 @@ class LoginViewController: BaseViewController, UITextFieldDelegate {
     @IBOutlet weak var rememberMeButton: UIButton!
 
     @IBOutlet weak var rememberMeLabel: CustomBlueTextColorLabel!
+    
+    @IBOutlet weak var helpButton: UIButton!
     
     var dataController:LoginDataController = LoginDataController()
     
@@ -366,5 +369,26 @@ class LoginViewController: BaseViewController, UITextFieldDelegate {
         }
     }
     
-   
+    //MARK: Help Mail
+    
+    @IBAction func helpButtonAction(_ sender: UIButton) {
+        openMailController()
+    }
+    
+    func openMailController() {
+        
+        if MFMailComposeViewController.canSendMail() {
+            let mailController:MFMailComposeViewController = MFMailComposeViewController()
+            mailController.mailComposeDelegate = self
+            mailController.setToRecipients([EmailIDs.helpEmailId])
+            self.present(mailController, animated: true, completion: nil)
+        }
+        else {
+            self.showQuickErrorAlert(message: AlertMessages.cannotOpenEmail)
+        }
+    }
+    
+    func mailComposeController(_ controller: MFMailComposeViewController, didFinishWith result: MFMailComposeResult, error: Error?) {
+        controller.dismiss(animated: true, completion: nil)
+    }
 }

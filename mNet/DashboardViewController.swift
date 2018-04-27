@@ -25,9 +25,7 @@ class DashboardViewController: BaseViewController, UITableViewDataSource, UITabl
     
     @IBOutlet weak var myAppsLabel: UILabel!
     @IBOutlet weak var myAppsTableView: UITableView!
-    
-    @IBOutlet weak var logoutButton: UIButton!
-    
+        
     @IBOutlet weak var noAppsLabel: CustomBrownTextColorLabel!
     
     
@@ -57,8 +55,6 @@ class DashboardViewController: BaseViewController, UITableViewDataSource, UITabl
     func setUpViewController() {
         
         myAppsTableView.tableFooterView = UIView()
-        logoutButton.imageView?.tintColor = ColorConstants.kWhiteColor
-        logoutButton.imageView?.image = logoutButton.imageView?.image?.withRenderingMode(.alwaysTemplate)
     }
     
     func setUpNavigationController()  {

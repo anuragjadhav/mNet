@@ -17,6 +17,8 @@ class DocumentDetailsViewController: BaseViewController,UITableViewDelegate,UITa
     @IBOutlet weak var documentNoTitleLabel: CustomBrownTextColorLabel!
     @IBOutlet weak var documentNoLabel: CustomBrownTextColorLabel!
     
+    @IBOutlet weak var vendorLabel: CustomBrownTextColorLabel!
+    
     @IBOutlet weak var mediumTitleLabel: CustomBrownTextColorLabel!
     @IBOutlet weak var meduimLabel: CustomBrownTextColorLabel!
     
@@ -26,18 +28,15 @@ class DocumentDetailsViewController: BaseViewController,UITableViewDelegate,UITa
     @IBOutlet weak var documentDateTitleLabel: CustomBrownTextColorLabel!
     @IBOutlet weak var documentDateLabel: CustomBrownTextColorLabel!
     
-    @IBOutlet weak var brandTitleLabel: CustomBrownTextColorLabel!
-    @IBOutlet weak var brandNameLabel: CustomBrownTextColorLabel!
+    @IBOutlet weak var descriptionLabel: CustomBrownTextColorLabel!
     
-    @IBOutlet weak var vendorBrandTitleLabel: CustomBrownTextColorLabel!
-    @IBOutlet weak var vendorBrandNameLabel: CustomBrownTextColorLabel!
-    
-    @IBOutlet weak var expenseTypeLabel: CustomBrownTextColorLabel!
     @IBOutlet weak var remarksLabel: CustomBrownTextColorLabel!
+   
+    @IBOutlet weak var costCentreLabel: CustomBrownTextColorLabel!
+        
     @IBOutlet weak var peopleListTableView: FullLengthTableView!
     
     @IBOutlet weak var peopleContainerScrollView: UIScrollView!
-    
     
     var dataController:ApprovalsDataController = ApprovalsDataController()
     
@@ -112,11 +111,15 @@ class DocumentDetailsViewController: BaseViewController,UITableViewDelegate,UITa
         }
         
         if let vendor:DynamicData = approval?.vendor {
-            vendorBrandNameLabel.text = vendor.value
+            vendorLabel.text = vendor.value
         }
         else {
-            vendorBrandNameLabel.text = "-"
+            vendorLabel.text = "-"
         }
+        
+        descriptionLabel.text = approval?.documentDescription
+        remarksLabel.text = approval?.remarks
+        costCentreLabel.text = approval?.costCentre
         
         peopleListTableView.reloadData()
         self.view.layoutIfNeeded()

@@ -68,6 +68,9 @@ struct URLS {
     static let rejectPost:URL = URL(string: "rejectRepliesToPost", relativeTo: baseURL)!
 }
 
+struct EmailIDs {
+    static let helpEmailId:String = "bradintelle@mediawareonline.com"
+}
 
 struct LoginTypeCode {
     
@@ -141,6 +144,10 @@ struct AlertMessages {
     static let connectToInternet:String = "Please connect to the Internet to continue"
     static let enterReplyMessage:String = "Please enter a reply message"
     static let selectAtleastOneUSer:String = "Please select a user"
+    static let cannotOpenEmail:String = "Your device could not send E-mail. Please check E-mail configuration and try again."
+    static let approvalSuccess:String = "Approved Successfully"
+    static let verificationSuccess:String = "Successfully sent to Next User"
+    static let rejectedSuccess:String = "Rejected Successfully"
 }
 
 struct ColorConstants {
@@ -305,6 +312,10 @@ struct ConstantStrings {
     static let sendFor:String = "SEND FOR"
     static let approval:String = "APPROVAL"
     static let verification:String = "VERIFICATION"
+    static let approvedMessage:String = "Approved"
+    static let verifiedMessge:String = "Verified"
+    static let cancelledTag:String = "Cancelled"
+    static let rejectedTag:String = "Rejected"
 }
 
 extension UIStoryboard {
