@@ -40,7 +40,13 @@ class AboutMeDataController: NSObject {
 
         if(editedDob != nil)
         {
-            postParams["user_dob"] = editedDob
+            let dateFormatter : DateFormatter = DateFormatter()
+            dateFormatter.dateFormat = "dd-MM-yyyy"
+            
+            guard let selectedDate:Date = dateFormatter.date(from: (editedDob)!)
+                else {return}
+            dateFormatter.dateFormat = "yyyy-MM-dd"
+            postParams["user_dob"] = dateFormatter.string(from: selectedDate)
         }
         else
         {

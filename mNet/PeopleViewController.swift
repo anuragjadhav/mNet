@@ -93,7 +93,7 @@ class PeopleViewController: BaseViewController,UITableViewDataSource,UITableView
                 self.showLoadingOnViewController()
             }
             
-            dataCtrl.getPeopleList(onSuccess: { [unowned self] in
+            dataCtrl.getPeopleList(isReload:isReload ,onSuccess: { [unowned self] in
                 
                 DispatchQueue.main.async {
                     

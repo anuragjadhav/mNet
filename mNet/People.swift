@@ -21,10 +21,6 @@ class People: NSObject,Mappable {
     var iblocked :String?
     var meblocked :String?
     var email:String?
-    var isSelectedForBcc:Bool = false
-    var isSelectedForTo:Bool = false
-    var isSelectedForVerification:Bool = false
-    var isSelectedForApproval:Bool = false
 
     required init?(map: Map) {
         

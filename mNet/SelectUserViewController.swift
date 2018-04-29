@@ -36,6 +36,10 @@ class SelectUserViewController: BaseViewController,UITableViewDelegate,UITableVi
         selectUserTableView.tableFooterView = UIView()
         searchBar.text = ""
 
+        getSelectUserList(isReload: true,isLoadMore: false, searchText: searchBar.text!)
+
+        dataCtrl?.selectedUserType = userType
+
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -43,18 +47,8 @@ class SelectUserViewController: BaseViewController,UITableViewDelegate,UITableVi
         
         self.setUpNavigationController()
         
-        dataCtrl?.selectedUserType = userType
-        
-        if(dataCtrl?.selectUserList?.count == 0)
-        {
-            getSelectUserList(isReload: true,isLoadMore: false, searchText: searchBar.text!)
-        }
-        else
-        {
-            dataCtrl?.filterSelectUsersListBasedOnSelectedUserType()
-            selectUserTableView.reloadData()
-            selectUserCollectionView.reloadData()
-        }
+        selectUserTableView.reloadData()
+        selectUserCollectionView.reloadData()
     }
     
     //MARK: Setup
@@ -76,22 +70,7 @@ class SelectUserViewController: BaseViewController,UITableViewDelegate,UITableVi
         
         let user:People = (dataCtrl?.selectUserList![indexPath.row])!
         
-        if(userType == NewConversationUserType.bcc)
-        {
-            cell.loadCellWith(user: user, isSelected: user.isSelectedForBcc)
-        }
-        else if(userType == NewConversationUserType.to)
-        {
-            cell.loadCellWith(user: user, isSelected: user.isSelectedForTo)
-        }
-        else if(userType == NewConversationUserType.forVerification)
-        {
-            cell.loadCellWith(user: user, isSelected: user.isSelectedForVerification)
-        }
-        else if(userType == NewConversationUserType.forApproval)
-        {
-            cell.loadCellWith(user: user, isSelected: user.isSelectedForApproval)
-        }
+       cell.loadCellWith(user: user, isSelected: (dataCtrl?.doesUserContainInSelectedList(selectedType:userType!, user: user))!)
         
         return cell
     }
@@ -101,19 +80,19 @@ class SelectUserViewController: BaseViewController,UITableViewDelegate,UITableVi
         
         if(userType == NewConversationUserType.bcc)
         {
-            return (dataCtrl?.getBccSelectedUsersCount())!
+            return (dataCtrl?.bccUserList?.count)!
         }
         else if(userType == NewConversationUserType.to)
         {
-            return (dataCtrl?.getToSelectedUsersCount())!
+           return (dataCtrl?.toUserList?.count)!
         }
         else if(userType == NewConversationUserType.forVerification)
         {
-            return (dataCtrl?.getVerificationSelectedUsersCount())!
+            return (dataCtrl?.forVerificationUserList?.count)!
         }
         else if(userType == NewConversationUserType.forApproval)
         {
-            return  (dataCtrl?.getApprovalSelectedUsersCount())!
+           return (dataCtrl?.forApprovalUserList?.count)!
         }
         
         return 0
@@ -246,31 +225,19 @@ class SelectUserViewController: BaseViewController,UITableViewDelegate,UITableVi
         let indexPath:IndexPath = self.selectUserTableView.indexPathForRow(at: buttonPoint)!
         
         let user:People = (dataCtrl?.selectUserList![indexPath.row])!
-        let cell:SelectUserTableViewCell = selectUserTableView.cellForRow(at: indexPath) as! SelectUserTableViewCell
-        
-        if(userType == NewConversationUserType.bcc)
+
+        if((dataCtrl?.doesUserContainInSelectedList(selectedType: userType!, user: user))!)
         {
-            user.isSelectedForBcc =  user.isSelectedForBcc ? false : true
-            cell.loadCellWith(user: user, isSelected: user.isSelectedForBcc)
+            dataCtrl?.removeUserFromSelectedList(selectedType:userType!, user: user)
         }
-        else if(userType == NewConversationUserType.to)
+        else
         {
-            user.isSelectedForTo =  user.isSelectedForTo ? false : true
-            cell.loadCellWith(user: user, isSelected: user.isSelectedForTo)
-        }
-        else if(userType == NewConversationUserType.forVerification)
-        {
-            user.isSelectedForVerification =  user.isSelectedForVerification ? false : true
-            cell.loadCellWith(user: user, isSelected: user.isSelectedForVerification)
-        }
-        else if(userType == NewConversationUserType.forApproval)
-        {
-            user.isSelectedForApproval =  user.isSelectedForApproval ? false : true
-            cell.loadCellWith(user: user, isSelected: user.isSelectedForApproval)
+            dataCtrl?.insertUserInSelectedList(selectedType: userType!, user: user)
         }
         
         // reload collection view to show selected user selection
         selectUserCollectionView.reloadData()
+        selectUserTableView.reloadData()
     }
     
     @IBAction func deleteSelectedUserButtonAction(_ sender: UIButton) {
@@ -278,27 +245,9 @@ class SelectUserViewController: BaseViewController,UITableViewDelegate,UITableVi
         let buttonPoint:CGPoint = sender.convert(CGPoint.zero, to: self.selectUserCollectionView)
         let indexPath:IndexPath = self.selectUserCollectionView.indexPathForItem(at: buttonPoint)!
         
-        if(userType == NewConversationUserType.bcc)
-        {
-            let user:People = (dataCtrl?.bccUserList![indexPath.row])!
-            user.isSelectedForBcc = false
-        }
-        else if(userType == NewConversationUserType.to)
-        {
-            let user:People = (dataCtrl?.toUserList![indexPath.row])!
-            user.isSelectedForTo =  false
-        }
-        else if(userType == NewConversationUserType.forVerification)
-        {
-            let user:People = (dataCtrl?.forVerificationUserList![indexPath.row])!
-            user.isSelectedForVerification =  false
-        }
-        else if(userType == NewConversationUserType.forApproval)
-        {
-            let user:People = (dataCtrl?.forApprovalUserList![indexPath.row])!
-            user.isSelectedForApproval =  false
-        }
-        
+        let user:People = (dataCtrl?.selectUserList![indexPath.row])!
+
+        dataCtrl?.removeUserFromSelectedList(selectedType:userType!, user: user)
         selectUserCollectionView.reloadData()
         selectUserTableView.reloadData()
         

@@ -126,7 +126,7 @@ class SettingsViewController: BaseViewController,UITableViewDelegate,UITableView
             
         case SettingOptions.logout:
             
-            let alert = UIAlertController(title:"Are you sure you want to logout?", message:nil, preferredStyle: .actionSheet)
+            let alert = UIAlertController(title:"Are you sure you want to logout?", message:nil, preferredStyle: .alert)
             alert.addAction(UIAlertAction(title:"Cancel", style:.cancel, handler: { _ in
             }))
             alert.addAction(UIAlertAction(title:"Log Out", style:.destructive, handler: { _ in

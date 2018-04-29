@@ -68,6 +68,7 @@ class AboutMeViewController: BaseViewController,UITextFieldDelegate,CustomPicker
             self.customerPickerView = UINib(nibName: "CustomPickerView", bundle: nil).instantiate(withOwner: nil, options: nil)[0] as? CustomPickerView
             self.customerPickerView?.frame = CGRect(x: 0, y: self.view.frame.height, width: self.view.frame.size.width, height: (self.customerPickerView?.frame.size.height)!)
             self.view.addSubview(self.customerPickerView!)
+            self.customerPickerView?.datePickerView.maximumDate = Date()
         }
     }
     
@@ -106,8 +107,6 @@ class AboutMeViewController: BaseViewController,UITextFieldDelegate,CustomPicker
             
         if(dataCtrl.profile?.dob != nil && dataCtrl.profile?.dob != ""){
             
-            birthdayButton.setTitle(dataCtrl.profile?.dob, for: .normal)
-            
             //set selected date in picker view
             let dateFormatter : DateFormatter = DateFormatter()
             dateFormatter.dateFormat = "yyyy-MM-dd"
@@ -115,9 +114,14 @@ class AboutMeViewController: BaseViewController,UITextFieldDelegate,CustomPicker
             guard let selectedDate:Date = dateFormatter.date(from: (dataCtrl.profile?.dob)!)
                 else {return}
             
+            dateFormatter.dateFormat = "dd-MM-yyyy"
+            
+            dataCtrl.editedDob = dateFormatter.string(from:selectedDate)
+            
             customerPickerView?.datePickerView.setDate(selectedDate, animated: true)
             
-            dataCtrl.editedDob = dataCtrl.profile?.dob
+            birthdayButton.setTitle(dataCtrl.editedDob, for: .normal)
+
         }
         else{
             birthdayButton.setTitle("----/--/--", for: .normal)
@@ -294,7 +298,7 @@ class AboutMeViewController: BaseViewController,UITextFieldDelegate,CustomPicker
     func selectedDateOnPickerView(date: Date) {
         
         let dateFormatter : DateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "yyyy-MM-dd"
+        dateFormatter.dateFormat = "dd-MM-yyyy"
         
         let selectedDateInString = dateFormatter.string(from: date)
         

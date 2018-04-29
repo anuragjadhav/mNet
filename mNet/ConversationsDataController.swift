@@ -48,7 +48,6 @@ class ConversationsDataController: NSObject {
     var forApprovalUserList:[People]? = []
     var forVerificationUserList:[People]? = []
     var selectUserList:[People]? = []
-    var originalSelectUserList:[People]? = []
     var selectUserPageStart:Int = 0
     var selectUserPageLength:Int = 20
     var selectedFilenameInNewConversation:String?
@@ -223,9 +222,6 @@ class ConversationsDataController: NSObject {
                 self.selectUserList = self.removeExistingAddedUsersFromList(array1: self.selectUserList!, array2: (self.selectedCoversation?.membersList)!)
             }
             
-            
-            self.originalSelectUserList = self.selectUserList
-            
             self.filterSelectUsersListBasedOnSelectedUserType()
             
             self.previousSelectUserCallSuccessOrFailed = true
@@ -265,15 +261,8 @@ class ConversationsDataController: NSObject {
         return newFilteredArray!
     }
     
-    
-    func setupSelectedUsersArray()
-    {
-       bccUserList = originalSelectUserList!.filter { $0.isSelectedForBcc == true}
-       toUserList = originalSelectUserList!.filter { $0.isSelectedForTo == true}
-       forVerificationUserList = originalSelectUserList!.filter { $0.isSelectedForVerification == true}
-       forApprovalUserList = originalSelectUserList!.filter { $0.isSelectedForApproval == true}
-    }
-    
+
+
     func filterSelectUsersListBasedOnSelectedUserType()
     {
         var otherSelectedArray:[People]? = []
@@ -349,7 +338,7 @@ class ConversationsDataController: NSObject {
         
         var newFilteredArray:[People]? = []
         
-        for user1:People in originalSelectUserList!
+        for user1:People in selectUserList!
         {
             var doesContain:Bool? = false
             
@@ -370,6 +359,116 @@ class ConversationsDataController: NSObject {
         selectUserList = newFilteredArray
     }
     
+    func doesUserContainInSelectedList(selectedType:String,user:People) -> Bool
+    {
+        var checkArray:[People]?
+        
+        if(selectedType == NewConversationUserType.bcc)
+        {
+            checkArray = bccUserList!
+        }
+        else if(selectedType == NewConversationUserType.to)
+        {
+            checkArray = toUserList!
+        }
+        else if(selectedType == NewConversationUserType.forVerification)
+        {
+            checkArray = forVerificationUserList!
+
+        }
+        else if(selectedType == NewConversationUserType.forApproval)
+        {
+            checkArray = forApprovalUserList!
+        }
+        
+        let filteredArray = checkArray?.filter{$0.userId == user.userId}
+        
+        return filteredArray?.count == 0 ? false : true
+    }
+    
+    func insertUserInSelectedList(selectedType:String,user:People)
+    {
+        if(selectedType == NewConversationUserType.bcc)
+        {
+            bccUserList?.append(user)
+        }
+        else if(selectedType == NewConversationUserType.to)
+        {
+            toUserList?.append(user)
+        }
+        else if(selectedType == NewConversationUserType.forVerification)
+        {
+            forVerificationUserList?.append(user)
+
+        }
+        else if(selectedType == NewConversationUserType.forApproval)
+        {
+            forApprovalUserList?.append(user)
+        }
+    }
+    
+    func removeUserFromSelectedList(selectedType:String,user:People)
+    {
+        if(selectedType == NewConversationUserType.bcc)
+        {
+            var i:Int = 0
+            
+            for people in bccUserList!
+            {
+                if(people.userId == user.userId)
+                {
+                    bccUserList!.remove(at: i)
+                    break
+                }
+                i = i + 1
+            }
+        }
+        else if(selectedType == NewConversationUserType.to)
+        {
+            var i:Int = 0
+            
+            for people in toUserList!
+            {
+                if(people.userId == user.userId)
+                {
+                    toUserList!.remove(at: i)
+                    break
+                }
+                i = i + 1
+            }
+        }
+        else if(selectedType == NewConversationUserType.forVerification)
+        {
+            var i:Int = 0
+            
+            for people in forVerificationUserList!
+            {
+                if(people.userId == user.userId)
+                {
+                    forVerificationUserList!.remove(at: i)
+                    break
+                }
+                i = i + 1
+            }
+            
+        }
+        else if(selectedType == NewConversationUserType.forApproval)
+        {
+            var i:Int = 0
+            
+            for people in forApprovalUserList!
+            {
+                if(people.userId == user.userId)
+                {
+                    forApprovalUserList!.remove(at: i)
+                    break
+                }
+                i = i + 1
+            }
+        }
+        
+    }
+    
     
     func refreshPreviouslySelectedData()
     {
@@ -384,29 +483,6 @@ class ConversationsDataController: NSObject {
         newConversationMessage = nil
     }
     
-    func getBccSelectedUsersCount() -> Int
-    {
-        setupSelectedUsersArray()
-        return (bccUserList?.count)!
-    }
-    
-    func getToSelectedUsersCount() -> Int
-    {
-        setupSelectedUsersArray()
-        return (toUserList?.count)!
-    }
-    
-    func getVerificationSelectedUsersCount() -> Int
-    {
-        setupSelectedUsersArray()
-        return (forVerificationUserList?.count)!
-    }
-    
-    func getApprovalSelectedUsersCount() -> Int
-    {
-        setupSelectedUsersArray()
-        return (forApprovalUserList?.count)!
-    }
     
     func createNewConversation(onSuccess:@escaping () -> Void , onFailure : @escaping (String) -> Void) {
         

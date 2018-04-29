@@ -28,14 +28,17 @@ class BlockedUsersViewController: BaseViewController,UITableViewDataSource,UITab
         peopleTableView.tableFooterView = UIView()
         
         dataCtrl.showOnlyBlockedUsers = true
+        
     }
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated);
         
         self.setupNavigationBar()
-        
         getPeopleList(isReload: true)
+        searchBar.text = ""
+        peopleTableView.reloadData()
+        
     }
     
     func setupNavigationBar(){
@@ -95,7 +98,7 @@ class BlockedUsersViewController: BaseViewController,UITableViewDataSource,UITab
                 self.showLoadingOnViewController()
             }
             
-            dataCtrl.getPeopleList(onSuccess: { [unowned self] in
+            dataCtrl.getPeopleList(isReload:isReload,onSuccess: { [unowned self] in
                 
                 DispatchQueue.main.async {
                     
