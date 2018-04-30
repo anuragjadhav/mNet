@@ -779,10 +779,10 @@ class ConversationsDataController: NSObject {
             }
         }
         
-        postParams["addusers"] = toEmailArray?.joined(separator: ",")
-        postParams["addusersasbcc"] = bccEmailArray?.joined(separator: ",")
-        postParams["addusersasagree"] = verificationEmailArray?.joined(separator: ",")
-        postParams["addusersasapprove"] = approvalEmailArray?.joined(separator: ",")
+        postParams["addusers"] = toEmailArray?.joined(separator: ";")
+        postParams["addusersasbcc"] = bccEmailArray?.joined(separator: ";")
+        postParams["addusersasagree"] = verificationEmailArray?.joined(separator: ";")
+        postParams["addusersasapprove"] = approvalEmailArray?.joined(separator: ";")
         
         WrapperManager.shared.conversationWrapper.addUsersToConversation(postParams: postParams, onSuccess: {
             
