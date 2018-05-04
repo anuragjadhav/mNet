@@ -12,12 +12,12 @@ class PeopleDataController: NSObject {
     
     private var originalPeopleListArray:[People] = []
     var peopleArray:[People] = []
-    let limit:Int = 100
+    let limit:Int = 50
     var start:Int = 0
     var previousCallSuccessOrFailed:Bool = false
     var showOnlyBlockedUsers:Bool = false
 
-    func getPeopleList(onSuccess:@escaping () -> Void , onFailure : @escaping (String) -> Void) {
+    func getPeopleList(isReload:Bool,onSuccess:@escaping () -> Void , onFailure : @escaping (String) -> Void) {
         
         previousCallSuccessOrFailed = false
         
@@ -30,22 +30,30 @@ class PeopleDataController: NSObject {
 
         WrapperManager.shared.peopleWrapper.getPeopleList(postParams: postParams, onSuccess: { [unowned self] (peopleArray) in
             
-            var filteredBlockedPeopleArray:[People] = []
-            
             if(self.showOnlyBlockedUsers)
             {
-                filteredBlockedPeopleArray = peopleArray.filter { $0.blockStatus == "Block" }
+               let filteredBlockedPeopleArray = peopleArray.filter { $0.blockStatus == "Block" }
+                
+                if(isReload){
+                    
+                    self.originalPeopleListArray = filteredBlockedPeopleArray
+                }
+                else
+                {
+                    for people in filteredBlockedPeopleArray
+                    {
+                        self.originalPeopleListArray.append(people)
+                    }
+                }
             }
             else
             {
-                filteredBlockedPeopleArray = peopleArray
+                for people in peopleArray
+                {
+                    self.originalPeopleListArray.append(people)
+                }
             }
-            
-            for people in filteredBlockedPeopleArray
-            {
-                self.originalPeopleListArray.append(people)
-            }
-            
+    
             self.peopleArray = self.originalPeopleListArray
             
             //change start
@@ -58,6 +66,7 @@ class PeopleDataController: NSObject {
             onFailure(errorMessage)
         }
     }
+    
     
     func filterPeopleWithSearchTerm(searchTerm:String?)
     {

@@ -56,8 +56,8 @@ struct URLS {
     static let blockUnblock:URL = URL(string: "userBlock", relativeTo: baseURL)!
     static let identifyUser:URL = URL(string: "indentifyUser", relativeTo: publicBaseURL)!
     static let loginAuthenticate:URL = URL(string: "public_authenticate", relativeTo: publicBaseURL)!
-    static let registerDevice:URL = URL(string: "registerToken", relativeTo: publicBaseURL)!
-    static let deRegisterDevice:URL = URL(string: "deregisterToken", relativeTo: publicBaseURL)!
+    static let registerDevice:URL = URL(string: "registerToken", relativeTo: baseURL)!
+    static let deRegisterDevice:URL = URL(string: "deregisterToken", relativeTo: baseURL)!
     static let getUserDetails:URL = URL(string: "GetUserDetails", relativeTo: baseURL)!
     static let getDashboardStatistics:URL = URL(string: "GetDashBoardStatistics", relativeTo: baseURL)!
     static let getUserAppsList:URL = URL(string: "getUserAppList", relativeTo: baseURL)!
@@ -405,5 +405,26 @@ extension URLRequest
 
 enum ResultError: Error {
     case InvalidFormat
+}
+
+extension String
+{
+    func getDisplayFromtDateFromDateString() -> String?
+    {
+        let dateFormatter = DateFormatter.init()
+        dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
+        
+        guard  let date = dateFormatter.date(from: self) else
+       {
+            return ""
+       }
+       
+       dateFormatter.dateFormat = "dd-MM-yy HH:mm:ss"
+
+       let requiredDateString = dateFormatter.string(from: date)
+        
+       return requiredDateString
+        
+    }
 }
 
