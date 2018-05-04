@@ -131,14 +131,24 @@ class LoginWrapper: NSObject {
             
             if let responseDict:[String:Any] = response.result.value as? [String:Any] {
                 
-                let error:String = responseDict[DictionaryKeys.APIResponse.error] as! String
+                let error = responseDict[DictionaryKeys.APIResponse.error]
                 
-                if error == DictionaryKeys.APIResponse.noError {
-                    
-                    onSuccess()
-                    return
+                if (error is Int)
+                {
+                    if (error as! Int == DictionaryKeys.APIResponse.noErrorInt) {
+                        
+                        onSuccess()
+                        return
+                    }
                 }
-                
+                else if (error  is String)
+                {
+                    if (error as! String == DictionaryKeys.APIResponse.noError) {
+                        
+                        onSuccess()
+                        return
+                    }
+                }
                 else {
                     onFailure()
                     return

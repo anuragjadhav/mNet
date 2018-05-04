@@ -19,7 +19,7 @@ struct MenuOptions {
     static let approve:String = "Approve"
     static let reject:String = "Reject"
     static let verify:String = "Verify"
-    static let forwardToUsers:String = "Forward To Users"
+    static let addUsers:String = "Add Users"
     static let goToapprovalDetails:String = "Approval Details"
 }
 
@@ -878,10 +878,10 @@ class ConversationsDataController: NSObject {
         hideIgnorePopOverObject.image = UIImage(named: "hideIcon")
         popOverObjectArray.append(hideIgnorePopOverObject)
         
-        let forwardToUsersPopOverObject:PopoverObject = PopoverObject()
-        forwardToUsersPopOverObject.title = MenuOptions.forwardToUsers
-        forwardToUsersPopOverObject.image = UIImage(named: "forward")
-        popOverObjectArray.append(forwardToUsersPopOverObject)
+//        let forwardToUsersPopOverObject:PopoverObject = PopoverObject()
+//        forwardToUsersPopOverObject.title = MenuOptions.addUsers
+//        forwardToUsersPopOverObject.image = UIImage(named: "forward")
+//        popOverObjectArray.append(forwardToUsersPopOverObject)
 
         switch conversationStatus {
             

@@ -22,7 +22,7 @@ class PeopleListTableViewCell: UITableViewCell {
         }
         nameLabel.text = history!.userName
         roleLabel.text = history!.approvalUserRole
-        dateLabel.text = history!.createdOn.components(separatedBy: " ").first ?? history!.createdOn
+        dateLabel.text = history!.createdOn.getDisplayFromtDateFromDateString()?.components(separatedBy: " ").first ?? history!.createdOn
         statusImageView.image = history!.statusImage
     }
 }

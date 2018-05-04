@@ -52,7 +52,7 @@ class ConversationInfoViewController: BaseViewController,UITableViewDelegate,UIT
             user2Label.text = member2.userName
         }
         
-        dateAndTimeLabel.text = dataCtrl?.selectedCoversation?.createdOn
+        dateAndTimeLabel.text = dataCtrl?.selectedCoversation?.createdOn.getDisplayFromtDateFromDateString()
 
     }
     

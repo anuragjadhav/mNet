@@ -397,3 +397,24 @@ enum ResultError: Error {
     case InvalidFormat
 }
 
+extension String
+{
+    func getDisplayFromtDateFromDateString() -> String?
+    {
+        let dateFormatter = DateFormatter.init()
+        dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
+        
+        guard  let date = dateFormatter.date(from: self) else
+       {
+            return ""
+       }
+       
+       dateFormatter.dateFormat = "dd-MM-yy HH:mm:ss"
+
+       let requiredDateString = dateFormatter.string(from: date)
+        
+       return requiredDateString
+        
+    }
+}
+

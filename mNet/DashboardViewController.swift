@@ -39,6 +39,9 @@ class DashboardViewController: BaseViewController, UITableViewDataSource, UITabl
 
         // Do any additional setup after loading the view.
         setUpViewController()
+        
+        getData()
+
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -48,13 +51,18 @@ class DashboardViewController: BaseViewController, UITableViewDataSource, UITabl
 
         self.setUpNavigationController()
         
-        getData()
     }
 
     //MARK:Setup
     func setUpViewController() {
         
         myAppsTableView.tableFooterView = UIView()
+        
+        let refreshControl = UIRefreshControl()
+        refreshControl.addTarget(self, action:
+            #selector(refreshTableViewData),
+                                 for: .valueChanged)
+        myAppsTableView.refreshControl = refreshControl
     }
     
     func setUpNavigationController()  {
@@ -67,21 +75,46 @@ class DashboardViewController: BaseViewController, UITableViewDataSource, UITabl
         self.navigationController?.navigationBar.isHidden = true
     }
     
-    func getData() {
+    func getData(showStransperantLoading:Bool = false) {
         
-        self.showLoadingOnViewController()
+        if showStransperantLoading
+        {
+            self.showTransperantLoadingOnViewController()
+        }
+        else
+        {
+            self.showLoadingOnViewController()
+        }
         
         dataController.getDashboardData(onSuccess: { [unowned self] in
             
             DispatchQueue.main.async {
-                self.removeLoadingFromViewController()
+                
+                if showStransperantLoading
+                {
+                    self.removeTransperantLoadingFromViewController()
+                }
+                else
+                {
+                    self.removeLoadingFromViewController()
+                }
+                
                 self.setData()
             }
             
         }) { [unowned self] (errorMessage) in
             
             DispatchQueue.main.async {
-                self.removeLoadingFromViewController()
+                
+                if showStransperantLoading
+                {
+                    self.removeTransperantLoadingFromViewController()
+                }
+                else
+                {
+                    self.removeLoadingFromViewController()
+                }
+                
                 self.showRetryView(message: errorMessage)
             }
         }
@@ -178,9 +211,12 @@ class DashboardViewController: BaseViewController, UITableViewDataSource, UITabl
         
         if(app.allowInMobile == "0")
         {
-            let alertController:UIAlertController = UIAlertController(title: "Coming Soon", message: "This app is coming soon for mobile.", preferredStyle: .alert)
-            alertController.addAction(UIAlertAction(title: AlertMessages.ok, style: .cancel, handler: nil))
-            present(alertController, animated: true, completion: nil)
+            DispatchQueue.main.async {
+                
+                let alertController:UIAlertController = UIAlertController(title: "Coming Soon", message: "This app is coming soon for mobile.", preferredStyle: .alert)
+                alertController.addAction(UIAlertAction(title: AlertMessages.ok, style: .cancel, handler: nil))
+                self.present(alertController, animated: true, completion: nil)
+            }
         }
         else
         {
@@ -270,9 +306,27 @@ class DashboardViewController: BaseViewController, UITableViewDataSource, UITabl
     }
     
     
-    @IBAction func logOutAction(_ sender: UIButton) {
+    @IBAction func refreshButtonAction(_ sender: UIButton) {
         
-        AppDelegate.sharedInstance.logout()
+        getData(showStransperantLoading: true)
+    }
+    
+    @objc func refreshTableViewData()
+    {
+        dataController.getDashboardApps(onSuccess: { [unowned self] in
+            
+            DispatchQueue.main.async {
+                self.myAppsTableView.refreshControl?.endRefreshing()
+                self.myAppsTableView.reloadData()
+            }
+            
+        }) { (errorMessage) in
+            
+            DispatchQueue.main.async {
+                self.myAppsTableView.refreshControl?.endRefreshing()
+            }
+            
+        }
     }
     
 }

@@ -119,7 +119,7 @@ class ConversationDetailViewController: BaseViewController,UITableViewDelegate,U
         //
         //        let dateTimeString:String = dateFormatterToShow.string(from: latestReplyDate) + " " + dateFormatterToShow.weekdaySymbols[safe:Calendar.current.component(.weekday, from: latestReplyDate) - 1]!
         //
-        dateTimeLabel.text = dataCtrl?.selectedCoversation?.createdOn
+        dateTimeLabel.text = dataCtrl?.selectedCoversation?.createdOn.getDisplayFromtDateFromDateString()
         
         conversationTableView.reloadData()
     }
@@ -782,7 +782,7 @@ class ConversationDetailViewController: BaseViewController,UITableViewDelegate,U
             
             break
             
-        case MenuOptions.forwardToUsers:
+        case MenuOptions.addUsers:
             
             self.addUsersToExistingConversation()
             

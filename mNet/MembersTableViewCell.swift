@@ -27,14 +27,9 @@ class MembersTableViewCell: UITableViewCell {
                 memberTypeLabel.text = "To Agree"
                 memberTypeLabel.textColor = ColorConstants.kRedColor
             }
-            else if(member.agreeStatus == "Agreed")
-            {
-                memberTypeLabel.text = "Agreed"
-                memberTypeLabel.textColor = ColorConstants.kGreenColor
-            }
             else
             {
-                memberTypeLabel.text = "Disagreed"
+                memberTypeLabel.text = member.agreeStatus
                 memberTypeLabel.textColor = ColorConstants.kGreenColor
             }
         }
@@ -45,14 +40,9 @@ class MembersTableViewCell: UITableViewCell {
                 memberTypeLabel.text = "To Approve"
                 memberTypeLabel.textColor = ColorConstants.kRedColor
             }
-            else if(member.agreeStatus == "Approved")
-            {
-                memberTypeLabel.text = "Approved"
-                memberTypeLabel.textColor = ColorConstants.kGreenColor
-            }
             else
             {
-                memberTypeLabel.text = "Rejected"
+                memberTypeLabel.text = member.agreeStatus
                 memberTypeLabel.textColor = ColorConstants.kGreenColor
             }
         }

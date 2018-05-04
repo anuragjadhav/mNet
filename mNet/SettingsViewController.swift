@@ -20,10 +20,14 @@ class SettingsViewController: BaseViewController,UITableViewDelegate,UITableView
     @IBOutlet weak var interactionsLabel: CustomBrownTextColorLabel!
     let dataCtrl = SettingsProfileDataController()
     
+    var sholadReloadData:Bool = false
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         NotificationCenter.default.addObserver(self, selector: #selector(didReceiveAnyPushNotification), name:.UIApplicationWillEnterForeground, object: nil)
+        
+        self.getUserSettings()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -33,7 +37,11 @@ class SettingsViewController: BaseViewController,UITableViewDelegate,UITableView
     
         self.setupNavigationBar()
         
-        self.getUserSettings()
+        if(sholadReloadData)
+        {
+            sholadReloadData = false
+            self.getUserSettings()
+        }
     }
 
     func setupNavigationBar(){
@@ -79,6 +87,8 @@ class SettingsViewController: BaseViewController,UITableViewDelegate,UITableView
             
         case SettingOptions.aboutMe:
             
+            sholadReloadData = true
+
             let aboutMeVC = UIStoryboard.settings.instantiateViewController(withIdentifier: StoryboardIDs.aboutMeViewController) as! AboutMeViewController
             aboutMeVC.dataCtrl.profile = self.dataCtrl.profile
             self.navigationController?.pushViewController(aboutMeVC, animated: true)
@@ -94,6 +104,8 @@ class SettingsViewController: BaseViewController,UITableViewDelegate,UITableView
             
         case SettingOptions.privacySettings:
             
+            sholadReloadData = true
+            
             let privacySettingsVC = UIStoryboard.settings.instantiateViewController(withIdentifier: StoryboardIDs.privacySetingsViewController) as! PrivacySettingsViewController
             privacySettingsVC.dataCtrl = self.dataCtrl
             self.navigationController?.pushViewController(privacySettingsVC, animated: true)
@@ -101,11 +113,15 @@ class SettingsViewController: BaseViewController,UITableViewDelegate,UITableView
             
         case SettingOptions.appSettings:
             
+            sholadReloadData = true
+            
             let appSettingsVC = UIStoryboard.settings.instantiateViewController(withIdentifier: StoryboardIDs.appSettingsViewController)
             self.navigationController?.pushViewController(appSettingsVC, animated: true)
             break
             
         case SettingOptions.emailPreferences:
+            
+            sholadReloadData = true
             
             let emailPreferenceVC = UIStoryboard.settings.instantiateViewController(withIdentifier: StoryboardIDs.emailPreferencesViewController) as! EmailPreferencesViewController
             emailPreferenceVC.dataCtrl = self.dataCtrl

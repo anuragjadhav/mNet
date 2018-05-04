@@ -11,6 +11,9 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
+        <array key="HelveticaNeue.ttc">
+            <string>HelveticaNeue-Bold</string>
+        </array>
         <array key="SanFranciscoDisplay-Bold.otf">
             <string>SanFranciscoDisplay-Bold</string>
         </array>
@@ -202,6 +205,17 @@
                                 <color key="textColor" red="0.3803921569" green="0.28235294119999998" blue="0.22352941179999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tt9-Eg-7AJ">
+                                <rect key="frame" x="335" y="84" width="20" height="20"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="20" id="UWK-ex-0ef"/>
+                                    <constraint firstAttribute="height" constant="20" id="jkV-P1-oLf"/>
+                                </constraints>
+                                <state key="normal" image="refresh"/>
+                                <connections>
+                                    <action selector="refreshButtonAction:" destination="lrb-xA-0fc" eventType="touchUpInside" id="0MM-3p-LSb"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.98039215690000003" green="0.98431372549999996" blue="0.98823529409999999" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
@@ -224,6 +238,7 @@
                             <constraint firstItem="aY6-xW-7a7" firstAttribute="top" secondItem="LO5-Ab-vbT" secondAttribute="bottom" constant="21" id="QkP-1h-Dja"/>
                             <constraint firstItem="dY6-rQ-dpZ" firstAttribute="leading" secondItem="XYB-iN-OEW" secondAttribute="leading" id="S50-7H-cjb"/>
                             <constraint firstItem="gg2-fU-KFW" firstAttribute="leading" secondItem="gfB-ab-tfT" secondAttribute="leading" id="TH3-Lf-fko"/>
+                            <constraint firstItem="wv2-VT-8yh" firstAttribute="trailing" secondItem="tt9-Eg-7AJ" secondAttribute="trailing" constant="20" id="Tat-FQ-Ddw"/>
                             <constraint firstItem="XYB-iN-OEW" firstAttribute="leading" secondItem="gg2-fU-KFW" secondAttribute="trailing" constant="20" id="YTq-gU-wX9"/>
                             <constraint firstItem="gg2-fU-KFW" firstAttribute="width" secondItem="XYB-iN-OEW" secondAttribute="width" id="Z8u-bj-K72"/>
                             <constraint firstItem="fMS-BN-x7b" firstAttribute="leading" secondItem="XYB-iN-OEW" secondAttribute="trailing" constant="20" id="a8Q-1u-7Ap"/>
@@ -245,6 +260,7 @@
                             <constraint firstItem="gg2-fU-KFW" firstAttribute="width" secondItem="fMS-BN-x7b" secondAttribute="width" id="vLy-MW-tPS"/>
                             <constraint firstItem="ymi-um-cXP" firstAttribute="centerY" secondItem="mUh-uh-gsA" secondAttribute="centerY" constant="-24" id="wF9-GU-MEz"/>
                             <constraint firstItem="XYB-iN-OEW" firstAttribute="top" secondItem="x55-qU-at0" secondAttribute="bottom" constant="9" id="y71-n7-tKL"/>
+                            <constraint firstItem="tt9-Eg-7AJ" firstAttribute="top" secondItem="wv2-VT-8yh" secondAttribute="top" constant="20" id="yUD-qg-npX"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="wv2-VT-8yh"/>
                     </view>
@@ -289,6 +305,7 @@
     <resources>
         <image name="dashboardBackground" width="2016" height="1512"/>
         <image name="newsIcon" width="133" height="133"/>
+        <image name="refresh" width="32" height="32"/>
         <image name="star_empty" width="16" height="16"/>
     </resources>
 </document>

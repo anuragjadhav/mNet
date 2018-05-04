@@ -23,6 +23,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate,UNUserNotificationCenterDe
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         
         performAppStartTasks(application)
+        UIApplication.shared.applicationIconBadgeNumber = 0
         return true
     }
     
