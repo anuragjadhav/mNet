@@ -66,6 +66,7 @@ struct URLS {
     static let verifyPost:URL = URL(string: "setVerifyRepliesToPost", relativeTo: baseURL)!
     static let approvePost:URL = URL(string: "setAuthorizeRepliesToPost", relativeTo: baseURL)!
     static let rejectPost:URL = URL(string: "rejectRepliesToPost", relativeTo: baseURL)!
+    static let forgotPassword:URL = URL(string: "passwordRecovery", relativeTo: baseURL)!
 }
 
 struct EmailIDs {
@@ -130,6 +131,15 @@ struct DictionaryKeys {
     struct Dashboard {
         
         static let days:String = "days"
+    }
+    
+    struct ForgotPassword {
+        
+        static let newPassword:String = "new-password"
+        static let otp:String = "otp"
+        static let action:String = "action"
+        static let actionSendOTP:String = "send-otp"
+        static let actionSetPassword:String = "set-password"
     }
 }
 
