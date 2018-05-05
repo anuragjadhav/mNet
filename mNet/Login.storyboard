@@ -7,6 +7,7 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -16,6 +17,9 @@
         </array>
         <array key="SanFranciscoDisplay-Light.otf">
             <string>SanFranciscoDisplay-Light</string>
+        </array>
+        <array key="SanFranciscoDisplay-Regular.otf">
+            <string>SanFranciscoDisplay-Regular</string>
         </array>
     </customFonts>
     <scenes>
@@ -166,7 +170,7 @@
                                                 </connections>
                                             </textField>
                                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Password" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ATu-5p-PAU" customClass="CustomBrownTextColorLabel" customModule="mNet" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="18" width="62" height="17"/>
+                                                <rect key="frame" x="0.0" y="18" width="62.5" height="17"/>
                                                 <fontDescription key="fontDescription" name="SanFranciscoDisplay-Bold" family="San Francisco Display" pointSize="14"/>
                                                 <color key="textColor" red="0.3803921569" green="0.28235294119999998" blue="0.22352941179999999" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
@@ -232,6 +236,16 @@
                                         <color key="textColor" red="0.2901960784" green="0.56470588239999997" blue="0.8862745098" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5V6-Bq-Wcx" customClass="CustomBlueTextColorButton" customModule="mNet" customModuleProvider="target">
+                                        <rect key="frame" x="121.5" y="603" width="131" height="30"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="15"/>
+                                        <state key="normal" title="Forgot Password?">
+                                            <color key="titleColor" red="0.2901960784" green="0.56470588239999997" blue="0.8862745098" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="forgotPasswordButtonAction:" destination="OM2-0e-Tyo" eventType="touchUpInside" id="RUi-Sc-u5s"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
@@ -243,6 +257,7 @@
                                     <constraint firstItem="pfp-hv-dLo" firstAttribute="leading" secondItem="kKd-RF-tff" secondAttribute="leading" id="Gu6-MK-yq3"/>
                                     <constraint firstItem="RSB-H9-XkY" firstAttribute="leading" secondItem="kCb-WY-YI5" secondAttribute="leading" id="Hzw-fI-BWE"/>
                                     <constraint firstItem="pfp-hv-dLo" firstAttribute="leading" secondItem="ZpG-Y4-Epn" secondAttribute="leading" constant="27" id="JLj-hh-O6u"/>
+                                    <constraint firstAttribute="bottom" secondItem="5V6-Bq-Wcx" secondAttribute="bottom" constant="80" id="KCr-0x-NHM"/>
                                     <constraint firstItem="pfp-hv-dLo" firstAttribute="trailing" secondItem="kKd-RF-tff" secondAttribute="trailing" id="Kky-7Q-NaV"/>
                                     <constraint firstItem="khH-V2-waG" firstAttribute="leading" secondItem="PvR-dH-47p" secondAttribute="trailing" constant="12" id="Lcs-M4-qvz"/>
                                     <constraint firstItem="kCb-WY-YI5" firstAttribute="leading" secondItem="RgB-Ys-snv" secondAttribute="leading" id="MkI-SE-QrI"/>
@@ -252,16 +267,17 @@
                                     <constraint firstItem="pfp-hv-dLo" firstAttribute="top" secondItem="kKd-RF-tff" secondAttribute="top" id="PyF-Dv-GQH"/>
                                     <constraint firstItem="kKd-RF-tff" firstAttribute="centerX" secondItem="ZpG-Y4-Epn" secondAttribute="centerX" id="T6u-c8-S2c"/>
                                     <constraint firstItem="RSB-H9-XkY" firstAttribute="leading" secondItem="ZpG-Y4-Epn" secondAttribute="leading" constant="27" id="TjI-GH-L3n"/>
-                                    <constraint firstAttribute="bottom" secondItem="vu1-Qt-yj7" secondAttribute="bottom" constant="80" id="Ttx-yl-9Zp"/>
                                     <constraint firstItem="PvR-dH-47p" firstAttribute="leading" secondItem="OnW-hF-Wwm" secondAttribute="leading" id="Wdh-lV-RkW"/>
                                     <constraint firstItem="PvR-dH-47p" firstAttribute="top" secondItem="OnW-hF-Wwm" secondAttribute="bottom" constant="18" id="Zak-Li-S8K"/>
                                     <constraint firstItem="kCb-WY-YI5" firstAttribute="top" secondItem="RgB-Ys-snv" secondAttribute="bottom" constant="30" id="a4p-Xo-Ugb"/>
                                     <constraint firstItem="khH-V2-waG" firstAttribute="centerY" secondItem="PvR-dH-47p" secondAttribute="centerY" id="aGg-ZV-zmO"/>
                                     <constraint firstItem="RgB-Ys-snv" firstAttribute="top" secondItem="2Ix-Rj-yrm" secondAttribute="bottom" constant="63" id="avz-Je-8ZC"/>
+                                    <constraint firstItem="5V6-Bq-Wcx" firstAttribute="top" secondItem="vu1-Qt-yj7" secondAttribute="bottom" constant="32" id="ck9-Y9-Z32"/>
                                     <constraint firstItem="RSB-H9-XkY" firstAttribute="centerX" secondItem="ZpG-Y4-Epn" secondAttribute="centerX" id="ebU-7i-9DK"/>
                                     <constraint firstItem="RSB-H9-XkY" firstAttribute="top" secondItem="kCb-WY-YI5" secondAttribute="bottom" constant="11" id="h14-Yb-Jss"/>
                                     <constraint firstItem="Y0I-hd-kCF" firstAttribute="width" secondItem="kKd-RF-tff" secondAttribute="width" id="jrM-9z-jDS"/>
                                     <constraint firstItem="vu1-Qt-yj7" firstAttribute="trailing" secondItem="pfp-hv-dLo" secondAttribute="trailing" id="klX-cW-Rqs"/>
+                                    <constraint firstItem="5V6-Bq-Wcx" firstAttribute="centerX" secondItem="pfp-hv-dLo" secondAttribute="centerX" id="p7b-Cx-wxB"/>
                                     <constraint firstItem="2Ix-Rj-yrm" firstAttribute="top" secondItem="ZpG-Y4-Epn" secondAttribute="top" constant="80" id="qRa-T7-f8J"/>
                                     <constraint firstItem="OnW-hF-Wwm" firstAttribute="leading" secondItem="RSB-H9-XkY" secondAttribute="leading" id="r4k-1B-2ef"/>
                                     <constraint firstItem="Y0I-hd-kCF" firstAttribute="leading" secondItem="kKd-RF-tff" secondAttribute="leading" id="wqQ-kT-Czr"/>
@@ -297,6 +313,7 @@
                         <outlet property="changeIdButtonHeight" destination="t8d-mu-Phe" id="53b-cd-Qoz"/>
                         <outlet property="emailLabel" destination="kCb-WY-YI5" id="EOJ-D0-rU3"/>
                         <outlet property="emailTextField" destination="RSB-H9-XkY" id="SrH-fF-P8K"/>
+                        <outlet property="forgotPasswordButton" destination="5V6-Bq-Wcx" id="foI-ra-f6x"/>
                         <outlet property="googleButtonHeight" destination="FYp-BW-0xt" id="jfA-Og-I6F"/>
                         <outlet property="helpButton" destination="YXF-tP-g1l" id="tux-u3-Uuj"/>
                         <outlet property="loginWithGoogleButton" destination="Y0I-hd-kCF" id="P6f-qI-1ag"/>
@@ -319,8 +336,446 @@
             </objects>
             <point key="canvasLocation" x="-128.5" y="-1096.5"/>
         </scene>
+        <!--Forgot Password-->
+        <scene sceneID="s2L-7j-nDc">
+            <objects>
+                <viewController id="xDT-UA-PcB" customClass="ForgotPasswordViewController" customModule="mNet" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Thf-ip-vWy">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" tag="12345" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fR7-ru-k04">
+                                <rect key="frame" x="0.0" y="116" width="375" height="551"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ENTER YOUR EMAIL ID" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LxP-GE-ak0" customClass="CustomBlueTextColorLabel" customModule="mNet" customModuleProvider="target">
+                                        <rect key="frame" x="27" y="64" width="180.5" height="19.5"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="16"/>
+                                        <color key="textColor" red="0.2901960784" green="0.56470588239999997" blue="0.8862745098" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Email" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZOF-kL-hRu" customClass="CustomBrownTextColorLabel" customModule="mNet" customModuleProvider="target">
+                                        <rect key="frame" x="27" y="114" width="35.5" height="17"/>
+                                        <fontDescription key="fontDescription" name="SanFranciscoDisplay-Bold" family="San Francisco Display" pointSize="14"/>
+                                        <color key="textColor" red="0.3803921569" green="0.28235294119999998" blue="0.22352941179999999" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="Enter your Email ID" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="jEP-f1-bFE" customClass="CustomBrownTextColorTextfield" customModule="mNet" customModuleProvider="target">
+                                        <rect key="frame" x="27" y="142" width="319" height="36"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="36" id="oQp-Iu-GuB"/>
+                                        </constraints>
+                                        <color key="textColor" red="0.3803921569" green="0.28235294119999998" blue="0.22352941179999999" alpha="1" colorSpace="calibratedRGB"/>
+                                        <fontDescription key="fontDescription" name="SanFranciscoDisplay-Light" family="San Francisco Display" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" keyboardType="emailAddress" keyboardAppearance="alert" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="0.0"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                <real key="value" value="1"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                <color key="value" white="0.66666666669999997" alpha="1" colorSpace="calibratedWhite"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="inset">
+                                                <real key="value" value="10"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <outlet property="delegate" destination="xDT-UA-PcB" id="gG2-Eq-rLo"/>
+                                        </connections>
+                                    </textField>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="An OTP will be sent to your Email ID" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NF4-ZQ-iXI" customClass="CustomBrownTextColorLabel" customModule="mNet" customModuleProvider="target">
+                                        <rect key="frame" x="27" y="194" width="319" height="17"/>
+                                        <fontDescription key="fontDescription" name="SanFranciscoDisplay-Regular" family="San Francisco Display" pointSize="14"/>
+                                        <color key="textColor" red="0.3803921569" green="0.28235294119999998" blue="0.22352941179999999" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="ZOF-kL-hRu" firstAttribute="leading" secondItem="LxP-GE-ak0" secondAttribute="leading" id="1RM-MI-FO5"/>
+                                    <constraint firstItem="jEP-f1-bFE" firstAttribute="leading" secondItem="ZOF-kL-hRu" secondAttribute="leading" id="3kj-Eq-dD3"/>
+                                    <constraint firstItem="NF4-ZQ-iXI" firstAttribute="trailing" secondItem="jEP-f1-bFE" secondAttribute="trailing" id="7op-YI-D6E"/>
+                                    <constraint firstItem="jEP-f1-bFE" firstAttribute="top" secondItem="ZOF-kL-hRu" secondAttribute="bottom" constant="11" id="Ahv-LS-a5E"/>
+                                    <constraint firstItem="NF4-ZQ-iXI" firstAttribute="leading" secondItem="jEP-f1-bFE" secondAttribute="leading" id="HnR-Er-bnw"/>
+                                    <constraint firstItem="LxP-GE-ak0" firstAttribute="leading" secondItem="fR7-ru-k04" secondAttribute="leading" constant="27" id="Irg-Oc-ZBE"/>
+                                    <constraint firstItem="NF4-ZQ-iXI" firstAttribute="top" secondItem="jEP-f1-bFE" secondAttribute="bottom" constant="16" id="THs-Vc-CzR"/>
+                                    <constraint firstAttribute="bottom" secondItem="jEP-f1-bFE" secondAttribute="bottom" constant="80" id="Uck-2I-Pl9"/>
+                                    <constraint firstItem="ZOF-kL-hRu" firstAttribute="top" secondItem="LxP-GE-ak0" secondAttribute="bottom" constant="30" id="X8A-LN-TaW"/>
+                                    <constraint firstAttribute="trailing" secondItem="jEP-f1-bFE" secondAttribute="trailing" constant="27" id="gYB-f4-gcM"/>
+                                    <constraint firstItem="LxP-GE-ak0" firstAttribute="top" secondItem="fR7-ru-k04" secondAttribute="top" constant="64" id="qFx-NJ-dPo"/>
+                                </constraints>
+                            </scrollView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dbh-Wf-kdl" customClass="CustomBlueBackgroundButton" customModule="mNet" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="622" width="375" height="45"/>
+                                <color key="backgroundColor" red="0.2901960784" green="0.56470588239999997" blue="0.8862745098" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="45" id="myt-KM-gl2"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="SanFranciscoDisplay-Bold" family="San Francisco Display" pointSize="16"/>
+                                <state key="normal" title="SEND OTP">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="sendOTPButtonAction:" destination="xDT-UA-PcB" eventType="touchUpInside" id="vUj-y5-NaJ"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="fR7-ru-k04" firstAttribute="top" secondItem="hrU-KE-Q3l" secondAttribute="top" id="3XI-T3-bWb"/>
+                            <constraint firstItem="hrU-KE-Q3l" firstAttribute="bottom" secondItem="fR7-ru-k04" secondAttribute="bottom" id="BZa-jx-OAM"/>
+                            <constraint firstItem="jEP-f1-bFE" firstAttribute="width" secondItem="Thf-ip-vWy" secondAttribute="width" multiplier="0.85" id="IDJ-Lr-lpD"/>
+                            <constraint firstItem="fR7-ru-k04" firstAttribute="leading" secondItem="hrU-KE-Q3l" secondAttribute="leading" id="JCv-k4-K78"/>
+                            <constraint firstItem="dbh-Wf-kdl" firstAttribute="trailing" secondItem="hrU-KE-Q3l" secondAttribute="trailing" id="O35-0E-y7b"/>
+                            <constraint firstItem="hrU-KE-Q3l" firstAttribute="bottom" secondItem="dbh-Wf-kdl" secondAttribute="bottom" id="i9T-mu-Tvr"/>
+                            <constraint firstItem="dbh-Wf-kdl" firstAttribute="leading" secondItem="hrU-KE-Q3l" secondAttribute="leading" id="uiD-vN-TTE"/>
+                            <constraint firstItem="hrU-KE-Q3l" firstAttribute="trailing" secondItem="fR7-ru-k04" secondAttribute="trailing" id="xjq-2h-3Zc"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="hrU-KE-Q3l"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Forgot Password" largeTitleDisplayMode="always" id="V2W-sx-7pq">
+                        <barButtonItem key="rightBarButtonItem" systemItem="cancel" id="Fxi-rU-hwn">
+                            <color key="tintColor" red="0.3803921569" green="0.28235294119999998" blue="0.22352941179999999" alpha="1" colorSpace="calibratedRGB"/>
+                            <connections>
+                                <action selector="cancelButtonAction:" destination="xDT-UA-PcB" id="Pob-ju-bp3"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="emailTextField" destination="jEP-f1-bFE" id="jCj-Tk-l8r"/>
+                        <outlet property="sendOTPButton" destination="dbh-Wf-kdl" id="gmX-DU-XXp"/>
+                        <segue destination="Ccm-1D-ALo" kind="push" identifier="forgotPasswordToOTPScreenSegue" id="TOT-Yu-HPu"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Abs-2A-MHe" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="980" y="-1079"/>
+        </scene>
+        <!--OTP-->
+        <scene sceneID="BgV-6b-PD0">
+            <objects>
+                <viewController id="Ccm-1D-ALo" customClass="OTPViewController" customModule="mNet" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Nym-jp-CBO">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" tag="12345" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="h7m-8c-p4L">
+                                <rect key="frame" x="0.0" y="116" width="375" height="506"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ENTER OTP" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="STL-F4-Khr" customClass="CustomBlueTextColorLabel" customModule="mNet" customModuleProvider="target">
+                                        <rect key="frame" x="27" y="64" width="91.5" height="19.5"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="16"/>
+                                        <color key="textColor" red="0.2901960784" green="0.56470588239999997" blue="0.8862745098" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="OTP" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6ih-Tf-g8P" customClass="CustomBrownTextColorLabel" customModule="mNet" customModuleProvider="target">
+                                        <rect key="frame" x="27" y="114" width="25" height="17"/>
+                                        <fontDescription key="fontDescription" name="SanFranciscoDisplay-Bold" family="San Francisco Display" pointSize="14"/>
+                                        <color key="textColor" red="0.3803921569" green="0.28235294119999998" blue="0.22352941179999999" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="Enter the OTP" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="h2B-Hq-CYr" customClass="CustomBrownTextColorTextfield" customModule="mNet" customModuleProvider="target">
+                                        <rect key="frame" x="27" y="142" width="319" height="36"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="36" id="P67-oi-mqE"/>
+                                        </constraints>
+                                        <color key="textColor" red="0.3803921569" green="0.28235294119999998" blue="0.22352941179999999" alpha="1" colorSpace="calibratedRGB"/>
+                                        <fontDescription key="fontDescription" name="SanFranciscoDisplay-Light" family="San Francisco Display" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" keyboardType="numberPad" keyboardAppearance="alert" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="0.0"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                <real key="value" value="1"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                <color key="value" white="0.66666666669999997" alpha="1" colorSpace="calibratedWhite"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="inset">
+                                                <real key="value" value="10"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <outlet property="delegate" destination="Ccm-1D-ALo" id="XKU-4c-xZx"/>
+                                        </connections>
+                                    </textField>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enter the OTP which was sent to your Email ID" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="40g-ry-rY6" customClass="CustomBrownTextColorLabel" customModule="mNet" customModuleProvider="target">
+                                        <rect key="frame" x="27" y="194" width="319" height="17"/>
+                                        <fontDescription key="fontDescription" name="SanFranciscoDisplay-Regular" family="San Francisco Display" pointSize="14"/>
+                                        <color key="textColor" red="0.3803921569" green="0.28235294119999998" blue="0.22352941179999999" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="h2B-Hq-CYr" firstAttribute="top" secondItem="6ih-Tf-g8P" secondAttribute="bottom" constant="11" id="2mE-um-Jrt"/>
+                                    <constraint firstItem="6ih-Tf-g8P" firstAttribute="leading" secondItem="STL-F4-Khr" secondAttribute="leading" id="3dD-lz-c9D"/>
+                                    <constraint firstItem="h2B-Hq-CYr" firstAttribute="leading" secondItem="6ih-Tf-g8P" secondAttribute="leading" id="6Yd-xB-Jdr"/>
+                                    <constraint firstAttribute="trailing" secondItem="h2B-Hq-CYr" secondAttribute="trailing" constant="27" id="D1P-Z8-eJ3"/>
+                                    <constraint firstItem="STL-F4-Khr" firstAttribute="top" secondItem="h7m-8c-p4L" secondAttribute="top" constant="64" id="E51-Nz-jBv"/>
+                                    <constraint firstItem="40g-ry-rY6" firstAttribute="trailing" secondItem="h2B-Hq-CYr" secondAttribute="trailing" id="hu3-xz-cdR"/>
+                                    <constraint firstItem="STL-F4-Khr" firstAttribute="leading" secondItem="h7m-8c-p4L" secondAttribute="leading" constant="27" id="iTr-f4-Dtu"/>
+                                    <constraint firstAttribute="bottom" secondItem="h2B-Hq-CYr" secondAttribute="bottom" constant="80" id="tAZ-jC-nUH"/>
+                                    <constraint firstItem="40g-ry-rY6" firstAttribute="leading" secondItem="h2B-Hq-CYr" secondAttribute="leading" id="tWm-DV-UgX"/>
+                                    <constraint firstItem="6ih-Tf-g8P" firstAttribute="top" secondItem="STL-F4-Khr" secondAttribute="bottom" constant="30" id="ydc-tE-1Y5"/>
+                                    <constraint firstItem="40g-ry-rY6" firstAttribute="top" secondItem="h2B-Hq-CYr" secondAttribute="bottom" constant="16" id="yiO-BN-E9E"/>
+                                </constraints>
+                            </scrollView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ES3-mM-QVN" customClass="CustomBlueBackgroundButton" customModule="mNet" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="622" width="375" height="45"/>
+                                <color key="backgroundColor" red="0.2901960784" green="0.56470588239999997" blue="0.8862745098" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="45" id="KT5-Ux-B9n"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="SanFranciscoDisplay-Bold" family="San Francisco Display" pointSize="16"/>
+                                <state key="normal" title="CONFIRM">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="confirmButtonAction:" destination="Ccm-1D-ALo" eventType="touchUpInside" id="jm7-VV-S1k"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="h7m-8c-p4L" firstAttribute="leading" secondItem="Nym-jp-CBO" secondAttribute="leading" id="7AO-gf-1uC"/>
+                            <constraint firstItem="h7m-8c-p4L" firstAttribute="top" secondItem="gpI-eM-ElI" secondAttribute="top" id="CqX-kz-Fjq"/>
+                            <constraint firstItem="gpI-eM-ElI" firstAttribute="bottom" secondItem="ES3-mM-QVN" secondAttribute="bottom" id="JPn-3i-3ov"/>
+                            <constraint firstItem="h2B-Hq-CYr" firstAttribute="width" secondItem="Nym-jp-CBO" secondAttribute="width" multiplier="0.85" id="OY5-Du-RFT"/>
+                            <constraint firstItem="ES3-mM-QVN" firstAttribute="leading" secondItem="Nym-jp-CBO" secondAttribute="leading" id="Pku-hf-jgf"/>
+                            <constraint firstItem="ES3-mM-QVN" firstAttribute="top" secondItem="h7m-8c-p4L" secondAttribute="bottom" id="SgT-tQ-GJg"/>
+                            <constraint firstItem="gpI-eM-ElI" firstAttribute="trailing" secondItem="h7m-8c-p4L" secondAttribute="trailing" id="hDk-jA-6yj"/>
+                            <constraint firstItem="gpI-eM-ElI" firstAttribute="trailing" secondItem="ES3-mM-QVN" secondAttribute="trailing" id="huH-hU-vGd"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="gpI-eM-ElI"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="OTP" id="0wh-Dw-uiu">
+                        <barButtonItem key="leftBarButtonItem" image="backButtonImage" id="1MZ-fE-f5n">
+                            <color key="tintColor" red="0.3803921569" green="0.28235294119999998" blue="0.22352941179999999" alpha="1" colorSpace="calibratedRGB"/>
+                            <connections>
+                                <action selector="backButtonAction:" destination="Ccm-1D-ALo" id="wH4-Mb-Lwt"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" systemItem="cancel" id="qYz-1I-fyG">
+                            <color key="tintColor" red="0.3803921569" green="0.28235294119999998" blue="0.22352941179999999" alpha="1" colorSpace="calibratedRGB"/>
+                            <connections>
+                                <action selector="cancelButtonAction:" destination="Ccm-1D-ALo" id="W8n-rK-DY0"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="confirmButton" destination="ES3-mM-QVN" id="6Jn-wT-Bh8"/>
+                        <outlet property="otpTextField" destination="h2B-Hq-CYr" id="K2y-hE-C2Z"/>
+                        <segue destination="w99-E7-HQU" kind="push" identifier="otpScreenToNewPasswordSegue" id="kGG-tT-Gcp"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Uku-CN-209" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1455" y="-1079"/>
+        </scene>
+        <!--New Password-->
+        <scene sceneID="baJ-tp-eEG">
+            <objects>
+                <viewController id="w99-E7-HQU" customClass="NewPasswordViewController" customModule="mNet" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="i2W-UX-H1u">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" tag="12345" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6gi-y7-7ph">
+                                <rect key="frame" x="0.0" y="116" width="375" height="506"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ENTER YOUR NEW PASSWORD" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1ER-as-7St" customClass="CustomBlueTextColorLabel" customModule="mNet" customModuleProvider="target">
+                                        <rect key="frame" x="27" y="64" width="243.5" height="19.5"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="16"/>
+                                        <color key="textColor" red="0.2901960784" green="0.56470588239999997" blue="0.8862745098" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UsV-jv-8IU" userLabel="Password View">
+                                        <rect key="frame" x="27" y="113.5" width="319" height="82"/>
+                                        <subviews>
+                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="Enter your new Password" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ueK-II-VFt" customClass="CustomBrownTextColorTextfield" customModule="mNet" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="46" width="319" height="36"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" priority="999" constant="36" id="IKR-2t-nOs"/>
+                                                </constraints>
+                                                <color key="textColor" red="0.3803921569" green="0.28235294119999998" blue="0.22352941179999999" alpha="1" colorSpace="calibratedRGB"/>
+                                                <fontDescription key="fontDescription" name="SanFranciscoDisplay-Light" family="San Francisco Display" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits" keyboardAppearance="alert" returnKeyType="done" secureTextEntry="YES"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                        <real key="value" value="0.0"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                        <real key="value" value="1"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                        <color key="value" white="0.66666666669999997" alpha="1" colorSpace="calibratedWhite"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="inset">
+                                                        <real key="value" value="10"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <outlet property="delegate" destination="w99-E7-HQU" id="P8b-Xi-38l"/>
+                                                </connections>
+                                            </textField>
+                                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="New Password" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iOU-x8-dX0" customClass="CustomBrownTextColorLabel" customModule="mNet" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="18" width="93" height="17"/>
+                                                <fontDescription key="fontDescription" name="SanFranciscoDisplay-Bold" family="San Francisco Display" pointSize="14"/>
+                                                <color key="textColor" red="0.3803921569" green="0.28235294119999998" blue="0.22352941179999999" alpha="1" colorSpace="calibratedRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstItem="ueK-II-VFt" firstAttribute="top" secondItem="iOU-x8-dX0" secondAttribute="bottom" priority="999" constant="11" id="0Iz-lw-BOY"/>
+                                            <constraint firstAttribute="trailing" secondItem="ueK-II-VFt" secondAttribute="trailing" id="3zT-cU-owX"/>
+                                            <constraint firstItem="iOU-x8-dX0" firstAttribute="leading" secondItem="UsV-jv-8IU" secondAttribute="leading" id="7iz-pZ-CxB"/>
+                                            <constraint firstItem="ueK-II-VFt" firstAttribute="leading" secondItem="iOU-x8-dX0" secondAttribute="leading" id="G5f-a9-Bqe"/>
+                                            <constraint firstAttribute="height" constant="82" id="YLh-86-icj"/>
+                                            <constraint firstItem="iOU-x8-dX0" firstAttribute="top" secondItem="UsV-jv-8IU" secondAttribute="top" priority="999" constant="18" id="bCc-OZ-SJs"/>
+                                            <constraint firstAttribute="bottom" secondItem="ueK-II-VFt" secondAttribute="bottom" priority="999" id="mAY-0m-rnx"/>
+                                        </constraints>
+                                    </view>
+                                    <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RZu-Og-5Kh" userLabel="Password View">
+                                        <rect key="frame" x="27" y="211.5" width="319" height="82"/>
+                                        <subviews>
+                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="Re-Enter your new Password" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="mJ2-SA-6lO" customClass="CustomBrownTextColorTextfield" customModule="mNet" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="46" width="319" height="36"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" priority="999" constant="36" id="J4b-82-7iP"/>
+                                                </constraints>
+                                                <color key="textColor" red="0.3803921569" green="0.28235294119999998" blue="0.22352941179999999" alpha="1" colorSpace="calibratedRGB"/>
+                                                <fontDescription key="fontDescription" name="SanFranciscoDisplay-Light" family="San Francisco Display" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits" keyboardAppearance="alert" returnKeyType="done" secureTextEntry="YES"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                        <real key="value" value="0.0"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                        <real key="value" value="1"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                        <color key="value" white="0.66666666669999997" alpha="1" colorSpace="calibratedWhite"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="inset">
+                                                        <real key="value" value="10"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <outlet property="delegate" destination="w99-E7-HQU" id="xN9-7Y-x0O"/>
+                                                </connections>
+                                            </textField>
+                                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Confrim New Password" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aHY-qt-4PH" customClass="CustomBrownTextColorLabel" customModule="mNet" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="18" width="148" height="17"/>
+                                                <fontDescription key="fontDescription" name="SanFranciscoDisplay-Bold" family="San Francisco Display" pointSize="14"/>
+                                                <color key="textColor" red="0.3803921569" green="0.28235294119999998" blue="0.22352941179999999" alpha="1" colorSpace="calibratedRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstItem="aHY-qt-4PH" firstAttribute="leading" secondItem="RZu-Og-5Kh" secondAttribute="leading" id="66Z-1h-kzs"/>
+                                            <constraint firstAttribute="bottom" secondItem="mJ2-SA-6lO" secondAttribute="bottom" priority="999" id="7QF-EC-kcP"/>
+                                            <constraint firstItem="aHY-qt-4PH" firstAttribute="top" secondItem="RZu-Og-5Kh" secondAttribute="top" priority="999" constant="18" id="CLd-GT-FNN"/>
+                                            <constraint firstItem="mJ2-SA-6lO" firstAttribute="leading" secondItem="aHY-qt-4PH" secondAttribute="leading" id="EjD-0e-psX"/>
+                                            <constraint firstAttribute="height" constant="82" id="IFi-DB-KoX"/>
+                                            <constraint firstItem="mJ2-SA-6lO" firstAttribute="top" secondItem="aHY-qt-4PH" secondAttribute="bottom" priority="999" constant="11" id="eF5-d4-5xz"/>
+                                            <constraint firstAttribute="trailing" secondItem="mJ2-SA-6lO" secondAttribute="trailing" id="nvt-1X-hhF"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="RZu-Og-5Kh" secondAttribute="bottom" constant="64" id="36u-wf-Sh2"/>
+                                    <constraint firstItem="RZu-Og-5Kh" firstAttribute="leading" secondItem="UsV-jv-8IU" secondAttribute="leading" id="5pT-A0-moR"/>
+                                    <constraint firstAttribute="trailing" secondItem="UsV-jv-8IU" secondAttribute="trailing" constant="27" id="D0J-f7-FGq"/>
+                                    <constraint firstItem="RZu-Og-5Kh" firstAttribute="top" secondItem="UsV-jv-8IU" secondAttribute="bottom" constant="16" id="ICg-RM-Xiy"/>
+                                    <constraint firstItem="UsV-jv-8IU" firstAttribute="leading" secondItem="1ER-as-7St" secondAttribute="leading" id="LRB-WQ-FJw"/>
+                                    <constraint firstItem="UsV-jv-8IU" firstAttribute="top" secondItem="1ER-as-7St" secondAttribute="bottom" constant="30" id="PSP-oU-QI1"/>
+                                    <constraint firstItem="1ER-as-7St" firstAttribute="top" secondItem="6gi-y7-7ph" secondAttribute="top" constant="64" id="iDf-Jb-MmS"/>
+                                    <constraint firstItem="RZu-Og-5Kh" firstAttribute="trailing" secondItem="UsV-jv-8IU" secondAttribute="trailing" id="t3f-4Y-Rhp"/>
+                                    <constraint firstItem="1ER-as-7St" firstAttribute="leading" secondItem="6gi-y7-7ph" secondAttribute="leading" constant="27" id="yr1-tf-DyX"/>
+                                </constraints>
+                            </scrollView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mUU-Na-5Hg" customClass="CustomBlueBackgroundButton" customModule="mNet" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="622" width="375" height="45"/>
+                                <color key="backgroundColor" red="0.2901960784" green="0.56470588239999997" blue="0.8862745098" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="45" id="fz6-M3-UrC"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="SanFranciscoDisplay-Bold" family="San Francisco Display" pointSize="16"/>
+                                <state key="normal" title="RESET PASSWORD">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="resetPasswordButtonAction:" destination="w99-E7-HQU" eventType="touchUpInside" id="BPy-HP-pha"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="6gi-y7-7ph" firstAttribute="leading" secondItem="XeL-Ix-bRo" secondAttribute="leading" id="3dh-Nj-Sm5"/>
+                            <constraint firstItem="mUU-Na-5Hg" firstAttribute="leading" secondItem="XeL-Ix-bRo" secondAttribute="leading" id="Erc-Gt-2GZ"/>
+                            <constraint firstAttribute="trailing" secondItem="6gi-y7-7ph" secondAttribute="trailing" id="W77-pF-e2x"/>
+                            <constraint firstItem="UsV-jv-8IU" firstAttribute="width" secondItem="i2W-UX-H1u" secondAttribute="width" multiplier="0.85" id="akn-hs-78A"/>
+                            <constraint firstAttribute="bottom" secondItem="mUU-Na-5Hg" secondAttribute="bottom" id="lx1-vD-5uD"/>
+                            <constraint firstItem="mUU-Na-5Hg" firstAttribute="top" secondItem="6gi-y7-7ph" secondAttribute="bottom" id="nSI-fn-cFB"/>
+                            <constraint firstItem="mUU-Na-5Hg" firstAttribute="top" secondItem="6gi-y7-7ph" secondAttribute="bottom" id="tpO-gc-sPx"/>
+                            <constraint firstAttribute="trailing" secondItem="mUU-Na-5Hg" secondAttribute="trailing" id="vYH-eW-wu2"/>
+                            <constraint firstItem="6gi-y7-7ph" firstAttribute="top" secondItem="XeL-Ix-bRo" secondAttribute="top" id="wTm-ud-8De"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="XeL-Ix-bRo"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="New Password" id="rVF-9B-MQt">
+                        <barButtonItem key="leftBarButtonItem" image="backButtonImage" id="nbo-9N-DoT">
+                            <color key="tintColor" red="0.3803921569" green="0.28235294119999998" blue="0.22352941179999999" alpha="1" colorSpace="calibratedRGB"/>
+                            <connections>
+                                <action selector="backButtonAction:" destination="w99-E7-HQU" id="FEp-b8-gtw"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" systemItem="cancel" id="QKc-BY-lco">
+                            <color key="tintColor" red="0.3803921569" green="0.28235294119999998" blue="0.22352941179999999" alpha="1" colorSpace="calibratedRGB"/>
+                            <connections>
+                                <action selector="cancelButtonAction:" destination="w99-E7-HQU" id="c6k-xM-QiF"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="confirmPasswordTextField" destination="mJ2-SA-6lO" id="an3-ox-Lea"/>
+                        <outlet property="newPasswordTextField" destination="ueK-II-VFt" id="cal-Qd-kUd"/>
+                        <outlet property="resetPasswordButton" destination="mUU-Na-5Hg" id="bx2-tF-WM0"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="s43-Um-VFg" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1920.5" y="-1079.5"/>
+        </scene>
+        <!--Base Navigation Controller-->
+        <scene sceneID="Z5J-kz-Od5">
+            <objects>
+                <navigationController storyboardIdentifier="ForgotPasswordNavigationControllerStoryboardID" automaticallyAdjustsScrollViewInsets="NO" id="qH9-yd-crI" customClass="BaseNavigationController" customModule="mNet" customModuleProvider="target" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" largeTitles="YES" id="Dpa-Or-o1G">
+                        <rect key="frame" x="0.0" y="20" width="375" height="96"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="xDT-UA-PcB" kind="relationship" relationship="rootViewController" id="83D-Ej-QgV"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="LDs-Z8-Ke5" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="483.5" y="-1078.5"/>
+        </scene>
     </scenes>
     <resources>
+        <image name="backButtonImage" width="24" height="24"/>
         <image name="brandIntelleLogo" width="600" height="157"/>
         <image name="help" width="256" height="256"/>
         <image name="hidePassword" width="32" height="32"/>

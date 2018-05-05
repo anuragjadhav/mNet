@@ -173,7 +173,7 @@ class AboutMeViewController: BaseViewController,UITextFieldDelegate,CustomPicker
         textField.layer.borderColor = UIColor.lightGray.cgColor;
     }
     
-    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+    @objc func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         self.view.endEditing(true)
         return true
     }

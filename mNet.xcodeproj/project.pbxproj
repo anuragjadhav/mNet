@@ -91,6 +91,10 @@
 		05B49A0C203390AF00EDAC5F /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05B49A0B203390AF00EDAC5F /* WebViewController.swift */; };
 		05BB3A262038CCCA0074990E /* FullLengthTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05BB3A252038CCCA0074990E /* FullLengthTableView.swift */; };
 		05CC51C320123AAA00EA6D55 /* ApprovalSectionCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05CC51C220123AAA00EA6D55 /* ApprovalSectionCollectionViewCell.swift */; };
+		05E65A92209CFB150087B63B /* ForgotPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05E65A91209CFB150087B63B /* ForgotPasswordViewController.swift */; };
+		05E65A94209CFB220087B63B /* OTPViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05E65A93209CFB220087B63B /* OTPViewController.swift */; };
+		05E65A96209CFB300087B63B /* NewPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05E65A95209CFB300087B63B /* NewPasswordViewController.swift */; };
+		05E65A98209CFDD50087B63B /* ForgotPasswordDataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05E65A97209CFDD50087B63B /* ForgotPasswordDataController.swift */; };
 		5E183E961FF3791D00368DE1 /* ApproveReject.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5E183E951FF3791D00368DE1 /* ApproveReject.storyboard */; };
 		5E183E9B1FF37B7C00368DE1 /* RejectApplicationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E183E9A1FF37B7C00368DE1 /* RejectApplicationViewController.swift */; };
 		5E183E9D1FF385AD00368DE1 /* CustomBrownColorTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E183E9C1FF385AD00368DE1 /* CustomBrownColorTextView.swift */; };
@@ -302,6 +306,10 @@
 		05B49A0B203390AF00EDAC5F /* WebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
 		05BB3A252038CCCA0074990E /* FullLengthTableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FullLengthTableView.swift; sourceTree = "<group>"; };
 		05CC51C220123AAA00EA6D55 /* ApprovalSectionCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApprovalSectionCollectionViewCell.swift; sourceTree = "<group>"; };
+		05E65A91209CFB150087B63B /* ForgotPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordViewController.swift; sourceTree = "<group>"; };
+		05E65A93209CFB220087B63B /* OTPViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OTPViewController.swift; sourceTree = "<group>"; };
+		05E65A95209CFB300087B63B /* NewPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewPasswordViewController.swift; sourceTree = "<group>"; };
+		05E65A97209CFDD50087B63B /* ForgotPasswordDataController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordDataController.swift; sourceTree = "<group>"; };
 		5E183E951FF3791D00368DE1 /* ApproveReject.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = ApproveReject.storyboard; sourceTree = "<group>"; };
 		5E183E9A1FF37B7C00368DE1 /* RejectApplicationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RejectApplicationViewController.swift; sourceTree = "<group>"; };
 		5E183E9C1FF385AD00368DE1 /* CustomBrownColorTextView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomBrownColorTextView.swift; sourceTree = "<group>"; };
@@ -439,6 +447,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0568B027209CFA720040F410 /* Forgot Password Module */ = {
+			isa = PBXGroup;
+			children = (
+				05E65A8F209CFADF0087B63B /* View Controllers */,
+				05E65A90209CFAED0087B63B /* Data Controller */,
+			);
+			name = "Forgot Password Module";
+			sourceTree = "<group>";
+		};
 		058A0E8B1FF7C4AA00147238 /* Login Module */ = {
 			isa = PBXGroup;
 			children = (
@@ -640,6 +657,24 @@
 			path = "Alamofire + Object Mapper";
 			sourceTree = "<group>";
 		};
+		05E65A8F209CFADF0087B63B /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				05E65A91209CFB150087B63B /* ForgotPasswordViewController.swift */,
+				05E65A93209CFB220087B63B /* OTPViewController.swift */,
+				05E65A95209CFB300087B63B /* NewPasswordViewController.swift */,
+			);
+			name = "View Controllers";
+			sourceTree = "<group>";
+		};
+		05E65A90209CFAED0087B63B /* Data Controller */ = {
+			isa = PBXGroup;
+			children = (
+				05E65A97209CFDD50087B63B /* ForgotPasswordDataController.swift */,
+			);
+			name = "Data Controller";
+			sourceTree = "<group>";
+		};
 		5E183E971FF37A5700368DE1 /* Approve Reject Application Module */ = {
 			isa = PBXGroup;
 			children = (
@@ -769,6 +804,7 @@
 		5E20CD911FE952BE004ACE0D /* mNet */ = {
 			isa = PBXGroup;
 			children = (
+				0568B027209CFA720040F410 /* Forgot Password Module */,
 				5E190A79203313C800EEE97B /* mNet.entitlements */,
 				5E1C49911FEA45F6007CE624 /* Constants.swift */,
 				5E20CD921FE952BE004ACE0D /* AppDelegate.swift */,
@@ -1153,6 +1189,7 @@
 				5E1A8D12201E221600BFAF10 /* ProfileDataController.swift in Sources */,
 				8BE5DA8C202D929E00E412A7 /* CommonResponse.swift in Sources */,
 				5EEFC9C12021E84900648F17 /* PeopleDataController.swift in Sources */,
+				05E65A98209CFDD50087B63B /* ForgotPasswordDataController.swift in Sources */,
 				5E2D37412020667F0013A138 /* UIImageView+AlamofireImage.swift in Sources */,
 				5E18AE3E1FF8113A007AA461 /* CustomBlueBackgroundButton.swift in Sources */,
 				5E183E9B1FF37B7C00368DE1 /* RejectApplicationViewController.swift in Sources */,
@@ -1184,6 +1221,7 @@
 				5E2D3749202087D50013A138 /* NotificationObject.swift in Sources */,
 				058D5C5F203CB53900A6BA4D /* ApprovalDocument.swift in Sources */,
 				05A569A22017B74B00C6F713 /* DispatchQueue+Alamofire.swift in Sources */,
+				05E65A94209CFB220087B63B /* OTPViewController.swift in Sources */,
 				5E1C499A1FEA7F30007CE624 /* CustomBrownTextColorTextfield.swift in Sources */,
 				5E3A046E2007A64D004EE2D7 /* ConversationDetailViewController.swift in Sources */,
 				5E190A782032CB9000EEE97B /* SelectedUsersCollectionViewCell.swift in Sources */,
@@ -1238,6 +1276,7 @@
 				5E1C49981FEA73F8007CE624 /* AboutMeViewController.swift in Sources */,
 				5E183E9F1FF3887600368DE1 /* CustomBlueTextColorButton.swift in Sources */,
 				5EF31C83201B57E9007727D8 /* Settings.swift in Sources */,
+				05E65A92209CFB150087B63B /* ForgotPasswordViewController.swift in Sources */,
 				05CC51C320123AAA00EA6D55 /* ApprovalSectionCollectionViewCell.swift in Sources */,
 				5E18AE441FF81B59007AA461 /* DocumentViewController.swift in Sources */,
 				5E2D37552020A16F0013A138 /* NotificationDataController.swift in Sources */,
@@ -1266,6 +1305,7 @@
 				5E1A8D10201DF57400BFAF10 /* ProfileWrapper.swift in Sources */,
 				050F1BE8203732F400B32841 /* ApprovalTabCounter.swift in Sources */,
 				05A569D12017B7B300C6F713 /* TransformOperators.swift in Sources */,
+				05E65A96209CFB300087B63B /* NewPasswordViewController.swift in Sources */,
 				5EF31C8A201B6231007727D8 /* Profile.swift in Sources */,
 				5E2D373C2020667F0013A138 /* ImageFilter.swift in Sources */,
 				05A569D22017B7B300C6F713 /* DateTransform.swift in Sources */,

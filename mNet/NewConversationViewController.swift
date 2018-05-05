@@ -153,7 +153,7 @@ class NewConversationViewController: BaseViewController,UICollectionViewDelegate
     
     //MARK: Text view delegates
     
-    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+    @objc func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         
         self.view.endEditing(true)
         

@@ -158,6 +158,8 @@ struct AlertMessages {
     static let approvalSuccess:String = "Approved Successfully"
     static let verificationSuccess:String = "Successfully sent to Next User"
     static let rejectedSuccess:String = "Rejected Successfully"
+    static let otpSent:String = "OTP sent on your Email-ID"
+    static let passwordResetSuccess:String = "Password changed successfully"
 }
 
 struct ColorConstants {
@@ -300,7 +302,12 @@ struct StoryboardIDs {
     static let conversationRejectViewController:String = "ConversationRejectViewController"
     static let conversationVerifyViewController:String = "ConversationVerifyViewController"
     static let conversationApproveViewController:String = "ConversationApproveViewController"
+    static let forgotPasswordNavigationController:String = "ForgotPasswordNavigationControllerStoryboardID"
+}
 
+struct SegueIdentifiers {
+    static let forgotPasswordToOTP:String = "forgotPasswordToOTPScreenSegue"
+    static let otpScreenToNewPassword:String = "otpScreenToNewPasswordSegue"
 }
 
 struct ImageNames {

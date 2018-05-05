@@ -161,4 +161,24 @@ class LoginWrapper: NSObject {
             }
         }
     }
+    
+    //MARK: Forgot Password
+    func postForgotPassword(postParams:[String:Any], onSuccess:@escaping () -> Void , onFailure : @escaping (String) -> Void) {
+        
+        request(URLS.forgotPassword, method: .post, parameters: postParams, encoding: JSONEncoding() as ParameterEncoding, headers: nil).responseObject { (response:DataResponse<CommonResponse>) in
+            
+            guard let commonResponse:CommonResponse = response.result.value else {
+                onFailure(WrapperManager.shared.getErrorMessage(message: nil))
+                return
+            }
+            if commonResponse.noError {
+                onSuccess()
+            }
+            else {
+                let serverErrorMessage:String? = commonResponse.responseData as? String
+                onFailure(WrapperManager.shared.getErrorMessage(message: serverErrorMessage))
+                return
+            }
+        }
+    }
 }

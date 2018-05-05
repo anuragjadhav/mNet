@@ -42,6 +42,8 @@ class LoginViewController: BaseViewController, UITextFieldDelegate, MFMailCompos
 
     @IBOutlet weak var rememberMeLabel: CustomBlueTextColorLabel!
     
+    @IBOutlet weak var forgotPasswordButton: CustomBlueTextColorButton!
+    
     @IBOutlet weak var helpButton: UIButton!
     
     var dataController:LoginDataController = LoginDataController()
@@ -81,7 +83,7 @@ class LoginViewController: BaseViewController, UITextFieldDelegate, MFMailCompos
         }
     }
     
-    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+    @objc func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         self.view.endEditing(true)
         return true
     }
@@ -368,6 +370,12 @@ class LoginViewController: BaseViewController, UITextFieldDelegate, MFMailCompos
             }
         }
     }
+    
+    @IBAction func forgotPasswordButtonAction(_ sender: CustomBlueTextColorButton) {
+        
+        present(self.storyboard!.instantiateViewController(withIdentifier: StoryboardIDs.forgotPasswordNavigationController), animated: true, completion: nil)
+    }
+    
     
     //MARK: Help Mail
     

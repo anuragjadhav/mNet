@@ -32,7 +32,7 @@ class ResetPasswordViewController: BaseViewController,UITextFieldDelegate {
     
     // MARK: - Text Field Delegates
     
-    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+    @objc func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         self.view.endEditing(true)
         return true
     }
