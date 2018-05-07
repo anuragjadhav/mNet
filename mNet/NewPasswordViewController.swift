@@ -37,7 +37,7 @@ class NewPasswordViewController: BaseViewController {
         let validation = dataController.validatePasswords()
         if validation.isValid {
             self.showTransperantLoadingOnViewController()
-            dataController.sendOTPandNewPassword(onSuccess: {
+            dataController.sendNewPassword(onSuccess: {
                 DispatchQueue.main.async {
                     self.removeTransperantLoadingFromViewController()
                     self.showQuickSuccessAlert(message: AlertMessages.passwordResetSuccess, completion: { (alertAction) in

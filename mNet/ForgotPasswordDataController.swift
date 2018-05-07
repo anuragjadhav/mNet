@@ -26,7 +26,16 @@ class ForgotPasswordDataController: NSObject {
         WrapperManager.shared.loginWrapper.postForgotPassword(postParams: postDictionary, onSuccess: onSuccess, onFailure: onFailure)
     }
     
-    func sendOTPandNewPassword(onSuccess:@escaping () -> Void , onFailure : @escaping (String) -> Void) {
+    func sendOTPForVerification(onSuccess:@escaping () -> Void , onFailure : @escaping (String) -> Void) {
+        var postDictionary:[String:String] = [String:String]()
+        postDictionary[DictionaryKeys.IdentifyUser.userEmail] = emailID
+        postDictionary[DictionaryKeys.IdentifyUser.requestFrom] = DictionaryKeys.IdentifyUser.requesrFromMobileApp
+        postDictionary[DictionaryKeys.IdentifyUser.platform] = DictionaryKeys.IdentifyUser.platformIOS
+        postDictionary[DictionaryKeys.ForgotPassword.action] = DictionaryKeys.ForgotPassword.actionValidateOTP
+        postDictionary[DictionaryKeys.ForgotPassword.otp] = otp
+    }
+    
+    func sendNewPassword(onSuccess:@escaping () -> Void , onFailure : @escaping (String) -> Void) {
         
         var postDictionary:[String:String] = [String:String]()
         postDictionary[DictionaryKeys.IdentifyUser.userEmail] = emailID

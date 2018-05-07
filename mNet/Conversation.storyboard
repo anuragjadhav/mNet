@@ -110,13 +110,13 @@
                                             <action selector="bccButtonAction:" destination="t0F-g9-TKV" eventType="touchUpInside" id="aBQ-jp-X6D"/>
                                         </connections>
                                     </button>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="for Approval" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9z5-ee-rx8" customClass="CustomBrownTextColorLabel" customModule="mNet" customModuleProvider="target">
+                                    <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="for Approval" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9z5-ee-rx8" customClass="CustomBrownTextColorLabel" customModule="mNet" customModuleProvider="target">
                                         <rect key="frame" x="27" y="133" width="78" height="17"/>
                                         <fontDescription key="fontDescription" name="SanFranciscoDisplay-Bold" family="San Francisco Display" pointSize="14"/>
                                         <color key="textColor" red="0.3803921569" green="0.28235294119999998" blue="0.22352941179999999" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="+" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oaa-jz-B4P">
+                                    <label hidden="YES" opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="+" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oaa-jz-B4P">
                                         <rect key="frame" x="27" y="174" width="32" height="32"/>
                                         <color key="backgroundColor" red="0.01176470588" green="0.51764705879999995" blue="0.80784313730000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
@@ -132,7 +132,7 @@
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                     </label>
-                                    <button contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rat-ZL-wg3">
+                                    <button hidden="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rat-ZL-wg3">
                                         <rect key="frame" x="27" y="174" width="32" height="32"/>
                                         <state key="normal">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -141,13 +141,13 @@
                                             <action selector="approvalButtonAction:" destination="t0F-g9-TKV" eventType="touchUpInside" id="ytU-ov-GbY"/>
                                         </connections>
                                     </button>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="for Verification" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5DB-5S-DR6" customClass="CustomBrownTextColorLabel" customModule="mNet" customModuleProvider="target">
+                                    <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="for Verification" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5DB-5S-DR6" customClass="CustomBrownTextColorLabel" customModule="mNet" customModuleProvider="target">
                                         <rect key="frame" x="194" y="133" width="95.5" height="17"/>
                                         <fontDescription key="fontDescription" name="SanFranciscoDisplay-Bold" family="San Francisco Display" pointSize="14"/>
                                         <color key="textColor" red="0.3803921569" green="0.28235294119999998" blue="0.22352941179999999" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="+" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eva-Dx-3o1">
+                                    <label hidden="YES" opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="+" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eva-Dx-3o1">
                                         <rect key="frame" x="194" y="174" width="32" height="32"/>
                                         <color key="backgroundColor" red="0.01176470588" green="0.51764705879999995" blue="0.80784313730000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
@@ -163,7 +163,7 @@
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                     </label>
-                                    <button contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zBi-IM-AWH">
+                                    <button hidden="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zBi-IM-AWH">
                                         <rect key="frame" x="194" y="174" width="32" height="32"/>
                                         <state key="normal">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -173,13 +173,13 @@
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Subject" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pzh-q0-PDP" customClass="CustomBrownTextColorLabel" customModule="mNet" customModuleProvider="target">
-                                        <rect key="frame" x="27" y="244" width="49.5" height="17"/>
+                                        <rect key="frame" x="27" y="134" width="49.5" height="17"/>
                                         <fontDescription key="fontDescription" name="SanFranciscoDisplay-Bold" family="San Francisco Display" pointSize="14"/>
                                         <color key="textColor" red="0.3803921569" green="0.28235294119999998" blue="0.22352941179999999" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="Subject" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="laD-YG-ZrP" customClass="CustomBrownTextColorTextfield" customModule="mNet" customModuleProvider="target">
-                                        <rect key="frame" x="27" y="272" width="315" height="36"/>
+                                        <rect key="frame" x="27" y="162" width="315" height="36"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="36" id="zVT-W7-8Ml"/>
@@ -206,19 +206,19 @@
                                         </connections>
                                     </textField>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Attachments" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MTJ-Hs-J2b" customClass="CustomBrownTextColorLabel" customModule="mNet" customModuleProvider="target">
-                                        <rect key="frame" x="27" y="330" width="83" height="17"/>
+                                        <rect key="frame" x="27" y="220" width="83" height="17"/>
                                         <fontDescription key="fontDescription" name="SanFranciscoDisplay-Bold" family="San Francisco Display" pointSize="14"/>
                                         <color key="textColor" red="0.3803921569" green="0.28235294119999998" blue="0.22352941179999999" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Message" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="x1o-a3-gkM" customClass="CustomBrownTextColorLabel" customModule="mNet" customModuleProvider="target">
-                                        <rect key="frame" x="27" y="416" width="57" height="17"/>
+                                        <rect key="frame" x="27" y="306" width="57" height="17"/>
                                         <fontDescription key="fontDescription" name="SanFranciscoDisplay-Bold" family="San Francisco Display" pointSize="14"/>
                                         <color key="textColor" red="0.3803921569" green="0.28235294119999998" blue="0.22352941179999999" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lq1-R3-Qu3">
-                                        <rect key="frame" x="27" y="366" width="25" height="27"/>
+                                        <rect key="frame" x="27" y="256" width="25" height="27"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="27" id="oee-FZ-36r"/>
                                             <constraint firstAttribute="width" constant="25" id="vY7-ep-TNM"/>
@@ -392,7 +392,7 @@
                                             <outlet property="delegate" destination="t0F-g9-TKV" id="K4a-ja-DL6"/>
                                         </connections>
                                     </collectionView>
-                                    <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="KSF-Ex-cJc">
+                                    <collectionView hidden="YES" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="KSF-Ex-cJc">
                                         <rect key="frame" x="65" y="156" width="105" height="69"/>
                                         <color key="backgroundColor" red="0.96862745098039216" green="0.97254901960784312" blue="0.97647058823529409" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
@@ -474,7 +474,7 @@
                                             <outlet property="delegate" destination="t0F-g9-TKV" id="iCn-td-8XN"/>
                                         </connections>
                                     </collectionView>
-                                    <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="n4q-IS-Qbq">
+                                    <collectionView hidden="YES" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="n4q-IS-Qbq">
                                         <rect key="frame" x="232" y="156" width="105" height="69"/>
                                         <color key="backgroundColor" red="0.96862745098039216" green="0.97254901960784312" blue="0.97647058823529409" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
@@ -557,13 +557,13 @@
                                         </connections>
                                     </collectionView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="j6g-yu-sK1" customClass="CustomBlueTextColorLabel" customModule="mNet" customModuleProvider="target">
-                                        <rect key="frame" x="68" y="379.5" width="0.0" height="0.0"/>
+                                        <rect key="frame" x="68" y="269.5" width="0.0" height="0.0"/>
                                         <fontDescription key="fontDescription" name="SanFranciscoDisplay-Regular" family="San Francisco Display" pointSize="14"/>
                                         <color key="textColor" red="0.2901960784" green="0.56470588239999997" blue="0.8862745098" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="ohC-iJ-IUy" customClass="CustomBrownColorTextView" customModule="mNet" customModuleProvider="target">
-                                        <rect key="frame" x="27" y="443" width="315" height="111"/>
+                                        <rect key="frame" x="27" y="333" width="315" height="111"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="111" id="hVp-VB-GSt"/>
@@ -598,7 +598,7 @@
                                     <constraint firstItem="lq1-R3-Qu3" firstAttribute="top" secondItem="MTJ-Hs-J2b" secondAttribute="bottom" constant="19" id="ANl-cO-C01"/>
                                     <constraint firstItem="5DB-5S-DR6" firstAttribute="leading" secondItem="96G-eG-aAD" secondAttribute="leading" id="ARY-x2-zvT"/>
                                     <constraint firstItem="Pzh-q0-PDP" firstAttribute="leading" secondItem="oaa-jz-B4P" secondAttribute="leading" id="BS9-89-NC4"/>
-                                    <constraint firstItem="Pzh-q0-PDP" firstAttribute="top" secondItem="oaa-jz-B4P" secondAttribute="bottom" constant="38" id="CUK-0n-FuY"/>
+                                    <constraint firstItem="Pzh-q0-PDP" firstAttribute="top" secondItem="oaa-jz-B4P" secondAttribute="bottom" constant="-72" id="CUK-0n-FuY"/>
                                     <constraint firstItem="MTJ-Hs-J2b" firstAttribute="top" secondItem="laD-YG-ZrP" secondAttribute="bottom" constant="22" id="DJ0-oz-nR0"/>
                                     <constraint firstItem="n4q-IS-Qbq" firstAttribute="width" secondItem="stt-T0-3rV" secondAttribute="width" id="Dkd-0e-AFE"/>
                                     <constraint firstItem="n4q-IS-Qbq" firstAttribute="leading" secondItem="eva-Dx-3o1" secondAttribute="trailing" constant="6" id="G1h-0r-ctn"/>

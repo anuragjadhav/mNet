@@ -139,6 +139,7 @@ struct DictionaryKeys {
         static let otp:String = "otp"
         static let action:String = "action"
         static let actionSendOTP:String = "send-otp"
+        static let actionValidateOTP:String = "validate-otp"
         static let actionSetPassword:String = "set-password"
     }
 }

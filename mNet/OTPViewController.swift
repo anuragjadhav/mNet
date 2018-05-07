@@ -40,7 +40,18 @@ class OTPViewController: BaseViewController {
         }
         else {
             dataController.otp = otpTextField.text!
-            self.performSegue(withIdentifier: SegueIdentifiers.otpScreenToNewPassword, sender: self)
+            self.showTransperantLoadingOnViewController()
+            dataController.sendOTPForVerification(onSuccess: {
+                DispatchQueue.main.async {
+                    self.removeTransperantLoadingFromViewController()
+                    self.performSegue(withIdentifier: SegueIdentifiers.otpScreenToNewPassword, sender: self)
+                }
+            }) { (errorMessage) in
+                DispatchQueue.main.async {
+                    self.removeTransperantLoadingFromViewController()
+                    self.showQuickFailureAlert(message: errorMessage)
+                }
+            }
         }
     }
     
