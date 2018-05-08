@@ -148,7 +148,7 @@ class User: NSObject, Mappable {
         
         var dictionary:[String:Any] = [String:Any]()
         dictionary["UserPass"] = password
-        dictionary["UserId"] = publicUserId
+        dictionary["UserId"] = userId
         dictionary["device"] = "ios"
         return dictionary
     }

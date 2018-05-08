@@ -95,6 +95,7 @@
 		05E65A94209CFB220087B63B /* OTPViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05E65A93209CFB220087B63B /* OTPViewController.swift */; };
 		05E65A96209CFB300087B63B /* NewPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05E65A95209CFB300087B63B /* NewPasswordViewController.swift */; };
 		05E65A98209CFDD50087B63B /* ForgotPasswordDataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05E65A97209CFDD50087B63B /* ForgotPasswordDataController.swift */; };
+		07FC1E5AD5A2D08162604091 /* Pods_mNet.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E143EE1D0AE605B28B4EDFF9 /* Pods_mNet.framework */; };
 		5E183E961FF3791D00368DE1 /* ApproveReject.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5E183E951FF3791D00368DE1 /* ApproveReject.storyboard */; };
 		5E183E9B1FF37B7C00368DE1 /* RejectApplicationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E183E9A1FF37B7C00368DE1 /* RejectApplicationViewController.swift */; };
 		5E183E9D1FF385AD00368DE1 /* CustomBrownColorTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E183E9C1FF385AD00368DE1 /* CustomBrownColorTextView.swift */; };
@@ -197,6 +198,7 @@
 		5EF31C88201B5F18007727D8 /* SettingsWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EF31C87201B5F18007727D8 /* SettingsWrapper.swift */; };
 		5EF31C8A201B6231007727D8 /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EF31C89201B6231007727D8 /* Profile.swift */; };
 		5EF354E7206908A3001A93E6 /* BlockedUsersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EF354E6206908A3001A93E6 /* BlockedUsersViewController.swift */; };
+		75A1171420A1AA6700176BE1 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 75A1171320A1AA6700176BE1 /* GoogleService-Info.plist */; };
 		75AA21E7208344C000A73D3D /* PopoverTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75AA21E6208344C000A73D3D /* PopoverTableViewCell.swift */; };
 		75AA21E92083459B00A73D3D /* PopoverObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75AA21E82083459B00A73D3D /* PopoverObject.swift */; };
 		75AA21EB20838F0B00A73D3D /* ConversationRejectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75AA21EA20838F0B00A73D3D /* ConversationRejectViewController.swift */; };
@@ -310,6 +312,7 @@
 		05E65A93209CFB220087B63B /* OTPViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OTPViewController.swift; sourceTree = "<group>"; };
 		05E65A95209CFB300087B63B /* NewPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewPasswordViewController.swift; sourceTree = "<group>"; };
 		05E65A97209CFDD50087B63B /* ForgotPasswordDataController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordDataController.swift; sourceTree = "<group>"; };
+		13782550D39865241F17ECC7 /* Pods-mNet.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-mNet.release.xcconfig"; path = "Pods/Target Support Files/Pods-mNet/Pods-mNet.release.xcconfig"; sourceTree = "<group>"; };
 		5E183E951FF3791D00368DE1 /* ApproveReject.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = ApproveReject.storyboard; sourceTree = "<group>"; };
 		5E183E9A1FF37B7C00368DE1 /* RejectApplicationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RejectApplicationViewController.swift; sourceTree = "<group>"; };
 		5E183E9C1FF385AD00368DE1 /* CustomBrownColorTextView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomBrownColorTextView.swift; sourceTree = "<group>"; };
@@ -415,6 +418,8 @@
 		5EF31C87201B5F18007727D8 /* SettingsWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsWrapper.swift; sourceTree = "<group>"; };
 		5EF31C89201B6231007727D8 /* Profile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Profile.swift; sourceTree = "<group>"; };
 		5EF354E6206908A3001A93E6 /* BlockedUsersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlockedUsersViewController.swift; sourceTree = "<group>"; };
+		6F304F26D0F6C4DA20E968B5 /* Pods-mNet.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-mNet.debug.xcconfig"; path = "Pods/Target Support Files/Pods-mNet/Pods-mNet.debug.xcconfig"; sourceTree = "<group>"; };
+		75A1171320A1AA6700176BE1 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		75AA21E6208344C000A73D3D /* PopoverTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopoverTableViewCell.swift; sourceTree = "<group>"; };
 		75AA21E82083459B00A73D3D /* PopoverObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopoverObject.swift; sourceTree = "<group>"; };
 		75AA21EA20838F0B00A73D3D /* ConversationRejectViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConversationRejectViewController.swift; sourceTree = "<group>"; };
@@ -423,6 +428,7 @@
 		8BE5DA87202D8DED00E412A7 /* DashboardStats.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardStats.swift; sourceTree = "<group>"; };
 		8BE5DA89202D91CE00E412A7 /* UserApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserApp.swift; sourceTree = "<group>"; };
 		8BE5DA8B202D929E00E412A7 /* CommonResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonResponse.swift; sourceTree = "<group>"; };
+		E143EE1D0AE605B28B4EDFF9 /* Pods_mNet.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_mNet.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E4E297D6206977F5008D38FD /* InfoPopoverViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoPopoverViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -441,6 +447,7 @@
 				5E21B324200F40820045CDA3 /* Foundation.framework in Frameworks */,
 				5E21B322200F40660045CDA3 /* CoreGraphics.framework in Frameworks */,
 				0568EC3D207EA47200506CE5 /* GoogleSignIn.framework in Frameworks */,
+				07FC1E5AD5A2D08162604091 /* Pods_mNet.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -675,6 +682,15 @@
 			name = "Data Controller";
 			sourceTree = "<group>";
 		};
+		0E78B1C9C30B6373EB488E27 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				6F304F26D0F6C4DA20E968B5 /* Pods-mNet.debug.xcconfig */,
+				13782550D39865241F17ECC7 /* Pods-mNet.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		5E183E971FF37A5700368DE1 /* Approve Reject Application Module */ = {
 			isa = PBXGroup;
 			children = (
@@ -784,12 +800,14 @@
 		5E20CD861FE952BE004ACE0D = {
 			isa = PBXGroup;
 			children = (
+				75A1171320A1AA6700176BE1 /* GoogleService-Info.plist */,
 				0568EC38207EA47000506CE5 /* GoogleSignIn.bundle */,
 				0568EC3A207EA47100506CE5 /* GoogleSignIn.framework */,
 				0568EC39207EA47100506CE5 /* GoogleSignInDependencies.framework */,
 				5E20CD911FE952BE004ACE0D /* mNet */,
 				5E20CD901FE952BE004ACE0D /* Products */,
 				5E21B320200F40660045CDA3 /* Frameworks */,
+				0E78B1C9C30B6373EB488E27 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -949,6 +967,7 @@
 				5E21B325200F40930045CDA3 /* UIKit.framework */,
 				5E21B323200F40820045CDA3 /* Foundation.framework */,
 				5E21B321200F40660045CDA3 /* CoreGraphics.framework */,
+				E143EE1D0AE605B28B4EDFF9 /* Pods_mNet.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -1070,10 +1089,14 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 5E20CDA11FE952BE004ACE0D /* Build configuration list for PBXNativeTarget "mNet" */;
 			buildPhases = (
+				6EB727FF2BDC34C46C1F5107 /* [CP] Check Pods Manifest.lock */,
 				5E20CD8B1FE952BE004ACE0D /* Sources */,
 				5E20CD8C1FE952BE004ACE0D /* Frameworks */,
 				5E20CD8D1FE952BE004ACE0D /* Resources */,
 				0568EC36207EA2DB00506CE5 /* Embed Frameworks */,
+				F1B16E71550DA42077C92C20 /* [CP] Embed Pods Frameworks */,
+				1A0C7BD883025392D5D0B1A8 /* [CP] Copy Pods Resources */,
+				75A1171520A1AB0900176BE1 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -1138,6 +1161,7 @@
 			files = (
 				058A0E4C1FF7C44D00147238 /* Login.storyboard in Resources */,
 				5E37E4CE2012004100088001 /* Notifications.storyboard in Resources */,
+				75A1171420A1AA6700176BE1 /* GoogleService-Info.plist in Resources */,
 				5E20CDB41FE962F2004ACE0D /* SanFranciscoDisplay-Semibold.otf in Resources */,
 				5EDC1E392060F2EC0046A7E5 /* WebView.storyboard in Resources */,
 				5EEEB6B3205FA7F100AFF81F /* DateSelector.storyboard in Resources */,
@@ -1164,6 +1188,75 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		1A0C7BD883025392D5D0B1A8 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-mNet/Pods-mNet-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		6EB727FF2BDC34C46C1F5107 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-mNet-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		75A1171520A1AB0900176BE1 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Fabric/run\"";
+		};
+		F1B16E71550DA42077C92C20 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-mNet/Pods-mNet-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
+				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-mNet/Pods-mNet-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		5E20CD8B1FE952BE004ACE0D /* Sources */ = {
@@ -1459,6 +1552,7 @@
 		};
 		5E20CDA21FE952BE004ACE0D /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6F304F26D0F6C4DA20E968B5 /* Pods-mNet.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = mNet/mNet.entitlements;
@@ -1490,6 +1584,7 @@
 		};
 		5E20CDA31FE952BE004ACE0D /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 13782550D39865241F17ECC7 /* Pods-mNet.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = mNet/mNet.entitlements;

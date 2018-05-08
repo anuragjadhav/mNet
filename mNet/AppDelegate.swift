@@ -9,6 +9,7 @@
 import UIKit
 import UserNotifications
 import GoogleSignIn
+import Firebase
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate,UNUserNotificationCenterDelegate, GIDSignInDelegate {
@@ -24,6 +25,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate,UNUserNotificationCenterDe
         
         performAppStartTasks(application)
         UIApplication.shared.applicationIconBadgeNumber = 0
+        
+        FirebaseApp.configure()
+        
         return true
     }
     

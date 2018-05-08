@@ -1,0 +1,6 @@
+framework module Pods_mNet {
+  umbrella header "Pods-mNet-umbrella.h"
+
+  export *
+  module * { export * }
+}
