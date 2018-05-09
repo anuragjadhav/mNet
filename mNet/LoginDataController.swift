@@ -64,7 +64,7 @@ class LoginDataController: NSObject {
             var loginTypeStatus:LoginType = .normal
             
             guard let isSSOLogin:String = userDictionary[DictionaryKeys.IdentifyUser.isSSO] else {
-                onFailure("Login Failed. Please try again.")
+                onSuccess(.normal)
                 return
             }
             
@@ -74,7 +74,7 @@ class LoginDataController: NSObject {
             else {
                 
                 guard let ssoType:String = userDictionary[DictionaryKeys.IdentifyUser.ssoType] else {
-                    onFailure("Login Failed. Please try again.")
+                    onSuccess(.normal)
                     return
                 }
                 
@@ -85,14 +85,12 @@ class LoginDataController: NSObject {
                     loginTypeStatus = .oktaSSo
                 }
                 else {
-                    onFailure("Login Failed. Please try again.")
-                    return
+                    loginTypeStatus = .normal
                 }
             }
             onSuccess(loginTypeStatus)
             
         }, onFailure: onFailure)
-        
     }
     
     func postLogin(onSuccess:@escaping () -> Void , onFailure : @escaping (String) -> Void) {

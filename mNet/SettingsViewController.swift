@@ -148,7 +148,7 @@ class SettingsViewController: BaseViewController,UITableViewDelegate,UITableView
             alert.addAction(UIAlertAction(title:"Log Out", style:.destructive, handler: { _ in
                 self.logout()
             }))
-            
+            //alert.popoverPresentationController?.sourceView = tableView.cellForRow(at: indexPath)
             DispatchQueue.main.async {
                 self.present(alert, animated: true, completion: nil)
             }
