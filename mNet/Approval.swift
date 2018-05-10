@@ -52,6 +52,19 @@ class Approval: NSObject, Mappable {
     var approvalUserList:[ApprovalUser] = [ApprovalUser]()
     var verificationUserList:[ApprovalUser] = [ApprovalUser]()
     var approveVerifyStatus:String = "0"
+    var documentTypeTitle:String = "Document Type"
+    var documentTypeValue:String = "-"
+    var documentNumberTitle:String = "Document Number"
+    var documentNumberValue:String = "-"
+    var vendorTitle:String = "Vendor"
+    var vendorValue:String = "-"
+    var mediumTitle:String = "Medium"
+    var mediumValue:String = "-"
+    var documentAmountTitle:String = "Document Amount"
+    var documentAmountValue:String = "-"
+    var documentDateTitle:String = "Document Date"
+    var documentDateValue:String = "-"
+    
     var isActionTaken:Bool {
         return approveVerifyStatus == "1"
     }
@@ -65,32 +78,7 @@ class Approval: NSObject, Mappable {
         return .approve
     }
     
-    
     var selectedUsers:[ApprovalUser] = [ApprovalUser]()
-    
-    var documentType:DynamicData? {
-        return dynamicData[safe:0]
-    }
-    
-    var documentNumber:DynamicData? {
-        return dynamicData[safe:1]
-    }
-    
-    var vendor:DynamicData? {
-        return dynamicData[safe:2]
-    }
-    
-    var medium:DynamicData? {
-        return dynamicData[safe:3]
-    }
-    
-    var documentAmount:DynamicData? {
-        return dynamicData[safe:4]
-    }
-    
-    var documentDate:DynamicData? {
-        return dynamicData[safe:5]
-    }
     
     required init?(map: Map) {
         
@@ -139,5 +127,17 @@ class Approval: NSObject, Mappable {
         verificationUserList        <- map["post_next_user_verifier"]
         postPriority                <- map["post_priority"]
         approveVerifyStatus         <- map["approve_verify_status"]
+        documentTypeTitle           <- map["string_type_label1_title"]
+        documentTypeValue           <- map["string_type_label1_value"]
+        documentNumberTitle         <- map["string_label2_title"]
+        documentNumberValue         <- map["string_label2_value"]
+        vendorTitle                 <- map["string_label3_title"]
+        vendorValue                 <- map["string_label3_value"]
+        mediumTitle                 <- map["string_label4_title"]
+        mediumValue                 <- map["string_label4_value"]
+        documentAmountTitle         <- map["string_amount_label5_title"]
+        documentAmountValue         <- map["string_amount_label5_value"]
+        documentDateTitle           <- map["string_date_label6_title"]
+        documentDateValue           <- map["date_label6_value"]
     }
 }

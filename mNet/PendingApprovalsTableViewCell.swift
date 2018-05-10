@@ -70,20 +70,11 @@ class PendingApprovalsTableViewCell: UITableViewCell {
         
         
         var title:String = approval.postTitle
-        if let documentType:String = approval.documentType?.value {
-            title = "\(title) (\(documentType))"
-        }
-        if let documentDate:String = approval.documentDate?.value {
-            title = "\(title) | \(documentDate)"
-        }
+        title = "\(title) (\(approval.documentTypeValue))"
+        title = "\(title) | \(approval.documentDateValue)"
         titleLabel.text = title
         
-        if let amount:String = approval.documentAmount?.value {
-            amountLabel.text = "Rs. \(amount)"
-        }
-        else {
-            amountLabel.text = "-"
-        }
+        amountLabel.text = "Rs. \(approval.documentAmountValue)"
         
         let brandArray:[String] = approval.brand.removeHTMLTags().components(separatedBy: ":")
         if brandArray.count > 0 {
@@ -101,23 +92,11 @@ class PendingApprovalsTableViewCell: UITableViewCell {
             brandValueLabel.text = "-"
         }
         
-        if let medium:DynamicData = approval.medium {
-            mediumTitleLabel.text = medium.title
-            mediumValueLabel.text = medium.value
-        }
-        else {
-            mediumTitleLabel.text = "MEDIUM"
-            mediumValueLabel.text = "-"
-        }
-        
-        if let vendor:DynamicData = approval.vendor {
-            vendorTitleLabel.text = vendor.title
-            vendorValueLabel.text = vendor.value
-        }
-        else {
-            vendorTitleLabel.text = "VENDOR"
-            vendorValueLabel.text = "-"
-        }
+        mediumTitleLabel.text = approval.mediumTitle
+        mediumValueLabel.text = approval.mediumValue
+    
+        vendorTitleLabel.text = approval.vendorTitle
+        vendorValueLabel.text = approval.vendorValue
         
         attachmentButton.isHidden = approval.otherDocument.count <= 0
     }
