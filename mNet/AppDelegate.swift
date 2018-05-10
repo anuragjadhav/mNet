@@ -23,8 +23,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate,UNUserNotificationCenterDe
     //MARK: Application Start Tasks
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         
+        application.applicationIconBadgeNumber = 0
+        
         performAppStartTasks(application)
-        UIApplication.shared.applicationIconBadgeNumber = 0
         
         FirebaseApp.configure()
         
