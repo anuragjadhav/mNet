@@ -54,6 +54,29 @@ class NotificationsViewController: BaseViewController, UITableViewDelegate, UITa
         currentTabbarItem?.badgeValue = nil
         
         notificationsTableView.reloadData()
+        
+        checkIfNotificationDataPresentAndDeepLinkToVC()
+    }
+    
+    func checkIfNotificationDataPresentAndDeepLinkToVC(){
+        
+        if let notifucationData = UserDefaults.standard.value(forKey: UserDefaultsKeys.notificationData)   as? [String:Any]
+        {
+            let notificationObject = NotificationObject(JSON: [String:String]())
+            notificationObject?.postId = notifucationData["post_id"] as? String
+            notificationObject?.approvalType = notifucationData["approval_type"] as? String
+            notificationObject?.notificationType = notifucationData["notification_type"] as? String
+
+            UserDefaults.standard.removeObject(forKey: UserDefaultsKeys.notificationData)
+            UserDefaults.standard.synchronize()
+            
+            if(notificationObject != nil)
+            {
+                navigateToCorrespondingVC(notification: notificationObject!)
+
+            }
+        }
+        
     }
     
     @objc func didEnterForeground()
@@ -88,9 +111,16 @@ class NotificationsViewController: BaseViewController, UITableViewDelegate, UITa
         
         self.tabBarController?.tabBar.isHidden = true
         
-        let notification:NotificationObject = dataCtrl.notifications[indexPath.row]
-        dataCtrl.selectedNotification = notification
+        let notificationObj:NotificationObject = dataCtrl.notifications[indexPath.row]
+        dataCtrl.selectedNotification = notificationObj
         
+        navigateToCorrespondingVC(notification: notificationObj)
+      
+    }
+    
+    
+    func navigateToCorrespondingVC(notification:NotificationObject) {
+    
         if(notification.status == "0")
         {
             dataCtrl.markNotificationAsRead()
@@ -115,6 +145,7 @@ class NotificationsViewController: BaseViewController, UITableViewDelegate, UITa
             goToApprovalDetailsScreen(notification:notification)
         }
     }
+    
     
     func goToApprovalDetailsScreen(notification:NotificationObject) {
         

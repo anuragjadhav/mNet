@@ -134,6 +134,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate,UNUserNotificationCenterDe
     @available(iOS 10.0, *)
     func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse, withCompletionHandler completionHandler: @escaping () -> Void) {
         UserDefaults.standard.set(true, forKey: UserDefaultsKeys.didReceiveNotification)
+        
+        if let notifucationData = response.notification.request.content.userInfo as? [String:Any]
+        {
+            UserDefaults.standard.set(notifucationData, forKey: UserDefaultsKeys.notificationData)
+        }
+        
         UserDefaults.standard.synchronize()
         completionHandler()
     }

@@ -274,6 +274,7 @@ struct UserDefaultsKeys {
     static let baseURL:String = "savedBaseURL"
     static let imagesBaseURL:String = "imagesBaseURL"
     static let didReceiveNotification:String = "didReceiveNotification"
+    static let notificationData:String = "notificationData"
     static let rememberedLoginEmail:String = "rememberedLoginEmail"
     static let rememberedLoginPassword:String = "rememberedLoginPasword"
 }
