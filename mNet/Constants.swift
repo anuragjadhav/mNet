@@ -78,6 +78,7 @@ struct LoginTypeCode {
     static let normal:String = "0"
     static let googleSSO:String = "gmail"
     static let oktaSSO:String = "okta"
+    static let googleSSOPost:String = "GmailSSO"
 }
 
 struct AnimationDurations {

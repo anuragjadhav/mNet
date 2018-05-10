@@ -29,7 +29,7 @@ class Approval: NSObject, Mappable {
     var brand:String = ""
     var period:String = ""
     var title1Note3:String = "-"
-    var documentDetailsTab1Name:String = ""
+    var documentDetailsTab1Name:String?
     var documentDescription:String = "-"
     var remarks:String = "-"
     var costCentre:String = "-"

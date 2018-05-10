@@ -79,8 +79,6 @@ class SettingsViewController: BaseViewController,UITableViewDelegate,UITableView
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
-        self.tabBarController?.tabBar.isHidden = true
-        
         let optionName = self.dataCtrl.settingOptionsArray[indexPath.row]
         
         switch optionName {
@@ -88,7 +86,7 @@ class SettingsViewController: BaseViewController,UITableViewDelegate,UITableView
         case SettingOptions.aboutMe:
             
             sholadReloadData = true
-
+            self.tabBarController?.tabBar.isHidden = true
             let aboutMeVC = UIStoryboard.settings.instantiateViewController(withIdentifier: StoryboardIDs.aboutMeViewController) as! AboutMeViewController
             aboutMeVC.dataCtrl.profile = self.dataCtrl.profile
             self.navigationController?.pushViewController(aboutMeVC, animated: true)
@@ -96,6 +94,7 @@ class SettingsViewController: BaseViewController,UITableViewDelegate,UITableView
             
         case SettingOptions.password:
          
+            self.tabBarController?.tabBar.isHidden = true
             let resetPasswordVC = UIStoryboard.settings.instantiateViewController(withIdentifier: StoryboardIDs.resetPasswordViewController) as! ResetPasswordViewController
             resetPasswordVC.dataCtrl = self.dataCtrl
             self.navigationController?.pushViewController(resetPasswordVC, animated: true)
@@ -105,7 +104,7 @@ class SettingsViewController: BaseViewController,UITableViewDelegate,UITableView
         case SettingOptions.privacySettings:
             
             sholadReloadData = true
-            
+            self.tabBarController?.tabBar.isHidden = true
             let privacySettingsVC = UIStoryboard.settings.instantiateViewController(withIdentifier: StoryboardIDs.privacySetingsViewController) as! PrivacySettingsViewController
             privacySettingsVC.dataCtrl = self.dataCtrl
             self.navigationController?.pushViewController(privacySettingsVC, animated: true)
@@ -114,7 +113,7 @@ class SettingsViewController: BaseViewController,UITableViewDelegate,UITableView
         case SettingOptions.appSettings:
             
             sholadReloadData = true
-            
+            self.tabBarController?.tabBar.isHidden = true
             let appSettingsVC = UIStoryboard.settings.instantiateViewController(withIdentifier: StoryboardIDs.appSettingsViewController)
             self.navigationController?.pushViewController(appSettingsVC, animated: true)
             break
@@ -122,35 +121,41 @@ class SettingsViewController: BaseViewController,UITableViewDelegate,UITableView
         case SettingOptions.emailPreferences:
             
             sholadReloadData = true
-            
+            self.tabBarController?.tabBar.isHidden = true
             let emailPreferenceVC = UIStoryboard.settings.instantiateViewController(withIdentifier: StoryboardIDs.emailPreferencesViewController) as! EmailPreferencesViewController
             emailPreferenceVC.dataCtrl = self.dataCtrl
             self.navigationController?.pushViewController(emailPreferenceVC, animated: true)
             break
             
         case SettingOptions.blockedUsers:
-           
+           self.tabBarController?.tabBar.isHidden = true
             let blockedUsersViewController:BlockedUsersViewController = UIStoryboard.settings.instantiateViewController(withIdentifier: StoryboardIDs.blockedUsersViewController) as! BlockedUsersViewController
             self.navigationController?.pushViewController(blockedUsersViewController, animated: true)
             break;
         
         case SettingOptions.people:
-            
+            self.tabBarController?.tabBar.isHidden = true
             let peopleViewController:PeopleViewController = UIStoryboard.settings.instantiateViewController(withIdentifier: StoryboardIDs.peopleViewController) as! PeopleViewController
             self.navigationController?.pushViewController(peopleViewController, animated: true)
             break;
             
         case SettingOptions.logout:
             
-            let alert = UIAlertController(title:"Are you sure you want to logout?", message:nil, preferredStyle: .alert)
+            
+            let alert = UIAlertController(title:"Are you sure you want to logout?", message:nil, preferredStyle: .actionSheet)
             alert.addAction(UIAlertAction(title:"Cancel", style:.cancel, handler: { _ in
             }))
             alert.addAction(UIAlertAction(title:"Log Out", style:.destructive, handler: { _ in
                 self.logout()
             }))
             
+            let selectedCell:UITableViewCell? = tableView.cellForRow(at: indexPath)
+            alert.popoverPresentationController?.sourceView = selectedCell
+            if let cellRect:CGRect = selectedCell?.frame {
+                alert.popoverPresentationController?.sourceRect = cellRect
+            }
             DispatchQueue.main.async {
-                self.present(alert, animated: true, completion: nil)
+                self.tabBarController?.present(alert, animated: true, completion: nil)
             }
             break;
         
@@ -279,7 +284,7 @@ class SettingsViewController: BaseViewController,UITableViewDelegate,UITableView
                     let alert = UIAlertController(title:AlertMessages.sorry, message:"Unable to logout", preferredStyle: .alert)
                         alert.addAction(UIAlertAction(title:AlertMessages.ok, style:.default, handler: { _ in
                         }))
-                    self.present(alert, animated: false, completion: nil)
+                    self.present(alert, animated: true, completion: nil)
               }
         })
     }

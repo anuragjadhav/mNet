@@ -22,6 +22,8 @@ class ApprovalVerificationViewController: BaseViewController,UISearchBarDelegate
     @IBOutlet weak var approveRadioButtonTop: NSLayoutConstraint!
     @IBOutlet weak var textViewHeight: NSLayoutConstraint!
     @IBOutlet weak var sendButton: CustomBlueBackgroundButton!
+    @IBOutlet weak var noUsersLabel: CustomBrownTextColorLabel!
+    
     
     //Properties
     var radioButtonGroup:PVRadioButtonGroup?
@@ -223,6 +225,7 @@ class ApprovalVerificationViewController: BaseViewController,UISearchBarDelegate
         reloadData()
     }
 
+    //MARK: Data Reload
     func reloadData() {
         
         if approvalRadioButton.isRadioSelected {
@@ -238,6 +241,7 @@ class ApprovalVerificationViewController: BaseViewController,UISearchBarDelegate
             })
         }
         
+        noUsersLabel.isHidden = (userList.count > 0)
         sendPeopleListTableView.reloadData()
     }
 

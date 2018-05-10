@@ -10,7 +10,7 @@ import UIKit
 import GoogleSignIn
 import MessageUI
 
-class LoginViewController: BaseViewController, UITextFieldDelegate, MFMailComposeViewControllerDelegate {
+class LoginViewController: BaseViewController, UITextFieldDelegate, MFMailComposeViewControllerDelegate, GIDSignInUIDelegate {
 
     //MARK: Outlets and Properties
     @IBOutlet weak var logoImageView: UIImageView!
@@ -317,7 +317,7 @@ class LoginViewController: BaseViewController, UITextFieldDelegate, MFMailCompos
         AppDelegate.sharedInstance.onGoogleSignInSuccess = { (googleSignInData) in
             let (email, _/*id*/, token) = googleSignInData
             self.dataController.userName = email
-            self.dataController.password = token
+            self.dataController.password = ""
             self.showTransperantLoadingOnViewController()
             self.dataController.loginType = LoginTypeCode.googleSSO
             self.dataController.postLogin(onSuccess: { [unowned self] in
@@ -336,6 +336,7 @@ class LoginViewController: BaseViewController, UITextFieldDelegate, MFMailCompos
             self.showQuickErrorAlert(message: errorMessage)
             GIDSignIn.sharedInstance().signOut()
         }
+        GIDSignIn.sharedInstance().uiDelegate = self
         GIDSignIn.sharedInstance().signIn()
     }
     
@@ -375,7 +376,6 @@ class LoginViewController: BaseViewController, UITextFieldDelegate, MFMailCompos
         
         present(self.storyboard!.instantiateViewController(withIdentifier: StoryboardIDs.forgotPasswordNavigationController), animated: true, completion: nil)
     }
-    
     
     //MARK: Help Mail
     

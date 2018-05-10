@@ -12,6 +12,9 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
+        <array key="HelveticaNeue.ttc">
+            <string>HelveticaNeue-Bold</string>
+        </array>
         <array key="SanFranciscoDisplay-Bold.otf">
             <string>SanFranciscoDisplay-Bold</string>
         </array>
@@ -582,7 +585,7 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="73" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Aka-mD-GkI">
-                                <rect key="frame" x="27" y="0.0" width="321" height="667"/>
+                                <rect key="frame" x="28" y="0.0" width="321" height="667"/>
                                 <color key="backgroundColor" red="0.96862745100000003" green="0.97254901959999995" blue="0.97647058819999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 <prototypes>
@@ -811,6 +814,15 @@
                                     <outlet property="delegate" destination="fW2-d9-Ri5" id="J82-D4-4cX"/>
                                 </connections>
                             </tableView>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No Users Available" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bCD-Ka-dMm" customClass="CustomBrownTextColorLabel" customModule="mNet" customModuleProvider="target">
+                                <rect key="frame" x="119" y="371" width="137.5" height="20"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="100" id="6Vd-37-cEq"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="SanFranciscoDisplay-Medium" family="San Francisco Display" pointSize="17"/>
+                                <color key="textColor" red="0.3803921569" green="0.28235294119999998" blue="0.22352941179999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gry-3z-gcO" customClass="CustomBlueBackgroundButton" customModule="mNet" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="622" width="375" height="45"/>
                                 <color key="backgroundColor" red="0.2901960784" green="0.56470588239999997" blue="0.8862745098" alpha="1" colorSpace="calibratedRGB"/>
@@ -846,10 +858,12 @@
                         <color key="backgroundColor" red="0.96862745100000003" green="0.97254901959999995" blue="0.97647058819999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="39v-bx-S97" firstAttribute="leading" secondItem="6sf-P1-tn5" secondAttribute="leading" id="7Xr-2Y-Fzr"/>
+                            <constraint firstItem="bCD-Ka-dMm" firstAttribute="top" secondItem="9A2-oL-lUe" secondAttribute="top" constant="64" id="8ND-Mg-ceg"/>
                             <constraint firstItem="1rl-84-S43" firstAttribute="width" secondItem="6sf-P1-tn5" secondAttribute="width" id="99m-Yg-gXq"/>
                             <constraint firstItem="B8m-wq-RSr" firstAttribute="top" secondItem="39v-bx-S97" secondAttribute="bottom" constant="27" id="9OE-PL-eia"/>
                             <constraint firstItem="Ew4-D6-teo" firstAttribute="trailing" secondItem="Gry-3z-gcO" secondAttribute="trailing" id="BDq-8N-3XE"/>
                             <constraint firstItem="B8m-wq-RSr" firstAttribute="trailing" secondItem="39v-bx-S97" secondAttribute="trailing" id="CDa-vl-UtI"/>
+                            <constraint firstItem="bCD-Ka-dMm" firstAttribute="centerX" secondItem="9A2-oL-lUe" secondAttribute="centerX" id="HrU-fX-fsj"/>
                             <constraint firstItem="Gry-3z-gcO" firstAttribute="leading" secondItem="Ew4-D6-teo" secondAttribute="leading" id="Pg7-qa-bh0"/>
                             <constraint firstItem="Gry-3z-gcO" firstAttribute="top" secondItem="9A2-oL-lUe" secondAttribute="bottom" id="QIQ-6u-8b6"/>
                             <constraint firstItem="eDn-eA-tjD" firstAttribute="leading" secondItem="6sf-P1-tn5" secondAttribute="leading" id="SF3-Fg-HEa"/>
@@ -881,6 +895,7 @@
                         <outlet property="approvalRadioButton" destination="6sf-P1-tn5" id="R8T-Nu-JT2"/>
                         <outlet property="approveRadioButtonTop" destination="pad-z5-fbU" id="1IY-1S-DZN"/>
                         <outlet property="messageTextView" destination="39v-bx-S97" id="o0Z-ou-lA6"/>
+                        <outlet property="noUsersLabel" destination="bCD-Ka-dMm" id="3XX-UV-Fuy"/>
                         <outlet property="searchBar" destination="B8m-wq-RSr" id="7Cq-8c-Sr3"/>
                         <outlet property="sendButton" destination="Gry-3z-gcO" id="iEi-hE-Xd1"/>
                         <outlet property="sendPeopleListTableView" destination="9A2-oL-lUe" id="0Yx-nc-fEu"/>
