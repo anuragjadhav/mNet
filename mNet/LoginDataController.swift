@@ -100,6 +100,9 @@ class LoginDataController: NSObject {
         if loginType != LoginTypeCode.normal {
             password = ""
         }
+        if loginType == LoginTypeCode.googleSSO {
+            loginType = LoginTypeCode.googleSSOPost
+        }
         loginParams[DictionaryKeys.LoginPost.password] = password
         loginParams[DictionaryKeys.LoginPost.loginType] = loginType
         loginParams[DictionaryKeys.LoginPost.requestFrom] = DictionaryKeys.LoginPost.requestFromApp
