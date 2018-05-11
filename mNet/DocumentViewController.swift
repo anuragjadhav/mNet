@@ -37,13 +37,7 @@ class DocumentViewController: BaseViewController {
         documentDetailsVC.view.frame = CGRect(x:0, y:0, width:self.containerView.frame.size.width, height:self.containerView.frame.size.height);
         self.containerView.addSubview(documentDetailsVC.view)
         documentDetailsVC.didMove(toParentViewController: self)
-        
-        if dataController.isFromDeepLinking {
-            getData()
-        }
-        else {
-            setData()
-        }
+        getData()
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -60,7 +54,7 @@ class DocumentViewController: BaseViewController {
     
     func getData() {
         self.showLoadingOnViewController()
-        dataController.getDeeplinkApproval(postId: dataController.selectedNotification?.postId ?? "0", onSuccess: {
+        dataController.getDeeplinkApproval(postId: dataController.selectedNotification?.postId ?? dataController.selectedApproval?.postId ?? "0", onSuccess: {
             DispatchQueue.main.async {
                 self.setData()
                 self.removeLoadingFromViewController()

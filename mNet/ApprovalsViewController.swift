@@ -41,8 +41,8 @@ class ApprovalsViewController: BaseViewController,UICollectionViewDelegate, UICo
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated);
-        
         self.setupNavigationBar()
+        dataController.isFromDeepLinking = false
     }
     
     override func viewDidDisappear(_ animated: Bool) {
@@ -80,6 +80,7 @@ class ApprovalsViewController: BaseViewController,UICollectionViewDelegate, UICo
         
         isLoading = true
         
+        self.pendingApprovalsTableView.setContentOffset(.zero, animated: true)
         dataController.getApprovalsData(onSuccess: { 
             
             DispatchQueue.main.async {

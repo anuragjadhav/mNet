@@ -57,12 +57,35 @@ class ApprovalVerificationViewController: BaseViewController,UISearchBarDelegate
         case .approve: hideRadioButtons()
         
         case .verify: showRadioButtons()
+                      getDataIfRequired()
         
         default: hideRadioButtons()
         
         }
         
         self.view.layoutIfNeeded()
+    }
+    
+    func getDataIfRequired() {
+        
+        if dataController.selectedApproval!.approvalUserList.count > 0 || dataController.selectedApproval!.verificationUserList.count > 0 {
+            reloadData()
+            return
+        }
+        
+        self.showTransperantLoadingOnViewController()
+        dataController.getDeeplinkApproval(postId: dataController.selectedApproval?.postId ?? "0", onSuccess: {
+            DispatchQueue.main.async {
+                self.reloadData()
+                self.removeTransperantLoadingFromViewController()
+            }
+        }) { (errorMessage) in
+            DispatchQueue.main.async {
+                self.reloadData()
+                self.removeTransperantLoadingFromViewController()
+                self.showQuickFailureAlert(message: errorMessage)
+            }
+        }
     }
     
     func showRadioButtons() {
@@ -80,7 +103,6 @@ class ApprovalVerificationViewController: BaseViewController,UISearchBarDelegate
         approvalRadioButton.isHidden = false
         verificationRadioButton.isHidden = false
         approvalRadioButton.isRadioSelected = true
-        reloadData()
     }
     
     func hideRadioButtons() {
@@ -94,6 +116,8 @@ class ApprovalVerificationViewController: BaseViewController,UISearchBarDelegate
         approvalRadioButton.isHidden = true
         verificationRadioButton.isHidden = true
     }
+    
+    
     
     func setupNavigationBar(){
         

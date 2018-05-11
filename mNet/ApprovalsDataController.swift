@@ -164,8 +164,11 @@ class ApprovalsDataController: NSObject {
         WrapperManager.shared.approvalWrapper.getApproval(postParams: postData, onSuccess: { (deeplinkApprovalData) in
             let section:ApprovalSection = ApprovalSection()
             section.approvalStatus = deeplinkApprovalData.approvalStatus
+            section.isRejected = self.selectedSection?.isRejected ?? false
+            section.isCancelled = self.selectedSection?.isCancelled ?? false
             self.deeplinkingApproval = deeplinkApprovalData
             self.deeplinkingApprovalSection = section
+            self.isFromDeepLinking = true
             onSuccess()
         }, onFailure: onFailure)
     }

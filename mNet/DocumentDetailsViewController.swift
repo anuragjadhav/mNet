@@ -65,57 +65,22 @@ class DocumentDetailsViewController: BaseViewController,UITableViewDelegate,UITa
         
         let approval:Approval? = dataController.selectedApproval
         
-        if let documentType:DynamicData = approval?.documentType {
-            documentTypeTitleLabel.text = documentType.title
-            documentTypeLabel.text = documentType.value
-        }
-        else {
-            documentTypeTitleLabel.text = "Document Type"
-            documentTypeLabel.text = "-"
-        }
-        
-        if let documentNumber:DynamicData = approval?.documentNumber {
-            documentNoTitleLabel.text = documentNumber.title
-            documentNoLabel.text = documentNumber.value
-        }
-        else {
-            documentNoTitleLabel.text = "Document Number"
-            documentNoLabel.text = "-"
-        }
-        
-        if let medium:DynamicData = approval?.medium {
-            mediumTitleLabel.text = medium.title
-            meduimLabel.text = medium.value
-        }
-        else {
-            mediumTitleLabel.text = "Medium"
-            meduimLabel.text = "-"
-        }
-        
-        if let documentAmount:DynamicData = approval?.documentAmount {
-            documentAmountTitleLabel.text = documentAmount.title
-            documentAmountLabel.text = documentAmount.value
-        }
-        else {
-            documentAmountTitleLabel.text = "Document Amount"
-            documentAmountLabel.text = "-"
-        }
-        
-        if let documentDate:DynamicData = approval?.documentDate {
-            documentDateTitleLabel.text = documentDate.title
-            documentDateLabel.text = documentDate.value
-        }
-        else {
-            documentDateTitleLabel.text = "Document Date"
-            documentDateLabel.text = "-"
-        }
-        
-        if let vendor:DynamicData = approval?.vendor {
-            vendorLabel.text = vendor.value
-        }
-        else {
-            vendorLabel.text = "-"
-        }
+        documentTypeTitleLabel.text = approval?.documentTypeTitle ?? "Document Type"
+        documentTypeLabel.text = approval?.documentTypeValue  ?? "-"
+    
+        documentNoTitleLabel.text = approval?.documentNumberTitle ?? "Document Number"
+        documentNoLabel.text = approval?.documentNumberValue  ?? "-"
+   
+        mediumTitleLabel.text = approval?.mediumTitle ?? "Medium"
+        meduimLabel.text = approval?.mediumValue  ?? "-"
+    
+        documentAmountTitleLabel.text = approval?.documentAmountTitle ?? "Document Amount"
+        documentAmountLabel.text = approval?.documentAmountValue  ?? "-"
+    
+        documentDateTitleLabel.text = approval?.documentDateTitle ?? "Document Date"
+        documentDateLabel.text = approval?.documentDateValue  ?? "-"
+    
+        vendorLabel.text = approval?.vendorValue  ?? "-"
         
         descriptionLabel.text = approval?.documentDescription
         remarksLabel.text = approval?.remarks
