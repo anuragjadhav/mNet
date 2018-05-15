@@ -35,7 +35,7 @@ class DashboardViewController: BaseViewController, UITableViewDataSource, UITabl
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        NotificationCenter.default.addObserver(self, selector: #selector(didReceiveAnyPushNotification), name:.UIApplicationWillEnterForeground, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(didReceiveAnyPushNotification), name:.UIApplicationDidBecomeActive, object: nil)
 
         // Do any additional setup after loading the view.
         setUpViewController()
@@ -178,15 +178,12 @@ class DashboardViewController: BaseViewController, UITableViewDataSource, UITabl
     
     @objc func didReceiveAnyPushNotification()
     {
-        let didReceivePusnNotif:Bool = UserDefaults.standard.bool(forKey: UserDefaultsKeys.didReceiveNotification)
         
-        if didReceivePusnNotif == true {
+        if (UserDefaults.standard.value(forKey: UserDefaultsKeys.notificationData)   as? [String:Any]) != nil {
             
             self.tabBarController?.selectedIndex = 2
         }
-        
-        UserDefaults.standard.set(false, forKey: UserDefaultsKeys.didReceiveNotification)
-        UserDefaults.standard.synchronize()
+
     }
     
     //MARK: Table View Methods

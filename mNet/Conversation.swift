@@ -35,7 +35,8 @@ class Conversation: NSObject, Mappable {
     var reply:[ConversationReply] = []
     var latestReplierDesignation:String = ""
     var ignore:String = "0"
-    
+    var postTypeValue:String = ""
+
     required init?(map: Map) {
         
     }
@@ -67,5 +68,6 @@ class Conversation: NSObject, Mappable {
         approvalType <- map["approval_type"]
         latestReplierDesignation <- map["latest_replyer_desingnation"]
         ignore <- map["ignore_status"]
+        postTypeValue <- map["post_type_value"]
     }
 }

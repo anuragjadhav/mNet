@@ -16,7 +16,7 @@ class MembersTableViewCell: UITableViewCell {
     
     @IBOutlet weak var deleteButton: UIButton!
     
-    func loadCellWithMember(member:ConversationMember , isPostCreator:Bool)
+    func loadCellWithMember(member:ConversationMember , isPostCreator:Bool , postType:String)
     {
         memberNameLabel.text = member.userName
         
@@ -25,11 +25,23 @@ class MembersTableViewCell: UITableViewCell {
             if(member.agreeStatus == "Pending")
             {
                 memberTypeLabel.text = "To Agree"
+                
+                if(postType == "5")
+                {
+                    memberTypeLabel.text = "To Verify"
+                }
+                
                 memberTypeLabel.textColor = ColorConstants.kRedColor
             }
             else
             {
                 memberTypeLabel.text = member.agreeStatus
+                
+                if(postType == "5" && member.agreeStatus == "Agree")
+                {
+                    memberTypeLabel.text = "Verify"
+                }
+                
                 memberTypeLabel.textColor = ColorConstants.kGreenColor
             }
         }

@@ -18,6 +18,8 @@ class NotificationsViewController: BaseViewController, UITableViewDelegate, UITa
     
     let dataCtrl:NotificationDataController = NotificationDataController()
     
+    var didComeFromNotification:Bool = false
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -63,7 +65,14 @@ class NotificationsViewController: BaseViewController, UITableViewDelegate, UITa
         if let notifucationData = UserDefaults.standard.value(forKey: UserDefaultsKeys.notificationData)   as? [String:Any]
         {
             let notificationObject = NotificationObject(JSON: [String:String]())
+            
             notificationObject?.postId = notifucationData["post_id"] as? String
+
+            if(notificationObject?.postId == nil)
+            {
+                notificationObject?.postId = String(notifucationData["post_id"] as! Int)
+            }
+            
             notificationObject?.approvalType = notifucationData["approval_type"] as? String
             notificationObject?.notificationType = notifucationData["notification_type"] as? String
 
@@ -73,6 +82,7 @@ class NotificationsViewController: BaseViewController, UITableViewDelegate, UITa
             if(notificationObject != nil)
             {
                 navigateToCorrespondingVC(notification: notificationObject!)
+                didComeFromNotification = true
 
             }
         }
@@ -109,7 +119,6 @@ class NotificationsViewController: BaseViewController, UITableViewDelegate, UITa
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
-        self.tabBarController?.tabBar.isHidden = true
         
         let notificationObj:NotificationObject = dataCtrl.notifications[indexPath.row]
         dataCtrl.selectedNotification = notificationObj
@@ -133,8 +142,10 @@ class NotificationsViewController: BaseViewController, UITableViewDelegate, UITa
             self.unreadNotificationLabel.text = self.dataCtrl.unreadNotificationCount! + " unread notifications"
         }
         
-        if(notification.notificationType == "reply" || notification.notificationType == "post")
+        if(notification.notificationType == "reply" || notification.notificationType == "post" || notification.notificationType == "conversation")
         {
+            self.tabBarController?.tabBar.isHidden = true
+            
             let conversationDetailVC = UIStoryboard.conversations.instantiateViewController(withIdentifier: StoryboardIDs.conversationDetailViewController) as! ConversationDetailViewController
             conversationDetailVC.dataCtrl = ConversationsDataController()
             conversationDetailVC.didComeFromNotification = true
@@ -142,6 +153,7 @@ class NotificationsViewController: BaseViewController, UITableViewDelegate, UITa
             self.navigationController?.pushViewController(conversationDetailVC, animated: true)
         }
         else {
+            self.tabBarController?.tabBar.isHidden = true
             goToApprovalDetailsScreen(notification:notification)
         }
     }
@@ -175,6 +187,23 @@ class NotificationsViewController: BaseViewController, UITableViewDelegate, UITa
                     if(isRefresh == false){
                         
                         self.removeLoadingFromViewController()
+                    }
+                    
+                    if(self.didComeFromNotification)
+                    {
+                        self.didComeFromNotification = false
+                        
+                        let notificationObj:NotificationObject = self.dataCtrl.notifications.first!
+                        self.dataCtrl.selectedNotification = notificationObj
+                        
+                        self.dataCtrl.markNotificationAsRead()
+                        
+                        //reduce read count
+                        var count:Int = Int(self.dataCtrl.unreadNotificationCount!)!
+                        count -= 1
+                        count = count < 0 ? 0 : count
+                        self.dataCtrl.unreadNotificationCount = String(count)
+                        self.unreadNotificationLabel.text = self.dataCtrl.unreadNotificationCount! + " unread notifications"
                     }
                     
                     self.unreadNotificationLabel.text = self.dataCtrl.unreadNotificationCount! + " unread notifications"

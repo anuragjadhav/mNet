@@ -88,7 +88,7 @@ class ConversationInfoViewController: BaseViewController,UITableViewDelegate,UIT
             isPostCreator = false
         }
         
-        cell.loadCellWithMember(member:member,isPostCreator: isPostCreator!)
+        cell.loadCellWithMember(member:member,isPostCreator: isPostCreator!,postType: (dataCtrl?.selectedCoversation?.postTypeValue)!)
         
         return cell
     }
