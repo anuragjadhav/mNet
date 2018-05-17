@@ -234,7 +234,7 @@ class ApprovalVerificationViewController: BaseViewController,UISearchBarDelegate
                     }
                     else
                     {
-                        self.navigationController?.popViewController(animated: true)
+                        self.backTwo()
 
                     }
                 })
@@ -247,6 +247,11 @@ class ApprovalVerificationViewController: BaseViewController,UISearchBarDelegate
                 self.showQuickErrorAlert(message: errorMessage)
             }
         }
+    }
+    
+    func backTwo() {
+        let viewControllers: [UIViewController] = self.navigationController!.viewControllers as [UIViewController]
+        self.navigationController!.popToViewController(viewControllers[viewControllers.count - 3], animated: true)
     }
 
     // MARK: - Radio Button Delegate
