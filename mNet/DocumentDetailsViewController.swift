@@ -45,6 +45,7 @@ class DocumentDetailsViewController: BaseViewController,UITableViewDelegate,UITa
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         setData()
+
     }
 
     override func viewWillAppear(_ animated: Bool) {
