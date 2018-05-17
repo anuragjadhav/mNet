@@ -205,8 +205,12 @@ class NotificationsViewController: BaseViewController, UITableViewDelegate, UITa
                         self.dataCtrl.unreadNotificationCount = String(count)
                         self.unreadNotificationLabel.text = self.dataCtrl.unreadNotificationCount! + " unread notifications"
                     }
+                    else
+                    {
+                        self.unreadNotificationLabel.text = self.dataCtrl.unreadNotificationCount! + " unread notifications"
+                    }
                     
-                    self.unreadNotificationLabel.text = self.dataCtrl.unreadNotificationCount! + " unread notifications"
+
                     self.checkNoData()
                     self.notificationsTableView.reloadData()
                  }

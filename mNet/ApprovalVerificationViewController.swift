@@ -227,7 +227,16 @@ class ApprovalVerificationViewController: BaseViewController,UISearchBarDelegate
                 self.showQuickSuccessAlert(message: successMessage, completion: { (_) in
                     self.approvalsVC?.resetData()
                     self.approvalsVC?.getData()
-                    self.navigationController?.popToViewController(self.approvalsVC!, animated: true)
+                    
+                    if(self.approvalsVC != nil){
+                        self.navigationController?.popToViewController(self.approvalsVC!, animated: true)
+
+                    }
+                    else
+                    {
+                        self.navigationController?.popViewController(animated: true)
+
+                    }
                 })
             }
             
@@ -261,7 +270,7 @@ class ApprovalVerificationViewController: BaseViewController,UISearchBarDelegate
         
         if searchTextEntered != nil {
             userList = userList.filter({ (user) -> Bool in
-                return user.name.contains(searchTextEntered!)
+                return user.name.localizedCaseInsensitiveContains(searchTextEntered!)
             })
         }
         
