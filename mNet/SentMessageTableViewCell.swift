@@ -10,7 +10,7 @@ import UIKit
 
 class SentMessageTableViewCell: UITableViewCell {
 
-    @IBOutlet weak var linkTextView: UITextView!
+    @IBOutlet weak var linkButton: UIButton!
     @IBOutlet weak var userNameLabel: UILabel!
     @IBOutlet weak var timeLabel: UILabel!
     @IBOutlet weak var messageLabel: UILabel!
@@ -38,14 +38,12 @@ class SentMessageTableViewCell: UITableViewCell {
         //set link if present
         if(link == nil || link == "")
         {
-            linkViewTopConstraint.constant = 2
             linkViewHeightConstraint.constant = 0
-            linkTextView.text = nil
+            linkButton.setTitle("", for: .normal)
         }
         else
         {
-            linkTextView.text = link
-            linkViewTopConstraint.constant = 6.5
+            linkButton.setTitle((link?.getFileURLExtension())! + " attached", for: .normal)
             linkViewHeightConstraint.constant = 15
         }
         

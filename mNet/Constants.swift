@@ -305,6 +305,7 @@ struct StoryboardIDs {
     static let conversationVerifyViewController:String = "ConversationVerifyViewController"
     static let conversationApproveViewController:String = "ConversationApproveViewController"
     static let forgotPasswordNavigationController:String = "ForgotPasswordNavigationControllerStoryboardID"
+    static let imageDisaplyViewController:String = "ImageDisplayViewController"
 }
 
 struct SegueIdentifiers {

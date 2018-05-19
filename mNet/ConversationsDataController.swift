@@ -565,7 +565,7 @@ class ConversationsDataController: NSObject {
         postParams["agree_id"] = verificationEmailArray?.joined(separator: ",")
         postParams["approve"] = approvalEmailArray?.joined(separator: ",")
         
-        WrapperManager.shared.conversationWrapper.createNewConversation(postParams: postParams, fileName:selectedFilenameInNewConversation! , fileData: selectedFileDataInNewConversation!, type: mimeType!, name:"file_name", onSuccess: {
+        WrapperManager.shared.conversationWrapper.createNewConversation(postParams: postParams, fileName:selectedFilenameInNewConversation , fileData: selectedFileDataInNewConversation, type: mimeType, name:"file_name", onSuccess: {
             
             onSuccess()
             

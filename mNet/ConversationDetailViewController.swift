@@ -38,9 +38,6 @@ class ConversationDetailViewController: BaseViewController,UITableViewDelegate,U
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        conversationTableView.estimatedRowHeight = 66
-        conversationTableView.rowHeight = UITableViewAutomaticDimension
-        
         sendButton.isEnabled = false
         sendButton.titleLabel?.textColor = UIColor.gray
         
@@ -217,12 +214,6 @@ class ConversationDetailViewController: BaseViewController,UITableViewDelegate,U
         }        
     }
     
-
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        
-        return UITableViewAutomaticDimension
-    }
-
     
     //Mark: Textview Delegates
     
@@ -245,15 +236,6 @@ class ConversationDetailViewController: BaseViewController,UITableViewDelegate,U
         return true
     }
     
-    func textView(_ textView: UITextView, shouldInteractWith URL: URL, in characterRange: NSRange) -> Bool {
-        
-        let webViewController:WebViewController = UIStoryboard.webView.instantiateViewController(withIdentifier: StoryboardIDs.webViewController) as! WebViewController
-        webViewController.setData(url: URL, header: URL.pathComponents.last)
-        navigationController?.pushViewController(webViewController, animated: true)
-        
-        return false
-    }
-    
     //MARK: Image Picker Delegates
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any])
@@ -264,7 +246,7 @@ class ConversationDetailViewController: BaseViewController,UITableViewDelegate,U
         
         dataCtrl?.selectedFilenameForNewReply = currentTimeStamp
         dataCtrl?.selectedFileDataForNewReply =
-        UIImageJPEGRepresentation(chosenImage,0.9)
+        UIImageJPEGRepresentation(chosenImage,0.7)
                 
         picker.dismiss(animated: true, completion: nil)
         
@@ -581,6 +563,31 @@ class ConversationDetailViewController: BaseViewController,UITableViewDelegate,U
         self.navigationController?.popViewController(animated: true)
     }
     
+    @IBAction func linkButtonAction(_ sender: UIButton) {
+        
+        let buttonPoint:CGPoint = sender.convert(CGPoint.zero, to: self.conversationTableView)
+        let indexPath:IndexPath = self.conversationTableView.indexPathForRow(at: buttonPoint)!
+        
+        let conversationReply:ConversationReply = (dataCtrl?.selectedCoversation?.reply[indexPath.row])!
+        
+        guard let linkURL = URL(string: conversationReply.replyLink ?? "") else {
+            return
+        }
+        
+        if(linkURL.pathExtension == "jpeg" || linkURL.pathExtension == "jpg" || linkURL.pathExtension == "png")
+        {
+            let imageDisplayController:ImageDisplayViewController = UIStoryboard.conversations.instantiateViewController(withIdentifier: StoryboardIDs.imageDisaplyViewController) as! ImageDisplayViewController
+            imageDisplayController.imageUrl = linkURL
+            navigationController?.pushViewController(imageDisplayController, animated: true)
+        }
+        else
+        {
+            let webViewController:WebViewController = UIStoryboard.webView.instantiateViewController(withIdentifier: StoryboardIDs.webViewController) as! WebViewController
+            webViewController.setData(url: linkURL, header: linkURL.pathComponents.last)
+            navigationController?.pushViewController(webViewController, animated: true)
+            
+        }
+    }
     
     func addUsersToExistingConversation() {
         

@@ -204,6 +204,8 @@
 		75AA21EB20838F0B00A73D3D /* ConversationRejectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75AA21EA20838F0B00A73D3D /* ConversationRejectViewController.swift */; };
 		75AA21ED20838F1C00A73D3D /* ConversationApproveViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75AA21EC20838F1C00A73D3D /* ConversationApproveViewController.swift */; };
 		75AA21EF20838F2F00A73D3D /* ConversationVerifyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75AA21EE20838F2F00A73D3D /* ConversationVerifyViewController.swift */; };
+		75B7318B20B0198C000421B3 /* ImageDisplayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75B7318A20B0198C000421B3 /* ImageDisplayViewController.swift */; };
+		75B7318D20B019BB000421B3 /* EFImageViewZoom.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75B7318C20B019BB000421B3 /* EFImageViewZoom.swift */; };
 		8BE5DA88202D8DED00E412A7 /* DashboardStats.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BE5DA87202D8DED00E412A7 /* DashboardStats.swift */; };
 		8BE5DA8A202D91CE00E412A7 /* UserApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BE5DA89202D91CE00E412A7 /* UserApp.swift */; };
 		8BE5DA8C202D929E00E412A7 /* CommonResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BE5DA8B202D929E00E412A7 /* CommonResponse.swift */; };
@@ -425,6 +427,8 @@
 		75AA21EA20838F0B00A73D3D /* ConversationRejectViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConversationRejectViewController.swift; sourceTree = "<group>"; };
 		75AA21EC20838F1C00A73D3D /* ConversationApproveViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConversationApproveViewController.swift; sourceTree = "<group>"; };
 		75AA21EE20838F2F00A73D3D /* ConversationVerifyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConversationVerifyViewController.swift; sourceTree = "<group>"; };
+		75B7318A20B0198C000421B3 /* ImageDisplayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageDisplayViewController.swift; sourceTree = "<group>"; };
+		75B7318C20B019BB000421B3 /* EFImageViewZoom.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EFImageViewZoom.swift; sourceTree = "<group>"; };
 		8BE5DA87202D8DED00E412A7 /* DashboardStats.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardStats.swift; sourceTree = "<group>"; };
 		8BE5DA89202D91CE00E412A7 /* UserApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserApp.swift; sourceTree = "<group>"; };
 		8BE5DA8B202D929E00E412A7 /* CommonResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonResponse.swift; sourceTree = "<group>"; };
@@ -578,6 +582,7 @@
 				75AA21EA20838F0B00A73D3D /* ConversationRejectViewController.swift */,
 				75AA21EC20838F1C00A73D3D /* ConversationApproveViewController.swift */,
 				75AA21EE20838F2F00A73D3D /* ConversationVerifyViewController.swift */,
+				75B7318A20B0198C000421B3 /* ImageDisplayViewController.swift */,
 			);
 			name = "View Controllers";
 			sourceTree = "<group>";
@@ -585,6 +590,7 @@
 		05A569812017B71600C6F713 /* Libraries */ = {
 			isa = PBXGroup;
 			children = (
+				75B7318C20B019BB000421B3 /* EFImageViewZoom.swift */,
 				5E2D374B202091290013A138 /* PullUpRefreshControl */,
 				05A569842017B73800C6F713 /* Alamofire + Object Mapper */,
 				05A569832017B72F00C6F713 /* Object Mapper */,
@@ -1359,6 +1365,7 @@
 				058A0ED21FF7C50400147238 /* DashboardMyAppsTableViewCell.swift in Sources */,
 				5E2D375320209DB60013A138 /* NotificationWrapper.swift in Sources */,
 				05A7A9011FF815A000472A60 /* ConversationInfoViewController.swift in Sources */,
+				75B7318B20B0198C000421B3 /* ImageDisplayViewController.swift in Sources */,
 				5EF354E7206908A3001A93E6 /* BlockedUsersViewController.swift in Sources */,
 				8BE5DA8A202D91CE00E412A7 /* UserApp.swift in Sources */,
 				5EC3005A1FEBEBFA00229516 /* AppSettingsViewController.swift in Sources */,
@@ -1399,6 +1406,7 @@
 				050F1BE8203732F400B32841 /* ApprovalTabCounter.swift in Sources */,
 				05A569D12017B7B300C6F713 /* TransformOperators.swift in Sources */,
 				05E65A96209CFB300087B63B /* NewPasswordViewController.swift in Sources */,
+				75B7318D20B019BB000421B3 /* EFImageViewZoom.swift in Sources */,
 				5EF31C8A201B6231007727D8 /* Profile.swift in Sources */,
 				5E2D373C2020667F0013A138 /* ImageFilter.swift in Sources */,
 				05A569D22017B7B300C6F713 /* DateTransform.swift in Sources */,

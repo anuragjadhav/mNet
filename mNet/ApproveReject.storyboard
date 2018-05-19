@@ -597,16 +597,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="filename.xyz" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="If3-YP-UyR" customClass="CustomBrownTextColorLabel" customModule="mNet" customModuleProvider="target">
-                                                    <rect key="frame" x="5" y="16.5" width="179" height="18"/>
-                                                    <fontDescription key="fontDescription" name="SanFranciscoDisplay-Regular" family="San Francisco Display" pointSize="15"/>
-                                                    <color key="textColor" red="0.3803921569" green="0.28235294119999998" blue="0.22352941179999999" alpha="1" colorSpace="calibratedRGB"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="30 Dec ' 17" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fx4-lS-BSt" customClass="CustomBrownTextColorLabel" customModule="mNet" customModuleProvider="target">
-                                                    <rect key="frame" x="200" y="16.5" width="72" height="18"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="width" constant="72" id="BXO-k1-2q6"/>
-                                                    </constraints>
+                                                    <rect key="frame" x="5" y="16" width="278" height="19"/>
                                                     <fontDescription key="fontDescription" name="SanFranciscoDisplay-Regular" family="San Francisco Display" pointSize="15"/>
                                                     <color key="textColor" red="0.3803921569" green="0.28235294119999998" blue="0.22352941179999999" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
@@ -625,21 +616,18 @@
                                             <constraints>
                                                 <constraint firstItem="FrV-7b-BRA" firstAttribute="trailing" secondItem="bcR-g3-w7v" secondAttribute="trailing" id="1dM-bs-KGJ"/>
                                                 <constraint firstAttribute="bottom" secondItem="If3-YP-UyR" secondAttribute="bottom" constant="16" id="4xH-2R-4uC"/>
-                                                <constraint firstItem="bcR-g3-w7v" firstAttribute="leading" secondItem="fx4-lS-BSt" secondAttribute="trailing" constant="25" id="CBk-Of-fwc"/>
                                                 <constraint firstItem="FrV-7b-BRA" firstAttribute="top" secondItem="bcR-g3-w7v" secondAttribute="top" id="Hcn-1I-9Ip"/>
+                                                <constraint firstItem="bcR-g3-w7v" firstAttribute="leading" secondItem="If3-YP-UyR" secondAttribute="trailing" constant="14" id="JZQ-fs-TZn"/>
                                                 <constraint firstItem="FrV-7b-BRA" firstAttribute="bottom" secondItem="bcR-g3-w7v" secondAttribute="bottom" id="NJm-Rv-CVD"/>
                                                 <constraint firstItem="If3-YP-UyR" firstAttribute="leading" secondItem="XCY-q1-mRQ" secondAttribute="leading" constant="5" id="WD6-Gu-52s"/>
                                                 <constraint firstAttribute="trailing" secondItem="bcR-g3-w7v" secondAttribute="trailing" constant="5" id="Ynx-T0-ZsZ"/>
                                                 <constraint firstItem="If3-YP-UyR" firstAttribute="top" secondItem="XCY-q1-mRQ" secondAttribute="top" constant="16" id="edz-la-1ZS"/>
                                                 <constraint firstItem="bcR-g3-w7v" firstAttribute="centerY" secondItem="XCY-q1-mRQ" secondAttribute="centerY" id="gBz-eX-8T5"/>
-                                                <constraint firstItem="fx4-lS-BSt" firstAttribute="leading" secondItem="If3-YP-UyR" secondAttribute="trailing" constant="16" id="gps-io-roX"/>
                                                 <constraint firstItem="FrV-7b-BRA" firstAttribute="leading" secondItem="bcR-g3-w7v" secondAttribute="leading" id="lim-4y-orw"/>
-                                                <constraint firstItem="fx4-lS-BSt" firstAttribute="centerY" secondItem="XCY-q1-mRQ" secondAttribute="centerY" id="m3Q-WT-Uc6"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" red="0.96862745100000003" green="0.97254901959999995" blue="0.97647058819999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <connections>
-                                            <outlet property="dateLabel" destination="fx4-lS-BSt" id="Pul-rh-xqr"/>
                                             <outlet property="downloadButton" destination="bcR-g3-w7v" id="td3-cN-gqL"/>
                                             <outlet property="filenameLabel" destination="If3-YP-UyR" id="P47-5W-bgn"/>
                                         </connections>

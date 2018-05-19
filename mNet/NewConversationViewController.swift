@@ -183,7 +183,7 @@ class NewConversationViewController: BaseViewController,UICollectionViewDelegate
         let currentTimeStamp:String = String(UInt64((Date.init().timeIntervalSince1970 + 62_135_596_800) * 10_000_000)) + "_doc.jpg"
         
         dataCtrl?.selectedFilenameInNewConversation = currentTimeStamp
-        dataCtrl?.selectedFileDataInNewConversation = UIImageJPEGRepresentation(chosenImage, 0.9)
+        dataCtrl?.selectedFileDataInNewConversation = UIImageJPEGRepresentation(chosenImage, 0.7)
         
         attachmentNameLabel.text = dataCtrl?.selectedFilenameInNewConversation
         
@@ -339,7 +339,7 @@ class NewConversationViewController: BaseViewController,UICollectionViewDelegate
 
     func startNewConversation()
     {
-        if((dataCtrl?.toUserList?.count)! > 0 && subjectTextField.text != nil && (subjectTextField.text?.count)! > 0 && messageTextView.text != nil && messageTextView.text.count > 0 && dataCtrl?.selectedFilenameInNewConversation != nil && dataCtrl?.selectedFileDataInNewConversation != nil)
+        if((dataCtrl?.toUserList?.count)! > 0 && subjectTextField.text != nil && (subjectTextField.text?.count)! > 0 && messageTextView.text != nil && messageTextView.text.count > 0)
         {
             dataCtrl?.newConversationSubject = subjectTextField.text
             dataCtrl?.newConversationMessage = messageTextView.text

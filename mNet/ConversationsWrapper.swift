@@ -146,7 +146,7 @@ class ConversationsWrapper: NSObject {
     }
     
     
-    func createNewConversation(postParams:[String:Any],fileName:String,fileData:Data,type:String,name:String, onSuccess:@escaping () -> Void , onFailure : @escaping (String) -> Void){
+    func createNewConversation(postParams:[String:Any],fileName:String?,fileData:Data?,type:String?,name:String?, onSuccess:@escaping () -> Void , onFailure : @escaping (String) -> Void){
         
         let headers: HTTPHeaders = [
             "Content-Type": "multipart/form-data"
@@ -158,8 +158,11 @@ class ConversationsWrapper: NSObject {
                 multipartFormData.append("\(value)".data(using: String.Encoding.utf8)!, withName: key as String)
             }
             
-            multipartFormData.append(fileData, withName:name, fileName:fileName, mimeType: type)
+            if(fileName != nil && fileData != nil && type != nil && name != nil){
+                multipartFormData.append(fileData!, withName:name!, fileName:fileName!, mimeType: type!)
+            }
             
+        
         }, usingThreshold: UInt64.init(), to: URLS.createNewConversation, method: .post, headers: headers) { (result) in
             switch result{
             case .success(let upload, _, _):
