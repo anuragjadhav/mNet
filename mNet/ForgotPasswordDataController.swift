@@ -33,6 +33,7 @@ class ForgotPasswordDataController: NSObject {
         postDictionary[DictionaryKeys.IdentifyUser.platform] = DictionaryKeys.IdentifyUser.platformIOS
         postDictionary[DictionaryKeys.ForgotPassword.action] = DictionaryKeys.ForgotPassword.actionValidateOTP
         postDictionary[DictionaryKeys.ForgotPassword.otp] = otp
+        WrapperManager.shared.loginWrapper.postForgotPassword(postParams: postDictionary, onSuccess: onSuccess, onFailure: onFailure)
     }
     
     func sendNewPassword(onSuccess:@escaping () -> Void , onFailure : @escaping (String) -> Void) {
