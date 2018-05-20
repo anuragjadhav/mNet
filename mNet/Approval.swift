@@ -66,8 +66,9 @@ class Approval: NSObject, Mappable {
     var documentDateValue:String = "-"
     
     var isActionTaken:Bool {
-        return approveVerifyStatus == "1"
+        return ( (approveVerifyStatus == "1") || (approveVerifyStatus == "2") || (isDocCancel == "1") )
     }
+    
     var approvalStatus:ApprovalStatus {
         if isActionTaken {
             return .none
