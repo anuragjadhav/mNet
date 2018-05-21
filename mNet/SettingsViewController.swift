@@ -232,7 +232,7 @@ class SettingsViewController: BaseViewController,UITableViewDelegate,UITableView
            
                 if(self.dataCtrl.profile?.imageUrl != nil && self.dataCtrl.profile?.imageUrl != "")
                 {
-                   if let urlRequest:URLRequest = URLRequest.getRequest(URLS.imageBaseURLString + (self.dataCtrl.profile?.imageUrl)!)
+                   if let urlRequest:URLRequest = URLRequest.getRequest(URLS.imageBaseURLString() + (self.dataCtrl.profile?.imageUrl)!)
                     {
                         UIImage.imageDownloader.download(urlRequest) { response in
                             

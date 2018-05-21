@@ -16,14 +16,14 @@ struct URLS {
     
     static let liveBaseURL:URL = URL(string:"http://demo.m-net.in/p_MNetV2Service/MnetV2WebService/")!
     
-    static var baseURL:URL {
+    static func baseURL() -> URL {
         if let savedBaseURL:URL = User.loggedInUser()?.privateApiLink {
             return savedBaseURL
         }
         return liveBaseURL
     }
     
-    static var imageBaseURLString:String {
+    static func imageBaseURLString() -> String {
         if let savedBaseURL:String = User.loggedInUser()?.imageURLString {
             return savedBaseURL
         }
@@ -32,41 +32,41 @@ struct URLS {
     
     static let publicBaseURL:URL = URL(string:"http://demo.m-net.in/p_MNetV2Service/MnetV2WebService/")!
     
-    static let getSettings:URL = URL(string: "getsetting", relativeTo: baseURL)!
-    static let setSettings:URL = URL(string: "setsetting", relativeTo: baseURL)!
-    static let setEmailPreferenceSettings:URL = URL(string: "setEmailPreferences", relativeTo: baseURL)!
+    static let getSettings:URL = URL(string: "getsetting", relativeTo: baseURL())!
+    static let setSettings:URL = URL(string: "setsetting", relativeTo: baseURL())!
+    static let setEmailPreferenceSettings:URL = URL(string: "setEmailPreferences", relativeTo: baseURL())!
     static let resetNewPassword:URL = URL(string: "changePassword", relativeTo: publicBaseURL)!
-    static let getConversationsList:URL = URL(string: "GetPost", relativeTo: baseURL)!
-    static let conversationApprovalRejection:URL = URL(string: "SetReply", relativeTo: baseURL)!
-    static let deleteConversationReply:URL = URL(string: "cancelReply", relativeTo: baseURL)!
-    static let deleteUserFromConversation:URL = URL(string:"deletepostuser", relativeTo: baseURL)!
-    static let hideConversation:URL = URL(string:"HidePost", relativeTo: baseURL)!
-    static let ignoreConversation:URL = URL(string:"ignorePost", relativeTo: baseURL)!
-    static let addUsersToExistingConversation:URL = URL(string:"setpostuser", relativeTo: baseURL)!
-    static let getSelectUserList:URL = URL(string:"findUsersfuncTo", relativeTo: baseURL)!
-    static let createNewConversation:URL = URL(string:"SetPost", relativeTo: baseURL)!
-    static let setNewReplyConversation:URL = URL(string:"SetReply", relativeTo: baseURL)!
-    static let markConversationAsRead:URL = URL(string: "markPostAsRead", relativeTo: baseURL)!
-    static let markNotificationAsRead:URL = URL(string: "readnotification", relativeTo: baseURL)!
-    static let getNotificationsList:URL = URL(string: "NotificationList", relativeTo: baseURL)!
-    static let getProfile:URL = URL(string: "GetUserDetails", relativeTo: baseURL)!
-    static let updateProfile:URL = URL(string: "updateProfile", relativeTo: baseURL)!
-    static let getPeopleList:URL = URL(string: "getUserList", relativeTo: baseURL)!
-    static let getPeopleProfile:URL = URL(string: "getpeopledetails", relativeTo: baseURL)!
-    static let blockUnblock:URL = URL(string: "userBlock", relativeTo: baseURL)!
+    static let getConversationsList:URL = URL(string: "GetPost", relativeTo: baseURL())!
+    static let conversationApprovalRejection:URL = URL(string: "SetReply", relativeTo: baseURL())!
+    static let deleteConversationReply:URL = URL(string: "cancelReply", relativeTo: baseURL())!
+    static let deleteUserFromConversation:URL = URL(string:"deletepostuser", relativeTo: baseURL())!
+    static let hideConversation:URL = URL(string:"HidePost", relativeTo: baseURL())!
+    static let ignoreConversation:URL = URL(string:"ignorePost", relativeTo: baseURL())!
+    static let addUsersToExistingConversation:URL = URL(string:"setpostuser", relativeTo: baseURL())!
+    static let getSelectUserList:URL = URL(string:"findUsersfuncTo", relativeTo: baseURL())!
+    static let createNewConversation:URL = URL(string:"SetPost", relativeTo: baseURL())!
+    static let setNewReplyConversation:URL = URL(string:"SetReply", relativeTo: baseURL())!
+    static let markConversationAsRead:URL = URL(string: "markPostAsRead", relativeTo: baseURL())!
+    static let markNotificationAsRead:URL = URL(string: "readnotification", relativeTo: baseURL())!
+    static let getNotificationsList:URL = URL(string: "NotificationList", relativeTo: baseURL())!
+    static let getProfile:URL = URL(string: "GetUserDetails", relativeTo: baseURL())!
+    static let updateProfile:URL = URL(string: "updateProfile", relativeTo: baseURL())!
+    static let getPeopleList:URL = URL(string: "getUserList", relativeTo: baseURL())!
+    static let getPeopleProfile:URL = URL(string: "getpeopledetails", relativeTo: baseURL())!
+    static let blockUnblock:URL = URL(string: "userBlock", relativeTo: baseURL())!
     static let identifyUser:URL = URL(string: "indentifyUser", relativeTo: publicBaseURL)!
     static let loginAuthenticate:URL = URL(string: "public_authenticate", relativeTo: publicBaseURL)!
-    static let registerDevice:URL = URL(string: "registerToken", relativeTo: baseURL)!
-    static let deRegisterDevice:URL = URL(string: "deregisterToken", relativeTo: baseURL)!
-    static let getUserDetails:URL = URL(string: "GetUserDetails", relativeTo: baseURL)!
-    static let getDashboardStatistics:URL = URL(string: "GetDashBoardStatistics", relativeTo: baseURL)!
-    static let getUserAppsList:URL = URL(string: "getUserAppList", relativeTo: baseURL)!
-    static let setAppPriority:URL = URL(string: "setAppPriority", relativeTo: baseURL)!
-    static let getApprovalList:URL = URL(string: "GetApprovedData", relativeTo: baseURL)!
-    static let verifyPost:URL = URL(string: "setVerifyRepliesToPost", relativeTo: baseURL)!
-    static let approvePost:URL = URL(string: "setAuthorizeRepliesToPost", relativeTo: baseURL)!
-    static let rejectPost:URL = URL(string: "rejectRepliesToPost", relativeTo: baseURL)!
-    static let forgotPassword:URL = URL(string: "passwordRecovery", relativeTo: baseURL)!
+    static let registerDevice:URL = URL(string: "registerToken", relativeTo: baseURL())!
+    static let deRegisterDevice:URL = URL(string: "deregisterToken", relativeTo: baseURL())!
+    static let getUserDetails:URL = URL(string: "GetUserDetails", relativeTo: baseURL())!
+    static let getDashboardStatistics:URL = URL(string: "GetDashBoardStatistics", relativeTo: baseURL())!
+    static let getUserAppsList:URL = URL(string: "getUserAppList", relativeTo: baseURL())!
+    static let setAppPriority:URL = URL(string: "setAppPriority", relativeTo: baseURL())!
+    static let getApprovalList:URL = URL(string: "GetApprovedData", relativeTo: baseURL())!
+    static let verifyPost:URL = URL(string: "setVerifyRepliesToPost", relativeTo: baseURL())!
+    static let approvePost:URL = URL(string: "setAuthorizeRepliesToPost", relativeTo: baseURL())!
+    static let rejectPost:URL = URL(string: "rejectRepliesToPost", relativeTo: baseURL())!
+    static let forgotPassword:URL = URL(string: "passwordRecovery", relativeTo: baseURL())!
 }
 
 struct EmailIDs {
