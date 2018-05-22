@@ -131,21 +131,25 @@ class AppDelegate: UIResponder, UIApplicationDelegate,UNUserNotificationCenterDe
     }
     
     @available(iOS 10.0, *)
+    
     func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse, withCompletionHandler completionHandler: @escaping () -> Void) {
         
         if let apsData = response.notification.request.content.userInfo as? [String:Any]
         {
             if let notifucationData = apsData["aps"] as? [String:Any]
             {
-                UserDefaults.standard.set(notifucationData, forKey: UserDefaultsKeys.notificationData)
-
+                if(notifucationData["post_id"] != nil)
+                {
+                    UserDefaults.standard.set(notifucationData, forKey: UserDefaultsKeys.notificationData)
+                    UserDefaults.standard.synchronize()
+                }
             }
         }
         
-        UserDefaults.standard.synchronize()
         completionHandler()
     }
     
+
     //MARK: Application Life Cycle
     func applicationWillResignActive(_ application: UIApplication) {
         // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
@@ -155,12 +159,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate,UNUserNotificationCenterDe
     func applicationDidEnterBackground(_ application: UIApplication) {
         // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later.
         // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
+        
+        application.applicationIconBadgeNumber = 0
+
     }
 
     func applicationWillEnterForeground(_ application: UIApplication) {
         
         application.applicationIconBadgeNumber = 0
-
+        
         // Called as part of the transition from the background to the active state; here you can undo many of the changes made on entering the background.
     }
 
