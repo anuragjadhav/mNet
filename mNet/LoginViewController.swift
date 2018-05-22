@@ -227,6 +227,8 @@ class LoginViewController: BaseViewController, UITextFieldDelegate, MFMailCompos
     
     @IBAction func signInButtonClicked(_ sender: UIButton) {
         
+        view.endEditing(true)
+        
         dataController.userName = emailTextField.text ?? ""
         dataController.password = passwordTextField.text ?? ""
         
@@ -308,6 +310,8 @@ class LoginViewController: BaseViewController, UITextFieldDelegate, MFMailCompos
     
     
     @IBAction func loginWithGoogleButtonAction(_ sender: UIButton) {
+        
+        view.endEditing(true)
         
         if !Reachability.isConnectedToNetwork() {
             showNoInternetAlert()
