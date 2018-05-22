@@ -21,6 +21,7 @@ class AboutMeDataController: NSObject {
     var editedAbout : String?
     var editedDesignation : String?
     var editedMobileNo : String?
+    var editedDepartment : String?
 
     func updateUserDetails(onSuccess:@escaping (String) -> Void , onFailure : @escaping (String) -> Void){
 
@@ -37,6 +38,7 @@ class AboutMeDataController: NSObject {
         postParams["user_address"] = editedAddress
         postParams["user_about"] = editedAbout
         postParams["user_gender"] = editedGender
+        postParams["user_department"] = editedDepartment
 
         if(editedDob != nil)
         {

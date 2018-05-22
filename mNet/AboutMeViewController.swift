@@ -17,6 +17,7 @@ struct TextFieldTags {
     static let address = 15
     static let about = 16
     static let email = 17
+    static let department = 21
 }
 
 class AboutMeViewController: BaseViewController,UITextFieldDelegate,CustomPickerViewDelegate,UIPickerViewDelegate,UIPickerViewDataSource {
@@ -231,6 +232,7 @@ class AboutMeViewController: BaseViewController,UITextFieldDelegate,CustomPicker
                 dataCtrl.editedAddress = addressTextField.text
                 dataCtrl.editedPhoneNo = landlineNumberTextField.text
                 dataCtrl.editedMobileNo = mobileNumberTextField.text
+                dataCtrl.editedDepartment = departmentTextField.text
 
                 self.showTransperantLoadingOnViewController()
                 
