@@ -61,9 +61,6 @@ class LoginViewController: BaseViewController, UITextFieldDelegate, MFMailCompos
     }
     
     func setUpViewController() {
-        
-        showProceedButton(animated: false)
-        hidePasswordView(animated: false)
         setUpAutoFill()
     }
     
@@ -134,7 +131,7 @@ class LoginViewController: BaseViewController, UITextFieldDelegate, MFMailCompos
             self.signInButton.isHidden = false
             self.emailTextField.isEnabled = false
             self.emailTextField.backgroundColor = UIColor.lightGray
-            
+            self.changeIdButton.backgroundColor = ColorConstants.kRedColor
             UIView.animate(withDuration: AnimationDurations.fast, animations: {
                 self.view.layoutIfNeeded()
             }, completion: { (isCompleted) in
@@ -150,17 +147,27 @@ class LoginViewController: BaseViewController, UITextFieldDelegate, MFMailCompos
         }
     }
     
-    func showGoogleButton() {
+    func showGoogleButton(isOKTA:Bool) {
         
         DispatchQueue.main.async {
             self.proceedButtonHeight.constant = 0
             self.signInButtonHeight.constant = 0
             self.loginWithGoogleButton.isHidden = false
+            self.emailTextField.isEnabled = false
+            self.emailTextField.backgroundColor = UIColor.lightGray
+            self.changeIdButton.backgroundColor = ColorConstants.kBlueColor
+            if isOKTA {
+                self.loginWithGoogleButton.isUserInteractionEnabled = false
+                self.loginWithGoogleButton.setTitle(ConstantStrings.loginWithOKTA, for: .normal)
+            }
+            else {
+                self.loginWithGoogleButton.isUserInteractionEnabled = true
+                self.loginWithGoogleButton.setTitle(ConstantStrings.loginWithGoogle, for: .normal)
+            }
             
             UIView.animate(withDuration: AnimationDurations.normal, animations: {
                 self.view.layoutIfNeeded()
             }, completion: { (isCompleted) in
-                
                 self.proceedButton.isHidden = true
                 self.signInButton.isHidden = true
                 self.googleButtonHeight.constant = self.buttonFullHeight
@@ -168,6 +175,7 @@ class LoginViewController: BaseViewController, UITextFieldDelegate, MFMailCompos
                     self.view.layoutIfNeeded()
                 })
             })
+            self.showBackButton()
         }
     }
 
@@ -183,8 +191,6 @@ class LoginViewController: BaseViewController, UITextFieldDelegate, MFMailCompos
         DispatchQueue.main.async {
             self.passwordViewHeight.constant = self.passwordViewFullHeight
             self.passwordView.isHidden = false
-            self.changeIdButton.isHidden = false
-            self.changeIdButtonHeight.constant = self.changeIdButtonFullHeight
             if animated {
                 UIView.animate(withDuration: AnimationDurations.normal, animations: {
                     self.view.layoutIfNeeded()
@@ -192,10 +198,32 @@ class LoginViewController: BaseViewController, UITextFieldDelegate, MFMailCompos
             }
             else {
                 self.passwordView.isHidden = false
-                self.changeIdButton.isHidden = false
-                self.changeIdButtonHeight.constant = self.changeIdButtonFullHeight
                 self.view.layoutIfNeeded()
             }
+            self.showBackButton()
+        }
+    }
+    
+    func showBackButton() {
+        self.changeIdButton.isHidden = false
+        self.changeIdButtonHeight.constant = self.changeIdButtonFullHeight
+        UIView.animate(withDuration: AnimationDurations.normal, animations: {
+            self.view.layoutIfNeeded()
+        })
+    }
+    
+    func hideBackButton(animated:Bool) {
+        self.changeIdButtonHeight.constant = 0
+        if animated {
+            UIView.animate(withDuration: AnimationDurations.normal, animations: {
+                self.view.layoutIfNeeded()
+            }, completion: { (isCompleted) in
+                self.changeIdButton.isHidden = true
+            })
+        }
+        else {
+            self.view.layoutIfNeeded()
+            self.changeIdButton.isHidden = true
         }
     }
     
@@ -207,19 +235,18 @@ class LoginViewController: BaseViewController, UITextFieldDelegate, MFMailCompos
         
         DispatchQueue.main.async {
             self.passwordViewHeight.constant = 0
-            self.changeIdButtonHeight.constant = 0
             if animated {
                 UIView.animate(withDuration: AnimationDurations.normal, animations: {
                     self.view.layoutIfNeeded()
                 }, completion: { (isCompleted) in
                     self.passwordView.isHidden = true
-                    self.changeIdButton.isHidden = true
                 })
             }
             else {
                 self.view.layoutIfNeeded()
                 self.passwordView.isHidden = true
             }
+            self.hideBackButton(animated: animated)
         }
     }
     
@@ -282,11 +309,10 @@ class LoginViewController: BaseViewController, UITextFieldDelegate, MFMailCompos
                         self.showSignInButton()
                     }
                     else if signInType == .gmailSSO {
-                        self.showGoogleButton()
+                        self.showGoogleButton(isOKTA: false)
                     }
                     else {
-                        //check what to do. show password for now
-                        self.showSignInButton()
+                        self.showGoogleButton(isOKTA: true)
                     }
                 }
                 

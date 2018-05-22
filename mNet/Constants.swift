@@ -336,6 +336,8 @@ struct ConstantStrings {
     static let verifiedMessge:String = "Verified"
     static let cancelledTag:String = "Cancelled"
     static let rejectedTag:String = "Rejected"
+    static let loginWithGoogle:String = "LOG IN WITH GOOGLE"
+    static let loginWithOKTA:String = "LOG IN WITH OKTA"
 }
 
 extension UIStoryboard {
