@@ -65,7 +65,17 @@ class RejectApplicationViewController: BaseViewController,UITextViewDelegate {
                 self.showQuickSuccessAlert(message: AlertMessages.rejectedSuccess, completion: { (_) in
                     self.approvalsVC?.resetData()
                     self.approvalsVC?.getData()
-                    self.navigationController?.popToViewController(self.approvalsVC!, animated: true)
+                    
+                    if(self.approvalsVC == nil)
+                    {
+                        self.backTwo()
+
+                    }
+                    else
+                    {
+                        self.navigationController?.popToViewController(self.approvalsVC!, animated: true)
+                    }
+                    
                 })
             }
 
@@ -76,6 +86,11 @@ class RejectApplicationViewController: BaseViewController,UITextViewDelegate {
                 self.showQuickErrorAlert(message: errorMessage)
             }
         }
+    }
+    
+    func backTwo() {
+        let viewControllers: [UIViewController] = self.navigationController!.viewControllers as [UIViewController]
+        self.navigationController!.popToViewController(viewControllers[viewControllers.count - 3], animated: true)
     }
 
     @IBAction func backButtonAction(_ sender: Any) {
