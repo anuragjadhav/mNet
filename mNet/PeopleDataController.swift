@@ -19,6 +19,11 @@ class PeopleDataController: NSObject {
 
     func getPeopleList(isReload:Bool,onSuccess:@escaping () -> Void , onFailure : @escaping (String) -> Void) {
         
+        if(isReload)
+        {
+            start = 0
+        }
+        
         previousCallSuccessOrFailed = false
         
         let user:User = User.loggedInUser()!
