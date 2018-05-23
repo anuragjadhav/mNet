@@ -69,6 +69,14 @@ class Approval: NSObject, Mappable {
         return ( (approveVerifyStatus == "1") || (approveVerifyStatus == "2") || (isDocCancel == "1") )
     }
     
+    var isCancelled:Bool {
+        return (isDocCancel == "1")
+    }
+    
+    var isRejected:Bool {
+        return (approveVerifyStatus == "2")
+    }
+    
     var approvalStatus:ApprovalStatus {
         if isActionTaken {
             return .none
