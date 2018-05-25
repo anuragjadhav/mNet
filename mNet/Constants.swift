@@ -162,6 +162,7 @@ struct AlertMessages {
     static let rejectedSuccess:String = "Rejected Successfully"
     static let otpSent:String = "OTP sent on your Email-ID"
     static let passwordResetSuccess:String = "Password changed successfully"
+    static let verificationlLimitReached:String = "Approval limit reached, selected user will be authorized signatory."
 }
 
 struct ColorConstants {

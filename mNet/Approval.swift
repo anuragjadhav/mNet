@@ -44,7 +44,7 @@ class Approval: NSObject, Mappable {
     var senderProfileImage:String = ""
     var fileLink:String = ""
     var history:[ApprovalHistory] = [ApprovalHistory]()
-    var approvalLevelLimit:String = ""
+    var approvalLevelLimit:String = "1"
     var readState:String = ""
     var otherDocument:[ApprovalDocument] = [ApprovalDocument]()
     var historyCount:Int = 0
