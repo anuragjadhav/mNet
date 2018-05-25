@@ -23,7 +23,7 @@ class NotificationsViewController: BaseViewController, UITableViewDelegate, UITa
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        NotificationCenter.default.addObserver(self, selector: #selector(didEnterForeground), name:.UIApplicationDidBecomeActive, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(didBecomeActive), name:.UIApplicationDidBecomeActive, object: nil)
 
         lineLabel.layer.shadowColor = UIColor.lightGray.cgColor
         lineLabel.layer.shadowOffset = CGSize(width: 0, height: 0.6)
@@ -57,6 +57,8 @@ class NotificationsViewController: BaseViewController, UITableViewDelegate, UITa
         
         notificationsTableView.reloadData()
         
+        UIApplication.shared.applicationIconBadgeNumber = 0
+        
         checkIfNotificationDataPresentAndDeepLinkToVC()
     }
     
@@ -67,10 +69,17 @@ class NotificationsViewController: BaseViewController, UITableViewDelegate, UITa
             let notificationObject = NotificationObject(JSON: [String:String]())
             
             notificationObject?.postId = notifucationData["post_id"] as? String
+            
+            notificationObject?.notificationId = notifucationData["notification_id"] as? String
 
             if(notificationObject?.postId == nil)
             {
                 notificationObject?.postId = String(notifucationData["post_id"] as! Int)
+            }
+            
+            if(notificationObject?.notificationId == nil && notifucationData["notification_id"] != nil)
+            {
+                notificationObject?.notificationId = String(notifucationData["notification_id"] as! Int)
             }
             
             notificationObject?.approvalType = notifucationData["approval_type"] as? String
@@ -81,18 +90,17 @@ class NotificationsViewController: BaseViewController, UITableViewDelegate, UITa
             
             if(notificationObject != nil)
             {
-                navigateToCorrespondingVC(notification: notificationObject!)
+                dataCtrl.selectedNotification = notificationObject
                 didComeFromNotification = true
+                navigateToCorrespondingVC(notification: notificationObject!)
 
             }
         }
         
     }
     
-    @objc func didEnterForeground()
+    @objc func didBecomeActive()
     {
-        getNotifications(isReload: true, isRefresh: false)
-        
         checkIfNotificationDataPresentAndDeepLinkToVC()
     }
     
@@ -144,6 +152,12 @@ class NotificationsViewController: BaseViewController, UITableViewDelegate, UITa
             self.unreadNotificationLabel.text = self.dataCtrl.unreadNotificationCount! + " unread notifications"
         }
         
+        if(didComeFromNotification)
+        {
+            self.didComeFromNotification = false
+            getNotifications(isReload: true, isRefresh: false)
+        }
+        
         if(notification.notificationType == "reply" || notification.notificationType == "post" || notification.notificationType == "conversation")
         {
             self.tabBarController?.tabBar.isHidden = true
@@ -191,26 +205,9 @@ class NotificationsViewController: BaseViewController, UITableViewDelegate, UITa
                         self.removeLoadingFromViewController()
                     }
                     
-                    if(self.didComeFromNotification)
-                    {
-                        self.didComeFromNotification = false
-                        
-                        let notificationObj:NotificationObject = self.dataCtrl.notifications.first!
-                        self.dataCtrl.selectedNotification = notificationObj
-                        
-                        self.dataCtrl.markNotificationAsRead()
-                        
-                        //reduce read count
-                        var count:Int = Int(self.dataCtrl.unreadNotificationCount!)!
-                        count -= 1
-                        count = count < 0 ? 0 : count
-                        self.dataCtrl.unreadNotificationCount = String(count)
-                        self.unreadNotificationLabel.text = self.dataCtrl.unreadNotificationCount! + " unread notifications"
-                    }
-                    else
-                    {
-                        self.unreadNotificationLabel.text = self.dataCtrl.unreadNotificationCount! + " unread notifications"
-                    }
+
+                    self.unreadNotificationLabel.text = self.dataCtrl.unreadNotificationCount! + " unread notifications"
+                    
                     
 
                     self.checkNoData()

@@ -67,11 +67,12 @@ class NotificationDataController: NSObject {
         postParams["UserId"] = user.userId
         postParams["UserPass"] = user.password
         postParams["UserEmail"] = user.email
-        postParams["notification_id"] = selectedNotification?.notificationId
+        postParams["notification_id"] = selectedNotification?.notificationId ?? "0"
         
-        WrapperManager.shared.notifiactionWrapper.markNotificationAsRead(postParams: postParams, onSuccess: { [unowned self] in
+        self.selectedNotification?.status = "1"
+        
+        WrapperManager.shared.notifiactionWrapper.markNotificationAsRead(postParams: postParams, onSuccess: {
             
-            self.selectedNotification?.status = "1"
         }) {
             
         }
