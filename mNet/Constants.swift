@@ -114,7 +114,7 @@ struct DictionaryKeys {
         static let platform:String = "platform"
         static let requesrFromMobileApp:String = "MobileApp"
         static let platformIOS:String = "iOS"
-        static let isSSO:String = "is_sso"
+        static let isSSO:String = "mobile_sso"
         static let ssoType:String = "sso_type"
     }
     
@@ -162,6 +162,7 @@ struct AlertMessages {
     static let rejectedSuccess:String = "Rejected Successfully"
     static let otpSent:String = "OTP sent on your Email-ID"
     static let passwordResetSuccess:String = "Password changed successfully"
+    static let verificationlLimitReached:String = "Approval limit reached, selected user will be authorized signatory."
 }
 
 struct ColorConstants {

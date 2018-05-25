@@ -115,6 +115,7 @@ class ApprovalVerificationViewController: BaseViewController,UISearchBarDelegate
         searchBar.isHidden = true
         approvalRadioButton.isHidden = true
         verificationRadioButton.isHidden = true
+        approvalRadioButton.isRadioSelected = true
     }
     
     
@@ -197,6 +198,15 @@ class ApprovalVerificationViewController: BaseViewController,UISearchBarDelegate
         if dataController.selectedApproval!.selectedUsers.count <= 0 && dataController.selectedSection!.approvalStatus == .verify {
             self.showQuickErrorAlert(message: AlertMessages.selectAtleastOneUSer)
             return
+        }
+        
+        if verificationRadioButton.isRadioSelected {
+            let verificationLimit:Int = Int(dataController.selectedApproval!.approvalLevelLimit)!
+            let verificationsDone:Int = Int(dataController.selectedApproval!.numberOfVerificationsDone)!
+            if verificationsDone >= verificationLimit {
+                self.showQuickErrorAlert(message: AlertMessages.verificationlLimitReached)
+                return
+            }
         }
         
         self.showTransperantLoadingOnViewController()
