@@ -62,6 +62,15 @@ class NotificationsViewController: BaseViewController, UITableViewDelegate, UITa
         checkIfNotificationDataPresentAndDeepLinkToVC()
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        self.tabBarController?.tabBar.isHidden = false
+        self.navigationController?.navigationBar.isHidden = true
+        
+        self.notificationsTableView.reloadData()
+    }
+    
     func checkIfNotificationDataPresentAndDeepLinkToVC(){
         
         if let notifucationData = UserDefaults.standard.value(forKey: UserDefaultsKeys.notificationData)   as? [String:Any]
@@ -281,6 +290,16 @@ class NotificationsViewController: BaseViewController, UITableViewDelegate, UITa
     override func retryButtonClicked() {
         
         getNotifications(isReload: true , isRefresh: false)
+    }
+    
+    func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldReceive touch: UITouch) -> Bool {
+        
+        if(gestureRecognizer is UIScreenEdgePanGestureRecognizer)
+        {
+            return false
+        }
+        
+        return true
     }
 
 }

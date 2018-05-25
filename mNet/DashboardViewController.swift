@@ -326,4 +326,14 @@ class DashboardViewController: BaseViewController, UITableViewDataSource, UITabl
         }
     }
     
+    func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldReceive touch: UITouch) -> Bool {
+                
+        if(gestureRecognizer is UIScreenEdgePanGestureRecognizer)
+        {
+            return false
+        }
+        
+        return true
+    }
+    
 }
