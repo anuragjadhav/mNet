@@ -71,6 +71,7 @@ class ConversationsListViewController: BaseViewController, UITableViewDelegate, 
         self.tabBarController?.tabBar.isHidden = false
     }
     
+
     override func viewDidDisappear(_ animated: Bool) {
         super.viewDidDisappear(animated)
         view.endEditing(true)

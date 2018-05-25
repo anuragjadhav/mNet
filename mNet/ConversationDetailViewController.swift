@@ -91,18 +91,28 @@ class ConversationDetailViewController: BaseViewController,UITableViewDelegate,U
         {
             let memberCount:Int = (dataCtrl?.selectedCoversation?.membersList.count)!
             
-            let member1:ConversationMember =  (dataCtrl?.selectedCoversation?.membersList.first)!
-            user1Label.text = member1.userName
+            let filteredMemberArray = dataCtrl?.selectedCoversation?.membersList.filter{$0.memberType == "Owner"} ?? []
             
+            if(filteredMemberArray.count > 0)
+            {
+                let member1:ConversationMember =  (filteredMemberArray.first)!
+                user1Label.text = member1.userName
+            }
+            else
+            {
+                let member1:ConversationMember =  (dataCtrl?.selectedCoversation?.membersList.first)!
+                user1Label.text = member1.userName
+            }
+        
             let member2:ConversationMember =  (dataCtrl?.selectedCoversation?.membersList.last)!
             user2Label.text = "\(member2.userName) + \(memberCount - 2)"
         }
         else
         {
-            let member1:ConversationMember? =  (dataCtrl?.selectedCoversation?.membersList.first) ?? nil
+            let member1:ConversationMember? =  (dataCtrl?.selectedCoversation?.membersList.last) ?? nil
             user1Label.text = member1?.userName
             
-            let member2:ConversationMember? =  (dataCtrl?.selectedCoversation?.membersList.last) ?? nil
+            let member2:ConversationMember? =  (dataCtrl?.selectedCoversation?.membersList.first) ?? nil
             user2Label.text = member2?.userName
         }
         
@@ -355,7 +365,9 @@ class ConversationDetailViewController: BaseViewController,UITableViewDelegate,U
         popController.popoverPresentationController?.delegate = self
         popController.popoverPresentationController?.sourceView = self.user2Label // button
         
-        popController.dataArray = (dataCtrl?.getPopoverObjectsFromStringArray(stringArray: dataCtrl?.selectedCoversation?.membersList.map{$0.userName} ?? [String]()))!
+        let filteredMemberArray = dataCtrl?.selectedCoversation?.membersList.filter{$0.memberType != "Owner"} ?? []
+        
+        popController.dataArray = (dataCtrl?.getPopoverObjectsFromStringArray(stringArray: filteredMemberArray.map{$0.userName}))!
         
         // present the popover
         self.present(popController, animated: true, completion: nil)
