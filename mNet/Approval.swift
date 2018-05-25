@@ -64,7 +64,8 @@ class Approval: NSObject, Mappable {
     var documentAmountValue:String = "-"
     var documentDateTitle:String = "Document Date"
     var documentDateValue:String = "-"
-    
+    var numberOfVerificationsDone:String = "0"
+
     var isActionTaken:Bool {
         return ( (approveVerifyStatus == "1") || (approveVerifyStatus == "2") || (isDocCancel == "1") )
     }
@@ -148,5 +149,7 @@ class Approval: NSObject, Mappable {
         documentAmountValue         <- map["string_amount_label5_value"]
         documentDateTitle           <- map["string_date_label6_title"]
         documentDateValue           <- map["date_label6_value"]
+        numberOfVerificationsDone           <- map["number_of_verifications_done"]
+
     }
 }

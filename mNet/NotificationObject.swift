@@ -17,7 +17,7 @@ class NotificationObject: NSObject,Mappable {
     var notificationType: String?
     var postId: String?
     var notificationTypeId:String?
-    var status:String?
+    var status:String? = "0"
     var createdBy:String?
     var createdOn:String?
     var userId:String?

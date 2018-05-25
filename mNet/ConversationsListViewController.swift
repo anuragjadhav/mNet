@@ -310,4 +310,14 @@ class ConversationsListViewController: BaseViewController, UITableViewDelegate, 
         dataCtrl.endDate = toDate ?? ""
         getConversations(isReload: true,isLoadMore: false, searchText: searchBar.text!)
     }
+    
+    func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldReceive touch: UITouch) -> Bool {
+        
+        if(gestureRecognizer is UIScreenEdgePanGestureRecognizer)
+        {
+            return false
+        }
+        
+        return true
+    }
 }
