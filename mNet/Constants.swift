@@ -114,7 +114,7 @@ struct DictionaryKeys {
         static let platform:String = "platform"
         static let requesrFromMobileApp:String = "MobileApp"
         static let platformIOS:String = "iOS"
-        static let isSSO:String = "is_sso"
+        static let isSSO:String = "mobile_sso"
         static let ssoType:String = "sso_type"
     }
     
