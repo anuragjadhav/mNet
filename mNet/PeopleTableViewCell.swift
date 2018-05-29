@@ -10,6 +10,7 @@ import UIKit
 
 class PeopleTableViewCell: UITableViewCell {
 
+    @IBOutlet weak var initialsLabel: UILabel!
     @IBOutlet weak var personNameLabel: CustomBrownTextColorLabel!
     @IBOutlet weak var branchNameLabel: CustomBrownTextColorLabel!
 
@@ -17,5 +18,9 @@ class PeopleTableViewCell: UITableViewCell {
         
         personNameLabel.text = people.userName
         branchNameLabel.text = people.branchName
+        
+        let initials = people.userName?.components(separatedBy: " ").reduce("") { ($0 == "" ? "" : "\($0.first!)") + ($1 == "" ? "" : "\($1.first!)") }
+        initialsLabel.text = initials?.uppercased()
+
     }
 }

@@ -157,6 +157,11 @@ class ProfileViewController: BaseViewController {
                 self.removeTransperantLoadingFromViewController()
                 self.setuserBlockStatus()
                 
+                 let alert = UIAlertController(title:AlertMessages.success, message:"User " + (self.dataCtrl.selectedPeople?.blockStatus)! + "ed", preferredStyle: .alert)
+                alert.addAction(UIAlertAction(title:AlertMessages.ok, style:.default, handler: { _ in
+                }))
+                self.present(alert, animated: true, completion: nil)
+                
             }
             
         }) { [unowned self] (errorMessage) in

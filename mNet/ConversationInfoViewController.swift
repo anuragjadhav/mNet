@@ -32,34 +32,24 @@ class ConversationInfoViewController: BaseViewController,UITableViewDelegate,UIT
         
         dataCtrl?.setupMemberList()
         
+        let filteredMemberArray = dataCtrl?.selectedCoversation?.membersList.filter{$0.memberType == "Owner"}
+        
+        let member1:ConversationMember? =  (filteredMemberArray?.first) ?? nil
+        user1Label.text = member1?.userName
+        
         if((dataCtrl?.selectedCoversation?.membersList.count)! > 2)
         {
             let memberCount:Int = (dataCtrl?.selectedCoversation?.membersList.count)!
-            
-            let filteredMemberArray = dataCtrl?.selectedCoversation?.membersList.filter{$0.memberType == "Owner"} ?? []
-            
-            if(filteredMemberArray.count > 0)
-            {
-                let member1:ConversationMember =  (filteredMemberArray.first)!
-                user1Label.text = member1.userName
-            }
-            else
-            {
-                let member1:ConversationMember =  (dataCtrl?.selectedCoversation?.membersList.first)!
-                user1Label.text = member1.userName
-            }
             
             let member2:ConversationMember =  (dataCtrl?.selectedCoversation?.membersList.last)!
             user2Label.text = "\(member2.userName) + \(memberCount - 2)"
         }
         else
         {
-            let member1:ConversationMember =  (dataCtrl?.selectedCoversation?.membersList.last)!
-                        
-            user1Label.text = member1.userName
+            let filteredArray = dataCtrl?.selectedCoversation?.membersList.filter{$0.memberType != "Owner"}
             
-            let member2:ConversationMember =  (dataCtrl?.selectedCoversation?.membersList.first)!
-            user2Label.text = member2.userName
+            let member2:ConversationMember? =  (filteredArray?.first) ?? nil
+            user2Label.text = member2?.userName
         }
         
         dateAndTimeLabel.text = dataCtrl?.selectedCoversation?.createdOn.getDisplayFromtDateFromDateString()
