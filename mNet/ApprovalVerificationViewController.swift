@@ -201,7 +201,7 @@ class ApprovalVerificationViewController: BaseViewController,UISearchBarDelegate
         }
         
         if verificationRadioButton.isRadioSelected {
-            let verificationLimit:Int = Int(dataController.selectedApproval!.approvalLevelLimit)!
+            let verificationLimit:Int = Int(dataController.selectedApproval!.approvalLevelLimit)! - 2
             let verificationsDone:Int = Int(dataController.selectedApproval!.numberOfVerificationsDone)!
             if verificationsDone >= verificationLimit {
                 self.showQuickErrorAlert(message: AlertMessages.verificationlLimitReached)
