@@ -69,6 +69,12 @@ class NotificationsViewController: BaseViewController, UITableViewDelegate, UITa
         self.navigationController?.navigationBar.isHidden = true
         
         self.notificationsTableView.reloadData()
+        
+        if(didComeFromNotification)
+        {
+            didComeFromNotification = false
+            getNotifications(isReload: true, isRefresh: false)
+        }
     }
     
     func checkIfNotificationDataPresentAndDeepLinkToVC(){
@@ -79,16 +85,9 @@ class NotificationsViewController: BaseViewController, UITableViewDelegate, UITa
             
             notificationObject?.postId = notifucationData["post_id"] as? String
             
-            notificationObject?.notificationId = notifucationData["notification_id"] as? String
-
             if(notificationObject?.postId == nil)
             {
                 notificationObject?.postId = String(notifucationData["post_id"] as! Int)
-            }
-            
-            if(notificationObject?.notificationId == nil && notifucationData["notification_id"] != nil)
-            {
-                notificationObject?.notificationId = String(notifucationData["notification_id"] as! Int)
             }
             
             notificationObject?.approvalType = notifucationData["approval_type"] as? String
@@ -111,6 +110,11 @@ class NotificationsViewController: BaseViewController, UITableViewDelegate, UITa
     @objc func didBecomeActive()
     {
         checkIfNotificationDataPresentAndDeepLinkToVC()
+        
+        if(didComeFromNotification == false && dataCtrl.previousCallSuccessOrFailed == true)
+        {
+            getNotifications(isReload: true,isRefresh: false)
+        }
     }
     
     //MARK: Setup
@@ -149,7 +153,7 @@ class NotificationsViewController: BaseViewController, UITableViewDelegate, UITa
     
     func navigateToCorrespondingVC(notification:NotificationObject) {
     
-        if(notification.status == "0")
+        if(notification.notificationId != nil && notification.status == "0")
         {
             dataCtrl.markNotificationAsRead()
             
@@ -159,12 +163,6 @@ class NotificationsViewController: BaseViewController, UITableViewDelegate, UITa
             count = count < 0 ? 0 : count
             dataCtrl.unreadNotificationCount = String(count)
             self.unreadNotificationLabel.text = self.dataCtrl.unreadNotificationCount! + " unread notifications"
-        }
-        
-        if(didComeFromNotification)
-        {
-            self.didComeFromNotification = false
-            getNotifications(isReload: true, isRefresh: false)
         }
         
         if(notification.notificationType == "reply" || notification.notificationType == "post" || notification.notificationType == "conversation")

@@ -39,6 +39,8 @@ class SelectUserViewController: BaseViewController,UITableViewDelegate,UITableVi
         getSelectUserList(isReload: true,isLoadMore: false, searchText: searchBar.text!)
 
         dataCtrl?.selectedUserType = userType
+        
+        headerLabel.text = userType
 
     }
 
