@@ -20,8 +20,11 @@ class PeopleWrapper: NSObject {
                 
                 if(error == DictionaryKeys.APIResponse.noError)
                 {
-                    let peopleDictArray:[[String:Any]] = responseDict[DictionaryKeys.APIResponse.responseData] as! [[String:Any]]
-                    var peopleArray:[People] = [People].init(JSONArray: peopleDictArray)
+                    guard let peopleDictArray:[[String:Any]] = responseDict[DictionaryKeys.APIResponse.responseData] as? [[String:Any]] else {
+                        onSuccess([People]())
+                        return
+                    }
+                    let peopleArray:[People] = [People].init(JSONArray: peopleDictArray)
                     onSuccess(peopleArray)
                 }
                 else
@@ -46,7 +49,10 @@ class PeopleWrapper: NSObject {
                 
                 if(error == DictionaryKeys.APIResponse.noError)
                 {
-                    let peopleProfileArray:[[String:Any]] = responseDict[DictionaryKeys.APIResponse.responseData] as! [[String:Any]]
+                    guard let peopleProfileArray:[[String:Any]] = responseDict[DictionaryKeys.APIResponse.responseData] as? [[String:Any]] else {
+                        onFailure(WrapperManager.shared.getErrorMessage(message: "Unable to fetch profile details"))
+                        return
+                    }
                     let profile:Profile = Profile.init(JSON:peopleProfileArray[0])!
                     onSuccess(profile)
                 }

@@ -21,13 +21,14 @@ class ConversationsWrapper: NSObject {
                 
                 if(error == DictionaryKeys.APIResponse.noError)
                 {
-                    let conversationDictArray:[[String:Any]] = responseDict[DictionaryKeys.APIResponse.responseData] as! [[String:Any]]
+                    guard let conversationDictArray:[[String:Any]] = responseDict[DictionaryKeys.APIResponse.responseData] as? [[String:Any]] else {
+                        let unreadNotifiactionCount:String = (responseDict["unread_post_count"] ?? "0") as! String
+                        onSuccess([Conversation](),unreadNotifiactionCount)
+                        return
+                    }
                     let conversationArray:[Conversation] = [Conversation].init(JSONArray: conversationDictArray)
-                    
                     let unreadNotifiactionCount = responseDict["unread_post_count"] ?? "0"
-                    
                     let filteredConversationArray = conversationArray.filter{$0.ignore == "0"}
-                    
                     onSuccess(filteredConversationArray,unreadNotifiactionCount as! String)
                 }
                 else
@@ -52,9 +53,11 @@ class ConversationsWrapper: NSObject {
                 
                 if(error == DictionaryKeys.APIResponse.noError)
                 {
-                    let conversationDict:[String:Any] = responseDict[DictionaryKeys.APIResponse.responseData] as! [String:Any]
+                    guard let conversationDict:[String:Any] = responseDict[DictionaryKeys.APIResponse.responseData] as? [String:Any] else {
+                        onFailure(WrapperManager.shared.getErrorMessage(message: "Unable to fetch conversation"))
+                        return
+                    }
                     let conversation:Conversation = Conversation(JSON:conversationDict)!
-
                     onSuccess(conversation)
                 }
                 else
@@ -129,7 +132,10 @@ class ConversationsWrapper: NSObject {
                 
                 if(error == DictionaryKeys.APIResponse.noError)
                 {
-                    let usersDictionaryArray:[[String:Any]] = responseDict[DictionaryKeys.APIResponse.responseData] as! [[String:Any]]
+                    guard let usersDictionaryArray:[[String:Any]] = responseDict[DictionaryKeys.APIResponse.responseData] as? [[String:Any]] else {
+                        onSuccess([People]())
+                        return
+                    }
                     let userListArray:[People] = [People].init(JSONArray: usersDictionaryArray)
                     onSuccess(userListArray)
                 }

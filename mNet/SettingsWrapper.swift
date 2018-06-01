@@ -23,7 +23,10 @@ class SettingsWrapper: NSObject {
                 
                 if(error == DictionaryKeys.APIResponse.noError)
                 {
-                    let responseArray:[[String:Any]] = responseDict[DictionaryKeys.APIResponse.responseData] as! [[String:Any]]
+                    guard let responseArray:[[String:Any]] = responseDict[DictionaryKeys.APIResponse.responseData] as? [[String:Any]] else {
+                        onFailure(WrapperManager.shared.getErrorMessage(message: "Unable to fetch setings data"))
+                        return
+                    }
                     
                     let settings:Settings = Settings(JSON: responseArray[0] as [String:Any])!
                     

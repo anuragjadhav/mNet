@@ -22,8 +22,10 @@ class ProfileWrapper: NSObject {
                 
                 if(error == DictionaryKeys.APIResponse.noError)
                 {
-                    let profile:Profile = Profile(JSON: responseDict[DictionaryKeys.APIResponse.responseData] as! [String:Any])!
-                    
+                    guard let profile:Profile = Profile(JSON: (responseDict[DictionaryKeys.APIResponse.responseData] as? [String:Any])!) else {
+                        onFailure(WrapperManager.shared.getErrorMessage(message: "Unable to fetch profile data"))
+                        return
+                    }
                     onSuccess(profile)
                 }
                 else

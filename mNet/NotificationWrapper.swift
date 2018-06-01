@@ -20,11 +20,14 @@ class NotificationWrapper: NSObject {
                 
                 if(error == DictionaryKeys.APIResponse.noError)
                 {
-                    let notificationDictArray:[[String:Any]] = responseDict[DictionaryKeys.APIResponse.responseData] as! [[String:Any]]
+                    guard let notificationDictArray:[[String:Any]] = responseDict[DictionaryKeys.APIResponse.responseData] as? [[String:Any]] else {
+                        let unreadNotifiactionCount = responseDict["unread_noti_count"] ?? "0"
+                        onSuccess([NotificationObject](),unreadNotifiactionCount as! String)
+                        return
+                }
                     let notificationsArray:[NotificationObject] = [NotificationObject].init(JSONArray: notificationDictArray)
-                    
                     let unreadNotifiactionCount = responseDict["unread_noti_count"] ?? "0"
-                   onSuccess(notificationsArray,unreadNotifiactionCount as! String)
+                    onSuccess(notificationsArray,unreadNotifiactionCount as! String)
                 }
                 else
                 {
