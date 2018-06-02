@@ -18,10 +18,8 @@ struct URLS {
     
     static func baseURL() -> URL {
         if let savedBaseURL:URL = User.loggedInUser()?.privateApiLink {
-            print("BASE URL: \(savedBaseURL)")
             return savedBaseURL
         }
-        print("BASE URL: \(liveBaseURL)")
         return liveBaseURL
     }
     
