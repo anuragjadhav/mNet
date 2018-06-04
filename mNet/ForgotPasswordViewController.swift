@@ -16,10 +16,16 @@ class ForgotPasswordViewController: BaseViewController {
     
     var dataController:ForgotPasswordDataController = ForgotPasswordDataController()
     
+    var prefilledEmail:String?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        if(prefilledEmail != nil)
+        {
+            emailTextField.text = prefilledEmail
+        }
 
-        // Do any additional setup after loading the view.
     }
 
     override func viewDidAppear(_ animated: Bool) {
