@@ -404,9 +404,9 @@ class LoginViewController: BaseViewController, UITextFieldDelegate, MFMailCompos
     
     @IBAction func forgotPasswordButtonAction(_ sender: CustomBlueTextColorButton) {
         
-        let forgotPasswordVC = self.storyboard!.instantiateViewController(withIdentifier: StoryboardIDs.forgotPasswordNavigationController) as! ForgotPasswordViewController
-        forgotPasswordVC.prefilledEmail = emailTextField.text
-        present(forgotPasswordVC, animated: true, completion: nil)
+        let forgotPasswordNavigationVC = self.storyboard!.instantiateViewController(withIdentifier: StoryboardIDs.forgotPasswordNavigationController) as! UINavigationController
+        forgotPasswordNavigationVC.title = emailTextField.text
+        present(forgotPasswordNavigationVC, animated: true, completion: nil)
     }
     
     //MARK: Help Mail

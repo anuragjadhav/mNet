@@ -16,14 +16,13 @@ class ForgotPasswordViewController: BaseViewController {
     
     var dataController:ForgotPasswordDataController = ForgotPasswordDataController()
     
-    var prefilledEmail:String?
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        if(prefilledEmail != nil)
+        if(self.navigationController?.title != nil)
         {
-            emailTextField.text = prefilledEmail
+            emailTextField.text = self.navigationController?.title
+            self.navigationController?.title = nil
         }
 
     }
