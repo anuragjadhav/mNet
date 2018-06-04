@@ -369,7 +369,7 @@ class NewConversationViewController: BaseViewController,UICollectionViewDelegate
         }
         else
         {
-            let alert = UIAlertController(title:AlertMessages.sorry, message:"Please enter valid data to start new conversation", preferredStyle: .alert)
+            let alert = UIAlertController(title:AlertMessages.sorry, message:"Please enter all details to start new conversation", preferredStyle: .alert)
             alert.addAction(UIAlertAction(title:AlertMessages.ok, style:.default, handler: { _ in
             }))
             self.present(alert, animated: true, completion: nil)
