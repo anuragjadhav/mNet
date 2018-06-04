@@ -28,6 +28,9 @@ class DocumentDetailsViewController: BaseViewController,UITableViewDelegate,UITa
     @IBOutlet weak var documentDateTitleLabel: CustomBrownTextColorLabel!
     @IBOutlet weak var documentDateLabel: CustomBrownTextColorLabel!
     
+    @IBOutlet weak var brandTitleLabel: CustomBrownTextColorLabel!
+    @IBOutlet weak var brandValueLabel: CustomBrownTextColorLabel!
+    
     @IBOutlet weak var descriptionLabel: CustomBrownTextColorLabel!
     
     @IBOutlet weak var remarksLabel: CustomBrownTextColorLabel!
@@ -86,6 +89,24 @@ class DocumentDetailsViewController: BaseViewController,UITableViewDelegate,UITa
         descriptionLabel.text = approval?.documentDescription
         remarksLabel.text = approval?.remarks
         costCentreLabel.text = approval?.costCentre
+        
+        //set brand. same as outer list
+        if let brandArray:[String] = approval?.brand.removeHTMLTags().components(separatedBy: ":") {
+            if brandArray.count > 0 {
+                if brandArray.count >  1 {
+                    brandTitleLabel.text = brandArray.first!.uppercased()
+                    brandValueLabel.text = brandArray[1]
+                }
+                else {
+                    brandTitleLabel.text = "BRAND"
+                    brandValueLabel.text = brandArray.first!
+                }
+            }
+            else {
+                brandTitleLabel.text = "BRAND"
+                brandValueLabel.text = "-"
+            }
+        }
         
         peopleListTableView.reloadData()
         self.view.layoutIfNeeded()
