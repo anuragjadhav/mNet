@@ -102,6 +102,7 @@
 		283B239A20BDE15E00A4CA30 /* SelectUserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 283B239720BDE15D00A4CA30 /* SelectUserViewController.swift */; };
 		283B239B20BDE15E00A4CA30 /* ConversationInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 283B239820BDE15D00A4CA30 /* ConversationInfoViewController.swift */; };
 		283B239D20BDE1D300A4CA30 /* SentMessageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 283B239C20BDE1D300A4CA30 /* SentMessageTableViewCell.swift */; };
+		28AE702520C663150097AD25 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 28AE702420C663150097AD25 /* GoogleService-Info.plist */; };
 		5E183E961FF3791D00368DE1 /* ApproveReject.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5E183E951FF3791D00368DE1 /* ApproveReject.storyboard */; };
 		5E183E9B1FF37B7C00368DE1 /* RejectApplicationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E183E9A1FF37B7C00368DE1 /* RejectApplicationViewController.swift */; };
 		5E183E9D1FF385AD00368DE1 /* CustomBrownColorTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E183E9C1FF385AD00368DE1 /* CustomBrownColorTextView.swift */; };
@@ -198,7 +199,6 @@
 		5EF31C88201B5F18007727D8 /* SettingsWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EF31C87201B5F18007727D8 /* SettingsWrapper.swift */; };
 		5EF31C8A201B6231007727D8 /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EF31C89201B6231007727D8 /* Profile.swift */; };
 		5EF354E7206908A3001A93E6 /* BlockedUsersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EF354E6206908A3001A93E6 /* BlockedUsersViewController.swift */; };
-		75A1171420A1AA6700176BE1 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 75A1171320A1AA6700176BE1 /* GoogleService-Info.plist */; };
 		75AA21E7208344C000A73D3D /* PopoverTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75AA21E6208344C000A73D3D /* PopoverTableViewCell.swift */; };
 		75AA21E92083459B00A73D3D /* PopoverObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75AA21E82083459B00A73D3D /* PopoverObject.swift */; };
 		75AA21EB20838F0B00A73D3D /* ConversationRejectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75AA21EA20838F0B00A73D3D /* ConversationRejectViewController.swift */; };
@@ -321,6 +321,7 @@
 		283B239720BDE15D00A4CA30 /* SelectUserViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectUserViewController.swift; sourceTree = "<group>"; };
 		283B239820BDE15D00A4CA30 /* ConversationInfoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConversationInfoViewController.swift; sourceTree = "<group>"; };
 		283B239C20BDE1D300A4CA30 /* SentMessageTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SentMessageTableViewCell.swift; sourceTree = "<group>"; };
+		28AE702420C663150097AD25 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		5E183E951FF3791D00368DE1 /* ApproveReject.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = ApproveReject.storyboard; sourceTree = "<group>"; };
 		5E183E9A1FF37B7C00368DE1 /* RejectApplicationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RejectApplicationViewController.swift; sourceTree = "<group>"; };
 		5E183E9C1FF385AD00368DE1 /* CustomBrownColorTextView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomBrownColorTextView.swift; sourceTree = "<group>"; };
@@ -421,7 +422,6 @@
 		5EF31C89201B6231007727D8 /* Profile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Profile.swift; sourceTree = "<group>"; };
 		5EF354E6206908A3001A93E6 /* BlockedUsersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlockedUsersViewController.swift; sourceTree = "<group>"; };
 		6F304F26D0F6C4DA20E968B5 /* Pods-mNet.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-mNet.debug.xcconfig"; path = "Pods/Target Support Files/Pods-mNet/Pods-mNet.debug.xcconfig"; sourceTree = "<group>"; };
-		75A1171320A1AA6700176BE1 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		75AA21E6208344C000A73D3D /* PopoverTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopoverTableViewCell.swift; sourceTree = "<group>"; };
 		75AA21E82083459B00A73D3D /* PopoverObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopoverObject.swift; sourceTree = "<group>"; };
 		75AA21EA20838F0B00A73D3D /* ConversationRejectViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConversationRejectViewController.swift; sourceTree = "<group>"; };
@@ -806,7 +806,7 @@
 		5E20CD861FE952BE004ACE0D = {
 			isa = PBXGroup;
 			children = (
-				75A1171320A1AA6700176BE1 /* GoogleService-Info.plist */,
+				28AE702420C663150097AD25 /* GoogleService-Info.plist */,
 				0568EC38207EA47000506CE5 /* GoogleSignIn.bundle */,
 				0568EC3A207EA47100506CE5 /* GoogleSignIn.framework */,
 				0568EC39207EA47100506CE5 /* GoogleSignInDependencies.framework */,
@@ -1167,7 +1167,7 @@
 			files = (
 				058A0E4C1FF7C44D00147238 /* Login.storyboard in Resources */,
 				5E37E4CE2012004100088001 /* Notifications.storyboard in Resources */,
-				75A1171420A1AA6700176BE1 /* GoogleService-Info.plist in Resources */,
+				28AE702520C663150097AD25 /* GoogleService-Info.plist in Resources */,
 				5E20CDB41FE962F2004ACE0D /* SanFranciscoDisplay-Semibold.otf in Resources */,
 				5EDC1E392060F2EC0046A7E5 /* WebView.storyboard in Resources */,
 				5EEEB6B3205FA7F100AFF81F /* DateSelector.storyboard in Resources */,
