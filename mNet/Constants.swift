@@ -16,7 +16,8 @@ struct APIKeys {
 struct URLS {
     
     static let liveBaseURL:URL = URL(string:"http://demo.m-net.in/p_MNetV2Service/MnetV2WebService/")!
-    
+   // static let liveBaseURL:URL = URL(string:"http://www.m-net.in/p_MNetV2Service/MnetV2WebService/")!
+
     static func baseURL() -> URL {
         if let savedBaseURL:URL = User.loggedInUser()?.privateApiLink {
             return savedBaseURL
@@ -29,9 +30,12 @@ struct URLS {
             return savedBaseURL
         }
         return "http://demo.m-net.in/demo/public/images/"
+        
+      //  return "http://www.m-net.in/public/images/"
     }
     
     static let publicBaseURL:URL = URL(string:"http://demo.m-net.in/p_MNetV2Service/MnetV2WebService/")!
+  //  static let publicBaseURL:URL = URL(string:"http://www.m-net.in/p_MNetV2Service/MnetV2WebService/")!
     
     static var getSettings:URL { return URL(string: "getsetting", relativeTo: baseURL())! }
     static var setSettings:URL { return  URL(string: "setsetting", relativeTo: baseURL())! }
