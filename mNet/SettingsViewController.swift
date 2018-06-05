@@ -229,15 +229,26 @@ class SettingsViewController: BaseViewController,UITableViewDelegate,UITableView
                 self.companyNameLabel.text = self.dataCtrl.profile?.companyName
                 self.applicationsLabel.text = self.dataCtrl.profile?.applicationCount
                 self.groupsLabel.text = self.dataCtrl.profile?.groupCount
+                
+                
+                if(self.dataCtrl.profile?.gender == "0")
+                {
+                    self.profileImageView.image = UIImage(named: "maleProfileIcon")
+                }
+                else if(self.dataCtrl.profile?.gender == "1")
+                {
+                    self.profileImageView.image = UIImage(named: "femaleProfileIcon")
+                }
+                
            
                 if(self.dataCtrl.profile?.imageUrl != nil && self.dataCtrl.profile?.imageUrl != "")
                 {
                    if let urlRequest:URLRequest = URLRequest.getRequest(URLS.imageBaseURLString() + (self.dataCtrl.profile?.imageUrl)!)
                     {
                         UIImage.imageDownloader.download(urlRequest) { response in
-                            
+
                             if let image = response.result.value {
-                                
+
                                 self.profileImageView.image = image
                             }
                         }

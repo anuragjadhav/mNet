@@ -254,6 +254,19 @@ class BaseViewController: UIViewController,RetryViewProtocol, UIGestureRecognize
         
         self.retryView?.messageLabel.text = message
         self.view.addSubview(retryView!)
+        
+        if(retryView?.messageLabel.text == AlertMessages.networkUnavailable || retryView?.messageLabel.text == AlertMessages.connectToInternet)
+        {
+            retryView?.messageHorizontalCenterConstraint.constant = 20
+            retryView?.aquariumImageView.isHidden = false
+        }
+        else
+        {
+            retryView?.messageHorizontalCenterConstraint.constant = -30
+            retryView?.aquariumImageView.isHidden = true
+        }
+        
+        self.retryView?.layoutIfNeeded()
     }
     
     //MARK: Retry view delegate

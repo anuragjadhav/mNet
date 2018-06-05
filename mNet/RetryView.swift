@@ -20,6 +20,9 @@ class RetryView: UIView {
     
     weak var delegate:RetryViewProtocol?
     
+    @IBOutlet weak var aquariumImageView: UIImageView!
+    @IBOutlet weak var messageHorizontalCenterConstraint: NSLayoutConstraint!
+    
     
     @IBAction func retryButtonAction(_
         sender: Any) {

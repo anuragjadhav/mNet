@@ -13,7 +13,7 @@ class Profile: NSObject,Mappable {
     var firstName : String?
     var lastName : String?
     var dob : String?
-    var gender : String?
+    var gender : String? = "0"
     var phoneNo : String?
     var address : String?
     var about : String?

@@ -25,14 +25,14 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Something went wrong" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bv5-89-TYj" customClass="CustomBrownTextColorLabel" customModule="mNet" customModuleProvider="target">
-                    <rect key="frame" x="25" y="294.5" width="325" height="18"/>
+                    <rect key="frame" x="25" y="344.5" width="325" height="18"/>
                     <viewLayoutGuide key="safeArea" id="66f-EK-mcx"/>
                     <fontDescription key="fontDescription" name="SanFranciscoDisplay-Regular" family="San Francisco Display" pointSize="15"/>
                     <color key="textColor" red="0.3803921569" green="0.28235294119999998" blue="0.22352941179999999" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="leQ-ec-HSl">
-                    <rect key="frame" x="151" y="333" width="73" height="30"/>
+                    <rect key="frame" x="151" y="383" width="73" height="30"/>
                     <color key="backgroundColor" red="0.3803921569" green="0.28235294119999998" blue="0.22352941179999999" alpha="1" colorSpace="calibratedRGB"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="73" id="Hvx-uL-yNv"/>
@@ -51,22 +51,36 @@
                         <action selector="retryButtonAction:" destination="iN0-l3-epB" eventType="touchUpInside" id="FgX-Hm-Vad"/>
                     </connections>
                 </button>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="noInternet" translatesAutoresizingMaskIntoConstraints="NO" id="KKc-6k-aRq">
+                    <rect key="frame" x="160" y="274" width="55" height="55"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="55" id="IYD-Ci-14e"/>
+                        <constraint firstAttribute="width" constant="55" id="Pgb-Ee-Pqt"/>
+                    </constraints>
+                </imageView>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstItem="bv5-89-TYj" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="25" id="4SL-7B-Ari"/>
+                <constraint firstItem="KKc-6k-aRq" firstAttribute="centerX" secondItem="bv5-89-TYj" secondAttribute="centerX" id="GAA-xl-nnm"/>
                 <constraint firstItem="bv5-89-TYj" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="Lvh-6W-ApP"/>
                 <constraint firstItem="leQ-ec-HSl" firstAttribute="centerX" secondItem="bv5-89-TYj" secondAttribute="centerX" id="jrn-Ad-Ouv"/>
                 <constraint firstItem="leQ-ec-HSl" firstAttribute="top" secondItem="bv5-89-TYj" secondAttribute="bottom" constant="20.5" id="lxC-79-bnM"/>
+                <constraint firstItem="bv5-89-TYj" firstAttribute="top" secondItem="KKc-6k-aRq" secondAttribute="bottom" constant="15.5" id="m0V-cf-riP"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="bv5-89-TYj" secondAttribute="trailing" constant="25" id="rVY-cr-sd7"/>
-                <constraint firstItem="bv5-89-TYj" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" constant="-30" id="z70-yA-IzH"/>
+                <constraint firstItem="bv5-89-TYj" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" constant="20" id="z70-yA-IzH"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
             <connections>
+                <outlet property="aquariumImageView" destination="KKc-6k-aRq" id="GX0-ji-KId"/>
+                <outlet property="messageHorizontalCenterConstraint" destination="z70-yA-IzH" id="g7M-HD-2C2"/>
                 <outlet property="messageLabel" destination="bv5-89-TYj" id="wbx-yQ-MQz"/>
                 <outlet property="retryButton" destination="leQ-ec-HSl" id="2RP-SB-Tmh"/>
             </connections>
             <point key="canvasLocation" x="33.5" y="82.5"/>
         </view>
     </objects>
+    <resources>
+        <image name="noInternet" width="256" height="256"/>
+    </resources>
 </document>
