@@ -82,7 +82,7 @@ class ApprovalsViewController: BaseViewController,UICollectionViewDelegate, UICo
         if dataController.startIndex == 0 {
             showTransperantLoadingOnViewController()
             
-            self.pendingApprovalsTableView.setContentOffset(.zero, animated: true)
+            self.pendingApprovalsTableView.setContentOffset(.zero, animated: false)
         }
         
         isLoading = true
