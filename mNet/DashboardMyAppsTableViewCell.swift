@@ -18,7 +18,7 @@ class DashboardMyAppsTableViewCell: UITableViewCell {
     func setUpCell(app:UserApp) {
         
         titleLabel.text = app.appName
-        descriptionLabel.text = app.appDescription
+        descriptionLabel.text = app.appDescription.trimmingCharacters(in: CharacterSet.whitespaces)
         
         let imageUrlString = app.appLogoLink.components(separatedBy: .whitespaces).joined()
         UIImage.imageDownloader.download(URLRequest.getRequest(URLS.imageBaseURLString() + imageUrlString)!) { response in
