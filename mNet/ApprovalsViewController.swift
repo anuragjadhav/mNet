@@ -82,15 +82,11 @@ class ApprovalsViewController: BaseViewController,UICollectionViewDelegate, UICo
         if dataController.startIndex == 0 {
             showTransperantLoadingOnViewController()
             
-            if(pendingApprovalsTableView.visibleCells.count > 0)
-            {
-                pendingApprovalsTableView.scrollToRow(at: IndexPath(row: 0, section: 0), at: .top, animated: false)
-            }
+            self.pendingApprovalsTableView.setContentOffset(.zero, animated: true)
         }
         
         isLoading = true
         
-        self.pendingApprovalsTableView.setContentOffset(.zero, animated: true)
         dataController.getApprovalsData(onSuccess: { [unowned self] in
             
             DispatchQueue.main.async {
