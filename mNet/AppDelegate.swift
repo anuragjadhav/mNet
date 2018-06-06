@@ -44,6 +44,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate,UNUserNotificationCenterDe
         }
         else {
             makeLoginPageHome(false)
+            UIApplication.shared.applicationIconBadgeNumber = 0
         }
     }
     
