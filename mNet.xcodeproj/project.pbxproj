@@ -1599,8 +1599,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = mNet/mNet.entitlements;
-				CODE_SIGN_IDENTITY = "iPhone Developer: Biswajit Das (5CAK337GLX)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Biswajit Das (5CAK337GLX)";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Mediaware Infotech Private Limited (3J7U28GXGW)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Mediaware Infotech Private Limited (3J7U28GXGW)";
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = 3J7U28GXGW;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -1621,8 +1621,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.mediaware.mNet;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "b21216d7-79ac-430c-9457-a7f14cec068f";
-				PROVISIONING_PROFILE_SPECIFIER = mNetDevelopment;
+				PROVISIONING_PROFILE = "ce2a92ec-ddcd-4cb7-bfee-40a013b88e66";
+				PROVISIONING_PROFILE_SPECIFIER = mNetAppStore;
 				SWIFT_SWIFT3_OBJC_INFERENCE = On;
 				SWIFT_VERSION = 4.0;
 			};

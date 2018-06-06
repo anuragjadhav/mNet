@@ -80,11 +80,11 @@ class ProfileViewController: BaseViewController {
             
             if(dataCtrl.profile?.gender! == "0")
             {
-                genderLabel.text = "male"
+                genderLabel.text = "Male"
             }
             else
             {
-                genderLabel.text = "female"
+                genderLabel.text = "Female"
             }
         }
         else{

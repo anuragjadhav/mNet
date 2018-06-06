@@ -44,7 +44,7 @@ class AboutMeViewController: BaseViewController,UITextFieldDelegate,CustomPicker
      @IBOutlet weak var departmentTextField: CustomBrownTextColorTextfield!
     
     var customerPickerView : CustomPickerView?
-    var genderArray:[String] = ["male","female"]
+    var genderArray:[String] = ["Male","Female"]
     
     let dataCtrl = AboutMeDataController()
     
@@ -132,11 +132,11 @@ class AboutMeViewController: BaseViewController,UITextFieldDelegate,CustomPicker
             
             if(dataCtrl.profile?.gender! == "0")
             {
-                genderButton.setTitle("male", for: .normal)
+                genderButton.setTitle("Male", for: .normal)
                 dataCtrl.editedGender = "0"            }
             else
             {
-                genderButton.setTitle("female", for: .normal)
+                genderButton.setTitle("Female", for: .normal)
                 dataCtrl.editedGender = "1"
             }
         }
