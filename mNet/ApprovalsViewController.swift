@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ApprovalsViewController: BaseViewController,UICollectionViewDelegate, UICollectionViewDataSource, UITableViewDelegate, UITableViewDataSource, UISearchBarDelegate, DateSelectorDeleagte {
+class ApprovalsViewController: BaseViewController,UICollectionViewDelegate, UICollectionViewDataSource, UITableViewDelegate, UITableViewDataSource, UISearchBarDelegate, DateSelectorDeleagte,KRPullLoadViewDelegate {
 
     //MARK:Outlets and Properties
     
@@ -33,6 +33,11 @@ class ApprovalsViewController: BaseViewController,UICollectionViewDelegate, UICo
     //MARK: View Controller Delegates
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        // add pull down and up refresh control
+        let loadMoreView = KRPullLoadView()
+        loadMoreView.delegate = self as KRPullLoadViewDelegate
+        pendingApprovalsTableView.addPullLoadableView(loadMoreView, type: .loadMore)
 
         // Do any additional setup after loading the view.
         self.getData()
@@ -81,7 +86,7 @@ class ApprovalsViewController: BaseViewController,UICollectionViewDelegate, UICo
         isLoading = true
         
         self.pendingApprovalsTableView.setContentOffset(.zero, animated: true)
-        dataController.getApprovalsData(onSuccess: { 
+        dataController.getApprovalsData(onSuccess: { [unowned self] in
             
             DispatchQueue.main.async {
                 
@@ -195,19 +200,21 @@ class ApprovalsViewController: BaseViewController,UICollectionViewDelegate, UICo
         goToDetailsPage(preSelectedIndex: 0)
     }
     
-    func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        
-        if scrollView == pendingApprovalsTableView {
-            
-            let contentOffset = scrollView.contentOffset.y
-            let maximumOffset = scrollView.contentSize.height - scrollView.frame.size.height;
-            
-            if maximumOffset - contentOffset <= 100 {
-                getData()
+    //MARK: Pull Up refresh control delegate
+    
+    func pullLoadView(_ pullLoadView: KRPullLoadView, didChangeState state: KRPullLoaderState, viewType type: KRPullLoaderType) {
+        if type == .loadMore {
+            switch state {
+            case let .loading(completionHandler):
+                completionHandler()
+                
+                self.getData()
+                
+            default: break
             }
+            return
         }
     }
-    
     
     //MARK: Search Bar Delegates
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
