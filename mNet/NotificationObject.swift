@@ -26,7 +26,7 @@ class NotificationObject: NSObject,Mappable {
     var userFirstName:String?
     var userLastName:String?
     var isApproval:String?
-    var approvalType:String?
+    var approvalType:String? = ""
     var postTitle:String?
     var stringLabel2Value:String?
     var postSenderId:String?

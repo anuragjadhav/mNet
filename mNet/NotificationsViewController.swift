@@ -100,11 +100,10 @@ class NotificationsViewController: BaseViewController, UITableViewDelegate, UITa
             {
                 dataCtrl.selectedNotification = notificationObject
                 didComeFromNotification = true
-                navigateToCorrespondingVC(notification: notificationObject!)
+                navigateToCorrespondingVC(notification: notificationObject!,didComeFromNotif:true)
 
             }
         }
-        
     }
     
     @objc func didBecomeActive()
@@ -151,7 +150,7 @@ class NotificationsViewController: BaseViewController, UITableViewDelegate, UITa
     }
     
     
-    func navigateToCorrespondingVC(notification:NotificationObject) {
+    func navigateToCorrespondingVC(notification:NotificationObject,didComeFromNotif:Bool = false) {
     
         if(notification.notificationId != nil && notification.status == "0")
         {
@@ -165,19 +164,39 @@ class NotificationsViewController: BaseViewController, UITableViewDelegate, UITa
             self.unreadNotificationLabel.text = self.dataCtrl.unreadNotificationCount! + " unread notifications"
         }
         
-        if(notification.notificationType == "reply" || notification.notificationType == "post" || notification.notificationType == "conversation")
+        if(didComeFromNotif)
         {
-            self.tabBarController?.tabBar.isHidden = true
-            
-            let conversationDetailVC = UIStoryboard.conversations.instantiateViewController(withIdentifier: StoryboardIDs.conversationDetailViewController) as! ConversationDetailViewController
-            conversationDetailVC.dataCtrl = ConversationsDataController()
-            conversationDetailVC.didComeFromNotification = true
-            conversationDetailVC.dataCtrl?.selectedNotification = notification
-            self.navigationController?.pushViewController(conversationDetailVC, animated: true)
+            if((notification.notificationType == "conversation"))
+            {
+                self.tabBarController?.tabBar.isHidden = true
+                
+                let conversationDetailVC = UIStoryboard.conversations.instantiateViewController(withIdentifier: StoryboardIDs.conversationDetailViewController) as! ConversationDetailViewController
+                conversationDetailVC.dataCtrl = ConversationsDataController()
+                conversationDetailVC.didComeFromNotification = true
+                conversationDetailVC.dataCtrl?.selectedNotification = notification
+                self.navigationController?.pushViewController(conversationDetailVC, animated: true)
+            }
+            else {
+                self.tabBarController?.tabBar.isHidden = true
+                goToApprovalDetailsScreen(notification:notification)
+            }
         }
-        else {
-            self.tabBarController?.tabBar.isHidden = true
-            goToApprovalDetailsScreen(notification:notification)
+        else
+        {
+            if((notification.notificationType == "reply" || notification.notificationType == "post")  && notification.approvalType == "")
+            {
+                self.tabBarController?.tabBar.isHidden = true
+                
+                let conversationDetailVC = UIStoryboard.conversations.instantiateViewController(withIdentifier: StoryboardIDs.conversationDetailViewController) as! ConversationDetailViewController
+                conversationDetailVC.dataCtrl = ConversationsDataController()
+                conversationDetailVC.didComeFromNotification = true
+                conversationDetailVC.dataCtrl?.selectedNotification = notification
+                self.navigationController?.pushViewController(conversationDetailVC, animated: true)
+            }
+            else {
+                self.tabBarController?.tabBar.isHidden = true
+                goToApprovalDetailsScreen(notification:notification)
+            }
         }
     }
     
