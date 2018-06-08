@@ -31,7 +31,7 @@ struct URLS {
         }
         return "http://demo.m-net.in/demo/public/images/"
         
-    //    return "http://m-net.in/public/images/"
+     //   return "http://m-net.in/public/images/"
     }
     
     static let publicBaseURL:URL = URL(string:"http://demo.m-net.in/p_MNetV2Service/MnetV2WebService/")!

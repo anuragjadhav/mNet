@@ -183,7 +183,7 @@ class NotificationsViewController: BaseViewController, UITableViewDelegate, UITa
         }
         else
         {
-            if((notification.notificationType == "reply" || notification.notificationType == "post")  && notification.approvalType == "")
+            if((notification.notificationType == "reply" || notification.notificationType == "post")  && (notification.approvalType == nil || notification.approvalType == "" || notification.approvalType == "null"))
             {
                 self.tabBarController?.tabBar.isHidden = true
                 
