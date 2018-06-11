@@ -69,7 +69,7 @@ class ProfileViewController: BaseViewController {
             emailLabel.text = User.loggedInUser()?.email ?? "-"
         }
         
-        aboutLabel.text = dataCtrl.profile?.about ?? "-"
+        aboutLabel.text = (dataCtrl.profile?.about ?? "-").trimmingCharacters(in: CharacterSet.whitespaces)
         addressLabel.text = dataCtrl.profile?.address ?? "-"
         landlineNumberLabel.text = dataCtrl.profile?.phoneNo ?? "-"
         mobileNumberLabel.text = dataCtrl.profile?.mobileNo ?? "-"
