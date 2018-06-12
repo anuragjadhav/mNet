@@ -17,14 +17,8 @@ class CustomBrownTextColorTextfield: UITextField {
         
         super.awakeFromNib();
         self.textColor = ColorConstants.kBrownColor;
+        let leftPaddingView: UIView = UIView(frame: CGRect(x: 0, y: 0, width: inset, height: self.frame.height))
+        self.leftView = leftPaddingView
+        self.leftViewMode = .always
     }
-    
-    override func textRect(forBounds bounds: CGRect) -> CGRect {
-        return bounds.insetBy(dx: inset, dy: inset)
-    }
-    
-    override func editingRect(forBounds bounds: CGRect) -> CGRect {
-        return textRect(forBounds: bounds)
-    }
-    
 }
