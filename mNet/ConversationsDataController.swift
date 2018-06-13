@@ -868,15 +868,15 @@ class ConversationsDataController: NSObject {
     {
         var popOverObjectArray = [PopoverObject]()
         
-        let infoPopOverObject:PopoverObject = PopoverObject()
-        infoPopOverObject.title = MenuOptions.viewDetails
-        infoPopOverObject.image = UIImage(named: "infoIcon")
-        popOverObjectArray.append(infoPopOverObject)
-        
-        let hideIgnorePopOverObject:PopoverObject = PopoverObject()
-        hideIgnorePopOverObject.title = MenuOptions.hideIgnorPost
-        hideIgnorePopOverObject.image = UIImage(named: "hideIcon")
-        popOverObjectArray.append(hideIgnorePopOverObject)
+//        let infoPopOverObject:PopoverObject = PopoverObject()
+//        infoPopOverObject.title = MenuOptions.viewDetails
+//        infoPopOverObject.image = UIImage(named: "infoIcon")
+//        popOverObjectArray.append(infoPopOverObject)
+//
+//        let hideIgnorePopOverObject:PopoverObject = PopoverObject()
+//        hideIgnorePopOverObject.title = MenuOptions.hideIgnorPost
+//        hideIgnorePopOverObject.image = UIImage(named: "hideIcon")
+//        popOverObjectArray.append(hideIgnorePopOverObject)
         
 //        let forwardToUsersPopOverObject:PopoverObject = PopoverObject()
 //        forwardToUsersPopOverObject.title = MenuOptions.addUsers

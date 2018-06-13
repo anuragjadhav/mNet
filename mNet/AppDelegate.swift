@@ -150,6 +150,33 @@ class AppDelegate: UIResponder, UIApplicationDelegate,UNUserNotificationCenterDe
         completionHandler()
     }
     
+    
+    //MARK: Check for app update
+    
+    func checkForAppUpdate()
+    {
+        if let version = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String {
+            
+            WrapperManager.shared.loginWrapper.checkForAppUpdateAvailable(postParams: ["platform":"IOS","version":version], onSuccess: { (isForceUpdateAvailable) in
+                
+                if(isForceUpdateAvailable)
+                {
+                    let alert = UIAlertController(title:"Update Available", message:"New update available. Please update your app to continue", preferredStyle: .alert)
+                    alert.addAction(UIAlertAction(title:"Update", style:.default, handler: { _ in
+                        
+                        UIApplication.shared.openURL(NSURL(string: "https://itunes.apple.com/in/app/apple-store/id1394706491?mt=8")! as URL)
+                        
+                    }))
+                    
+                    self.window?.rootViewController?.present(alert, animated: true, completion: nil)
+                }
+            }) {
+                
+            }
+        }
+    }
+    
+    
 
     //MARK: Application Life Cycle
     func applicationWillResignActive(_ application: UIApplication) {
@@ -170,6 +197,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate,UNUserNotificationCenterDe
     func applicationDidBecomeActive(_ application: UIApplication) {
         
         // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
+        
+        checkForAppUpdate()
     }
 
     func applicationWillTerminate(_ application: UIApplication) {
