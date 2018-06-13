@@ -28,7 +28,11 @@ class WrapperManager: NSObject {
     func getErrorMessage(message:String?) -> String {
         
         if Reachability.isConnectedToNetwork() {
-            return message ?? "Something went wrong. Please try again."
+            if message != nil && (message! != "0" || message != "1") {
+                return message!
+            }
+            return "Something went wrong. Please try again."
+            
         }
         else {
             return AlertMessages.connectToInternet

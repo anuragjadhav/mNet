@@ -62,20 +62,15 @@ class RejectApplicationViewController: BaseViewController,UITextViewDelegate {
             
             DispatchQueue.main.async {
                 self.removeTransperantLoadingFromViewController()
-                self.showQuickSuccessAlert(message: AlertMessages.rejectedSuccess, completion: { (_) in
+                self.showQuickSuccessAlert(message: message, completion: { (_) in
                     self.approvalsVC?.resetData()
                     self.approvalsVC?.getData()
-                    
-                    if(self.approvalsVC == nil)
-                    {
+                    if(self.approvalsVC == nil) {
                         self.backTwo()
-
                     }
-                    else
-                    {
+                    else{
                         self.navigationController?.popToViewController(self.approvalsVC!, animated: true)
                     }
-                    
                 })
             }
 

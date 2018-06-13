@@ -52,9 +52,8 @@ class ApprovalWrapper: NSObject {
                 if let message:String = commonResponse.responseData as? String {
                     onSuccess(message)
                 }
-                
                 else {
-                    onSuccess("Document Approved")
+                    onSuccess(AlertMessages.approvalSuccess)
                 }
             }
                 
@@ -81,12 +80,12 @@ class ApprovalWrapper: NSObject {
                 }
                     
                 else {
-                    onSuccess("Document Verified")
+                    onSuccess(AlertMessages.verificationSuccess)
                 }
             }
                 
             else {
-                onFailure(WrapperManager.shared.getErrorMessage(message: nil))
+                onFailure(WrapperManager.shared.getErrorMessage(message: commonResponse.errorString))
                 return
             }
         }
@@ -102,18 +101,15 @@ class ApprovalWrapper: NSObject {
             }
             
             if commonResponse.noError {
-                
                 if let message:String = commonResponse.responseData as? String {
                     onSuccess(message)
                 }
-                    
                 else {
-                    onSuccess("Document Rejected")
+                    onSuccess(AlertMessages.rejectedSuccess)
                 }
             }
-                
             else {
-                onFailure(WrapperManager.shared.getErrorMessage(message: nil))
+                onFailure(WrapperManager.shared.getErrorMessage(message: commonResponse.errorString))
                 return
             }
         }
