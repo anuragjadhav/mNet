@@ -213,7 +213,7 @@ class ApprovalVerificationViewController: BaseViewController,UISearchBarDelegate
         
         var messageText:String? =  messageTextView.text
         if messageText == nil || messageText!.isEmpty || messageText! == "" {
-            if verificationRadioButton.isRadioSelected {
+            if dataController.selectedSection!.approvalStatus == .verify {
                 messageText = ConstantStrings.verifiedMessge
             }
             else {
