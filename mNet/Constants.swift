@@ -72,6 +72,8 @@ struct URLS {
     static var approvePost:URL { return  URL(string: "setAuthorizeRepliesToPost", relativeTo: baseURL())! }
     static var rejectPost:URL { return  URL(string: "rejectRepliesToPost", relativeTo: baseURL())! }
     static var forgotPassword:URL { return  URL(string: "passwordRecovery", relativeTo: baseURL())! }
+    static var checkForAppUpdate:URL { return  URL(string: "http://35.154.186.37:81/demo/d_MNetV2Service/MnetV2WebService/appUpdateStatus")! }
+
 }
 
 struct EmailIDs {

@@ -181,4 +181,41 @@ class LoginWrapper: NSObject {
             }
         }
     }
+    
+    //MARK: Check for app update
+    func checkForAppUpdateAvailable(postParams:[String:Any], onSuccess:@escaping (Bool) -> Void , onFailure : @escaping () -> Void) {
+        
+        request(URLS.checkForAppUpdate, method: .post, parameters: postParams, encoding: JSONEncoding() as ParameterEncoding, headers: nil).responseJSON { (response) in
+            
+            if let responseDict:[String:Any] = response.result.value as? [String:Any] {
+                
+                let error = responseDict[DictionaryKeys.APIResponse.error]
+                
+                if (error is Int)
+                {
+                    if (error as! Int == DictionaryKeys.APIResponse.noErrorInt) {
+                        
+                        onSuccess(responseDict["status"] as? Bool ?? false)
+                        return
+                    }
+                }
+                else if (error  is String)
+                {
+                    if (error as! String == DictionaryKeys.APIResponse.noError) {
+                        
+                        onSuccess(responseDict["status"] as? Bool ?? false)
+                        return
+                    }
+                }
+                else {
+                    onFailure()
+                    return
+                }
+            }
+            else {
+                onFailure()
+                return
+            }
+        }
+    }
 }
