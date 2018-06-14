@@ -222,8 +222,22 @@ class AboutMeViewController: BaseViewController,UITextFieldDelegate,CustomPicker
             {
                 //set data controller values
                 var fullNameArray = nameTextField.text?.split(separator: " ")
-                let firstName: String = String(fullNameArray![0])
-                let lastName: String? = (fullNameArray?.count)! > 1 ? String(fullNameArray![1]) : ""
+                
+                var firstName: String?
+                var lastName: String?
+                
+                if((fullNameArray?.count)! > 2)
+                {
+                    firstName = String(fullNameArray![0]) + " " + String(fullNameArray![1])
+                    lastName = String(fullNameArray![2])
+                }
+                else
+                {
+                    firstName = String(fullNameArray![0])
+                    lastName = (fullNameArray?.count)! > 1 ? String(fullNameArray![1]) : ""
+                }
+                
+
                 
                 dataCtrl.editedFirstName = firstName
                 dataCtrl.editedLastName = lastName

@@ -72,7 +72,7 @@ struct URLS {
     static var approvePost:URL { return  URL(string: "setAuthorizeRepliesToPost", relativeTo: baseURL())! }
     static var rejectPost:URL { return  URL(string: "rejectRepliesToPost", relativeTo: baseURL())! }
     static var forgotPassword:URL { return  URL(string: "passwordRecovery", relativeTo: baseURL())! }
-    static var checkForAppUpdate:URL { return  URL(string: "http://35.154.186.37:81/demo/d_MNetV2Service/MnetV2WebService/appUpdateStatus")! }
+    static var checkForAppUpdate:URL { return  URL(string: "http://m-net.in/p_MNetV2Service/MnetV2WebService/appUpdateStatus")! }
 
 }
 
@@ -446,5 +446,19 @@ extension String
        return requiredDateString
         
     }
+    
+    var htmlToAttributedString: NSAttributedString? {
+        guard let data = data(using: .utf8) else { return NSAttributedString() }
+        do {
+            return try NSAttributedString(data: data, options: [NSAttributedString.DocumentReadingOptionKey.documentType:  NSAttributedString.DocumentType.html], documentAttributes: nil)
+        } catch {
+            return NSAttributedString()
+        }
+    }
+    
+    var htmlToString: String {
+        return htmlToAttributedString?.string ?? ""
+    }
 }
+
 
