@@ -94,6 +94,7 @@
 		05E65A96209CFB300087B63B /* NewPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05E65A95209CFB300087B63B /* NewPasswordViewController.swift */; };
 		05E65A98209CFDD50087B63B /* ForgotPasswordDataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05E65A97209CFDD50087B63B /* ForgotPasswordDataController.swift */; };
 		07FC1E5AD5A2D08162604091 /* Pods_mNet.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E143EE1D0AE605B28B4EDFF9 /* Pods_mNet.framework */; };
+		2807054920D43D6D0032DBA9 /* Privacy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2807054820D43D6D0032DBA9 /* Privacy.swift */; };
 		283B238F20BDE09400A4CA30 /* Settings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 283B238E20BDE09300A4CA30 /* Settings.storyboard */; };
 		283B239120BDE0AF00A4CA30 /* PeopleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 283B239020BDE0AF00A4CA30 /* PeopleTableViewCell.swift */; };
 		283B239320BDE0CB00A4CA30 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 283B239220BDE0CB00A4CA30 /* ProfileViewController.swift */; };
@@ -313,6 +314,7 @@
 		05E65A95209CFB300087B63B /* NewPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewPasswordViewController.swift; sourceTree = "<group>"; };
 		05E65A97209CFDD50087B63B /* ForgotPasswordDataController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordDataController.swift; sourceTree = "<group>"; };
 		13782550D39865241F17ECC7 /* Pods-mNet.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-mNet.release.xcconfig"; path = "Pods/Target Support Files/Pods-mNet/Pods-mNet.release.xcconfig"; sourceTree = "<group>"; };
+		2807054820D43D6D0032DBA9 /* Privacy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Privacy.swift; sourceTree = "<group>"; };
 		283B238E20BDE09300A4CA30 /* Settings.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Settings.storyboard; sourceTree = "<group>"; };
 		283B239020BDE0AF00A4CA30 /* PeopleTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PeopleTableViewCell.swift; sourceTree = "<group>"; };
 		283B239220BDE0CB00A4CA30 /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
@@ -1059,6 +1061,7 @@
 				058D5C5E203CB53900A6BA4D /* ApprovalDocument.swift */,
 				0517446F2043283200C2382D /* ApprovalUser.swift */,
 				75AA21E82083459B00A73D3D /* PopoverObject.swift */,
+				2807054820D43D6D0032DBA9 /* Privacy.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -1379,6 +1382,7 @@
 				5EF31C83201B57E9007727D8 /* Settings.swift in Sources */,
 				05E65A92209CFB150087B63B /* ForgotPasswordViewController.swift in Sources */,
 				05CC51C320123AAA00EA6D55 /* ApprovalSectionCollectionViewCell.swift in Sources */,
+				2807054920D43D6D0032DBA9 /* Privacy.swift in Sources */,
 				5E18AE441FF81B59007AA461 /* DocumentViewController.swift in Sources */,
 				5E2D37552020A16F0013A138 /* NotificationDataController.swift in Sources */,
 				5EC3005E1FEC03FE00229516 /* SettingOptionsTableViewCell.swift in Sources */,

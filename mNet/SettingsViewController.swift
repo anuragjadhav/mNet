@@ -225,10 +225,10 @@ class SettingsViewController: BaseViewController,UITableViewDelegate,UITableView
                     self.userNameLabel.text = (self.dataCtrl.profile?.firstName)! + " " + (self.dataCtrl.profile?.lastName)!
                 }
                 
-                self.interactionsLabel.text = self.dataCtrl.profile?.profileVisitsCount
+                self.interactionsLabel.text = String(self.dataCtrl.profile?.profileVisitsCount ?? 0)
                 self.companyNameLabel.text = self.dataCtrl.profile?.companyName
-                self.applicationsLabel.text = self.dataCtrl.profile?.applicationCount
-                self.groupsLabel.text = self.dataCtrl.profile?.groupCount
+                self.applicationsLabel.text = String(self.dataCtrl.profile?.applicationCount ?? 0)
+                self.groupsLabel.text = String(self.dataCtrl.profile?.groupCount ?? 0)
                 
                 
                 if(self.dataCtrl.profile?.gender == "0")

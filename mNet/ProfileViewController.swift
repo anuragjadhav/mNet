@@ -21,6 +21,15 @@ class ProfileViewController: BaseViewController {
     @IBOutlet weak var nameLabel: CustomBrownTextColorLabel!
     @IBOutlet weak var blockUnblockButton: UIButton!
     
+    @IBOutlet weak var usernameImageView: UIImageView!
+    @IBOutlet weak var birthdayImageView: UIImageView!
+    @IBOutlet weak var designationImageView: UIImageView!
+    @IBOutlet weak var mobileImageView: UIImageView!
+    @IBOutlet weak var addressImageView: UIImageView!
+    @IBOutlet weak var emailImageView: UIImageView!
+    @IBOutlet weak var landlineImageView: UIImageView!
+
+    
     let dataCtrl:ProfileDataController = ProfileDataController()
     var didComeFromPeopleVC:Bool = false
     
@@ -76,6 +85,44 @@ class ProfileViewController: BaseViewController {
         mobileNumberLabel.text = dataCtrl.profile?.mobileNo ?? "-"
         designationLabel.text = dataCtrl.profile?.designation ?? "-"
         birthdayLabel.text = dataCtrl.profile?.dob ?? "----/--/--"
+        
+        if(dataCtrl.profile?.privacy?.showUsername == "1")
+        {
+            usernameImageView.isHidden = false
+            nameLabel.isHidden = true
+        }
+
+        if(dataCtrl.profile?.privacy?.showEmail == "1")
+        {
+            emailImageView.isHidden = false
+            emailLabel.isHidden = true
+        }
+
+        if(dataCtrl.profile?.privacy?.showDob == "1")
+        {
+            birthdayImageView.isHidden = false
+            birthdayLabel.isHidden = true
+        }
+        
+        if(dataCtrl.profile?.privacy?.showDesignation == "1")
+        {
+            designationImageView.isHidden = false
+            designationLabel.isHidden = true
+        }
+        
+        if(dataCtrl.profile?.privacy?.showMobile == "1")
+        {
+            landlineImageView.isHidden = false
+            mobileImageView.isHidden = false
+            landlineNumberLabel.isHidden = true
+            mobileNumberLabel.isHidden = true
+        }
+        
+        if(dataCtrl.profile?.privacy?.showAddress == "1")
+        {
+            addressImageView.isHidden = false
+            addressLabel.isHidden = true
+        }
         
         if(dataCtrl.profile?.gender != nil){
             
