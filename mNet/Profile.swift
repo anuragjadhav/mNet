@@ -53,9 +53,9 @@ class Profile: NSObject,Mappable {
         organizationId <- map["org_id"]
         organizationName <- map["org_name"]
         imageUrl <- map["profile_img_link"]
-        applicationCount <- map["application_count"]
-        profileVisitsCount <- map["profile_visits_count"]
-        groupCount <- map["group_count"]
+        applicationCount <- map["app_count"]
+        profileVisitsCount <- map["intraction_count"]
+        groupCount <- map["groups_count"]
         email <- map["user_comp_email"]
     }
     
