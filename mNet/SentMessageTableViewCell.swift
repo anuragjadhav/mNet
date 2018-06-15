@@ -33,7 +33,7 @@ class SentMessageTableViewCell: UITableViewCell {
         
         //set namd and message
         userNameLabel.text = reply.fullName
-        messageLabel.text = reply.replyMessage.removeHTMLTags()
+        messageLabel.attributedText = reply.replyMessage.attributedStringFromHTML(label: messageLabel)
         
         //set link if present
         if(link == nil || link == "")
