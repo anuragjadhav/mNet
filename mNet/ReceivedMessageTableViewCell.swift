@@ -33,7 +33,7 @@ class ReceivedMessageTableViewCell: UITableViewCell {
         
         //set name and message
         userNameLabel.text = reply.fullName
-        messageLabel.attributedText = reply.replyMessage.attributedStringFromHTML(label: messageLabel)
+        messageLabel.attributedText = reply.replyMessage.attributedStringFromHTML(label: messageLabel,color:"#614839")
         
         //set link if present
         if(link == nil || link == "")

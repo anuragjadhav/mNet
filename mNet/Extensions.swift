@@ -57,18 +57,26 @@ extension String {
         return self.replacingOccurrences(of: "<[^>]+>", with: "", options: .regularExpression, range: nil)        
     }
     
-    func attributedStringFromHTML(label:UILabel?) -> NSAttributedString? {
+    func attributedStringFromHTML(label:UILabel?,color:String?) -> NSAttributedString? {
         do {
             
-            let attributedString:NSAttributedString = try NSAttributedString(data: self.data(using: String.Encoding.utf8)!, options: [NSAttributedString.DocumentReadingOptionKey.documentType: NSAttributedString.DocumentType.html, NSAttributedString.DocumentReadingOptionKey.characterEncoding: String.Encoding.utf8.rawValue], documentAttributes: nil)
+            let colorToApply = color ?? "#000000"
+            
+            let normalBodyFont = "SanFranciscoDisplay-Regular"
+            let boldFont = "SanFranciscoDisplay-Bold"
+            let htmlStyle = "<style>b {font-family:\(boldFont); color:\(colorToApply);} body {font-family:\(normalBodyFont);color:\(colorToApply);}}</style>"
+            
+            let htmlString = "\(htmlStyle)\n\n\(self)"
+            
+            let attributedString:NSAttributedString = try NSAttributedString(data: htmlString.data(using: String.Encoding.utf8)!, options: [NSAttributedString.DocumentReadingOptionKey.documentType: NSAttributedString.DocumentType.html, NSAttributedString.DocumentReadingOptionKey.characterEncoding: String.Encoding.utf8.rawValue], documentAttributes: nil)
             return attributedString
         } catch {
             return nil
         }
     }
     
-    func stringFromHTML() -> String? {
-        return attributedStringFromHTML(label: nil)?.string
+    func stringFromHTML(color:String?) -> String? {
+        return attributedStringFromHTML(label: nil,color: color)?.string
     }
     
     func shortDateFromDDMMYY() -> String {
