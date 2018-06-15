@@ -57,6 +57,18 @@ extension String {
         return self.replacingOccurrences(of: "<[^>]+>", with: "", options: .regularExpression, range: nil)        
     }
     
+    var attributedStringFromHTML: NSAttributedString? {
+        do {
+            return try NSAttributedString(data: self.data(using: String.Encoding.utf8)!, options: [NSAttributedString.DocumentReadingOptionKey.documentType: NSAttributedString.DocumentType.html, NSAttributedString.DocumentReadingOptionKey.characterEncoding: String.Encoding.utf8.rawValue], documentAttributes: nil)
+        } catch {
+            return nil
+        }
+    }
+    
+    var stringFromHTML: String {
+        return attributedStringFromHTML?.string ?? ""
+    }
+    
     func shortDateFromDDMMYY() -> String {
         
         let dateFormatter:DateFormatter = DateFormatter()
