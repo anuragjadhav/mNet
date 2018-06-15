@@ -885,33 +885,33 @@ class ConversationsDataController: NSObject {
 
         switch conversationStatus {
             
-        case .approve? :
-            
-            let approvePopOverObject:PopoverObject = PopoverObject()
-            approvePopOverObject.title = MenuOptions.approve
-            approvePopOverObject.image = UIImage(named: "greenTick")
-            popOverObjectArray.append(approvePopOverObject)
-            
-            let rejectPopOverObject:PopoverObject = PopoverObject()
-            rejectPopOverObject.title = MenuOptions.reject
-            rejectPopOverObject.image = UIImage(named: "redCross")
-            popOverObjectArray.append(rejectPopOverObject)
-            
-            break
-            
-        case .verify? :
-            
-            let verifyPopOverObject:PopoverObject = PopoverObject()
-            verifyPopOverObject.title = MenuOptions.verify
-            verifyPopOverObject.image = UIImage(named: "greenTick")
-            popOverObjectArray.append(verifyPopOverObject)
-            
-            let rejectPopOverObject:PopoverObject = PopoverObject()
-            rejectPopOverObject.title = MenuOptions.reject
-            rejectPopOverObject.image = UIImage(named: "redCross")
-            popOverObjectArray.append(rejectPopOverObject)
-            
-            break
+//        case .approve? :
+//
+//            let approvePopOverObject:PopoverObject = PopoverObject()
+//            approvePopOverObject.title = MenuOptions.approve
+//            approvePopOverObject.image = UIImage(named: "greenTick")
+//            popOverObjectArray.append(approvePopOverObject)
+//
+//            let rejectPopOverObject:PopoverObject = PopoverObject()
+//            rejectPopOverObject.title = MenuOptions.reject
+//            rejectPopOverObject.image = UIImage(named: "redCross")
+//            popOverObjectArray.append(rejectPopOverObject)
+//
+//            break
+//
+//        case .verify? :
+//
+//            let verifyPopOverObject:PopoverObject = PopoverObject()
+//            verifyPopOverObject.title = MenuOptions.verify
+//            verifyPopOverObject.image = UIImage(named: "greenTick")
+//            popOverObjectArray.append(verifyPopOverObject)
+//
+//            let rejectPopOverObject:PopoverObject = PopoverObject()
+//            rejectPopOverObject.title = MenuOptions.reject
+//            rejectPopOverObject.image = UIImage(named: "redCross")
+//            popOverObjectArray.append(rejectPopOverObject)
+//
+//            break
             
         case .approvalDetails? :
             
