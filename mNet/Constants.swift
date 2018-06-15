@@ -40,7 +40,7 @@ struct URLS {
     static var getSettings:URL { return URL(string: "getsetting", relativeTo: baseURL())! }
     static var setSettings:URL { return  URL(string: "setsetting", relativeTo: baseURL())! }
     static var setEmailPreferenceSettings:URL { return  URL(string: "setEmailPreferences", relativeTo: baseURL())! }
-    static var resetNewPassword:URL { return  URL(string: "changePassword", relativeTo: publicBaseURL)! }
+    static var resetNewPassword:URL { return  URL(string: "http://m-net.in/p_MNetV2Service/MnetV2WebService/public_authenticate")! }
     static var getConversationsList:URL { return  URL(string: "GetPost", relativeTo: baseURL())! }
     static var conversationApprovalRejection:URL { return  URL(string: "SetReply", relativeTo: baseURL())! }
     static var deleteConversationReply:URL { return  URL(string: "cancelReply", relativeTo: baseURL())! }
