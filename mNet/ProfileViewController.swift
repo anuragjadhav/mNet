@@ -42,6 +42,7 @@ class ProfileViewController: BaseViewController {
         {
             self.setupProfileData()
         }
+
     }
 
     func setupNavigationBar(){
