@@ -206,12 +206,12 @@ class ConversationDetailViewController: BaseViewController,UITableViewDelegate,U
     }
     
     
-    //Mark: Textview Delegates
+    //MARK: Textview Delegates
     
     func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
         
-        guard let text = textView.text else { return true }
-        let newLength = text.count + text.count - range.length
+        guard let existingText = textView.text else { return true }
+        let newLength = existingText.count + text.count - range.length
         
         if(newLength > 0 && Reachability.isConnectedToNetwork())
         {
