@@ -61,12 +61,6 @@ extension String {
         do {
             
             let attributedString:NSAttributedString = try NSAttributedString(data: self.data(using: String.Encoding.utf8)!, options: [NSAttributedString.DocumentReadingOptionKey.documentType: NSAttributedString.DocumentType.html, NSAttributedString.DocumentReadingOptionKey.characterEncoding: String.Encoding.utf8.rawValue], documentAttributes: nil)
-            if label != nil {
-                let mutableAttributedString:NSMutableAttributedString = attributedString.mutableCopy() as! NSMutableAttributedString
-                mutableAttributedString.addAttribute(NSAttributedStringKey.font, value: label!.font, range: NSRange.init(location: 0, length: mutableAttributedString.length))
-                mutableAttributedString.addAttribute(NSAttributedStringKey.foregroundColor, value: label!.textColor, range: NSRange.init(location: 0, length: mutableAttributedString.length))
-                return mutableAttributedString
-            }
             return attributedString
         } catch {
             return nil

@@ -53,7 +53,7 @@ class ConversationListTableViewCell: UITableViewCell {
 //        }
         
         //set message
-        messageLabel.text = conversation.latestReplierMessage
+        messageLabel.attributedText = conversation.latestReplierMessage.attributedStringFromHTML(label: messageLabel)
         
         //set time label
         let dateFormatter : DateFormatter = DateFormatter()
