@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -108,30 +108,65 @@
                                                 <color key="textColor" red="0.3803921569" green="0.28235294119999998" blue="0.22352941179999999" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
+                                            <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="lockIcon" translatesAutoresizingMaskIntoConstraints="NO" id="IOG-l3-TuM">
+                                                <rect key="frame" x="36" y="163" width="14" height="16"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="14" id="6IU-pb-Utm"/>
+                                                    <constraint firstAttribute="height" constant="16" id="NZj-LE-DpK"/>
+                                                </constraints>
+                                            </imageView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="UI Designer" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xQa-yw-Uz0" customClass="CustomBrownTextColorLabel" customModule="mNet" customModuleProvider="target">
                                                 <rect key="frame" x="28" y="222" width="325" height="17"/>
                                                 <fontDescription key="fontDescription" name="SanFranciscoDisplay-Light" family="San Francisco Display" pointSize="14"/>
                                                 <color key="textColor" red="0.3803921569" green="0.28235294119999998" blue="0.22352941179999999" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
+                                            <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="lockIcon" translatesAutoresizingMaskIntoConstraints="NO" id="4R6-Jj-Hnp">
+                                                <rect key="frame" x="36" y="222.5" width="14" height="16"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="14" id="GLD-vA-hpT"/>
+                                                    <constraint firstAttribute="height" constant="16" id="nBZ-qX-toy"/>
+                                                </constraints>
+                                            </imageView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1234567890" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7Ap-GM-WLU" customClass="CustomBrownTextColorLabel" customModule="mNet" customModuleProvider="target">
                                                 <rect key="frame" x="28" y="279.5" width="74" height="17"/>
                                                 <fontDescription key="fontDescription" name="SanFranciscoDisplay-Light" family="San Francisco Display" pointSize="14"/>
                                                 <color key="textColor" red="0.3803921569" green="0.28235294119999998" blue="0.22352941179999999" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
+                                            <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="lockIcon" translatesAutoresizingMaskIntoConstraints="NO" id="WpU-Sv-ifc">
+                                                <rect key="frame" x="36" y="280" width="14" height="16"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="14" id="YG5-HX-sRF"/>
+                                                    <constraint firstAttribute="height" constant="16" id="fJG-8I-x00"/>
+                                                </constraints>
+                                            </imageView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="02223343434" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GlN-qZ-PSt" customClass="CustomBrownTextColorLabel" customModule="mNet" customModuleProvider="target">
                                                 <rect key="frame" x="28" y="338.5" width="84" height="17"/>
                                                 <fontDescription key="fontDescription" name="SanFranciscoDisplay-Light" family="San Francisco Display" pointSize="14"/>
                                                 <color key="textColor" red="0.3803921569" green="0.28235294119999998" blue="0.22352941179999999" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
+                                            <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="lockIcon" translatesAutoresizingMaskIntoConstraints="NO" id="vNZ-QP-b65">
+                                                <rect key="frame" x="36" y="339" width="14" height="16"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="14" id="C0X-h9-rGI"/>
+                                                    <constraint firstAttribute="height" constant="16" id="QdC-EM-bhd"/>
+                                                </constraints>
+                                            </imageView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="A 503  adarsh road , goregaon station , mumbai - 400063 " textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZJM-6Y-Fcu" customClass="CustomBrownTextColorLabel" customModule="mNet" customModuleProvider="target">
                                                 <rect key="frame" x="28" y="398" width="325" height="33.5"/>
                                                 <fontDescription key="fontDescription" name="SanFranciscoDisplay-Light" family="San Francisco Display" pointSize="14"/>
                                                 <color key="textColor" red="0.3803921569" green="0.28235294119999998" blue="0.22352941179999999" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
+                                            <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="lockIcon" translatesAutoresizingMaskIntoConstraints="NO" id="9zU-Ac-vfW">
+                                                <rect key="frame" x="36" y="407" width="14" height="16"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="16" id="IPY-ti-ulw"/>
+                                                    <constraint firstAttribute="width" constant="14" id="Tuv-Mr-auV"/>
+                                                </constraints>
+                                            </imageView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="something about myself" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RPk-l4-bbB" customClass="CustomBrownTextColorLabel" customModule="mNet" customModuleProvider="target">
                                                 <rect key="frame" x="28" y="474" width="325" height="17"/>
                                                 <fontDescription key="fontDescription" name="SanFranciscoDisplay-Light" family="San Francisco Display" pointSize="14"/>
@@ -144,6 +179,13 @@
                                                 <color key="textColor" red="0.3803921569" green="0.28235294119999998" blue="0.22352941179999999" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
+                                            <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="lockIcon" translatesAutoresizingMaskIntoConstraints="NO" id="YQA-Ie-iep">
+                                                <rect key="frame" x="36" y="533.5" width="14" height="16"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="14" id="0Ro-Ci-zyQ"/>
+                                                    <constraint firstAttribute="height" constant="16" id="2rg-Uo-Nl8"/>
+                                                </constraints>
+                                            </imageView>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Thq-SN-Ddc">
                                                 <rect key="frame" x="28" y="577.5" width="68" height="29"/>
                                                 <constraints>
@@ -168,6 +210,13 @@
                                                     <action selector="blockUnblockButtonAction:" destination="ucf-OG-4Jl" eventType="touchUpInside" id="rTJ-bf-xlN"/>
                                                 </connections>
                                             </button>
+                                            <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="lockIcon" translatesAutoresizingMaskIntoConstraints="NO" id="xDX-2b-YZ7">
+                                                <rect key="frame" x="36" y="46" width="14" height="16"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="16" id="2tf-hJ-rro"/>
+                                                    <constraint firstAttribute="width" constant="14" id="bNG-De-mM5"/>
+                                                </constraints>
+                                            </imageView>
                                         </subviews>
                                         <color key="backgroundColor" red="0.96862745100000003" green="0.97254901959999995" blue="0.97647058819999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
@@ -178,8 +227,13 @@
                                             <constraint firstItem="1IX-q2-ncg" firstAttribute="leading" secondItem="JsP-5I-kbW" secondAttribute="leading" id="6CS-pf-Xv5"/>
                                             <constraint firstItem="I4e-Jz-HxE" firstAttribute="top" secondItem="XvK-Xd-80a" secondAttribute="bottom" constant="16" id="7nY-mJ-iDW"/>
                                             <constraint firstItem="Thq-SN-Ddc" firstAttribute="leading" secondItem="vvW-IR-brl" secondAttribute="leading" id="7za-YY-u7K"/>
+                                            <constraint firstItem="vNZ-QP-b65" firstAttribute="centerY" secondItem="GlN-qZ-PSt" secondAttribute="centerY" id="8dE-fd-hKs"/>
+                                            <constraint firstItem="9zU-Ac-vfW" firstAttribute="leading" secondItem="xDX-2b-YZ7" secondAttribute="leading" id="9mW-QB-a45"/>
                                             <constraint firstItem="hDH-tz-4tE" firstAttribute="leading" secondItem="JsP-5I-kbW" secondAttribute="leading" id="Ap1-lX-BJc"/>
                                             <constraint firstItem="ZJM-6Y-Fcu" firstAttribute="leading" secondItem="JsP-5I-kbW" secondAttribute="leading" id="Bns-eV-9qy"/>
+                                            <constraint firstItem="zIU-ZV-zGa" firstAttribute="leading" secondItem="xDX-2b-YZ7" secondAttribute="trailing" constant="-22" id="Bsd-Vz-hGr"/>
+                                            <constraint firstItem="WpU-Sv-ifc" firstAttribute="centerY" secondItem="7Ap-GM-WLU" secondAttribute="centerY" id="BvZ-1R-3FR"/>
+                                            <constraint firstItem="4R6-Jj-Hnp" firstAttribute="centerY" secondItem="xQa-yw-Uz0" secondAttribute="centerY" id="CBq-hp-dPv"/>
                                             <constraint firstItem="vvW-IR-brl" firstAttribute="leading" secondItem="JsP-5I-kbW" secondAttribute="leading" id="CYs-0W-oGs"/>
                                             <constraint firstItem="ewc-R9-gfV" firstAttribute="top" secondItem="ZJM-6Y-Fcu" secondAttribute="bottom" constant="16" id="DLw-6p-iZl"/>
                                             <constraint firstItem="GlN-qZ-PSt" firstAttribute="top" secondItem="hDH-tz-4tE" secondAttribute="bottom" constant="9" id="DVt-Sz-20o"/>
@@ -189,18 +243,25 @@
                                             <constraint firstItem="1IX-q2-ncg" firstAttribute="top" secondItem="xQa-yw-Uz0" secondAttribute="bottom" constant="15" id="GSV-jA-42p"/>
                                             <constraint firstItem="oDZ-7n-nZb" firstAttribute="leading" secondItem="JsP-5I-kbW" secondAttribute="leading" id="HJ8-ik-kML"/>
                                             <constraint firstItem="QVq-aV-cZd" firstAttribute="top" secondItem="zIU-ZV-zGa" secondAttribute="bottom" constant="16" id="JR6-Iw-Qk2"/>
+                                            <constraint firstItem="xDX-2b-YZ7" firstAttribute="centerY" secondItem="zIU-ZV-zGa" secondAttribute="centerY" id="Kwu-NN-l3M"/>
                                             <constraint firstItem="xQa-yw-Uz0" firstAttribute="top" secondItem="I4e-Jz-HxE" secondAttribute="bottom" constant="9" id="L0N-lR-PLL"/>
                                             <constraint firstItem="TEb-RG-Oar" firstAttribute="leading" secondItem="JsP-5I-kbW" secondAttribute="leading" id="NXU-eF-2Qd"/>
                                             <constraint firstItem="RPk-l4-bbB" firstAttribute="leading" secondItem="JsP-5I-kbW" secondAttribute="leading" id="OLf-GA-p9f"/>
                                             <constraint firstItem="Umn-Ic-AlR" firstAttribute="leading" secondItem="JsP-5I-kbW" secondAttribute="leading" id="Oxz-QF-85x"/>
+                                            <constraint firstItem="IOG-l3-TuM" firstAttribute="centerY" secondItem="XvK-Xd-80a" secondAttribute="centerY" id="TIs-Gd-2ZA"/>
                                             <constraint firstItem="zIU-ZV-zGa" firstAttribute="leading" secondItem="JsP-5I-kbW" secondAttribute="leading" id="UDk-lQ-7tB"/>
                                             <constraint firstItem="7Ap-GM-WLU" firstAttribute="leading" secondItem="JsP-5I-kbW" secondAttribute="leading" id="UTB-2m-ZxX"/>
+                                            <constraint firstItem="IOG-l3-TuM" firstAttribute="leading" secondItem="xDX-2b-YZ7" secondAttribute="leading" id="Uyh-uR-VdP"/>
                                             <constraint firstItem="ZJM-6Y-Fcu" firstAttribute="top" secondItem="TEb-RG-Oar" secondAttribute="bottom" constant="9" id="W8K-1b-aQP"/>
+                                            <constraint firstItem="YQA-Ie-iep" firstAttribute="leading" secondItem="xDX-2b-YZ7" secondAttribute="leading" id="WBc-ru-mJ4"/>
                                             <constraint firstItem="GlN-qZ-PSt" firstAttribute="leading" secondItem="JsP-5I-kbW" secondAttribute="leading" id="ZNH-db-uaX"/>
                                             <constraint firstItem="JsP-5I-kbW" firstAttribute="top" secondItem="eUO-cH-6MD" secondAttribute="top" constant="18.5" id="crf-ze-Olh"/>
                                             <constraint firstItem="TEb-RG-Oar" firstAttribute="top" secondItem="GlN-qZ-PSt" secondAttribute="bottom" constant="16" id="esu-ZB-eKA"/>
                                             <constraint firstAttribute="trailing" secondItem="ZJM-6Y-Fcu" secondAttribute="trailing" constant="22" id="ew1-0b-tQJ"/>
+                                            <constraint firstItem="4R6-Jj-Hnp" firstAttribute="leading" secondItem="xDX-2b-YZ7" secondAttribute="leading" id="f7h-g0-IeO"/>
                                             <constraint firstItem="xQa-yw-Uz0" firstAttribute="leading" secondItem="JsP-5I-kbW" secondAttribute="leading" id="ff6-FV-Dgk"/>
+                                            <constraint firstItem="9zU-Ac-vfW" firstAttribute="centerY" secondItem="ZJM-6Y-Fcu" secondAttribute="centerY" id="fnb-PS-msd"/>
+                                            <constraint firstItem="WpU-Sv-ifc" firstAttribute="leading" secondItem="xDX-2b-YZ7" secondAttribute="leading" id="g8F-aF-sOZ"/>
                                             <constraint firstItem="YZ2-IM-4Kh" firstAttribute="leading" secondItem="JsP-5I-kbW" secondAttribute="leading" id="gMF-8F-qRk"/>
                                             <constraint firstAttribute="trailing" secondItem="Umn-Ic-AlR" secondAttribute="trailing" constant="22" id="gN6-5y-iNY"/>
                                             <constraint firstItem="zIU-ZV-zGa" firstAttribute="top" secondItem="JsP-5I-kbW" secondAttribute="bottom" constant="9" id="ikb-fh-wB3"/>
@@ -211,10 +272,12 @@
                                             <constraint firstItem="YZ2-IM-4Kh" firstAttribute="top" secondItem="QVq-aV-cZd" secondAttribute="bottom" constant="9" id="oTt-aO-nOL"/>
                                             <constraint firstAttribute="trailing" secondItem="xQa-yw-Uz0" secondAttribute="trailing" constant="22" id="qLY-Jl-rUU"/>
                                             <constraint firstItem="QVq-aV-cZd" firstAttribute="leading" secondItem="JsP-5I-kbW" secondAttribute="leading" id="rbh-6C-eLm"/>
+                                            <constraint firstItem="YQA-Ie-iep" firstAttribute="centerY" secondItem="Umn-Ic-AlR" secondAttribute="centerY" id="suW-Hw-nch"/>
                                             <constraint firstItem="I4e-Jz-HxE" firstAttribute="leading" secondItem="JsP-5I-kbW" secondAttribute="leading" id="uZN-F6-egJ"/>
                                             <constraint firstItem="vvW-IR-brl" firstAttribute="top" secondItem="RPk-l4-bbB" secondAttribute="bottom" constant="16" id="udr-T6-S8g"/>
                                             <constraint firstItem="RPk-l4-bbB" firstAttribute="top" secondItem="ewc-R9-gfV" secondAttribute="bottom" constant="9" id="viL-lz-sEm"/>
                                             <constraint firstItem="oDZ-7n-nZb" firstAttribute="top" secondItem="YZ2-IM-4Kh" secondAttribute="bottom" constant="16" id="wcP-fI-5zk"/>
+                                            <constraint firstItem="vNZ-QP-b65" firstAttribute="leading" secondItem="xDX-2b-YZ7" secondAttribute="leading" id="zar-Nc-hPc"/>
                                         </constraints>
                                     </view>
                                 </subviews>
@@ -249,15 +312,22 @@
                     <size key="freeformSize" width="375" height="800"/>
                     <connections>
                         <outlet property="aboutLabel" destination="RPk-l4-bbB" id="wnl-rm-kWc"/>
+                        <outlet property="addressImageView" destination="9zU-Ac-vfW" id="eql-l5-Zcm"/>
                         <outlet property="addressLabel" destination="ZJM-6Y-Fcu" id="SW0-tR-8tz"/>
+                        <outlet property="birthdayImageView" destination="IOG-l3-TuM" id="q41-8v-Qh8"/>
                         <outlet property="birthdayLabel" destination="XvK-Xd-80a" id="Oh7-Xq-GZ2"/>
                         <outlet property="blockUnblockButton" destination="Thq-SN-Ddc" id="oI7-d1-w5b"/>
+                        <outlet property="designationImageView" destination="4R6-Jj-Hnp" id="DuT-XG-N8Q"/>
                         <outlet property="designationLabel" destination="xQa-yw-Uz0" id="gOP-pW-WHk"/>
+                        <outlet property="emailImageView" destination="YQA-Ie-iep" id="U1k-Wp-WwE"/>
                         <outlet property="emailLabel" destination="Umn-Ic-AlR" id="k79-ff-wTS"/>
                         <outlet property="genderLabel" destination="YZ2-IM-4Kh" id="QI9-md-Nqd"/>
+                        <outlet property="landlineImageView" destination="vNZ-QP-b65" id="bZ6-JZ-Mhh"/>
                         <outlet property="landlineNumberLabel" destination="GlN-qZ-PSt" id="4pV-3Z-Pp9"/>
+                        <outlet property="mobileImageView" destination="WpU-Sv-ifc" id="bwZ-6Y-zVk"/>
                         <outlet property="mobileNumberLabel" destination="7Ap-GM-WLU" id="T3C-ia-ITh"/>
                         <outlet property="nameLabel" destination="zIU-ZV-zGa" id="GiA-aP-JGq"/>
+                        <outlet property="usernameImageView" destination="xDX-2b-YZ7" id="0XC-cW-TQC"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="An4-qD-SvE" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -300,5 +370,6 @@
     </scenes>
     <resources>
         <image name="backButtonImage" width="24" height="24"/>
+        <image name="lockIcon" width="32" height="32"/>
     </resources>
 </document>

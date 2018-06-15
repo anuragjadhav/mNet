@@ -53,7 +53,15 @@ class PeopleWrapper: NSObject {
                         onFailure(WrapperManager.shared.getErrorMessage(message: "Unable to fetch profile details"))
                         return
                     }
+                    
                     let profile:Profile = Profile.init(JSON:peopleProfileArray[0])!
+                    
+                    if let privacyArray:[[String:Any]] = responseDict["privacy"] as? [[String:Any]] {
+                        
+                        let privacy:Privacy = Privacy.init(JSON:privacyArray[0])!
+                        profile.privacy = privacy
+                    }
+                    
                     onSuccess(profile)
                 }
                 else

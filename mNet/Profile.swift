@@ -26,11 +26,13 @@ class Profile: NSObject,Mappable {
     var organizationId : String?
     var organizationName : String?
     var imageUrl :String?
-    var applicationCount : String?
-    var profileVisitsCount : String?
-    var groupCount : String?
+    var applicationCount : Int? = 0
+    var profileVisitsCount : Int? = 0
+    var groupCount : Int? = 0
     var email: String?
     
+    var privacy: Privacy?
+
     required init?(map: Map) {
         
     }
@@ -53,10 +55,11 @@ class Profile: NSObject,Mappable {
         organizationId <- map["org_id"]
         organizationName <- map["org_name"]
         imageUrl <- map["profile_img_link"]
-        applicationCount <- map["application_count"]
-        profileVisitsCount <- map["profile_visits_count"]
-        groupCount <- map["group_count"]
+        applicationCount <- map["app_count"]
+        profileVisitsCount <- map["intraction_count"]
+        groupCount <- map["groups_count"]
         email <- map["user_comp_email"]
+
     }
     
     override func copy() -> Any {
