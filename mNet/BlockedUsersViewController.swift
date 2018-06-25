@@ -29,16 +29,14 @@ class BlockedUsersViewController: BaseViewController,UITableViewDataSource,UITab
         
         dataCtrl.showOnlyBlockedUsers = true
         
+        searchBar.text = ""
     }
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated);
         
         self.setupNavigationBar()
-        getPeopleList(isReload: true)
-        searchBar.text = ""
-        peopleTableView.reloadData()
-        
+        getPeopleList(isReload: true,isLoadMore: false, searchText: searchBar.text!)
     }
     
     func setupNavigationBar(){
@@ -83,13 +81,12 @@ class BlockedUsersViewController: BaseViewController,UITableViewDataSource,UITab
     
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         
-        dataCtrl.filterPeopleWithSearchTerm(searchTerm: searchBar.text)
-        peopleTableView.reloadData()
+        getPeopleList(isReload: false,isLoadMore: false, searchText: searchText)
     }
     
     //MARK: Get People list
     
-    func getPeopleList(isReload:Bool)
+    func getPeopleList(isReload:Bool,isLoadMore:Bool,searchText:String)
     {
         if Reachability.isConnectedToNetwork(){
             
@@ -98,7 +95,7 @@ class BlockedUsersViewController: BaseViewController,UITableViewDataSource,UITab
                 self.showLoadingOnViewController()
             }
             
-            dataCtrl.getPeopleList(isReload:isReload,onSuccess: { [unowned self] in
+        dataCtrl.getPeopleList(searchText:searchText,isLoadMore:isLoadMore ,onSuccess: { [unowned self] in
                 
                 DispatchQueue.main.async {
                     
@@ -146,9 +143,9 @@ class BlockedUsersViewController: BaseViewController,UITableViewDataSource,UITab
             case let .loading(completionHandler):
                 completionHandler()
                 
-                if((searchBar.text == nil || searchBar.text == "") && dataCtrl.previousCallSuccessOrFailed){
+                if(dataCtrl.previousCallSuccessOrFailed){
                     
-                    self.getPeopleList(isReload: false)
+                    self.getPeopleList(isReload: false,isLoadMore: true, searchText: searchBar.text!)
                 }
             default: break
             }
@@ -160,7 +157,8 @@ class BlockedUsersViewController: BaseViewController,UITableViewDataSource,UITab
     
     override func retryButtonClicked() {
         
-        getPeopleList(isReload: true)
+        getPeopleList(isReload: true,isLoadMore: false, searchText: searchBar.text!)
+
     }
 
 

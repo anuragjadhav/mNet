@@ -9,6 +9,9 @@
 import UIKit
 
 class ProfileViewController: BaseViewController {
+    
+    @IBOutlet weak var companyNameLabel: CustomBrownTextColorLabel!
+    @IBOutlet weak var organizationNameLabel: CustomBrownTextColorLabel!
 
     @IBOutlet weak var emailLabel: CustomBrownTextColorLabel!
     @IBOutlet weak var aboutLabel: CustomBrownTextColorLabel!
@@ -19,8 +22,11 @@ class ProfileViewController: BaseViewController {
     @IBOutlet weak var birthdayLabel: CustomBrownTextColorLabel!
     @IBOutlet weak var genderLabel: CustomBrownTextColorLabel!
     @IBOutlet weak var nameLabel: CustomBrownTextColorLabel!
+    @IBOutlet weak var departmentNameLabel: CustomBrownTextColorLabel!
+    @IBOutlet weak var branchNameLabel: CustomBrownTextColorLabel!
     @IBOutlet weak var blockUnblockButton: UIButton!
     
+    @IBOutlet weak var departmentNameImageView: UIImageView!
     @IBOutlet weak var usernameImageView: UIImageView!
     @IBOutlet weak var birthdayImageView: UIImageView!
     @IBOutlet weak var designationImageView: UIImageView!
@@ -28,7 +34,8 @@ class ProfileViewController: BaseViewController {
     @IBOutlet weak var addressImageView: UIImageView!
     @IBOutlet weak var emailImageView: UIImageView!
     @IBOutlet weak var landlineImageView: UIImageView!
-
+    @IBOutlet weak var organizationImageView: UIImageView!
+        @IBOutlet weak var companyImageView: UIImageView!
     
     let dataCtrl:ProfileDataController = ProfileDataController()
     var didComeFromPeopleVC:Bool = false
@@ -85,7 +92,11 @@ class ProfileViewController: BaseViewController {
         mobileNumberLabel.text = dataCtrl.profile?.mobileNo ?? "-"
         designationLabel.text = dataCtrl.profile?.designation ?? "-"
         birthdayLabel.text = dataCtrl.profile?.dob ?? "----/--/--"
-        
+        organizationNameLabel.text = dataCtrl.profile?.organizationName ?? "-"
+        companyNameLabel.text = dataCtrl.profile?.companyName ?? "-"
+        departmentNameLabel.text = dataCtrl.profile?.department ?? "-"
+        branchNameLabel.text = dataCtrl.profile?.branchName ?? "-"
+
         if(dataCtrl.profile?.privacy?.showUsername == "1")
         {
             usernameImageView.isHidden = false
@@ -108,6 +119,24 @@ class ProfileViewController: BaseViewController {
         {
             designationImageView.isHidden = false
             designationLabel.isHidden = true
+        }
+        
+        if(dataCtrl.profile?.privacy?.showDepartment == "1")
+        {
+            departmentNameImageView.isHidden = false
+            departmentNameLabel.isHidden = true
+        }
+        
+        if(dataCtrl.profile?.privacy?.showOrganisation == "1")
+        {
+            organizationImageView.isHidden = false
+            organizationNameLabel.isHidden = true
+        }
+        
+        if(dataCtrl.profile?.privacy?.showCompany == "1")
+        {
+            companyImageView.isHidden = false
+            companyNameLabel.isHidden = true
         }
         
         if(dataCtrl.profile?.privacy?.showMobile == "1")

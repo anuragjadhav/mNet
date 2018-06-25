@@ -10,18 +10,21 @@ import UIKit
 
 class PeopleDataController: NSObject {
     
-    private var originalPeopleListArray:[People] = []
     var peopleArray:[People] = []
-    let limit:Int = 50
+    let limit:Int = 20
     var start:Int = 0
     var previousCallSuccessOrFailed:Bool = false
     var showOnlyBlockedUsers:Bool = false
 
-    func getPeopleList(isReload:Bool,onSuccess:@escaping () -> Void , onFailure : @escaping (String) -> Void) {
+    func getPeopleList(searchText:String,isLoadMore:Bool,onSuccess:@escaping () -> Void , onFailure : @escaping (String) -> Void) {
         
-        if(isReload)
+        if(isLoadMore == true)
         {
-            start = 0
+            self.start += self.peopleArray.count
+        }
+        else
+        {
+            self.start = 0
         }
         
         previousCallSuccessOrFailed = false
@@ -29,9 +32,10 @@ class PeopleDataController: NSObject {
         let user:User = User.loggedInUser()!
         
         var postParams:[String:Any] = user.toJSONPost()
-        postParams["UserType"] = ""
+        postParams["UserType"] = searchText
         postParams["limit"] = "\(limit)"
         postParams["start"] = "\(start)"
+
 
         WrapperManager.shared.peopleWrapper.getPeopleList(postParams: postParams, onSuccess: { [unowned self] (peopleArray) in
             
@@ -39,30 +43,34 @@ class PeopleDataController: NSObject {
             {
                let filteredBlockedPeopleArray = peopleArray.filter { $0.blockStatus == "Block" }
                 
-                if(isReload){
+                if(isLoadMore){
                     
-                    self.originalPeopleListArray = filteredBlockedPeopleArray
+                    for people in filteredBlockedPeopleArray
+                    {
+                        self.peopleArray.append(people)
+                    }
                 }
                 else
                 {
-                    for people in filteredBlockedPeopleArray
-                    {
-                        self.originalPeopleListArray.append(people)
-                    }
+                    self.peopleArray = filteredBlockedPeopleArray
                 }
             }
             else
             {
-                for people in peopleArray
+                
+                if(isLoadMore)
                 {
-                    self.originalPeopleListArray.append(people)
+                    for people in peopleArray
+                    {
+                        self.peopleArray.append(people)
+                    }
+                }
+                else
+                {
+                    self.peopleArray = peopleArray
                 }
             }
-    
-            self.peopleArray = self.originalPeopleListArray
             
-            //change start
-            self.start += self.originalPeopleListArray.count
             self.previousCallSuccessOrFailed = true
             onSuccess()
             
@@ -72,17 +80,4 @@ class PeopleDataController: NSObject {
         }
     }
     
-    
-    func filterPeopleWithSearchTerm(searchTerm:String?)
-    {
-        if(searchTerm != nil && searchTerm != "")
-        {
-            let filteredPeopleArray:[People] = originalPeopleListArray.filter { $0.userName!.localizedCaseInsensitiveContains(searchTerm!) }
-            self.peopleArray = filteredPeopleArray
-        }
-        else
-        {
-            self.peopleArray = self.originalPeopleListArray
-        }
-    }
 }

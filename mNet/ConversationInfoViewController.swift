@@ -31,24 +31,20 @@ class ConversationInfoViewController: BaseViewController,UITableViewDelegate,UIT
         self.setUpNavigationController()
         
         dataCtrl?.setupMemberList()
-        
-        let filteredMemberArray = dataCtrl?.selectedCoversation?.membersList.filter{$0.memberType == "Owner"}
-        
-        let member1:ConversationMember? =  (filteredMemberArray?.first) ?? nil
+
+        let member1:ConversationMember? =  dataCtrl?.selectedCoversation?.membersList.first
         user1Label.text = member1?.userName
         
         if((dataCtrl?.selectedCoversation?.membersList.count)! > 2)
         {
             let memberCount:Int = (dataCtrl?.selectedCoversation?.membersList.count)!
             
-            let member2:ConversationMember =  (dataCtrl?.selectedCoversation?.membersList.last)!
+            let member2:ConversationMember =  (dataCtrl?.selectedCoversation?.membersList[1])!
             user2Label.text = "\(member2.userName) + \(memberCount - 2)"
         }
         else
         {
-            let filteredArray = dataCtrl?.selectedCoversation?.membersList.filter{$0.memberType != "Owner"}
-            
-            let member2:ConversationMember? =  (filteredArray?.first) ?? nil
+            let member2:ConversationMember? =  dataCtrl?.selectedCoversation?.membersList.last
             user2Label.text = member2?.userName
         }
         
@@ -88,7 +84,7 @@ class ConversationInfoViewController: BaseViewController,UITableViewDelegate,UIT
             isPostCreator = false
         }
         
-        cell.loadCellWithMember(member:member,isPostCreator: isPostCreator!,postType: (dataCtrl?.selectedCoversation?.postTypeValue)!)
+        cell.loadCellWithMember(member:member,isPostCreator: isPostCreator!)
         
         return cell
     }

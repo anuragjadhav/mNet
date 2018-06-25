@@ -31,7 +31,13 @@ class Conversation: NSObject, Mappable {
     var postType:String = ""
     var postTypeId:String = ""
     var approvalType:String = ""
-    var membersList:[ConversationMember] = []
+    var orderedMembersList: [ConversationMember] = []
+    var membersList:[ConversationMember] {
+        get {
+            
+            return orderedMembersList.sorted(by: { $0.order < $1.order })
+        }
+    }
     var reply:[ConversationReply] = []
     var latestReplierDesignation:String = ""
     var ignore:String = "0"
@@ -61,7 +67,7 @@ class Conversation: NSObject, Mappable {
         latesReplierImage <- map["latest_replyer_image"]
         latestReplierMessage <- map["latest_replyer_message"]
         latestReplierDate <- map["latest_replyer_date"]
-        membersList <- map["memberlist"]
+        orderedMembersList <- map["memberlist"]
         reply <- map["reply"]
         postType <- map["post_type"]
         postTypeId <- map["post_type_id"]

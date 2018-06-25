@@ -27,7 +27,9 @@ class PeopleViewController: BaseViewController,UITableViewDataSource,UITableView
         
         peopleTableView.tableFooterView = UIView()
         
-        getPeopleList(isReload: true)
+        searchBar.text = ""
+        
+        getPeopleList(isReload: true,isLoadMore: false, searchText: searchBar.text!)
 
     }
 
@@ -78,13 +80,12 @@ class PeopleViewController: BaseViewController,UITableViewDataSource,UITableView
     
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         
-        dataCtrl.filterPeopleWithSearchTerm(searchTerm: searchBar.text)
-        peopleTableView.reloadData()
+        getPeopleList(isReload: false,isLoadMore: false, searchText: searchText)
     }
     
     //MARK: Get People list
     
-    func getPeopleList(isReload:Bool)
+    func getPeopleList(isReload:Bool,isLoadMore:Bool,searchText:String)
     {
         if Reachability.isConnectedToNetwork(){
             
@@ -93,7 +94,7 @@ class PeopleViewController: BaseViewController,UITableViewDataSource,UITableView
                 self.showLoadingOnViewController()
             }
             
-            dataCtrl.getPeopleList(isReload:isReload ,onSuccess: { [unowned self] in
+            dataCtrl.getPeopleList(searchText:searchText,isLoadMore:isLoadMore , onSuccess: { [unowned self] in
                 
                 DispatchQueue.main.async {
                     
@@ -143,9 +144,9 @@ class PeopleViewController: BaseViewController,UITableViewDataSource,UITableView
             case let .loading(completionHandler):
                 completionHandler()
                 
-                if((searchBar.text == nil || searchBar.text == "") && dataCtrl.previousCallSuccessOrFailed){
+                if(dataCtrl.previousCallSuccessOrFailed){
                     
-                    self.getPeopleList(isReload: false)
+                    self.getPeopleList(isReload: false,isLoadMore: true, searchText: searchBar.text!)
                 }
             default: break
             }
@@ -157,7 +158,7 @@ class PeopleViewController: BaseViewController,UITableViewDataSource,UITableView
     
     override func retryButtonClicked() {
         
-        getPeopleList(isReload: true)
+        getPeopleList(isReload: true,isLoadMore: false, searchText: searchBar.text!)
     }
 
 }

@@ -20,6 +20,26 @@ class ConversationMember: NSObject, Mappable {
     var approveStatus:String = ""
     var agreeStatus:String = ""
     
+    var order:Int {
+        
+        if(memberType.lowercased() == "creator" || memberType.lowercased() == "owner")
+        {
+            return 0
+        }
+        else if(memberType.lowercased() == "to")
+        {
+            return 1
+        }
+        else if(memberType.lowercased() == "bcc")
+        {
+            return 2
+        }
+        else
+        {
+            return 3
+        }
+    }
+    
     required init?(map: Map) {
         
     }

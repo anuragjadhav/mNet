@@ -175,7 +175,7 @@ class ConversationsDataController: NSObject {
         let newFilteredMemberArray2:[ConversationMember] = (selectedCoversation?.membersList.filter { $0.userId != memberToDelete?.userId})!
         
         memberList = newFilteredMemberArray1
-        selectedCoversation?.membersList = newFilteredMemberArray2
+        selectedCoversation?.orderedMembersList = newFilteredMemberArray2
     }
 
 
@@ -832,6 +832,28 @@ class ConversationsDataController: NSObject {
         
         return popOverObjectArray
     }
+    
+    
+    func checkIfLoggedInUserIsBcc() -> Bool
+    {
+        for member in (selectedCoversation?.membersList)!
+        {
+            if(member.userId == User.loggedInUser()?.userId)
+            {
+                if(member.memberType.lowercased() == "bcc")
+                {
+                    return true
+                }
+                else
+                {
+                    return false
+                }
+            }
+        }
+        
+        return false
+    }
+
     
     func checkWhetherSelectedConversationIsVerifyOrApprove()
     {

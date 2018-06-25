@@ -339,7 +339,10 @@ class NewConversationViewController: BaseViewController,UICollectionViewDelegate
 
     func startNewConversation()
     {
-        if((dataCtrl?.toUserList?.count)! > 0 && subjectTextField.text != nil && (subjectTextField.text?.count)! > 0 && messageTextView.text != nil && messageTextView.text.count > 0)
+        let subject = subjectTextField.text?.trimmingCharacters(in: .whitespaces) ?? ""
+        let message = messageTextView.text?.trimmingCharacters(in: .whitespaces) ?? ""
+
+        if((dataCtrl?.toUserList?.count)! > 0 &&  subject.count > 0 && message.count > 0)
         {
             dataCtrl?.newConversationSubject = subjectTextField.text
             dataCtrl?.newConversationMessage = messageTextView.text

@@ -20,6 +20,7 @@ protocol HideIgnorePostDelegate : class {
 
 class ConversationDetailViewController: BaseViewController,UITableViewDelegate,UITableViewDataSource,UITextViewDelegate,UIDocumentMenuDelegate,UIDocumentPickerDelegate,UINavigationControllerDelegate,UIImagePickerControllerDelegate,ImageDocDisplayDelegate, UIPopoverPresentationControllerDelegate,PopOverDelegate {
 
+    @IBOutlet weak var inputViewHeightConstraint: NSLayoutConstraint!
     @IBOutlet weak var conversationTableView: UITableView!
     @IBOutlet weak var sendButton: CustomBlueTextColorButton!
     @IBOutlet weak var messageTextView: UITextView!
@@ -65,7 +66,12 @@ class ConversationDetailViewController: BaseViewController,UITableViewDelegate,U
         super.viewWillAppear(animated);
         
         setupNavigationBar()
-    
+        
+        if(dataCtrl?.checkIfLoggedInUserIsBcc() == true)
+        {
+            inputViewHeightConstraint.constant = 0
+            view.layoutIfNeeded()
+        }
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -87,23 +93,19 @@ class ConversationDetailViewController: BaseViewController,UITableViewDelegate,U
     {
         self.navigationItem.title = dataCtrl?.selectedCoversation?.postTitle
         
-        let filteredMemberArray = dataCtrl?.selectedCoversation?.membersList.filter{$0.memberType == "Owner"}
-        
-        let member1:ConversationMember? =  (filteredMemberArray?.first) ?? nil
+        let member1:ConversationMember? =  dataCtrl?.selectedCoversation?.membersList.first
         user1Label.text = member1?.userName
         
         if((dataCtrl?.selectedCoversation?.membersList.count)! > 2)
         {
             let memberCount:Int = (dataCtrl?.selectedCoversation?.membersList.count)!
         
-            let member2:ConversationMember =  (dataCtrl?.selectedCoversation?.membersList.last)!
+            let member2:ConversationMember =  (dataCtrl?.selectedCoversation?.membersList[1])!
             user2Label.text = "\(member2.userName) + \(memberCount - 2)"
         }
         else
         {
-            let filteredArray = dataCtrl?.selectedCoversation?.membersList.filter{$0.memberType != "Owner"}
-            
-            let member2:ConversationMember? =  (filteredArray?.first) ?? nil
+            let member2:ConversationMember? =  dataCtrl?.selectedCoversation?.membersList.last
             user2Label.text = member2?.userName
         }
         
@@ -347,7 +349,6 @@ class ConversationDetailViewController: BaseViewController,UITableViewDelegate,U
         popController.popoverPresentationController?.sourceView = self.user2Label // button
         
         let filteredMemberArray = dataCtrl?.selectedCoversation?.membersList.filter{$0.memberType != "Owner"} ?? []
-        
         popController.dataArray = (dataCtrl?.getPopoverObjectsFromStringArray(stringArray: filteredMemberArray.map{$0.userName}))!
         
         // present the popover

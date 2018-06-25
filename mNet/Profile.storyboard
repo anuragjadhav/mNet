@@ -10,6 +10,9 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
+        <array key="HelveticaNeue.ttc">
+            <string>HelveticaNeue-Medium</string>
+        </array>
         <array key="SanFranciscoDisplay-Bold.otf">
             <string>SanFranciscoDisplay-Bold</string>
         </array>
@@ -23,7 +26,7 @@
             <objects>
                 <viewController storyboardIdentifier="ProfileViewController" id="ucf-OG-4Jl" userLabel="Profile" customClass="ProfileViewController" customModule="mNet" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="2BJ-H3-YzL">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="800"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="950"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="x2w-PD-aXx">
@@ -31,10 +34,10 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" tag="12345" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9os-hh-9sp">
-                                <rect key="frame" x="0.0" y="116" width="375" height="684"/>
+                                <rect key="frame" x="0.0" y="113" width="375" height="837"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eUO-cH-6MD">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="631.5"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="857.5"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JsP-5I-kbW" customClass="CustomBrownTextColorLabel" customModule="mNet" customModuleProvider="target">
                                                 <rect key="frame" x="28" y="18.5" width="37" height="17"/>
@@ -67,31 +70,31 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mobile" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1IX-q2-ncg" customClass="CustomBrownTextColorLabel" customModule="mNet" customModuleProvider="target">
-                                                <rect key="frame" x="28" y="253.5" width="43" height="17"/>
+                                                <rect key="frame" x="28" y="314" width="43" height="17"/>
                                                 <fontDescription key="fontDescription" name="SanFranciscoDisplay-Bold" family="San Francisco Display" pointSize="14"/>
                                                 <color key="textColor" red="0.3803921569" green="0.28235294119999998" blue="0.22352941179999999" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Landline" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hDH-tz-4tE" customClass="CustomBrownTextColorLabel" customModule="mNet" customModuleProvider="target">
-                                                <rect key="frame" x="28" y="312.5" width="54.5" height="17"/>
+                                                <rect key="frame" x="28" y="373" width="54.5" height="17"/>
                                                 <fontDescription key="fontDescription" name="SanFranciscoDisplay-Bold" family="San Francisco Display" pointSize="14"/>
                                                 <color key="textColor" red="0.3803921569" green="0.28235294119999998" blue="0.22352941179999999" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Address" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TEb-RG-Oar" customClass="CustomBrownTextColorLabel" customModule="mNet" customModuleProvider="target">
-                                                <rect key="frame" x="28" y="371.5" width="52" height="17"/>
+                                                <rect key="frame" x="28" y="432" width="52" height="17"/>
                                                 <fontDescription key="fontDescription" name="SanFranciscoDisplay-Bold" family="San Francisco Display" pointSize="14"/>
                                                 <color key="textColor" red="0.3803921569" green="0.28235294119999998" blue="0.22352941179999999" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="About" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ewc-R9-gfV" customClass="CustomBrownTextColorLabel" customModule="mNet" customModuleProvider="target">
-                                                <rect key="frame" x="28" y="447.5" width="38" height="17"/>
+                                                <rect key="frame" x="28" y="508" width="38" height="17"/>
                                                 <fontDescription key="fontDescription" name="SanFranciscoDisplay-Bold" family="San Francisco Display" pointSize="14"/>
                                                 <color key="textColor" red="0.3803921569" green="0.28235294119999998" blue="0.22352941179999999" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Email" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vvW-IR-brl" customClass="CustomBrownTextColorLabel" customModule="mNet" customModuleProvider="target">
-                                                <rect key="frame" x="28" y="506.5" width="35.5" height="17"/>
+                                                <rect key="frame" x="28" y="567" width="35.5" height="17"/>
                                                 <fontDescription key="fontDescription" name="SanFranciscoDisplay-Bold" family="San Francisco Display" pointSize="14"/>
                                                 <color key="textColor" red="0.3803921569" green="0.28235294119999998" blue="0.22352941179999999" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
@@ -129,65 +132,141 @@
                                                 </constraints>
                                             </imageView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1234567890" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7Ap-GM-WLU" customClass="CustomBrownTextColorLabel" customModule="mNet" customModuleProvider="target">
-                                                <rect key="frame" x="28" y="279.5" width="74" height="17"/>
+                                                <rect key="frame" x="28" y="340" width="74" height="17"/>
                                                 <fontDescription key="fontDescription" name="SanFranciscoDisplay-Light" family="San Francisco Display" pointSize="14"/>
                                                 <color key="textColor" red="0.3803921569" green="0.28235294119999998" blue="0.22352941179999999" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="lockIcon" translatesAutoresizingMaskIntoConstraints="NO" id="WpU-Sv-ifc">
-                                                <rect key="frame" x="36" y="280" width="14" height="16"/>
+                                                <rect key="frame" x="36" y="340.5" width="14" height="16"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="14" id="YG5-HX-sRF"/>
                                                     <constraint firstAttribute="height" constant="16" id="fJG-8I-x00"/>
                                                 </constraints>
                                             </imageView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="02223343434" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GlN-qZ-PSt" customClass="CustomBrownTextColorLabel" customModule="mNet" customModuleProvider="target">
-                                                <rect key="frame" x="28" y="338.5" width="84" height="17"/>
+                                                <rect key="frame" x="28" y="399" width="84" height="17"/>
                                                 <fontDescription key="fontDescription" name="SanFranciscoDisplay-Light" family="San Francisco Display" pointSize="14"/>
                                                 <color key="textColor" red="0.3803921569" green="0.28235294119999998" blue="0.22352941179999999" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="lockIcon" translatesAutoresizingMaskIntoConstraints="NO" id="vNZ-QP-b65">
-                                                <rect key="frame" x="36" y="339" width="14" height="16"/>
+                                                <rect key="frame" x="36" y="399.5" width="14" height="16"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="14" id="C0X-h9-rGI"/>
                                                     <constraint firstAttribute="height" constant="16" id="QdC-EM-bhd"/>
                                                 </constraints>
                                             </imageView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="A 503  adarsh road , goregaon station , mumbai - 400063 " textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZJM-6Y-Fcu" customClass="CustomBrownTextColorLabel" customModule="mNet" customModuleProvider="target">
-                                                <rect key="frame" x="28" y="398" width="325" height="33.5"/>
+                                                <rect key="frame" x="28" y="458.5" width="325" height="33.5"/>
                                                 <fontDescription key="fontDescription" name="SanFranciscoDisplay-Light" family="San Francisco Display" pointSize="14"/>
                                                 <color key="textColor" red="0.3803921569" green="0.28235294119999998" blue="0.22352941179999999" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="lockIcon" translatesAutoresizingMaskIntoConstraints="NO" id="9zU-Ac-vfW">
-                                                <rect key="frame" x="36" y="407" width="14" height="16"/>
+                                                <rect key="frame" x="36" y="467.5" width="14" height="16"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="16" id="IPY-ti-ulw"/>
                                                     <constraint firstAttribute="width" constant="14" id="Tuv-Mr-auV"/>
                                                 </constraints>
                                             </imageView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="something about myself" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RPk-l4-bbB" customClass="CustomBrownTextColorLabel" customModule="mNet" customModuleProvider="target">
-                                                <rect key="frame" x="28" y="474" width="325" height="17"/>
+                                                <rect key="frame" x="28" y="534.5" width="325" height="17"/>
                                                 <fontDescription key="fontDescription" name="SanFranciscoDisplay-Light" family="San Francisco Display" pointSize="14"/>
                                                 <color key="textColor" red="0.3803921569" green="0.28235294119999998" blue="0.22352941179999999" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="example@gmail.com" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Umn-Ic-AlR" customClass="CustomBrownTextColorLabel" customModule="mNet" customModuleProvider="target">
-                                                <rect key="frame" x="28" y="533" width="325" height="17"/>
+                                                <rect key="frame" x="28" y="593.5" width="325" height="17"/>
                                                 <fontDescription key="fontDescription" name="SanFranciscoDisplay-Light" family="San Francisco Display" pointSize="14"/>
                                                 <color key="textColor" red="0.3803921569" green="0.28235294119999998" blue="0.22352941179999999" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="lockIcon" translatesAutoresizingMaskIntoConstraints="NO" id="YQA-Ie-iep">
-                                                <rect key="frame" x="36" y="533.5" width="14" height="16"/>
+                                                <rect key="frame" x="36" y="594" width="14" height="16"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="14" id="0Ro-Ci-zyQ"/>
                                                     <constraint firstAttribute="height" constant="16" id="2rg-Uo-Nl8"/>
                                                 </constraints>
                                             </imageView>
+                                            <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="lockIcon" translatesAutoresizingMaskIntoConstraints="NO" id="xDX-2b-YZ7">
+                                                <rect key="frame" x="36" y="46" width="14" height="16"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="16" id="2tf-hJ-rro"/>
+                                                    <constraint firstAttribute="width" constant="14" id="bNG-De-mM5"/>
+                                                </constraints>
+                                            </imageView>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Organization" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YNJ-4q-z1x" customClass="CustomBrownTextColorLabel" customModule="mNet" customModuleProvider="target">
+                                                <rect key="frame" x="28" y="626.5" width="82" height="17"/>
+                                                <fontDescription key="fontDescription" name="SanFranciscoDisplay-Bold" family="San Francisco Display" pointSize="14"/>
+                                                <color key="textColor" red="0.3803921569" green="0.28235294119999998" blue="0.22352941179999999" alpha="1" colorSpace="calibratedRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mediaware" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eyF-sA-PpP" customClass="CustomBrownTextColorLabel" customModule="mNet" customModuleProvider="target">
+                                                <rect key="frame" x="28" y="652.5" width="325" height="17"/>
+                                                <fontDescription key="fontDescription" name="SanFranciscoDisplay-Light" family="San Francisco Display" pointSize="14"/>
+                                                <color key="textColor" red="0.3803921569" green="0.28235294119999998" blue="0.22352941179999999" alpha="1" colorSpace="calibratedRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="lockIcon" translatesAutoresizingMaskIntoConstraints="NO" id="MkH-Mv-cjE">
+                                                <rect key="frame" x="36" y="652.5" width="14" height="16"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="14" id="37Y-FK-k8K"/>
+                                                    <constraint firstAttribute="height" constant="16" id="jn6-Lf-dwl"/>
+                                                </constraints>
+                                            </imageView>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Company" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WxU-wg-5xM" customClass="CustomBrownTextColorLabel" customModule="mNet" customModuleProvider="target">
+                                                <rect key="frame" x="28" y="685.5" width="60.5" height="17"/>
+                                                <fontDescription key="fontDescription" name="SanFranciscoDisplay-Bold" family="San Francisco Display" pointSize="14"/>
+                                                <color key="textColor" red="0.3803921569" green="0.28235294119999998" blue="0.22352941179999999" alpha="1" colorSpace="calibratedRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mediaware" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kVT-4B-MCN" customClass="CustomBrownTextColorLabel" customModule="mNet" customModuleProvider="target">
+                                                <rect key="frame" x="28" y="711.5" width="325" height="17"/>
+                                                <fontDescription key="fontDescription" name="SanFranciscoDisplay-Light" family="San Francisco Display" pointSize="14"/>
+                                                <color key="textColor" red="0.3803921569" green="0.28235294119999998" blue="0.22352941179999999" alpha="1" colorSpace="calibratedRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="lockIcon" translatesAutoresizingMaskIntoConstraints="NO" id="kW8-4s-0DT">
+                                                <rect key="frame" x="36" y="711.5" width="14" height="16"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="14" id="ORT-du-Gqf"/>
+                                                    <constraint firstAttribute="height" constant="16" id="oKn-Z7-4Yz"/>
+                                                </constraints>
+                                            </imageView>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Department" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dwv-72-caB" customClass="CustomBrownTextColorLabel" customModule="mNet" customModuleProvider="target">
+                                                <rect key="frame" x="28" y="255" width="77" height="17"/>
+                                                <fontDescription key="fontDescription" name="SanFranciscoDisplay-Bold" family="San Francisco Display" pointSize="14"/>
+                                                <color key="textColor" red="0.3803921569" green="0.28235294119999998" blue="0.22352941179999999" alpha="1" colorSpace="calibratedRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="IT" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hfk-hy-1bL" customClass="CustomBrownTextColorLabel" customModule="mNet" customModuleProvider="target">
+                                                <rect key="frame" x="28" y="281" width="325" height="17"/>
+                                                <fontDescription key="fontDescription" name="SanFranciscoDisplay-Light" family="San Francisco Display" pointSize="14"/>
+                                                <color key="textColor" red="0.3803921569" green="0.28235294119999998" blue="0.22352941179999999" alpha="1" colorSpace="calibratedRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="lockIcon" translatesAutoresizingMaskIntoConstraints="NO" id="6Ur-uO-SZt">
+                                                <rect key="frame" x="36" y="281.5" width="14" height="16"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="16" id="OKH-vr-aO6"/>
+                                                    <constraint firstAttribute="width" constant="14" id="V3X-09-frg"/>
+                                                </constraints>
+                                            </imageView>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Branch" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AdK-CP-mz8" customClass="CustomBrownTextColorLabel" customModule="mNet" customModuleProvider="target">
+                                                <rect key="frame" x="28" y="744.5" width="46" height="17"/>
+                                                <fontDescription key="fontDescription" name="SanFranciscoDisplay-Bold" family="San Francisco Display" pointSize="14"/>
+                                                <color key="textColor" red="0.3803921569" green="0.28235294119999998" blue="0.22352941179999999" alpha="1" colorSpace="calibratedRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="IT" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dgi-RD-zVD" customClass="CustomBrownTextColorLabel" customModule="mNet" customModuleProvider="target">
+                                                <rect key="frame" x="28" y="770.5" width="325" height="17"/>
+                                                <fontDescription key="fontDescription" name="SanFranciscoDisplay-Light" family="San Francisco Display" pointSize="14"/>
+                                                <color key="textColor" red="0.3803921569" green="0.28235294119999998" blue="0.22352941179999999" alpha="1" colorSpace="calibratedRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Thq-SN-Ddc">
-                                                <rect key="frame" x="28" y="577.5" width="68" height="29"/>
+                                                <rect key="frame" x="28" y="803.5" width="68" height="29"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="68" id="0b0-fw-m06"/>
                                                 </constraints>
@@ -210,21 +289,16 @@
                                                     <action selector="blockUnblockButtonAction:" destination="ucf-OG-4Jl" eventType="touchUpInside" id="rTJ-bf-xlN"/>
                                                 </connections>
                                             </button>
-                                            <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="lockIcon" translatesAutoresizingMaskIntoConstraints="NO" id="xDX-2b-YZ7">
-                                                <rect key="frame" x="36" y="46" width="14" height="16"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="16" id="2tf-hJ-rro"/>
-                                                    <constraint firstAttribute="width" constant="14" id="bNG-De-mM5"/>
-                                                </constraints>
-                                            </imageView>
                                         </subviews>
                                         <color key="backgroundColor" red="0.96862745100000003" green="0.97254901959999995" blue="0.97647058819999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="bottom" secondItem="Thq-SN-Ddc" secondAttribute="bottom" constant="25" id="0KS-k4-yoz"/>
                                             <constraint firstItem="hDH-tz-4tE" firstAttribute="top" secondItem="7Ap-GM-WLU" secondAttribute="bottom" constant="16" id="1Le-cq-Tvg"/>
-                                            <constraint firstItem="Thq-SN-Ddc" firstAttribute="top" secondItem="Umn-Ic-AlR" secondAttribute="bottom" constant="28" id="5Ed-Js-Hmt"/>
+                                            <constraint firstItem="kVT-4B-MCN" firstAttribute="top" secondItem="WxU-wg-5xM" secondAttribute="bottom" constant="9" id="5X2-et-ht7"/>
                                             <constraint firstItem="XvK-Xd-80a" firstAttribute="leading" secondItem="JsP-5I-kbW" secondAttribute="leading" id="5gp-mj-R8a"/>
                                             <constraint firstItem="1IX-q2-ncg" firstAttribute="leading" secondItem="JsP-5I-kbW" secondAttribute="leading" id="6CS-pf-Xv5"/>
+                                            <constraint firstItem="WxU-wg-5xM" firstAttribute="top" secondItem="eyF-sA-PpP" secondAttribute="bottom" constant="16" id="72L-78-Uhm"/>
+                                            <constraint firstAttribute="trailing" secondItem="dgi-RD-zVD" secondAttribute="trailing" constant="22" id="7Tx-9i-sB2"/>
                                             <constraint firstItem="I4e-Jz-HxE" firstAttribute="top" secondItem="XvK-Xd-80a" secondAttribute="bottom" constant="16" id="7nY-mJ-iDW"/>
                                             <constraint firstItem="Thq-SN-Ddc" firstAttribute="leading" secondItem="vvW-IR-brl" secondAttribute="leading" id="7za-YY-u7K"/>
                                             <constraint firstItem="vNZ-QP-b65" firstAttribute="centerY" secondItem="GlN-qZ-PSt" secondAttribute="centerY" id="8dE-fd-hKs"/>
@@ -239,44 +313,68 @@
                                             <constraint firstItem="GlN-qZ-PSt" firstAttribute="top" secondItem="hDH-tz-4tE" secondAttribute="bottom" constant="9" id="DVt-Sz-20o"/>
                                             <constraint firstItem="7Ap-GM-WLU" firstAttribute="top" secondItem="1IX-q2-ncg" secondAttribute="bottom" constant="9" id="DhB-bF-XU0"/>
                                             <constraint firstAttribute="trailing" secondItem="RPk-l4-bbB" secondAttribute="trailing" constant="22" id="EXI-2b-sR5"/>
+                                            <constraint firstItem="1IX-q2-ncg" firstAttribute="top" secondItem="hfk-hy-1bL" secondAttribute="bottom" constant="16" id="F5D-H2-evj"/>
                                             <constraint firstItem="Umn-Ic-AlR" firstAttribute="top" secondItem="vvW-IR-brl" secondAttribute="bottom" constant="9" id="FWH-Eq-D6n"/>
-                                            <constraint firstItem="1IX-q2-ncg" firstAttribute="top" secondItem="xQa-yw-Uz0" secondAttribute="bottom" constant="15" id="GSV-jA-42p"/>
                                             <constraint firstItem="oDZ-7n-nZb" firstAttribute="leading" secondItem="JsP-5I-kbW" secondAttribute="leading" id="HJ8-ik-kML"/>
                                             <constraint firstItem="QVq-aV-cZd" firstAttribute="top" secondItem="zIU-ZV-zGa" secondAttribute="bottom" constant="16" id="JR6-Iw-Qk2"/>
                                             <constraint firstItem="xDX-2b-YZ7" firstAttribute="centerY" secondItem="zIU-ZV-zGa" secondAttribute="centerY" id="Kwu-NN-l3M"/>
                                             <constraint firstItem="xQa-yw-Uz0" firstAttribute="top" secondItem="I4e-Jz-HxE" secondAttribute="bottom" constant="9" id="L0N-lR-PLL"/>
+                                            <constraint firstItem="dgi-RD-zVD" firstAttribute="leading" secondItem="JsP-5I-kbW" secondAttribute="leading" id="Mdf-V9-r3R"/>
+                                            <constraint firstItem="6Ur-uO-SZt" firstAttribute="leading" secondItem="xDX-2b-YZ7" secondAttribute="leading" id="N7e-We-BUo"/>
+                                            <constraint firstItem="Dwv-72-caB" firstAttribute="leading" secondItem="JsP-5I-kbW" secondAttribute="leading" id="NMh-LK-eqC"/>
                                             <constraint firstItem="TEb-RG-Oar" firstAttribute="leading" secondItem="JsP-5I-kbW" secondAttribute="leading" id="NXU-eF-2Qd"/>
+                                            <constraint firstItem="6Ur-uO-SZt" firstAttribute="centerY" secondItem="hfk-hy-1bL" secondAttribute="centerY" id="OBo-yJ-3fn"/>
+                                            <constraint firstItem="eyF-sA-PpP" firstAttribute="top" secondItem="YNJ-4q-z1x" secondAttribute="bottom" constant="9" id="OJ5-C4-aWO"/>
+                                            <constraint firstItem="kW8-4s-0DT" firstAttribute="leading" secondItem="xDX-2b-YZ7" secondAttribute="leading" id="OKp-yL-Rwm"/>
                                             <constraint firstItem="RPk-l4-bbB" firstAttribute="leading" secondItem="JsP-5I-kbW" secondAttribute="leading" id="OLf-GA-p9f"/>
                                             <constraint firstItem="Umn-Ic-AlR" firstAttribute="leading" secondItem="JsP-5I-kbW" secondAttribute="leading" id="Oxz-QF-85x"/>
+                                            <constraint firstItem="MkH-Mv-cjE" firstAttribute="leading" secondItem="xDX-2b-YZ7" secondAttribute="leading" id="QaL-8h-SSR"/>
+                                            <constraint firstAttribute="trailing" secondItem="eyF-sA-PpP" secondAttribute="trailing" constant="22" id="Qg9-lL-UiJ"/>
+                                            <constraint firstItem="AdK-CP-mz8" firstAttribute="leading" secondItem="JsP-5I-kbW" secondAttribute="leading" id="QyE-ij-XUA"/>
                                             <constraint firstItem="IOG-l3-TuM" firstAttribute="centerY" secondItem="XvK-Xd-80a" secondAttribute="centerY" id="TIs-Gd-2ZA"/>
+                                            <constraint firstAttribute="trailing" secondItem="hfk-hy-1bL" secondAttribute="trailing" constant="22" id="TJK-FL-nby"/>
                                             <constraint firstItem="zIU-ZV-zGa" firstAttribute="leading" secondItem="JsP-5I-kbW" secondAttribute="leading" id="UDk-lQ-7tB"/>
+                                            <constraint firstItem="YNJ-4q-z1x" firstAttribute="top" secondItem="Umn-Ic-AlR" secondAttribute="bottom" constant="16" id="UFE-df-XE9"/>
                                             <constraint firstItem="7Ap-GM-WLU" firstAttribute="leading" secondItem="JsP-5I-kbW" secondAttribute="leading" id="UTB-2m-ZxX"/>
                                             <constraint firstItem="IOG-l3-TuM" firstAttribute="leading" secondItem="xDX-2b-YZ7" secondAttribute="leading" id="Uyh-uR-VdP"/>
                                             <constraint firstItem="ZJM-6Y-Fcu" firstAttribute="top" secondItem="TEb-RG-Oar" secondAttribute="bottom" constant="9" id="W8K-1b-aQP"/>
                                             <constraint firstItem="YQA-Ie-iep" firstAttribute="leading" secondItem="xDX-2b-YZ7" secondAttribute="leading" id="WBc-ru-mJ4"/>
+                                            <constraint firstItem="AdK-CP-mz8" firstAttribute="top" secondItem="kVT-4B-MCN" secondAttribute="bottom" constant="16" id="Xgp-Pc-CjW"/>
                                             <constraint firstItem="GlN-qZ-PSt" firstAttribute="leading" secondItem="JsP-5I-kbW" secondAttribute="leading" id="ZNH-db-uaX"/>
+                                            <constraint firstItem="Dwv-72-caB" firstAttribute="top" secondItem="xQa-yw-Uz0" secondAttribute="bottom" constant="16" id="b0W-HF-DZ2"/>
                                             <constraint firstItem="JsP-5I-kbW" firstAttribute="top" secondItem="eUO-cH-6MD" secondAttribute="top" constant="18.5" id="crf-ze-Olh"/>
+                                            <constraint firstItem="hfk-hy-1bL" firstAttribute="leading" secondItem="JsP-5I-kbW" secondAttribute="leading" id="dd1-DR-pU5"/>
                                             <constraint firstItem="TEb-RG-Oar" firstAttribute="top" secondItem="GlN-qZ-PSt" secondAttribute="bottom" constant="16" id="esu-ZB-eKA"/>
                                             <constraint firstAttribute="trailing" secondItem="ZJM-6Y-Fcu" secondAttribute="trailing" constant="22" id="ew1-0b-tQJ"/>
                                             <constraint firstItem="4R6-Jj-Hnp" firstAttribute="leading" secondItem="xDX-2b-YZ7" secondAttribute="leading" id="f7h-g0-IeO"/>
+                                            <constraint firstItem="eyF-sA-PpP" firstAttribute="leading" secondItem="JsP-5I-kbW" secondAttribute="leading" id="f8z-y6-wCG"/>
+                                            <constraint firstItem="kW8-4s-0DT" firstAttribute="centerY" secondItem="kVT-4B-MCN" secondAttribute="centerY" id="fB9-6Q-mhv"/>
                                             <constraint firstItem="xQa-yw-Uz0" firstAttribute="leading" secondItem="JsP-5I-kbW" secondAttribute="leading" id="ff6-FV-Dgk"/>
                                             <constraint firstItem="9zU-Ac-vfW" firstAttribute="centerY" secondItem="ZJM-6Y-Fcu" secondAttribute="centerY" id="fnb-PS-msd"/>
                                             <constraint firstItem="WpU-Sv-ifc" firstAttribute="leading" secondItem="xDX-2b-YZ7" secondAttribute="leading" id="g8F-aF-sOZ"/>
                                             <constraint firstItem="YZ2-IM-4Kh" firstAttribute="leading" secondItem="JsP-5I-kbW" secondAttribute="leading" id="gMF-8F-qRk"/>
                                             <constraint firstAttribute="trailing" secondItem="Umn-Ic-AlR" secondAttribute="trailing" constant="22" id="gN6-5y-iNY"/>
                                             <constraint firstItem="zIU-ZV-zGa" firstAttribute="top" secondItem="JsP-5I-kbW" secondAttribute="bottom" constant="9" id="ikb-fh-wB3"/>
+                                            <constraint firstItem="WxU-wg-5xM" firstAttribute="leading" secondItem="JsP-5I-kbW" secondAttribute="leading" id="ir1-Nh-u4l"/>
                                             <constraint firstItem="ewc-R9-gfV" firstAttribute="leading" secondItem="JsP-5I-kbW" secondAttribute="leading" id="is3-1h-qdQ"/>
                                             <constraint firstItem="XvK-Xd-80a" firstAttribute="top" secondItem="oDZ-7n-nZb" secondAttribute="bottom" constant="9" id="jrL-mL-aTu"/>
                                             <constraint firstItem="JsP-5I-kbW" firstAttribute="leading" secondItem="eUO-cH-6MD" secondAttribute="leading" constant="28" id="kwn-h1-Ke5"/>
                                             <constraint firstAttribute="trailing" secondItem="zIU-ZV-zGa" secondAttribute="trailing" constant="22" id="mss-DT-4Su"/>
                                             <constraint firstItem="YZ2-IM-4Kh" firstAttribute="top" secondItem="QVq-aV-cZd" secondAttribute="bottom" constant="9" id="oTt-aO-nOL"/>
+                                            <constraint firstItem="Thq-SN-Ddc" firstAttribute="top" secondItem="dgi-RD-zVD" secondAttribute="bottom" constant="16" id="oes-0p-SJp"/>
+                                            <constraint firstItem="dgi-RD-zVD" firstAttribute="top" secondItem="AdK-CP-mz8" secondAttribute="bottom" constant="9" id="pgv-dd-YjT"/>
                                             <constraint firstAttribute="trailing" secondItem="xQa-yw-Uz0" secondAttribute="trailing" constant="22" id="qLY-Jl-rUU"/>
+                                            <constraint firstItem="YNJ-4q-z1x" firstAttribute="leading" secondItem="JsP-5I-kbW" secondAttribute="leading" id="qLp-pA-9Q2"/>
+                                            <constraint firstItem="hfk-hy-1bL" firstAttribute="top" secondItem="Dwv-72-caB" secondAttribute="bottom" constant="9" id="rML-MT-1KK"/>
                                             <constraint firstItem="QVq-aV-cZd" firstAttribute="leading" secondItem="JsP-5I-kbW" secondAttribute="leading" id="rbh-6C-eLm"/>
+                                            <constraint firstItem="kVT-4B-MCN" firstAttribute="leading" secondItem="JsP-5I-kbW" secondAttribute="leading" id="rp4-jl-5eO"/>
                                             <constraint firstItem="YQA-Ie-iep" firstAttribute="centerY" secondItem="Umn-Ic-AlR" secondAttribute="centerY" id="suW-Hw-nch"/>
+                                            <constraint firstAttribute="trailing" secondItem="kVT-4B-MCN" secondAttribute="trailing" constant="22" id="u4g-V1-6I0"/>
                                             <constraint firstItem="I4e-Jz-HxE" firstAttribute="leading" secondItem="JsP-5I-kbW" secondAttribute="leading" id="uZN-F6-egJ"/>
                                             <constraint firstItem="vvW-IR-brl" firstAttribute="top" secondItem="RPk-l4-bbB" secondAttribute="bottom" constant="16" id="udr-T6-S8g"/>
                                             <constraint firstItem="RPk-l4-bbB" firstAttribute="top" secondItem="ewc-R9-gfV" secondAttribute="bottom" constant="9" id="viL-lz-sEm"/>
                                             <constraint firstItem="oDZ-7n-nZb" firstAttribute="top" secondItem="YZ2-IM-4Kh" secondAttribute="bottom" constant="16" id="wcP-fI-5zk"/>
+                                            <constraint firstItem="MkH-Mv-cjE" firstAttribute="centerY" secondItem="eyF-sA-PpP" secondAttribute="centerY" id="xBX-xd-hFI"/>
                                             <constraint firstItem="vNZ-QP-b65" firstAttribute="leading" secondItem="xDX-2b-YZ7" secondAttribute="leading" id="zar-Nc-hPc"/>
                                         </constraints>
                                     </view>
@@ -309,7 +407,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-                    <size key="freeformSize" width="375" height="800"/>
+                    <size key="freeformSize" width="375" height="950"/>
                     <connections>
                         <outlet property="aboutLabel" destination="RPk-l4-bbB" id="wnl-rm-kWc"/>
                         <outlet property="addressImageView" destination="9zU-Ac-vfW" id="eql-l5-Zcm"/>
@@ -317,6 +415,11 @@
                         <outlet property="birthdayImageView" destination="IOG-l3-TuM" id="q41-8v-Qh8"/>
                         <outlet property="birthdayLabel" destination="XvK-Xd-80a" id="Oh7-Xq-GZ2"/>
                         <outlet property="blockUnblockButton" destination="Thq-SN-Ddc" id="oI7-d1-w5b"/>
+                        <outlet property="branchNameLabel" destination="dgi-RD-zVD" id="oG8-0o-P3J"/>
+                        <outlet property="companyImageView" destination="kW8-4s-0DT" id="7DM-tl-BZc"/>
+                        <outlet property="companyNameLabel" destination="kVT-4B-MCN" id="5UK-NX-uL5"/>
+                        <outlet property="departmentNameImageView" destination="6Ur-uO-SZt" id="lgT-k0-pbS"/>
+                        <outlet property="departmentNameLabel" destination="hfk-hy-1bL" id="O6g-78-jgB"/>
                         <outlet property="designationImageView" destination="4R6-Jj-Hnp" id="DuT-XG-N8Q"/>
                         <outlet property="designationLabel" destination="xQa-yw-Uz0" id="gOP-pW-WHk"/>
                         <outlet property="emailImageView" destination="YQA-Ie-iep" id="U1k-Wp-WwE"/>
@@ -327,6 +430,8 @@
                         <outlet property="mobileImageView" destination="WpU-Sv-ifc" id="bwZ-6Y-zVk"/>
                         <outlet property="mobileNumberLabel" destination="7Ap-GM-WLU" id="T3C-ia-ITh"/>
                         <outlet property="nameLabel" destination="zIU-ZV-zGa" id="GiA-aP-JGq"/>
+                        <outlet property="organizationImageView" destination="MkH-Mv-cjE" id="8go-E8-jsH"/>
+                        <outlet property="organizationNameLabel" destination="eyF-sA-PpP" id="MJr-1h-k83"/>
                         <outlet property="usernameImageView" destination="xDX-2b-YZ7" id="0XC-cW-TQC"/>
                     </connections>
                 </viewController>
@@ -340,7 +445,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="eKl-mk-p3d" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" largeTitles="YES" id="KRP-qt-93S">
-                        <rect key="frame" x="0.0" y="20" width="375" height="96"/>
+                        <rect key="frame" x="0.0" y="20" width="375" height="93"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="o3E-LQ-xem">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="o3E-LQ-xem">
     <device id="retina4_0" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -768,7 +768,7 @@
                                                     <color key="textColor" red="0.3803921569" green="0.28235294119999998" blue="0.22352941179999999" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Tha-DT-pen">
+                                                <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Tha-DT-pen">
                                                     <rect key="frame" x="267" y="9" width="18" height="18"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" secondItem="Tha-DT-pen" secondAttribute="height" multiplier="1:1" id="8fJ-u4-jgV"/>
@@ -1689,7 +1689,7 @@
                                     <outlet property="delegate" destination="ZDB-Oo-0rh" id="k5B-Us-Ehh"/>
                                 </connections>
                             </tableView>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NoE-32-TYf">
+                            <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NoE-32-TYf">
                                 <rect key="frame" x="0.0" y="518" width="320" height="50"/>
                                 <subviews>
                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="ZUx-yy-FrG">
@@ -1715,7 +1715,7 @@
                                             <outlet property="delegate" destination="ZDB-Oo-0rh" id="ih8-dx-6FF"/>
                                         </connections>
                                     </textView>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lAc-sc-Jfq" customClass="CustomBlueTextColorButton" customModule="mNet" customModuleProvider="target">
+                                    <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lAc-sc-Jfq" customClass="CustomBlueTextColorButton" customModule="mNet" customModuleProvider="target">
                                         <rect key="frame" x="257" y="9" width="55" height="32"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="55" id="1vS-nh-isX"/>
@@ -1739,7 +1739,7 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="w8Y-E0-Wjb">
+                                    <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="w8Y-E0-Wjb">
                                         <rect key="frame" x="5" y="10" width="30" height="30"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="30" id="hn1-PF-NCS"/>
@@ -1799,6 +1799,7 @@
                     <connections>
                         <outlet property="conversationTableView" destination="8bi-AF-q3O" id="mKW-cG-sG0"/>
                         <outlet property="dateTimeLabel" destination="fOW-sk-FW1" id="I1p-Wg-CFy"/>
+                        <outlet property="inputViewHeightConstraint" destination="IF2-qQ-fxi" id="Pca-sF-bv2"/>
                         <outlet property="messageTextView" destination="ZUx-yy-FrG" id="5YQ-Hj-ghJ"/>
                         <outlet property="messageViewBottomConstraint" destination="WSQ-4j-E6d" id="PR6-Vt-I7u"/>
                         <outlet property="sendButton" destination="lAc-sc-Jfq" id="fTF-9q-Tm4"/>

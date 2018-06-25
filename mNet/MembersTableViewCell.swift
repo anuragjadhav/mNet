@@ -16,65 +16,95 @@ class MembersTableViewCell: UITableViewCell {
     
     @IBOutlet weak var deleteButton: UIButton!
     
-    func loadCellWithMember(member:ConversationMember , isPostCreator:Bool , postType:String)
+    func loadCellWithMember(member:ConversationMember , isPostCreator:Bool)
     {
         memberNameLabel.text = member.userName
         
-        if(member.askForAgree == "Yes")
+        if(member.memberType.lowercased() == "owner")
         {
-            if(member.agreeStatus == "Pending")
+            memberTypeLabel.text = "Creator"
+            memberTypeLabel.textColor = ColorConstants.kBrownColor
+        }
+        else if (member.memberType.lowercased() == "bcc")
+        {
+            memberTypeLabel.text = "Bcc"
+            memberTypeLabel.textColor = ColorConstants.kBrownColor
+        }
+        else if (member.memberType.lowercased() == "to")
+        {
+            if(member.askForAgree == "Yes")
             {
-                memberTypeLabel.text = "To Agree"
-                
-                if(postType == "5")
+                if(member.agreeStatus == "Pending")
                 {
                     memberTypeLabel.text = "To Verify"
+                    memberTypeLabel.textColor = ColorConstants.kRedColor
                 }
-                
-                memberTypeLabel.textColor = ColorConstants.kRedColor
-            }
-            else
-            {
-                memberTypeLabel.text = member.agreeStatus
-                
-                if(postType == "5" && member.agreeStatus == "Agree")
+                else if(member.agreeStatus == "Agreed")
                 {
-                    memberTypeLabel.text = "Verify"
+                    memberTypeLabel.text = "Verified"
+                    memberTypeLabel.textColor = ColorConstants.kGreenColor
                 }
-                
-                memberTypeLabel.textColor = ColorConstants.kGreenColor
+                else
+                {
+                    memberTypeLabel.text = "Rejected"
+                    memberTypeLabel.textColor = ColorConstants.kGreenColor
+                }
             }
-        }
-        else if(member.askForApprove == "Yes")
-        {
-            if(member.agreeStatus == "Pending")
+            else if(member.askForAgree == "No" && member.askForApprove == "Yes")
             {
-                memberTypeLabel.text = "To Approve"
-                memberTypeLabel.textColor = ColorConstants.kRedColor
+                if(member.agreeStatus == "Pending")
+                {
+                    memberTypeLabel.text = "To Approve"
+                    memberTypeLabel.textColor = ColorConstants.kRedColor
+                }
+                else if(member.agreeStatus == "Approved")
+                {
+                    memberTypeLabel.text = "Approved"
+                    memberTypeLabel.textColor = ColorConstants.kGreenColor
+                }
+                else
+                {
+                    memberTypeLabel.text = "Rejected"
+                    memberTypeLabel.textColor = ColorConstants.kGreenColor
+                }
+            }
+            else if(member.askForApprove == "Yes")
+            {
+                if(member.agreeStatus == "Pending")
+                {
+                    memberTypeLabel.text = "To Approve"
+                    memberTypeLabel.textColor = ColorConstants.kRedColor
+                }
+                else if(member.agreeStatus == "Approved")
+                {
+                    memberTypeLabel.text = "Approved"
+                    memberTypeLabel.textColor = ColorConstants.kGreenColor
+                }
+                else
+                {
+                    memberTypeLabel.text = "Rejected"
+                    memberTypeLabel.textColor = ColorConstants.kGreenColor
+                }
             }
             else
             {
-                memberTypeLabel.text = member.agreeStatus
-                memberTypeLabel.textColor = ColorConstants.kGreenColor
+                memberTypeLabel.text = nil
+                memberTypeLabel.textColor = ColorConstants.kBrownColor
             }
         }
-        else if(member.memberType == "Owner")
-        {
-          memberTypeLabel.text = "Creator"
-        }
         else
         {
-            memberTypeLabel.text = ""
+            memberTypeLabel.text = nil
+            memberTypeLabel.textColor = ColorConstants.kBrownColor
         }
         
-        
-        if(isPostCreator)
-        {
-            deleteButton.isHidden = false
-        }
-        else
-        {
-            deleteButton.isHidden = true
-        }
+//        if(isPostCreator)
+//        {
+//            deleteButton.isHidden = false
+//        }
+//        else
+//        {
+//            deleteButton.isHidden = true
+//        }
     }
 }
