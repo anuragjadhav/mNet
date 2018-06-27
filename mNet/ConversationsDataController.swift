@@ -836,6 +836,11 @@ class ConversationsDataController: NSObject {
     
     func checkIfLoggedInUserIsBcc() -> Bool
     {
+        if(selectedCoversation == nil){
+            
+            return false
+        }
+        
         for member in (selectedCoversation?.membersList)!
         {
             if(member.userId == User.loggedInUser()?.userId)

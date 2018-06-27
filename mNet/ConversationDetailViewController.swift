@@ -67,11 +67,8 @@ class ConversationDetailViewController: BaseViewController,UITableViewDelegate,U
         
         setupNavigationBar()
         
-        if(dataCtrl?.checkIfLoggedInUserIsBcc() == true)
-        {
-            inputViewHeightConstraint.constant = 0
-            view.layoutIfNeeded()
-        }
+        setChatView()
+        
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -80,6 +77,15 @@ class ConversationDetailViewController: BaseViewController,UITableViewDelegate,U
         if(didComeFromNotification == false)
         {
             scrollTableViewToBottom()
+        }
+    }
+    
+    func setChatView()
+    {
+        if(dataCtrl?.checkIfLoggedInUserIsBcc() == true)
+        {
+            inputViewHeightConstraint.constant = 0
+            view.layoutIfNeeded()
         }
     }
     
@@ -718,6 +724,7 @@ class ConversationDetailViewController: BaseViewController,UITableViewDelegate,U
                     
                     self.setupData()
                     self.scrollTableViewToBottom()
+                    self.setChatView()
                     self.removeLoadingFromWindow()
                     
                 }

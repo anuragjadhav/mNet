@@ -274,7 +274,7 @@ class ConversationsListViewController: BaseViewController, UITableViewDelegate, 
             if(dataCtrl.previousConversationCallSuccessOrFailed){
                 print("threshould: \(threshould)")
                 print("offset: \(offset.y)")
-
+                dataCtrl.filterString = nil
                 self.getConversations(isReload: false,isLoadMore: false, searchText: searchBar.text!)
             }
         }

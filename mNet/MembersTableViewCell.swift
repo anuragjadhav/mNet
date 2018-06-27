@@ -32,40 +32,25 @@ class MembersTableViewCell: UITableViewCell {
         }
         else if (member.memberType.lowercased() == "to")
         {
+            memberTypeLabel.text = "To"
+            memberTypeLabel.textColor = ColorConstants.kBrownColor
+
             if(member.askForAgree == "Yes")
             {
                 if(member.agreeStatus == "Pending")
                 {
+                    memberTypeLabel.textColor = ColorConstants.kPendingActionColor
                     memberTypeLabel.text = "To Verify"
-                    memberTypeLabel.textColor = ColorConstants.kRedColor
                 }
                 else if(member.agreeStatus == "Agreed")
                 {
                     memberTypeLabel.text = "Verified"
-                    memberTypeLabel.textColor = ColorConstants.kGreenColor
+                    memberTypeLabel.textColor = ColorConstants.kDoneActionColor
                 }
                 else
                 {
                     memberTypeLabel.text = "Rejected"
-                    memberTypeLabel.textColor = ColorConstants.kGreenColor
-                }
-            }
-            else if(member.askForAgree == "No" && member.askForApprove == "Yes")
-            {
-                if(member.agreeStatus == "Pending")
-                {
-                    memberTypeLabel.text = "To Approve"
-                    memberTypeLabel.textColor = ColorConstants.kRedColor
-                }
-                else if(member.agreeStatus == "Approved")
-                {
-                    memberTypeLabel.text = "Approved"
-                    memberTypeLabel.textColor = ColorConstants.kGreenColor
-                }
-                else
-                {
-                    memberTypeLabel.text = "Rejected"
-                    memberTypeLabel.textColor = ColorConstants.kGreenColor
+                    memberTypeLabel.textColor = ColorConstants.kBeforeRejectionActionColor
                 }
             }
             else if(member.askForApprove == "Yes")
@@ -73,29 +58,28 @@ class MembersTableViewCell: UITableViewCell {
                 if(member.agreeStatus == "Pending")
                 {
                     memberTypeLabel.text = "To Approve"
-                    memberTypeLabel.textColor = ColorConstants.kRedColor
+                    memberTypeLabel.textColor = ColorConstants.kPendingActionColor
                 }
                 else if(member.agreeStatus == "Approved")
                 {
                     memberTypeLabel.text = "Approved"
-                    memberTypeLabel.textColor = ColorConstants.kGreenColor
+                    memberTypeLabel.textColor = ColorConstants.kDoneActionColor
                 }
                 else
                 {
                     memberTypeLabel.text = "Rejected"
-                    memberTypeLabel.textColor = ColorConstants.kGreenColor
+                    memberTypeLabel.textColor = ColorConstants.kBeforeRejectionActionColor
                 }
             }
-            else
-            {
-                memberTypeLabel.text = nil
-                memberTypeLabel.textColor = ColorConstants.kBrownColor
-            }
+        }
+        else if (member.memberType.lowercased() == "cc")
+        {
+            memberTypeLabel.text = "To"
+            memberTypeLabel.textColor = ColorConstants.kBrownColor
         }
         else
         {
             memberTypeLabel.text = nil
-            memberTypeLabel.textColor = ColorConstants.kBrownColor
         }
         
 //        if(isPostCreator)

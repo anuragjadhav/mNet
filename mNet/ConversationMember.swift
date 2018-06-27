@@ -30,13 +30,17 @@ class ConversationMember: NSObject, Mappable {
         {
             return 1
         }
-        else if(memberType.lowercased() == "bcc")
+        else if(memberType.lowercased() == "cc")
         {
             return 2
         }
-        else
+        else if(memberType.lowercased() == "bcc")
         {
             return 3
+        }
+        else
+        {
+            return 4
         }
     }
     
