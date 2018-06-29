@@ -31,6 +31,11 @@ class ConversationsWrapper: NSObject {
                     let filteredConversationArray = conversationArray.filter{$0.ignore == "0"}
                     onSuccess(filteredConversationArray,unreadNotifiactionCount as! String)
                 }
+                else if(error == DictionaryKeys.APIResponse.invaidCredentialsError)
+                {
+                    NotificationCenter.default.post(name: NSNotification.Name(rawValue: NotificationName.invalidCredentialsNotification), object: nil, userInfo: nil)
+                    return
+                }
                 else
                 {
                     onFailure(WrapperManager.shared.getErrorMessage(message: "Unable to fetch conversations"))
@@ -60,6 +65,11 @@ class ConversationsWrapper: NSObject {
                     let conversation:Conversation = Conversation(JSON:conversationDict)!
                     onSuccess(conversation)
                 }
+                else if(error == DictionaryKeys.APIResponse.invaidCredentialsError)
+                {
+                    NotificationCenter.default.post(name: NSNotification.Name(rawValue: NotificationName.invalidCredentialsNotification), object: nil, userInfo: nil)
+                    return
+                }
                 else
                 {
                     onFailure(WrapperManager.shared.getErrorMessage(message: "Unable to fetch conversation"))
@@ -86,6 +96,11 @@ class ConversationsWrapper: NSObject {
                 {
                     onSuccess()
                 }
+                else if(error == DictionaryKeys.APIResponse.invaidCredentialsError)
+                {
+                    NotificationCenter.default.post(name: NSNotification.Name(rawValue: NotificationName.invalidCredentialsNotification), object: nil, userInfo: nil)
+                    return
+                }
                 else
                 {
                     onFailure()
@@ -109,6 +124,11 @@ class ConversationsWrapper: NSObject {
                 if(error == DictionaryKeys.APIResponse.noError)
                 {
                     onSuccess()
+                }
+                else if(error == DictionaryKeys.APIResponse.invaidCredentialsError)
+                {
+                    NotificationCenter.default.post(name: NSNotification.Name(rawValue: NotificationName.invalidCredentialsNotification), object: nil, userInfo: nil)
+                    return
                 }
                 else
                 {
@@ -138,6 +158,11 @@ class ConversationsWrapper: NSObject {
                     }
                     let userListArray:[People] = [People].init(JSONArray: usersDictionaryArray)
                     onSuccess(userListArray)
+                }
+                else if(error == DictionaryKeys.APIResponse.invaidCredentialsError)
+                {
+                    NotificationCenter.default.post(name: NSNotification.Name(rawValue: NotificationName.invalidCredentialsNotification), object: nil, userInfo: nil)
+                    return
                 }
                 else
                 {
@@ -182,6 +207,11 @@ class ConversationsWrapper: NSObject {
                         if(error == DictionaryKeys.APIResponse.noError)
                         {
                             onSuccess()
+                        }
+                        else if(error == DictionaryKeys.APIResponse.invaidCredentialsError)
+                        {
+                            NotificationCenter.default.post(name: NSNotification.Name(rawValue: NotificationName.invalidCredentialsNotification), object: nil, userInfo: nil)
+                            return
                         }
                         else
                         {
@@ -232,6 +262,11 @@ class ConversationsWrapper: NSObject {
                         
                             onSuccess(responseDict["reply_id"] as! String,responseDict["reply_link"] as! String)
                         }
+                        else if(error == DictionaryKeys.APIResponse.invaidCredentialsError)
+                        {
+                            NotificationCenter.default.post(name: NSNotification.Name(rawValue: NotificationName.invalidCredentialsNotification), object: nil, userInfo: nil)
+                            return
+                        }
                         else
                         {
                             onFailure("Unable to send reply")
@@ -261,6 +296,11 @@ class ConversationsWrapper: NSObject {
                 if(error == DictionaryKeys.APIResponse.noError)
                 {
                     onSuccess()
+                }
+                else if(error == DictionaryKeys.APIResponse.invaidCredentialsError)
+                {
+                    NotificationCenter.default.post(name: NSNotification.Name(rawValue: NotificationName.invalidCredentialsNotification), object: nil, userInfo: nil)
+                    return
                 }
                 else
                 {

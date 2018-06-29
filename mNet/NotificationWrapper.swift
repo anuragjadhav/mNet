@@ -24,10 +24,15 @@ class NotificationWrapper: NSObject {
                         let unreadNotifiactionCount = responseDict["unread_noti_count"] ?? "0"
                         onSuccess([NotificationObject](),unreadNotifiactionCount as! String)
                         return
-                }
+                        }
                     let notificationsArray:[NotificationObject] = [NotificationObject].init(JSONArray: notificationDictArray)
                     let unreadNotifiactionCount = responseDict["unread_noti_count"] ?? "0"
                     onSuccess(notificationsArray,unreadNotifiactionCount as! String)
+                }
+                else if(error == DictionaryKeys.APIResponse.invaidCredentialsError)
+                {
+                    NotificationCenter.default.post(name: NSNotification.Name(rawValue: NotificationName.invalidCredentialsNotification), object: nil, userInfo: nil)
+                    return
                 }
                 else
                 {
@@ -53,6 +58,11 @@ class NotificationWrapper: NSObject {
                 if(error == DictionaryKeys.APIResponse.noError)
                 {
                     onSuccess()
+                }
+                else if(error == DictionaryKeys.APIResponse.invaidCredentialsError)
+                {
+                    NotificationCenter.default.post(name: NSNotification.Name(rawValue: NotificationName.invalidCredentialsNotification), object: nil, userInfo: nil)
+                    return
                 }
                 else
                 {

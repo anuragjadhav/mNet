@@ -80,6 +80,11 @@ struct EmailIDs {
     static let helpEmailId:String = "bradintelle@mediawareonline.com"
 }
 
+struct NotificationName {
+    
+    static let invalidCredentialsNotification:String = "InvalidCredentialsNotification"
+}
+
 struct LoginTypeCode {
     
     static let normal:String = "0"
@@ -102,6 +107,7 @@ struct DictionaryKeys {
         static let error:String = "error"
         static let responseData:String = "status"
         static let noError:String = "0"
+        static let invaidCredentialsError:String = "3"
         static let noErrorInt:Int = 0
     }
     

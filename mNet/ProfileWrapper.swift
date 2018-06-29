@@ -28,6 +28,11 @@ class ProfileWrapper: NSObject {
                     }
                     onSuccess(profile)
                 }
+                else if(error == DictionaryKeys.APIResponse.invaidCredentialsError)
+                {
+                    NotificationCenter.default.post(name: NSNotification.Name(rawValue: NotificationName.invalidCredentialsNotification), object: nil, userInfo: nil)
+                    return
+                }
                 else
                 {
                     onFailure(WrapperManager.shared.getErrorMessage(message: "Unable to fetch profile data"))
@@ -51,6 +56,11 @@ class ProfileWrapper: NSObject {
                 if(error == DictionaryKeys.APIResponse.noError)
                 {
                     onSuccess("Profile updated")
+                }
+                else if(error == DictionaryKeys.APIResponse.invaidCredentialsError)
+                {
+                    NotificationCenter.default.post(name: NSNotification.Name(rawValue: NotificationName.invalidCredentialsNotification), object: nil, userInfo: nil)
+                    return
                 }
                 else
                 {

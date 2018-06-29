@@ -27,6 +27,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate,UNUserNotificationCenterDe
         
         FirebaseApp.configure()
         
+        NotificationCenter.default.addObserver(self, selector: #selector(invalidCredentials(_:)), name: NSNotification.Name(rawValue: NotificationName.invalidCredentialsNotification), object: nil)
+        
         return true
     }
     
@@ -177,7 +179,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate,UNUserNotificationCenterDe
     }
     
     
-
+    @objc func invalidCredentials(_ notification:Notification)
+    {
+        logout()
+    }
+    
+    
     //MARK: Application Life Cycle
     func applicationWillResignActive(_ application: UIApplication) {
         // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.

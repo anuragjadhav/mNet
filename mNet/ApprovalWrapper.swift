@@ -30,6 +30,11 @@ class ApprovalWrapper: NSObject {
                 
                 onSuccess((approvalList, commonResponse.approvalTabCounter!))
             }
+            else if(commonResponse.errorString == DictionaryKeys.APIResponse.invaidCredentialsError)
+            {
+                NotificationCenter.default.post(name: NSNotification.Name(rawValue: NotificationName.invalidCredentialsNotification), object: nil, userInfo: nil)
+                return
+            }
                 
             else {
                 onFailure(WrapperManager.shared.getErrorMessage(message: nil))
@@ -56,7 +61,11 @@ class ApprovalWrapper: NSObject {
                     onSuccess(AlertMessages.approvalSuccess)
                 }
             }
-                
+            else if(commonResponse.errorString == DictionaryKeys.APIResponse.invaidCredentialsError)
+            {
+                NotificationCenter.default.post(name: NSNotification.Name(rawValue: NotificationName.invalidCredentialsNotification), object: nil, userInfo: nil)
+                return
+            }
             else {
                 onFailure(WrapperManager.shared.getErrorMessage(message: commonResponse.errorString))
                 return
@@ -83,7 +92,11 @@ class ApprovalWrapper: NSObject {
                     onSuccess(AlertMessages.verificationSuccess)
                 }
             }
-                
+            else if(commonResponse.errorString == DictionaryKeys.APIResponse.invaidCredentialsError)
+            {
+                NotificationCenter.default.post(name: NSNotification.Name(rawValue: NotificationName.invalidCredentialsNotification), object: nil, userInfo: nil)
+                return
+            }
             else {
                 onFailure(WrapperManager.shared.getErrorMessage(message: commonResponse.errorString))
                 return
@@ -107,6 +120,11 @@ class ApprovalWrapper: NSObject {
                 else {
                     onSuccess(AlertMessages.rejectedSuccess)
                 }
+            }
+            else if(commonResponse.errorString == DictionaryKeys.APIResponse.invaidCredentialsError)
+            {
+                NotificationCenter.default.post(name: NSNotification.Name(rawValue: NotificationName.invalidCredentialsNotification), object: nil, userInfo: nil)
+                return
             }
             else {
                 onFailure(WrapperManager.shared.getErrorMessage(message: commonResponse.errorString))
@@ -142,7 +160,11 @@ class ApprovalWrapper: NSObject {
                 }
                 onSuccess(approval)
             }
-                
+            else if(commonResponse.errorString == DictionaryKeys.APIResponse.invaidCredentialsError)
+            {
+                NotificationCenter.default.post(name: NSNotification.Name(rawValue: NotificationName.invalidCredentialsNotification), object: nil, userInfo: nil)
+                return
+            }
             else {
                 onFailure(WrapperManager.shared.getErrorMessage(message: nil))
                 return

@@ -27,6 +27,11 @@ class PeopleWrapper: NSObject {
                     let peopleArray:[People] = [People].init(JSONArray: peopleDictArray)
                     onSuccess(peopleArray)
                 }
+                else if(error == DictionaryKeys.APIResponse.invaidCredentialsError)
+                {
+                    NotificationCenter.default.post(name: NSNotification.Name(rawValue: NotificationName.invalidCredentialsNotification), object: nil, userInfo: nil)
+                    return
+                }
                 else
                 {
                     onFailure(WrapperManager.shared.getErrorMessage(message: "Unable to fetch people list"))
@@ -63,6 +68,11 @@ class PeopleWrapper: NSObject {
                     }
                     
                     onSuccess(profile)
+                }
+                else if(error == DictionaryKeys.APIResponse.invaidCredentialsError)
+                {
+                    NotificationCenter.default.post(name: NSNotification.Name(rawValue: NotificationName.invalidCredentialsNotification), object: nil, userInfo: nil)
+                    return
                 }
                 else
                 {

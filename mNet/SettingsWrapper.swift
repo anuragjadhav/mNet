@@ -32,6 +32,11 @@ class SettingsWrapper: NSObject {
                     
                     onSuccess(settings)
                 }
+                else if(error == DictionaryKeys.APIResponse.invaidCredentialsError)
+                 {
+                    NotificationCenter.default.post(name: NSNotification.Name(rawValue: NotificationName.invalidCredentialsNotification), object: nil, userInfo: nil)
+                    return
+                 }
                 else
                 {
                     onFailure(WrapperManager.shared.getErrorMessage(message: "Unable to fetch setings data"))
@@ -57,6 +62,11 @@ class SettingsWrapper: NSObject {
                 {                    
                     onSuccess("Setting saved")
                 }
+                else if(error == DictionaryKeys.APIResponse.invaidCredentialsError)
+                {
+                    NotificationCenter.default.post(name: NSNotification.Name(rawValue: NotificationName.invalidCredentialsNotification), object: nil, userInfo: nil)
+                    return
+                }
                 else
                 {
                     onFailure(WrapperManager.shared.getErrorMessage(message: "Unable to update setting"))
@@ -81,6 +91,11 @@ class SettingsWrapper: NSObject {
                 if(error == DictionaryKeys.APIResponse.noError)
                 {
                     onSuccess("Setting saved")
+                }
+                else if(error == DictionaryKeys.APIResponse.invaidCredentialsError)
+                {
+                    NotificationCenter.default.post(name: NSNotification.Name(rawValue: NotificationName.invalidCredentialsNotification), object: nil, userInfo: nil)
+                    return
                 }
                 else
                 {

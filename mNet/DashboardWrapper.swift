@@ -33,7 +33,11 @@ class DashboardWrapper: NSObject {
                 
                 onSuccess(stats)
             }
-            
+            else if(commonResponse.errorString == DictionaryKeys.APIResponse.invaidCredentialsError)
+            {
+                NotificationCenter.default.post(name: NSNotification.Name(rawValue: NotificationName.invalidCredentialsNotification), object: nil, userInfo: nil)
+                return
+            }
             else {
                 onFailure(WrapperManager.shared.getErrorMessage(message: nil))
                 return
@@ -60,6 +64,11 @@ class DashboardWrapper: NSObject {
                 let apps:[UserApp] = Mapper<UserApp>().mapArray(JSONArray: appsDictionaryArray)
                 onSuccess(apps)
             }
+            else if(commonResponse.errorString == DictionaryKeys.APIResponse.invaidCredentialsError)
+            {
+                NotificationCenter.default.post(name: NSNotification.Name(rawValue: NotificationName.invalidCredentialsNotification), object: nil, userInfo: nil)
+                return
+            }
                 
             else {
                 onFailure(WrapperManager.shared.getErrorMessage(message: nil))
@@ -79,6 +88,11 @@ class DashboardWrapper: NSObject {
             
             if commonResponse.noError {
                 onSuccess()
+            }
+            else if(commonResponse.errorString == DictionaryKeys.APIResponse.invaidCredentialsError)
+            {
+                NotificationCenter.default.post(name: NSNotification.Name(rawValue: NotificationName.invalidCredentialsNotification), object: nil, userInfo: nil)
+                return
             }
             else {
                 onFailure(WrapperManager.shared.getErrorMessage(message: nil))
