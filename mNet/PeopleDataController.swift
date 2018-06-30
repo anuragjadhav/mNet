@@ -47,7 +47,11 @@ class PeopleDataController: NSObject {
                     
                     for people in filteredBlockedPeopleArray
                     {
-                        self.peopleArray.append(people)
+                        if(self.checkIfUserAlreadyPresentInThelist(people: people) == false)
+                        {
+                            self.peopleArray.append(people)
+                        }
+
                     }
                 }
                 else
@@ -80,4 +84,16 @@ class PeopleDataController: NSObject {
         }
     }
     
+    
+    func checkIfUserAlreadyPresentInThelist(people:People) -> Bool
+    {
+        let filteredArray = peopleArray.filter { $0.userId == people.userId}
+        
+        if(filteredArray.count > 0)
+        {
+            return true
+        }
+        
+        return false
+    }
 }
