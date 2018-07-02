@@ -1571,6 +1571,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer: Biswajit Das (5CAK337GLX)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Biswajit Das (5CAK337GLX)";
 				CODE_SIGN_STYLE = Manual;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = 3J7U28GXGW;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",

@@ -39,36 +39,36 @@ class MembersTableViewCell: UITableViewCell {
             {
                 if(member.agreeStatus == "Pending")
                 {
-                    memberTypeLabel.textColor = ColorConstants.kPendingActionColor
+                    memberTypeLabel.textColor = hexStringToUIColor(hex:ColorConstants.kPendingActionColor)
                     memberTypeLabel.text = "To Verify"
                 }
                 else if(member.agreeStatus == "Agreed")
                 {
                     memberTypeLabel.text = "Verified"
-                    memberTypeLabel.textColor = ColorConstants.kDoneActionColor
+                    memberTypeLabel.textColor = hexStringToUIColor(hex:ColorConstants.kDoneActionColor)
                 }
                 else
                 {
                     memberTypeLabel.text = "Rejected"
-                    memberTypeLabel.textColor = ColorConstants.kBeforeRejectionActionColor
+                    memberTypeLabel.textColor = hexStringToUIColor(hex:ColorConstants.kBeforeRejectionActionColor)
                 }
             }
             else if(member.askForApprove == "Yes")
             {
-                if(member.agreeStatus == "Pending")
+                if(member.approveStatus == "Pending")
                 {
                     memberTypeLabel.text = "To Approve"
-                    memberTypeLabel.textColor = ColorConstants.kPendingActionColor
+                    memberTypeLabel.textColor = hexStringToUIColor(hex:ColorConstants.kPendingActionColor)
                 }
-                else if(member.agreeStatus == "Approved")
+                else if(member.approveStatus == "Approved")
                 {
                     memberTypeLabel.text = "Approved"
-                    memberTypeLabel.textColor = ColorConstants.kDoneActionColor
+                    memberTypeLabel.textColor = hexStringToUIColor(hex:ColorConstants.kDoneActionColor)
                 }
                 else
                 {
                     memberTypeLabel.text = "Rejected"
-                    memberTypeLabel.textColor = ColorConstants.kBeforeRejectionActionColor
+                    memberTypeLabel.textColor = hexStringToUIColor(hex:ColorConstants.kBeforeRejectionActionColor)
                 }
             }
         }
@@ -90,5 +90,29 @@ class MembersTableViewCell: UITableViewCell {
 //        {
 //            deleteButton.isHidden = true
 //        }
+    }
+    
+    
+    
+    func hexStringToUIColor (hex:String) -> UIColor {
+        var cString:String = hex.trimmingCharacters(in: .whitespacesAndNewlines).uppercased()
+        
+        if (cString.hasPrefix("#")) {
+            cString.remove(at: cString.startIndex)
+        }
+        
+        if ((cString.count) != 6) {
+            return UIColor.gray
+        }
+        
+        var rgbValue:UInt32 = 0
+        Scanner(string: cString).scanHexInt32(&rgbValue)
+        
+        return UIColor(
+            red: CGFloat((rgbValue & 0xFF0000) >> 16) / 255.0,
+            green: CGFloat((rgbValue & 0x00FF00) >> 8) / 255.0,
+            blue: CGFloat(rgbValue & 0x0000FF) / 255.0,
+            alpha: CGFloat(1.0)
+        )
     }
 }

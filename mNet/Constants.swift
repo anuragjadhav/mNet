@@ -187,9 +187,9 @@ struct ColorConstants {
     static let kWhiteColor:UIColor = UIColor.white
     static let kGreenColor: UIColor = UIColor(red: 0.0/255.0, green: 128.0/255.0, blue: 0.0/255.0, alpha: 1.0)
     
-    static let kDoneActionColor: UIColor = UIColor(red: 76.0/255.0, green: 175.0/255.0, blue: 80.0/255.0, alpha: 1.0)
-    static let kPendingActionColor: UIColor = UIColor(red: 0.0/255.0, green: 188.0/255.0, blue: 212.0/255.0, alpha: 1.0)
-    static let kBeforeRejectionActionColor: UIColor = UIColor(red: 255.0/255.0, green: 255.0/255.0, blue: 0.0/255.0, alpha: 1.0)
+    static let kDoneActionColor:String = "#4CAF50"
+    static let kPendingActionColor:String = "#00bcd4"
+    static let kBeforeRejectionActionColor:String = "#ff0000"
 }
 
 struct NewConversationUserType {
