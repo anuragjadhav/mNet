@@ -67,7 +67,14 @@ class ApprovalWrapper: NSObject {
                 return
             }
             else {
-                onFailure(WrapperManager.shared.getErrorMessage(message: commonResponse.errorString))
+                if let message:String = commonResponse.responseData as? String {
+                    
+                    onFailure(message)
+                }
+                else{
+                    
+                    onFailure("Something went wrong")
+                }
                 return
             }
         }
@@ -98,7 +105,14 @@ class ApprovalWrapper: NSObject {
                 return
             }
             else {
-                onFailure(WrapperManager.shared.getErrorMessage(message: commonResponse.errorString))
+                if let message:String = commonResponse.responseData as? String {
+                    
+                    onFailure(message)
+                }
+                else{
+                    
+                    onFailure("Something went wrong")
+                }
                 return
             }
         }
@@ -127,7 +141,16 @@ class ApprovalWrapper: NSObject {
                 return
             }
             else {
-                onFailure(WrapperManager.shared.getErrorMessage(message: commonResponse.errorString))
+                
+                if let message:String = commonResponse.responseData as? String {
+                    
+                    onFailure(message)
+                }
+                else{
+                    
+                    onFailure("Something went wrong")
+                }
+                
                 return
             }
         }

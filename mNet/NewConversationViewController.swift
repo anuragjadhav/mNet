@@ -347,13 +347,13 @@ class NewConversationViewController: BaseViewController,UICollectionViewDelegate
             dataCtrl?.newConversationSubject = subjectTextField.text
             dataCtrl?.newConversationMessage = messageTextView.text
             
-            self.showTransperantLoadingOnViewController()
+            self.showTransperantLoadingOnWindow()
             
             dataCtrl?.createNewConversation(onSuccess: { [unowned self] in
                 
                 DispatchQueue.main.async {
                     
-                    self.removeTransperantLoadingFromViewController()
+                    self.removeTransperantLoadingFromWindow()
                     self.dataCtrl?.isNewConversationAdded = true
                     self.navigationController?.popViewController(animated: true)
                 }
@@ -362,7 +362,7 @@ class NewConversationViewController: BaseViewController,UICollectionViewDelegate
                     
                     DispatchQueue.main.async {
                         
-                        self.removeTransperantLoadingFromViewController()
+                        self.removeTransperantLoadingFromWindow()
                         let alert = UIAlertController(title:AlertMessages.sorry, message:errorMessage, preferredStyle: .alert)
                         alert.addAction(UIAlertAction(title:AlertMessages.ok, style:.default, handler: { _ in
                         }))
