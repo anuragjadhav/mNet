@@ -610,15 +610,16 @@ class ConversationDetailViewController: BaseViewController,UITableViewDelegate,U
     
     @IBAction func sendButtonAction(_ sender: Any) {
         
-        self.showTransperantLoadingOnViewController()
+        self.showTransperantLoadingOnWindow()
         
         dataCtrl?.setNewReplyWithoutDocumentConversation(replyMessage: messageTextView.text, onSuccess: { [unowned self] in
             
             DispatchQueue.main.async {
                 
+                self.removeTransperantLoadingFromWindow()
+
                 self.messageTextView.text = ""
                 self.messageTextView.resignFirstResponder()
-                self.removeTransperantLoadingFromViewController()
                 self.conversationTableView.reloadData()
                 
                 let indexPath = IndexPath(row: (self.dataCtrl?.selectedCoversation?.reply.count)! - 1, section: 0)
@@ -629,7 +630,7 @@ class ConversationDetailViewController: BaseViewController,UITableViewDelegate,U
             
             DispatchQueue.main.async {
                 
-                self.removeTransperantLoadingFromViewController()
+                self.removeTransperantLoadingFromWindow()
                 
                 let alert = UIAlertController(title:AlertMessages.failure, message:errorMessage, preferredStyle: .alert)
                 alert.addAction(UIAlertAction(title:AlertMessages.ok, style:.default, handler: { _ in
