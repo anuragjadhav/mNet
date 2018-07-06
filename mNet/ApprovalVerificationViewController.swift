@@ -230,13 +230,15 @@ class ApprovalVerificationViewController: BaseViewController,UISearchBarDelegate
             
             DispatchQueue.main.async {
                 self.removeTransperantLoadingFromViewController()
+                
+                NotificationCenter.default.post(name: NSNotification.Name(rawValue: NotificationName.approvalActionTakenNotification), object: nil, userInfo: nil)
+                
 //                var successMessage:String = AlertMessages.approvalSuccess
 //                if self.verificationRadioButton.isRadioSelected {
 //                    successMessage = AlertMessages.verificationSuccess
 //                }
                 self.showQuickSuccessAlert(message: message, completion: { (_) in
-                    self.approvalsVC?.resetData()
-                    self.approvalsVC?.getData()
+                
                     if(self.approvalsVC != nil) {
                         self.navigationController?.popToViewController(self.approvalsVC!, animated: true)
                     }

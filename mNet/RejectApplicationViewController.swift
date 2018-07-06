@@ -62,9 +62,11 @@ class RejectApplicationViewController: BaseViewController,UITextViewDelegate {
             
             DispatchQueue.main.async {
                 self.removeTransperantLoadingFromViewController()
+                
+                NotificationCenter.default.post(name: NSNotification.Name(rawValue: NotificationName.approvalActionTakenNotification), object: nil, userInfo: nil)
+                
                 self.showQuickSuccessAlert(message: message, completion: { (_) in
-                    self.approvalsVC?.resetData()
-                    self.approvalsVC?.getData()
+                    
                     if(self.approvalsVC == nil) {
                         self.backTwo()
                     }

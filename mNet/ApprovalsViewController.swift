@@ -42,6 +42,8 @@ class ApprovalsViewController: BaseViewController,UICollectionViewDelegate, UICo
         // Do any additional setup after loading the view.
         self.getData()
         setUpViewController()
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(approvalActionTaken(_:)), name: NSNotification.Name(rawValue: NotificationName.approvalActionTakenNotification), object: nil)
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -320,6 +322,12 @@ class ApprovalsViewController: BaseViewController,UICollectionViewDelegate, UICo
         dataController.startDate = fromDate ?? ""
         dataController.endDate = toDate ?? ""
         getData()
+    }
+    
+    @objc func approvalActionTaken(_ notification:Notification)
+    {
+        self.resetData()
+        self.getData()
     }
     
 }

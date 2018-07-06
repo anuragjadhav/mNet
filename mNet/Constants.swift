@@ -83,6 +83,7 @@ struct EmailIDs {
 struct NotificationName {
     
     static let invalidCredentialsNotification:String = "InvalidCredentialsNotification"
+    static let approvalActionTakenNotification:String = "ApprovalActionTaken"
 }
 
 struct LoginTypeCode {
