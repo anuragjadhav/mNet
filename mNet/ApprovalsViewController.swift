@@ -326,6 +326,7 @@ class ApprovalsViewController: BaseViewController,UICollectionViewDelegate, UICo
     
     @objc func approvalActionTaken(_ notification:Notification)
     {
+        self.dataController.isFromDeepLinking = false
         self.resetData()
         self.getData()
     }
