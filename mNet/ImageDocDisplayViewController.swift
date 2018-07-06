@@ -59,7 +59,7 @@ class ImageDocDisplayViewController: BaseViewController {
         
         super.keyBoardWillShow(notification: notification)
         
-        if let keyboardSize = (notification.userInfo?[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue
+        if let keyboardSize = (notification.userInfo?[UIKeyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue
         {
             inputViewBottomConstraint.constant = keyboardSize.height
             self.view.layoutIfNeeded()
