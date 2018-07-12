@@ -140,12 +140,20 @@ class LoginWrapper: NSObject {
                         onSuccess()
                         return
                     }
+                    else {
+                        onFailure()
+                        return
+                    }
                 }
                 else if (error  is String)
                 {
                     if (error as! String == DictionaryKeys.APIResponse.noError) {
                         
                         onSuccess()
+                        return
+                    }
+                    else {
+                        onFailure()
                         return
                     }
                 }
@@ -198,12 +206,20 @@ class LoginWrapper: NSObject {
                         onSuccess(responseDict["status"] as? Bool ?? false)
                         return
                     }
+                    else {
+                        onFailure()
+                        return
+                    }
                 }
                 else if (error  is String)
                 {
                     if (error as! String == DictionaryKeys.APIResponse.noError) {
                         
                         onSuccess(responseDict["status"] as? Bool ?? false)
+                        return
+                    }
+                    else {
+                        onFailure()
                         return
                     }
                 }

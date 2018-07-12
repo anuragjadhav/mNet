@@ -115,15 +115,41 @@ class SettingsWrapper: NSObject {
             
             if let responseDict:[String:Any] = response.result.value as? [String:Any] {
                 
-                let error:Int = responseDict[DictionaryKeys.APIResponse.error] as! Int
-                
-                if(error == DictionaryKeys.APIResponse.noErrorInt)
+                let error = responseDict[DictionaryKeys.APIResponse.error]
+
+                if (error is Int)
                 {
-                    onSuccess()
+                    if (error as! Int == DictionaryKeys.APIResponse.noErrorInt) {
+                        
+                        onSuccess()
+                        return
+                    }
+                    else
+                    {
+                        let displayMessage = responseDict[DictionaryKeys.APIResponse.responseData] as? String  ?? "Unable to reset password"
+                        
+                        onFailure(WrapperManager.shared.getErrorMessage(message:displayMessage))
+                    }
+                }
+                else if (error  is String)
+                {
+                    if (error as! String == DictionaryKeys.APIResponse.noError) {
+                        
+                        onSuccess()
+                        return
+                    }
+                    else
+                    {
+                        let displayMessage = responseDict[DictionaryKeys.APIResponse.responseData] as? String  ?? "Unable to reset password"
+                        
+                        onFailure(WrapperManager.shared.getErrorMessage(message:displayMessage))
+                    }
                 }
                 else
                 {
-                    onFailure(WrapperManager.shared.getErrorMessage(message: "Unable to reset password"))
+                    let displayMessage = responseDict[DictionaryKeys.APIResponse.responseData] as? String  ?? "Unable to reset password"
+                    
+                    onFailure(WrapperManager.shared.getErrorMessage(message:displayMessage))
                 }
             }
             else{

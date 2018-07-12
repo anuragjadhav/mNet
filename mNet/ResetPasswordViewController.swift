@@ -48,12 +48,12 @@ class ResetPasswordViewController: BaseViewController,UITextFieldDelegate {
         {
             if Reachability.isConnectedToNetwork(){
                 
-                self.showTransperantLoadingOnViewController()
+                self.showTransperantLoadingOnWindow()
                 dataCtrl?.resetNewPassword(oldPassword:oldPasswordTextField.text!,newPassword: newPasswordTextfield.text!,onSuccess: { [unowned self]  in
                     
                     DispatchQueue.main.async {
                         
-                        self.removeTransperantLoadingFromViewController()
+                        self.removeTransperantLoadingFromWindow()
                         
                         let alert = UIAlertController(title:AlertMessages.success, message:"Password reset successfully", preferredStyle: .alert)
                         alert.addAction(UIAlertAction(title:AlertMessages.ok, style:.default, handler: { _ in
@@ -69,7 +69,7 @@ class ResetPasswordViewController: BaseViewController,UITextFieldDelegate {
                         
                         DispatchQueue.main.async {
                             
-                            self.removeTransperantLoadingFromViewController()
+                            self.removeTransperantLoadingFromWindow()
                             
                             let alert = UIAlertController(title:AlertMessages.failure, message:errorMessage, preferredStyle: .alert)
                             alert.addAction(UIAlertAction(title:AlertMessages.ok, style:.default, handler: { _ in
